@@ -16,15 +16,5 @@ namespace Project
         {
             InitializeComponent();
         }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-        {
-
-        }
     }
 }
