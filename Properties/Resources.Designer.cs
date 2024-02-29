@@ -59,15 +59,5 @@ namespace Project.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap weapon_crosshair {
-            get {
-                object obj = ResourceManager.GetObject("weapon-crosshair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
