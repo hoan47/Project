@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Practice
+namespace Project
 {
-    public partial class UserControl1 : UserControl
+    public partial class FManager : Form
     {
-        public UserControl1()
+        public FManager()
         {
             InitializeComponent();
         }

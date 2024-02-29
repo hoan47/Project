@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Practice
+namespace Project
 {
-    public partial class Form1 : Form
+    public partial class FLogin : Form
     {
-        public Form1()
+        public FLogin()
         {
             InitializeComponent();
         }

@@ -1,9 +1,0 @@
-D:\IT\Winform\Practice\bin\Debug\Practice.exe.config
-D:\IT\Winform\Practice\bin\Debug\Practice.exe
-D:\IT\Winform\Practice\bin\Debug\Practice.pdb
-D:\IT\Winform\Practice\obj\Debug\Practice.Properties.Resources.resources
-D:\IT\Winform\Practice\obj\Debug\Practice.UserControl1.resources
-D:\IT\Winform\Practice\obj\Debug\Practice.csproj.GenerateResource.cache
-D:\IT\Winform\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache
-D:\IT\Winform\Practice\obj\Debug\Practice.exe
-D:\IT\Winform\Practice\obj\Debug\Practice.pdb
