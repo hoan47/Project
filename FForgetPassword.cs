@@ -26,6 +26,7 @@ namespace Project
                     panelPassword.Visible = true;
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
                     textBoxAccount.Enabled = false;
+                    textBoxPassword.Focus();
                 }
                 else
                 {
@@ -44,6 +45,24 @@ namespace Project
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
             AccountDAO.UpdatePasswored(textBoxAccount.Text, textBoxPassword.Text);
+        }
+
+        private void TextBoxAccountKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                ButtonCreateAccountClick(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                ButtonUpdatePasswordClick(sender, e);
+                e.Handled = true;
+            }
         }
     }
 }

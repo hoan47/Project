@@ -37,5 +37,28 @@ namespace Project
             }
             forgotPassword.Show();
         }
+
+        private void TextBoxAccountKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                textBoxPassword.Focus();
+                e.Handled = true;
+            }    
+        }
+
+        private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                ButtonLoginClick(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void ButtonLoginClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

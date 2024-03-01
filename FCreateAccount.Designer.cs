@@ -34,6 +34,11 @@ namespace Project
             this.pictureAccount = new System.Windows.Forms.PictureBox();
             this.textBoxAccount = new System.Windows.Forms.TextBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelNewPassword = new System.Windows.Forms.Panel();
+            this.labelNewPassword = new System.Windows.Forms.Label();
+            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxNewPassword = new System.Windows.Forms.PictureBox();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelPassword = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -41,19 +46,14 @@ namespace Project
             this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
             this.panelAccount = new System.Windows.Forms.Panel();
             this.panelRoadAccount = new System.Windows.Forms.Panel();
-            this.panelNewPassword = new System.Windows.Forms.Panel();
-            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBoxNewPassword = new System.Windows.Forms.PictureBox();
-            this.labelNewPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).BeginInit();
             this.panelMain.SuspendLayout();
+            this.panelNewPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             this.panelAccount.SuspendLayout();
-            this.panelNewPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCreateAccount
@@ -87,6 +87,7 @@ namespace Project
             this.textBoxAccount.Name = "textBoxAccount";
             this.textBoxAccount.Size = new System.Drawing.Size(234, 30);
             this.textBoxAccount.TabIndex = 1;
+            this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
             // 
             // panelMain
             // 
@@ -99,6 +100,56 @@ namespace Project
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(478, 210);
             this.panelMain.TabIndex = 3;
+            // 
+            // panelNewPassword
+            // 
+            this.panelNewPassword.Controls.Add(this.labelNewPassword);
+            this.panelNewPassword.Controls.Add(this.textBoxNewPassword);
+            this.panelNewPassword.Controls.Add(this.panel2);
+            this.panelNewPassword.Controls.Add(this.pictureBoxNewPassword);
+            this.panelNewPassword.Location = new System.Drawing.Point(159, 112);
+            this.panelNewPassword.Name = "panelNewPassword";
+            this.panelNewPassword.Size = new System.Drawing.Size(314, 60);
+            this.panelNewPassword.TabIndex = 5;
+            // 
+            // labelNewPassword
+            // 
+            this.labelNewPassword.AutoSize = true;
+            this.labelNewPassword.Location = new System.Drawing.Point(16, 4);
+            this.labelNewPassword.Name = "labelNewPassword";
+            this.labelNewPassword.Size = new System.Drawing.Size(148, 17);
+            this.labelNewPassword.TabIndex = 5;
+            this.labelNewPassword.Text = "Nhập lại mật khẩu mới";
+            // 
+            // textBoxNewPassword
+            // 
+            this.textBoxNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNewPassword.Location = new System.Drawing.Point(59, 24);
+            this.textBoxNewPassword.MaxLength = 16;
+            this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.Size = new System.Drawing.Size(234, 27);
+            this.textBoxNewPassword.TabIndex = 2;
+            this.textBoxNewPassword.UseSystemPasswordChar = true;
+            this.textBoxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNewPasswordKeyPress);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Aqua;
+            this.panel2.Location = new System.Drawing.Point(19, 54);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(274, 3);
+            this.panel2.TabIndex = 4;
+            // 
+            // pictureBoxNewPassword
+            // 
+            this.pictureBoxNewPassword.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNewPassword.Image")));
+            this.pictureBoxNewPassword.Location = new System.Drawing.Point(18, 24);
+            this.pictureBoxNewPassword.Name = "pictureBoxNewPassword";
+            this.pictureBoxNewPassword.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxNewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxNewPassword.TabIndex = 3;
+            this.pictureBoxNewPassword.TabStop = false;
             // 
             // pictureBoxIcon
             // 
@@ -130,6 +181,7 @@ namespace Project
             this.textBoxPassword.Size = new System.Drawing.Size(234, 27);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPasswordKeyPress);
             // 
             // panelRoadPassword
             // 
@@ -167,55 +219,6 @@ namespace Project
             this.panelRoadAccount.Size = new System.Drawing.Size(274, 3);
             this.panelRoadAccount.TabIndex = 3;
             // 
-            // panelNewPassword
-            // 
-            this.panelNewPassword.Controls.Add(this.labelNewPassword);
-            this.panelNewPassword.Controls.Add(this.textBoxNewPassword);
-            this.panelNewPassword.Controls.Add(this.panel2);
-            this.panelNewPassword.Controls.Add(this.pictureBoxNewPassword);
-            this.panelNewPassword.Location = new System.Drawing.Point(159, 112);
-            this.panelNewPassword.Name = "panelNewPassword";
-            this.panelNewPassword.Size = new System.Drawing.Size(314, 60);
-            this.panelNewPassword.TabIndex = 5;
-            // 
-            // textBoxNewPassword
-            // 
-            this.textBoxNewPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNewPassword.Location = new System.Drawing.Point(59, 24);
-            this.textBoxNewPassword.MaxLength = 16;
-            this.textBoxNewPassword.Name = "textBoxNewPassword";
-            this.textBoxNewPassword.Size = new System.Drawing.Size(234, 27);
-            this.textBoxNewPassword.TabIndex = 2;
-            this.textBoxNewPassword.UseSystemPasswordChar = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Aqua;
-            this.panel2.Location = new System.Drawing.Point(19, 54);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 3);
-            this.panel2.TabIndex = 4;
-            // 
-            // pictureBoxNewPassword
-            // 
-            this.pictureBoxNewPassword.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNewPassword.Image")));
-            this.pictureBoxNewPassword.Location = new System.Drawing.Point(18, 24);
-            this.pictureBoxNewPassword.Name = "pictureBoxNewPassword";
-            this.pictureBoxNewPassword.Size = new System.Drawing.Size(32, 32);
-            this.pictureBoxNewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxNewPassword.TabIndex = 3;
-            this.pictureBoxNewPassword.TabStop = false;
-            // 
-            // labelNewPassword
-            // 
-            this.labelNewPassword.AutoSize = true;
-            this.labelNewPassword.Location = new System.Drawing.Point(16, 4);
-            this.labelNewPassword.Name = "labelNewPassword";
-            this.labelNewPassword.Size = new System.Drawing.Size(148, 17);
-            this.labelNewPassword.TabIndex = 5;
-            this.labelNewPassword.Text = "Nhập lại mật khẩu mới";
-            // 
             // FCreateAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,15 +232,15 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            this.panelNewPassword.ResumeLayout(false);
+            this.panelNewPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             this.panelAccount.ResumeLayout(false);
             this.panelAccount.PerformLayout();
-            this.panelNewPassword.ResumeLayout(false);
-            this.panelNewPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNewPassword)).EndInit();
             this.ResumeLayout(false);
 
         }

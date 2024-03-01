@@ -19,52 +19,46 @@ namespace Project
             sqlConnection = new SqlConnection(Properties.Settings.Default.connectionStr);
         }
 
-        private static bool Cmd(string cmdStr, string message)
+        public static EErrorCreate CreateAccount(string userName, string password, string newPassword)
         {
-            sqlConnection.Open();
-            SqlCommand cmd = new SqlCommand(cmdStr, sqlConnection);
-
-            if (cmd.ExecuteNonQuery() > 0)
+            if (IsAccount(userName) == EErrorCreate.account)
             {
-                MessageBox.Show(message);
-                return true;
+                return EErrorCreate.account;
             }
-            sqlConnection.Close();
-            return false;
-        }
-
-        public static void CreateAccount(string userName, string password, string newPassword)
-        {
-            if (IsAccount(userName) == true && IsPassword(password, newPassword) == true)
+            if (IsPassword(password, newPassword) == EErrorCreate.password)
             {
-                try
+                return EErrorCreate.password;
+            }
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
+
+                if ((int)checkAccountCmd.ExecuteScalar() != 0)
                 {
-                    sqlConnection.Open();
-                    SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
+                    ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+                    return EErrorCreate.duplicateAccounts;
+                }
+                else
+                {
+                    SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{userName}' COLLATE SQL_Latin1_General_CP1_CS_AS, '{password}')", sqlConnection);
 
-                    if ((int)checkAccountCmd.ExecuteScalar() != 0)
+                    if (insertAccountCmd.ExecuteNonQuery() == 1)
                     {
-                        ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
-                    }
-                    else
-                    {
-                        SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{userName}' COLLATE SQL_Latin1_General_CP1_CS_AS, '{password}')", sqlConnection);
-
-                        if (insertAccountCmd.ExecuteNonQuery() == 1)
-                        {
-                            MessageBox.Show("Tạo tài khoản thành công.", "Thông báo");
-                        }
+                        MessageBox.Show("Tạo tài khoản thành công.", "Thông báo");
+                        return EErrorCreate.success;
                     }
                 }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    sqlConnection.Close();
-                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return EErrorCreate.error;
         }
 
         public static bool FindAccount(string userName)
@@ -89,14 +83,14 @@ namespace Project
 
         public static void UpdatePasswored(string userName, string newPassword)
         {
-            if (IsPassword(newPassword, newPassword) == true)
+            if (IsPassword(newPassword, newPassword) == EErrorCreate.success)
             {
                 try
                 {
                     sqlConnection.Open();
                     SqlCommand updatePassword = new SqlCommand($"UPDATE Account SET password = '{newPassword}' WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
 
-                    if(updatePassword.ExecuteNonQuery() == 1)
+                    if (updatePassword.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("Cập nhật mật khẩu mới thành công.", "Thông báo");
                     }
@@ -109,7 +103,7 @@ namespace Project
                 {
                     sqlConnection.Close();
                 }
-            }    
+            }
         }
 
         private static void ShowWarning(string message)
@@ -117,54 +111,63 @@ namespace Project
             MessageBox.Show(message, "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private static bool IsAccount(string userName)
+        private static EErrorCreate IsAccount(string userName)
         {
             if (userName.Length < 5 || userName.Length > 11)
             {
                 ShowWarning("Tài khoản phải dài hơn 4 và bé hơn 12 kí tự.");
-                return false;
+                return EErrorCreate.account;
             }
             if (!userName.Any(char.IsLetter))
             {
                 ShowWarning("Tài khoản vui lòng có ít nhất 1 chữ cái.");
-                return false;
+                return EErrorCreate.account;
             }
             if (userName.Any(char.IsWhiteSpace))
             {
                 ShowWarning("Tài khoản tồn tại khoảng trắng.");
-                return false;
+                return EErrorCreate.account;
             }
-            if (Regex.IsMatch(userName, "^[a-z0-9@#!_]+$") == false)
+            if (Regex.IsMatch(userName, "^[a-z0-9@#_.]+$") == false)
             {
-                ShowWarning("Tài khoản không hợp lệ. Chỉ chấp nhận chữ cái viết thường, số, @, #, !, _");
-                return false;
+                ShowWarning("Tài khoản không hợp lệ. Chỉ chấp nhận chữ cái viết thường, số, ., @, #, _.");
+                return EErrorCreate.account;
             }
-            return true;
+            return EErrorCreate.success;
         }
 
-        private static bool IsPassword(string password, string newPassword)
+        private static EErrorCreate IsPassword(string password, string newPassword)
         {
-            if(password != newPassword)
-            {
-                ShowWarning("Vui lòng nhập lại mật khẩu.");
-                return false;
-            }
             if (password.Length < 5 || password.Length > 16)
             {
                 ShowWarning("Mật khẩu phải dài hơn 4 và bé hơn 16 kí tự.");
-                return false;
+                return EErrorCreate.password;
             }
             if (password.Any(char.IsWhiteSpace) == true)
             {
                 ShowWarning("Mật khẩu tồn tại khoảng trắng.");
-                return false;
+                return EErrorCreate.password;
             }
-            if(Regex.IsMatch(password, "^[a-z0-9@#!_]+$") == false)
+            if (Regex.IsMatch(password, "^[a-z0-9@#!_]+$") == false)
             {
                 ShowWarning("Mật khẩu không hợp lệ. Chỉ chấp nhận chữ cái viết thường, số, @, #, !, _");
-                return false;
-            }    
-            return true;
+                return EErrorCreate.password;
+            }
+            if (password != newPassword)
+            {
+                ShowWarning("Vui lòng nhập lại mật khẩu mới.");
+                return EErrorCreate.password;
+            }
+            return EErrorCreate.success;
+        }
+
+        public enum EErrorCreate
+        {
+            account,
+            duplicateAccounts,
+            password,
+            success,
+            error
         }
     }
 }
