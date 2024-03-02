@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,7 +17,7 @@ namespace Project
 
         static AccountDAO()
         {
-            sqlConnection = new SqlConnection(Properties.Settings.Default.connectionStr);
+            sqlConnection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.Length - 10) + "DatabaseProject.mdf"}; Integrated Security = True");
         }
 
         public static EErrorCreate CreateAccount(string userName, string password, string newPassword)
@@ -32,7 +33,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
+                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName = '{userName}'", sqlConnection);
 
                 if ((int)checkAccountCmd.ExecuteScalar() != 0)
                 {
@@ -41,7 +42,7 @@ namespace Project
                 }
                 else
                 {
-                    SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{userName}' COLLATE SQL_Latin1_General_CP1_CS_AS, '{password}')", sqlConnection);
+                    SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{userName}', '{password}')", sqlConnection);
 
                     if (insertAccountCmd.ExecuteNonQuery() == 1)
                     {
