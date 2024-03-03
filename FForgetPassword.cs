@@ -54,6 +54,7 @@ namespace Project
                 ButtonCreateAccountClick(sender, e);
                 e.Handled = true;
             }
+            MessageBox.Show("hi");
         }
 
         private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
