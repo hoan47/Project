@@ -13,39 +13,40 @@ namespace Project
 {
     public partial class FLogin : Form
     {
-        FCreateAccount fCreateAccount;
-        FForgetPassword forgotPassword;
+        private Form currentFromChild;
         public FLogin()
         {
             InitializeComponent();
         }
 
-
-        private void linkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void OpenForm(Form formChild)
         {
-            if (fCreateAccount == null || fCreateAccount.Visible == false)
-            {
-                fCreateAccount = new FCreateAccount();
-            }
-            fCreateAccount.Show();
+            currentFromChild = formChild;
+            formChild.TopLevel = false;
+            panelMain_.Controls.Add(formChild);
+            formChild.BringToFront();
+            formChild.Show();
+        }
+
+        private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenForm(new FCreateAccount());
+            buttonComback.Visible = true;
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (forgotPassword == null || forgotPassword.Visible == false)
-            {
-                forgotPassword = new FForgetPassword();
-            }
-            forgotPassword.Show();
+            OpenForm(new FForgetPassword());
+            buttonComback.Visible = true;
         }
 
         private void TextBoxAccountKeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 textBoxPassword.Focus();
                 e.Handled = true;
-            }    
+            }
         }
 
         private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
@@ -60,6 +61,12 @@ namespace Project
         private void ButtonLoginClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonCombackClick(object sender, EventArgs e)
+        {
+            buttonComback.Visible = false;
+            currentFromChild.Close();
         }
     }
 }
