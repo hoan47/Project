@@ -96,9 +96,9 @@ namespace Project
             this.panelMain.Controls.Add(this.pictureBoxIcon);
             this.panelMain.Controls.Add(this.panelPassword);
             this.panelMain.Controls.Add(this.panelAccount);
-            this.panelMain.Location = new System.Drawing.Point(12, 12);
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(478, 210);
+            this.panelMain.Size = new System.Drawing.Size(475, 205);
             this.panelMain.TabIndex = 3;
             // 
             // panelNewPassword
@@ -224,8 +224,9 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(502, 226);
+            this.ClientSize = new System.Drawing.Size(477, 208);
             this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCreateAccount";
