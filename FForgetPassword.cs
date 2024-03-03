@@ -56,7 +56,7 @@ namespace Project
             }
         }
 
-        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {

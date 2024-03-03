@@ -37,7 +37,7 @@ namespace Project
             this.panelNewPassword = new System.Windows.Forms.Panel();
             this.labelNewPassword = new System.Windows.Forms.Label();
             this.textBoxNewPassword = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelRoadNewPasswoed = new System.Windows.Forms.Panel();
             this.pictureBoxNewPassword = new System.Windows.Forms.PictureBox();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelPassword = new System.Windows.Forms.Panel();
@@ -105,7 +105,7 @@ namespace Project
             // 
             this.panelNewPassword.Controls.Add(this.labelNewPassword);
             this.panelNewPassword.Controls.Add(this.textBoxNewPassword);
-            this.panelNewPassword.Controls.Add(this.panel2);
+            this.panelNewPassword.Controls.Add(this.panelRoadNewPasswoed);
             this.panelNewPassword.Controls.Add(this.pictureBoxNewPassword);
             this.panelNewPassword.Location = new System.Drawing.Point(159, 112);
             this.panelNewPassword.Name = "panelNewPassword";
@@ -133,13 +133,13 @@ namespace Project
             this.textBoxNewPassword.UseSystemPasswordChar = true;
             this.textBoxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNewPasswordKeyPress);
             // 
-            // panel2
+            // panelRoadNewPasswoed
             // 
-            this.panel2.BackColor = System.Drawing.Color.Aqua;
-            this.panel2.Location = new System.Drawing.Point(19, 54);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 3);
-            this.panel2.TabIndex = 4;
+            this.panelRoadNewPasswoed.BackColor = System.Drawing.Color.Aqua;
+            this.panelRoadNewPasswoed.Location = new System.Drawing.Point(19, 54);
+            this.panelRoadNewPasswoed.Name = "panelRoadNewPasswoed";
+            this.panelRoadNewPasswoed.Size = new System.Drawing.Size(274, 3);
+            this.panelRoadNewPasswoed.TabIndex = 4;
             // 
             // pictureBoxNewPassword
             // 
@@ -261,7 +261,7 @@ namespace Project
         private System.Windows.Forms.Panel panelNewPassword;
         private System.Windows.Forms.Label labelNewPassword;
         private System.Windows.Forms.TextBox textBoxNewPassword;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelRoadNewPasswoed;
         private System.Windows.Forms.PictureBox pictureBoxNewPassword;
     }
 }
