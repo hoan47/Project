@@ -84,7 +84,7 @@ namespace Project
             this.linkLabelCreateAccount.AutoSize = true;
             this.linkLabelCreateAccount.Location = new System.Drawing.Point(364, 142);
             this.linkLabelCreateAccount.Name = "linkLabelCreateAccount";
-            this.linkLabelCreateAccount.Size = new System.Drawing.Size(95, 17);
+            this.linkLabelCreateAccount.Size = new System.Drawing.Size(89, 16);
             this.linkLabelCreateAccount.TabIndex = 5;
             this.linkLabelCreateAccount.TabStop = true;
             this.linkLabelCreateAccount.Text = "Tạo tài khoản";
@@ -95,7 +95,7 @@ namespace Project
             this.linkLabelForgetPassword.AutoSize = true;
             this.linkLabelForgetPassword.Location = new System.Drawing.Point(241, 142);
             this.linkLabelForgetPassword.Name = "linkLabelForgetPassword";
-            this.linkLabelForgetPassword.Size = new System.Drawing.Size(117, 17);
+            this.linkLabelForgetPassword.Size = new System.Drawing.Size(106, 16);
             this.linkLabelForgetPassword.TabIndex = 4;
             this.linkLabelForgetPassword.TabStop = true;
             this.linkLabelForgetPassword.Text = "Quên mật khẩu ?";
