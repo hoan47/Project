@@ -20,7 +20,7 @@ namespace Project
             InitializeComponent();
         }
 
-        private void OpenForm(Form formChild)
+        private void OpenFormChild(Form formChild)
         {
             currentFromChild = formChild;
             formChild.TopLevel = false;
@@ -31,13 +31,13 @@ namespace Project
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenForm(new FCreateAccount());
+            OpenFormChild(new FCreateAccount());
             buttonComback.Visible = true;
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenForm(new FForgetPassword());
+            OpenFormChild(new FForgetPassword());
             buttonComback.Visible = true;
         }
 
