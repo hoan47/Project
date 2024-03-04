@@ -121,7 +121,7 @@
   <data name="pictureAccount.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        xAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAET5SURBVHhe7d0H
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAET5SURBVHhe7d0H
         mBRV1sbxMeecw+7qrmvOGNaMWUBAlFkTIIqiYgITZkcFhDUBooCKIILoIDlnUTEgZjGhmBVdlWQOvN+5
         zPWTbQ4wM3So7v6/z/Nb1p4O1VX3nlPVobqEEJLwTNMqJU9ry5JJ2rNkso4x/zbNTWtzq+la8oQeMUPM
         OPOMXTbN/p1hPjDfpvjFKEW4LPV6M82MeF/PmHDf4THCY91r2pkr7e/N7d9Sc3TJRO0Rl3XluPSEEEII
@@ -422,7 +422,7 @@
   <data name="pictureBoxNewPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAABL
-        lwAAS5cB7sVvIAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD0XSURBVHhe7Z0J
+        lgAAS5YBPIKNxAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD0XSURBVHhe7Z0J
         mFxVtagJiBN6VdTnjKKiQCR0V1cnRoJERZ+KICIRVNCr3qvirNerPhUJXFHxKgqS9KnqDBAIgVYmEREi
         YUbCIIGYMCaBhBAIhClkTvd6a6cW0pxspKur6tTe5/z/9/1fY0y69rjWqqpz9tkGAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ6dkZPkRXtMlpeN7pWduyfLm5+0M5E9
@@ -689,7 +689,7 @@
   <data name="pictureBoxIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHbJSURBVHhe7d0H
+        1gAADdYBkG95nAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHbJSURBVHhe7d0H
         lBTV0gfwt3kJS84555xzzklACYIoIqIYkSAiCAgiIEoURKI5PnNEnzlhQBTFLGbAjARB0Vdf3XH5bHn/
         3e2e6Z7umfnfc37neEpmpqen61btTPftf4kIEdmko5zqqsarqepytVStV3eoR9Tz6k31sdqrDinz4CAx
         22S27RO1XZltNtt+p9qglql5apo6S/VQFVUS2i9EFHtgkCiR6civmqgRara6Vb2h9itrEU1EpnEwDYNp
@@ -1202,7 +1202,7 @@
   <data name="pictureBoxPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAABL
-        lwAAS5cB7sVvIAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD0XSURBVHhe7Z0J
+        lgAAS5YBPIKNxAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAD0XSURBVHhe7Z0J
         mFxVtagJiBN6VdTnjKKiQCR0V1cnRoJERZ+KICIRVNCr3qvirNerPhUJXFHxKgqS9KnqDBAIgVYmEREi
         YUbCIIGYMCaBhBAIhClkTvd6a6cW0pxspKur6tTe5/z/9/1fY0y69rjWqqpz9tkGAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJ6dkZPkRXtMlpeN7pWduyfLm5+0M5E9
