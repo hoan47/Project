@@ -57,5 +57,10 @@ namespace Project
                 e.Handled = true;
             }
         }
+
+        private void FCreateAccountLoad(object sender, EventArgs e)
+        {
+            textBoxAccount.Focus();
+        }
     }
 }

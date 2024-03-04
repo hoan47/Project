@@ -62,7 +62,7 @@ namespace Project
             this.buttonCreateAccount.Location = new System.Drawing.Point(258, 175);
             this.buttonCreateAccount.Name = "buttonCreateAccount";
             this.buttonCreateAccount.Size = new System.Drawing.Size(105, 27);
-            this.buttonCreateAccount.TabIndex = 3;
+            this.buttonCreateAccount.TabIndex = 4;
             this.buttonCreateAccount.Text = "Tạo tài khoản";
             this.buttonCreateAccount.UseVisualStyleBackColor = true;
             this.buttonCreateAccount.Click += new System.EventHandler(this.ButtonCreateAccountClick);
@@ -99,7 +99,7 @@ namespace Project
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(475, 205);
-            this.panelMain.TabIndex = 3;
+            this.panelMain.TabIndex = 0;
             // 
             // panelNewPassword
             // 
@@ -110,7 +110,7 @@ namespace Project
             this.panelNewPassword.Location = new System.Drawing.Point(159, 112);
             this.panelNewPassword.Name = "panelNewPassword";
             this.panelNewPassword.Size = new System.Drawing.Size(314, 60);
-            this.panelNewPassword.TabIndex = 5;
+            this.panelNewPassword.TabIndex = 3;
             // 
             // labelNewPassword
             // 
@@ -209,7 +209,7 @@ namespace Project
             this.panelAccount.Location = new System.Drawing.Point(159, 3);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(314, 50);
-            this.panelAccount.TabIndex = 0;
+            this.panelAccount.TabIndex = 1;
             // 
             // panelRoadAccount
             // 
@@ -230,6 +230,7 @@ namespace Project
             this.Name = "FCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FCreateAccount";
+            this.Load += new System.EventHandler(this.FCreateAccountLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

@@ -14,6 +14,7 @@ namespace Project
     public partial class FLogin : Form
     {
         private Form currentFromChild;
+
         public FLogin()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Project
         {
             currentFromChild = formChild;
             formChild.TopLevel = false;
-            panelMain_.Controls.Add(formChild);
+            panelMain.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
         }

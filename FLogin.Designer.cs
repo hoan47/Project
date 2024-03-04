@@ -30,7 +30,7 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLogin));
-            this.panelMain = new System.Windows.Forms.Panel();
+            this.panelLogin = new System.Windows.Forms.Panel();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.linkLabelCreateAccount = new System.Windows.Forms.LinkLabel();
             this.linkLabelForgetPassword = new System.Windows.Forms.LinkLabel();
@@ -43,30 +43,30 @@ namespace Project
             this.panelRoadAccount = new System.Windows.Forms.Panel();
             this.pictureBoxAccount = new System.Windows.Forms.PictureBox();
             this.textBoxAccount = new System.Windows.Forms.TextBox();
-            this.panelMain_ = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.buttonComback = new System.Windows.Forms.Button();
-            this.panelMain.SuspendLayout();
+            this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             this.panelAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).BeginInit();
-            this.panelMain_.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMain
+            // panelLogin
             // 
-            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelMain.Controls.Add(this.buttonLogin);
-            this.panelMain.Controls.Add(this.linkLabelCreateAccount);
-            this.panelMain.Controls.Add(this.linkLabelForgetPassword);
-            this.panelMain.Controls.Add(this.pictureBoxIcon);
-            this.panelMain.Controls.Add(this.panelPassword);
-            this.panelMain.Controls.Add(this.panelAccount);
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(475, 165);
-            this.panelMain.TabIndex = 3;
+            this.panelLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelLogin.Controls.Add(this.buttonLogin);
+            this.panelLogin.Controls.Add(this.linkLabelCreateAccount);
+            this.panelLogin.Controls.Add(this.linkLabelForgetPassword);
+            this.panelLogin.Controls.Add(this.pictureBoxIcon);
+            this.panelLogin.Controls.Add(this.panelPassword);
+            this.panelLogin.Controls.Add(this.panelAccount);
+            this.panelLogin.Location = new System.Drawing.Point(0, 0);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(475, 165);
+            this.panelLogin.TabIndex = 0;
             // 
             // buttonLogin
             // 
@@ -74,7 +74,7 @@ namespace Project
             this.buttonLogin.Location = new System.Drawing.Point(270, 112);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(88, 27);
-            this.buttonLogin.TabIndex = 3;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.ButtonLoginClick);
@@ -85,7 +85,7 @@ namespace Project
             this.linkLabelCreateAccount.Location = new System.Drawing.Point(364, 142);
             this.linkLabelCreateAccount.Name = "linkLabelCreateAccount";
             this.linkLabelCreateAccount.Size = new System.Drawing.Size(95, 17);
-            this.linkLabelCreateAccount.TabIndex = 5;
+            this.linkLabelCreateAccount.TabIndex = 4;
             this.linkLabelCreateAccount.TabStop = true;
             this.linkLabelCreateAccount.Text = "Tạo tài khoản";
             this.linkLabelCreateAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelCreateAccountLinkClicked);
@@ -96,7 +96,7 @@ namespace Project
             this.linkLabelForgetPassword.Location = new System.Drawing.Point(241, 142);
             this.linkLabelForgetPassword.Name = "linkLabelForgetPassword";
             this.linkLabelForgetPassword.Size = new System.Drawing.Size(117, 17);
-            this.linkLabelForgetPassword.TabIndex = 4;
+            this.linkLabelForgetPassword.TabIndex = 3;
             this.linkLabelForgetPassword.TabStop = true;
             this.linkLabelForgetPassword.Text = "Quên mật khẩu ?";
             this.linkLabelForgetPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelForgetPasswordLinkClicked);
@@ -119,7 +119,7 @@ namespace Project
             this.panelPassword.Location = new System.Drawing.Point(159, 56);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(314, 50);
-            this.panelPassword.TabIndex = 2;
+            this.panelPassword.TabIndex = 1;
             // 
             // textBoxPassword
             // 
@@ -159,7 +159,7 @@ namespace Project
             this.panelAccount.Location = new System.Drawing.Point(159, 3);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(314, 50);
-            this.panelAccount.TabIndex = 1;
+            this.panelAccount.TabIndex = 0;
             // 
             // panelRoadAccount
             // 
@@ -191,13 +191,13 @@ namespace Project
             this.textBoxAccount.TabIndex = 1;
             this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
             // 
-            // panelMain_
+            // panelMain
             // 
-            this.panelMain_.Controls.Add(this.panelMain);
-            this.panelMain_.Location = new System.Drawing.Point(0, 30);
-            this.panelMain_.Name = "panelMain_";
-            this.panelMain_.Size = new System.Drawing.Size(475, 208);
-            this.panelMain_.TabIndex = 2;
+            this.panelMain.Controls.Add(this.panelLogin);
+            this.panelMain.Location = new System.Drawing.Point(0, 30);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(475, 205);
+            this.panelMain.TabIndex = 0;
             // 
             // buttonComback
             // 
@@ -216,15 +216,15 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(477, 245);
+            this.ClientSize = new System.Drawing.Size(477, 243);
             this.Controls.Add(this.buttonComback);
-            this.Controls.Add(this.panelMain_);
+            this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLogin";
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
@@ -232,14 +232,14 @@ namespace Project
             this.panelAccount.ResumeLayout(false);
             this.panelAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).EndInit();
-            this.panelMain_.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.Panel panelPassword;
         private System.Windows.Forms.Panel panelAccount;
         private System.Windows.Forms.TextBox textBoxAccount;
@@ -252,7 +252,7 @@ namespace Project
         private System.Windows.Forms.Panel panelRoadPassword;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogin;
-        private System.Windows.Forms.Panel panelMain_;
+        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button buttonComback;
     }
 }

@@ -64,5 +64,10 @@ namespace Project
                 e.Handled = true;
             }
         }
+
+        private void FForgetPasswordLoad(object sender, EventArgs e)
+        {
+            textBoxAccount.Focus();
+        }
     }
 }

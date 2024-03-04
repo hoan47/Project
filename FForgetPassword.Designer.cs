@@ -186,6 +186,7 @@ namespace Project
             this.Name = "FForgetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FForgotPassword";
+            this.Load += new System.EventHandler(this.FForgetPasswordLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).EndInit();
             this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
