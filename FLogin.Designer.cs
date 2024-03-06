@@ -193,7 +193,6 @@ namespace Project
             // 
             // panelMain
             // 
-            this.panelMain.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelMain.Controls.Add(this.panelLogin);
             this.panelMain.Location = new System.Drawing.Point(0, 30);
             this.panelMain.Name = "panelMain";
@@ -217,10 +216,11 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1211, 626);
+            this.ClientSize = new System.Drawing.Size(477, 238);
             this.Controls.Add(this.buttonComback);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FLogin";

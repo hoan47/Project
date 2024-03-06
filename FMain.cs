@@ -15,6 +15,21 @@ namespace Project
         public FMain()
         {
             InitializeComponent();
+            Form x = new FUpdateInfo();
+            x.TopLevel = false;
+            panel1.Controls.Add(x);
+            x.BringToFront();
+            x.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
