@@ -49,19 +49,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(205, 0);
+            this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 630);
+            this.panel1.Size = new System.Drawing.Size(1042, 630);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.Red;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(195, 195);
+            this.panel3.Size = new System.Drawing.Size(200, 200);
             this.panel3.TabIndex = 0;
             // 
             // panel2
@@ -79,9 +79,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.toolStrip1);
-            this.panel4.Location = new System.Drawing.Point(0, 201);
+            this.panel4.Location = new System.Drawing.Point(0, 200);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(195, 429);
+            this.panel4.Size = new System.Drawing.Size(200, 430);
             this.panel4.TabIndex = 1;
             // 
             // toolStrip1
@@ -101,7 +101,7 @@
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(190, 429);
+            this.toolStrip1.Size = new System.Drawing.Size(200, 430);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1247, 633);
+            this.ClientSize = new System.Drawing.Size(1242, 633);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
