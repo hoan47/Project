@@ -95,7 +95,7 @@
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
-            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.Controls.Add(this.buttonUpdate);
             this.panelMain.Controls.Add(this.panelImage);
             this.panelMain.Controls.Add(this.panelPhone);
