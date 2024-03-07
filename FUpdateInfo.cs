@@ -89,5 +89,30 @@ namespace Project
         {
             panelRoadIdCard.BackColor = colorTextBoxLeave;
         }
+
+        private void buttonEditName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonChangeImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelImage_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBoxImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
