@@ -25,9 +25,21 @@ namespace Project
             panelRoadName.BackColor = colorTextBoxEnter;
         }
 
+        private void LeaveEdit(Panel panel, Control control, Button button)
+        {
+            panel.BackColor = colorTextBoxLeave;
+            control.Enabled = !(button.Visible = true);
+        }
+
+        private void ClickEdit(Control control, Button button)
+        {
+            control.Enabled = !(button.Visible = false);
+            control.Focus();
+        }
+
         private void TextBoxNameLeave(object sender, EventArgs e)
         {
-            panelRoadName.BackColor = colorTextBoxLeave;
+            LeaveEdit(panelRoadName, textBoxName, buttonEditName);
         }
 
         private void DateTimePickerDateOfBirthEnter(object sender, EventArgs e)
@@ -37,17 +49,12 @@ namespace Project
 
         private void DateTimePickerDateOfBirthLeave(object sender, EventArgs e)
         {
-            panelRoadDateOfBirth.BackColor = colorTextBoxLeave;
+            LeaveEdit(panelRoadDateOfBirth, dateTimePickerDateOfBirth, buttonEditDateOfBirth);
         }
 
         private void RadioButtonEnter(object sender, EventArgs e)
         {
             panelRoadGender.BackColor = colorTextBoxEnter;
-        }
-
-        private void RadioButtonLeave(object sender, EventArgs e)
-        {
-            panelRoadGender.BackColor = colorTextBoxLeave;
         }
 
         private void TextBoxAddressEnter(object sender, EventArgs e)
@@ -80,19 +87,25 @@ namespace Project
             panelRoadPhone.BackColor = colorTextBoxEnter;
         }
 
-        private void TextBoxIdCardEnter(object sender, EventArgs e)
-        {
-            panelRoadIdCard.BackColor = colorTextBoxEnter;
-        }
 
         private void TextBoxIdCardLeave(object sender, EventArgs e)
         {
             panelRoadIdCard.BackColor = colorTextBoxLeave;
         }
 
-        private void buttonEditName_Click(object sender, EventArgs e)
+        private void ButtonEditNameClick(object sender, EventArgs e)
         {
+            ClickEdit(textBoxName, buttonEditName);
+        }
 
+        private void ButtonEditDateOfBirthClick(object sender, EventArgs e)
+        {
+            ClickEdit(dateTimePickerDateOfBirth, buttonEditDateOfBirth);
+        }
+
+        private void ButtonEditGenderClick(object sender, EventArgs e)
+        {
+            ClickEdit(panelRadioGender, buttonEditGender);
         }
 
         private void buttonChangeImage_Click(object sender, EventArgs e)
@@ -111,6 +124,16 @@ namespace Project
         }
 
         private void labelUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonGirl_CheckedChanged(object sender, EventArgs e)
         {
 
         }

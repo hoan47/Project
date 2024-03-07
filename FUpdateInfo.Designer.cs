@@ -57,11 +57,12 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.panelGender = new System.Windows.Forms.Panel();
+            this.panelRadioGender = new System.Windows.Forms.Panel();
+            this.radioButtonGirl = new System.Windows.Forms.RadioButton();
+            this.radioButtonBoy = new System.Windows.Forms.RadioButton();
             this.buttonEditGender = new System.Windows.Forms.Button();
             this.panelRoadGender = new System.Windows.Forms.Panel();
             this.labelGender = new System.Windows.Forms.Label();
-            this.radioButtonGirl = new System.Windows.Forms.RadioButton();
-            this.radioButtonBoy = new System.Windows.Forms.RadioButton();
             this.panelDateOfBirth = new System.Windows.Forms.Panel();
             this.buttonEditDateOfBirth = new System.Windows.Forms.Button();
             this.dateTimePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -82,6 +83,7 @@
             this.panelEmail.SuspendLayout();
             this.panelAddRess.SuspendLayout();
             this.panelGender.SuspendLayout();
+            this.panelRadioGender.SuspendLayout();
             this.panelDateOfBirth.SuspendLayout();
             this.panelName.SuspendLayout();
             this.SuspendLayout();
@@ -281,7 +283,6 @@
             this.textBoxIdCard.Name = "textBoxIdCard";
             this.textBoxIdCard.Size = new System.Drawing.Size(303, 18);
             this.textBoxIdCard.TabIndex = 2;
-            this.textBoxIdCard.Enter += new System.EventHandler(this.TextBoxIdCardEnter);
             this.textBoxIdCard.Leave += new System.EventHandler(this.TextBoxIdCardLeave);
             // 
             // panelRoadIdCard
@@ -427,17 +428,53 @@
             // panelGender
             // 
             this.panelGender.BackColor = System.Drawing.Color.Transparent;
+            this.panelGender.Controls.Add(this.panelRadioGender);
             this.panelGender.Controls.Add(this.buttonEditGender);
             this.panelGender.Controls.Add(this.panelRoadGender);
             this.panelGender.Controls.Add(this.labelGender);
-            this.panelGender.Controls.Add(this.radioButtonGirl);
-            this.panelGender.Controls.Add(this.radioButtonBoy);
             this.panelGender.Location = new System.Drawing.Point(290, 140);
             this.panelGender.Margin = new System.Windows.Forms.Padding(2);
             this.panelGender.Name = "panelGender";
             this.panelGender.Size = new System.Drawing.Size(426, 37);
             this.panelGender.TabIndex = 4;
             this.panelGender.TabStop = true;
+            // 
+            // panelRadioGender
+            // 
+            this.panelRadioGender.Controls.Add(this.radioButtonGirl);
+            this.panelRadioGender.Controls.Add(this.radioButtonBoy);
+            this.panelRadioGender.Enabled = false;
+            this.panelRadioGender.Location = new System.Drawing.Point(78, 6);
+            this.panelRadioGender.Name = "panelRadioGender";
+            this.panelRadioGender.Size = new System.Drawing.Size(168, 25);
+            this.panelRadioGender.TabIndex = 12;
+            // 
+            // radioButtonGirl
+            // 
+            this.radioButtonGirl.AutoSize = true;
+            this.radioButtonGirl.Location = new System.Drawing.Point(115, 5);
+            this.radioButtonGirl.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonGirl.Name = "radioButtonGirl";
+            this.radioButtonGirl.Size = new System.Drawing.Size(39, 17);
+            this.radioButtonGirl.TabIndex = 2;
+            this.radioButtonGirl.TabStop = true;
+            this.radioButtonGirl.Text = "Nữ";
+            this.radioButtonGirl.UseVisualStyleBackColor = true;
+            this.radioButtonGirl.CheckedChanged += new System.EventHandler(this.radioButtonGirl_CheckedChanged);
+            this.radioButtonGirl.Enter += new System.EventHandler(this.RadioButtonEnter);
+            // 
+            // radioButtonBoy
+            // 
+            this.radioButtonBoy.AutoSize = true;
+            this.radioButtonBoy.Location = new System.Drawing.Point(15, 6);
+            this.radioButtonBoy.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonBoy.Name = "radioButtonBoy";
+            this.radioButtonBoy.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonBoy.TabIndex = 1;
+            this.radioButtonBoy.TabStop = true;
+            this.radioButtonBoy.Text = "Nam";
+            this.radioButtonBoy.UseVisualStyleBackColor = true;
+            this.radioButtonBoy.Enter += new System.EventHandler(this.RadioButtonEnter);
             // 
             // buttonEditGender
             // 
@@ -449,6 +486,7 @@
             this.buttonEditGender.Size = new System.Drawing.Size(25, 25);
             this.buttonEditGender.TabIndex = 11;
             this.buttonEditGender.UseVisualStyleBackColor = false;
+            this.buttonEditGender.Click += new System.EventHandler(this.ButtonEditGenderClick);
             // 
             // panelRoadGender
             // 
@@ -469,34 +507,6 @@
             this.labelGender.Size = new System.Drawing.Size(65, 17);
             this.labelGender.TabIndex = 0;
             this.labelGender.Text = "Giới Tính";
-            // 
-            // radioButtonGirl
-            // 
-            this.radioButtonGirl.AutoSize = true;
-            this.radioButtonGirl.Location = new System.Drawing.Point(164, 16);
-            this.radioButtonGirl.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonGirl.Name = "radioButtonGirl";
-            this.radioButtonGirl.Size = new System.Drawing.Size(39, 17);
-            this.radioButtonGirl.TabIndex = 2;
-            this.radioButtonGirl.TabStop = true;
-            this.radioButtonGirl.Text = "Nữ";
-            this.radioButtonGirl.UseVisualStyleBackColor = true;
-            this.radioButtonGirl.Enter += new System.EventHandler(this.RadioButtonEnter);
-            this.radioButtonGirl.Leave += new System.EventHandler(this.RadioButtonLeave);
-            // 
-            // radioButtonBoy
-            // 
-            this.radioButtonBoy.AutoSize = true;
-            this.radioButtonBoy.Location = new System.Drawing.Point(93, 15);
-            this.radioButtonBoy.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonBoy.Name = "radioButtonBoy";
-            this.radioButtonBoy.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonBoy.TabIndex = 1;
-            this.radioButtonBoy.TabStop = true;
-            this.radioButtonBoy.Text = "Nam";
-            this.radioButtonBoy.UseVisualStyleBackColor = true;
-            this.radioButtonBoy.Enter += new System.EventHandler(this.RadioButtonEnter);
-            this.radioButtonBoy.Leave += new System.EventHandler(this.RadioButtonLeave);
             // 
             // panelDateOfBirth
             // 
@@ -522,6 +532,7 @@
             this.buttonEditDateOfBirth.Size = new System.Drawing.Size(25, 25);
             this.buttonEditDateOfBirth.TabIndex = 11;
             this.buttonEditDateOfBirth.UseVisualStyleBackColor = false;
+            this.buttonEditDateOfBirth.Click += new System.EventHandler(this.ButtonEditDateOfBirthClick);
             // 
             // dateTimePickerDateOfBirth
             // 
@@ -530,6 +541,7 @@
             this.dateTimePickerDateOfBirth.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dateTimePickerDateOfBirth.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dateTimePickerDateOfBirth.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dateTimePickerDateOfBirth.Enabled = false;
             this.dateTimePickerDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDateOfBirth.Location = new System.Drawing.Point(78, 8);
             this.dateTimePickerDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
@@ -583,7 +595,7 @@
             this.buttonEditName.Size = new System.Drawing.Size(25, 25);
             this.buttonEditName.TabIndex = 10;
             this.buttonEditName.UseVisualStyleBackColor = false;
-            this.buttonEditName.Click += new System.EventHandler(this.buttonEditName_Click);
+            this.buttonEditName.Click += new System.EventHandler(this.ButtonEditNameClick);
             // 
             // panelRoadName
             // 
@@ -598,14 +610,17 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxName.Enabled = false;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(78, 14);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxName.MaxLength = 11;
+            this.textBoxName.MaxLength = 27;
             this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(303, 18);
             this.textBoxName.TabIndex = 1;
+            this.textBoxName.Text = "Nguyễn Văn An";
+            this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             this.textBoxName.Enter += new System.EventHandler(this.TextBoxNameEnter);
             this.textBoxName.Leave += new System.EventHandler(this.TextBoxNameLeave);
             // 
@@ -648,6 +663,8 @@
             this.panelAddRess.PerformLayout();
             this.panelGender.ResumeLayout(false);
             this.panelGender.PerformLayout();
+            this.panelRadioGender.ResumeLayout(false);
+            this.panelRadioGender.PerformLayout();
             this.panelDateOfBirth.ResumeLayout(false);
             this.panelDateOfBirth.PerformLayout();
             this.panelName.ResumeLayout(false);
@@ -700,5 +717,6 @@
         private System.Windows.Forms.Button buttonEditAddress;
         private System.Windows.Forms.Button buttonEditGender;
         private System.Windows.Forms.Button buttonEditDateOfBirth;
+        private System.Windows.Forms.Panel panelRadioGender;
     }
 }
