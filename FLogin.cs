@@ -20,7 +20,7 @@ namespace Project
             InitializeComponent();
         }
 
-        private void OpenForm(Form formChild)
+        private void OpenFormChild(Form formChild)
         {
             currentFromChild = formChild;
             formChild.TopLevel = false;
@@ -31,37 +31,52 @@ namespace Project
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenForm(new FCreateAccount());
+            OpenFormChild(new FCreateAccount());
             buttonComback.Visible = true;
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenForm(new FForgetPassword());
+            OpenFormChild(new FForgetPassword());
             buttonComback.Visible = true;
         }
 
-        private void TextBoxAccountKeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                textBoxPassword.Focus();
-                e.Handled = true;
-            }
-        }
-
-        private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                ButtonLoginClick(sender, e);
+                if ((TextBox)sender == textBoxAccount)
+                {
+                    textBoxPassword.Focus();
+                }
+                else if ((TextBox)sender == textBoxPassword)
+                {
+                    ButtonLoginClick(sender, e);
+                }
                 e.Handled = true;
             }
         }
 
         private void ButtonLoginClick(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
 
+=======
+            FController.Instance.user = new User(textBoxAccount.Text, textBoxPassword.Text, textBoxPassword.Text);
+            switch (FController.Instance.accountDAO.Login())
+            {
+                case ErrorUserInfo.account:
+                    textBoxAccount.Focus();
+                    break;
+                case ErrorUserInfo.password:
+                    textBoxPassword.Focus();
+                    break;
+                case ErrorUserInfo.success:
+                    FController.Instance.InitializeMain();
+                    Close();
+                    break;
+            }
+>>>>>>> Stashed changes
         }
 
         private void ButtonCombackClick(object sender, EventArgs e)

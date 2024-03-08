@@ -131,7 +131,7 @@ namespace Project
             this.textBoxPassword.Size = new System.Drawing.Size(234, 27);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPasswordKeyPress);
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // panelRoadPassword
             // 
@@ -189,7 +189,7 @@ namespace Project
             this.textBoxAccount.Name = "textBoxAccount";
             this.textBoxAccount.Size = new System.Drawing.Size(234, 30);
             this.textBoxAccount.TabIndex = 1;
-            this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
+            this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // panelMain
             // 
@@ -219,7 +219,7 @@ namespace Project
             this.ClientSize = new System.Drawing.Size(477, 238);
             this.Controls.Add(this.buttonComback);
             this.Controls.Add(this.panelMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

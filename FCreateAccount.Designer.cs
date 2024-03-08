@@ -87,7 +87,7 @@ namespace Project
             this.textBoxAccount.Name = "textBoxAccount";
             this.textBoxAccount.Size = new System.Drawing.Size(234, 30);
             this.textBoxAccount.TabIndex = 1;
-            this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
+            this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // panelMain
             // 
@@ -131,7 +131,7 @@ namespace Project
             this.textBoxNewPassword.Size = new System.Drawing.Size(234, 27);
             this.textBoxNewPassword.TabIndex = 2;
             this.textBoxNewPassword.UseSystemPasswordChar = true;
-            this.textBoxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxNewPasswordKeyPress);
+            this.textBoxNewPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // panelRoadNewPasswoed
             // 
@@ -181,7 +181,7 @@ namespace Project
             this.textBoxPassword.Size = new System.Drawing.Size(234, 27);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxPasswordKeyPress);
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // panelRoadPassword
             // 

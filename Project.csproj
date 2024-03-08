@@ -62,6 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAO.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="DAO.cs" />
+    <Compile Include="FController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FController.Designer.cs">
+      <DependentUpon>FController.cs</DependentUpon>
+    </Compile>
+>>>>>>> Stashed changes
     <Compile Include="FCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowMessage.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="FController.resx">
+      <DependentUpon>FController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCreateAccount.resx">
       <DependentUpon>FCreateAccount.cs</DependentUpon>
     </EmbeddedResource>

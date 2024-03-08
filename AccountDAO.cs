@@ -13,6 +13,7 @@ namespace Project
 {
     static class AccountDAO
     {
+<<<<<<< Updated upstream
         private static SqlConnection sqlConnection;
 
         static AccountDAO()
@@ -21,59 +22,95 @@ namespace Project
         }
 
         public static EErrorCreate CreateAccount(string userName, string password, string newPassword)
+=======
+        public ErrorUserInfo Login()
         {
-            if (IsAccount(userName) == EErrorCreate.account)
+            if (FindAccount() == false)
             {
-                return EErrorCreate.account;
-            }
-            if (IsPassword(password, newPassword) == EErrorCreate.password)
-            {
-                return EErrorCreate.password;
+                ShowMessage.ShowWarning("Tài khoản không tồn tại.");
+                return ErrorUserInfo.account;
             }
             try
             {
                 sqlConnection.Open();
-                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName = '{userName}'", sqlConnection);
+                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName = '{FController.Instance.user.UserName}' and password = '{FController.Instance.user.Password}'", sqlConnection);
 
                 if ((int)checkAccountCmd.ExecuteScalar() != 0)
                 {
-                    ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
-                    return EErrorCreate.duplicateAccounts;
+                    ShowMessage.ShowNotification("Đăng nhập thành công.");
+                    return ErrorUserInfo.success;
                 }
                 else
                 {
-                    SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{userName}', '{password}')", sqlConnection);
-
-                    if (insertAccountCmd.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Tạo tài khoản thành công.", "Thông báo");
-                        return EErrorCreate.success;
-                    }
+                    ShowMessage.ShowWarning("Mật khẩu sai.");
+                    return ErrorUserInfo.password;
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowMessage.ShowError(e.Message);
             }
             finally
             {
                 sqlConnection.Close();
             }
-            return EErrorCreate.error;
+            return ErrorUserInfo.error;
         }
 
+        public ErrorUserInfo CreateAccount()
+>>>>>>> Stashed changes
+        {
+            if (FindAccount() == true)
+            {
+                ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+                return ErrorUserInfo.duplicateAccounts;
+            }
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{FController.Instance.user.UserName}', '{FController.Instance.user.Password}')", sqlConnection);
+
+                if (insertAccountCmd.ExecuteNonQuery() == 1)
+                {
+                    ShowMessage.ShowNotification("Tạo tài khoản thành công.");
+                    return ErrorUserInfo.success;
+                }
+            }
+            catch (Exception e)
+            {
+<<<<<<< Updated upstream
+                MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+=======
+                ShowMessage.ShowError(e.Message);
+>>>>>>> Stashed changes
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return ErrorUserInfo.error;
+        }
+
+<<<<<<< Updated upstream
         public static bool FindAccount(string userName)
+=======
+        public bool FindAccount()
+>>>>>>> Stashed changes
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
+                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{FController.Instance.user.UserName}'", sqlConnection);
 
                 return (int)checkAccountCmd.ExecuteScalar() != 0;
             }
             catch (Exception e)
             {
+<<<<<<< Updated upstream
                 MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+=======
+                ShowMessage.ShowError(e.Message);
+>>>>>>> Stashed changes
             }
             finally
             {
@@ -82,22 +119,20 @@ namespace Project
             return false;
         }
 
+<<<<<<< Updated upstream
         public static void UpdatePasswored(string userName, string newPassword)
+=======
+        public void UpdatePasswored()
+>>>>>>> Stashed changes
         {
-            if (IsPassword(newPassword, newPassword) == EErrorCreate.success)
+            try
             {
-                try
-                {
-                    sqlConnection.Open();
-                    SqlCommand updatePassword = new SqlCommand($"UPDATE Account SET password = '{newPassword}' WHERE userName COLLATE Latin1_General_CS_AS = '{userName}'", sqlConnection);
+                sqlConnection.Open();
+                SqlCommand updatePassword = new SqlCommand($"UPDATE Account SET password = '{FController.Instance.user.NewPassword}' WHERE userName = '{FController.Instance.user.UserName}'", sqlConnection);
 
-                    if (updatePassword.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Cập nhật mật khẩu mới thành công.", "Thông báo");
-                    }
-                }
-                catch (Exception e)
+                if (updatePassword.ExecuteNonQuery() == 1)
                 {
+<<<<<<< Updated upstream
                     MessageBox.Show("Lỗi: " + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
@@ -115,15 +150,20 @@ namespace Project
         private static EErrorCreate IsAccount(string userName)
         {
             if (userName.Length < 5 || userName.Length > 11)
-            {
-                ShowWarning("Tài khoản phải dài hơn 4 và bé hơn 12 kí tự.");
-                return EErrorCreate.account;
+=======
+                    ShowMessage.ShowNotification("Cập nhật mật khẩu mới thành công.");
+                }
             }
-            if (!userName.Any(char.IsLetter))
+            catch (Exception e)
+>>>>>>> Stashed changes
             {
-                ShowWarning("Tài khoản vui lòng có ít nhất 1 chữ cái.");
-                return EErrorCreate.account;
+                ShowMessage.ShowError(e.Message);
             }
+            finally
+            {
+                sqlConnection.Close();
+            }
+<<<<<<< Updated upstream
             if (userName.Any(char.IsWhiteSpace))
             {
                 ShowWarning("Tài khoản tồn tại khoảng trắng.");
@@ -169,6 +209,8 @@ namespace Project
             password,
             success,
             error
+=======
+>>>>>>> Stashed changes
         }
     }
 }
