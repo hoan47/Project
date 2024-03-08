@@ -19,13 +19,17 @@ namespace Project
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
+            FController.Instance.user = new User(textBoxAccount.Text);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
+<<<<<<< Updated upstream
                 if (AccountDAO.FindAccount(textBoxAccount.Text) == true)
+=======
+                if (FController.Instance.accountDAO.FindAccount() == true)
+>>>>>>> Stashed changes
                 {
-                    panelPassword.Visible = true;
+                    textBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
-                    textBoxAccount.Enabled = false;
                     textBoxPassword.Focus();
                 }
                 else
@@ -36,31 +40,41 @@ namespace Project
             else if (buttonFindAccount.Text == "Bỏ chọn tài khoản")
             {
                 buttonFindAccount.Text = "Tìm tài khoản";
-                textBoxAccount.Enabled = true;
+                panelPassword.Visible = !(textBoxAccount.Enabled = true);
                 textBoxPassword.Text = string.Empty;
-                panelPassword.Visible = false;
             }    
         }
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
             AccountDAO.UpdatePasswored(textBoxAccount.Text, textBoxPassword.Text);
         }
 
         private void TextBoxAccountKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
+=======
+            FController.Instance.user = new User(textBoxAccount.Text, textBoxPassword.Text, textBoxPassword.Text);
+            if (FController.Instance.user.IsPassword() == ErrorUserInfo.success)
+>>>>>>> Stashed changes
             {
-                ButtonCreateAccountClick(sender, e);
-                e.Handled = true;
+                FController.Instance.accountDAO.UpdatePasswored();
             }
         }
 
-        private void TextBoxPasswordKeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxKeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                ButtonUpdatePasswordClick(sender, e);
+                if ((TextBox)sender == textBoxAccount)
+                {
+                    ButtonCreateAccountClick(sender, e);
+                }
+                else if((TextBox)sender == textBoxPassword)
+                {
+                    ButtonUpdatePasswordClick(sender, e);
+                }
                 e.Handled = true;
             }
         }
