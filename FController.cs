@@ -23,11 +23,15 @@ namespace Project
             user = new User();
             accountDAO = new AccountDAO();
             InitializeComponent();
-            InitializeMain();
+            InitializeLogin();
         }
 
         private void OpenFormChild(Form formChild)
         {
+            if(currentFromChild != null)
+            {
+                currentFromChild.Close();
+            }    
             currentFromChild = formChild;
             formChild.TopLevel = false;
             Size = (panelMain.Size = formChild.Size) + new Size(15, 40);

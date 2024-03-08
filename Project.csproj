@@ -61,109 +61,139 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountDAO.cs" />
-    <Compile Include="DAO.cs" />
+    <Compile Include="DAOScripts\AccountDAO.cs" />
+    <Compile Include="DAOScripts\DAO.cs" />
     <Compile Include="FController.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FController.Designer.cs">
       <DependentUpon>FController.cs</DependentUpon>
     </Compile>
-    <Compile Include="FCreateAccount.cs">
+    <Compile Include="FLogins\FCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FCreateAccount.Designer.cs">
+    <Compile Include="FLogins\FCreateAccount.Designer.cs">
       <DependentUpon>FCreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="FForgetPassword.cs">
+    <Compile Include="FLogins\FForgetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FForgetPassword.Designer.cs">
+    <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FHistory.cs">
+    <Compile Include="FMains\FHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FHistory.Designer.cs">
+    <Compile Include="FMains\FHistory.Designer.cs">
       <DependentUpon>FHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="FHomePage.cs">
+    <Compile Include="FMains\FHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FHomePage.Designer.cs">
+    <Compile Include="FMains\FHomePage.Designer.cs">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMain.cs">
+    <Compile Include="FMains\FMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMain.designer.cs">
+    <Compile Include="FMains\FMain.designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FPreferential.cs">
+    <Compile Include="FMains\FPreferential.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FPreferential.Designer.cs">
+    <Compile Include="FMains\FPreferential.Designer.cs">
       <DependentUpon>FPreferential.cs</DependentUpon>
     </Compile>
-    <Compile Include="FService.cs">
+    <Compile Include="FMains\FService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FService.Designer.cs">
+    <Compile Include="FMains\FService.Designer.cs">
       <DependentUpon>FService.cs</DependentUpon>
     </Compile>
-    <Compile Include="FSetting.cs">
+    <Compile Include="FMains\FSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FSetting.Designer.cs">
+    <Compile Include="FMains\FSetting.Designer.cs">
       <DependentUpon>FSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="FUpdateInfo.cs">
+    <Compile Include="FMains\FUpdateInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FUpdateInfo.Designer.cs">
+    <Compile Include="FMains\FUpdateInfo.Designer.cs">
       <DependentUpon>FUpdateInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FLogin.cs">
+    <Compile Include="FLogins\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FLogin.designer.cs">
+    <Compile Include="FLogins\FLogin.designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowMessage.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="UserControls\UserControlDateTimePackerEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
+      <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlRadioButtonEdit.Designer.cs">
+      <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBoxAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBoxAccount.Designer.cs">
+      <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBoxEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBoxEdit.Designer.cs">
+      <DependentUpon>UserControlTextBoxEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAOScripts\User.cs" />
+    <Compile Include="UserControls\UserControlTextBoxPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBoxPassword.Designer.cs">
+      <DependentUpon>UserControlTextBoxPassword.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FController.resx">
       <DependentUpon>FController.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FCreateAccount.resx">
+    <EmbeddedResource Include="FLogins\FCreateAccount.resx">
       <DependentUpon>FCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FForgetPassword.resx">
+    <EmbeddedResource Include="FLogins\FForgetPassword.resx">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FHistory.resx">
+    <EmbeddedResource Include="FMains\FHistory.resx">
       <DependentUpon>FHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FHomePage.resx">
+    <EmbeddedResource Include="FMains\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMain.resx">
+    <EmbeddedResource Include="FMains\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FPreferential.resx">
+    <EmbeddedResource Include="FMains\FPreferential.resx">
       <DependentUpon>FPreferential.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FService.resx">
+    <EmbeddedResource Include="FMains\FService.resx">
       <DependentUpon>FService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FSetting.resx">
+    <EmbeddedResource Include="FMains\FSetting.resx">
       <DependentUpon>FSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FUpdateInfo.resx">
+    <EmbeddedResource Include="FMains\FUpdateInfo.resx">
       <DependentUpon>FUpdateInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FLogin.resx">
+    <EmbeddedResource Include="FLogins\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -171,6 +201,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
+      <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
+      <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
+      <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlTextBoxEdit.resx">
+      <DependentUpon>UserControlTextBoxEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlTextBoxPassword.resx">
+      <DependentUpon>UserControlTextBoxPassword.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
