@@ -20,122 +20,81 @@ namespace Project
             InitializeComponent();
         }
 
-        private void TextBoxNameEnter(object sender, EventArgs e)
+        private void ButtonClickEdit(object sender, EventArgs e)
         {
-            panelRoadName.BackColor = colorTextBoxEnter;
+            ((Button)sender).Visible = false;
+            foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
+            {
+                if(control is Panel panelRoad)
+                {
+                    panelRoad.BackColor = colorTextBoxEnter;
+                }
+                else if(control is DateTimePicker timePicker)
+                {
+                    timePicker.Enabled = true;
+                    timePicker.Focus();
+                }
+                else if(control is RadioButton radioButton)
+                {
+                    radioButton.Enabled = true;
+                }
+                else if(control is TextBox textBox)
+                {
+                    textBox.Enabled = true;
+                    textBox.Focus();
+                }
+            }
         }
 
-        private void LeaveEdit(Panel panel, Control control, Button button)
+        private void ControlLeave(object sender, EventArgs e)
         {
-            panel.BackColor = colorTextBoxLeave;
-            control.Enabled = !(button.Visible = true);
+            if (sender is TextBox textBox)
+            {
+                textBox.Enabled = false;
+            }
+            else if (sender is DateTimePicker timePicker)
+            {
+                timePicker.Enabled = false;
+            }
+            else if (sender is RadioButton radioButton)
+            {
+                radioButton.Enabled = false;
+            }
+            foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
+            {
+                if (control is Panel panelRoad)
+                {
+                    panelRoad.BackColor = colorTextBoxLeave; 
+                }
+                else if(control is Button button)
+                {
+                    button.Visible = true;
+                }
+            }
         }
 
-        private void ClickEdit(Control control, Button button)
+        private void ButtonChangeImageClick(object sender, EventArgs e)
         {
-            control.Enabled = !(button.Visible = false);
-            control.Focus();
-        }
-
-        private void TextBoxNameLeave(object sender, EventArgs e)
-        {
-            LeaveEdit(panelRoadName, textBoxName, buttonEditName);
-        }
-
-        private void DateTimePickerDateOfBirthEnter(object sender, EventArgs e)
-        {
-            panelRoadDateOfBirth.BackColor = colorTextBoxEnter;
-        }
-
-        private void DateTimePickerDateOfBirthLeave(object sender, EventArgs e)
-        {
-            LeaveEdit(panelRoadDateOfBirth, dateTimePickerDateOfBirth, buttonEditDateOfBirth);
-        }
-
-        private void RadioButtonEnter(object sender, EventArgs e)
-        {
-            panelRoadGender.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxAddressEnter(object sender, EventArgs e)
-        {
-            panelRoadAddress.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxAddressLeave(object sender, EventArgs e)
-        {
-            panelRoadAddress.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxEmailEnter(object sender, EventArgs e)
-        {
-            panelRoadEmail.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxEmailLeave(object sender, EventArgs e)
-        {
-            panelRoadEmail.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxPhoneLeave(object sender, EventArgs e)
-        {
-            panelRoadPhone.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxPhoneEnter(object sender, EventArgs e)
-        {
-            panelRoadPhone.BackColor = colorTextBoxEnter;
-        }
-
-
-        private void TextBoxIdCardLeave(object sender, EventArgs e)
-        {
-            panelRoadIdCard.BackColor = colorTextBoxLeave;
-        }
-
-        private void ButtonEditNameClick(object sender, EventArgs e)
-        {
-            ClickEdit(textBoxName, buttonEditName);
-        }
-
-        private void ButtonEditDateOfBirthClick(object sender, EventArgs e)
-        {
-            ClickEdit(dateTimePickerDateOfBirth, buttonEditDateOfBirth);
-        }
-
-        private void ButtonEditGenderClick(object sender, EventArgs e)
-        {
-            ClickEdit(panelRadioGender, buttonEditGender);
-        }
-
-        private void buttonChangeImage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelImage_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBoxImage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButtonGirl_CheckedChanged(object sender, EventArgs e)
-        {
-
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string imagePath = openFileDialog.FileName;
+                    Image image = Image.FromFile(imagePath);
+                    pictureBoxImage.Image = image;
+                    pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxImage.Dock = DockStyle.Fill;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Lỗi: Không thể mở tập tin!" + ex.Message);
+                }
+            }
         }
     }
 }
