@@ -20,74 +20,81 @@ namespace Project
             InitializeComponent();
         }
 
-        private void TextBoxNameEnter(object sender, EventArgs e)
+        private void ButtonClickEdit(object sender, EventArgs e)
         {
-            panelRoadName.BackColor = colorTextBoxEnter;
+            ((Button)sender).Visible = false;
+            foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
+            {
+                if(control is Panel panelRoad)
+                {
+                    panelRoad.BackColor = colorTextBoxEnter;
+                }
+                else if(control is DateTimePicker timePicker)
+                {
+                    timePicker.Enabled = true;
+                    timePicker.Focus();
+                }
+                else if(control is RadioButton radioButton)
+                {
+                    radioButton.Enabled = true;
+                }
+                else if(control is TextBox textBox)
+                {
+                    textBox.Enabled = true;
+                    textBox.Focus();
+                }
+            }
         }
 
-        private void TextBoxNameLeave(object sender, EventArgs e)
+        private void ControlLeave(object sender, EventArgs e)
         {
-            panelRoadName.BackColor = colorTextBoxLeave;
+            if (sender is TextBox textBox)
+            {
+                textBox.Enabled = false;
+            }
+            else if (sender is DateTimePicker timePicker)
+            {
+                timePicker.Enabled = false;
+            }
+            else if (sender is RadioButton radioButton)
+            {
+                radioButton.Enabled = false;
+            }
+            foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
+            {
+                if (control is Panel panelRoad)
+                {
+                    panelRoad.BackColor = colorTextBoxLeave; 
+                }
+                else if(control is Button button)
+                {
+                    button.Visible = true;
+                }
+            }
         }
 
-        private void DateTimePickerDateOfBirthEnter(object sender, EventArgs e)
+        private void ButtonChangeImageClick(object sender, EventArgs e)
         {
-            panelRoadDateOfBirth.BackColor = colorTextBoxEnter;
-        }
-
-        private void DateTimePickerDateOfBirthLeave(object sender, EventArgs e)
-        {
-            panelRoadDateOfBirth.BackColor = colorTextBoxLeave;
-        }
-
-        private void RadioButtonEnter(object sender, EventArgs e)
-        {
-            panelRoadGender.BackColor = colorTextBoxEnter;
-        }
-
-        private void RadioButtonLeave(object sender, EventArgs e)
-        {
-            panelRoadGender.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxAddressEnter(object sender, EventArgs e)
-        {
-            panelRoadAddress.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxAddressLeave(object sender, EventArgs e)
-        {
-            panelRoadAddress.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxEmailEnter(object sender, EventArgs e)
-        {
-            panelRoadEmail.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxEmailLeave(object sender, EventArgs e)
-        {
-            panelRoadEmail.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxPhoneLeave(object sender, EventArgs e)
-        {
-            panelRoadPhone.BackColor = colorTextBoxLeave;
-        }
-
-        private void TextBoxPhoneEnter(object sender, EventArgs e)
-        {
-            panelRoadPhone.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxIdCardEnter(object sender, EventArgs e)
-        {
-            panelRoadIdCard.BackColor = colorTextBoxEnter;
-        }
-
-        private void TextBoxIdCardLeave(object sender, EventArgs e)
-        {
-            panelRoadIdCard.BackColor = colorTextBoxLeave;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string imagePath = openFileDialog.FileName;
+                    Image image = Image.FromFile(imagePath);
+                    pictureBoxImage.Image = image;
+                    pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBoxImage.Dock = DockStyle.Fill;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Lỗi: Không thể mở tập tin!" + ex.Message);
+                }
+            }
         }
     }
 }

@@ -84,12 +84,6 @@
     <Compile Include="FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FInfo.Designer.cs">
-      <DependentUpon>FInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FUpdateInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,9 +114,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FForgetPassword.resx">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FInfo.resx">
-      <DependentUpon>FInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FUpdateInfo.resx">
       <DependentUpon>FUpdateInfo.cs</DependentUpon>

@@ -16,11 +16,7 @@ namespace Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< Updated upstream
-            Application.Run(new FMain());
-=======
             Application.Run(new FController());
->>>>>>> Stashed changes
             return;
         }
     }
