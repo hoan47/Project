@@ -73,7 +73,7 @@ namespace Project
                 ShowMessage.ShowWarning("Mật khẩu tồn tại khoảng trắng.");
                 return ErrorUserInfo.password;
             }
-            if (Regex.IsMatch(Password, "^[a-z0-9@#!_]$") == false)
+            if (Regex.IsMatch(Password, "^[a-z0-9@#!_]+$") == false)
             {
                 ShowMessage.ShowWarning("Mật khẩu không hợp lệ. Chỉ chấp nhận chữ cái viết thường, số, @, #, !, _");
                 return ErrorUserInfo.password;
@@ -103,7 +103,7 @@ namespace Project
                 ShowMessage.ShowWarning("Họ tên ít nhất phải có 2 từ");
                 return ErrorUserInfo.name;
             }
-            if (Regex.IsMatch(Name, "^[a-z]$") == false)
+            if (Regex.IsMatch(Name, "^[a-zA-z]+$") == false)
             {
                 ShowMessage.ShowWarning("Họ tên chỉ được chứ chữ cái.");
                 return ErrorUserInfo.name;
@@ -118,7 +118,7 @@ namespace Project
                 ShowMessage.ShowWarning("Chứng minh nhân dân phải có 12 số");
                 return ErrorUserInfo.idCard;
             }    
-            if(Regex.IsMatch(IdCard, "^[0-9]$") == false)
+            if(Regex.IsMatch(IdCard, "^[0-9]+$") == false)
             {
                 ShowMessage.ShowWarning("Chứng minh nhân dân chỉ chứa số");
                 return ErrorUserInfo.idCard;
@@ -133,7 +133,7 @@ namespace Project
                 ShowMessage.ShowWarning("Số điện thoại phải có 10 số");
                 return ErrorUserInfo.phone;
             }
-            if (Regex.IsMatch(Phone, "^(0[0-9])$") == false)
+            if (Regex.IsMatch(Phone, "^(0[0-9])+$") == false)
             {
                 ShowMessage.ShowWarning("Số điện thoại chỉ chứa số");
                 return ErrorUserInfo.phone;

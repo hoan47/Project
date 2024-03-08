@@ -59,9 +59,6 @@ namespace Project
 
         private void ButtonLoginClick(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
-
-=======
             FController.Instance.user = new User(textBoxAccount.Text, textBoxPassword.Text, textBoxPassword.Text);
             switch (FController.Instance.accountDAO.Login())
             {
@@ -76,7 +73,6 @@ namespace Project
                     Close();
                     break;
             }
->>>>>>> Stashed changes
         }
 
         private void ButtonCombackClick(object sender, EventArgs e)

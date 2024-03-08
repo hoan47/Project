@@ -13,7 +13,7 @@ namespace Project
     public partial class FUpdateInfo : Form
     {
         private Color colorTextBoxEnter = Color.FromArgb(255, 128, 0);
-        private Color colorTextBoxLeave = Color.FromArgb(255, 128, 255);
+        private Color colorTextBoxLeave = Color.FromArgb(64, 64, 64);
 
         public FUpdateInfo()
         {
@@ -22,53 +22,57 @@ namespace Project
 
         private void ButtonClickEdit(object sender, EventArgs e)
         {
+            DisableControlInfo(panelInfo);
             ((Button)sender).Visible = false;
             foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
             {
-                if(control is Panel panelRoad)
+                if (control is Panel panelRoad)
                 {
                     panelRoad.BackColor = colorTextBoxEnter;
                 }
-                else if(control is DateTimePicker timePicker)
+                else if (control is DateTimePicker || control is TextBox)
                 {
-                    timePicker.Enabled = true;
-                    timePicker.Focus();
+                    control.Enabled = true;
+                    control.Focus();
                 }
-                else if(control is RadioButton radioButton)
+                else if (control is RadioButton radioButton)
                 {
                     radioButton.Enabled = true;
                 }
-                else if(control is TextBox textBox)
+            }
+        }
+
+        private void DisableControlInfo(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if(control is Panel)
                 {
-                    textBox.Enabled = true;
-                    textBox.Focus();
+                    DisableControlInfo((Panel)control);
+                }    
+                if (control is TextBox || control is RadioButton || control is DateTimePicker)
+                {
+                    control.Enabled = false;
                 }
+                if(control is Button)
+                {
+                    control.Visible = true;
+                }    
+                if(control.Size.Height < 5)
+                {
+                    control.BackColor = colorTextBoxLeave;
+                }    
             }
         }
 
         private void ControlLeave(object sender, EventArgs e)
         {
-            if (sender is TextBox textBox)
-            {
-                textBox.Enabled = false;
-            }
-            else if (sender is DateTimePicker timePicker)
-            {
-                timePicker.Enabled = false;
-            }
-            else if (sender is RadioButton radioButton)
-            {
-                radioButton.Enabled = false;
-            }
+            DisableControlInfo(panelInfo);
             foreach (Control control in ((Panel)((Control)sender).Parent).Controls)
             {
                 if (control is Panel panelRoad)
                 {
                     panelRoad.BackColor = colorTextBoxLeave; 
-                }
-                else if(control is Button button)
-                {
-                    button.Visible = true;
                 }
             }
         }
@@ -95,6 +99,11 @@ namespace Project
                     MessageBox.Show("Lỗi: Không thể mở tập tin!" + ex.Message);
                 }
             }
+        }
+
+        private void ButtonUpdateClick(object sender, EventArgs e)
+        {
+            DisableControlInfo(panelInfo);
         }
     }
 }

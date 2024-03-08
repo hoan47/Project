@@ -30,254 +30,196 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.panelOption = new System.Windows.Forms.Panel();
+            this.toolStripOption = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonHomePage = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonPreferential = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonService = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSetting = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonLogOut = new System.Windows.Forms.ToolStripButton();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.panelOption.SuspendLayout();
+            this.toolStripOption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelOption
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(206, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 630);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelOption.Controls.Add(this.toolStripOption);
+            this.panelOption.Location = new System.Drawing.Point(0, 170);
+            this.panelOption.Name = "panelOption";
+            this.panelOption.Size = new System.Drawing.Size(200, 462);
+            this.panelOption.TabIndex = 3;
             // 
-            // panel3
+            // toolStripOption
             // 
-            this.panel3.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 161);
-            this.panel3.TabIndex = 0;
+            this.toolStripOption.AutoSize = false;
+            this.toolStripOption.BackColor = System.Drawing.Color.White;
+            this.toolStripOption.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStripOption.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripOption.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStripOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonInfo,
+            this.toolStripButtonHomePage,
+            this.toolStripButtonHistory,
+            this.toolStripButtonPreferential,
+            this.toolStripButtonService,
+            this.toolStripButtonSetting,
+            this.toolStripButtonLogOut});
+            this.toolStripOption.Location = new System.Drawing.Point(0, 0);
+            this.toolStripOption.Name = "toolStripOption";
+            this.toolStripOption.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripOption.Size = new System.Drawing.Size(200, 462);
+            this.toolStripOption.TabIndex = 1;
+            this.toolStripOption.Text = "toolStrip1";
             // 
-            // panel2
+            // toolStripButtonInfo
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(2, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(203, 698);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.toolStripButtonInfo.AutoSize = false;
+            this.toolStripButtonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonInfo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
+            this.toolStripButtonInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonInfo.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonInfo.Name = "toolStripButtonInfo";
+            this.toolStripButtonInfo.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonInfo.Text = "Thông Tin";
+            this.toolStripButtonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonInfo.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // panel4
+            // toolStripButtonHomePage
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.toolStrip1);
-            this.panel4.Location = new System.Drawing.Point(0, 161);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 534);
-            this.panel4.TabIndex = 1;
+            this.toolStripButtonHomePage.AutoSize = false;
+            this.toolStripButtonHomePage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStripButtonHomePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonHomePage.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHomePage.Image")));
+            this.toolStripButtonHomePage.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonHomePage.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonHomePage.Name = "toolStripButtonHomePage";
+            this.toolStripButtonHomePage.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonHomePage.Text = "Trang Chủ";
+            this.toolStripButtonHomePage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonHomePage.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStrip1
+            // toolStripButtonHistory
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripSeparator2,
-            this.toolStripButton3,
-            this.toolStripSeparator3,
-            this.toolStripButton4,
-            this.toolStripSeparator4,
-            this.toolStripButton5,
-            this.toolStripSeparator5,
-            this.toolStripButton6,
-            this.toolStripSeparator6,
-            this.toolStripButton7});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(201, 534);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            this.toolStripButtonHistory.AutoSize = false;
+            this.toolStripButtonHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonHistory.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonHistory.Image")));
+            this.toolStripButtonHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonHistory.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonHistory.Name = "toolStripButtonHistory";
+            this.toolStripButtonHistory.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonHistory.Text = "Lịch Sử";
+            this.toolStripButtonHistory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonHistory.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStripButton1
+            // toolStripButtonPreferential
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.toolStripButton1.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton1.Text = "Trang Chủ";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonPreferential.AutoSize = false;
+            this.toolStripButtonPreferential.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonPreferential.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPreferential.Image")));
+            this.toolStripButtonPreferential.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonPreferential.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonPreferential.Name = "toolStripButtonPreferential";
+            this.toolStripButtonPreferential.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonPreferential.Text = "Ưu Đãi";
+            this.toolStripButtonPreferential.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonPreferential.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStripSeparator1
+            // toolStripButtonService
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(198, 6);
+            this.toolStripButtonService.AutoSize = false;
+            this.toolStripButtonService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonService.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonService.Image")));
+            this.toolStripButtonService.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonService.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonService.Name = "toolStripButtonService";
+            this.toolStripButtonService.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonService.Text = "Dịch Vụ";
+            this.toolStripButtonService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonService.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStripButton2
+            // toolStripButtonSetting
             // 
-            this.toolStripButton2.AutoSize = false;
-            this.toolStripButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
-            this.toolStripButton2.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton2.Text = "Thông Tin";
-            this.toolStripButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonSetting.AutoSize = false;
+            this.toolStripButtonSetting.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonSetting.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSetting.Image")));
+            this.toolStripButtonSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonSetting.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonSetting.Name = "toolStripButtonSetting";
+            this.toolStripButtonSetting.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonSetting.Text = "Cài Đặt";
+            this.toolStripButtonSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonSetting.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStripSeparator2
+            // toolStripButtonLogOut
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(198, 6);
+            this.toolStripButtonLogOut.AutoSize = false;
+            this.toolStripButtonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonLogOut.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonLogOut.Image")));
+            this.toolStripButtonLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonLogOut.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonLogOut.Name = "toolStripButtonLogOut";
+            this.toolStripButtonLogOut.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonLogOut.Text = "Đăng Xuất";
+            this.toolStripButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonLogOut.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // toolStripButton3
+            // panelMain
             // 
-            this.toolStripButton3.AutoSize = false;
-            this.toolStripButton3.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton3.Text = "Lịch Sử";
-            this.toolStripButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Location = new System.Drawing.Point(200, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1040, 630);
+            this.panelMain.TabIndex = 2;
             // 
-            // toolStripSeparator3
+            // pictureBoxIcon
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(198, 6);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton4.Text = "Ưu Đãi";
-            this.toolStripButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(198, 6);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.AutoSize = false;
-            this.toolStripButton5.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton5.Text = "Dịch Vụ Của Bạn";
-            this.toolStripButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(198, 6);
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.AutoSize = false;
-            this.toolStripButton6.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton6.Text = "Cài Đặt";
-            this.toolStripButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(198, 6);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.AutoSize = false;
-            this.toolStripButton7.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButton7.Text = "Đăng Xuất";
-            this.toolStripButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 4;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // FMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 699);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1240, 630);
+            this.Controls.Add(this.pictureBoxIcon);
+            this.Controls.Add(this.panelOption);
+            this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FMain";
             this.Text = "FMain";
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panelOption.ResumeLayout(false);
+            this.toolStripOption.ResumeLayout(false);
+            this.toolStripOption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.Panel panelOption;
+        private System.Windows.Forms.ToolStrip toolStripOption;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfo;
+        private System.Windows.Forms.ToolStripButton toolStripButtonHomePage;
+        private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
+        private System.Windows.Forms.ToolStripButton toolStripButtonPreferential;
+        private System.Windows.Forms.ToolStripButton toolStripButtonService;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSetting;
+        private System.Windows.Forms.ToolStripButton toolStripButtonLogOut;
+        private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.PictureBox pictureBoxIcon;
     }
 }

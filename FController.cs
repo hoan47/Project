@@ -23,7 +23,7 @@ namespace Project
             user = new User();
             accountDAO = new AccountDAO();
             InitializeComponent();
-            InitializeLogin();
+            InitializeMain();
         }
 
         private void OpenFormChild(Form formChild)

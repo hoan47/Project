@@ -19,12 +19,8 @@ namespace Project
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
-            switch(AccountDAO.CreateAccount(textBoxAccount.Text, textBoxPassword.Text, textBoxNewPassword.Text))
-=======
             FController.Instance.user = new User(textBoxAccount.Text, textBoxPassword.Text, textBoxNewPassword.Text);
             if (FController.Instance.user.IsAccount() == ErrorUserInfo.account)
->>>>>>> Stashed changes
             {
                 textBoxAccount.Focus();
                 return;

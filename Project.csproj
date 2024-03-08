@@ -62,8 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDAO.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="DAO.cs" />
     <Compile Include="FController.cs">
       <SubType>Form</SubType>
@@ -71,7 +69,6 @@
     <Compile Include="FController.Designer.cs">
       <DependentUpon>FController.cs</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
     <Compile Include="FCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +81,42 @@
     <Compile Include="FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHistory.Designer.cs">
+      <DependentUpon>FHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHomePage.Designer.cs">
+      <DependentUpon>FHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMain.designer.cs">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPreferential.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPreferential.Designer.cs">
+      <DependentUpon>FPreferential.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FService.Designer.cs">
+      <DependentUpon>FService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSetting.Designer.cs">
+      <DependentUpon>FSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="FUpdateInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +128,6 @@
     </Compile>
     <Compile Include="FLogin.designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMain.designer.cs">
-      <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,15 +142,30 @@
     <EmbeddedResource Include="FForgetPassword.resx">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FHistory.resx">
+      <DependentUpon>FHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FHomePage.resx">
+      <DependentUpon>FHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMain.resx">
+      <DependentUpon>FMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPreferential.resx">
+      <DependentUpon>FPreferential.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FService.resx">
+      <DependentUpon>FService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSetting.resx">
+      <DependentUpon>FSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FUpdateInfo.resx">
       <DependentUpon>FUpdateInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMain.resx">
-      <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

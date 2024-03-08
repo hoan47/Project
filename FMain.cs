@@ -12,29 +12,66 @@ namespace Project
 {
     public partial class FMain : Form
     {
+        private Color colorNormal = Color.White;
+        private Form formChildCurrent;
         public FMain()
         {
             InitializeComponent();
-            Form x = new FUpdateInfo();
-            x.TopLevel = false;
-            panel1.Controls.Add(x);
-            x.BringToFront();
-            x.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void OpenFormChild(Form formChild, ToolStripButton toolStripButton)
         {
-
+            if(formChildCurrent != null)
+            {
+                formChildCurrent.Close();
+            }
+            formChildCurrent = formChild;
+            formChild.TopLevel = false;
+            panelMain.Controls.Add(formChild);
+            formChild.BringToFront();
+            formChild.Show();
+            toolStripButton.BackColor = formChild.BackColor;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void ToolStripButtonClick(object sender, EventArgs e)
         {
+            foreach (ToolStripButton toolStripButton in toolStripOption.Items)
+            {
+                toolStripButton.BackColor = colorNormal;
+            }
 
-        }
+            if (sender == toolStripButtonInfo)
+            {
+                OpenFormChild(new FUpdateInfo(), toolStripButtonInfo);
+            }
+            else if (sender == toolStripButtonHomePage)
+            {
+                OpenFormChild(new FHomePage(), toolStripButtonHomePage);
+            }
+            else if (sender == toolStripButtonHistory)
+            {
+                OpenFormChild(new FHistory(), toolStripButtonHistory);
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+            }
+            else if (sender == toolStripButtonPreferential)
+            {
+                OpenFormChild(new FPreferential(), toolStripButtonPreferential);
 
-        }
+            }
+            else if(sender == toolStripButtonService)
+            {
+                OpenFormChild(new FService(), toolStripButtonService);
+
+            }
+            else if(sender == toolStripButtonSetting)
+            {
+                OpenFormChild(new FSetting(), toolStripButtonSetting);
+
+            }
+            else if(sender == toolStripButtonLogOut)
+            {
+                Close();
+            }
+        } 
     }
 }

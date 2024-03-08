@@ -1,10 +1,6 @@
 ﻿namespace Project
 {
-<<<<<<<< Updated upstream:FInfo.Designer.cs
-    partial class FInfo
-========
     partial class FController
->>>>>>>> Stashed changes:FController.Designer.cs
     {
         /// <summary>
         /// Required designer variable.
@@ -32,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<<< Updated upstream:FInfo.Designer.cs
-            this.SuspendLayout();
-            // 
-            // FInfo
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 583);
-            this.Name = "FInfo";
-            this.Text = "FInfo";
-========
             this.panelMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -64,7 +49,6 @@
             this.Name = "FController";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FController";
->>>>>>>> Stashed changes:FController.Designer.cs
             this.ResumeLayout(false);
 
         }
