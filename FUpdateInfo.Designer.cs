@@ -57,11 +57,11 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.panelGender = new System.Windows.Forms.Panel();
+            this.radioButtonBoy = new System.Windows.Forms.RadioButton();
+            this.radioButtonGirl = new System.Windows.Forms.RadioButton();
             this.buttonEditGender = new System.Windows.Forms.Button();
             this.panelRoadGender = new System.Windows.Forms.Panel();
             this.labelGender = new System.Windows.Forms.Label();
-            this.radioButtonGirl = new System.Windows.Forms.RadioButton();
-            this.radioButtonBoy = new System.Windows.Forms.RadioButton();
             this.panelDateOfBirth = new System.Windows.Forms.Panel();
             this.buttonEditDateOfBirth = new System.Windows.Forms.Button();
             this.dateTimePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
@@ -98,7 +98,7 @@
             buttonChangeImage.Size = new System.Drawing.Size(38, 37);
             buttonChangeImage.TabIndex = 1;
             buttonChangeImage.UseVisualStyleBackColor = false;
-            buttonChangeImage.Click += new System.EventHandler(this.buttonChangeImage_Click);
+            buttonChangeImage.Click += new System.EventHandler(this.ButtonChangeImageClick);
             // 
             // panelMain
             // 
@@ -147,7 +147,6 @@
             this.panelImage.Size = new System.Drawing.Size(229, 281);
             this.panelImage.TabIndex = 1;
             this.panelImage.TabStop = true;
-            this.panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelImage_Paint);
             // 
             // panelBackground
             // 
@@ -170,7 +169,6 @@
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImage.TabIndex = 23;
             this.pictureBoxImage.TabStop = false;
-            this.pictureBoxImage.Click += new System.EventHandler(this.pictureBoxImage_Click);
             // 
             // labelUser
             // 
@@ -183,7 +181,6 @@
             this.labelUser.Size = new System.Drawing.Size(56, 17);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "hoan67";
-            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
             // 
             // panelPhone
             // 
@@ -209,6 +206,7 @@
             this.buttonEditPhone.Size = new System.Drawing.Size(25, 25);
             this.buttonEditPhone.TabIndex = 11;
             this.buttonEditPhone.UseVisualStyleBackColor = false;
+            this.buttonEditPhone.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // panelRoadPhone
             // 
@@ -223,6 +221,7 @@
             // 
             this.textBoxPhone.BackColor = System.Drawing.Color.White;
             this.textBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPhone.Enabled = false;
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPhone.Location = new System.Drawing.Point(78, 14);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(2);
@@ -231,8 +230,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(303, 18);
             this.textBoxPhone.TabIndex = 1;
-            this.textBoxPhone.Enter += new System.EventHandler(this.TextBoxPhoneEnter);
-            this.textBoxPhone.Leave += new System.EventHandler(this.TextBoxPhoneLeave);
+            this.textBoxPhone.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // labelPhone
             // 
@@ -268,11 +266,13 @@
             this.buttonEditIdCard.Size = new System.Drawing.Size(25, 25);
             this.buttonEditIdCard.TabIndex = 11;
             this.buttonEditIdCard.UseVisualStyleBackColor = false;
+            this.buttonEditIdCard.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // textBoxIdCard
             // 
             this.textBoxIdCard.BackColor = System.Drawing.Color.White;
             this.textBoxIdCard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxIdCard.Enabled = false;
             this.textBoxIdCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIdCard.Location = new System.Drawing.Point(78, 14);
             this.textBoxIdCard.Margin = new System.Windows.Forms.Padding(2);
@@ -281,8 +281,7 @@
             this.textBoxIdCard.Name = "textBoxIdCard";
             this.textBoxIdCard.Size = new System.Drawing.Size(303, 18);
             this.textBoxIdCard.TabIndex = 2;
-            this.textBoxIdCard.Enter += new System.EventHandler(this.TextBoxIdCardEnter);
-            this.textBoxIdCard.Leave += new System.EventHandler(this.TextBoxIdCardLeave);
+            this.textBoxIdCard.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // panelRoadIdCard
             // 
@@ -328,6 +327,7 @@
             this.buttonEditEmail.Size = new System.Drawing.Size(25, 25);
             this.buttonEditEmail.TabIndex = 11;
             this.buttonEditEmail.UseVisualStyleBackColor = false;
+            this.buttonEditEmail.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // panelRoadEmail
             // 
@@ -342,6 +342,7 @@
             // 
             this.textBoxEmail.BackColor = System.Drawing.Color.White;
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(78, 14);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2);
@@ -350,8 +351,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(303, 18);
             this.textBoxEmail.TabIndex = 1;
-            this.textBoxEmail.Enter += new System.EventHandler(this.TextBoxEmailEnter);
-            this.textBoxEmail.Leave += new System.EventHandler(this.TextBoxEmailLeave);
+            this.textBoxEmail.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // labelEmail
             // 
@@ -388,6 +388,7 @@
             this.buttonEditAddress.Size = new System.Drawing.Size(25, 25);
             this.buttonEditAddress.TabIndex = 11;
             this.buttonEditAddress.UseVisualStyleBackColor = false;
+            this.buttonEditAddress.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // panelRoadAddress
             // 
@@ -402,6 +403,7 @@
             // 
             this.textBoxAddress.BackColor = System.Drawing.Color.White;
             this.textBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAddress.Enabled = false;
             this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAddress.Location = new System.Drawing.Point(78, 14);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(2);
@@ -410,8 +412,7 @@
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(303, 18);
             this.textBoxAddress.TabIndex = 1;
-            this.textBoxAddress.Enter += new System.EventHandler(this.TextBoxAddressEnter);
-            this.textBoxAddress.Leave += new System.EventHandler(this.TextBoxAddressLeave);
+            this.textBoxAddress.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // labelAddress
             // 
@@ -427,17 +428,45 @@
             // panelGender
             // 
             this.panelGender.BackColor = System.Drawing.Color.Transparent;
+            this.panelGender.Controls.Add(this.radioButtonBoy);
+            this.panelGender.Controls.Add(this.radioButtonGirl);
             this.panelGender.Controls.Add(this.buttonEditGender);
             this.panelGender.Controls.Add(this.panelRoadGender);
             this.panelGender.Controls.Add(this.labelGender);
-            this.panelGender.Controls.Add(this.radioButtonGirl);
-            this.panelGender.Controls.Add(this.radioButtonBoy);
             this.panelGender.Location = new System.Drawing.Point(290, 140);
             this.panelGender.Margin = new System.Windows.Forms.Padding(2);
             this.panelGender.Name = "panelGender";
             this.panelGender.Size = new System.Drawing.Size(426, 37);
             this.panelGender.TabIndex = 4;
             this.panelGender.TabStop = true;
+            // 
+            // radioButtonBoy
+            // 
+            this.radioButtonBoy.AutoSize = true;
+            this.radioButtonBoy.Enabled = false;
+            this.radioButtonBoy.Location = new System.Drawing.Point(78, 14);
+            this.radioButtonBoy.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonBoy.Name = "radioButtonBoy";
+            this.radioButtonBoy.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonBoy.TabIndex = 1;
+            this.radioButtonBoy.TabStop = true;
+            this.radioButtonBoy.Text = "Nam";
+            this.radioButtonBoy.UseVisualStyleBackColor = true;
+            this.radioButtonBoy.Click += new System.EventHandler(this.ControlLeave);
+            // 
+            // radioButtonGirl
+            // 
+            this.radioButtonGirl.AutoSize = true;
+            this.radioButtonGirl.Enabled = false;
+            this.radioButtonGirl.Location = new System.Drawing.Point(184, 14);
+            this.radioButtonGirl.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButtonGirl.Name = "radioButtonGirl";
+            this.radioButtonGirl.Size = new System.Drawing.Size(39, 17);
+            this.radioButtonGirl.TabIndex = 2;
+            this.radioButtonGirl.TabStop = true;
+            this.radioButtonGirl.Text = "Nữ";
+            this.radioButtonGirl.UseVisualStyleBackColor = true;
+            this.radioButtonGirl.Click += new System.EventHandler(this.ControlLeave);
             // 
             // buttonEditGender
             // 
@@ -449,6 +478,7 @@
             this.buttonEditGender.Size = new System.Drawing.Size(25, 25);
             this.buttonEditGender.TabIndex = 11;
             this.buttonEditGender.UseVisualStyleBackColor = false;
+            this.buttonEditGender.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // panelRoadGender
             // 
@@ -469,34 +499,6 @@
             this.labelGender.Size = new System.Drawing.Size(65, 17);
             this.labelGender.TabIndex = 0;
             this.labelGender.Text = "Giới Tính";
-            // 
-            // radioButtonGirl
-            // 
-            this.radioButtonGirl.AutoSize = true;
-            this.radioButtonGirl.Location = new System.Drawing.Point(164, 16);
-            this.radioButtonGirl.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonGirl.Name = "radioButtonGirl";
-            this.radioButtonGirl.Size = new System.Drawing.Size(39, 17);
-            this.radioButtonGirl.TabIndex = 2;
-            this.radioButtonGirl.TabStop = true;
-            this.radioButtonGirl.Text = "Nữ";
-            this.radioButtonGirl.UseVisualStyleBackColor = true;
-            this.radioButtonGirl.Enter += new System.EventHandler(this.RadioButtonEnter);
-            this.radioButtonGirl.Leave += new System.EventHandler(this.RadioButtonLeave);
-            // 
-            // radioButtonBoy
-            // 
-            this.radioButtonBoy.AutoSize = true;
-            this.radioButtonBoy.Location = new System.Drawing.Point(93, 15);
-            this.radioButtonBoy.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonBoy.Name = "radioButtonBoy";
-            this.radioButtonBoy.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonBoy.TabIndex = 1;
-            this.radioButtonBoy.TabStop = true;
-            this.radioButtonBoy.Text = "Nam";
-            this.radioButtonBoy.UseVisualStyleBackColor = true;
-            this.radioButtonBoy.Enter += new System.EventHandler(this.RadioButtonEnter);
-            this.radioButtonBoy.Leave += new System.EventHandler(this.RadioButtonLeave);
             // 
             // panelDateOfBirth
             // 
@@ -522,6 +524,7 @@
             this.buttonEditDateOfBirth.Size = new System.Drawing.Size(25, 25);
             this.buttonEditDateOfBirth.TabIndex = 11;
             this.buttonEditDateOfBirth.UseVisualStyleBackColor = false;
+            this.buttonEditDateOfBirth.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // dateTimePickerDateOfBirth
             // 
@@ -530,14 +533,14 @@
             this.dateTimePickerDateOfBirth.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dateTimePickerDateOfBirth.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dateTimePickerDateOfBirth.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dateTimePickerDateOfBirth.Enabled = false;
             this.dateTimePickerDateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDateOfBirth.Location = new System.Drawing.Point(78, 8);
             this.dateTimePickerDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDateOfBirth.Name = "dateTimePickerDateOfBirth";
             this.dateTimePickerDateOfBirth.Size = new System.Drawing.Size(305, 23);
             this.dateTimePickerDateOfBirth.TabIndex = 1;
-            this.dateTimePickerDateOfBirth.Enter += new System.EventHandler(this.DateTimePickerDateOfBirthEnter);
-            this.dateTimePickerDateOfBirth.Leave += new System.EventHandler(this.DateTimePickerDateOfBirthLeave);
+            this.dateTimePickerDateOfBirth.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // labelDateOfBirth
             // 
@@ -583,7 +586,7 @@
             this.buttonEditName.Size = new System.Drawing.Size(25, 25);
             this.buttonEditName.TabIndex = 10;
             this.buttonEditName.UseVisualStyleBackColor = false;
-            this.buttonEditName.Click += new System.EventHandler(this.buttonEditName_Click);
+            this.buttonEditName.Click += new System.EventHandler(this.ButtonClickEdit);
             // 
             // panelRoadName
             // 
@@ -598,16 +601,16 @@
             // 
             this.textBoxName.BackColor = System.Drawing.Color.White;
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxName.Enabled = false;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(78, 14);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxName.MaxLength = 11;
+            this.textBoxName.MaxLength = 27;
             this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(303, 18);
             this.textBoxName.TabIndex = 1;
-            this.textBoxName.Enter += new System.EventHandler(this.TextBoxNameEnter);
-            this.textBoxName.Leave += new System.EventHandler(this.TextBoxNameLeave);
+            this.textBoxName.Leave += new System.EventHandler(this.ControlLeave);
             // 
             // labelName
             // 
