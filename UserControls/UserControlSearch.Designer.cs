@@ -64,9 +64,9 @@ namespace Project.UserControls
             // 
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label.Location = new System.Drawing.Point(73, 14);
+            this.label.Location = new System.Drawing.Point(72, 12);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(301, 30);
+            this.label.Size = new System.Drawing.Size(301, 35);
             this.label.TabIndex = 2;
             this.label.Text = "Tìm kiếm";
             this.label.Click += new System.EventHandler(this.Processed);
