@@ -47,7 +47,7 @@ namespace Project
             {
                 FController.Instance.accountDAO.UpdatePasswored(FController.Instance.user);
                 Close();
-                FController.Instance.InitializeLogin();
+                FController.Instance.InitializeFLogin();
             }
         }
     }

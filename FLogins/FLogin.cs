@@ -57,7 +57,7 @@ namespace Project
             if (FController.Instance.accountDAO.Login(FController.Instance.user) == true)
             {
                 FController.Instance.user = FController.Instance.infoDAO.Access(FController.Instance.user);
-                FController.Instance.InitializeMain();
+                FController.Instance.InitializeFMain();
                 Close();
             }
         }

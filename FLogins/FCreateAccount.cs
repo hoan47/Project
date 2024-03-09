@@ -26,7 +26,7 @@ namespace Project
                 {
                     FController.Instance.infoDAO.Insert(FController.Instance.user);
                     Close();
-                    FController.Instance.InitializeLogin();
+                    FController.Instance.InitializeFLogin();
                 }    
             }
         }

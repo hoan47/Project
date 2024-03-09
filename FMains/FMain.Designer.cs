@@ -41,8 +41,10 @@
             this.toolStripButtonLogOut = new System.Windows.Forms.ToolStripButton();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.userControlSearch1 = new Project.UserControls.UserControlSearch();
             this.panelOption.SuspendLayout();
             this.toolStripOption.SuspendLayout();
+            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,6 +174,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.userControlSearch1);
             this.panelMain.Location = new System.Drawing.Point(200, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1040, 630);
@@ -186,6 +189,17 @@
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 4;
             this.pictureBoxIcon.TabStop = false;
+            // 
+            // userControlSearch1
+            // 
+            this.userControlSearch1.BackColor = System.Drawing.Color.Transparent;
+            this.userControlSearch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlSearch1.BackgroundImage")));
+            this.userControlSearch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userControlSearch1.Location = new System.Drawing.Point(291, 12);
+            this.userControlSearch1.Name = "userControlSearch1";
+            this.userControlSearch1.Size = new System.Drawing.Size(400, 50);
+            this.userControlSearch1.TabIndex = 0;
+            this.userControlSearch1.TextVisible = null;
             // 
             // FMain
             // 
@@ -204,6 +218,7 @@
             this.panelOption.ResumeLayout(false);
             this.toolStripOption.ResumeLayout(false);
             this.toolStripOption.PerformLayout();
+            this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
@@ -222,5 +237,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonLogOut;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
+        private UserControls.UserControlSearch userControlSearch1;
     }
 }

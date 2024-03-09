@@ -15,15 +15,15 @@ namespace Project
         public FUpdateInfo()
         {
             InitializeComponent();
-            GetData();
+            LoadData();
         }
 
-        private void GetData()
+        private void LoadData()
         {
             labelUser.Text = FController.Instance.user.UserName;
             userControlTextBoxEditName.TextBoxText = FController.Instance.user.Name;
-            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString();
-            //userControlRadioButtonEditGender = FController.Instance.user.Gender;
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString("đd-MM-yyyy");
+            userControlRadioButtonEditGender.GenderText = FController.Instance.user.Gender;
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)

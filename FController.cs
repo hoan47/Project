@@ -25,7 +25,7 @@ namespace Project
             accountDAO = new AccountDAO();
             infoDAO = new InfoDAO();
             InitializeComponent();
-            InitializeLogin();
+            InitializeFMain();
         }
 
         private void OpenFormChild(Form formChild)
@@ -43,12 +43,12 @@ namespace Project
             CenterToScreen();
         }
 
-        public void InitializeLogin()
+        public void InitializeFLogin()
         {
             OpenFormChild(new FLogin());
         }
 
-        public void InitializeMain()
+        public void InitializeFMain()
         {
             OpenFormChild(new FMain());
         }

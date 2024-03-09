@@ -145,6 +145,12 @@
     <Compile Include="UserControls\UserControlRadioButtonEdit.Designer.cs">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSearch.Designer.cs">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSearch.resx">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
