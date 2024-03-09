@@ -31,14 +31,7 @@ namespace Project
             userControlTextBoxEditPhone.TextBoxText = FController.Instance.user.Phone;
             if (ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.man) ==true || ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.girl) == true)
             {
-                if(FController.Instance.user.Gender == "Nam")
-                {
-                    pictureBoxImage.Image = Properties.Resources.man;
-                }
-                else
-                {
-                    pictureBoxImage.Image = Properties.Resources.girl;
-                } 
+                GetImageNormal();
             }    
             else
             {
@@ -46,10 +39,10 @@ namespace Project
             }    
         }
 
-
         private void ButtonChangeImageClick(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
             openFileDialog.InitialDirectory = "c:\\";
             openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
             openFileDialog.FilterIndex = 1;
@@ -60,6 +53,7 @@ namespace Project
                 {
                     string imagePath = openFileDialog.FileName;
                     Image image = Image.FromFile(imagePath);
+
                     pictureBoxImage.Image = image;
                     pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
                 }
@@ -91,6 +85,11 @@ namespace Project
         }
 
         private void ButtonDeleteImageClick(object sender, EventArgs e)
+        {
+            GetImageNormal();
+        }
+
+        private void GetImageNormal()
         {
             pictureBoxImage.Image = FController.Instance.user.Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
         }
