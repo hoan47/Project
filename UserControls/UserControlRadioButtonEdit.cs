@@ -16,8 +16,6 @@ namespace Project
         private Color colorTextBoxLeave = Color.FromArgb(64, 64, 64);
         public string LabelText { get { return label.Text; } set { label.Text = value; } }
         public string GenderText { get { return radioButtonBoy.Checked == true ? "Nam" : "Nữ"; } set { radioButtonGirl.Checked = !(radioButtonBoy.Checked = value == "Nam" ? true : false); } }
-        public bool CheckRadioButtonBoy { get { return radioButtonBoy.Checked; } set { radioButtonBoy.Checked = value; } }
-        public bool CheckRadioButtonGirl { get { return radioButtonGirl.Checked; } set { radioButtonGirl.Checked = value; } }
 
         public UserControlRadioButtonEdit()
         {
@@ -26,15 +24,14 @@ namespace Project
 
         private void Edit(object sender, EventArgs e)
         {
-            radioButtonGirl.Enabled = !(buttonEdit.Visible = false);
-            panelRoad.BackColor = colorTextBoxEnter;
+            radioButtonBoy.Enabled = radioButtonGirl.Enabled = !(buttonEdit.Visible = false);
         }
 
         private void UserControlRadioButtonEditLeave(object sender, EventArgs e)
         {
-            if(buttonEdit.Visible == false)
+            if (buttonEdit.Visible == false)
             {
-                radioButtonGirl.Enabled = !(buttonEdit.Visible = true);
+                radioButtonBoy.Enabled =  radioButtonGirl.Enabled = !(buttonEdit.Visible = true);
                 panelRoad.BackColor = colorTextBoxLeave;
             }
         }

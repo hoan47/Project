@@ -53,10 +53,10 @@ namespace Project
 
         private void ButtonLoginClick(object sender, EventArgs e)
         {
-            FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword1.TextBoxText, userControlTextBoxPassword1.TextBoxText);
-            if (FController.Instance.accountDAO.Login(FController.Instance.user) == true)
+            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword1.TextBoxText, userControlTextBoxPassword1.TextBoxText);
+            if (FController.Instance.accountDAO.Login() == true)
             {
-                FController.Instance.user = FController.Instance.infoDAO.Access(FController.Instance.user);
+                FController.Instance.infoDAO.Access();
                 FController.Instance.InitializeFMain();
                 Close();
             }

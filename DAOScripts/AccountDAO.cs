@@ -16,9 +16,9 @@ namespace Project
         public AccountDAO() : base("Account")
         { }
 
-        public bool Login(User user)
+        public bool Login()
         {
-            if (FindAccount(user) == false)
+            if (FindAccount() == false)
             {
                 ShowMessage.ShowWarning("Tài khoản không tồn tại.");
                 return false;
@@ -26,7 +26,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{FController.Instance.user.UserName}' and password = '{FController.Instance.user.Password}'", sqlConnection);
 
                 if ((int)selectCMD.ExecuteScalar() != 0)
                 {
@@ -50,9 +50,9 @@ namespace Project
             return false;
         }
 
-        public bool CreateAccount(User user)
+        public bool CreateAccount()
         {
-            if (FindAccount(user) == true)
+            if (FindAccount() == true)
             {
                 ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
                 return false;
@@ -60,7 +60,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"INSERT {table} VALUES ('{user.UserName}', '{user.Password}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"INSERT {table} VALUES ('{FController.Instance.user.UserName}', '{FController.Instance.user.Password}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -79,12 +79,12 @@ namespace Project
             return false;
         }
 
-        public bool FindAccount(User user)
+        public bool FindAccount()
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName COLLATE Latin1_General_CS_AS = '{user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName COLLATE Latin1_General_CS_AS = '{FController.Instance.user.UserName}'", sqlConnection);
 
                 return (int)selectCMD.ExecuteScalar() != 0;
             }

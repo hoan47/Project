@@ -73,5 +73,10 @@ namespace Project
                 Close();
             }
         }
+
+        private void userControlRadioButtonEdit1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,10 +19,10 @@ namespace Project
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-            FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText);
+            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (FController.Instance.accountDAO.FindAccount(FController.Instance.user) == true)
+                if (FController.Instance.accountDAO.FindAccount() == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -42,7 +42,7 @@ namespace Project
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
-            FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             if (FController.Instance.user.IsPassword() == true)
             {
                 FController.Instance.accountDAO.UpdatePasswored(FController.Instance.user);

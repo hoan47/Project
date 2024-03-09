@@ -39,14 +39,12 @@ namespace Project
             // 
             // radioButtonBoy
             // 
-            this.radioButtonBoy.Checked = true;
             this.radioButtonBoy.Enabled = false;
             this.radioButtonBoy.Location = new System.Drawing.Point(129, 16);
             this.radioButtonBoy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonBoy.Name = "radioButtonBoy";
             this.radioButtonBoy.Size = new System.Drawing.Size(77, 20);
-            this.radioButtonBoy.TabIndex = 0;
-            this.radioButtonBoy.TabStop = true;
+            this.radioButtonBoy.TabIndex = 19;
             this.radioButtonBoy.Text = "Nam";
             this.radioButtonBoy.UseVisualStyleBackColor = true;
             // 
@@ -57,8 +55,7 @@ namespace Project
             this.radioButtonGirl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonGirl.Name = "radioButtonGirl";
             this.radioButtonGirl.Size = new System.Drawing.Size(63, 20);
-            this.radioButtonGirl.TabIndex = 1;
-            this.radioButtonGirl.TabStop = true;
+            this.radioButtonGirl.TabIndex = 20;
             this.radioButtonGirl.Text = "Nữ";
             this.radioButtonGirl.UseVisualStyleBackColor = true;
             // 
@@ -71,27 +68,26 @@ namespace Project
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(33, 31);
-            this.buttonEdit.TabIndex = 2;
+            this.buttonEdit.TabIndex = 21;
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.Edit);
             // 
             // panelRoad
             // 
             this.panelRoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelRoad.Location = new System.Drawing.Point(19, 37);
+            this.panelRoad.Location = new System.Drawing.Point(16, 38);
             this.panelRoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRoad.Name = "panelRoad";
             this.panelRoad.Size = new System.Drawing.Size(533, 2);
-            this.panelRoad.TabIndex = 12;
+            this.panelRoad.TabIndex = 22;
             // 
             // label
             // 
-            this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.Location = new System.Drawing.Point(16, 16);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(76, 20);
-            this.label.TabIndex = 13;
+            this.label.Size = new System.Drawing.Size(107, 20);
+            this.label.TabIndex = 23;
             this.label.Text = "Giới Tính";
             // 
             // UserControlRadioButtonEdit
@@ -108,7 +104,6 @@ namespace Project
             this.Size = new System.Drawing.Size(568, 46);
             this.Leave += new System.EventHandler(this.UserControlRadioButtonEditLeave);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

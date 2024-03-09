@@ -30,7 +30,13 @@
         {
             System.Windows.Forms.Button buttonChangeImage;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
+            System.Windows.Forms.Button buttonDeleteImage;
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.panelBackground = new System.Windows.Forms.Panel();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.labelUser = new System.Windows.Forms.Label();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
             this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
@@ -38,12 +44,8 @@
             this.userControlTextBoxEditAddress = new Project.UserControlTextBoxEdit();
             this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
             this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.panelImage = new System.Windows.Forms.Panel();
-            this.panelBackground = new System.Windows.Forms.Panel();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.labelUser = new System.Windows.Forms.Label();
             buttonChangeImage = new System.Windows.Forms.Button();
+            buttonDeleteImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
             this.panelBackground.SuspendLayout();
@@ -56,7 +58,7 @@
             buttonChangeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             buttonChangeImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChangeImage.BackgroundImage")));
             buttonChangeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            buttonChangeImage.Location = new System.Drawing.Point(124, 284);
+            buttonChangeImage.Location = new System.Drawing.Point(95, 284);
             buttonChangeImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             buttonChangeImage.Name = "buttonChangeImage";
             buttonChangeImage.Size = new System.Drawing.Size(51, 46);
@@ -79,6 +81,67 @@
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(621, 466);
             this.panelInfo.TabIndex = 1;
+            this.panelInfo.TabStop = true;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.AutoSize = true;
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUpdate.Location = new System.Drawing.Point(300, 399);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(53, 49);
+            this.buttonUpdate.TabIndex = 7;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            // 
+            // panelImage
+            // 
+            this.panelImage.BackColor = System.Drawing.Color.Transparent;
+            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelImage.Controls.Add(buttonDeleteImage);
+            this.panelImage.Controls.Add(this.panelBackground);
+            this.panelImage.Controls.Add(this.labelUser);
+            this.panelImage.Controls.Add(buttonChangeImage);
+            this.panelImage.Location = new System.Drawing.Point(48, 82);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(305, 346);
+            this.panelImage.TabIndex = 0;
+            this.panelImage.TabStop = true;
+            // 
+            // panelBackground
+            // 
+            this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
+            this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBackground.Controls.Add(this.pictureBoxImage);
+            this.panelBackground.Location = new System.Drawing.Point(35, 58);
+            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelBackground.Name = "panelBackground";
+            this.panelBackground.Size = new System.Drawing.Size(240, 222);
+            this.panelBackground.TabIndex = 0;
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(23, 22);
+            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(193, 178);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImage.TabIndex = 23;
+            this.pictureBoxImage.TabStop = false;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.Color.Black;
+            this.labelUser.Location = new System.Drawing.Point(120, 34);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(0, 20);
+            this.labelUser.TabIndex = 0;
             // 
             // userControlTextBoxEditPhone
             // 
@@ -93,8 +156,7 @@
             // userControlRadioButtonEditGender
             // 
             this.userControlRadioButtonEditGender.BackColor = System.Drawing.Color.Transparent;
-            this.userControlRadioButtonEditGender.CheckRadioButtonBoy = true;
-            this.userControlRadioButtonEditGender.CheckRadioButtonGirl = false;
+            this.userControlRadioButtonEditGender.GenderText = "Nam";
             this.userControlRadioButtonEditGender.LabelText = "Giới Tính";
             this.userControlRadioButtonEditGender.Location = new System.Drawing.Point(26, 138);
             this.userControlRadioButtonEditGender.Name = "userControlRadioButtonEditGender";
@@ -134,12 +196,12 @@
             // userControlDateTimePackerEditDateOfBirth
             // 
             this.userControlDateTimePackerEditDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.userControlDateTimePackerEditDateOfBirth.DateTimePickerText = "Friday, March 8, 2024";
             this.userControlDateTimePackerEditDateOfBirth.LabelText = "Ngày Sinh";
             this.userControlDateTimePackerEditDateOfBirth.Location = new System.Drawing.Point(26, 86);
             this.userControlDateTimePackerEditDateOfBirth.Name = "userControlDateTimePackerEditDateOfBirth";
             this.userControlDateTimePackerEditDateOfBirth.Size = new System.Drawing.Size(568, 46);
             this.userControlDateTimePackerEditDateOfBirth.TabIndex = 1;
-            this.userControlDateTimePackerEditDateOfBirth.DateTimePickerText = "Friday, March 8, 2024";
             // 
             // userControlTextBoxEditName
             // 
@@ -151,64 +213,19 @@
             this.userControlTextBoxEditName.TabIndex = 0;
             this.userControlTextBoxEditName.TextBoxText = "";
             // 
-            // buttonUpdate
+            // buttonDeleteImage
             // 
-            this.buttonUpdate.AutoSize = true;
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUpdate.Location = new System.Drawing.Point(300, 399);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(53, 49);
-            this.buttonUpdate.TabIndex = 7;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            // 
-            // panelImage
-            // 
-            this.panelImage.BackColor = System.Drawing.Color.Transparent;
-            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelImage.Controls.Add(this.panelBackground);
-            this.panelImage.Controls.Add(this.labelUser);
-            this.panelImage.Controls.Add(buttonChangeImage);
-            this.panelImage.Location = new System.Drawing.Point(48, 82);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(305, 346);
-            this.panelImage.TabIndex = 0;
-            this.panelImage.TabStop = true;
-            // 
-            // panelBackground
-            // 
-            this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
-            this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBackground.Controls.Add(this.pictureBoxImage);
-            this.panelBackground.Location = new System.Drawing.Point(35, 58);
-            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(240, 222);
-            this.panelBackground.TabIndex = 0;
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImage.Image")));
-            this.pictureBoxImage.Location = new System.Drawing.Point(23, 22);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(193, 178);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 23;
-            this.pictureBoxImage.TabStop = false;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.ForeColor = System.Drawing.Color.Black;
-            this.labelUser.Location = new System.Drawing.Point(120, 34);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 20);
-            this.labelUser.TabIndex = 0;
+            buttonDeleteImage.AutoSize = true;
+            buttonDeleteImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
+            buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            buttonDeleteImage.Location = new System.Drawing.Point(164, 284);
+            buttonDeleteImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            buttonDeleteImage.Name = "buttonDeleteImage";
+            buttonDeleteImage.Size = new System.Drawing.Size(51, 46);
+            buttonDeleteImage.TabIndex = 2;
+            buttonDeleteImage.UseVisualStyleBackColor = false;
+            buttonDeleteImage.Click += new System.EventHandler(this.ButtonDeleteImageClick);
             // 
             // FUpdateInfo
             // 
@@ -231,6 +248,7 @@
             this.panelBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -25,7 +25,7 @@ namespace Project
             accountDAO = new AccountDAO();
             infoDAO = new InfoDAO();
             InitializeComponent();
-            InitializeFMain();
+            InitializeFLogin();
         }
 
         private void OpenFormChild(Form formChild)

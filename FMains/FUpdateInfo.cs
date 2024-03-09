@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,29 @@ namespace Project
         {
             labelUser.Text = FController.Instance.user.UserName;
             userControlTextBoxEditName.TextBoxText = FController.Instance.user.Name;
-            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString("đd-MM-yyyy");
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString();
             userControlRadioButtonEditGender.GenderText = FController.Instance.user.Gender;
+            userControlTextBoxEditAddress.TextBoxText = FController.Instance.user.Address;
+            userControlTextBoxEditIdCard.TextBoxText = FController.Instance.user.IdCard;
+            userControlTextBoxEditEmail.TextBoxText = FController.Instance.user.Email;
+            userControlTextBoxEditPhone.TextBoxText = FController.Instance.user.Phone;
+            if (ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.man) ==true || ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.girl) == true)
+            {
+                if(FController.Instance.user.Gender == "Nam")
+                {
+                    pictureBoxImage.Image = Properties.Resources.man;
+                }
+                else
+                {
+                    pictureBoxImage.Image = Properties.Resources.girl;
+                } 
+            }    
+            else
+            {
+                pictureBoxImage.Image = FController.Instance.user.Image;
+            }    
         }
+
 
         private void ButtonChangeImageClick(object sender, EventArgs e)
         {
@@ -40,14 +61,38 @@ namespace Project
                     string imagePath = openFileDialog.FileName;
                     Image image = Image.FromFile(imagePath);
                     pictureBoxImage.Image = image;
-                    pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pictureBoxImage.Dock = DockStyle.Fill;
+                    pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Lỗi: Không thể mở tập tin!" + ex.Message);
+                    ShowMessage.ShowError("Lỗi: Không thể mở tập tin!" + ex.Message);
                 }
             }
+        }
+
+        private void ButtonUpdateClick(object sender, EventArgs e)
+        {
+            User newUser = new User();
+            DateTime dateTime;
+
+            if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
+            {
+                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
+                {
+                    FController.Instance.user.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                    if(FController.Instance.infoDAO.Update() == true)
+                    {
+                        ShowMessage.ShowNotification("Cập nhật thành công");
+                        LoadData();
+                    }    
+                }
+            }
+        }
+
+        private void ButtonDeleteImageClick(object sender, EventArgs e)
+        {
+            pictureBoxImage.Image = FController.Instance.user.Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
         }
     }
 }
