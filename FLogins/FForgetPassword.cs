@@ -46,6 +46,8 @@ namespace Project
             if (FController.Instance.user.IsPassword() == true)
             {
                 FController.Instance.accountDAO.UpdatePasswored(FController.Instance.user);
+                Close();
+                FController.Instance.InitializeLogin();
             }
         }
     }

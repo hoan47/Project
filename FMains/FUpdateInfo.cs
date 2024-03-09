@@ -23,6 +23,7 @@ namespace Project
             labelUser.Text = FController.Instance.user.UserName;
             userControlTextBoxEditName.TextBoxText = FController.Instance.user.Name;
             userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString();
+            //userControlRadioButtonEditGender = FController.Instance.user.Gender;
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)

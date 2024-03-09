@@ -43,7 +43,7 @@ namespace Project
             CenterToScreen();
         }
 
-        private void InitializeLogin()
+        public void InitializeLogin()
         {
             OpenFormChild(new FLogin());
         }
@@ -52,5 +52,6 @@ namespace Project
         {
             OpenFormChild(new FMain());
         }
+
     }
 }

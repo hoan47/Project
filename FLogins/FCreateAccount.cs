@@ -20,11 +20,13 @@ namespace Project
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
             FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
-            if (FController.Instance.user.IsAccount() == true || FController.Instance.user.IsPassword() == true)
+            if (FController.Instance.user.IsAccount() == true && FController.Instance.user.IsPassword() == true)
             {
                 if(FController.Instance.accountDAO.CreateAccount(FController.Instance.user) == true)
                 {
                     FController.Instance.infoDAO.Insert(FController.Instance.user);
+                    Close();
+                    FController.Instance.InitializeLogin();
                 }    
             }
         }
