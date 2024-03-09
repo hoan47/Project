@@ -11,10 +11,12 @@ namespace Project
     public class DAO
     {
         protected SqlConnection sqlConnection;
+        protected string table;
 
-        public DAO()
+        public DAO(string table)
         {
             sqlConnection = new SqlConnection($@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = {AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.Length - 10) + "DatabaseProject.mdf"}; Integrated Security = True");
+            this.table = table;
         }
     }
 }

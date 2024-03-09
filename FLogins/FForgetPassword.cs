@@ -22,7 +22,7 @@ namespace Project
             FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (FController.Instance.accountDAO.FindAccount() == true)
+                if (FController.Instance.accountDAO.FindAccount(FController.Instance.user) == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -45,7 +45,7 @@ namespace Project
             FController.Instance.user = new User(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             if (FController.Instance.user.IsPassword() == true)
             {
-                FController.Instance.accountDAO.UpdatePasswored();
+                FController.Instance.accountDAO.UpdatePasswored(FController.Instance.user);
             }
         }
     }

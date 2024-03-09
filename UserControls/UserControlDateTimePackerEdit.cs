@@ -15,7 +15,7 @@ namespace Project
         private Color colorTextBoxEnter = Color.FromArgb(255, 128, 0);
         private Color colorTextBoxLeave = Color.FromArgb(64, 64, 64);
         public string LabelText { get { return label.Text; } set { label.Text = value; } }
-        public string TextBoxText { get { return dateTimePicker.Text; } set { dateTimePicker.Text = value; } }
+        public string DateTimePickerText { get { return dateTimePicker.Text; } set { dateTimePicker.Text = value; } }
 
         public UserControlDateTimePackerEdit()
         {

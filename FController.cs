@@ -15,6 +15,7 @@ namespace Project
         static public FController Instance { get; private set; }
         public User user;
         public AccountDAO accountDAO;
+        public InfoDAO infoDAO;
         private Form currentFromChild;
 
         public FController()
@@ -22,6 +23,7 @@ namespace Project
             FController.Instance = this;
             user = new User();
             accountDAO = new AccountDAO();
+            infoDAO = new InfoDAO();
             InitializeComponent();
             InitializeLogin();
         }

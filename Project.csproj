@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="DAOScripts\AccountDAO.cs" />
     <Compile Include="DAOScripts\DAO.cs" />
+    <Compile Include="DAOScripts\InfoDAO.cs" />
     <Compile Include="FController.cs">
       <SubType>Form</SubType>
     </Compile>

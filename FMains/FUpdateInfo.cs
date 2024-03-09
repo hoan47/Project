@@ -15,6 +15,14 @@ namespace Project
         public FUpdateInfo()
         {
             InitializeComponent();
+            GetData();
+        }
+
+        private void GetData()
+        {
+            labelUser.Text = FController.Instance.user.UserName;
+            userControlTextBoxEditName.TextBoxText = FController.Instance.user.Name;
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString();
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)

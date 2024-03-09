@@ -21,6 +21,8 @@ namespace Project
         public string IdCard { get; private set; }
         public string Email { get; private set; }
         public string Phone { get; private set; }
+        public int ImageId { get; private set; }
+        public Byte[] ImageBytes { get; private set; }
 
         public User() { }
 
@@ -34,6 +36,21 @@ namespace Project
             UserName = userName;
             Password = password;
             NewPassword = newPassword;
+        }
+
+        public User(string userName, string password, string name, DateTime dateOfBirth, string gender, string address, string idCard, string email, string phone, int imageID, byte[] imageBytes)
+        {
+            UserName = userName;
+            Password = NewPassword = password;
+            Name = name;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            AddRess = address;
+            IdCard = idCard;
+            Email = email;
+            Phone = phone;
+            ImageId = imageID;
+            ImageBytes = imageBytes;
         }
 
         public bool IsAccount()

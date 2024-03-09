@@ -13,9 +13,12 @@ namespace Project
 {
     public class AccountDAO : DAO
     {
-        public bool Login()
+        public AccountDAO() : base("Account")
+        { }
+
+        public bool Login(User user)
         {
-            if (FindAccount() == false)
+            if (FindAccount(user) == false)
             {
                 ShowMessage.ShowWarning("Tài khoản không tồn tại.");
                 return false;
@@ -23,9 +26,9 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName = '{FController.Instance.user.UserName}' and password = '{FController.Instance.user.Password}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
 
-                if ((int)checkAccountCmd.ExecuteScalar() != 0)
+                if ((int)selectCMD.ExecuteScalar() != 0)
                 {
                     ShowMessage.ShowNotification("Đăng nhập thành công.");
                     return true;
@@ -47,9 +50,9 @@ namespace Project
             return false;
         }
 
-        public bool CreateAccount()
+        public bool CreateAccount(User user)
         {
-            if (FindAccount() == true)
+            if (FindAccount(user) == true)
             {
                 ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
                 return false;
@@ -57,9 +60,9 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertAccountCmd = new SqlCommand($"INSERT Account VALUES ('{FController.Instance.user.UserName}', '{FController.Instance.user.Password}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"INSERT {table} VALUES ('{user.UserName}', '{user.Password}')", sqlConnection);
 
-                if (insertAccountCmd.ExecuteNonQuery() == 1)
+                if (insertCMD.ExecuteNonQuery() == 1)
                 {
                     ShowMessage.ShowNotification("Tạo tài khoản thành công.");
                     return true;
@@ -76,14 +79,14 @@ namespace Project
             return false;
         }
 
-        public bool FindAccount()
+        public bool FindAccount(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand checkAccountCmd = new SqlCommand($"SELECT COUNT(*) FROM Account WHERE userName COLLATE Latin1_General_CS_AS = '{FController.Instance.user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName COLLATE Latin1_General_CS_AS = '{user.UserName}'", sqlConnection);
 
-                return (int)checkAccountCmd.ExecuteScalar() != 0;
+                return (int)selectCMD.ExecuteScalar() != 0;
             }
             catch (Exception e)
             {
@@ -96,14 +99,14 @@ namespace Project
             return false;
         }
 
-        public void UpdatePasswored()
+        public void UpdatePasswored(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand updatePassword = new SqlCommand($"UPDATE Account SET password = '{FController.Instance.user.NewPassword}' WHERE userName = '{FController.Instance.user.UserName}'", sqlConnection);
+                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET password = '{user.NewPassword}' WHERE userName = '{user.UserName}'", sqlConnection);
 
-                if (updatePassword.ExecuteNonQuery() == 1)
+                if (updateCMD.ExecuteNonQuery() == 1)
                 {
                     ShowMessage.ShowNotification("Đổi mật khẩu thành công");
                 }

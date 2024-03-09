@@ -78,7 +78,6 @@ namespace Project
             this.userControlTextBoxNewPassword.Size = new System.Drawing.Size(314, 49);
             this.userControlTextBoxNewPassword.TabIndex = 2;
             this.userControlTextBoxNewPassword.TextBoxText = "";
-            this.userControlTextBoxNewPassword.Load += new System.EventHandler(this.userControlTextBoxNewPassword_Load);
             // 
             // userControlTextBoxPassword
             // 
