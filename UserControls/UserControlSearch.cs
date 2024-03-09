@@ -13,6 +13,7 @@ namespace Project.UserControls
     public partial class UserControlSearch : UserControl
     {
         public string TextVisible { get; set; }
+
         public UserControlSearch()
         {
             InitializeComponent();
