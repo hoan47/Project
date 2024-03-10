@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
             System.Windows.Forms.Button buttonDeleteImage;
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.panelBackground = new System.Windows.Forms.Panel();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.labelUser = new System.Windows.Forms.Label();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
             this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
@@ -39,11 +44,6 @@
             this.userControlTextBoxEditAddress = new Project.UserControlTextBoxEdit();
             this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
             this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.panelImage = new System.Windows.Forms.Panel();
-            this.panelBackground = new System.Windows.Forms.Panel();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.labelUser = new System.Windows.Forms.Label();
             buttonChangeImage = new System.Windows.Forms.Button();
             buttonDeleteImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
@@ -96,6 +96,66 @@
             this.panelInfo.Size = new System.Drawing.Size(621, 466);
             this.panelInfo.TabIndex = 1;
             this.panelInfo.TabStop = true;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.AutoSize = true;
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUpdate.Location = new System.Drawing.Point(288, 400);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(50, 50);
+            this.buttonUpdate.TabIndex = 7;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            // 
+            // panelImage
+            // 
+            this.panelImage.BackColor = System.Drawing.Color.Transparent;
+            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelImage.Controls.Add(buttonDeleteImage);
+            this.panelImage.Controls.Add(this.panelBackground);
+            this.panelImage.Controls.Add(this.labelUser);
+            this.panelImage.Controls.Add(buttonChangeImage);
+            this.panelImage.Location = new System.Drawing.Point(48, 82);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(305, 346);
+            this.panelImage.TabIndex = 0;
+            this.panelImage.TabStop = true;
+            // 
+            // panelBackground
+            // 
+            this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
+            this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelBackground.Controls.Add(this.pictureBoxImage);
+            this.panelBackground.Location = new System.Drawing.Point(35, 34);
+            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelBackground.Name = "panelBackground";
+            this.panelBackground.Size = new System.Drawing.Size(240, 240);
+            this.panelBackground.TabIndex = 0;
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(25, 26);
+            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(190, 190);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImage.TabIndex = 23;
+            this.pictureBoxImage.TabStop = false;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.Color.Black;
+            this.labelUser.Location = new System.Drawing.Point(120, 34);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(0, 20);
+            this.labelUser.TabIndex = 0;
             // 
             // userControlTextBoxEditPhone
             // 
@@ -166,66 +226,6 @@
             this.userControlTextBoxEditName.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditName.TabIndex = 0;
             this.userControlTextBoxEditName.TextBoxText = "";
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.AutoSize = true;
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUpdate.Location = new System.Drawing.Point(288, 400);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(50, 50);
-            this.buttonUpdate.TabIndex = 7;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
-            // 
-            // panelImage
-            // 
-            this.panelImage.BackColor = System.Drawing.Color.Transparent;
-            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelImage.Controls.Add(buttonDeleteImage);
-            this.panelImage.Controls.Add(this.panelBackground);
-            this.panelImage.Controls.Add(this.labelUser);
-            this.panelImage.Controls.Add(buttonChangeImage);
-            this.panelImage.Location = new System.Drawing.Point(48, 82);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(305, 346);
-            this.panelImage.TabIndex = 0;
-            this.panelImage.TabStop = true;
-            // 
-            // panelBackground
-            // 
-            this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
-            this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBackground.Controls.Add(this.pictureBoxImage);
-            this.panelBackground.Location = new System.Drawing.Point(35, 34);
-            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(240, 240);
-            this.panelBackground.TabIndex = 0;
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(25, 26);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(190, 190);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxImage.TabIndex = 23;
-            this.pictureBoxImage.TabStop = false;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.ForeColor = System.Drawing.Color.Black;
-            this.labelUser.Location = new System.Drawing.Point(120, 34);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 20);
-            this.labelUser.TabIndex = 0;
             // 
             // FUpdateInfo
             // 
