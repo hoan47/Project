@@ -75,10 +75,10 @@ namespace Project
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.Location = new System.Drawing.Point(13, 18);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(48, 20);
+            this.label.Size = new System.Drawing.Size(52, 20);
             this.label.TabIndex = 0;
             this.label.Text = "SDT ";
             // 
