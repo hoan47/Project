@@ -6,36 +6,44 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FUpdateInfo : Form
+    public partial class FUpdateInfo : Form, IUser
     {
-        public FUpdateInfo()
+        public User User { get; set; }
+        public AccountDAO AccountDAO { get; set; }
+        public InfoDAO InfoDAO { get; set; }
+
+        public FUpdateInfo(User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            User = user;
+            AccountDAO = accountDAO;
+            InfoDAO = infoDAO;
             LoadData();
         }
 
         private void LoadData()
         {
-            labelUser.Text = FController.Instance.user.UserName;
-            userControlTextBoxEditName.TextBoxText = FController.Instance.user.Name;
-            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.user.DateOfBirth.ToString();
-            userControlRadioButtonEditGender.GenderText = FController.Instance.user.Gender;
-            userControlTextBoxEditAddress.TextBoxText = FController.Instance.user.Address;
-            userControlTextBoxEditIdCard.TextBoxText = FController.Instance.user.IdCard;
-            userControlTextBoxEditEmail.TextBoxText = FController.Instance.user.Email;
-            userControlTextBoxEditPhone.TextBoxText = FController.Instance.user.Phone;
-            if (ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.man) ==true || ProcessImage.Comparer(FController.Instance.user.Image, Properties.Resources.girl) == true)
+            labelUser.Text = User.UserName;
+            userControlTextBoxEditName.TextBoxText = User.Name;
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = User.DateOfBirth.ToString();
+            userControlRadioButtonEditGender.GenderText = User.Gender;
+            userControlTextBoxEditAddress.TextBoxText = User.Address;
+            userControlTextBoxEditIdCard.TextBoxText = User.IdCard;
+            userControlTextBoxEditEmail.TextBoxText = User.Email;
+            userControlTextBoxEditPhone.TextBoxText = User.Phone;
+            if (ProcessImage.Comparer(User.Image, Properties.Resources.man) ==true || ProcessImage.Comparer(User.Image, Properties.Resources.girl) == true)
             {
                 GetImageNormal();
             }    
             else
             {
-                pictureBoxImage.Image = FController.Instance.user.Image;
+                pictureBoxImage.Image = User.Image;
             }    
         }
 
@@ -68,18 +76,21 @@ namespace Project
         {
             User newUser = new User();
             DateTime dateTime;
-
             if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
             {
                 newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
-                    FController.Instance.user.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
-                    if(FController.Instance.infoDAO.Update() == true)
+                    UserControlLoading userControlLoading = new UserControlLoading(this, 500);
+
+                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                    userControlLoading.OnLoading();
+                    if (InfoDAO.Update() == true)
                     {
                         ShowMessage.ShowNotification("Cập nhật thành công");
                         LoadData();
-                    }    
+                    }
+                    userControlLoading.OffLoading();
                 }
             }
         }
@@ -91,7 +102,7 @@ namespace Project
 
         private void GetImageNormal()
         {
-            pictureBoxImage.Image = FController.Instance.user.Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
+            pictureBoxImage.Image = User.Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
         }
     }
 }

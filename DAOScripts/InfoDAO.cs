@@ -10,20 +10,20 @@ namespace Project
 {
     public class InfoDAO : DAO
     {
-        public InfoDAO() : base("Info")
-        { }
+        public InfoDAO(User user) : base("Info", user)
+        {  }
 
         public void Access()
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
                 SqlDataReader dataInfo = selectCMD.ExecuteReader();
 
                 if (dataInfo.Read())
                 {
-                    FController.Instance.user.UpdateInfo(
+                    user.UpdateInfo(
                         dataInfo.IsDBNull(1) ? null : dataInfo[1].ToString(),
                         dataInfo.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(dataInfo[2]),
                         dataInfo.IsDBNull(3) ? "Nam" : dataInfo[3].ToString(),
@@ -52,7 +52,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName) values('{FController.Instance.user.UserName}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName) values('{user.UserName}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -76,23 +76,23 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand insertCMD = new SqlCommand($"UPDATE {table} SET " +
-                 $"name = N'{FController.Instance.user.Name}', " +
-                 $"dateOfBirth = '{FController.Instance.user.DateOfBirth.ToString("yyyyMMdd")}', " +
-                 $"gender = N'{FController.Instance.user.Gender}', " +
-                 $"address = N'{FController.Instance.user.Address}', " +
-                 $"idCard = '{FController.Instance.user.IdCard}', " +
-                 $"email = '{FController.Instance.user.Email}', " +
-                 $"phone = '{FController.Instance.user.Phone}', " +
+                 $"name = N'{user.Name}', " +
+                 $"dateOfBirth = '{user.DateOfBirth.ToString("yyyyMMdd")}', " +
+                 $"gender = N'{user.Gender}', " +
+                 $"address = N'{user.Address}', " +
+                 $"idCard = '{user.IdCard}', " +
+                 $"email = '{user.Email}', " +
+                 $"phone = '{user.Phone}', " +
                  $"imageBytes = @imageBytes " +
-                 $"WHERE userName = '{FController.Instance.user.UserName}'", sqlConnection);
+                 $"WHERE userName = '{user.UserName}'", sqlConnection);
 
-                if (FController.Instance.user.Image == null)
+                if (user.Image == null)
                 {
                     insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = DBNull.Value;
                 }
                 else
                 {
-                    insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(FController.Instance.user.Image);
+                    insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(user.Image);
                 }
 
                 if (insertCMD.ExecuteNonQuery() == 1)

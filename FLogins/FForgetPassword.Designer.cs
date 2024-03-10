@@ -35,6 +35,7 @@ namespace Project
             this.panelPassword = new System.Windows.Forms.Panel();
             this.buttonUpdatePassword = new System.Windows.Forms.Button();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.userControlTextBoxPassword = new Project.UserControls.UserControlTextBoxPassword();
             this.userControlTextBoxAccount = new Project.UserControls.UserControlTextBoxAccount();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -51,12 +52,12 @@ namespace Project
             this.buttonFindAccount.TabIndex = 1;
             this.buttonFindAccount.Text = "Tìm tài khoản";
             this.buttonFindAccount.UseVisualStyleBackColor = true;
-            this.buttonFindAccount.Click += new System.EventHandler(this.ButtonCreateAccountClick);
+            this.buttonFindAccount.Click += new System.EventHandler(this.ButtonFindAccountClick);
             // 
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(7, 4);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(4, 37);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -67,10 +68,10 @@ namespace Project
             // 
             this.panelPassword.Controls.Add(this.userControlTextBoxPassword);
             this.panelPassword.Controls.Add(this.buttonUpdatePassword);
-            this.panelPassword.Location = new System.Drawing.Point(163, 85);
+            this.panelPassword.Location = new System.Drawing.Point(160, 118);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(314, 80);
-            this.panelPassword.TabIndex = 1;
+            this.panelPassword.TabIndex = 2;
             this.panelPassword.TabStop = true;
             this.panelPassword.Visible = false;
             // 
@@ -89,15 +90,27 @@ namespace Project
             // 
             this.panelAccount.Controls.Add(this.userControlTextBoxAccount);
             this.panelAccount.Controls.Add(this.buttonFindAccount);
-            this.panelAccount.Location = new System.Drawing.Point(164, 0);
+            this.panelAccount.Location = new System.Drawing.Point(161, 33);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(314, 80);
-            this.panelAccount.TabIndex = 0;
+            this.panelAccount.TabIndex = 1;
             this.panelAccount.TabStop = true;
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
+            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBack.Location = new System.Drawing.Point(431, 12);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(35, 27);
+            this.buttonBack.TabIndex = 3;
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.Back);
             // 
             // userControlTextBoxPassword
             // 
             this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxPassword.LableText = "Mật khẩu mới";
             this.userControlTextBoxPassword.Location = new System.Drawing.Point(0, 0);
             this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
             this.userControlTextBoxPassword.Size = new System.Drawing.Size(314, 50);
@@ -118,7 +131,8 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(477, 168);
+            this.ClientSize = new System.Drawing.Size(475, 205);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.panelAccount);
@@ -126,6 +140,7 @@ namespace Project
             this.Name = "FForgetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FForgotPassword";
+            this.Load += new System.EventHandler(this.FForgetPasswordLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
@@ -143,6 +158,7 @@ namespace Project
         private System.Windows.Forms.Panel panelAccount;
         private System.Windows.Forms.Button buttonUpdatePassword;
         private UserControls.UserControlTextBoxAccount userControlTextBoxAccount;
+        private System.Windows.Forms.Button buttonBack;
         private UserControls.UserControlTextBoxPassword userControlTextBoxPassword;
     }
 }

@@ -12,7 +12,6 @@ namespace Project
 {
     public partial class FController : Form
     {
-        static public FController Instance { get; private set; }
         public User user;
         public AccountDAO accountDAO;
         public InfoDAO infoDAO;
@@ -20,20 +19,19 @@ namespace Project
 
         public FController()
         {
-            FController.Instance = this;
             user = new User();
-            accountDAO = new AccountDAO();
-            infoDAO = new InfoDAO();
+            accountDAO = new AccountDAO(user);
+            infoDAO = new InfoDAO(user);
             InitializeComponent();
             InitializeFLogin();
         }
 
         private void OpenFormChild(Form formChild)
         {
-            if(currentFromChild != null)
+            if (currentFromChild != null)
             {
                 currentFromChild.Close();
-            }    
+            }
             currentFromChild = formChild;
             formChild.TopLevel = false;
             Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
@@ -45,13 +43,22 @@ namespace Project
 
         public void InitializeFLogin()
         {
-            OpenFormChild(new FLogin());
+            OpenFormChild(new FLogin(this, user, accountDAO, infoDAO));
+        }
+
+        public void InitializeFCreateAccount()
+        {
+            OpenFormChild(new FCreateAccount(this, user, accountDAO, infoDAO));
+        }
+
+        public void InitializeFForgetPassword()
+        {
+            OpenFormChild(new FForgetPassword(this, user, accountDAO, infoDAO));
         }
 
         public void InitializeFMain()
         {
-            OpenFormChild(new FMain());
+            OpenFormChild(new FMain(this, user, accountDAO, infoDAO));
         }
-
     }
 }

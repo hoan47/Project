@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FMain : Form
+    public partial class FMain : Form, IUser
     {
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
-        public FMain()
+
+        public FController fController { get; set; }
+        public User User { get; set; }
+        public AccountDAO AccountDAO { get; set; }
+        public InfoDAO InfoDAO { get; set; }
+
+        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            this.fController = fController;
+            User = user;
+            AccountDAO = accountDAO;
+            InfoDAO = infoDAO;
         }
 
         private void OpenFormChild(Form formChild, ToolStripButton toolStripButton)
@@ -25,12 +35,17 @@ namespace Project
             {
                 formChildCurrent.Close();
             }
+            UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
+            userControlLoading.OnLoading();
+            userControlLoading.OnLoading();
             formChildCurrent = formChild;
             formChild.TopLevel = false;
+            formChild.Size = panelMain.Size;
             panelMain.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
             toolStripButton.BackColor = formChild.BackColor;
+            userControlLoading.OffLoading();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)
@@ -42,7 +57,7 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(), toolStripButtonInfo);
+                OpenFormChild(new FUpdateInfo(User, AccountDAO, InfoDAO), toolStripButtonInfo);
             }
             else if (sender == toolStripButtonHomePage)
             {

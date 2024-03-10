@@ -6,67 +6,55 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FLogin : Form
+    public partial class FLogin : Form, IUser
     {
-        private Form currentFromChild;
+        public FController fController;
+        public User User { get; set; }
+        public AccountDAO AccountDAO { get; set; }
+        public InfoDAO InfoDAO { get; set; }
 
-        public FLogin()
+        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
-        }
-
-        private void OpenFormChild(Form formChild)
-        {
-            VisibleControlPanelMain();
-            currentFromChild = formChild;
-            formChild.TopLevel = false;
-            panelMain.Controls.Add(formChild);
-            formChild.BringToFront();
-            formChild.Show();
-        }
-
-        private void VisibleControlPanelMain()
-        {
-            foreach (Control control in panelMain.Controls)
-            {
-                control.Visible = !control.Visible;
-            }
+            this.fController = fController;
+            User = user;
+            AccountDAO = accountDAO;
+            InfoDAO = infoDAO;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenFormChild(new FCreateAccount());
-            buttonComback.Visible = true;
+            fController.InitializeFCreateAccount();
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenFormChild(new FForgetPassword());
-            buttonComback.Visible = true;
+            fController.InitializeFForgetPassword();
         }
-
 
         private void ButtonLoginClick(object sender, EventArgs e)
         {
-            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword1.TextBoxText, userControlTextBoxPassword1.TextBoxText);
-            if (FController.Instance.accountDAO.Login() == true)
+            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            if (AccountDAO.Login() == true)
             {
-                FController.Instance.infoDAO.Access();
-                FController.Instance.InitializeFMain();
+                InfoDAO.Access();
+                fController.InitializeFMain();
+                UserControlLoading userControlLoading = new UserControlLoading(fController, 1000);
+                userControlLoading.OnLoading();
                 Close();
+                userControlLoading.OffLoading();
             }
         }
 
-        private void ButtonCombackClick(object sender, EventArgs e)
+        private void FLoginLoad(object sender, EventArgs e)
         {
-            VisibleControlPanelMain();
-            buttonComback.Visible = false;
-            currentFromChild.Close();
+            userControlTextBoxAccount.Focus();
         }
     }
 }

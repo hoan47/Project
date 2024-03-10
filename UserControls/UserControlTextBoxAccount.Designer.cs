@@ -31,8 +31,9 @@ namespace Project.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlTextBoxAccount));
             this.panelRoad = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,16 +45,6 @@ namespace Project.UserControls
             this.panelRoad.Size = new System.Drawing.Size(274, 3);
             this.panelRoad.TabIndex = 6;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(20, 9);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 5;
-            this.pictureBox.TabStop = false;
-            // 
             // textBox
             // 
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -64,13 +55,38 @@ namespace Project.UserControls
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(234, 30);
             this.textBox.TabIndex = 0;
+            this.textBox.Enter += new System.EventHandler(this.TextBoxEnter);
             this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
+            this.textBox.Leave += new System.EventHandler(this.TextBoxLeave);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(20, 9);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 5;
+            this.pictureBox.TabStop = false;
+            // 
+            // label
+            // 
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label.Location = new System.Drawing.Point(60, 9);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(234, 30);
+            this.label.TabIndex = 0;
+            this.label.Text = "Tài khoản";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label.Click += new System.EventHandler(this.LabelClick);
             // 
             // UserControlTextBoxAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.label);
             this.Controls.Add(this.panelRoad);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.textBox);
@@ -87,5 +103,6 @@ namespace Project.UserControls
         private System.Windows.Forms.Panel panelRoad;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Label label;
     }
 }

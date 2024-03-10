@@ -10,19 +10,28 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FForgetPassword : Form
+    public partial class FForgetPassword : Form, IUser
     {
-        public FForgetPassword()
+        public FController fController { get; set; }
+        public User User { get; set; }
+        public AccountDAO AccountDAO { get; set; }
+        public InfoDAO InfoDAO { get; set; }
+
+        public FForgetPassword(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            this.fController = fController;
+            this.User = user;
+            this.AccountDAO = accountDAO;
+            this.InfoDAO = infoDAO;
         }
 
-        private void ButtonCreateAccountClick(object sender, EventArgs e)
+        private void ButtonFindAccountClick(object sender, EventArgs e)
         {
-            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText);
+            User.Update(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (FController.Instance.accountDAO.FindAccount() == true)
+                if (AccountDAO.FindAccount() == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -42,13 +51,23 @@ namespace Project
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
-            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (FController.Instance.user.IsPassword() == true)
+            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            if (User.IsPassword() == true)
             {
-                FController.Instance.accountDAO.UpdatePasswored(FController.Instance.user);
-                Close();
-                FController.Instance.InitializeFLogin();
+                AccountDAO.UpdatePasswored(User);
+                Back(sender, e);
             }
+        }
+
+        private void Back(object sender, EventArgs e)
+        {
+            fController.InitializeFLogin();
+            Close();
+        }
+
+        private void FForgetPasswordLoad(object sender, EventArgs e)
+        {
+            userControlTextBoxAccount.Focus();
         }
     }
 }

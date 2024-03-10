@@ -82,6 +82,7 @@
     <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="IUser.cs" />
     <Compile Include="FMains\FHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +140,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlLoading.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlLoading.Designer.cs">
+      <DependentUpon>UserControlLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlLoading.resx">
+      <DependentUpon>UserControlLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>

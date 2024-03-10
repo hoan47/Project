@@ -12,7 +12,8 @@ namespace Project.UserControls
 {
     public partial class UserControlTextBoxPassword : UserControl
     {
-        public string TextBoxText { get { return textBoxPassword.Text; } set { textBoxPassword.Text = value; } }
+        public string LableText { get { return label.Text; } set { label.Text = value; } }
+        public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
 
         public UserControlTextBoxPassword()
         {
@@ -25,6 +26,25 @@ namespace Project.UserControls
             {
                 e.Handled = true;
             }
+        }
+
+        private void LabelClick(object sender, EventArgs e)
+        {
+            label.Visible = false;
+            textBox.Focus();
+        }
+
+        private void TextBoxLeave(object sender, EventArgs e)
+        {
+            if (textBox.Text == string.Empty)
+            {
+                label.Visible = true;
+            }
+        }
+
+        private void TextBoxEnter(object sender, EventArgs e)
+        {
+            label.Visible = false;
         }
     }
 }

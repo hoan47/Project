@@ -10,25 +10,44 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FCreateAccount : Form
+    public partial class FCreateAccount : Form, IUser
     {
-        public FCreateAccount()
+        public FController fController { get; set; }
+        public User User { get; set; }
+        public AccountDAO AccountDAO { get; set; }
+        public InfoDAO InfoDAO { get; set; }
+
+        public FCreateAccount(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            this.fController = fController;
+            this.User = user;
+            this.AccountDAO = accountDAO;
+            this.InfoDAO = infoDAO;
         }
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-            FController.Instance.user.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
-            if (FController.Instance.user.IsAccount() == true && FController.Instance.user.IsPassword() == true)
+            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            if (User.IsAccount() == true && User.IsPassword() == true)
             {
-                if(FController.Instance.accountDAO.CreateAccount() == true)
+                if(AccountDAO.CreateAccount() == true)
                 {
-                    FController.Instance.infoDAO.Insert();
-                    Close();
-                    FController.Instance.InitializeFLogin();
+                    InfoDAO.Insert();
+                    Back(sender, e);
                 }    
             }
+        }
+
+        private void Back(object sender, EventArgs e)
+        {
+            fController.InitializeFLogin();
+            Close();
+        }
+
+        private void FCreateAccountLoad(object sender, EventArgs e)
+        {
+            userControlTextBoxAccount.Focus();
         }
     }
 }
