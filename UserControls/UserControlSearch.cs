@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Project.UserControls
 {
-    public partial class UserControlSearch : UserControl
+    public partial class UserControlSearch : System.Windows.Forms.UserControl
     {
         public string TextVisible { get; set; }
 

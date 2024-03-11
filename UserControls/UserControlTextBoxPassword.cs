@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Project.UserControls
 {
-    public partial class UserControlTextBoxPassword : UserControl
+    public partial class UserControlTextBoxPassword : System.Windows.Forms.UserControl
     {
         public string LableText { get { return label.Text; } set { label.Text = value; } }
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }

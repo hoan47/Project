@@ -15,6 +15,10 @@ namespace Project
         public FService()
         {
             InitializeComponent();
+            for(int i=1; i<5; i++)
+            {
+                flowLayoutPanelService.Controls.Add(new UserControlHotel());
+            }
         }
     }
 }

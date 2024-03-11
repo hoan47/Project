@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Project.UserControls
 {
-    public partial class UserControlTextBoxAccount : UserControl
+    public partial class UserControlTextBoxAccount : System.Windows.Forms.UserControl
     {
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
 
