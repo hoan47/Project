@@ -36,6 +36,7 @@ namespace Project
             this.userControlTextBoxPassword = new Project.UserControls.UserControlTextBoxPassword();
             this.userControlTextBoxAccount = new Project.UserControls.UserControlTextBoxAccount();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,5 +139,6 @@ namespace Project
         private UserControls.UserControlTextBoxAccount userControlTextBoxAccount;
         private UserControls.UserControlTextBoxPassword userControlTextBoxPassword;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }

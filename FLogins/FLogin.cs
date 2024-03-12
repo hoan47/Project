@@ -19,10 +19,11 @@ namespace Project
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
 
-
         public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
+            backgroundWorker.RunWorkerCompleted += DackgroundWorkerRunWorkerCompletedLogin;
             this.fController = fController;
             User = user;
             AccountDAO = accountDAO;
@@ -42,10 +43,8 @@ namespace Project
         private void ButtonLoginClick(object sender, EventArgs e)
         {
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-
             fController.userControlLoading = new UserControlLoading(fController, 1000);
-            fController.ConfigureBackgroundWorker(BackgroundWorkerDoWorkLogin, DackgroundWorkerRunWorkerCompletedLogin);
-            fController.StartBackgroundWork();
+            backgroundWorker.RunWorkerAsync();
         }
 
         private void FLoginLoad(object sender, EventArgs e)
@@ -56,11 +55,12 @@ namespace Project
         public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
         {
             bool isSuccess = AccountDAO.Login();
+
             if (isSuccess == true)
             {
                 InfoDAO.Access();
-                e.Result = isSuccess;
             }
+            e.Result = isSuccess;
         }
 
         public void DackgroundWorkerRunWorkerCompletedLogin(object sender, RunWorkerCompletedEventArgs e)
@@ -72,7 +72,6 @@ namespace Project
                 fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
             }
             fController.userControlLoading.OffLoading();
-            fController.DropBackgroundWorker(BackgroundWorkerDoWorkLogin, DackgroundWorkerRunWorkerCompletedLogin);
         }
     }
 }

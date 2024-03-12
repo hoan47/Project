@@ -91,6 +91,12 @@
     <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMains\UserControlMap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FMains\UserControlMap.Designer.cs">
+      <DependentUpon>UserControlMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="IUser.cs" />
     <Compile Include="FMains\FHistory.cs">
       <SubType>Form</SubType>
@@ -241,6 +247,9 @@
     <EmbeddedResource Include="FLogins\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\UserControlMap.resx">
+      <DependentUpon>UserControlMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

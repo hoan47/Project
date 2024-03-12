@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // panelMain
