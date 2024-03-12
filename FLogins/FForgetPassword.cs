@@ -54,7 +54,7 @@ namespace Project
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             if (User.IsPassword() == true)
             {
-                AccountDAO.UpdatePasswored(User);
+                AccountDAO.Update();
                 Back(sender, e);
             }
         }

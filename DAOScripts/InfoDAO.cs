@@ -85,16 +85,7 @@ namespace Project
                  $"phone = '{user.Phone}', " +
                  $"imageBytes = @imageBytes " +
                  $"WHERE userName = '{user.UserName}'", sqlConnection);
-
-                if (user.Image == null)
-                {
-                    insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = DBNull.Value;
-                }
-                else
-                {
-                    insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(user.Image);
-                }
-
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(user.Image);
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
                     return true;

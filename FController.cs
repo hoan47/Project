@@ -15,6 +15,7 @@ namespace Project
         public User user;
         public AccountDAO accountDAO;
         public InfoDAO infoDAO;
+        public ClientDAO clientDAO;
         private Form currentFromChild;
 
         public FController()
@@ -22,6 +23,7 @@ namespace Project
             user = new User();
             accountDAO = new AccountDAO(user);
             infoDAO = new InfoDAO(user);
+            clientDAO = new ClientDAO(user);
             InitializeComponent();
             InitializeFLogin();
         }
@@ -33,9 +35,27 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            formChild.TopLevel = false;
             Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
-            panelMain.Controls.Add(formChild);
+            ProcessOpenFormChild(formChild);
+        }
+
+        private void OpenFormMessage(Form formChild, Form formParent = null)
+        {
+            ProcessOpenFormChild(formChild, formParent);
+            formChild.Size = formParent != null ? formParent.Size : Size;
+        }
+
+        private void ProcessOpenFormChild(Form formChild, Form formParent = null)
+        {
+            formChild.TopLevel = false;
+            if (formParent == null)
+            {
+                panelMain.Controls.Add(formChild);
+            }
+            else
+            {
+                formParent.Controls.Add(formChild);
+            }    
             formChild.BringToFront();
             formChild.Show();
             CenterToScreen();
@@ -59,6 +79,21 @@ namespace Project
         public void InitializeFMain()
         {
             OpenFormChild(new FMain(this, user, accountDAO, infoDAO));
+        }
+
+        public void MessageSuccess(string tile, string content, Form formParent = null)
+        {
+            OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.success), formParent);
+        }
+
+        public void MessageWarning(string tile, string content, Form formParent = null)
+        {
+            OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.warning), formParent);
+
+        }
+        public void MessageError(string tile, string content)
+        {
+            OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.error));
         }
     }
 }

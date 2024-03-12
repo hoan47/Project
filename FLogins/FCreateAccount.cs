@@ -21,9 +21,9 @@ namespace Project
         {
             InitializeComponent();
             this.fController = fController;
-            this.User = user;
-            this.AccountDAO = accountDAO;
-            this.InfoDAO = infoDAO;
+            User = user;
+            AccountDAO = accountDAO;
+            InfoDAO = infoDAO;
         }
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace Project
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
             if (User.IsAccount() == true && User.IsPassword() == true)
             {
-                if(AccountDAO.CreateAccount() == true)
+                if(AccountDAO.Insert() == true)
                 {
                     InfoDAO.Insert();
                     Back(sender, e);

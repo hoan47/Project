@@ -24,8 +24,10 @@ namespace Project
         public string Phone { get; private set; }
         public int ImageId { get; private set; }
         public Image Image { get; private set; }
+        public Client Client { get; private set; }
 
-        public User() { }
+        public User() 
+        { }
 
         public void Update(string userName)
         {
@@ -39,11 +41,6 @@ namespace Project
             NewPassword = newPassword;
         }
 
-        public void UpdateInfo(Image image)
-        {
-            Image = image;
-        }
-
         public void UpdateInfo(string name, DateTime dateOfBirth, string gender, string address, string idCard, string email, string phone, Image image)
         {
             Name = name;
@@ -55,6 +52,7 @@ namespace Project
             Phone = phone;
             Image = image;
             StandardizedName();
+            InitializeClient();
         }
 
         public void UpdateInfo(string name, DateTime dateOfBirth, string gender, string address, string idCard, string email, string phone, int imageID, Image image)
@@ -69,6 +67,20 @@ namespace Project
             ImageId = imageID;
             Image = image;
             StandardizedName();
+            InitializeClient();
+        }
+
+        private void InitializeClient()
+        {
+            if (Client == null && Name != null && Address != null && IdCard != null && Email != null && Phone != null)
+            {
+                Client = new Client(this);
+            }
+        }
+
+        public Image GetImageNormal()
+        {
+            return Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
         }
 
         public bool IsAccount()

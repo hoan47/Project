@@ -49,6 +49,7 @@ namespace Project
                 userControlLoading.OnLoading();
                 Close();
                 userControlLoading.OffLoading();
+                fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
             }
         }
 

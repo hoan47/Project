@@ -14,13 +14,15 @@ namespace Project
 {
     public partial class FUpdateInfo : Form, IUser
     {
+        FController FController { get; set; }
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
 
-        public FUpdateInfo(User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FUpdateInfo(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
+            FController = fController;
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
@@ -37,13 +39,25 @@ namespace Project
             userControlTextBoxEditIdCard.TextBoxText = User.IdCard;
             userControlTextBoxEditEmail.TextBoxText = User.Email;
             userControlTextBoxEditPhone.TextBoxText = User.Phone;
-            if (ProcessImage.Comparer(User.Image, Properties.Resources.man) ==true || ProcessImage.Comparer(User.Image, Properties.Resources.girl) == true)
+            if (ProcessImage.Comparer(User.Image, Properties.Resources.man) == true || ProcessImage.Comparer(User.Image, Properties.Resources.girl) == true)
             {
-                GetImageNormal();
-            }    
+                pictureBoxImage.Image = User.GetImageNormal();
+            }
             else
             {
                 pictureBoxImage.Image = User.Image;
+            }
+            if(User.Client != null)
+            {
+                labelRank.Text = User.Client.RankStr();
+                pictureBoxImageRank.Image = User.Client.RankImage();
+                toolTip.SetToolTip(pictureBoxImageRank, User.Client.StatusRank());
+            }    
+            else
+            {
+                labelRank.Text = "Vô Hạng";
+                pictureBoxImageRank.Image = Properties.Resources.noRank;
+                toolTip.SetToolTip(pictureBoxImageRank, "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng và mở khóa các tính năng khác.");
             }    
         }
 
@@ -74,20 +88,26 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
+            bool isFirstUpdate = User.Client == null;
             User newUser = new User();
             DateTime dateTime;
+
             if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
             {
                 newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
-                    UserControlLoading userControlLoading = new UserControlLoading(this, 500);
+                    UserControlLoading userControlLoading = new UserControlLoading(this, 2000);
 
                     User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                     userControlLoading.OnLoading();
                     if (InfoDAO.Update() == true)
                     {
-                        ShowMessage.ShowNotification("Cập nhật thành công");
+                        if (isFirstUpdate != (User.Client == null))
+                        {
+                            FController.clientDAO.Insert();
+                        }
+                        FController.MessageSuccess("Thông báo", $"Cập nhật thành công {(isFirstUpdate != (User.Client == null) ? ".\nBạn vừa được thăng lên cấp hạng Đồng.\nChúc bạn có trải nghiệm tốt." : string.Empty)}", this);
                         LoadData();
                     }
                     userControlLoading.OffLoading();
@@ -97,12 +117,7 @@ namespace Project
 
         private void ButtonDeleteImageClick(object sender, EventArgs e)
         {
-            GetImageNormal();
-        }
-
-        private void GetImageNormal()
-        {
-            pictureBoxImage.Image = User.Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
+            pictureBoxImage.Image = User.GetImageNormal();
         }
     }
 }
