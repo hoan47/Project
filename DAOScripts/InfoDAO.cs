@@ -24,7 +24,7 @@ namespace Project
                 if (dataInfo.Read())
                 {
                     user.UpdateInfo(
-                        dataInfo.IsDBNull(1) ? null : dataInfo[1].ToString(),
+                        dataInfo.IsDBNull(1) ? "Nguyen Van An" : dataInfo[1].ToString(),
                         dataInfo.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(dataInfo[2]),
                         dataInfo.IsDBNull(3) ? "Nam" : dataInfo[3].ToString(),
                         dataInfo.IsDBNull(4) ? null : dataInfo[4].ToString(),

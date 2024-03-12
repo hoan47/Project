@@ -35,12 +35,12 @@
             this.panelInfo = new System.Windows.Forms.Panel();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.panelBackground = new System.Windows.Forms.Panel();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.labelRank = new System.Windows.Forms.Label();
             this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
             this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
@@ -52,9 +52,9 @@
             buttonChangeImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
-            this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDeleteImage
@@ -121,8 +121,9 @@
             // 
             this.panelImage.BackColor = System.Drawing.Color.Transparent;
             this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelImage.Controls.Add(this.pictureBoxImage);
+            this.panelImage.Controls.Add(this.pictureBox1);
             this.panelImage.Controls.Add(buttonDeleteImage);
-            this.panelImage.Controls.Add(this.panelBackground);
             this.panelImage.Controls.Add(this.labelUser);
             this.panelImage.Controls.Add(buttonChangeImage);
             this.panelImage.Location = new System.Drawing.Point(53, 190);
@@ -132,24 +133,14 @@
             this.panelImage.TabIndex = 0;
             this.panelImage.TabStop = true;
             // 
-            // panelBackground
-            // 
-            this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
-            this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBackground.Controls.Add(this.pictureBoxImage);
-            this.panelBackground.Location = new System.Drawing.Point(13, 7);
-            this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelBackground.Name = "panelBackground";
-            this.panelBackground.Size = new System.Drawing.Size(240, 240);
-            this.panelBackground.TabIndex = 0;
-            // 
             // pictureBoxImage
             // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(25, 26);
+            this.pictureBoxImage.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImage.Image")));
+            this.pictureBoxImage.Location = new System.Drawing.Point(30, 25);
             this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(189, 190);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImage.Size = new System.Drawing.Size(205, 205);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImage.TabIndex = 23;
             this.pictureBoxImage.TabStop = false;
             // 
@@ -181,6 +172,16 @@
             this.pictureBoxImageRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImageRank.TabIndex = 4;
             this.pictureBoxImageRank.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 240);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // userControlTextBoxEditPhone
             // 
@@ -280,9 +281,9 @@
             this.panelInfo.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
-            this.panelBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,7 +292,6 @@
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Panel panelImage;
         private System.Windows.Forms.Label labelUser;
-        private System.Windows.Forms.Panel panelBackground;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Panel panelInfo;
         private UserControlTextBoxEdit userControlTextBoxEditPhone;
@@ -304,5 +304,6 @@
         private System.Windows.Forms.PictureBox pictureBoxImageRank;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label labelRank;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

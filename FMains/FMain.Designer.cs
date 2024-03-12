@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.panelOption = new System.Windows.Forms.Panel();
             this.toolStripOption = new System.Windows.Forms.ToolStrip();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHomePage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
@@ -40,7 +41,6 @@
             this.toolStripButtonSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogOut = new System.Windows.Forms.ToolStripButton();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelOption.SuspendLayout();
             this.toolStripOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
@@ -76,6 +76,16 @@
             this.toolStripOption.TabIndex = 0;
             this.toolStripOption.TabStop = true;
             this.toolStripOption.Text = "toolStrip1";
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 4;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // toolStripButtonInfo
             // 
@@ -178,16 +188,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1040, 630);
             this.panelMain.TabIndex = 2;
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIcon.TabIndex = 4;
-            this.pictureBoxIcon.TabStop = false;
             // 
             // FMain
             // 

@@ -76,7 +76,6 @@ namespace Project
                     Image image = Image.FromFile(imagePath);
 
                     pictureBoxImage.Image = image;
-                    pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
                 }
                 catch(Exception ex)
                 {

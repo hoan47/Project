@@ -98,10 +98,10 @@ namespace Project
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(31, 42);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(12, 30);
             this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(149, 150);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(170, 170);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 3;
             this.pictureBoxIcon.TabStop = false;

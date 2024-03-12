@@ -12,9 +12,13 @@ namespace Project
 {
     public partial class FHomePage : Form
     {
-        public FHomePage()
+        FController fController;
+
+        public FHomePage(FController fController)
         {
             InitializeComponent();
+            this.fController = fController;
+            userControlComboBoxAddress.GetData(fController.addressDAO.Addreses);
         }
 
         private void labelAddress_Click(object sender, EventArgs e)

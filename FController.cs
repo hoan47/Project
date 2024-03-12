@@ -16,6 +16,7 @@ namespace Project
         public AccountDAO accountDAO;
         public InfoDAO infoDAO;
         public ClientDAO clientDAO;
+        public AddRessDAO addressDAO;
         public UserControlLoading userControlLoading;
         private Form currentFromChild;
 
@@ -25,6 +26,7 @@ namespace Project
             accountDAO = new AccountDAO(user);
             infoDAO = new InfoDAO(user);
             clientDAO = new ClientDAO(user);
+            addressDAO = new AddRessDAO();
             InitializeComponent();
             InitializeFLogin();
         }

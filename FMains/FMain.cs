@@ -69,7 +69,7 @@ namespace Project
             }    
             else if (sender == toolStripButtonHomePage)
             {
-                OpenFormChild(new FHomePage(), toolStripButtonHomePage);
+                OpenFormChild(new FHomePage(fController), toolStripButtonHomePage);
             }
             else if (sender == toolStripButtonHistory)
             {
