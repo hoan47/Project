@@ -14,6 +14,10 @@ namespace Project
     {
         public UserControlHotel()
         {
+            this.userControlHotelEditAddress = new UserControls.UserControlHotelEdit(this);
+            this.userControlHotelEditName = new UserControls.UserControlHotelEdit(this);
+            this.userControlHotelEditPhone = new UserControls.UserControlHotelEdit(this);
+            this.userControlHotelEditPrice = new UserControls.UserControlHotelEdit(this);
             InitializeComponent();
         }
 

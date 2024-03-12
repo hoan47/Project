@@ -31,10 +31,6 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotel));
             this.pictureBoxHotel = new System.Windows.Forms.PictureBox();
-            this.userControlHotelEditAddress = new UserControls.UserControlHotelEdit(this);
-            this.userControlHotelEditName = new UserControls.UserControlHotelEdit(this);
-            this.userControlHotelEditPhone = new UserControls.UserControlHotelEdit(this);
-            this.userControlHotelEditPrice = new UserControls.UserControlHotelEdit(this);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).BeginInit();
             this.SuspendLayout();
             // 
