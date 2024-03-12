@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button buttonChangeImage;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button buttonDeleteImage;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
+            System.Windows.Forms.Button buttonChangeImage;
             this.panelInfo = new System.Windows.Forms.Panel();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panelBackground = new System.Windows.Forms.Panel();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.labelUser = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.labelRank = new System.Windows.Forms.Label();
+            this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
             this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
@@ -44,27 +48,14 @@
             this.userControlTextBoxEditAddress = new Project.UserControlTextBoxEdit();
             this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
             this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
-            buttonChangeImage = new System.Windows.Forms.Button();
             buttonDeleteImage = new System.Windows.Forms.Button();
+            buttonChangeImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
             this.panelBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonChangeImage
-            // 
-            buttonChangeImage.AutoSize = true;
-            buttonChangeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            buttonChangeImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChangeImage.BackgroundImage")));
-            buttonChangeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            buttonChangeImage.Location = new System.Drawing.Point(95, 284);
-            buttonChangeImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            buttonChangeImage.Name = "buttonChangeImage";
-            buttonChangeImage.Size = new System.Drawing.Size(50, 50);
-            buttonChangeImage.TabIndex = 1;
-            buttonChangeImage.UseVisualStyleBackColor = false;
-            buttonChangeImage.Click += new System.EventHandler(this.ButtonChangeImageClick);
             // 
             // buttonDeleteImage
             // 
@@ -72,13 +63,27 @@
             buttonDeleteImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
             buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            buttonDeleteImage.Location = new System.Drawing.Point(164, 284);
+            buttonDeleteImage.Location = new System.Drawing.Point(148, 254);
             buttonDeleteImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             buttonDeleteImage.Name = "buttonDeleteImage";
-            buttonDeleteImage.Size = new System.Drawing.Size(50, 50);
+            buttonDeleteImage.Size = new System.Drawing.Size(51, 50);
             buttonDeleteImage.TabIndex = 2;
             buttonDeleteImage.UseVisualStyleBackColor = false;
             buttonDeleteImage.Click += new System.EventHandler(this.ButtonDeleteImageClick);
+            // 
+            // buttonChangeImage
+            // 
+            buttonChangeImage.AutoSize = true;
+            buttonChangeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            buttonChangeImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChangeImage.BackgroundImage")));
+            buttonChangeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            buttonChangeImage.Location = new System.Drawing.Point(79, 254);
+            buttonChangeImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            buttonChangeImage.Name = "buttonChangeImage";
+            buttonChangeImage.Size = new System.Drawing.Size(51, 50);
+            buttonChangeImage.TabIndex = 1;
+            buttonChangeImage.UseVisualStyleBackColor = false;
+            buttonChangeImage.Click += new System.EventHandler(this.ButtonChangeImageClick);
             // 
             // panelInfo
             // 
@@ -92,6 +97,7 @@
             this.panelInfo.Controls.Add(this.userControlTextBoxEditName);
             this.panelInfo.Controls.Add(this.buttonUpdate);
             this.panelInfo.Location = new System.Drawing.Point(359, 82);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(621, 466);
             this.panelInfo.TabIndex = 1;
@@ -106,7 +112,7 @@
             this.buttonUpdate.Location = new System.Drawing.Point(288, 400);
             this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(50, 50);
+            this.buttonUpdate.Size = new System.Drawing.Size(51, 50);
             this.buttonUpdate.TabIndex = 7;
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
@@ -119,10 +125,10 @@
             this.panelImage.Controls.Add(this.panelBackground);
             this.panelImage.Controls.Add(this.labelUser);
             this.panelImage.Controls.Add(buttonChangeImage);
-            this.panelImage.Location = new System.Drawing.Point(48, 82);
+            this.panelImage.Location = new System.Drawing.Point(53, 190);
             this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(305, 346);
+            this.panelImage.Size = new System.Drawing.Size(268, 311);
             this.panelImage.TabIndex = 0;
             this.panelImage.TabStop = true;
             // 
@@ -131,7 +137,7 @@
             this.panelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelBackground.BackgroundImage")));
             this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBackground.Controls.Add(this.pictureBoxImage);
-            this.panelBackground.Location = new System.Drawing.Point(35, 34);
+            this.panelBackground.Location = new System.Drawing.Point(13, 7);
             this.panelBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Size = new System.Drawing.Size(240, 240);
@@ -142,7 +148,7 @@
             this.pictureBoxImage.Location = new System.Drawing.Point(25, 26);
             this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(190, 190);
+            this.pictureBoxImage.Size = new System.Drawing.Size(189, 190);
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImage.TabIndex = 23;
             this.pictureBoxImage.TabStop = false;
@@ -157,11 +163,31 @@
             this.labelUser.Size = new System.Drawing.Size(0, 20);
             this.labelUser.TabIndex = 0;
             // 
+            // labelRank
+            // 
+            this.labelRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRank.Location = new System.Drawing.Point(108, 2);
+            this.labelRank.Name = "labelRank";
+            this.labelRank.Size = new System.Drawing.Size(163, 31);
+            this.labelRank.TabIndex = 5;
+            this.labelRank.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxImageRank
+            // 
+            this.pictureBoxImageRank.Location = new System.Drawing.Point(108, 34);
+            this.pictureBoxImageRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxImageRank.Name = "pictureBoxImageRank";
+            this.pictureBoxImageRank.Size = new System.Drawing.Size(163, 150);
+            this.pictureBoxImageRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImageRank.TabIndex = 4;
+            this.pictureBoxImageRank.TabStop = false;
+            // 
             // userControlTextBoxEditPhone
             // 
             this.userControlTextBoxEditPhone.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxEditPhone.LabelText = "Phone";
-            this.userControlTextBoxEditPhone.Location = new System.Drawing.Point(26, 340);
+            this.userControlTextBoxEditPhone.Location = new System.Drawing.Point(27, 340);
+            this.userControlTextBoxEditPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxEditPhone.Name = "userControlTextBoxEditPhone";
             this.userControlTextBoxEditPhone.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditPhone.TabIndex = 6;
@@ -172,7 +198,8 @@
             this.userControlRadioButtonEditGender.BackColor = System.Drawing.Color.Transparent;
             this.userControlRadioButtonEditGender.GenderText = "Nam";
             this.userControlRadioButtonEditGender.LabelText = "Giới Tính";
-            this.userControlRadioButtonEditGender.Location = new System.Drawing.Point(26, 138);
+            this.userControlRadioButtonEditGender.Location = new System.Drawing.Point(27, 138);
+            this.userControlRadioButtonEditGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlRadioButtonEditGender.Name = "userControlRadioButtonEditGender";
             this.userControlRadioButtonEditGender.Size = new System.Drawing.Size(568, 46);
             this.userControlRadioButtonEditGender.TabIndex = 2;
@@ -181,7 +208,8 @@
             // 
             this.userControlTextBoxEditEmail.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxEditEmail.LabelText = "Email";
-            this.userControlTextBoxEditEmail.Location = new System.Drawing.Point(26, 288);
+            this.userControlTextBoxEditEmail.Location = new System.Drawing.Point(27, 288);
+            this.userControlTextBoxEditEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxEditEmail.Name = "userControlTextBoxEditEmail";
             this.userControlTextBoxEditEmail.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditEmail.TabIndex = 5;
@@ -191,7 +219,8 @@
             // 
             this.userControlTextBoxEditIdCard.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxEditIdCard.LabelText = "CMND";
-            this.userControlTextBoxEditIdCard.Location = new System.Drawing.Point(26, 236);
+            this.userControlTextBoxEditIdCard.Location = new System.Drawing.Point(27, 236);
+            this.userControlTextBoxEditIdCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxEditIdCard.Name = "userControlTextBoxEditIdCard";
             this.userControlTextBoxEditIdCard.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditIdCard.TabIndex = 4;
@@ -201,7 +230,8 @@
             // 
             this.userControlTextBoxEditAddress.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxEditAddress.LabelText = "Địa Chỉ";
-            this.userControlTextBoxEditAddress.Location = new System.Drawing.Point(26, 190);
+            this.userControlTextBoxEditAddress.Location = new System.Drawing.Point(27, 190);
+            this.userControlTextBoxEditAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxEditAddress.Name = "userControlTextBoxEditAddress";
             this.userControlTextBoxEditAddress.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditAddress.TabIndex = 3;
@@ -212,7 +242,8 @@
             this.userControlDateTimePackerEditDateOfBirth.BackColor = System.Drawing.Color.Transparent;
             this.userControlDateTimePackerEditDateOfBirth.DateTimePickerText = "Friday, March 8, 2024";
             this.userControlDateTimePackerEditDateOfBirth.LabelText = "Ngày Sinh";
-            this.userControlDateTimePackerEditDateOfBirth.Location = new System.Drawing.Point(26, 86);
+            this.userControlDateTimePackerEditDateOfBirth.Location = new System.Drawing.Point(27, 86);
+            this.userControlDateTimePackerEditDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlDateTimePackerEditDateOfBirth.Name = "userControlDateTimePackerEditDateOfBirth";
             this.userControlDateTimePackerEditDateOfBirth.Size = new System.Drawing.Size(568, 46);
             this.userControlDateTimePackerEditDateOfBirth.TabIndex = 1;
@@ -221,7 +252,8 @@
             // 
             this.userControlTextBoxEditName.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxEditName.LabelText = "Họ Tên";
-            this.userControlTextBoxEditName.Location = new System.Drawing.Point(26, 34);
+            this.userControlTextBoxEditName.Location = new System.Drawing.Point(27, 34);
+            this.userControlTextBoxEditName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxEditName.Name = "userControlTextBoxEditName";
             this.userControlTextBoxEditName.Size = new System.Drawing.Size(568, 46);
             this.userControlTextBoxEditName.TabIndex = 0;
@@ -233,6 +265,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.labelRank);
+            this.Controls.Add(this.pictureBoxImageRank);
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,12 +275,14 @@
             this.Name = "FUpdateInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FInfo";
+            this.Load += new System.EventHandler(this.FUpdateInfoLoad);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
             this.panelBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +301,8 @@
         private UserControlTextBoxEdit userControlTextBoxEditAddress;
         private UserControlDateTimePackerEdit userControlDateTimePackerEditDateOfBirth;
         private UserControlTextBoxEdit userControlTextBoxEditName;
+        private System.Windows.Forms.PictureBox pictureBoxImageRank;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label labelRank;
     }
 }

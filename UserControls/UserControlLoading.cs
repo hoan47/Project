@@ -33,12 +33,15 @@ namespace Project
 
         public void OffLoading()
         {
-            new Thread(() =>
-            {
-                Thread.Sleep(time);
-                form.Controls.Remove(this);
-                Dispose();
-            }).Start();
+            timer.Interval = time;
+            timer.Start();
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            timer.Stop();
+            form.Controls.Remove(this);
+            Dispose();
         }
     }
 }

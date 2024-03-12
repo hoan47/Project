@@ -33,10 +33,14 @@ namespace Project
         {
             if(formChildCurrent != null)
             {
+                if (formChild.GetType() == formChildCurrent.GetType())
+                {
+                    return;
+                }
                 formChildCurrent.Close();
             }
             UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
-            userControlLoading.OnLoading();
+
             userControlLoading.OnLoading();
             formChildCurrent = formChild;
             formChild.TopLevel = false;
@@ -57,8 +61,12 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(User, AccountDAO, InfoDAO), toolStripButtonInfo);
+                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO), toolStripButtonInfo);
             }
+            else if(User.Client == null)
+            {
+                fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
+            }    
             else if (sender == toolStripButtonHomePage)
             {
                 OpenFormChild(new FHomePage(), toolStripButtonHomePage);
@@ -87,11 +95,6 @@ namespace Project
             {
                 Close();
             }
-        }
-
-        private void userControlRadioButtonEdit1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

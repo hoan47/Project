@@ -19,6 +19,7 @@ namespace Project
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
 
+
         public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
         {
             InitializeComponent();
@@ -41,20 +42,37 @@ namespace Project
         private void ButtonLoginClick(object sender, EventArgs e)
         {
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (AccountDAO.Login() == true)
-            {
-                InfoDAO.Access();
-                fController.InitializeFMain();
-                UserControlLoading userControlLoading = new UserControlLoading(fController, 1000);
-                userControlLoading.OnLoading();
-                Close();
-                userControlLoading.OffLoading();
-            }
+
+            fController.userControlLoading = new UserControlLoading(fController, 1000);
+            fController.ConfigureBackgroundWorker(BackgroundWorkerDoWorkLogin, DackgroundWorkerRunWorkerCompletedLogin);
+            fController.StartBackgroundWork();
         }
 
         private void FLoginLoad(object sender, EventArgs e)
         {
             userControlTextBoxAccount.Focus();
+        }
+
+        public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
+        {
+            bool isSuccess = AccountDAO.Login();
+            if (isSuccess == true)
+            {
+                InfoDAO.Access();
+                e.Result = isSuccess;
+            }
+        }
+
+        public void DackgroundWorkerRunWorkerCompletedLogin(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if ((bool)e.Result == true)
+            {
+                fController.InitializeFMain();
+                fController.userControlLoading.OnLoading();
+                fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
+            }
+            fController.userControlLoading.OffLoading();
+            fController.DropBackgroundWorker(BackgroundWorkerDoWorkLogin, DackgroundWorkerRunWorkerCompletedLogin);
         }
     }
 }

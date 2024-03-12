@@ -61,7 +61,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="FCustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCustomMessageBox.Designer.cs">
+      <DependentUpon>FCustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAOScripts\Client.cs" />
     <Compile Include="DAOScripts\AccountDAO.cs" />
+    <Compile Include="DAOScripts\ClientDAO.cs" />
     <Compile Include="DAOScripts\DAO.cs" />
     <Compile Include="DAOScripts\InfoDAO.cs" />
     <Compile Include="FController.cs">
@@ -133,13 +142,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowMessage.cs" />
     <Compile Include="ProcessImage.cs" />
+    <Compile Include="ShowMessage.cs" />
     <Compile Include="UserControls\UserControlDateTimePackerEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlItemHottel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlItemHottel.Designer.cs">
+      <DependentUpon>UserControlItemHottel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlLoading.cs">
       <SubType>UserControl</SubType>
@@ -178,6 +193,9 @@
     <Compile Include="UserControls\UserControlTextBoxPassword.Designer.cs">
       <DependentUpon>UserControlTextBoxPassword.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FCustomMessageBox.resx">
+      <DependentUpon>FCustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FController.resx">
       <DependentUpon>FController.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlItemHottel.resx">
+      <DependentUpon>UserControlItemHottel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlLoading.resx">
       <DependentUpon>UserControlLoading.cs</DependentUpon>
@@ -278,6 +299,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseProject.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\noRank.png" />
+    <Content Include="Resources\success.png" />
+    <None Include="Resources\yellow.png" />
+    <None Include="Resources\copper.png" />
+    <None Include="Resources\silver.png" />
     <None Include="Resources\girl.png" />
     <None Include="Resources\man.png" />
   </ItemGroup>
