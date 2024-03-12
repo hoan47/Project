@@ -16,5 +16,20 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void labelAddress_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMinMax_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNoRent_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
