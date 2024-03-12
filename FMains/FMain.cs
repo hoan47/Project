@@ -40,7 +40,7 @@ namespace Project
                 formChildCurrent.Close();
             }
             UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
-            userControlLoading.OnLoading();
+
             userControlLoading.OnLoading();
             formChildCurrent = formChild;
             formChild.TopLevel = false;

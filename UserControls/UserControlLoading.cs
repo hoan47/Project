@@ -39,6 +39,7 @@ namespace Project
 
         private void TimerTick(object sender, EventArgs e)
         {
+            timer.Stop();
             form.Controls.Remove(this);
             Dispose();
         }

@@ -26,7 +26,6 @@ namespace Project
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
-            LoadData();
         }
 
         private void LoadData()
@@ -118,6 +117,11 @@ namespace Project
         private void ButtonDeleteImageClick(object sender, EventArgs e)
         {
             pictureBoxImage.Image = User.GetImageNormal();
+        }
+
+        private void FUpdateInfoLoad(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

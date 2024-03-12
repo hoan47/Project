@@ -33,13 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
             System.Windows.Forms.Button buttonChangeImage;
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
-            this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
-            this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
-            this.userControlTextBoxEditIdCard = new Project.UserControlTextBoxEdit();
-            this.userControlTextBoxEditAddress = new Project.UserControlTextBoxEdit();
-            this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
-            this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panelBackground = new System.Windows.Forms.Panel();
@@ -48,6 +41,13 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.labelRank = new System.Windows.Forms.Label();
             this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
+            this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
+            this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
+            this.userControlTextBoxEditEmail = new Project.UserControlTextBoxEdit();
+            this.userControlTextBoxEditIdCard = new Project.UserControlTextBoxEdit();
+            this.userControlTextBoxEditAddress = new Project.UserControlTextBoxEdit();
+            this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
+            this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
             buttonDeleteImage = new System.Windows.Forms.Button();
             buttonChangeImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
@@ -102,83 +102,6 @@
             this.panelInfo.Size = new System.Drawing.Size(621, 466);
             this.panelInfo.TabIndex = 1;
             this.panelInfo.TabStop = true;
-            // 
-            // userControlTextBoxEditPhone
-            // 
-            this.userControlTextBoxEditPhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxEditPhone.LabelText = "Phone";
-            this.userControlTextBoxEditPhone.Location = new System.Drawing.Point(27, 340);
-            this.userControlTextBoxEditPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxEditPhone.Name = "userControlTextBoxEditPhone";
-            this.userControlTextBoxEditPhone.Size = new System.Drawing.Size(568, 46);
-            this.userControlTextBoxEditPhone.TabIndex = 6;
-            this.userControlTextBoxEditPhone.TextBoxText = "";
-            // 
-            // userControlRadioButtonEditGender
-            // 
-            this.userControlRadioButtonEditGender.BackColor = System.Drawing.Color.Transparent;
-            this.userControlRadioButtonEditGender.GenderText = "Nam";
-            this.userControlRadioButtonEditGender.LabelText = "Giới Tính";
-            this.userControlRadioButtonEditGender.Location = new System.Drawing.Point(27, 138);
-            this.userControlRadioButtonEditGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlRadioButtonEditGender.Name = "userControlRadioButtonEditGender";
-            this.userControlRadioButtonEditGender.Size = new System.Drawing.Size(568, 46);
-            this.userControlRadioButtonEditGender.TabIndex = 2;
-            // 
-            // userControlTextBoxEditEmail
-            // 
-            this.userControlTextBoxEditEmail.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxEditEmail.LabelText = "Email";
-            this.userControlTextBoxEditEmail.Location = new System.Drawing.Point(27, 288);
-            this.userControlTextBoxEditEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxEditEmail.Name = "userControlTextBoxEditEmail";
-            this.userControlTextBoxEditEmail.Size = new System.Drawing.Size(568, 46);
-            this.userControlTextBoxEditEmail.TabIndex = 5;
-            this.userControlTextBoxEditEmail.TextBoxText = "";
-            // 
-            // userControlTextBoxEditIdCard
-            // 
-            this.userControlTextBoxEditIdCard.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxEditIdCard.LabelText = "CMND";
-            this.userControlTextBoxEditIdCard.Location = new System.Drawing.Point(27, 236);
-            this.userControlTextBoxEditIdCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxEditIdCard.Name = "userControlTextBoxEditIdCard";
-            this.userControlTextBoxEditIdCard.Size = new System.Drawing.Size(568, 46);
-            this.userControlTextBoxEditIdCard.TabIndex = 4;
-            this.userControlTextBoxEditIdCard.TextBoxText = "";
-            // 
-            // userControlTextBoxEditAddress
-            // 
-            this.userControlTextBoxEditAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxEditAddress.LabelText = "Địa Chỉ";
-            this.userControlTextBoxEditAddress.Location = new System.Drawing.Point(27, 190);
-            this.userControlTextBoxEditAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxEditAddress.Name = "userControlTextBoxEditAddress";
-            this.userControlTextBoxEditAddress.Size = new System.Drawing.Size(568, 46);
-            this.userControlTextBoxEditAddress.TabIndex = 3;
-            this.userControlTextBoxEditAddress.TextBoxText = "";
-            // 
-            // userControlDateTimePackerEditDateOfBirth
-            // 
-            this.userControlDateTimePackerEditDateOfBirth.BackColor = System.Drawing.Color.Transparent;
-            this.userControlDateTimePackerEditDateOfBirth.DateTimePickerText = "Friday, March 8, 2024";
-            this.userControlDateTimePackerEditDateOfBirth.LabelText = "Ngày Sinh";
-            this.userControlDateTimePackerEditDateOfBirth.Location = new System.Drawing.Point(27, 86);
-            this.userControlDateTimePackerEditDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlDateTimePackerEditDateOfBirth.Name = "userControlDateTimePackerEditDateOfBirth";
-            this.userControlDateTimePackerEditDateOfBirth.Size = new System.Drawing.Size(568, 46);
-            this.userControlDateTimePackerEditDateOfBirth.TabIndex = 1;
-            // 
-            // userControlTextBoxEditName
-            // 
-            this.userControlTextBoxEditName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxEditName.LabelText = "Họ Tên";
-            this.userControlTextBoxEditName.Location = new System.Drawing.Point(27, 34);
-            this.userControlTextBoxEditName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxEditName.Name = "userControlTextBoxEditName";
-            this.userControlTextBoxEditName.Size = new System.Drawing.Size(568, 46);
-            this.userControlTextBoxEditName.TabIndex = 0;
-            this.userControlTextBoxEditName.TextBoxText = "";
             // 
             // buttonUpdate
             // 
@@ -259,6 +182,83 @@
             this.pictureBoxImageRank.TabIndex = 4;
             this.pictureBoxImageRank.TabStop = false;
             // 
+            // userControlTextBoxEditPhone
+            // 
+            this.userControlTextBoxEditPhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxEditPhone.LabelText = "Phone";
+            this.userControlTextBoxEditPhone.Location = new System.Drawing.Point(27, 340);
+            this.userControlTextBoxEditPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxEditPhone.Name = "userControlTextBoxEditPhone";
+            this.userControlTextBoxEditPhone.Size = new System.Drawing.Size(568, 46);
+            this.userControlTextBoxEditPhone.TabIndex = 6;
+            this.userControlTextBoxEditPhone.TextBoxText = "";
+            // 
+            // userControlRadioButtonEditGender
+            // 
+            this.userControlRadioButtonEditGender.BackColor = System.Drawing.Color.Transparent;
+            this.userControlRadioButtonEditGender.GenderText = "Nam";
+            this.userControlRadioButtonEditGender.LabelText = "Giới Tính";
+            this.userControlRadioButtonEditGender.Location = new System.Drawing.Point(27, 138);
+            this.userControlRadioButtonEditGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlRadioButtonEditGender.Name = "userControlRadioButtonEditGender";
+            this.userControlRadioButtonEditGender.Size = new System.Drawing.Size(568, 46);
+            this.userControlRadioButtonEditGender.TabIndex = 2;
+            // 
+            // userControlTextBoxEditEmail
+            // 
+            this.userControlTextBoxEditEmail.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxEditEmail.LabelText = "Email";
+            this.userControlTextBoxEditEmail.Location = new System.Drawing.Point(27, 288);
+            this.userControlTextBoxEditEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxEditEmail.Name = "userControlTextBoxEditEmail";
+            this.userControlTextBoxEditEmail.Size = new System.Drawing.Size(568, 46);
+            this.userControlTextBoxEditEmail.TabIndex = 5;
+            this.userControlTextBoxEditEmail.TextBoxText = "";
+            // 
+            // userControlTextBoxEditIdCard
+            // 
+            this.userControlTextBoxEditIdCard.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxEditIdCard.LabelText = "CMND";
+            this.userControlTextBoxEditIdCard.Location = new System.Drawing.Point(27, 236);
+            this.userControlTextBoxEditIdCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxEditIdCard.Name = "userControlTextBoxEditIdCard";
+            this.userControlTextBoxEditIdCard.Size = new System.Drawing.Size(568, 46);
+            this.userControlTextBoxEditIdCard.TabIndex = 4;
+            this.userControlTextBoxEditIdCard.TextBoxText = "";
+            // 
+            // userControlTextBoxEditAddress
+            // 
+            this.userControlTextBoxEditAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxEditAddress.LabelText = "Địa Chỉ";
+            this.userControlTextBoxEditAddress.Location = new System.Drawing.Point(27, 190);
+            this.userControlTextBoxEditAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxEditAddress.Name = "userControlTextBoxEditAddress";
+            this.userControlTextBoxEditAddress.Size = new System.Drawing.Size(568, 46);
+            this.userControlTextBoxEditAddress.TabIndex = 3;
+            this.userControlTextBoxEditAddress.TextBoxText = "";
+            // 
+            // userControlDateTimePackerEditDateOfBirth
+            // 
+            this.userControlDateTimePackerEditDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.userControlDateTimePackerEditDateOfBirth.DateTimePickerText = "Friday, March 8, 2024";
+            this.userControlDateTimePackerEditDateOfBirth.LabelText = "Ngày Sinh";
+            this.userControlDateTimePackerEditDateOfBirth.Location = new System.Drawing.Point(27, 86);
+            this.userControlDateTimePackerEditDateOfBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlDateTimePackerEditDateOfBirth.Name = "userControlDateTimePackerEditDateOfBirth";
+            this.userControlDateTimePackerEditDateOfBirth.Size = new System.Drawing.Size(568, 46);
+            this.userControlDateTimePackerEditDateOfBirth.TabIndex = 1;
+            // 
+            // userControlTextBoxEditName
+            // 
+            this.userControlTextBoxEditName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxEditName.LabelText = "Họ Tên";
+            this.userControlTextBoxEditName.Location = new System.Drawing.Point(27, 34);
+            this.userControlTextBoxEditName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxEditName.Name = "userControlTextBoxEditName";
+            this.userControlTextBoxEditName.Size = new System.Drawing.Size(568, 46);
+            this.userControlTextBoxEditName.TabIndex = 0;
+            this.userControlTextBoxEditName.TextBoxText = "";
+            // 
             // FUpdateInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +275,7 @@
             this.Name = "FUpdateInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FInfo";
+            this.Load += new System.EventHandler(this.FUpdateInfoLoad);
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.panelImage.ResumeLayout(false);

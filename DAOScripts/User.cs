@@ -135,12 +135,15 @@ namespace Project
 
         private void StandardizedName()
         {
-            if (Name != null)
+            CultureInfo cultureInfo = new CultureInfo("vi-VN", false);
+            TextInfo textInfo = cultureInfo.TextInfo;
+            string[] words = Name.Split(' ');
+
+            for (int i = 0; i < words.Length; i++)
             {
-                CultureInfo cultureInfo = new CultureInfo("vi-VN", false);
-                TextInfo textInfo = cultureInfo.TextInfo;
-                Name = textInfo.ToTitleCase(Name.Trim());
+                words[i] = textInfo.ToTitleCase(words[i].ToLower());
             }
+            Name = string.Join(" ", words);
         }
 
         public bool IsName()
@@ -240,7 +243,6 @@ namespace Project
                 ShowMessage.ShowWarning("Email không được để trống.");
                 return false;
             }
-
             if (!Regex.IsMatch(Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
             {
                 ShowMessage.ShowWarning("Email không hợp lệ.");

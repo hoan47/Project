@@ -16,7 +16,9 @@ namespace Project
         public AccountDAO accountDAO;
         public InfoDAO infoDAO;
         public ClientDAO clientDAO;
+        public UserControlLoading userControlLoading;
         private Form currentFromChild;
+        private BackgroundWorker backgroundWorker;
 
         public FController()
         {
@@ -24,6 +26,7 @@ namespace Project
             accountDAO = new AccountDAO(user);
             infoDAO = new InfoDAO(user);
             clientDAO = new ClientDAO(user);
+            backgroundWorker = new BackgroundWorker();
             InitializeComponent();
             InitializeFLogin();
         }
@@ -94,6 +97,23 @@ namespace Project
         public void MessageError(string tile, string content)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.error));
+        }
+
+        public void ConfigureBackgroundWorker(Action<object, DoWorkEventArgs> doWorkHandler, Action<object, RunWorkerCompletedEventArgs> completedHandler)
+        {
+            backgroundWorker.DoWork += new DoWorkEventHandler(doWorkHandler);
+            backgroundWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(completedHandler);
+        }
+
+        public void DropBackgroundWorker(Action<object, DoWorkEventArgs> doWorkHandler, Action<object, RunWorkerCompletedEventArgs> completedHandler)
+        {
+            backgroundWorker.DoWork -= new DoWorkEventHandler(doWorkHandler);
+            backgroundWorker.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(completedHandler);
+        }
+
+        public void StartBackgroundWork(object[] parameters = null)
+        {
+            backgroundWorker.RunWorkerAsync(parameters);
         }
     }
 }

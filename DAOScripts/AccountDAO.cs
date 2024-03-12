@@ -18,6 +18,16 @@ namespace Project
 
         public bool Login()
         {
+            int sum = 0;
+
+            for(int i = 0; i < 100000000; i++)
+            {
+                if (i % 2 == 0)
+                    sum = i + 12;
+                else
+                    sum = i + 6;
+            }    
+
             if (FindAccount() == false)
             {
                 ShowMessage.ShowWarning("Tài khoản không tồn tại.");
