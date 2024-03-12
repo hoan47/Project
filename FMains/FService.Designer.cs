@@ -71,7 +71,7 @@ namespace Project
             this.pictureBoxHotel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHotel.Image")));
             this.pictureBoxHotel.Location = new System.Drawing.Point(1, -18);
             this.pictureBoxHotel.Name = "pictureBoxHotel";
-            this.pictureBoxHotel.Size = new System.Drawing.Size(242, 115);
+            this.pictureBoxHotel.Size = new System.Drawing.Size(173, 115);
             this.pictureBoxHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHotel.TabIndex = 2;
             this.pictureBoxHotel.TabStop = false;

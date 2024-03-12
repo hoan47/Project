@@ -17,9 +17,18 @@ namespace Project
             InitializeComponent();
         }
 
-        private void UserControlHottelDoubleClick(object sender, EventArgs e)
+        public void UserControlHottelDoubleClick(object sender, EventArgs e)
         {
             MessageBox.Show("Chọn khách sạn");
+        }
+
+        private void UserControlHotel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxHotel_Click(object sender, EventArgs e)
+        {
         }
     }
 }

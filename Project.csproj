@@ -82,6 +82,12 @@
     <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMains\FServiceHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FServiceHotel.Designer.cs">
+      <DependentUpon>FServiceHotel.cs</DependentUpon>
+    </Compile>
     <Compile Include="IUser.cs" />
     <Compile Include="FMains\FHistory.cs">
       <SubType>Form</SubType>
@@ -146,6 +152,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHotelEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHotelEdit.Designer.cs">
+      <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlLoading.cs">
       <SubType>UserControl</SubType>
@@ -214,6 +226,9 @@
     <EmbeddedResource Include="FMains\FService.resx">
       <DependentUpon>FService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FServiceHotel.resx">
+      <DependentUpon>FServiceHotel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMains\FSetting.resx">
       <DependentUpon>FSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,11 +244,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
+      <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
-      <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlHotelEdit.resx">
+      <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlLoading.resx">
       <DependentUpon>UserControlLoading.cs</DependentUpon>

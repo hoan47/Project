@@ -36,7 +36,6 @@ namespace Project
             new Thread(() =>
             {
                 Thread.Sleep(time);
-                form.Controls.Remove(this);
                 Dispose();
             }).Start();
         }

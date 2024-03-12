@@ -42,9 +42,10 @@ namespace Project
             // linkLabelCreateAccount
             // 
             this.linkLabelCreateAccount.AutoSize = true;
-            this.linkLabelCreateAccount.Location = new System.Drawing.Point(367, 144);
+            this.linkLabelCreateAccount.Location = new System.Drawing.Point(275, 117);
+            this.linkLabelCreateAccount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelCreateAccount.Name = "linkLabelCreateAccount";
-            this.linkLabelCreateAccount.Size = new System.Drawing.Size(95, 17);
+            this.linkLabelCreateAccount.Size = new System.Drawing.Size(73, 13);
             this.linkLabelCreateAccount.TabIndex = 5;
             this.linkLabelCreateAccount.TabStop = true;
             this.linkLabelCreateAccount.Text = "Tạo tài khoản";
@@ -53,9 +54,10 @@ namespace Project
             // linkLabelForgetPassword
             // 
             this.linkLabelForgetPassword.AutoSize = true;
-            this.linkLabelForgetPassword.Location = new System.Drawing.Point(261, 144);
+            this.linkLabelForgetPassword.Location = new System.Drawing.Point(196, 117);
+            this.linkLabelForgetPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelForgetPassword.Name = "linkLabelForgetPassword";
-            this.linkLabelForgetPassword.Size = new System.Drawing.Size(105, 17);
+            this.linkLabelForgetPassword.Size = new System.Drawing.Size(80, 13);
             this.linkLabelForgetPassword.TabIndex = 4;
             this.linkLabelForgetPassword.TabStop = true;
             this.linkLabelForgetPassword.Text = "Quên mật khẩu";
@@ -64,9 +66,10 @@ namespace Project
             // buttonLogin
             // 
             this.buttonLogin.AutoSize = true;
-            this.buttonLogin.Location = new System.Drawing.Point(283, 113);
+            this.buttonLogin.Location = new System.Drawing.Point(212, 92);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(88, 27);
+            this.buttonLogin.Size = new System.Drawing.Size(70, 23);
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -75,38 +78,42 @@ namespace Project
             // userControlTextBoxAccount
             // 
             this.userControlTextBoxAccount.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxAccount.Location = new System.Drawing.Point(161, 12);
+            this.userControlTextBoxAccount.Location = new System.Drawing.Point(121, 10);
+            this.userControlTextBoxAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlTextBoxAccount.Name = "userControlTextBoxAccount";
-            this.userControlTextBoxAccount.Size = new System.Drawing.Size(314, 50);
+            this.userControlTextBoxAccount.Size = new System.Drawing.Size(236, 41);
             this.userControlTextBoxAccount.TabIndex = 1;
             this.userControlTextBoxAccount.TextBoxText = "";
+            this.userControlTextBoxAccount.Load += new System.EventHandler(this.userControlTextBoxAccount_Load);
             // 
             // userControlTextBoxPassword
             // 
             this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxPassword.LableText = "Mật khẩu";
-            this.userControlTextBoxPassword.Location = new System.Drawing.Point(161, 62);
+            this.userControlTextBoxPassword.Location = new System.Drawing.Point(121, 50);
+            this.userControlTextBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
-            this.userControlTextBoxPassword.Size = new System.Drawing.Size(314, 47);
+            this.userControlTextBoxPassword.Size = new System.Drawing.Size(236, 38);
             this.userControlTextBoxPassword.TabIndex = 2;
             this.userControlTextBoxPassword.TextBoxText = "";
             // 
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(8, 7);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(6, 6);
+            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(112, 122);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 3;
             this.pictureBoxIcon.TabStop = false;
             // 
             // FLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(475, 168);
+            this.ClientSize = new System.Drawing.Size(356, 136);
             this.Controls.Add(this.userControlTextBoxPassword);
             this.Controls.Add(this.userControlTextBoxAccount);
             this.Controls.Add(this.buttonLogin);
@@ -114,6 +121,7 @@ namespace Project
             this.Controls.Add(this.linkLabelCreateAccount);
             this.Controls.Add(this.linkLabelForgetPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

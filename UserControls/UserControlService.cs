@@ -12,7 +12,7 @@ namespace Project.UserControls
 {
     public partial class UserControlService : UserControl
     {
-        public string LabelText { get { return groupBox1.Text; } set { groupBox1.Text = value; } }
+        public string GroupBoxText { get { return groupBox1.Text; } set { groupBox1.Text = value; } }
         public string TextBoxText { get { return textBox1.Text; } set { textBox1.Text = value; } }
         public Image Image {  get { return pictureBox1.Image; } set { pictureBox1.Image = value; } }
         public UserControlService()

@@ -45,16 +45,18 @@ namespace Project
             {
                 InfoDAO.Access();
                 fController.InitializeFMain();
-                UserControlLoading userControlLoading = new UserControlLoading(fController, 1000);
-                userControlLoading.OnLoading();
                 Close();
-                userControlLoading.OffLoading();
             }
         }
 
         private void FLoginLoad(object sender, EventArgs e)
         {
             userControlTextBoxAccount.Focus();
+        }
+
+        private void userControlTextBoxAccount_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
