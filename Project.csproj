@@ -150,6 +150,18 @@
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlHotel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHotel.Designer.cs">
+      <DependentUpon>UserControlHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHotelEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHotelEdit.Designer.cs">
+      <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlItemHottel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHotel.resx">
+      <DependentUpon>UserControlHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHotelEdit.resx">
+      <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlItemHottel.resx">
       <DependentUpon>UserControlItemHottel.cs</DependentUpon>
