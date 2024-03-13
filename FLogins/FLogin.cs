@@ -47,7 +47,7 @@ namespace Project
                 return;
             }
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            fController.userControlLoading = new UserControlLoading(fController, 1000);
+            fController.userControlLoading = new UserControlLoading(fController, 500);
             fController.userControlLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
