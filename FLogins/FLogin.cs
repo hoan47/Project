@@ -42,8 +42,13 @@ namespace Project
 
         private void ButtonLoginClick(object sender, EventArgs e)
         {
+            if (backgroundWorker.IsBusy == true)
+            {
+                return;
+            }
             User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             fController.userControlLoading = new UserControlLoading(fController, 1000);
+            fController.userControlLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
 

@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="FCustomMessageBox.cs">
