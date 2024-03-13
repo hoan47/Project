@@ -31,6 +31,8 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.pictureBoxYesNo = new System.Windows.Forms.PictureBox();
             this.checkBoxYesRent = new System.Windows.Forms.CheckBox();
             this.checkBoxNoRent = new System.Windows.Forms.CheckBox();
@@ -44,11 +46,9 @@ namespace Project
             this.pictureBoxCity = new System.Windows.Forms.PictureBox();
             this.textBoxPriceMax = new System.Windows.Forms.TextBox();
             this.textBoxPriceMin = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.userControlComboBoxAddress = new Project.UserControlComboBoxAddress();
+            this.flowLayoutPanelHomePageSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.userControlSearch1 = new Project.UserControls.UserControlSearch();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControlComboBoxAddress = new Project.UserControlComboBoxAddress();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYesNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrice)).BeginInit();
@@ -80,6 +80,28 @@ namespace Project
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(230, 512);
             this.panelSearch.TabIndex = 3;
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.Location = new System.Drawing.Point(119, 269);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(91, 25);
+            this.labelSearch.TabIndex = 19;
+            this.labelSearch.Text = "Tìm kiếm";
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSearch.FlatAppearance.BorderSize = 0;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Location = new System.Drawing.Point(13, 225);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(100, 100);
+            this.buttonSearch.TabIndex = 18;
+            this.buttonSearch.UseVisualStyleBackColor = true;
             // 
             // pictureBoxYesNo
             // 
@@ -205,35 +227,14 @@ namespace Project
             this.textBoxPriceMin.Size = new System.Drawing.Size(100, 20);
             this.textBoxPriceMin.TabIndex = 3;
             // 
-            // buttonSearch
+            // flowLayoutPanelHomePageSearch
             // 
-            this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
-            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonSearch.FlatAppearance.BorderSize = 0;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Location = new System.Drawing.Point(13, 225);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(100, 100);
-            this.buttonSearch.TabIndex = 18;
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSearch.Location = new System.Drawing.Point(119, 269);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(91, 25);
-            this.labelSearch.TabIndex = 19;
-            this.labelSearch.Text = "Tìm kiếm";
-            // 
-            // userControlComboBoxAddress
-            // 
-            this.userControlComboBoxAddress.Location = new System.Drawing.Point(58, 32);
-            this.userControlComboBoxAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
-            this.userControlComboBoxAddress.Size = new System.Drawing.Size(159, 20);
-            this.userControlComboBoxAddress.TabIndex = 17;
+            this.flowLayoutPanelHomePageSearch.AutoScroll = true;
+            this.flowLayoutPanelHomePageSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.flowLayoutPanelHomePageSearch.Location = new System.Drawing.Point(230, 0);
+            this.flowLayoutPanelHomePageSearch.Name = "flowLayoutPanelHomePageSearch";
+            this.flowLayoutPanelHomePageSearch.Size = new System.Drawing.Size(550, 512);
+            this.flowLayoutPanelHomePageSearch.TabIndex = 4;
             // 
             // userControlSearch1
             // 
@@ -247,12 +248,13 @@ namespace Project
             this.userControlSearch1.TabIndex = 20;
             this.userControlSearch1.TextVisible = null;
             // 
-            // flowLayoutPanel1
+            // userControlComboBoxAddress
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(230, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(550, 512);
-            this.flowLayoutPanel1.TabIndex = 4;
+            this.userControlComboBoxAddress.Location = new System.Drawing.Point(58, 32);
+            this.userControlComboBoxAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
+            this.userControlComboBoxAddress.Size = new System.Drawing.Size(159, 20);
+            this.userControlComboBoxAddress.TabIndex = 17;
             // 
             // FHomePage
             // 
@@ -260,11 +262,11 @@ namespace Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(780, 512);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanelHomePageSearch);
             this.Controls.Add(this.panelSearch);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHomePage";
             this.Text = "FHomePage";
             this.panelSearch.ResumeLayout(false);
@@ -297,6 +299,6 @@ namespace Project
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label labelSearch;
         private UserControls.UserControlSearch userControlSearch1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelHomePageSearch;
     }
 }

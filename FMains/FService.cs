@@ -20,10 +20,5 @@ namespace Project
                 flowLayoutPanelService.Controls.Add(new UserControlHotel());
             }
         }
-
-        private void flowLayoutPanelService_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
