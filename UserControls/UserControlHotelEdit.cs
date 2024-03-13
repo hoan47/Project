@@ -20,6 +20,7 @@ namespace Project
         public UserControlHotelEdit(UserControl userParent)
         {
             InitializeComponent();
+            
             this.userParent = userParent;
         }
 

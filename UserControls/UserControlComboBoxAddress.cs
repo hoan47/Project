@@ -46,7 +46,7 @@ namespace Project
             }
             foreach (string district in addresses[curentAddress])
             {
-                comboBox.Items.Add(curentAddress + ", " + district);
+                comboBox.Items.Add(district);
             }
         }
 
@@ -60,6 +60,8 @@ namespace Project
             {
                 UpdateDistrict();
             }
+            isProvince = !isProvince;
+
         }
 
         private void ComboBoxSelectedIndexChanged(object sender, EventArgs e)
@@ -69,16 +71,16 @@ namespace Project
 
         private void ComboBoxLeave(object sender, EventArgs e)
         {
-            if (comboBox.SelectedItem == null)
+            if (isProvince != true)
             {
-                return;
+                curentAddress = comboBox.Text;
             }
-            curentAddress = comboBox.Text;
-            if (isProvince == false)
+            else
             {
-                comboBox.Text = curentAddress;
+                string curentTextAddreed = curentAddress + ", " + comboBox.Text;
+                comboBox.Items.Add(curentTextAddreed);
+                comboBox.Text = curentTextAddreed;
             }
-            isProvince = !isProvince;
         }
     }
 }

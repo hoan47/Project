@@ -83,7 +83,7 @@ namespace Project
             }
             else if(sender == toolStripButtonService)
             {
-                OpenFormChild(new FService(), toolStripButtonService);
+                OpenFormChild(new FService(fController), toolStripButtonService);
 
             }
             else if(sender == toolStripButtonSetting)

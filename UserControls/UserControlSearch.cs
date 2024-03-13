@@ -12,7 +12,7 @@ namespace Project.UserControls
 {
     public partial class UserControlSearch : UserControl
     {
-        public string TextVisible { get; set; }
+        public string TextVisible { get{ return label.Text; } set { label.Text = value; } }
 
         public UserControlSearch()
         {
@@ -37,6 +37,11 @@ namespace Project.UserControls
             {
                 e.Handled = true;
             }    
+        }
+
+        private void UserControlSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

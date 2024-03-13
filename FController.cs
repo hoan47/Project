@@ -38,7 +38,7 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
+            Size = (panelMain.Size = formChild.Size)+ new Size(15, 40);
             ProcessOpenFormChild(formChild);
         }
 
@@ -83,7 +83,7 @@ namespace Project
         {
             OpenFormChild(new FMain(this, user, accountDAO, infoDAO));
         }
-
+       
         public void MessageSuccess(string tile, string content, Form formParent = null)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.success), formParent);

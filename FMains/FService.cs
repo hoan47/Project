@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.FMains;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,39 @@ namespace Project
 {
     public partial class FService : Form
     {
-        public FService()
+        FController fController;
+        private Form formChildCurrent;
+        public FService(FController fController)
         {
             InitializeComponent();
+            formChildCurrent = this;
+            this.fController = fController;
             for(int i=1; i<5; i++)
             {
                 flowLayoutPanelService.Controls.Add(new UserControlHotel());
             }
         }
 
+        private void OpenFormChild(Form formChild)
+        {
+            
+            UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
+            userControlLoading.OnLoading();
+            formChild.TopLevel = false;
+            Controls.Add(formChild);
+            formChild.BringToFront();
+            formChild.Show();          
+            userControlLoading.OffLoading();
+        }
         private void flowLayoutPanelService_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            OpenFormChild(new FUpdateService());
+           
         }
     }
 }

@@ -64,9 +64,9 @@ namespace Project.UserControls
             // 
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label.Location = new System.Drawing.Point(72, 12);
+            this.label.Location = new System.Drawing.Point(73, 15);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(301, 35);
+            this.label.Size = new System.Drawing.Size(282, 30);
             this.label.TabIndex = 2;
             this.label.Text = "Tìm kiếm";
             this.label.Click += new System.EventHandler(this.Processed);
@@ -84,6 +84,7 @@ namespace Project.UserControls
             this.DoubleBuffered = true;
             this.Name = "UserControlSearch";
             this.Size = new System.Drawing.Size(400, 50);
+            this.Load += new System.EventHandler(this.UserControlSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
