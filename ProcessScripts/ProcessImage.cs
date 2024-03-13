@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -50,6 +51,31 @@ namespace Project
             }
 
             return true; 
+        }
+
+        static public Image OpenFileImageDialog()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string imagePath = openFileDialog.FileName;
+                    Image image = Image.FromFile(imagePath);
+
+                    return image;
+                }
+                catch (Exception ex)
+                {
+                    ShowMessage.ShowError("Lỗi: Không thể mở tập tin!" + ex.Message);
+                }
+            }
+            return null;
         }
     }
 }

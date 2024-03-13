@@ -107,7 +107,6 @@ namespace Project
             this.checkBoxNoRent.TabIndex = 14;
             this.checkBoxNoRent.Text = "Chưa thuê";
             this.checkBoxNoRent.UseVisualStyleBackColor = true;
-            this.checkBoxNoRent.CheckedChanged += new System.EventHandler(this.checkBoxNoRent_CheckedChanged);
             // 
             // labelMinMax
             // 
@@ -119,7 +118,6 @@ namespace Project
             this.labelMinMax.Size = new System.Drawing.Size(188, 17);
             this.labelMinMax.TabIndex = 13;
             this.labelMinMax.Text = "Min ------------------------- Max";
-            this.labelMinMax.Click += new System.EventHandler(this.labelMinMax_Click);
             // 
             // labelPrice
             // 
@@ -183,7 +181,6 @@ namespace Project
             this.labelAddress.Size = new System.Drawing.Size(51, 17);
             this.labelAddress.TabIndex = 6;
             this.labelAddress.Text = "Địa chỉ";
-            this.labelAddress.Click += new System.EventHandler(this.labelAddress_Click);
             // 
             // pictureBoxCity
             // 
@@ -214,9 +211,13 @@ namespace Project
             // 
             // userControlComboBoxAddress
             // 
+            this.userControlComboBoxAddress.ComboBoxColor = System.Drawing.Color.White;
+            this.userControlComboBoxAddress.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlComboBoxAddress.ComboBoxText = "";
             this.userControlComboBoxAddress.Location = new System.Drawing.Point(77, 39);
             this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
             this.userControlComboBoxAddress.Size = new System.Drawing.Size(212, 24);
+            this.userControlComboBoxAddress.SizeUserControl = new System.Drawing.Size(212, 24);
             this.userControlComboBoxAddress.TabIndex = 17;
             // 
             // FHomePage

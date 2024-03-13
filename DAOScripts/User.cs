@@ -164,7 +164,7 @@ namespace Project
 
             foreach (string part in nameParts)
             {
-                if (!Regex.IsMatch(part, @"^[\p{L}]+$"))
+                if (Regex.IsMatch(part, @"^[\p{L}]+$") == false)
                 {
                     ShowMessage.ShowWarning("Họ tên chỉ được chứa chữ cái có dấu hoặc không có dấu.");
                     return false;
@@ -176,12 +176,7 @@ namespace Project
 
         public bool IsAddress()
         {
-            if (string.IsNullOrWhiteSpace(Address))
-            {
-                ShowMessage.ShowWarning("Địa chỉ không được để trống.");
-                return false;
-            }
-            return true;
+            return ProcessAddress.IsAddRess(Address);
         }
 
         public bool IsIdCard()

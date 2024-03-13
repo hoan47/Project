@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAOScripts\Address.cs" />
+    <Compile Include="ProcessScripts\ProcessAddress.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="FCustomMessageBox.cs">
       <SubType>Form</SubType>
@@ -143,8 +143,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProcessImage.cs" />
+    <Compile Include="ProcessScripts\ProcessImage.cs" />
     <Compile Include="ShowMessage.cs" />
+    <Compile Include="UserControls\UserControlAddressEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAddressEdit.Designer.cs">
+      <DependentUpon>UserControlAddressEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlComboBoxAddress.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +250,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlAddressEdit.resx">
+      <DependentUpon>UserControlAddressEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlComboBoxAddress.resx">
       <DependentUpon>UserControlComboBoxAddress.cs</DependentUpon>
