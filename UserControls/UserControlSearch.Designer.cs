@@ -39,9 +39,10 @@ namespace Project.UserControls
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(18, 10);
+            this.pictureBox.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox.Size = new System.Drawing.Size(20, 20);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -52,28 +53,31 @@ namespace Project.UserControls
             this.textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(78, 12);
+            this.textBox.Location = new System.Drawing.Point(29, 5);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(296, 30);
+            this.textBox.Size = new System.Drawing.Size(170, 20);
             this.textBox.TabIndex = 1;
             this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             this.textBox.Leave += new System.EventHandler(this.Processed);
             // 
             // label
             // 
+            this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label.Location = new System.Drawing.Point(72, 12);
+            this.label.Location = new System.Drawing.Point(29, 5);
+            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(301, 35);
+            this.label.Size = new System.Drawing.Size(71, 20);
             this.label.TabIndex = 2;
             this.label.Text = "Tìm kiếm";
             this.label.Click += new System.EventHandler(this.Processed);
             // 
             // UserControlSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -82,8 +86,9 @@ namespace Project.UserControls
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.pictureBox);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlSearch";
-            this.Size = new System.Drawing.Size(400, 50);
+            this.Size = new System.Drawing.Size(210, 30);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
