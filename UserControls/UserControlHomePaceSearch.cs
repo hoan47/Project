@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project
+namespace Project.UserControls
 {
-    public partial class FService : Form
+    public partial class UserControlHomePaceSearch : UserControl
     {
-        public FService()
+        public UserControlHomePaceSearch()
         {
             InitializeComponent();
-            for(int i=1; i<5; i++)
-            {
-                flowLayoutPanelService.Controls.Add(new UserControlHotel());
-            }
         }
     }
 }

@@ -10,29 +10,20 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHotel : System.Windows.Forms.UserControl
+    public partial class UserControlHotel : UserControl
     {
         public UserControlHotel()
         {
-            this.userControlHotelEditAddress = new UserControlHotelEdit(this);
-            this.userControlHotelEditName = new UserControlHotelEdit(this);
-            this.userControlHotelEditPhone = new UserControlHotelEdit(this);
-            this.userControlHotelEditPrice = new UserControlHotelEdit(this);
             InitializeComponent();
+            userControlHotelEditAddress.GetData(this);
+            userControlHotelEditName.GetData(this);
+            userControlHotelEditPhone.GetData(this);
+            userControlHotelEditPrice.GetData(this);
         }
 
         public void UserControlHottelDoubleClick(object sender, EventArgs e)
         {
             MessageBox.Show("Chọn khách sạn");
-        }
-
-        private void UserControlHotel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxHotel_Click(object sender, EventArgs e)
-        {
         }
     }
 }

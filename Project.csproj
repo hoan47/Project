@@ -163,6 +163,18 @@
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearch.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchItem.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearch.resx">
+      <DependentUpon>UserControlHomePaceSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchItem.resx">
+      <DependentUpon>UserControlHomePaceSearchItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>

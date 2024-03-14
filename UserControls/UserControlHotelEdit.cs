@@ -17,15 +17,19 @@ namespace Project
         public Image PictureBoxHotelEdit { get { return pictureBoxHotelEdit.Image; } set { pictureBoxHotelEdit.Image = value; } }
         public string LabelHotelEdit { get { return labelHotelEdit.Text; } set { labelHotelEdit.Text = value; } }
 
-        public UserControlHotelEdit(UserControl userParent)
+        public UserControlHotelEdit()
         {
             InitializeComponent();
+        }
+
+        public void GetData(UserControl userParent)
+        {
             this.userParent = userParent;
         }
 
         private void DoubleClickUser(object sender, EventArgs e)
         {
-            if(userParent is UserControlHotel user)
+            if (userParent is UserControlHotel user)
             {
                 user.UserControlHottelDoubleClick(sender, e);
             }
