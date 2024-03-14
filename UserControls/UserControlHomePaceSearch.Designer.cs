@@ -41,7 +41,7 @@ namespace Project.UserControls
             // pictureBoxHomePageSearch
             // 
             this.pictureBoxHomePageSearch.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHomePageSearch.Image")));
-            this.pictureBoxHomePageSearch.Location = new System.Drawing.Point(5, 5);
+            this.pictureBoxHomePageSearch.Location = new System.Drawing.Point(22, 27);
             this.pictureBoxHomePageSearch.Name = "pictureBoxHomePageSearch";
             this.pictureBoxHomePageSearch.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxHomePageSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -52,54 +52,57 @@ namespace Project.UserControls
             // 
             this.userControlHomePaceSearchItemPrice.GroupBox = "Giá";
             this.userControlHomePaceSearchItemPrice.Label = "1.234.567.890 VND";
-            this.userControlHomePaceSearchItemPrice.Location = new System.Drawing.Point(317, 54);
+            this.userControlHomePaceSearchItemPrice.Location = new System.Drawing.Point(315, 78);
             this.userControlHomePaceSearchItemPrice.Name = "userControlHomePaceSearchItemPrice";
             this.userControlHomePaceSearchItemPrice.PictureBox = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchItemPrice.PictureBox")));
-            this.userControlHomePaceSearchItemPrice.Size = new System.Drawing.Size(200, 50);
+            this.userControlHomePaceSearchItemPrice.Size = new System.Drawing.Size(180, 50);
             this.userControlHomePaceSearchItemPrice.TabIndex = 4;
             // 
             // userControlHomePaceSearchItemAddress
             // 
             this.userControlHomePaceSearchItemAddress.GroupBox = "Địa chỉ";
             this.userControlHomePaceSearchItemAddress.Label = "TP Hồ Chí Minh, Thủ Đức, Võ Văn Ngân";
-            this.userControlHomePaceSearchItemAddress.Location = new System.Drawing.Point(317, 0);
+            this.userControlHomePaceSearchItemAddress.Location = new System.Drawing.Point(315, 22);
             this.userControlHomePaceSearchItemAddress.Name = "userControlHomePaceSearchItemAddress";
             this.userControlHomePaceSearchItemAddress.PictureBox = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchItemAddress.PictureBox")));
-            this.userControlHomePaceSearchItemAddress.Size = new System.Drawing.Size(200, 50);
+            this.userControlHomePaceSearchItemAddress.Size = new System.Drawing.Size(180, 50);
             this.userControlHomePaceSearchItemAddress.TabIndex = 3;
             // 
             // userControlHomePaceSearchItemPhone
             // 
             this.userControlHomePaceSearchItemPhone.GroupBox = "Số điện thoại";
             this.userControlHomePaceSearchItemPhone.Label = "0123456789";
-            this.userControlHomePaceSearchItemPhone.Location = new System.Drawing.Point(112, 54);
+            this.userControlHomePaceSearchItemPhone.Location = new System.Drawing.Point(129, 78);
             this.userControlHomePaceSearchItemPhone.Name = "userControlHomePaceSearchItemPhone";
             this.userControlHomePaceSearchItemPhone.PictureBox = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchItemPhone.PictureBox")));
-            this.userControlHomePaceSearchItemPhone.Size = new System.Drawing.Size(200, 50);
+            this.userControlHomePaceSearchItemPhone.Size = new System.Drawing.Size(180, 50);
             this.userControlHomePaceSearchItemPhone.TabIndex = 2;
             // 
             // userControlHomePaceSearchItemName
             // 
             this.userControlHomePaceSearchItemName.GroupBox = "Tên khách sạn";
             this.userControlHomePaceSearchItemName.Label = "Tình một đêm";
-            this.userControlHomePaceSearchItemName.Location = new System.Drawing.Point(111, 0);
+            this.userControlHomePaceSearchItemName.Location = new System.Drawing.Point(129, 22);
             this.userControlHomePaceSearchItemName.Name = "userControlHomePaceSearchItemName";
             this.userControlHomePaceSearchItemName.PictureBox = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchItemName.PictureBox")));
-            this.userControlHomePaceSearchItemName.Size = new System.Drawing.Size(200, 50);
+            this.userControlHomePaceSearchItemName.Size = new System.Drawing.Size(180, 50);
             this.userControlHomePaceSearchItemName.TabIndex = 1;
             // 
             // UserControlHomePaceSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.userControlHomePaceSearchItemPrice);
             this.Controls.Add(this.userControlHomePaceSearchItemAddress);
             this.Controls.Add(this.userControlHomePaceSearchItemPhone);
             this.Controls.Add(this.userControlHomePaceSearchItemName);
             this.Controls.Add(this.pictureBoxHomePageSearch);
+            this.DoubleBuffered = true;
             this.Name = "UserControlHomePaceSearch";
-            this.Size = new System.Drawing.Size(525, 110);
+            this.Size = new System.Drawing.Size(521, 143);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHomePageSearch)).EndInit();
             this.ResumeLayout(false);
 

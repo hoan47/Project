@@ -15,27 +15,10 @@ namespace Project
         public FHomePage()
         {
             InitializeComponent();
-            this.fController = fController;
-            userControlComboBoxAddress.GetData(fController.addressDAO.Addreses);
             for(int i=0; i<10; i++)
             {
                 flowLayoutPanelHomePageSearch.Controls.Add(new UserControls.UserControlHomePaceSearch());
             }
-        }
-
-        private void labelAddress_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelMinMax_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxNoRent_CheckedChanged(object sender, EventArgs e)
-        {
-        
         }
     }
 }
