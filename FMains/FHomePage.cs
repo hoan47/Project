@@ -12,9 +12,7 @@ namespace Project
 {
     public partial class FHomePage : Form
     {
-        FController fController;
-
-        public FHomePage(FController fController)
+        public FHomePage()
         {
             InitializeComponent();
             this.fController = fController;
@@ -37,7 +35,7 @@ namespace Project
 
         private void checkBoxNoRent_CheckedChanged(object sender, EventArgs e)
         {
-
+        
         }
     }
 }
