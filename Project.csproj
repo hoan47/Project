@@ -170,6 +170,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
+    <Compile Include="DAOScripts\CheckInfo.cs" />
+    <Compile Include="DAOScripts\Hotel.cs" />
+    <Compile Include="DAOScripts\HotelDAO.cs" />
+    <Compile Include="DAOScripts\Room.cs" />
     <Compile Include="FCustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>

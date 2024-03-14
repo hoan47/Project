@@ -97,7 +97,7 @@ namespace Project
             return false;
         }
 
-        public void Update()
+        public bool Update()
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Project
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {
-                    ShowMessage.ShowNotification("Đổi mật khẩu thành công");
+                    return true;
                 }
             }
             catch (Exception e)
@@ -117,6 +117,7 @@ namespace Project
             {
                 sqlConnection.Close();
             }
+            return true;
         }
     }
 }

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    class Room
+    public class Room
     {
         private Hotel hotel;
+        public bool IsEmptyRoom { get; private set; }
+
+        public Room(Hotel hotel)
+        {
+            this.hotel = hotel;
+        }
     }
 }

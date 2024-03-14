@@ -45,12 +45,7 @@ namespace Project
 
         public bool IsAddRess()
         {
-            if (ProvinceAndDistrict?.Count(c => c == ',') != 1)
-            {
-                ShowMessage.ShowWarning("Vui lòng chọn đầy đủ địa chỉ.");
-                return false;
-            }
-            return true;
+            return CheckInfo.IsAddRess(ProvinceAndDistrict);
         }
     }
 }

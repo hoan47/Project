@@ -31,8 +31,8 @@ namespace Project
 
                 while (reader.Read())
                 {
-                    string province = reader["nameProvince"].ToString();
-                    string district = reader["nameDistrict"].ToString();
+                    string province = reader[0].ToString();
+                    string district = reader[1].ToString();
 
                     if (addresses.ContainsKey(province))
                     {

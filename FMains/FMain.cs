@@ -65,7 +65,7 @@ namespace Project
             {
                 OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO, ClientDAO), toolStripButtonInfo);
             }
-            else if(User.Client == null)
+            else if(User.Client.RankInt == 0)
             {
                 fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
             }    

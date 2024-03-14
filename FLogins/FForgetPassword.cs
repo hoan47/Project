@@ -21,14 +21,14 @@ namespace Project
         {
             InitializeComponent();
             this.fController = fController;
-            this.User = user;
-            this.AccountDAO = accountDAO;
-            this.InfoDAO = infoDAO;
+            User = user;
+            AccountDAO = accountDAO;
+            InfoDAO = infoDAO;
         }
 
         private void ButtonFindAccountClick(object sender, EventArgs e)
         {
-            User.Update(userControlTextBoxAccount.TextBoxText);
+            User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
                 if (AccountDAO.FindAccount() == true)

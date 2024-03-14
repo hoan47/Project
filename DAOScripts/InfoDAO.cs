@@ -35,6 +35,7 @@ namespace Project
                         dataInfo.IsDBNull(9) ? Properties.Resources.man : ProcessImage.ByteToImageArray((byte[])dataInfo[9])
                     );
                 }
+                dataInfo.Close();
             }
             catch (Exception e)
             {
