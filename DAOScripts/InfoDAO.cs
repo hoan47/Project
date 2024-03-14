@@ -27,7 +27,7 @@ namespace Project
                         dataInfo.IsDBNull(1) ? "Nguyen Van An" : dataInfo[1].ToString(),
                         dataInfo.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(dataInfo[2]),
                         dataInfo.IsDBNull(3) ? "Nam" : dataInfo[3].ToString(),
-                        dataInfo.IsDBNull(4) ? null : dataInfo[4].ToString(),
+                        dataInfo.IsDBNull(4) ? null : new Address(dataInfo[4].ToString()),
                         dataInfo.IsDBNull(5) ? null : dataInfo[5].ToString(),
                         dataInfo.IsDBNull(6) ? null : dataInfo[6].ToString(),
                         dataInfo.IsDBNull(7) ? null : dataInfo[7].ToString(),
@@ -79,7 +79,7 @@ namespace Project
                  $"name = N'{user.Name}', " +
                  $"dateOfBirth = '{user.DateOfBirth.ToString("yyyyMMdd")}', " +
                  $"gender = N'{user.Gender}', " +
-                 $"address = N'{user.Address}', " +
+                 $"address = N'{user.Address.AddressValue}', " +
                  $"idCard = '{user.IdCard}', " +
                  $"email = '{user.Email}', " +
                  $"phone = '{user.Phone}', " +
