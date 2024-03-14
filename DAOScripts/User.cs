@@ -18,7 +18,7 @@ namespace Project
         public string Name { get; private set; }
         public DateTime DateOfBirth { get; private set; }
         public string Gender { get; private set; }
-        public string Address { get; private set; }
+        public Address Address { get; private set; }
         public string IdCard { get; private set; }
         public string Email { get; private set; }
         public string Phone { get; private set; }
@@ -41,7 +41,7 @@ namespace Project
             NewPassword = newPassword;
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, string address, string idCard, string email, string phone, Image image)
+        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, Image image)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -55,7 +55,7 @@ namespace Project
             InitializeClient();
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, string address, string idCard, string email, string phone, int imageID, Image image)
+        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, int imageID, Image image)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -176,7 +176,7 @@ namespace Project
 
         public bool IsAddress()
         {
-            return ProcessAddress.IsAddRess(Address);
+            return Address.IsAddRess();
         }
 
         public bool IsIdCard()

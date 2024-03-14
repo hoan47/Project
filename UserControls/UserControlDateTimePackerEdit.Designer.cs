@@ -46,10 +46,10 @@ namespace Project
             this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dateTimePicker.Enabled = false;
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(132, 6);
+            this.dateTimePicker.Location = new System.Drawing.Point(150, 6);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(362, 27);
+            this.dateTimePicker.Size = new System.Drawing.Size(340, 27);
             this.dateTimePicker.TabIndex = 0;
             // 
             // label

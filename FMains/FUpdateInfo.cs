@@ -36,8 +36,8 @@ namespace Project
             userControlRadioButtonEditGender.GenderText = User.Gender;
             if (User.Address != null)
             {
-                userControlAddressEditAddress.ComboBoxText = ProcessAddress.SelectProvinceAndDistrict(User.Address);
-                userControlTextBoxEditSpecificLocation.TextBoxText = ProcessAddress.SelectSpecificLocation(User.Address);
+                userControlAddressEditAddress.ComboBoxText = User.Address.ProvinceAndDistrict;
+                userControlTextBoxEditSpecificLocation.TextBoxText = User.Address.SpecificLocation;
             }
             userControlTextBoxEditIdCard.TextBoxText = User.IdCard;
             userControlTextBoxEditEmail.TextBoxText = User.Email;
@@ -77,12 +77,14 @@ namespace Project
 
             if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
             {
-                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                Address address = new Address(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText);
+
+                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
                     UserControlLoading userControlLoading = new UserControlLoading(this, 2000);
 
-                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, ProcessAddress.AppendAddress(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText), userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                     userControlLoading.OnLoading();
                     if (InfoDAO.Update() == true)
                     {

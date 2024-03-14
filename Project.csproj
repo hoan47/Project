@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProcessScripts\ProcessAddress.cs" />
+    <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="FCustomMessageBox.cs">
       <SubType>Form</SubType>
