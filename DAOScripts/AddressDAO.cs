@@ -6,8 +6,7 @@ namespace Project
 {
     public class AddRessDAO : DAO
     {
-        static Dictionary<string, List<string>> addresses;
-        public Dictionary<string, List<string>> Addreses { get { return addresses; } }
+        public static Dictionary<string, List<string>> addresses;
 
         static AddRessDAO()
         {

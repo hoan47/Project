@@ -86,7 +86,6 @@ namespace Project
             this.panelSearch.Controls.Add(this.groupBox3);
             this.panelSearch.Controls.Add(this.groupBox2);
             this.panelSearch.Location = new System.Drawing.Point(0, 0);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(324, 630);
             this.panelSearch.TabIndex = 3;
@@ -292,7 +291,7 @@ namespace Project
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxPrice
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(7, 22);
@@ -309,7 +308,7 @@ namespace Project
             this.pictureBoxPeople.Location = new System.Drawing.Point(7, 22);
             this.pictureBoxPeople.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxPeople.Name = "pictureBoxPeople";
-            this.pictureBoxPeople.Size = new System.Drawing.Size(53, 49);
+            this.pictureBoxPeople.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxPeople.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPeople.TabIndex = 7;
             this.pictureBoxPeople.TabStop = false;
@@ -319,8 +318,22 @@ namespace Project
             this.pictureBoxCity.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCity.Image")));
             this.pictureBoxCity.Location = new System.Drawing.Point(7, 22);
             this.pictureBoxCity.Margin = new System.Windows.Forms.Padding(4);
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.ForeColor = System.Drawing.Color.Black;
+            this.labelAddress.Location = new System.Drawing.Point(58, 12);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(40, 13);
+            this.labelAddress.TabIndex = 6;
+            this.labelAddress.Text = "Địa chỉ";
+            // 
+            // pictureBoxCity
+            // 
+            this.pictureBoxCity.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCity.Image")));
+            this.pictureBoxCity.Location = new System.Drawing.Point(12, 12);
             this.pictureBoxCity.Name = "pictureBoxCity";
-            this.pictureBoxCity.Size = new System.Drawing.Size(53, 49);
+            this.pictureBoxCity.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxCity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCity.TabIndex = 5;
             this.pictureBoxCity.TabStop = false;
@@ -336,7 +349,7 @@ namespace Project
             this.userControlSearch1.TabIndex = 7;
             this.userControlSearch1.TextVisible = "Tìm kiếm";
             // 
-            // userControlComboBoxAddress
+            // flowLayoutPanelHomePageSearch
             // 
             this.userControlComboBoxAddress.Location = new System.Drawing.Point(63, 49);
             this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
@@ -345,7 +358,7 @@ namespace Project
             // 
             // FHomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -356,7 +369,7 @@ namespace Project
             this.Controls.Add(this.panelSearch);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHomePage";
             this.Text = "FHomePage";
             this.Load += new System.EventHandler(this.FHomePage_Load);

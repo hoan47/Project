@@ -34,7 +34,11 @@ namespace Project
             userControlTextBoxEditName.TextBoxText = User.Name;
             userControlDateTimePackerEditDateOfBirth.DateTimePickerText = User.DateOfBirth.ToString();
             userControlRadioButtonEditGender.GenderText = User.Gender;
-            userControlTextBoxEditAddress.TextBoxText = User.Address;
+            if (User.Address != null)
+            {
+                userControlAddressEditAddress.ComboBoxText = User.Address.ProvinceAndDistrict;
+                userControlTextBoxEditSpecificLocation.TextBoxText = User.Address.SpecificLocation;
+            }
             userControlTextBoxEditIdCard.TextBoxText = User.IdCard;
             userControlTextBoxEditEmail.TextBoxText = User.Email;
             userControlTextBoxEditPhone.TextBoxText = User.Phone;
@@ -62,26 +66,7 @@ namespace Project
 
         private void ButtonChangeImageClick(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp";
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.RestoreDirectory = true;
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    string imagePath = openFileDialog.FileName;
-                    Image image = Image.FromFile(imagePath);
-
-                    pictureBoxImage.Image = image;
-                }
-                catch(Exception ex)
-                {
-                    ShowMessage.ShowError("Lỗi: Không thể mở tập tin!" + ex.Message);
-                }
-            }
+            pictureBoxImage.Image = ProcessImage.OpenFileImageDialog();
         }
 
         private void ButtonUpdateClick(object sender, EventArgs e)
@@ -92,12 +77,14 @@ namespace Project
 
             if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
             {
-                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                Address address = new Address(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText);
+
+                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
                     UserControlLoading userControlLoading = new UserControlLoading(this, 2000);
 
-                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, userControlTextBoxEditAddress.TextBoxText, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                     userControlLoading.OnLoading();
                     if (InfoDAO.Update() == true)
                     {

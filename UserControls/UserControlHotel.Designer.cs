@@ -1,6 +1,7 @@
 ﻿
 namespace Project
 {
+
     partial class UserControlHotel
     {
         /// <summary> 
@@ -31,6 +32,10 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotel));
             this.pictureBoxHotel = new System.Windows.Forms.PictureBox();
+            this.userControlHotelEditAddress = new Project.UserControlHotelEdit();
+            this.userControlHotelEditName = new Project.UserControlHotelEdit();
+            this.userControlHotelEditPhone = new Project.UserControlHotelEdit();
+            this.userControlHotelEditPrice = new Project.UserControlHotelEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +49,6 @@ namespace Project
             this.pictureBoxHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxHotel.TabIndex = 6;
             this.pictureBoxHotel.TabStop = false;
-            this.pictureBoxHotel.Click += new System.EventHandler(this.pictureBoxHotel_Click);
             this.pictureBoxHotel.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
             // userControlHotelEditPhone
@@ -111,7 +115,6 @@ namespace Project
             this.DoubleBuffered = true;
             this.Name = "UserControlHotel";
             this.Size = new System.Drawing.Size(650, 181);
-            this.Load += new System.EventHandler(this.UserControlHotel_Load);
             this.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).EndInit();
             this.ResumeLayout(false);

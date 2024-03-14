@@ -12,9 +12,23 @@ namespace Project
 {
     public partial class UserControlComboBoxAddress : UserControl
     {
-        private Dictionary<string, List<string>> addresses;
         string curentAddress;
         private bool isProvince;
+        public Size SizeUserControl { get { return Size; } set { comboBox.Size = (comboBox.Size = value) - new Size(Size.Width / 4, 2); } }
+        public Color ComboBoxColor { get { return comboBox.BackColor; } set { comboBox.BackColor = value; } }
+        public Font ComboBoxFont { get { return comboBox.Font; } set { comboBox.Font = value; } }
+        public string ComboBoxText 
+        { 
+            get 
+            { 
+                return comboBox.Text; 
+            } 
+            set 
+            {
+                comboBox.Items.Add(value);
+                comboBox.Text = value;
+            } 
+        }
 
         public UserControlComboBoxAddress()
         {
@@ -23,15 +37,10 @@ namespace Project
             curentAddress = null;
         }
 
-        public void GetData(Dictionary<string, List<string>> addresses)
-        {
-            this.addresses = addresses;
-        }
-
         public void UpdateProvince()
         {
             comboBox.Items.Clear();
-            foreach(string province in addresses.Keys)
+            foreach(string province in AddRessDAO.addresses.Keys)
             {
                 comboBox.Items.Add(province);
             }    
@@ -40,11 +49,11 @@ namespace Project
         public void UpdateDistrict()
         {
             comboBox.Items.Clear();
-            if (addresses.ContainsKey(curentAddress) == false)
+            if (AddRessDAO.addresses.ContainsKey(curentAddress) == false)
             {
                 return;
             }
-            foreach (string district in addresses[curentAddress])
+            foreach (string district in AddRessDAO.addresses[curentAddress])
             {
                 comboBox.Items.Add(district);
             }
@@ -81,6 +90,12 @@ namespace Project
                 comboBox.Items.Add(curentTextAddreed);
                 comboBox.Text = curentTextAddreed;
             }
+        }
+
+        public void GetComboBoxText(string address)
+        {
+            comboBox.Items.Add(address);
+            comboBox.Text = address;
         }
     }
 }

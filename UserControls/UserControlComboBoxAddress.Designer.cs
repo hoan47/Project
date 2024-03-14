@@ -36,8 +36,8 @@ namespace Project
             // 
             // comboBox
             // 
-            this.comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox.BackColor = System.Drawing.Color.White;
+            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Location = new System.Drawing.Point(0, 0);
             this.comboBox.Name = "comboBox";

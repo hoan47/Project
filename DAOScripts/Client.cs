@@ -67,7 +67,6 @@ namespace Project
                     return $"Bạn cần thêm {ERank.rankYellow - User.Client.RankInt} điểm để mở khóa hạng Vàng.";
                 default:
                     return $"Bạn hiện tại đang ở mức hạng cao nhất.";
-
             }
         }
 

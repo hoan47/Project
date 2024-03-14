@@ -12,7 +12,7 @@ namespace Project.UserControls
 {
     public partial class UserControlSearch : UserControl
     {
-        public string TextVisible { get{ return label.Text; } set { label.Text = value; } }
+        public string TextVisible { get { return label.Text; } set { label.Text = value; } }
 
         public UserControlSearch()
         {

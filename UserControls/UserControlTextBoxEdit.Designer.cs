@@ -66,12 +66,12 @@ namespace Project
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox.Enabled = false;
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(109, 17);
+            this.textBox.Location = new System.Drawing.Point(193, 17);
             this.textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox.MaxLength = 27;
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(404, 22);
+            this.textBox.Size = new System.Drawing.Size(320, 22);
             this.textBox.TabIndex = 0;
             // 
             // label
