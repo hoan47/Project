@@ -59,6 +59,11 @@ namespace Project
 
         public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
         {
+            if(User.IsAccount() == false)
+            {
+                e.Result = false;
+                return;
+            }    
             bool isSuccess = AccountDAO.Login();
 
             if (isSuccess == true)

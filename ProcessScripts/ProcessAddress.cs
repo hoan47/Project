@@ -46,7 +46,7 @@ namespace Project
                     }    
                 }    
             }
-            return addresses.Substring(0, count - 1);
+            return addresses.Substring(0, count < addresses.Length ? count- 1 : count);
         }
 
         public static string SelectSpecificLocation(string addresses)
