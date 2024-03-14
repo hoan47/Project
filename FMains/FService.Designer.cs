@@ -109,6 +109,7 @@ namespace Project
             this.buttonAdd.Size = new System.Drawing.Size(80, 80);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // FService
             // 

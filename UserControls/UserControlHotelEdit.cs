@@ -20,6 +20,7 @@ namespace Project
         public UserControlHotelEdit()
         {
             InitializeComponent();
+
         }
 
         public void GetData(UserControl userParent)

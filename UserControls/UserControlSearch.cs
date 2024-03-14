@@ -38,5 +38,10 @@ namespace Project.UserControls
                 e.Handled = true;
             }    
         }
+
+        private void UserControlSearch_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

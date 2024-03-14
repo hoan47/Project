@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.panelOption = new System.Windows.Forms.Panel();
             this.toolStripOption = new System.Windows.Forms.ToolStrip();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHomePage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
@@ -40,6 +39,7 @@
             this.toolStripButtonService = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogOut = new System.Windows.Forms.ToolStripButton();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelOption.SuspendLayout();
             this.toolStripOption.SuspendLayout();
@@ -76,16 +76,6 @@
             this.toolStripOption.TabIndex = 0;
             this.toolStripOption.TabStop = true;
             this.toolStripOption.Text = "toolStrip1";
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIcon.TabIndex = 4;
-            this.pictureBoxIcon.TabStop = false;
             // 
             // toolStripButtonInfo
             // 
@@ -179,6 +169,16 @@
             this.toolStripButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButtonLogOut.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 4;
+            this.pictureBoxIcon.TabStop = false;
+            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
@@ -222,7 +222,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonService;
         private System.Windows.Forms.ToolStripButton toolStripButtonSetting;
         private System.Windows.Forms.ToolStripButton toolStripButtonLogOut;
-        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.PictureBox pictureBoxIcon;
+        public System.Windows.Forms.Panel panelMain;
     }
 }
