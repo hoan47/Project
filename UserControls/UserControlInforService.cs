@@ -26,5 +26,15 @@ namespace Project.UserControls
         {
 
         }
+
+        private void userControlTextBoxService2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,26 +35,27 @@ namespace Project.UserControls
             // 
             // userControlComboBoxAddress1
             // 
-            this.userControlComboBoxAddress1.BackColor = System.Drawing.Color.Transparent;
             this.userControlComboBoxAddress1.ComboBoxColor = System.Drawing.Color.White;
             this.userControlComboBoxAddress1.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlComboBoxAddress1.ComboBoxText = "";
-            this.userControlComboBoxAddress1.Location = new System.Drawing.Point(7, 6);
+            this.userControlComboBoxAddress1.Location = new System.Drawing.Point(8, 7);
             this.userControlComboBoxAddress1.Name = "userControlComboBoxAddress1";
-            this.userControlComboBoxAddress1.Size = new System.Drawing.Size(213, 24);
-            this.userControlComboBoxAddress1.SizeUserControl = new System.Drawing.Size(213, 24);
+            this.userControlComboBoxAddress1.Size = new System.Drawing.Size(279, 29);
+            this.userControlComboBoxAddress1.SizeUserControl = new System.Drawing.Size(279, 29);
             this.userControlComboBoxAddress1.TabIndex = 0;
+            this.userControlComboBoxAddress1.Load += new System.EventHandler(this.userControlComboBoxAddress1_Load);
             // 
             // UserControlAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.userControlComboBoxAddress1);
             this.DoubleBuffered = true;
             this.Name = "UserControlAddress";
-            this.Size = new System.Drawing.Size(225, 36);
+            this.Size = new System.Drawing.Size(295, 36);
             this.ResumeLayout(false);
 
         }

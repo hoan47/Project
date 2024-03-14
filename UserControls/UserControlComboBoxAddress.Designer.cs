@@ -38,10 +38,11 @@ namespace Project
             // 
             this.comboBox.BackColor = System.Drawing.Color.White;
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Location = new System.Drawing.Point(0, 0);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(212, 24);
+            this.comboBox.Size = new System.Drawing.Size(276, 24);
             this.comboBox.TabIndex = 0;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
             this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
@@ -50,11 +51,13 @@ namespace Project
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(212, 25);
+            this.pictureBox.Size = new System.Drawing.Size(279, 25);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // UserControlComboBoxAddress
             // 
@@ -63,7 +66,7 @@ namespace Project
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.pictureBox);
             this.Name = "UserControlComboBoxAddress";
-            this.Size = new System.Drawing.Size(212, 24);
+            this.Size = new System.Drawing.Size(279, 25);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace Project.FMains
 {
     public partial class FUpdateService : Form
     {
+        Form formChildCurrent;
+       
         public FUpdateService()
         {
             InitializeComponent();
+            formChildCurrent = this;
+            for (int i = 1; i < 10; i++)
+            {
+               flowLayoutPanel1.Controls.Add(new UserControlRoom());
+            }
+            dateTimePicker1.ShowUpDown=true;
+            dateTimePicker2.ShowUpDown=true;
         }
         private void OpenFormChild(Form formChild)
         {
@@ -105,6 +115,74 @@ namespace Project.FMains
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFormChild(new FRegisterRoom());
+        }
+
+        private void userControlTextBoxService1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlTextBoxService2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlTextBoxService3_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlComboBoxAddress1_Load(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void userControlComboBoxAddress1_Load_1(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void userControlComboBoxAddress1_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

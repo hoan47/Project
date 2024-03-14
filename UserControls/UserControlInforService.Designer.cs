@@ -41,6 +41,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.userControlTextBoxService1 = new Project.UserControls.UserControlTextBoxService();
+            this.userControlTextBoxService2 = new Project.UserControls.UserControlTextBoxService();
+            this.userControlTextBoxService3 = new Project.UserControls.UserControlTextBoxService();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,9 +65,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 382);
+            this.groupBox1.Location = new System.Drawing.Point(0, 235);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(434, 116);
+            this.groupBox1.Size = new System.Drawing.Size(434, 79);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời Gian";
@@ -128,9 +134,9 @@
             this.pictureBox2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(111, 23);
+            this.pictureBox2.Location = new System.Drawing.Point(361, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 25;
             this.pictureBox2.TabStop = false;
@@ -139,9 +145,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(362, 165);
+            this.pictureBox4.Location = new System.Drawing.Point(356, 91);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(55, 39);
+            this.pictureBox4.Size = new System.Drawing.Size(59, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 26;
             this.pictureBox4.TabStop = false;
@@ -150,21 +156,88 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(361, 280);
+            this.pictureBox5.Location = new System.Drawing.Point(372, 168);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(54, 39);
+            this.pictureBox5.Size = new System.Drawing.Size(33, 31);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 27;
             this.pictureBox5.TabStop = false;
+            // 
+            // userControlTextBoxService1
+            // 
+            this.userControlTextBoxService1.AutoSize = true;
+            this.userControlTextBoxService1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.userControlTextBoxService1.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxService1.Image")));
+            this.userControlTextBoxService1.LabelText = "Tên Khách Sạn";
+            this.userControlTextBoxService1.Location = new System.Drawing.Point(-2, 3);
+            this.userControlTextBoxService1.Name = "userControlTextBoxService1";
+            this.userControlTextBoxService1.Size = new System.Drawing.Size(429, 82);
+            this.userControlTextBoxService1.TabIndex = 28;
+          
+            // 
+            // userControlTextBoxService2
+            // 
+            this.userControlTextBoxService2.AutoSize = true;
+            this.userControlTextBoxService2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.userControlTextBoxService2.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxService2.Image")));
+            this.userControlTextBoxService2.LabelText = "Địa Chỉ";
+            this.userControlTextBoxService2.Location = new System.Drawing.Point(0, 80);
+            this.userControlTextBoxService2.Name = "userControlTextBoxService2";
+            this.userControlTextBoxService2.Size = new System.Drawing.Size(429, 82);
+            this.userControlTextBoxService2.TabIndex = 29;
+ 
+            this.userControlTextBoxService2.Load += new System.EventHandler(this.userControlTextBoxService2_Load);
+            // 
+            // userControlTextBoxService3
+            // 
+            this.userControlTextBoxService3.AutoSize = true;
+            this.userControlTextBoxService3.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.userControlTextBoxService3.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxService3.Image")));
+            this.userControlTextBoxService3.LabelText = "Số Điện Thoại";
+            this.userControlTextBoxService3.Location = new System.Drawing.Point(-2, 158);
+            this.userControlTextBoxService3.Name = "userControlTextBoxService3";
+            this.userControlTextBoxService3.Size = new System.Drawing.Size(436, 82);
+            this.userControlTextBoxService3.TabIndex = 30;
+   
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Location = new System.Drawing.Point(97, 51);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(279, 20);
+            this.textBox2.TabIndex = 31;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Location = new System.Drawing.Point(97, 209);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(279, 20);
+            this.textBox3.TabIndex = 33;
             // 
             // UserControlInforService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.userControlTextBoxService2);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.userControlTextBoxService1);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.userControlTextBoxService3);
             this.Name = "UserControlInforService";
             this.Size = new System.Drawing.Size(430, 501);
             this.groupBox1.ResumeLayout(false);
@@ -175,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +268,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private UserControlTextBoxService userControlTextBoxService1;
+        private UserControlTextBoxService userControlTextBoxService2;
+        private UserControlTextBoxService userControlTextBoxService3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

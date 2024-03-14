@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.UserControls
+namespace Project.FMains
 {
-    public partial class UserControlAddress : UserControl
+    public partial class FInforHote : Form
     {
-        public UserControlAddress()
+        public FInforHote()
         {
             InitializeComponent();
         }
 
-        private void userControlComboBoxAddress1_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

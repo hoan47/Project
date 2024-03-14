@@ -72,15 +72,15 @@ namespace Project
             // 
             // userControlComboBoxAddress
             // 
-            this.userControlComboBoxAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.userControlComboBoxAddress.BackColor = System.Drawing.Color.White;
             this.userControlComboBoxAddress.ComboBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.userControlComboBoxAddress.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlComboBoxAddress.ComboBoxText = "";
             this.userControlComboBoxAddress.Enabled = false;
-            this.userControlComboBoxAddress.Location = new System.Drawing.Point(200, 8);
+            this.userControlComboBoxAddress.Location = new System.Drawing.Point(210, 9);
             this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
-            this.userControlComboBoxAddress.Size = new System.Drawing.Size(294, 28);
-            this.userControlComboBoxAddress.SizeUserControl = new System.Drawing.Size(294, 28);
+            this.userControlComboBoxAddress.Size = new System.Drawing.Size(222, 28);
+            this.userControlComboBoxAddress.SizeUserControl = new System.Drawing.Size(222, 28);
             this.userControlComboBoxAddress.TabIndex = 1;
             // 
             // UserControlAddressEdit

@@ -52,6 +52,7 @@ namespace Project
             this.flowLayoutPanelService.Name = "flowLayoutPanelService";
             this.flowLayoutPanelService.Size = new System.Drawing.Size(907, 495);
             this.flowLayoutPanelService.TabIndex = 0;
+            this.flowLayoutPanelService.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelService_Paint_1);
             // 
             // labelQuantity
             // 

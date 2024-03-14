@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Project.UserControls
 {
-    public partial class UserControlAddress : UserControl
+    public partial class UserControlHomePageRoom : UserControl
     {
-        public UserControlAddress()
+        public UserControlHomePageRoom()
         {
             InitializeComponent();
-        }
-
-        private void userControlComboBoxAddress1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

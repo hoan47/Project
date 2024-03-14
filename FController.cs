@@ -63,7 +63,7 @@ namespace Project
             formChild.Show();
             CenterToScreen();
         }
-
+      
         public void InitializeFLogin()
         {
             OpenFormChild(new FLogin(this, user, accountDAO, infoDAO));
