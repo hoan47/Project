@@ -51,7 +51,7 @@ namespace Project
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
-            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             if (User.IsPassword() == true)
             {
                 AccountDAO.Update();

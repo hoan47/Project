@@ -16,24 +16,28 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
+        public ClientDAO ClientDAO { get; set; }
 
-        public FCreateAccount(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FCreateAccount(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             this.fController = fController;
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            User.UpdateClient(new Client(User));
             if (User.IsAccount() == true && User.IsPassword() == true)
             {
                 if(AccountDAO.Insert() == true)
                 {
                     InfoDAO.Insert();
+                    ClientDAO.Insert();
                     Back(sender, e);
                 }    
             }

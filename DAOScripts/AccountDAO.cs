@@ -27,7 +27,6 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
-
                 if ((int)selectCMD.ExecuteScalar() != 0)
                 {
                     return true;

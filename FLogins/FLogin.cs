@@ -18,8 +18,9 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
+        public ClientDAO ClientDAO { get; set; }
 
-        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
@@ -28,6 +29,7 @@ namespace Project
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -46,7 +48,7 @@ namespace Project
             {
                 return;
             }
-            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             fController.userControlLoading = new UserControlLoading(fController, 500);
             fController.userControlLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
@@ -69,6 +71,7 @@ namespace Project
             if (isSuccess == true)
             {
                 InfoDAO.Access();
+                ClientDAO.Access();
             }
             e.Result = isSuccess;
         }

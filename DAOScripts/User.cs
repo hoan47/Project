@@ -25,6 +25,7 @@ namespace Project
         public int ImageId { get; private set; }
         public Image Image { get; private set; }
         public Client Client { get; private set; }
+        public List<Hotel> Hotels { get; private set; }
 
         public User() 
         { }
@@ -34,7 +35,16 @@ namespace Project
             UserName = userName;
         }
 
-        public void Update(string userName, string password, string newPassword)
+        public void AddHotel(Hotel hotel)
+        {
+            if(Hotels == null)
+            {
+                Hotels = new List<Hotel>();
+            }    
+            Hotels.Add(hotel);
+        }
+
+        public void UpdateUserPassword(string userName, string password, string newPassword)
         {
             UserName = userName;
             Password = password;
@@ -52,7 +62,6 @@ namespace Project
             Phone = phone;
             Image = image;
             StandardizedName();
-            InitializeClient();
         }
 
         public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, int imageID, Image image)
@@ -67,15 +76,11 @@ namespace Project
             ImageId = imageID;
             Image = image;
             StandardizedName();
-            InitializeClient();
         }
 
-        private void InitializeClient()
+        public void UpdateClient(Client client)
         {
-            if (Client == null && Name != null && Address != null && IdCard != null && Email != null && Phone != null)
-            {
-                Client = new Client(this);
-            }
+            Client = client;
         }
 
         public Image GetImageNormal()
@@ -153,7 +158,6 @@ namespace Project
                 ShowMessage.ShowWarning("Họ tên không được để trống.");
                 return false;
             }
-
             string[] nameParts = Name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             if (nameParts.Length < 2)
@@ -161,7 +165,6 @@ namespace Project
                 ShowMessage.ShowWarning("Họ tên phải có ít nhất 2 từ.");
                 return false;
             }
-
             foreach (string part in nameParts)
             {
                 if (Regex.IsMatch(part, @"^[\p{L}]+$") == false)
@@ -170,7 +173,6 @@ namespace Project
                     return false;
                 }
             }
-
             return true;
         }
 
@@ -186,19 +188,16 @@ namespace Project
                 ShowMessage.ShowWarning("Chứng minh nhân dân không được để trống.");
                 return false;
             }
-
             if (IdCard.Length != 12)
             {
                 ShowMessage.ShowWarning("Chứng minh nhân dân phải có 12 số");
                 return false;
             }
-
             if (!Regex.IsMatch(IdCard, "^[0-9]+$"))
             {
                 ShowMessage.ShowWarning("Chứng minh nhân dân chỉ chứa số");
                 return false;
             }
-
             return true;
         }
 
@@ -227,7 +226,6 @@ namespace Project
                 ShowMessage.ShowWarning("Số điện thoại chỉ chứa số");
                 return false;
             }
-
             return true;
         }
 

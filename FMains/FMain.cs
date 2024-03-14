@@ -19,14 +19,16 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
+        public ClientDAO ClientDAO { get; set; }
 
-        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             this.fController = fController;
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void OpenFormChild(Form formChild, ToolStripButton toolStripButton)
@@ -61,7 +63,7 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO), toolStripButtonInfo);
+                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO, ClientDAO), toolStripButtonInfo);
             }
             else if(User.Client == null)
             {
