@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlInforService));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,9 +41,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.userControlService3 = new Project.UserControls.UserControlTextBoxService();
-            this.userControlService2 = new Project.UserControls.UserControlTextBoxService();
-            this.userControlService1 = new Project.UserControls.UserControlTextBoxService();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,16 +66,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời Gian";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(235, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 40);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -97,6 +84,16 @@
             this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 5;
             this.label1.Text = "Check in";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(235, 19);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // maskedTextBox1
             // 
@@ -160,44 +157,6 @@
             this.pictureBox5.TabIndex = 27;
             this.pictureBox5.TabStop = false;
             // 
-            // userControlService3
-            // 
-            this.userControlService3.AutoSize = true;
-            this.userControlService3.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.userControlService3.Image = ((System.Drawing.Image)(resources.GetObject("userControlService3.Image")));
-            this.userControlService3.LabelText = "Hotline";
-            this.userControlService3.Location = new System.Drawing.Point(-3, 260);
-            this.userControlService3.Name = "userControlService3";
-            this.userControlService3.Size = new System.Drawing.Size(434, 135);
-            this.userControlService3.TabIndex = 23;
-            this.userControlService3.TextBoxText = "";
-            // 
-            // userControlService2
-            // 
-            this.userControlService2.AutoSize = true;
-            this.userControlService2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.userControlService2.Image = ((System.Drawing.Image)(resources.GetObject("userControlService2.Image")));
-            this.userControlService2.LabelText = "Địa Chỉ";
-            this.userControlService2.Location = new System.Drawing.Point(-7, 130);
-            this.userControlService2.Name = "userControlService2";
-            this.userControlService2.Size = new System.Drawing.Size(434, 135);
-            this.userControlService2.TabIndex = 22;
-            this.userControlService2.TextBoxText = "";
-            this.userControlService2.Load += new System.EventHandler(this.userControlService2_Load);
-            // 
-            // userControlService1
-            // 
-            this.userControlService1.AutoSize = true;
-            this.userControlService1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.userControlService1.Image = ((System.Drawing.Image)(resources.GetObject("userControlService1.Image")));
-            this.userControlService1.LabelText = "Tên Khách Sạn";
-            this.userControlService1.Location = new System.Drawing.Point(-3, 0);
-            this.userControlService1.Name = "userControlService1";
-            this.userControlService1.Size = new System.Drawing.Size(434, 135);
-            this.userControlService1.TabIndex = 21;
-            this.userControlService1.TextBoxText = "";
-            this.userControlService1.Load += new System.EventHandler(this.userControlService1_Load);
-            // 
             // UserControlInforService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,9 +165,6 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.userControlService3);
-            this.Controls.Add(this.userControlService2);
-            this.Controls.Add(this.userControlService1);
             this.Name = "UserControlInforService";
             this.Size = new System.Drawing.Size(430, 501);
             this.groupBox1.ResumeLayout(false);
@@ -219,7 +175,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
