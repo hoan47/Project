@@ -145,6 +145,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProcessScripts\ProcessImage.cs" />
     <Compile Include="ShowMessage.cs" />
+    <Compile Include="UserControls\UserControlAddress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAddress.Designer.cs">
+      <DependentUpon>UserControlAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlAddressEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +199,12 @@
     <Compile Include="UserControls\UserControlLoading.Designer.cs">
       <DependentUpon>UserControlLoading.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNumericUpDown.Designer.cs">
+      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlSearch.Designer.cs">
       <DependentUpon>UserControlSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlTextBox.Designer.cs">
+      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -263,6 +281,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlAddress.resx">
+      <DependentUpon>UserControlAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlAddressEdit.resx">
       <DependentUpon>UserControlAddressEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,11 +308,17 @@
     <EmbeddedResource Include="UserControls\UserControlLoading.resx">
       <DependentUpon>UserControlLoading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNumericUpDown.resx">
+      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlSearch.resx">
       <DependentUpon>UserControlSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlTextBox.resx">
+      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
