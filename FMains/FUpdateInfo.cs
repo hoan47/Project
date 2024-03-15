@@ -74,10 +74,10 @@ namespace Project
                 newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
-                    UserControlLoading userControlLoading = new UserControlLoading(this, 2000);
+                    FLoading fLoading = new FLoading(this, 2000);
 
                     User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
-                    userControlLoading.OnLoading();
+                    fLoading.OnLoading();
                     if (InfoDAO.Update() == true)
                     {
                         if(User.Client.GetRank() == Client.ERank.noRank)
@@ -90,7 +90,7 @@ namespace Project
                         FController.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
                         LoadData();
                     }
-                    userControlLoading.OffLoading();
+                    fLoading.OffLoading();
                 }
             }
         }

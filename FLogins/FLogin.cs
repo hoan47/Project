@@ -19,7 +19,7 @@ namespace Project
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
         public ClientDAO ClientDAO { get; set; }
-
+        private FLoading fLoading;
         public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
@@ -49,8 +49,8 @@ namespace Project
                 return;
             }
             User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            fController.userControlLoading = new UserControlLoading(fController, 500);
-            fController.userControlLoading.OnLoading();
+            fLoading = new FLoading(fController, 500);
+            fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
 
@@ -81,10 +81,10 @@ namespace Project
             if ((bool)e.Result == true)
             {
                 fController.InitializeFMain();
-                fController.userControlLoading.OnLoading();
+                fLoading.OnLoading();
                 fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
             }
-            fController.userControlLoading.OffLoading();
+            fLoading.OffLoading();
         }
     }
 }

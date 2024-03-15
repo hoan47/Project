@@ -41,9 +41,9 @@ namespace Project
                 }
                 formChildCurrent.Close();
             }
-            UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
+            FLoading fLoading = new FLoading(formChild, 300);
 
-            userControlLoading.OnLoading();
+            fLoading.OnLoading();
             formChildCurrent = formChild;
             formChild.TopLevel = false;
             formChild.Size = panelMain.Size;
@@ -51,7 +51,7 @@ namespace Project
             formChild.BringToFront();
             formChild.Show();
             toolStripButton.BackColor = formChild.BackColor;
-            userControlLoading.OffLoading();
+            fLoading.OffLoading();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)

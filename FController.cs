@@ -17,7 +17,6 @@ namespace Project
         public InfoDAO infoDAO;
         public ClientDAO clientDAO;
         public AddRessDAO addressDAO;
-        public UserControlLoading userControlLoading;
         private Form currentFromChild;
 
         public FController()
@@ -38,7 +37,7 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            Size = (panelMain.Size = formChild.Size)+ new Size(15, 40);
+            Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
             ProcessOpenFormChild(formChild);
         }
 

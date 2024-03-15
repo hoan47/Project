@@ -191,6 +191,12 @@
     <Compile Include="FController.Designer.cs">
       <DependentUpon>FController.cs</DependentUpon>
     </Compile>
+    <Compile Include="FLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLoading.Designer.cs">
+      <DependentUpon>FLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogins\FCreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,18 +328,6 @@
     <Compile Include="UserControls\UserControlInforService.Designer.cs">
       <DependentUpon>UserControlInforService.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlLoading.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlLoading.Designer.cs">
-      <DependentUpon>UserControlLoading.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlNumericUpDown.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlNumericUpDown.Designer.cs">
-      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,18 +339,6 @@
     </Compile>
     <Compile Include="UserControls\UserControlRoom.Designer.cs">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlSearch.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlSearch.Designer.cs">
-      <DependentUpon>UserControlSearch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlTextBox.Designer.cs">
-      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -388,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FController.resx">
       <DependentUpon>FController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLoading.resx">
+      <DependentUpon>FLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogins\FCreateAccount.resx">
       <DependentUpon>FCreateAccount.cs</DependentUpon>
@@ -455,23 +440,11 @@
     <EmbeddedResource Include="UserControls\UserControlInforService.resx">
       <DependentUpon>UserControlInforService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlLoading.resx">
-      <DependentUpon>UserControlLoading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlNumericUpDown.resx">
-      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRoom.resx">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlSearch.resx">
-      <DependentUpon>UserControlSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlTextBox.resx">
-      <DependentUpon>UserControlTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>

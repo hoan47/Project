@@ -11,22 +11,27 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlLoading : UserControl
+    public partial class FLoading : Form
     {
         private Form form;
         int time;
 
-        public UserControlLoading(Form form, int time)
+        public FLoading(Form form, int time)
         {
             InitializeComponent();
+            BackColor = form.BackColor;
             this.form = form;
             this.time = time;
         }
 
         public void OnLoading()
         {
-            form.Controls.Add(this);
+            TopLevel = false;
             Size = form.Size;
+            if (form.Controls.Contains(this) == false)
+            {
+                form.Controls.Add(this);
+            }
             Show();
             BringToFront();
         }
