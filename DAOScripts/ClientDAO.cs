@@ -59,13 +59,13 @@ namespace Project
             return false;
         }
 
-        public bool Update()
+        public bool Update(int core)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand updateCMD = new SqlCommand(
-                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt}' WHERE userName = '{user.UserName}'", sqlConnection);
+                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt + core}' WHERE userName = '{user.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {

@@ -14,9 +14,10 @@ namespace Project
     {
         string curentAddress;
         private bool isProvince;
-        public Size SizeUserControl { get { return Size; } set { comboBox.Size = (comboBox.Size = value) - new Size(Size.Width / 4, 2); } }
+        public Size SizeUserControl { get { return Size; } set { comboBox.Size = (comboBox.Size = value) - new Size(0, 1); } }
         public Color ComboBoxColor { get { return comboBox.BackColor; } set { comboBox.BackColor = value; } }
         public Font ComboBoxFont { get { return comboBox.Font; } set { comboBox.Font = value; } }
+
         public string ComboBoxText 
         { 
             get 
@@ -70,18 +71,16 @@ namespace Project
                 UpdateDistrict();
             }
             isProvince = !isProvince;
-
-        }
-
-        private void ComboBoxSelectedIndexChanged(object sender, EventArgs e)
-        {
-            pictureBox.Focus();
         }
 
         private void ComboBoxLeave(object sender, EventArgs e)
         {
-            if (isProvince != true)
+            if (isProvince == false)
             {
+                if(comboBox.Text == string.Empty)
+                {
+                    isProvince = true;
+                }
                 curentAddress = comboBox.Text;
             }
             else
@@ -92,15 +91,9 @@ namespace Project
             }
         }
 
-        public void GetComboBoxText(string address)
+        private void ComboBoxSelectedValueChanged(object sender, EventArgs e)
         {
-            comboBox.Items.Add(address);
-            comboBox.Text = address;
-        }
-
-        private void pictureBox_Click(object sender, EventArgs e)
-        {
-
+            pictureBox.Focus();
         }
     }
 }

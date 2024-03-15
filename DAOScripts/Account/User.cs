@@ -60,20 +60,6 @@ namespace Project
             StandardizedName();
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, int imageID, Image image)
-        {
-            Name = name;
-            DateOfBirth = dateOfBirth;
-            Gender = gender;
-            Address = address;
-            IdCard = idCard;
-            Email = email;
-            Phone = phone;
-            ImageId = imageID;
-            Image = image;
-            StandardizedName();
-        }
-
         public void AddHotel(Hotel hotel)
         {
             if (Hotels == null)
@@ -81,6 +67,11 @@ namespace Project
                 Hotels = new List<Hotel>();
             }
             Hotels.Add(hotel);
+        }
+
+        public Hotel GetIndex(int index)
+        {
+            return Hotels == null ? null : 0 <= index && index < Hotels.Count ? Hotels[index] : null;
         }
 
         private void StandardizedName()
@@ -94,11 +85,6 @@ namespace Project
                 words[i] = textInfo.ToTitleCase(words[i].ToLower());
             }
             Name = string.Join(" ", words);
-        }
-
-        public Image GetImageNormal()
-        {
-            return Gender == "Nam" ? Properties.Resources.man : Properties.Resources.girl;
         }
 
         public bool IsAccount()

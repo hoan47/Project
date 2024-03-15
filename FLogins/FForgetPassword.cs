@@ -10,28 +10,22 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FForgetPassword : Form, IUser
+    public partial class FForgetPassword : Form
     {
-        public FController fController { get; set; }
-        public User User { get; set; }
-        public AccountDAO AccountDAO { get; set; }
-        public InfoDAO InfoDAO { get; set; }
+        private FController fController;
 
-        public FForgetPassword(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FForgetPassword(FController fController)
         {
             InitializeComponent();
             this.fController = fController;
-            User = user;
-            AccountDAO = accountDAO;
-            InfoDAO = infoDAO;
         }
 
         private void ButtonFindAccountClick(object sender, EventArgs e)
         {
-            User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
+            fController.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (AccountDAO.FindAccount() == true)
+                if (fController.AccountDAO.FindAccount() == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -51,10 +45,10 @@ namespace Project
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
-            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (User.IsPassword() == true)
+            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            if (fController.User.IsPassword() == true)
             {
-                AccountDAO.Update();
+                fController.AccountDAO.Update();
                 Back(sender, e);
             }
         }

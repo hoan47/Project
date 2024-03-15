@@ -44,7 +44,7 @@ namespace Project
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(276, 24);
             this.comboBox.TabIndex = 0;
-            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
+            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxSelectedValueChanged);
             this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
             this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
             // 
@@ -57,7 +57,6 @@ namespace Project
             this.pictureBox.Size = new System.Drawing.Size(279, 25);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // UserControlComboBoxAddress
             // 

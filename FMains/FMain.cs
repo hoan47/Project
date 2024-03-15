@@ -10,28 +10,19 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FMain : Form, IUser
+    public partial class FMain : Form
     {
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
-
         public FController fController { get; set; }
-        public User User { get; set; }
-        public AccountDAO AccountDAO { get; set; }
-        public InfoDAO InfoDAO { get; set; }
-        public ClientDAO ClientDAO { get; set; }
 
-        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
+        public FMain(FController fController)
         {
             InitializeComponent();
             this.fController = fController;
-            User = user;
-            AccountDAO = accountDAO;
-            InfoDAO = infoDAO;
-            ClientDAO = clientDAO;
         }
 
-        private void OpenFormChild(Form formChild, ToolStripButton toolStripButton)
+        public void OpenFormChild(Form formChild)
         {
             if(formChildCurrent != null)
             {
@@ -41,16 +32,43 @@ namespace Project
                 }
                 formChildCurrent.Close();
             }
+            if (formChild is FUpdateInfo)
+            {
+                toolStripButtonInfo.BackColor = formChild.BackColor;
+            }
+            else if(formChild is FHomePage)
+            {
+                toolStripButtonHomePage.BackColor = formChild.BackColor;
+            }
+            else if(formChild is FHistory)
+            {
+                toolStripButtonHistory.BackColor = formChild.BackColor;
+            }
+            else if(formChild is FPreferential)
+            {
+                toolStripButtonPreferential.BackColor = formChild.BackColor;
+            }
+            else if(formChild is FService)
+            {
+                toolStripButtonService.BackColor = formChild.BackColor;
+            }
+            else if (formChild is FSetting)
+            {
+                toolStripButtonSetting.BackColor = formChild.BackColor;
+            }
+            else if(formChild is FUpdateService)
+            {
+                toolStripButtonService.BackColor = formChild.BackColor;
+            }
             FLoading fLoading = new FLoading(formChild, 300);
 
             fLoading.OnLoading();
             formChildCurrent = formChild;
-            formChild.TopLevel = false;
             formChild.Size = panelMain.Size;
+            formChild.TopLevel = false;
             panelMain.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
-            toolStripButton.BackColor = formChild.BackColor;
             fLoading.OffLoading();
         }
 
@@ -63,35 +81,31 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO, ClientDAO), toolStripButtonInfo);
+                OpenFormChild(new FUpdateInfo(fController));
             }
-            else if(User.Client.RankInt == 0)
+            else if(fController.User.Client.RankInt == 0)
             {
                 fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
             }    
             else if (sender == toolStripButtonHomePage)
             {
-                OpenFormChild(new FHomePage(), toolStripButtonHomePage);
+                OpenFormChild(new FHomePage());
             }
             else if (sender == toolStripButtonHistory)
             {
-                OpenFormChild(new FHistory(), toolStripButtonHistory);
-
+                OpenFormChild(new FHistory());
             }
             else if (sender == toolStripButtonPreferential)
             {
-                OpenFormChild(new FPreferential(), toolStripButtonPreferential);
-
+                OpenFormChild(new FPreferential());
             }
             else if(sender == toolStripButtonService)
             {
-                OpenFormChild(new FService(fController), toolStripButtonService);
-
+                OpenFormChild(new FService(fController, this));
             }
             else if(sender == toolStripButtonSetting)
             {
-                OpenFormChild(new FSetting(), toolStripButtonSetting);
-
+                OpenFormChild(new FSetting());
             }
             else if(sender == toolStripButtonLogOut)
             {

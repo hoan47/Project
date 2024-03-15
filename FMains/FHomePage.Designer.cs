@@ -345,23 +345,11 @@ namespace Project
             // 
             // userControlSearch1
             // 
-            this.userControlSearch1.BackColor = System.Drawing.Color.Transparent;
-            this.userControlSearch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlSearch1.BackgroundImage")));
-            this.userControlSearch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userControlSearch1.Location = new System.Drawing.Point(474, 15);
-            this.userControlSearch1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlSearch1.Name = "userControlSearch1";
-            this.userControlSearch1.Size = new System.Drawing.Size(533, 62);
-            this.userControlSearch1.TabIndex = 7;
-            this.userControlSearch1.TextVisible = "Tìm kiếm";
-            // FHomePage
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1040, 630);
-            this.Controls.Add(this.userControlSearch1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSearch);

@@ -10,36 +10,33 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FCreateAccount : Form, IUser
+    public partial class FCreateAccount : Form
     {
-        public FController fController { get; set; }
-        public User User { get; set; }
-        public AccountDAO AccountDAO { get; set; }
-        public InfoDAO InfoDAO { get; set; }
-        public ClientDAO ClientDAO { get; set; }
+        public FController fController;
 
-        public FCreateAccount(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
+        public FCreateAccount(FController fController)
         {
             InitializeComponent();
             this.fController = fController;
-            User = user;
-            AccountDAO = accountDAO;
-            InfoDAO = infoDAO;
-            ClientDAO = clientDAO;
         }
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
-            User.UpdateClient(new Client(User));
-            if (User.IsAccount() == true && User.IsPassword() == true)
+            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            fController.User.UpdateClient(new Client(fController.User));
+            if (fController.User.IsAccount() == true && fController.User.IsPassword() == true)
             {
-                if(AccountDAO.Insert() == true)
+                if(fController.AccountDAO.Insert() == true)
                 {
-                    InfoDAO.Insert();
-                    ClientDAO.Insert();
+                    fController.InfoDAO.Insert();
+                    fController.ClientDAO.Insert();
+                    ShowMessage.ShowNotification("Tạo tài khoản thành công.");
                     Back(sender, e);
-                }    
+                }
+                else
+                {
+                    ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+                }
             }
         }
 

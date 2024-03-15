@@ -18,24 +18,12 @@ namespace Project
 
         public bool Login()
         {
-            if (FindAccount() == false)
-            {
-                ShowMessage.ShowWarning("Tài khoản không tồn tại.");
-                return false;
-            }
             try
             {
                 sqlConnection.Open();
                 SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
-                if ((int)selectCMD.ExecuteScalar() != 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    ShowMessage.ShowWarning("Mật khẩu sai.");
-                    return false;
-                }
+
+                return (int)selectCMD.ExecuteScalar() != 0;
             }
             catch (Exception e)
             {
@@ -52,7 +40,6 @@ namespace Project
         {
             if (FindAccount() == true)
             {
-                ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
                 return false;
             }
             try
@@ -62,7 +49,6 @@ namespace Project
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
-                    ShowMessage.ShowNotification("Tạo tài khoản thành công.");
                     return true;
                 }
             }

@@ -12,49 +12,34 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FUpdateInfo : Form, IUser
+    public partial class FUpdateInfo : Form
     {
-        FController FController { get; set; }
-        public User User { get; set; }
-        public AccountDAO AccountDAO { get; set; }
-        public InfoDAO InfoDAO { get; set; }
-        public ClientDAO ClientDAO { get; set; }
+        FController fController { get; set; }
 
-        public FUpdateInfo(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
+        public FUpdateInfo(FController fController)
         {
             InitializeComponent();
-            FController = fController;
-            User = user;
-            AccountDAO = accountDAO;
-            InfoDAO = infoDAO;
-            ClientDAO = clientDAO;
+            this.fController = fController;
         }
 
         private void LoadData()
         {
-            labelUser.Text = User.UserName;
-            userControlTextBoxEditName.TextBoxText = User.Name;
-            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = User.DateOfBirth.ToString();
-            userControlRadioButtonEditGender.GenderText = User.Gender;
-            if (User.Address != null)
+            labelUser.Text = fController.User.UserName;
+            userControlTextBoxEditName.TextBoxText = fController.User.Name;
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = fController.User.DateOfBirth.ToString();
+            userControlRadioButtonEditGender.GenderText = fController.User.Gender;
+            if (fController.User.Address != null)
             {
-                userControlAddressEditAddress.ComboBoxText = User.Address.ProvinceAndDistrict;
-                userControlTextBoxEditSpecificLocation.TextBoxText = User.Address.SpecificLocation;
+                userControlAddressEditAddress.ComboBoxText = fController.User.Address.ProvinceAndDistrict;
+                userControlTextBoxEditSpecificLocation.TextBoxText = fController.User.Address.SpecificLocation;
             }
-            userControlTextBoxEditIdCard.TextBoxText = User.IdCard;
-            userControlTextBoxEditEmail.TextBoxText = User.Email;
-            userControlTextBoxEditPhone.TextBoxText = User.Phone;
-            if (ProcessImage.Comparer(User.Image, Properties.Resources.man) == true || ProcessImage.Comparer(User.Image, Properties.Resources.girl) == true)
-            {
-                pictureBoxImage.Image = User.GetImageNormal();
-            }
-            else
-            {
-                pictureBoxImage.Image = User.Image;
-            }
-            labelRank.Text = User.Client.RankStr();
-            pictureBoxImageRank.Image = User.Client.RankImage();
-            toolTip.SetToolTip(pictureBoxImageRank, User.Client.StatusRank());
+            userControlTextBoxEditIdCard.TextBoxText = fController.User.IdCard;
+            userControlTextBoxEditEmail.TextBoxText = fController.User.Email;
+            userControlTextBoxEditPhone.TextBoxText = fController.User.Phone;
+            pictureBoxImage.Image = fController.User.Image == null ? Properties.Resources.noImage : fController.User.Image;
+            labelRank.Text = fController.User.Client.RankStr();
+            pictureBoxImageRank.Image = fController.User.Client.RankImage();
+            toolTip.SetToolTip(pictureBoxImageRank, fController.User.Client.StatusRank());
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)
@@ -71,23 +56,23 @@ namespace Project
             {
                 Address address = new Address(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText);
 
-                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image == Properties.Resources.noImage ? null : pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
                     FLoading fLoading = new FLoading(this, 2000);
 
-                    User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
+                    fController.User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image == Properties.Resources.noImage ? null : pictureBoxImage.Image);
                     fLoading.OnLoading();
-                    if (InfoDAO.Update() == true)
+                    if (fController.InfoDAO.Update() == true)
                     {
-                        if(User.Client.GetRank() == Client.ERank.noRank)
+                        if(fController.User.Client.GetRank() == Client.ERank.noRank)
                         {
-                            if (ClientDAO.Update() == true)
+                            if (fController.ClientDAO.Update((int)Client.ERank.rankCopper) == true)
                             {
-                                User.Client.UpdateRank((int)Client.ERank.rankCopper);
+                                fController.User.Client.UpdateRank((int)Client.ERank.rankCopper);
                             }
                         }    
-                        FController.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
+                        fController.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
                         LoadData();
                     }
                     fLoading.OffLoading();
@@ -97,7 +82,7 @@ namespace Project
 
         private void ButtonDeleteImageClick(object sender, EventArgs e)
         {
-            pictureBoxImage.Image = User.GetImageNormal();
+            pictureBoxImage.Image = Properties.Resources.noImage;
         }
 
         private void FUpdateInfoLoad(object sender, EventArgs e)

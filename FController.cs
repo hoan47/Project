@@ -12,20 +12,26 @@ namespace Project
 {
     public partial class FController : Form
     {
-        public User user;
-        public AccountDAO accountDAO;
-        public InfoDAO infoDAO;
-        public ClientDAO clientDAO;
-        public AddRessDAO addressDAO;
         private Form currentFromChild;
+        public User User { get; private set; }
+        public Client Client { get; private set; }
+        public List<Hotel> Hotels { get; private set; }
+        public AccountDAO AccountDAO { get; private set; }
+        public InfoDAO InfoDAO { get; private set; }
+        public ClientDAO ClientDAO { get; private set; }
+        public AddRessDAO AddressDAO { get; private set; }
+        public HotelDAO HotelDAO { get; private set; }
+        public ImageHotelDAO ImageHotelDAO { get; private set; }
 
         public FController()
         {
-            user = new User();
-            accountDAO = new AccountDAO(user);
-            infoDAO = new InfoDAO(user);
-            clientDAO = new ClientDAO(user);
-            addressDAO = new AddRessDAO();
+            User = new User();
+            AccountDAO = new AccountDAO(User);
+            InfoDAO = new InfoDAO(User);
+            ClientDAO = new ClientDAO(User);
+            AddressDAO = new AddRessDAO();
+            HotelDAO = new HotelDAO(User);
+            ImageHotelDAO = new ImageHotelDAO(User);
             InitializeComponent();
             InitializeFLogin();
         }
@@ -47,7 +53,7 @@ namespace Project
             formChild.Size = formParent != null ? formParent.Size : Size;
         }
 
-        private void ProcessOpenFormChild(Form formChild, Form formParent = null)
+        public void ProcessOpenFormChild(Form formChild, Form formParent = null)
         {
             formChild.TopLevel = false;
             if (formParent == null)
@@ -65,22 +71,22 @@ namespace Project
       
         public void InitializeFLogin()
         {
-            OpenFormChild(new FLogin(this, user, accountDAO, infoDAO, clientDAO));
+            OpenFormChild(new FLogin(this));
         }
 
         public void InitializeFCreateAccount()
         {
-            OpenFormChild(new FCreateAccount(this, user, accountDAO, infoDAO, clientDAO));
+            OpenFormChild(new FCreateAccount(this));
         }
 
         public void InitializeFForgetPassword()
         {
-            OpenFormChild(new FForgetPassword(this, user, accountDAO, infoDAO));
+            OpenFormChild(new FForgetPassword(this));
         }
 
         public void InitializeFMain()
         {
-            OpenFormChild(new FMain(this, user, accountDAO, infoDAO, clientDAO));
+            OpenFormChild(new FMain(this));
         }
        
         public void MessageSuccess(string tile, string content, Form formParent = null)

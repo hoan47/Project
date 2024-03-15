@@ -32,10 +32,10 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotel));
             this.pictureBoxHotel = new System.Windows.Forms.PictureBox();
-            this.userControlHotelEditAddress = new Project.UserControlHotelEdit();
-            this.userControlHotelEditName = new Project.UserControlHotelEdit();
-            this.userControlHotelEditPhone = new Project.UserControlHotelEdit();
-            this.userControlHotelEditPrice = new Project.UserControlHotelEdit();
+            this.userControlerLableName = new Project.UserControlerLable();
+            this.userControlerLableAddress = new Project.UserControlerLable();
+            this.userControlerLablePrice = new Project.UserControlerLable();
+            this.userControlerLablePhone = new Project.UserControlerLable();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +43,8 @@ namespace Project
             // 
             this.pictureBoxHotel.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxHotel.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHotel.Image")));
-            this.pictureBoxHotel.Location = new System.Drawing.Point(44, 38);
-            this.pictureBoxHotel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxHotel.Location = new System.Drawing.Point(29, 47);
+            this.pictureBoxHotel.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxHotel.Name = "pictureBoxHotel";
             this.pictureBoxHotel.Size = new System.Drawing.Size(173, 160);
             this.pictureBoxHotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -52,57 +52,53 @@ namespace Project
             this.pictureBoxHotel.TabStop = false;
             this.pictureBoxHotel.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
-            // userControlHotelEditAddress
+            // userControlerLableName
             // 
-            this.userControlHotelEditAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlHotelEditAddress.GroupBoxText = "Địa chỉ";
-            this.userControlHotelEditAddress.LabelHotelEdit = "Dak lak, playku, ho chinh minh, ha nodddddddddddddd";
-            this.userControlHotelEditAddress.Location = new System.Drawing.Point(532, 38);
-            this.userControlHotelEditAddress.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.userControlHotelEditAddress.Name = "userControlHotelEditAddress";
-            this.userControlHotelEditAddress.PictureBoxHotelEdit = ((System.Drawing.Image)(resources.GetObject("userControlHotelEditAddress.PictureBoxHotelEdit")));
-            this.userControlHotelEditAddress.Size = new System.Drawing.Size(253, 74);
-            this.userControlHotelEditAddress.TabIndex = 8;
-            this.userControlHotelEditAddress.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
+            this.userControlerLableName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlerLableName.GroupBoxText = "Tên";
+            this.userControlerLableName.LableText = "";
+            this.userControlerLableName.Location = new System.Drawing.Point(216, 47);
+            this.userControlerLableName.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlerLableName.Name = "userControlerLableName";
+            this.userControlerLableName.PictureBoxImage = ((System.Drawing.Image)(resources.GetObject("userControlerLableName.PictureBoxImage")));
+            this.userControlerLableName.Size = new System.Drawing.Size(313, 74);
+            this.userControlerLableName.TabIndex = 7;
             // 
-            // userControlHotelEditName
+            // userControlerLableAddress
             // 
-            this.userControlHotelEditName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlHotelEditName.GroupBoxText = "Tên khách sạn";
-            this.userControlHotelEditName.LabelHotelEdit = "Tên khách sạn: ";
-            this.userControlHotelEditName.Location = new System.Drawing.Point(239, 37);
-            this.userControlHotelEditName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.userControlHotelEditName.Name = "userControlHotelEditName";
-            this.userControlHotelEditName.PictureBoxHotelEdit = ((System.Drawing.Image)(resources.GetObject("userControlHotelEditName.PictureBoxHotelEdit")));
-            this.userControlHotelEditName.Size = new System.Drawing.Size(313, 74);
-            this.userControlHotelEditName.TabIndex = 7;
-            this.userControlHotelEditName.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
+            this.userControlerLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlerLableAddress.GroupBoxText = "Địa Chỉ";
+            this.userControlerLableAddress.LableText = "";
+            this.userControlerLableAddress.Location = new System.Drawing.Point(538, 47);
+            this.userControlerLableAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlerLableAddress.Name = "userControlerLableAddress";
+            this.userControlerLableAddress.PictureBoxImage = ((System.Drawing.Image)(resources.GetObject("userControlerLableAddress.PictureBoxImage")));
+            this.userControlerLableAddress.Size = new System.Drawing.Size(313, 74);
+            this.userControlerLableAddress.TabIndex = 8;
             // 
-            // userControlHotelEditPhone
+            // userControlerLablePrice
             // 
-            this.userControlHotelEditPhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlHotelEditPhone.GroupBoxText = "SDT";
-            this.userControlHotelEditPhone.LabelHotelEdit = "SDT: ";
-            this.userControlHotelEditPhone.Location = new System.Drawing.Point(532, 122);
-            this.userControlHotelEditPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.userControlHotelEditPhone.Name = "userControlHotelEditPhone";
-            this.userControlHotelEditPhone.PictureBoxHotelEdit = ((System.Drawing.Image)(resources.GetObject("userControlHotelEditPhone.PictureBoxHotelEdit")));
-            this.userControlHotelEditPhone.Size = new System.Drawing.Size(238, 73);
-            this.userControlHotelEditPhone.TabIndex = 10;
-            this.userControlHotelEditPhone.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
+            this.userControlerLablePrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlerLablePrice.GroupBoxText = "Giá Tiền";
+            this.userControlerLablePrice.LableText = "";
+            this.userControlerLablePrice.Location = new System.Drawing.Point(216, 132);
+            this.userControlerLablePrice.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlerLablePrice.Name = "userControlerLablePrice";
+            this.userControlerLablePrice.PictureBoxImage = ((System.Drawing.Image)(resources.GetObject("userControlerLablePrice.PictureBoxImage")));
+            this.userControlerLablePrice.Size = new System.Drawing.Size(313, 74);
+            this.userControlerLablePrice.TabIndex = 9;
             // 
-            // userControlHotelEditPrice
+            // userControlerLablePhone
             // 
-            this.userControlHotelEditPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlHotelEditPrice.GroupBoxText = "Giá: ";
-            this.userControlHotelEditPrice.LabelHotelEdit = "Giá: ";
-            this.userControlHotelEditPrice.Location = new System.Drawing.Point(226, 121);
-            this.userControlHotelEditPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.userControlHotelEditPrice.Name = "userControlHotelEditPrice";
-            this.userControlHotelEditPrice.PictureBoxHotelEdit = ((System.Drawing.Image)(resources.GetObject("userControlHotelEditPrice.PictureBoxHotelEdit")));
-            this.userControlHotelEditPrice.Size = new System.Drawing.Size(313, 74);
-            this.userControlHotelEditPrice.TabIndex = 9;
-            this.userControlHotelEditPrice.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
+            this.userControlerLablePhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlerLablePhone.GroupBoxText = "Số Điện Thoại";
+            this.userControlerLablePhone.LableText = "";
+            this.userControlerLablePhone.Location = new System.Drawing.Point(538, 133);
+            this.userControlerLablePhone.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlerLablePhone.Name = "userControlerLablePhone";
+            this.userControlerLablePhone.PictureBoxImage = ((System.Drawing.Image)(resources.GetObject("userControlerLablePhone.PictureBoxImage")));
+            this.userControlerLablePhone.Size = new System.Drawing.Size(313, 74);
+            this.userControlerLablePhone.TabIndex = 10;
             // 
             // UserControlHotel
             // 
@@ -111,16 +107,16 @@ namespace Project
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Controls.Add(this.userControlHotelEditPhone);
-            this.Controls.Add(this.userControlHotelEditPrice);
-            this.Controls.Add(this.userControlHotelEditAddress);
-            this.Controls.Add(this.userControlHotelEditName);
+            this.Controls.Add(this.userControlerLablePhone);
+            this.Controls.Add(this.userControlerLablePrice);
+            this.Controls.Add(this.userControlerLableAddress);
+            this.Controls.Add(this.userControlerLableName);
             this.Controls.Add(this.pictureBoxHotel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserControlHotel";
-            this.Size = new System.Drawing.Size(867, 223);
+            this.Size = new System.Drawing.Size(867, 239);
             this.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).EndInit();
             this.ResumeLayout(false);
@@ -129,9 +125,9 @@ namespace Project
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBoxHotel;
-        private UserControlHotelEdit userControlHotelEditName;
-        private UserControlHotelEdit userControlHotelEditAddress;
-        private UserControlHotelEdit userControlHotelEditPrice;
-        private UserControlHotelEdit userControlHotelEditPhone;
+        private UserControlerLable userControlerLableName;
+        private UserControlerLable userControlerLableAddress;
+        private UserControlerLable userControlerLablePrice;
+        private UserControlerLable userControlerLablePhone;
     }
 }

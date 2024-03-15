@@ -13,43 +13,38 @@ namespace Project
 {
     public partial class FService : Form
     {
-        FController fController;
-        private Form formChildCurrent;
-        public FService(FController fController)
+        public FController fController;
+        private FMain fMain;
+
+        public FService(FController fController, FMain fMain)
         {
             InitializeComponent();
-            formChildCurrent = this;
             this.fController = fController;
-            for(int i=1; i<5; i++)
+            this.fMain = fMain;
+            LoadData();
+        }
+
+        private void ButtonAddClick(object sender, EventArgs e)
+        {
+            OpenHotel();
+        }
+
+        public void OpenHotel(int index = -1)
+        {
+            fMain.OpenFormChild(new FUpdateService(fController, index));
+        }
+
+        private  void LoadData()
+        {
+            if (fMain.fController.User.Hotels == null)
             {
-                flowLayoutPanelService.Controls.Add(new UserControlHotel());
+                return; 
             }
-        }
 
-        private void OpenFormChild(Form formChild)
-        {
-            FLoading fLoading = new FLoading(formChild, 300);
-            fLoading.OnLoading();
-            formChild.TopLevel = false;
-            Controls.Add(formChild);
-            formChild.BringToFront();
-            formChild.Show();
-            fLoading.OffLoading();
-        }
-        private void flowLayoutPanelService_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            OpenFormChild(new FUpdateService());
-           
-        }
-
-        private void flowLayoutPanelService_Paint_1(object sender, PaintEventArgs e)
-        {
-
+            for (int i = 0; i < fController.User.Hotels.Count; i++)
+            {
+                flowLayoutPanelHottel.Controls.Add(new UserControlHotel(fController, this, i));
+            }    
         }
     }
 }

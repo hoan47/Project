@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Project.UserControls
 {
-    public partial class UserControlTextBoxService : UserControl
+    public partial class UserControlTextBox : UserControl
     {
         public string LabelText { get { return groupBoxInforService.Text; } set { groupBoxInforService.Text = value; } }
-        public Image Image {  get { return pictureBoxInforService.Image; } set { pictureBoxInforService.Image = value; } }
-        public UserControlTextBoxService()
+        public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
+        public Image Image { get { return pictureBoxInforService.Image; } set { pictureBoxInforService.Image = value; } }
+
+        public UserControlTextBox()
         {
             InitializeComponent();
         }

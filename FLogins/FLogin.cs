@@ -12,24 +12,17 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FLogin : Form, IUser
+    public partial class FLogin : Form
     {
         public FController fController;
-        public User User { get; set; }
-        public AccountDAO AccountDAO { get; set; }
-        public InfoDAO InfoDAO { get; set; }
-        public ClientDAO ClientDAO { get; set; }
         private FLoading fLoading;
-        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
+
+        public FLogin(FController fController)
         {
             InitializeComponent();
             backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
             backgroundWorker.RunWorkerCompleted += DackgroundWorkerRunWorkerCompletedLogin;
             this.fController = fController;
-            User = user;
-            AccountDAO = accountDAO;
-            InfoDAO = infoDAO;
-            ClientDAO = clientDAO;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,7 +41,7 @@ namespace Project
             {
                 return;
             }
-            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             fLoading = new FLoading(fController, 500);
             fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
@@ -61,17 +54,31 @@ namespace Project
 
         public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
         {
-            if(User.IsAccount() == false)
+            if(fController.User.IsAccount() == false)
             {
                 e.Result = false;
                 return;
-            }    
-            bool isSuccess = AccountDAO.Login();
+            }
+
+            bool isSuccess = true;
+            if (fController.AccountDAO.FindAccount() == false)
+            {
+                ShowMessage.ShowWarning("Tài khoản không tồn tại.");
+                isSuccess = false;
+            }
+            else if (fController.AccountDAO.Login() == false)
+            {
+                ShowMessage.ShowWarning("Mật khẩu sai.");
+                isSuccess = false;
+            }
 
             if (isSuccess == true)
             {
-                InfoDAO.Access();
-                ClientDAO.Access();
+                fController.InfoDAO.Access();
+                fController.ClientDAO.Access();
+                fController.HotelDAO.Access();
+                fController.ImageHotelDAO.Access();
+                
             }
             e.Result = isSuccess;
         }

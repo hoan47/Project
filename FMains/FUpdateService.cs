@@ -4,185 +4,164 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.FMains
+namespace Project
 {
     public partial class FUpdateService : Form
     {
-        Form formChildCurrent;
-       
-        public FUpdateService()
+        private FController fControler;
+        private Hotel hotel;
+        private Image_ cureentImage;
+        private int index;
+
+        public FUpdateService(FController fController, int index)
         {
             InitializeComponent();
-            formChildCurrent = this;
-            for (int i = 1; i < 10; i++)
+            fControler = fController;
+            this.index = index;
+            hotel = fController.User.GetIndex(index);
+            pictureBoxImage.Image = index == -1 || hotel.Images == null || hotel.Images.Count == 0 ? Properties.Resources.noImage : hotel.Images.First().Image;
+            cureentImage = index == -1 || hotel?.Images == null || hotel.Images?.Count == 0 ? null : hotel.Images.First();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            if(index != -1)
             {
-               flowLayoutPanel1.Controls.Add(new UserControlRoom());
+                panelImage.Visible = true;
+                userControlTextBoxName.TextBoxText = hotel.Name;
+                userControlAddressHotel.AddressText = hotel.Address;
+                userControlTextBoxPhone.TextBoxText = hotel.Phone;
+                userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
+                userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
+                textBoxDescribe.Text = hotel.Describe;
+                bool[] checks = { hotel.IsPool,
+                    hotel.IsFoodServingArea, 
+                    hotel.IsCarPark, 
+                    hotel.IsWifi, 
+                    hotel.IsServeFullTime, 
+                    hotel.IsLaundryService, 
+                    hotel.IsSmokingArea, 
+                    hotel.IsPark };
+
+                for (int i = 0; i < checkedListBox.Items.Count; i++)
+                {
+                    checkedListBox.SetItemChecked(i, checks[i]);
+                }
             }
-            dateTimePicker1.ShowUpDown=true;
-            dateTimePicker2.ShowUpDown=true;
-        }
-        private void OpenFormChild(Form formChild)
-        {
-
-            FLoading fLoading = new FLoading(formChild, 300);
-            fLoading.OnLoading();
-            formChild.TopLevel = false;
-            Controls.Add(formChild);
-            formChild.BringToFront();
-            formChild.Show();
-            fLoading.OffLoading();
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                panelImage.Visible = false;
+            }    
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void ButtonUpdateClick(object sender, EventArgs e)
         {
+            bool[] checks = new bool[8];
 
+            for (int i = 0; i < checkedListBox.Items.Count; i++)
+            {
+                checks[i] = checkedListBox.GetItemChecked(i);
+            }
+
+            TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText);
+
+            if(timeSpanIn == new TimeSpan(0, 0, 0))
+            {
+                return;
+            }    
+            TimeSpan timeSpanOut = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxOutText);
+
+            if(timeSpanOut != new TimeSpan(0, 0, 0))
+            {
+                Hotel hotel = new Hotel(
+                    fControler.User,
+                    index == -1 ? fControler.User.Hotels == null ? 0 : fControler.User.Hotels.Count : this.hotel.IdHotel,
+                    userControlTextBoxName.TextBoxText,
+                    userControlTextBoxPhone.TextBoxText,
+                    userControlAddressHotel.AddressText,
+                    timeSpanIn,
+                    timeSpanOut,
+                    checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
+                    textBoxDescribe.Text,
+                    index == -1 ? null : this.hotel.Images);
+
+                if (hotel.IsPhone() && hotel.IsAddress())
+                {
+                    if (index == -1)
+                    {
+                        fControler.User.AddHotel(hotel);
+                        index = fControler.User.Hotels.Count - 1;
+                        fControler.HotelDAO.Insert(hotel);
+                        fControler.MessageSuccess("Thông báo", "Tạo khách sạn mới thành công.", this);
+                    }
+                    else
+                    {
+                        fControler.User.Hotels[index] = hotel;
+                        fControler.HotelDAO.Update(hotel);
+                        fControler.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
+                    }
+                    this.hotel = hotel;
+                    LoadData();
+                }
+            }
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        private void ButtonUploadImageClick(object sender, EventArgs e)
         {
+            Image image = ProcessImage.OpenFileImageDialog();
 
+            if (image != null)
+            {
+                Image_ image_ = new Image_(fControler.User, hotel.IdHotel, image);
+
+                hotel.AddImage(image_);
+                fControler.ImageHotelDAO.Insert(image_);
+                pictureBoxImage.Image = image;
+                cureentImage = image_;
+            }
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        private void ButtonDeleteImageClick(object sender, EventArgs e)
         {
+            if(hotel?.Images == null || hotel.Images.Count == 0)
+            {
+                return;
+            }    
+            int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
 
+            hotel.Images.Remove(cureentImage);
+            fControler.ImageHotelDAO.Delete(cureentImage);
+            pictureBoxImage.Image = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage].Image : pictureBoxImage.Image = Properties.Resources.noImage;
+            cureentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ButtonLeftClick(object sender, EventArgs e)
         {
+            if (hotel?.Images == null || hotel.Images.Count < 2)
+            {
+                return;
+            }
+            int indexImage = hotel.Images.IndexOf(cureentImage) - 1;
 
+            pictureBoxImage.Image = (cureentImage =  indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage]).Image;
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void ButtonRightClick(object sender, EventArgs e)
         {
+            if (hotel?.Images == null || hotel.Images.Count < 2)
+            {
+                return;
+            }
+            int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
 
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OpenFormChild(new FRegisterRoom());
-        }
-
-        private void userControlTextBoxService1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlTextBoxService2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlTextBoxService3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userControlComboBoxAddress1_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void userControlComboBoxAddress1_Load_1(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void userControlComboBoxAddress1_Load_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
-        {
-
+            pictureBoxImage.Image = (cureentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
         }
     }
 }

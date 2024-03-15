@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHotelEdit : UserControl
+    public partial class UserControlerLable : UserControl
     {
         private UserControl userParent;
-        public string GroupBoxText { get { return groupBoxHotelEdit.Text; } set { groupBoxHotelEdit.Text = value; } }
-        public Image PictureBoxHotelEdit { get { return pictureBoxHotelEdit.Image; } set { pictureBoxHotelEdit.Image = value; } }
-        public string LabelHotelEdit { get { return labelHotelEdit.Text; } set { labelHotelEdit.Text = value; } }
+        public string GroupBoxText { get { return groupBox.Text; } set { groupBox.Text = value; } }
+        public Image PictureBoxImage { get { return pictureBoxHotelEdit.Image; } set { pictureBoxHotelEdit.Image = value; } }
+        public string LableText { get { return labelContect.Text; } set { labelContect.Text = value; } }
 
-        public UserControlHotelEdit()
+        public UserControlerLable()
         {
             InitializeComponent();
 
