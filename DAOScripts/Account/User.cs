@@ -32,7 +32,7 @@ namespace Project
 
         public void UpdateUserName(string userName)
         {
-            Name = userName;
+            UserName = userName;
         }
 
         public void UpdateClient(Client client)

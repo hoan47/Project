@@ -32,7 +32,7 @@ namespace Project
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy tài khoản", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ShowMessage.ShowWarning("Không tìm thấy tài khoản");
                 }
             }
             else if (buttonFindAccount.Text == "Bỏ chọn tài khoản")
