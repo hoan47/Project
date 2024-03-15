@@ -12,6 +12,30 @@ namespace Project
         public ClientDAO(User user) : base("Client", user)
         { }
 
+        public void Access()
+        {
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlDataReader dataClient = selectCMD.ExecuteReader();
+
+                if (dataClient.Read())
+                {
+                    user.UpdateClient(new Client(user, Convert.ToInt32(dataClient[1])));
+                }
+                dataClient.Close();
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowError(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
         public bool Insert()
         {
             try
@@ -35,16 +59,17 @@ namespace Project
             return false;
         }
 
-        public void Update(User user)
+        public bool Update()
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET password = '{user.NewPassword}' WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand updateCMD = new SqlCommand(
+                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt}' WHERE userName = '{user.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {
-                    ShowMessage.ShowNotification("Đổi mật khẩu thành công");
+                    return true;
                 }
             }
             catch (Exception e)
@@ -55,6 +80,7 @@ namespace Project
             {
                 sqlConnection.Close();
             }
+            return false;
         }
     }
 }

@@ -55,7 +55,6 @@ namespace Project
             this.userControlComboBoxAddress = new Project.UserControlComboBoxAddress();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.userControlSearch1 = new Project.UserControls.UserControlSearch();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -355,7 +354,6 @@ namespace Project
             this.userControlSearch1.Size = new System.Drawing.Size(533, 62);
             this.userControlSearch1.TabIndex = 7;
             this.userControlSearch1.TextVisible = "Tìm kiếm";
-            // 
             // FHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -419,6 +417,5 @@ namespace Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private UserControls.UserControlSearch userControlSearch1;
     }
 }

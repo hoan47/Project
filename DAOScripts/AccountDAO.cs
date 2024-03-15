@@ -27,7 +27,6 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
-
                 if ((int)selectCMD.ExecuteScalar() != 0)
                 {
                     return true;
@@ -98,7 +97,7 @@ namespace Project
             return false;
         }
 
-        public void Update()
+        public bool Update()
         {
             try
             {
@@ -107,7 +106,7 @@ namespace Project
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {
-                    ShowMessage.ShowNotification("Đổi mật khẩu thành công");
+                    return true;
                 }
             }
             catch (Exception e)
@@ -118,6 +117,7 @@ namespace Project
             {
                 sqlConnection.Close();
             }
+            return true;
         }
     }
 }

@@ -18,8 +18,9 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
-
-        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public ClientDAO ClientDAO { get; set; }
+        private FLoading fLoading;
+        public FLogin(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
@@ -28,6 +29,7 @@ namespace Project
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -46,9 +48,9 @@ namespace Project
             {
                 return;
             }
-            User.Update(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            fController.userControlLoading = new UserControlLoading(fController, 500);
-            fController.userControlLoading.OnLoading();
+            User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            fLoading = new FLoading(fController, 500);
+            fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
 
@@ -69,6 +71,7 @@ namespace Project
             if (isSuccess == true)
             {
                 InfoDAO.Access();
+                ClientDAO.Access();
             }
             e.Result = isSuccess;
         }
@@ -78,10 +81,10 @@ namespace Project
             if ((bool)e.Result == true)
             {
                 fController.InitializeFMain();
-                fController.userControlLoading.OnLoading();
+                fLoading.OnLoading();
                 fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
             }
-            fController.userControlLoading.OffLoading();
+            fLoading.OffLoading();
         }
     }
 }

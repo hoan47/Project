@@ -12,16 +12,23 @@ namespace Project
         public User User { get; private set; } 
         public int RankInt { get; private set; }
 
-        public Client(User user)
+        public Client(User user, int rankInt = 0)
         {
             User = user;
-            RankInt = 5;
+            RankInt = rankInt;
+        }
+
+        public void UpdateRank(int core)
+        {
+            RankInt = RankInt + core;
         }
 
         public ERank GetRank()
         {
             switch(RankInt)
             {
+                case (int)ERank.noRank:
+                    return ERank.noRank;
                 case (int)ERank.rankCopper:
                     return ERank.rankCopper;
                 case (int)ERank.rankSilver:
@@ -35,6 +42,8 @@ namespace Project
         {
             switch(RankInt)
             {
+                case (int)ERank.noRank:
+                    return "Vô hạng";
                 case (int)ERank.rankCopper:
                     return "Hạng Đồng";
                 case (int)ERank.rankSilver:
@@ -48,6 +57,8 @@ namespace Project
         {
             switch (RankInt)
             {
+                case (int)ERank.noRank:
+                    return Properties.Resources.noRank;
                 case (int)ERank.rankCopper:
                     return Properties.Resources.copper;
                 case (int)ERank.rankSilver:
@@ -61,6 +72,8 @@ namespace Project
         {
             switch (GetRank())
             {
+                case ERank.noRank:
+                    return "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng và mở khóa các tính năng khác.";
                 case ERank.rankCopper:
                     return $"Bạn cần thêm {ERank.rankSilver - User.Client.RankInt} điểm để mở khóa hạng Bạc.";
                 case ERank.rankSilver:
@@ -72,6 +85,7 @@ namespace Project
 
         public enum ERank
         {
+            noRank = 0,
             rankCopper = 5,
             rankSilver = 16,
             rankYellow = 30

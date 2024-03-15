@@ -170,6 +170,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
+    <Compile Include="DAOScripts\CheckInfo.cs" />
+    <Compile Include="DAOScripts\Hotel.cs" />
+    <Compile Include="DAOScripts\HotelDAO.cs" />
+    <Compile Include="DAOScripts\Room.cs" />
     <Compile Include="FCustomMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +190,12 @@
     </Compile>
     <Compile Include="FController.Designer.cs">
       <DependentUpon>FController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLoading.Designer.cs">
+      <DependentUpon>FLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="FLogins\FCreateAccount.cs">
       <SubType>Form</SubType>
@@ -330,18 +340,6 @@
     <Compile Include="UserControls\UserControlInforService.Designer.cs">
       <DependentUpon>UserControlInforService.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlLoading.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlLoading.Designer.cs">
-      <DependentUpon>UserControlLoading.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlNumericUpDown.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlNumericUpDown.Designer.cs">
-      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FController.resx">
       <DependentUpon>FController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLoading.resx">
+      <DependentUpon>FLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogins\FCreateAccount.resx">
       <DependentUpon>FCreateAccount.cs</DependentUpon>
@@ -462,12 +463,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlInforService.resx">
       <DependentUpon>UserControlInforService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlLoading.resx">
-      <DependentUpon>UserControlLoading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlNumericUpDown.resx">
-      <DependentUpon>UserControlNumericUpDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
