@@ -97,5 +97,10 @@ namespace Project
             comboBox.Items.Add(address);
             comboBox.Text = address;
         }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

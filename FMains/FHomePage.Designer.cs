@@ -69,6 +69,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCity)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,12 +79,11 @@ namespace Project
             this.panelSearch.Controls.Add(this.label1);
             this.panelSearch.Controls.Add(this.pictureBox6);
             this.panelSearch.Controls.Add(this.panel1);
-            this.panelSearch.Controls.Add(this.groupBox4);
             this.panelSearch.Controls.Add(this.groupBox1);
             this.panelSearch.Controls.Add(this.groupBox3);
             this.panelSearch.Controls.Add(this.groupBox2);
             this.panelSearch.Location = new System.Drawing.Point(0, 0);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(432, 775);
             this.panelSearch.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace Project
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(349, 6);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(72, 60);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +115,7 @@ namespace Project
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(72, 60);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -126,7 +126,7 @@ namespace Project
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(3, 71);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(419, 6);
             this.panel1.TabIndex = 4;
@@ -139,10 +139,10 @@ namespace Project
             this.groupBox4.Controls.Add(this.dateTimePicker2);
             this.groupBox4.Controls.Add(this.dateTimePicker1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(5, 513);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(427, 199);
             this.groupBox4.TabIndex = 23;
             this.groupBox4.TabStop = false;
@@ -152,7 +152,7 @@ namespace Project
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(19, 126);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(53, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +163,7 @@ namespace Project
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(19, 26);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(53, 55);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,7 +174,7 @@ namespace Project
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(19, 73);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(53, 55);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -184,7 +184,7 @@ namespace Project
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(83, 150);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(340, 24);
             this.dateTimePicker2.TabIndex = 1;
@@ -192,7 +192,7 @@ namespace Project
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(79, 54);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(339, 24);
             this.dateTimePicker1.TabIndex = 0;
@@ -206,9 +206,9 @@ namespace Project
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 352);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(417, 154);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
@@ -219,7 +219,7 @@ namespace Project
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(156, 102);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(55, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,7 +230,7 @@ namespace Project
             // 
             this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox3.Location = new System.Drawing.Point(9, 96);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 36);
@@ -243,7 +243,7 @@ namespace Project
             // 
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
             this.textBox2.Location = new System.Drawing.Point(216, 96);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 36);
@@ -258,9 +258,9 @@ namespace Project
             this.groupBox3.Controls.Add(this.numericUpDown1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 222);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(428, 123);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
@@ -270,7 +270,7 @@ namespace Project
             // 
             this.pictureBoxPeople.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPeople.Image")));
             this.pictureBoxPeople.Location = new System.Drawing.Point(9, 27);
-            this.pictureBoxPeople.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBoxPeople.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBoxPeople.Name = "pictureBoxPeople";
             this.pictureBoxPeople.Size = new System.Drawing.Size(53, 49);
             this.pictureBoxPeople.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -280,7 +280,7 @@ namespace Project
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(108, 49);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(127, 24);
             this.numericUpDown1.TabIndex = 9;
@@ -292,9 +292,9 @@ namespace Project
             this.groupBox2.Controls.Add(this.userControlComboBoxAddress);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(4, 91);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(424, 123);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
@@ -304,7 +304,7 @@ namespace Project
             // 
             this.pictureBoxCity.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCity.Image")));
             this.pictureBoxCity.Location = new System.Drawing.Point(16, 15);
-            this.pictureBoxCity.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBoxCity.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBoxCity.Name = "pictureBoxCity";
             this.pictureBoxCity.Size = new System.Drawing.Size(53, 49);
             this.pictureBoxCity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -317,7 +317,7 @@ namespace Project
             this.userControlComboBoxAddress.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlComboBoxAddress.ComboBoxText = "";
             this.userControlComboBoxAddress.Location = new System.Drawing.Point(84, 60);
-            this.userControlComboBoxAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userControlComboBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.userControlComboBoxAddress.Name = "userControlComboBoxAddress";
             this.userControlComboBoxAddress.Size = new System.Drawing.Size(317, 38);
             this.userControlComboBoxAddress.SizeUserControl = new System.Drawing.Size(317, 38);
@@ -325,8 +325,9 @@ namespace Project
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.groupBox4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(437, 118);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(919, 642);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -335,20 +336,32 @@ namespace Project
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(1215, 16);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(133, 62);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             // 
+            // userControlSearch1
+            // 
+            this.userControlSearch1.BackColor = System.Drawing.Color.Transparent;
+            this.userControlSearch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlSearch1.BackgroundImage")));
+            this.userControlSearch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userControlSearch1.Location = new System.Drawing.Point(474, 15);
+            this.userControlSearch1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlSearch1.Name = "userControlSearch1";
+            this.userControlSearch1.Size = new System.Drawing.Size(533, 62);
+            this.userControlSearch1.TabIndex = 7;
+            this.userControlSearch1.TextVisible = "Tìm kiếm";
             // FHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(1364, 775);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.userControlSearch1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSearch);
@@ -374,6 +387,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCity)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 

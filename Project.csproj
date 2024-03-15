@@ -209,6 +209,18 @@
     <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FMains\FInforHote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FInforHote.Designer.cs">
+      <DependentUpon>FInforHote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\FInforRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FInforRoom.Designer.cs">
+      <DependentUpon>FInforRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMains\FRegisterRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +316,12 @@
     <Compile Include="UserControls\UserControlDiscount.Designer.cs">
       <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlHomePageRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePageRoom.Designer.cs">
+      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,12 +333,6 @@
     </Compile>
     <Compile Include="UserControls\UserControlHotelEdit.Designer.cs">
       <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlInforRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlInforRoom.Designer.cs">
-      <DependentUpon>UserControlInforRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlInforService.cs">
       <SubType>UserControl</SubType>
@@ -339,6 +351,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlRoom.Designer.cs">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSearch.Designer.cs">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -386,6 +404,12 @@
     <EmbeddedResource Include="FMains\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FInforHote.resx">
+      <DependentUpon>FInforHote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FInforRoom.resx">
+      <DependentUpon>FInforRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMains\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,14 +452,14 @@
     <EmbeddedResource Include="UserControls\UserControlDiscount.resx">
       <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePageRoom.resx">
+      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotelEdit.resx">
       <DependentUpon>UserControlHotelEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlInforRoom.resx">
-      <DependentUpon>UserControlInforRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlInforService.resx">
       <DependentUpon>UserControlInforService.cs</DependentUpon>
@@ -445,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRoom.resx">
       <DependentUpon>UserControlRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlSearch.resx">
+      <DependentUpon>UserControlSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>

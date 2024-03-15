@@ -46,5 +46,10 @@ namespace Project
             OpenFormChild(new FUpdateService());
            
         }
+
+        private void flowLayoutPanelService_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
