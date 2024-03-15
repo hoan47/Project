@@ -55,7 +55,6 @@ namespace Project
             this.userControlComboBoxAddress = new Project.UserControlComboBoxAddress();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.userControlSearch1 = new Project.UserControls.UserControlSearch();
             this.panelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -343,18 +342,6 @@ namespace Project
             this.pictureBox8.TabIndex = 6;
             this.pictureBox8.TabStop = false;
             // 
-            // userControlSearch1
-            // 
-            this.userControlSearch1.BackColor = System.Drawing.Color.Transparent;
-            this.userControlSearch1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userControlSearch1.BackgroundImage")));
-            this.userControlSearch1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userControlSearch1.Location = new System.Drawing.Point(599, 16);
-            this.userControlSearch1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.userControlSearch1.Name = "userControlSearch1";
-            this.userControlSearch1.Size = new System.Drawing.Size(533, 62);
-            this.userControlSearch1.TabIndex = 7;
-            this.userControlSearch1.TextVisible = "Tìm kiếm";
-            // 
             // FHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -362,7 +349,6 @@ namespace Project
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1364, 775);
-            this.Controls.Add(this.userControlSearch1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelSearch);
@@ -417,6 +403,5 @@ namespace Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private UserControls.UserControlSearch userControlSearch1;
     }
 }

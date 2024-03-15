@@ -18,14 +18,16 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
+        public ClientDAO ClientDAO { get; set; }
 
-        public FUpdateInfo(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FUpdateInfo(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             FController = fController;
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void LoadData()
@@ -50,18 +52,9 @@ namespace Project
             {
                 pictureBoxImage.Image = User.Image;
             }
-            if(User.Client != null)
-            {
-                labelRank.Text = User.Client.RankStr();
-                pictureBoxImageRank.Image = User.Client.RankImage();
-                toolTip.SetToolTip(pictureBoxImageRank, User.Client.StatusRank());
-            }    
-            else
-            {
-                labelRank.Text = "Vô Hạng";
-                pictureBoxImageRank.Image = Properties.Resources.noRank;
-                toolTip.SetToolTip(pictureBoxImageRank, "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng và mở khóa các tính năng khác.");
-            }    
+            labelRank.Text = User.Client.RankStr();
+            pictureBoxImageRank.Image = User.Client.RankImage();
+            toolTip.SetToolTip(pictureBoxImageRank, User.Client.StatusRank());
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)
@@ -71,7 +64,6 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
-            bool isFirstUpdate = User.Client == null;
             User newUser = new User();
             DateTime dateTime;
 
@@ -82,20 +74,23 @@ namespace Project
                 newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
-                    UserControlLoading userControlLoading = new UserControlLoading(this, 2000);
+                    FLoading fLoading = new FLoading(this, 2000);
 
                     User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
-                    userControlLoading.OnLoading();
+                    fLoading.OnLoading();
                     if (InfoDAO.Update() == true)
                     {
-                        if (isFirstUpdate != (User.Client == null))
+                        if(User.Client.GetRank() == Client.ERank.noRank)
                         {
-                            FController.clientDAO.Insert();
-                        }
-                        FController.MessageSuccess("Thông báo", $"Cập nhật thành công {(isFirstUpdate != (User.Client == null) ? ".\nBạn vừa được thăng lên cấp hạng Đồng.\nChúc bạn có trải nghiệm tốt." : string.Empty)}", this);
+                            if (ClientDAO.Update() == true)
+                            {
+                                User.Client.UpdateRank((int)Client.ERank.rankCopper);
+                            }
+                        }    
+                        FController.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
                         LoadData();
                     }
-                    userControlLoading.OffLoading();
+                    fLoading.OffLoading();
                 }
             }
         }

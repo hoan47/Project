@@ -19,14 +19,16 @@ namespace Project
         public User User { get; set; }
         public AccountDAO AccountDAO { get; set; }
         public InfoDAO InfoDAO { get; set; }
+        public ClientDAO ClientDAO { get; set; }
 
-        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO)
+        public FMain(FController fController, User user, AccountDAO accountDAO, InfoDAO infoDAO, ClientDAO clientDAO)
         {
             InitializeComponent();
             this.fController = fController;
             User = user;
             AccountDAO = accountDAO;
             InfoDAO = infoDAO;
+            ClientDAO = clientDAO;
         }
 
         private void OpenFormChild(Form formChild, ToolStripButton toolStripButton)
@@ -39,9 +41,9 @@ namespace Project
                 }
                 formChildCurrent.Close();
             }
-            UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
+            FLoading fLoading = new FLoading(formChild, 300);
 
-            userControlLoading.OnLoading();
+            fLoading.OnLoading();
             formChildCurrent = formChild;
             formChild.TopLevel = false;
             formChild.Size = panelMain.Size;
@@ -49,7 +51,7 @@ namespace Project
             formChild.BringToFront();
             formChild.Show();
             toolStripButton.BackColor = formChild.BackColor;
-            userControlLoading.OffLoading();
+            fLoading.OffLoading();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)
@@ -61,9 +63,9 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO), toolStripButtonInfo);
+                OpenFormChild(new FUpdateInfo(fController, User, AccountDAO, InfoDAO, ClientDAO), toolStripButtonInfo);
             }
-            else if(User.Client == null)
+            else if(User.Client.RankInt == 0)
             {
                 fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
             }    

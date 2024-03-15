@@ -68,7 +68,7 @@ namespace Project
             this.buttonLogin.Location = new System.Drawing.Point(305, 148);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(93, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(93, 29);
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Đăng nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;

@@ -33,11 +33,11 @@ namespace Project
             this.buttonFindAccount = new System.Windows.Forms.Button();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelPassword = new System.Windows.Forms.Panel();
+            this.userControlTextBoxPassword = new Project.UserControls.UserControlTextBoxPassword();
             this.buttonUpdatePassword = new System.Windows.Forms.Button();
             this.panelAccount = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
-            this.userControlTextBoxPassword = new Project.UserControls.UserControlTextBoxPassword();
             this.userControlTextBoxAccount = new Project.UserControls.UserControlTextBoxAccount();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panelPassword.SuspendLayout();
             this.panelAccount.SuspendLayout();
@@ -78,6 +78,17 @@ namespace Project
             this.panelPassword.TabStop = true;
             this.panelPassword.Visible = false;
             // 
+            // userControlTextBoxPassword
+            // 
+            this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxPassword.LableText = "Mật khẩu mới";
+            this.userControlTextBoxPassword.Location = new System.Drawing.Point(0, 0);
+            this.userControlTextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
+            this.userControlTextBoxPassword.Size = new System.Drawing.Size(315, 50);
+            this.userControlTextBoxPassword.TabIndex = 0;
+            this.userControlTextBoxPassword.TextBoxText = "";
+            // 
             // buttonUpdatePassword
             // 
             this.buttonUpdatePassword.AutoSize = true;
@@ -101,6 +112,16 @@ namespace Project
             this.panelAccount.TabIndex = 1;
             this.panelAccount.TabStop = true;
             // 
+            // userControlTextBoxAccount
+            // 
+            this.userControlTextBoxAccount.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxAccount.Location = new System.Drawing.Point(0, 0);
+            this.userControlTextBoxAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.userControlTextBoxAccount.Name = "userControlTextBoxAccount";
+            this.userControlTextBoxAccount.Size = new System.Drawing.Size(315, 50);
+            this.userControlTextBoxAccount.TabIndex = 0;
+            this.userControlTextBoxAccount.TextBoxText = "";
+            // 
             // buttonBack
             // 
             this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
@@ -112,27 +133,6 @@ namespace Project
             this.buttonBack.TabIndex = 3;
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.Back);
-            // 
-            // userControlTextBoxPassword
-            // 
-            this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxPassword.LableText = "Mật khẩu mới";
-            this.userControlTextBoxPassword.Location = new System.Drawing.Point(0, 0);
-            this.userControlTextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
-            this.userControlTextBoxPassword.Size = new System.Drawing.Size(315, 50);
-            this.userControlTextBoxPassword.TabIndex = 0;
-            this.userControlTextBoxPassword.TextBoxText = "";
-            // 
-            // userControlTextBoxAccount
-            // 
-            this.userControlTextBoxAccount.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxAccount.Location = new System.Drawing.Point(0, 0);
-            this.userControlTextBoxAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.userControlTextBoxAccount.Name = "userControlTextBoxAccount";
-            this.userControlTextBoxAccount.Size = new System.Drawing.Size(315, 50);
-            this.userControlTextBoxAccount.TabIndex = 0;
-            this.userControlTextBoxAccount.TextBoxText = "";
             // 
             // FForgetPassword
             // 

@@ -17,7 +17,6 @@ namespace Project
         public InfoDAO infoDAO;
         public ClientDAO clientDAO;
         public AddRessDAO addressDAO;
-        public UserControlLoading userControlLoading;
         private Form currentFromChild;
 
         public FController()
@@ -38,7 +37,7 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            Size = (panelMain.Size = formChild.Size)+ new Size(15, 40);
+            Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
             ProcessOpenFormChild(formChild);
         }
 
@@ -66,12 +65,12 @@ namespace Project
 
         public void InitializeFLogin()
         {
-            OpenFormChild(new FLogin(this, user, accountDAO, infoDAO));
+            OpenFormChild(new FLogin(this, user, accountDAO, infoDAO, clientDAO));
         }
 
         public void InitializeFCreateAccount()
         {
-            OpenFormChild(new FCreateAccount(this, user, accountDAO, infoDAO));
+            OpenFormChild(new FCreateAccount(this, user, accountDAO, infoDAO, clientDAO));
         }
 
         public void InitializeFForgetPassword()
@@ -81,7 +80,7 @@ namespace Project
 
         public void InitializeFMain()
         {
-            OpenFormChild(new FMain(this, user, accountDAO, infoDAO));
+            OpenFormChild(new FMain(this, user, accountDAO, infoDAO, clientDAO));
         }
        
         public void MessageSuccess(string tile, string content, Form formParent = null)

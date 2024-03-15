@@ -19,13 +19,13 @@ namespace Project.FMains
         private void OpenFormChild(Form formChild)
         {
 
-            UserControlLoading userControlLoading = new UserControlLoading(formChild, 300);
-            userControlLoading.OnLoading();
+            FLoading fLoading = new FLoading(formChild, 300);
+            fLoading.OnLoading();
             formChild.TopLevel = false;
             Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
-            userControlLoading.OffLoading();
+            fLoading.OffLoading();
         }
         private void label4_Click(object sender, EventArgs e)
         {
