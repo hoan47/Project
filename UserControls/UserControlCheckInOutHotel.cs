@@ -24,5 +24,10 @@ namespace Project
         {
 
         }
+
+        private void maskedTextBoxOut_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

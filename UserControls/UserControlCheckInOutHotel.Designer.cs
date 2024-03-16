@@ -33,15 +33,15 @@ namespace Project
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelIn = new Guna.UI2.WinForms.Guna2Panel();
             this.maskedTextBoxIn = new System.Windows.Forms.MaskedTextBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelOut = new Guna.UI2.WinForms.Guna2Panel();
             this.maskedTextBoxOut = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
+            this.panelIn.SuspendLayout();
+            this.panelOut.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -67,8 +67,8 @@ namespace Project
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.guna2Panel2);
-            this.groupBox1.Controls.Add(this.guna2Panel1);
+            this.groupBox1.Controls.Add(this.panelIn);
+            this.groupBox1.Controls.Add(this.panelOut);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,52 +79,55 @@ namespace Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thời Gian";
             // 
-            // guna2Panel2
+            // panelIn
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel2.BorderRadius = 10;
-            this.guna2Panel2.BorderThickness = 2;
-            this.guna2Panel2.Controls.Add(this.maskedTextBoxIn);
-            this.guna2Panel2.Location = new System.Drawing.Point(90, 40);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(78, 32);
-            this.guna2Panel2.TabIndex = 9;
+            this.panelIn.BackColor = System.Drawing.Color.White;
+            this.panelIn.BorderColor = System.Drawing.Color.Black;
+            this.panelIn.BorderRadius = 10;
+            this.panelIn.BorderThickness = 2;
+            this.panelIn.Controls.Add(this.maskedTextBoxIn);
+            this.panelIn.Location = new System.Drawing.Point(90, 40);
+            this.panelIn.Name = "panelIn";
+            this.panelIn.Size = new System.Drawing.Size(78, 32);
+            this.panelIn.TabIndex = 9;
             // 
             // maskedTextBoxIn
             // 
             this.maskedTextBoxIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxIn.Location = new System.Drawing.Point(13, 3);
+            this.maskedTextBoxIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxIn.Location = new System.Drawing.Point(13, 8);
             this.maskedTextBoxIn.Mask = "00:00";
             this.maskedTextBoxIn.Name = "maskedTextBoxIn";
-            this.maskedTextBoxIn.Size = new System.Drawing.Size(53, 23);
+            this.maskedTextBoxIn.Size = new System.Drawing.Size(53, 15);
             this.maskedTextBoxIn.TabIndex = 8;
+            this.maskedTextBoxIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxIn.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxIn.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxIn_MaskInputRejected);
             // 
-            // guna2Panel1
+            // panelOut
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.BorderThickness = 2;
-            this.guna2Panel1.Controls.Add(this.maskedTextBoxOut);
-            this.guna2Panel1.Location = new System.Drawing.Point(281, 40);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(78, 32);
-            this.guna2Panel1.TabIndex = 8;
+            this.panelOut.BackColor = System.Drawing.Color.White;
+            this.panelOut.BorderColor = System.Drawing.Color.Black;
+            this.panelOut.BorderRadius = 10;
+            this.panelOut.BorderThickness = 2;
+            this.panelOut.Controls.Add(this.maskedTextBoxOut);
+            this.panelOut.Location = new System.Drawing.Point(281, 40);
+            this.panelOut.Name = "panelOut";
+            this.panelOut.Size = new System.Drawing.Size(78, 32);
+            this.panelOut.TabIndex = 8;
             // 
             // maskedTextBoxOut
             // 
             this.maskedTextBoxOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxOut.Location = new System.Drawing.Point(13, 3);
+            this.maskedTextBoxOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxOut.Location = new System.Drawing.Point(13, 8);
             this.maskedTextBoxOut.Mask = "00:00";
             this.maskedTextBoxOut.Name = "maskedTextBoxOut";
-            this.maskedTextBoxOut.Size = new System.Drawing.Size(53, 23);
+            this.maskedTextBoxOut.Size = new System.Drawing.Size(53, 15);
             this.maskedTextBoxOut.TabIndex = 8;
+            this.maskedTextBoxOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxOut.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxOut.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxOut_MaskInputRejected);
             // 
             // UserControlCheckInOutHotel
             // 
@@ -136,10 +139,10 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
+            this.panelIn.ResumeLayout(false);
+            this.panelIn.PerformLayout();
+            this.panelOut.ResumeLayout(false);
+            this.panelOut.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -151,7 +154,7 @@ namespace Project
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxIn;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxOut;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel panelOut;
+        private Guna.UI2.WinForms.Guna2Panel panelIn;
     }
 }
