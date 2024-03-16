@@ -14,6 +14,7 @@ namespace Project
     {
         private int index;
         private FController fController;
+        private Hotel hotel;
         private FService fService;
 
         public UserControlHotel(FController fController, FService fService, int index)
@@ -21,15 +22,13 @@ namespace Project
             this.index = index;
             this.fController = fController;
             this.fService = fService;
+            hotel = fController.User.Hotels[index];
             InitializeComponent();
-            userControlerLableName.LableText = fController.User.Hotels[index].Name;
-            userControlerLableAddress.LableText = fController.User.Hotels[index].Address.AddressValue;
-            userControlerLablePhone.LableText = "   -    ";
-            userControlerLablePrice.LableText = fController.User.Hotels[index].Phone;
-            userControlerLableName.GetData(this);
-            userControlerLableAddress.GetData(this);
-            userControlerLablePhone.GetData(this);
-            userControlerLablePrice.GetData(this);
+            groupBox.Text = hotel.Name;
+            labelAddress.Text = hotel.Address.AddressValue;
+            labelPhone.Text = hotel.Phone;
+            labelPrice.Text = "0 - 0";
+            pictureBoxHotel.Image = hotel.Images != null ? hotel.Images.Count > 0 ? hotel.Images.First().Image : Properties.Resources.noImage : Properties.Resources.noImage;
         }
 
         public void UserControlHottelDoubleClick(object sender, EventArgs e)

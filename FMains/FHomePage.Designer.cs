@@ -313,7 +313,7 @@ namespace Project
             // 
             // userControlComboBoxAddress
             // 
-            this.userControlComboBoxAddress.ComboBoxColor = System.Drawing.Color.White;
+            this.userControlComboBoxAddress.ComboBoxBackColor = System.Drawing.Color.White;
             this.userControlComboBoxAddress.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlComboBoxAddress.ComboBoxText = "";
             this.userControlComboBoxAddress.Location = new System.Drawing.Point(84, 60);

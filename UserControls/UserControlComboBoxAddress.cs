@@ -14,8 +14,12 @@ namespace Project
     {
         string curentAddress;
         private bool isProvince;
-        public Size SizeUserControl { get { return Size; } set { comboBox.Size = (comboBox.Size = value) - new Size(0, 1); } }
-        public Color ComboBoxColor { get { return comboBox.BackColor; } set { comboBox.BackColor = value; } }
+        public Size SizeUserControl { get { return Size; } set { comboBox.Size = (comboBox.Size = value) + new Size(0, 5); } }
+        public int Hight { get { return comboBox.ItemHeight; } set { comboBox.ItemHeight = value; } }
+        public int BorderRadius { get { return comboBox.BorderRadius; } set { comboBox.BorderRadius = value; } }
+        public int BorderThickness { get { return comboBox.BorderThickness; } set { comboBox.BorderThickness = value; } }
+        public Color ComboBoxBackColor { get { return comboBox.BackColor; } set { comboBox.BackColor = value; } }
+        public Color ComboBoxFillColor { get { return comboBox.FillColor; } set { comboBox.FillColor = value; } }
         public Font ComboBoxFont { get { return comboBox.Font; } set { comboBox.Font = value; } }
 
         public string ComboBoxText 

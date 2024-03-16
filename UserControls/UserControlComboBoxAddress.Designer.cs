@@ -29,24 +29,10 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox
-            // 
-            this.comboBox.BackColor = System.Drawing.Color.White;
-            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(0, 0);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(276, 24);
-            this.comboBox.TabIndex = 0;
-            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxSelectedValueChanged);
-            this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
-            this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
             // 
             // pictureBox
             // 
@@ -54,9 +40,29 @@ namespace Project
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(279, 25);
+            this.pictureBox.Size = new System.Drawing.Size(0, 0);
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
+            // 
+            // comboBox
+            // 
+            this.comboBox.BackColor = System.Drawing.Color.White;
+            this.comboBox.BorderColor = System.Drawing.Color.Black;
+            this.comboBox.BorderThickness = 0;
+            this.comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox.ItemHeight = 30;
+            this.comboBox.Location = new System.Drawing.Point(0, 0);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(279, 36);
+            this.comboBox.TabIndex = 2;
+            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxSelectedValueChanged);
+            this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
+            this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
             // 
             // UserControlComboBoxAddress
             // 
@@ -65,15 +71,14 @@ namespace Project
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.pictureBox);
             this.Name = "UserControlComboBoxAddress";
-            this.Size = new System.Drawing.Size(279, 25);
+            this.Size = new System.Drawing.Size(279, 36);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.PictureBox pictureBox;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox;
     }
 }

@@ -12,17 +12,19 @@ namespace Project
 {
     public partial class UserControlAddressHotel : UserControl
     {
-        public string ComboBoxText { get { return userControlComboBoxAddress.ComboBoxText; } set { userControlComboBoxAddress.ComboBoxText = value; } }
+        private string curentAddress;
+        private bool isProvince;
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
         public Address AddressText
         {
             get 
             { 
-                return new Address(userControlComboBoxAddress.ComboBoxText, TextBoxText); 
+                return new Address(comboBox.Text, TextBoxText); 
             }
             set
             {
-                userControlComboBoxAddress.ComboBoxText = value.ProvinceAndDistrict;
+                comboBox.Items.Add(value.ProvinceAndDistrict);
+                comboBox.Text = value.ProvinceAndDistrict;
                 textBox.Text = value.SpecificLocation;
             }
         }
@@ -30,6 +32,44 @@ namespace Project
         public UserControlAddressHotel()
         {
             InitializeComponent();
+            isProvince = true;
+            curentAddress = null;
+        }
+
+        private void ComboBoxLeave(object sender, EventArgs e)
+        {
+            if (isProvince == false)
+            {
+                if (comboBox.Text == string.Empty)
+                {
+                    isProvince = true;
+                }
+                curentAddress = comboBox.Text;
+            }
+            else
+            {
+                string curentTextAddreed = curentAddress + ", " + comboBox.Text;
+                comboBox.Items.Add(curentTextAddreed);
+                comboBox.Text = curentTextAddreed;
+            }
+        }
+
+        private void ComboBoxEnter(object sender, EventArgs e)
+        {
+            if (isProvince == true)
+            {
+                Address.UpdateProvince(comboBox);
+            }
+            else
+            {
+                Address.UpdateDistrict(comboBox, curentAddress);
+            }
+            isProvince = !isProvince;
+        }
+
+        private void ComboBoxCSelectedValueChanged(object sender, EventArgs e)
+        {
+            pictureBox.Focus();
         }
     }
 }

@@ -30,106 +30,101 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddressHotel));
-            this.groupBoxInforService = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBoxInforService = new System.Windows.Forms.PictureBox();
-            this.userControlComboBoxAddress = new Project.UserControlComboBoxAddress();
-            this.groupBoxInforService.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInforService)).BeginInit();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBoxInforService
+            // groupBox
             // 
-            this.groupBoxInforService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxInforService.Controls.Add(this.panel2);
-            this.groupBoxInforService.Controls.Add(this.panel1);
-            this.groupBoxInforService.Controls.Add(this.pictureBoxInforService);
-            this.groupBoxInforService.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBoxInforService.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxInforService.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxInforService.Name = "groupBoxInforService";
-            this.groupBoxInforService.Size = new System.Drawing.Size(400, 110);
-            this.groupBoxInforService.TabIndex = 1;
-            this.groupBoxInforService.TabStop = false;
-            this.groupBoxInforService.Text = "Địa chỉ";
+            this.groupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox.Controls.Add(this.comboBox);
+            this.groupBox.Controls.Add(this.textBox);
+            this.groupBox.Controls.Add(this.pictureBox);
+            this.groupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox.Location = new System.Drawing.Point(0, 0);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(400, 110);
+            this.groupBox.TabIndex = 1;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Địa chỉ";
             // 
-            // panel2
+            // comboBox
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.textBox);
-            this.panel2.Location = new System.Drawing.Point(78, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(302, 36);
-            this.panel2.TabIndex = 2;
+            this.comboBox.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox.BorderColor = System.Drawing.Color.Transparent;
+            this.comboBox.BorderRadius = 10;
+            this.comboBox.BorderThickness = 2;
+            this.comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox.ForeColor = System.Drawing.Color.Black;
+            this.comboBox.ItemHeight = 25;
+            this.comboBox.Location = new System.Drawing.Point(84, 23);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(291, 31);
+            this.comboBox.TabIndex = 10;
+            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxCSelectedValueChanged);
+            this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
+            this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox.Location = new System.Drawing.Point(12, 6);
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox1";
-            this.textBox.Size = new System.Drawing.Size(280, 25);
-            this.textBox.TabIndex = 0;
+            this.textBox.BorderColor = System.Drawing.Color.Black;
+            this.textBox.BorderRadius = 10;
+            this.textBox.BorderThickness = 2;
+            this.textBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox.DefaultText = "";
+            this.textBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Location = new System.Drawing.Point(84, 66);
+            this.textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox.Name = "textBox";
+            this.textBox.PasswordChar = '\0';
+            this.textBox.PlaceholderText = "";
+            this.textBox.SelectedText = "";
+            this.textBox.Size = new System.Drawing.Size(291, 37);
+            this.textBox.TabIndex = 2;
             // 
-            // panel1
+            // pictureBox
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.userControlComboBoxAddress);
-            this.panel1.Location = new System.Drawing.Point(78, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 36);
-            this.panel1.TabIndex = 1;
-            // 
-            // pictureBoxInforService
-            // 
-            this.pictureBoxInforService.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInforService.Image")));
-            this.pictureBoxInforService.Location = new System.Drawing.Point(6, 23);
-            this.pictureBoxInforService.Name = "pictureBoxInforService";
-            this.pictureBoxInforService.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxInforService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInforService.TabIndex = 0;
-            this.pictureBoxInforService.TabStop = false;
-            // 
-            // userControlComboBoxAddress1
-            // 
-            this.userControlComboBoxAddress.ComboBoxColor = System.Drawing.Color.White;
-            this.userControlComboBoxAddress.ComboBoxFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlComboBoxAddress.ComboBoxText = "";
-            this.userControlComboBoxAddress.Location = new System.Drawing.Point(12, 4);
-            this.userControlComboBoxAddress.Name = "userControlComboBoxAddress1";
-            this.userControlComboBoxAddress.Size = new System.Drawing.Size(279, 25);
-            this.userControlComboBoxAddress.SizeUserControl = new System.Drawing.Size(279, 25);
-            this.userControlComboBoxAddress.TabIndex = 0;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // UserControlAddressHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBoxInforService);
+            this.Controls.Add(this.groupBox);
             this.Name = "UserControlAddressHotel";
             this.Size = new System.Drawing.Size(400, 110);
-            this.groupBoxInforService.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInforService)).EndInit();
+            this.groupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxInforService;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBoxInforService;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox;
-        private UserControlComboBoxAddress userControlComboBoxAddress;
+        private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private Guna.UI2.WinForms.Guna2TextBox textBox;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox;
     }
 }
