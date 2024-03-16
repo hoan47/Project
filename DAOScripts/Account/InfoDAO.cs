@@ -52,7 +52,8 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName) values('{user.UserName}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, imageBytes) values('{user.UserName}', @imageBytes)", sqlConnection);
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(Properties.Resources.noImage);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {

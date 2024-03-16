@@ -36,7 +36,7 @@ namespace Project
             userControlTextBoxEditIdCard.TextBoxText = fController.User.IdCard;
             userControlTextBoxEditEmail.TextBoxText = fController.User.Email;
             userControlTextBoxEditPhone.TextBoxText = fController.User.Phone;
-            pictureBoxImage.Image = fController.User.Image == null ? Properties.Resources.noImage : fController.User.Image;
+            pictureBoxImage.Image = fController.User.Image;
             labelRank.Text = fController.User.Client.RankStr();
             pictureBoxImageRank.Image = fController.User.Client.RankImage();
             toolTip.SetToolTip(pictureBoxImageRank, fController.User.Client.StatusRank());
@@ -55,13 +55,13 @@ namespace Project
             if (DateTime.TryParse(userControlDateTimePackerEditDateOfBirth.DateTimePickerText, out dateTime) == true)
             {
                 Address address = new Address(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText);
-
-                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image == Properties.Resources.noImage ? null : pictureBoxImage.Image);
+                
+                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                 if (newUser.IsName() == true && newUser.IsAddress() == true && newUser.IsIdCard() == true && newUser.IsEmail() == true && newUser.IsPhone() == true)
                 {
                     FLoading fLoading = new FLoading(this, 2000);
 
-                    fController.User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image == Properties.Resources.noImage ? null : pictureBoxImage.Image);
+                    fController.User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, pictureBoxImage.Image);
                     fLoading.OnLoading();
                     if (fController.InfoDAO.Update() == true)
                     {

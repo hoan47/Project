@@ -84,7 +84,7 @@ namespace Project
             this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox.ForeColor = System.Drawing.Color.Black;
             this.comboBox.ItemHeight = 20;
-            this.comboBox.Location = new System.Drawing.Point(178, 10);
+            this.comboBox.Location = new System.Drawing.Point(178, 11);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(318, 26);
             this.comboBox.TabIndex = 9;
@@ -95,7 +95,8 @@ namespace Project
             // labelValue
             // 
             this.labelValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValue.Location = new System.Drawing.Point(90, 10);
+            this.labelValue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelValue.Location = new System.Drawing.Point(90, 13);
             this.labelValue.Name = "labelValue";
             this.labelValue.Size = new System.Drawing.Size(406, 26);
             this.labelValue.TabIndex = 10;
@@ -106,8 +107,8 @@ namespace Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelValue);
             this.Controls.Add(this.panelRoad);
+            this.Controls.Add(this.labelValue);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.label);

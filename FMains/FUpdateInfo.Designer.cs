@@ -33,6 +33,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
             System.Windows.Forms.Button buttonChangeImage;
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.panelImage = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.labelRank = new System.Windows.Forms.Label();
+            this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.userControlAddressEditAddress = new Project.UserControlAddressEdit();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
@@ -41,21 +48,12 @@
             this.userControlTextBoxEditSpecificLocation = new Project.UserControlTextBoxEdit();
             this.userControlDateTimePackerEditDateOfBirth = new Project.UserControlDateTimePackerEdit();
             this.userControlTextBoxEditName = new Project.UserControlTextBoxEdit();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.panelImage = new System.Windows.Forms.Panel();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBackGround = new System.Windows.Forms.PictureBox();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.labelRank = new System.Windows.Forms.Label();
-            this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
             buttonDeleteImage = new System.Windows.Forms.Button();
             buttonChangeImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackGround)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonDeleteImage
@@ -104,6 +102,76 @@
             this.panelInfo.Size = new System.Drawing.Size(621, 537);
             this.panelInfo.TabIndex = 1;
             this.panelInfo.TabStop = true;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.AutoSize = true;
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUpdate.Location = new System.Drawing.Point(288, 461);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(51, 50);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            // 
+            // panelImage
+            // 
+            this.panelImage.BackColor = System.Drawing.Color.Transparent;
+            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelImage.Controls.Add(this.pictureBoxImage);
+            this.panelImage.Controls.Add(buttonDeleteImage);
+            this.panelImage.Controls.Add(this.labelUser);
+            this.panelImage.Controls.Add(buttonChangeImage);
+            this.panelImage.Location = new System.Drawing.Point(53, 190);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelImage.Name = "panelImage";
+            this.panelImage.Size = new System.Drawing.Size(268, 311);
+            this.panelImage.TabIndex = 0;
+            this.panelImage.TabStop = true;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.Color.Black;
+            this.labelUser.Location = new System.Drawing.Point(120, 34);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(0, 20);
+            this.labelUser.TabIndex = 0;
+            // 
+            // labelRank
+            // 
+            this.labelRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRank.Location = new System.Drawing.Point(108, 2);
+            this.labelRank.Name = "labelRank";
+            this.labelRank.Size = new System.Drawing.Size(163, 31);
+            this.labelRank.TabIndex = 5;
+            this.labelRank.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxImageRank
+            // 
+            this.pictureBoxImageRank.Location = new System.Drawing.Point(108, 34);
+            this.pictureBoxImageRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxImageRank.Name = "pictureBoxImageRank";
+            this.pictureBoxImageRank.Size = new System.Drawing.Size(163, 150);
+            this.pictureBoxImageRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxImageRank.TabIndex = 4;
+            this.pictureBoxImageRank.TabStop = false;
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.BorderRadius = 20;
+            this.pictureBoxImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pictureBoxImage.ImageRotate = 0F;
+            this.pictureBoxImage.Location = new System.Drawing.Point(18, 12);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(230, 230);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 24;
+            this.pictureBoxImage.TabStop = false;
             // 
             // userControlAddressEditAddress
             // 
@@ -190,85 +258,6 @@
             this.userControlTextBoxEditName.TabIndex = 0;
             this.userControlTextBoxEditName.TextBoxText = "";
             // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.AutoSize = true;
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUpdate.Location = new System.Drawing.Point(288, 461);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(51, 50);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
-            // 
-            // panelImage
-            // 
-            this.panelImage.BackColor = System.Drawing.Color.Transparent;
-            this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelImage.Controls.Add(this.pictureBoxImage);
-            this.panelImage.Controls.Add(this.pictureBoxBackGround);
-            this.panelImage.Controls.Add(buttonDeleteImage);
-            this.panelImage.Controls.Add(this.labelUser);
-            this.panelImage.Controls.Add(buttonChangeImage);
-            this.panelImage.Location = new System.Drawing.Point(53, 190);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(268, 311);
-            this.panelImage.TabIndex = 0;
-            this.panelImage.TabStop = true;
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(18, 12);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(230, 230);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 23;
-            this.pictureBoxImage.TabStop = false;
-            // 
-            // pictureBoxBackGround
-            // 
-            this.pictureBoxBackGround.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackGround.Image")));
-            this.pictureBoxBackGround.Location = new System.Drawing.Point(13, 7);
-            this.pictureBoxBackGround.Name = "pictureBoxBackGround";
-            this.pictureBoxBackGround.Size = new System.Drawing.Size(240, 240);
-            this.pictureBoxBackGround.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBackGround.TabIndex = 3;
-            this.pictureBoxBackGround.TabStop = false;
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.ForeColor = System.Drawing.Color.Black;
-            this.labelUser.Location = new System.Drawing.Point(120, 34);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(0, 20);
-            this.labelUser.TabIndex = 0;
-            // 
-            // labelRank
-            // 
-            this.labelRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRank.Location = new System.Drawing.Point(108, 2);
-            this.labelRank.Name = "labelRank";
-            this.labelRank.Size = new System.Drawing.Size(163, 31);
-            this.labelRank.TabIndex = 5;
-            this.labelRank.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBoxImageRank
-            // 
-            this.pictureBoxImageRank.Location = new System.Drawing.Point(108, 34);
-            this.pictureBoxImageRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxImageRank.Name = "pictureBoxImageRank";
-            this.pictureBoxImageRank.Size = new System.Drawing.Size(163, 150);
-            this.pictureBoxImageRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxImageRank.TabIndex = 4;
-            this.pictureBoxImageRank.TabStop = false;
-            // 
             // FUpdateInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,15 +279,13 @@
             this.panelInfo.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackGround)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Panel panelImage;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonUpdate;
@@ -313,7 +300,7 @@
         private System.Windows.Forms.PictureBox pictureBoxImageRank;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label labelRank;
-        private System.Windows.Forms.PictureBox pictureBoxBackGround;
         private UserControlAddressEdit userControlAddressEditAddress;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxImage;
     }
 }

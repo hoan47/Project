@@ -25,9 +25,14 @@ namespace Project
             fControler = fController;
             this.index = index;
             hotel = fController.User.GetIndex(index);
-            pictureBoxImage.Image = index == -1 || hotel.Images == null || hotel.Images.Count == 0 ? Properties.Resources.noImage : hotel.Images.First().Image;
-            cureentImage = index == -1 || hotel?.Images == null || hotel.Images?.Count == 0 ? null : hotel.Images.First();
+            pictureBoxImage.Image = IsZeroImage() == true ? Properties.Resources.noImage : hotel.Images.First().Image;
+            cureentImage = IsZeroImage() == true ? null : hotel.Images.First();
             LoadData();
+        }
+
+        private bool IsZeroImage()
+        {
+            return index == -1 || hotel.Images == null || hotel.Images.Count == 0;
         }
 
         private void LoadData()
@@ -69,16 +74,15 @@ namespace Project
             {
                 checks[i] = checkedListBox.GetItemChecked(i);
             }
-
             TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText);
 
-            if(timeSpanIn == new TimeSpan(0, 0, 0))
+            if(timeSpanIn == TimeSpan.Zero)
             {
                 return;
             }    
             TimeSpan timeSpanOut = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxOutText);
 
-            if(timeSpanOut != new TimeSpan(0, 0, 0))
+            if(timeSpanOut != TimeSpan.Zero)
             {
                 Hotel hotel = new Hotel(
                     fControler.User,
@@ -130,7 +134,7 @@ namespace Project
 
         private void ButtonDeleteImageClick(object sender, EventArgs e)
         {
-            if(hotel?.Images == null || hotel.Images.Count == 0)
+            if(IsZeroImage() == true)
             {
                 return;
             }    
@@ -144,7 +148,7 @@ namespace Project
 
         private void ButtonLeftClick(object sender, EventArgs e)
         {
-            if (hotel?.Images == null || hotel.Images.Count < 2)
+            if (IsZeroImage() == true)
             {
                 return;
             }
@@ -155,7 +159,7 @@ namespace Project
 
         private void ButtonRightClick(object sender, EventArgs e)
         {
-            if (hotel?.Images == null || hotel.Images.Count < 2)
+            if (IsZeroImage() == true)
             {
                 return;
             }

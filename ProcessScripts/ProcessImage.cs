@@ -29,7 +29,7 @@ namespace Project
             }
         }
 
-        public static bool Comparer(Image image1, Image image2)
+        public static bool Compare(Image image1, Image image2)
         {
             if (image1.Width != image2.Width || image1.Height != image2.Height)
             {

@@ -8,14 +8,14 @@ namespace Project
 {
     static class ProcessTimeSpan
     {
-        static public TimeSpan TimeSpanPrase(string timeString)
+        public static TimeSpan TimeSpanPrase(string timeString)
         {
             foreach (string time in timeString.Split(':'))
             {
                 if (string.IsNullOrEmpty(time) || string.IsNullOrWhiteSpace(time))
                 {
                     ShowMessage.ShowNotification("Vui lòng nhập thời gian.");
-                    return new TimeSpan(0, 0, 0);
+                    return new TimeSpan();
                 }
             }
             string[] parts = timeString.Split(':');
@@ -29,7 +29,7 @@ namespace Project
                 }
                 ShowMessage.ShowNotification("Thời gian không hợp lệ.");
             }
-            return new TimeSpan(0, 0, 0);
+            return new TimeSpan();
         }
     }
 }
