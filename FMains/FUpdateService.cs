@@ -14,34 +14,29 @@ namespace Project
 {
     public partial class FUpdateService : Form
     {
-        private FController fControler;
         private Hotel hotel;
-        private Image_ cureentImage;
-        private int index;
+        private Image cureentImage;
 
-        public FUpdateService(FController fController, int index)
+        public FUpdateService(Hotel hotel)
         {
             InitializeComponent();
-            fControler = fController;
-            this.index = index;
-            hotel = fController.User.GetIndex(index);
-            pictureBoxImage.Image = IsZeroImage() == true ? Properties.Resources.noImage : hotel.Images.First().Image;
-            cureentImage = IsZeroImage() == true ? null : hotel.Images.First();
+            this.hotel = hotel;
+            pictureBoxImage.Image = cureentImage = IsZeroImage() == true ? Properties.Resources.noImage : hotel.Images.First();
             LoadData();
         }
 
         private bool IsZeroImage()
         {
-            return index == -1 || hotel.Images == null || hotel.Images.Count == 0;
+            return hotel == null || hotel.Images == null || hotel.Images.Count == 0;
         }
 
         private void LoadData()
         {
-            if(index != -1)
+            if(hotel != null)
             {
                 panelImage.Visible = true;
                 userControlTextBoxName.TextBoxText = hotel.Name;
-                userControlAddressHotel.AddressText = hotel.Address;
+                userControlAddressHotel.AddressValue = hotel.Address;
                 userControlTextBoxPhone.TextBoxText = hotel.Phone;
                 userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
@@ -76,50 +71,47 @@ namespace Project
             }
             string message;
 
-            TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText, out message);
-
-            if(timeSpanIn == TimeSpan.Zero)
-            {
-                fControler.MessageWarning("Thông báo", message);
-                return;
-            }    
+            TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText, out message);   
             TimeSpan timeSpanOut = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxOutText, out message);
 
-            if(timeSpanOut != TimeSpan.Zero)
+            if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(
-                    fControler.User,
-                    index == -1 ? fControler.User.Hotels == null ? 0 : fControler.User.Hotels.Count : this.hotel.IdHotel,
-                    userControlTextBoxName.TextBoxText,
-                    userControlTextBoxPhone.TextBoxText,
-                    userControlAddressHotel.AddressText,
-                    timeSpanIn,
-                    timeSpanOut,
-                    checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
-                    textBoxDescribe.Text,
-                    index == -1 ? null : this.hotel.Images);
+                Hotel hotel = new Hotel(FController.Instance.User.Hotels.Count, userControlTextBoxName.TextBoxText,
+                            userControlTextBoxPhone.TextBoxText,
+                            userControlAddressHotel.AddressValue,
+                            timeSpanIn,
+                            timeSpanOut,
+                            checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
+                            textBoxDescribe.Text);
 
-                if (hotel.IsPhone(out message) && hotel.IsAddress(out message))
+                if (hotel.IsName(out message) && hotel.IsAddress(out message) && hotel.IsPhone(out message))
                 {
-                    if (index == -1)
+                    if (this.hotel == null)
                     {
-                        fControler.User.AddHotel(hotel);
-                        index = fControler.User.Hotels.Count - 1;
-                        fControler.HotelDAO.Insert(hotel);
-                        fControler.MessageSuccess("Thông báo", "Tạo khách sạn mới thành công.", this);
+                        FController.Instance.User.AddHotel(hotel);
+                        this.hotel = hotel;
+                        FController.Instance.HotelDAO.Insert(hotel);
+                        FController.Instance.MessageSuccess("Thông báo", "Tạo khách sạn mới thành công.", this);
                     }
                     else
                     {
-                        fControler.User.Hotels[index] = hotel;
-                        fControler.HotelDAO.Update(hotel);
-                        fControler.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
+                        this.hotel.UpdateInfo(
+                            userControlTextBoxName.TextBoxText,
+                            userControlTextBoxPhone.TextBoxText,
+                            userControlAddressHotel.AddressValue,
+                            timeSpanIn,
+                            timeSpanOut,
+                            checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
+                            textBoxDescribe.Text);
+
+                        FController.Instance.HotelDAO.Update(this.hotel);
+                        FController.Instance.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
                     }
-                    this.hotel = hotel;
                     LoadData();
                     return;
                 }
             }
-            fControler.MessageWarning("Thông báo", message, this);
+            FController.Instance.MessageWarning("Thông báo", message, this);
         }
 
         private void ButtonUploadImageClick(object sender, EventArgs e)
@@ -128,12 +120,10 @@ namespace Project
 
             if (image != null)
             {
-                Image_ image_ = new Image_(fControler.User, hotel.IdHotel, image);
-
-                hotel.AddImage(image_);
-                fControler.ImageHotelDAO.Insert(image_);
+                hotel.AddImage(image);
+                FController.Instance.ImageHotelDAO.Insert(hotel, image);
                 pictureBoxImage.Image = image;
-                cureentImage = image_;
+                cureentImage = image;
             }
         }
 
@@ -146,8 +136,8 @@ namespace Project
             int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
 
             hotel.Images.Remove(cureentImage);
-            fControler.ImageHotelDAO.Delete(cureentImage);
-            pictureBoxImage.Image = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage].Image : pictureBoxImage.Image = Properties.Resources.noImage;
+            FController.Instance.ImageHotelDAO.Delete(hotel, cureentImage);
+            pictureBoxImage.Image = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : pictureBoxImage.Image = Properties.Resources.noImage;
             cureentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
         }
 
@@ -159,7 +149,7 @@ namespace Project
             }
             int indexImage = hotel.Images.IndexOf(cureentImage) - 1;
 
-            pictureBoxImage.Image = (cureentImage =  indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage]).Image;
+            pictureBoxImage.Image = cureentImage =  indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage];
         }
 
         private void ButtonRightClick(object sender, EventArgs e)
@@ -170,7 +160,7 @@ namespace Project
             }
             int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
 
-            pictureBoxImage.Image = (cureentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
+            pictureBoxImage.Image = cureentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage];
         }
     }
 }

@@ -14,25 +14,23 @@ namespace Project
 {
     public partial class FLogin : Form
     {
-        public FController fController;
         private FLoading fLoading;
 
-        public FLogin(FController fController)
+        public FLogin()
         {
             InitializeComponent();
             backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
             backgroundWorker.RunWorkerCompleted += DackgroundWorkerRunWorkerCompletedLogin;
-            this.fController = fController;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fController.InitializeFCreateAccount();
+            FController.Instance.InitializeFCreateAccount();
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fController.InitializeFForgetPassword();
+            FController.Instance.InitializeFForgetPassword();
         }
 
         private void ButtonLoginClick(object sender, EventArgs e)
@@ -41,8 +39,8 @@ namespace Project
             {
                 return;
             }
-            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            fLoading = new FLoading(fController, 500);
+            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            fLoading = new FLoading(FController.Instance, 500);
             fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
@@ -56,24 +54,24 @@ namespace Project
         {
             string message;
 
-            if(fController.User.IsAccount(out message) == false)
+            if(FController.Instance.User.IsAccount(out message) == false)
             {
                 e.Result = message;
             }
-            else if (fController.AccountDAO.FindAccount() == false)
+            else if (FController.Instance.AccountDAO.FindAccount() == false)
             {
                 e.Result = "Tài khoản không tồn tại.";
             }
-            else if (fController.AccountDAO.Select() == false)
+            else if (FController.Instance.AccountDAO.Select() == false)
             {
                 e.Result = "Mật khẩu sai.";
             }
             else
             {
-                fController.InfoDAO.Access();
-                fController.ClientDAO.Access();
-                fController.HotelDAO.Access();
-                fController.ImageHotelDAO.Access();
+                FController.Instance.InfoDAO.Access();
+                FController.Instance.ClientDAO.Access();
+                FController.Instance.HotelDAO.Access();
+                FController.Instance.ImageHotelDAO.Access();
                 e.Result = "Đăng nhập thành công.";
             }
         }
@@ -82,13 +80,13 @@ namespace Project
         {
             if ((string)e.Result == "Đăng nhập thành công.")
             {
-                fController.InitializeFMain();
+                FController.Instance.InitializeFMain();
                 fLoading.OnLoading();
-                fController.MessageSuccess("Thông báo", (string)e.Result);
+                FController.Instance.MessageSuccess("Thông báo", (string)e.Result);
             }
             else
             {
-                fController.MessageWarning("Thông báo", (string)e.Result);
+                FController.Instance.MessageWarning("Thông báo", (string)e.Result);
             }
             fLoading.OffLoading();
         }

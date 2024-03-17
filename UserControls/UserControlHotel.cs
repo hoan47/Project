@@ -12,28 +12,24 @@ namespace Project
 {
     public partial class UserControlHotel : UserControl
     {
-        private int index;
-        private FController fController;
         private Hotel hotel;
         private FService fService;
 
-        public UserControlHotel(FController fController, FService fService, int index)
+        public UserControlHotel(FService fService, Hotel hotel)
         {
-            this.index = index;
-            this.fController = fController;
+            this.hotel = hotel;
             this.fService = fService;
-            hotel = fController.User.Hotels[index];
             InitializeComponent();
-            groupBox.Text = hotel.Name;
+            groupBox.Text = "Tên Khách Sạn: " + hotel.Name;
             labelAddress.Text = hotel.Address.AddressValue;
             labelPhone.Text = hotel.Phone;
             labelPrice.Text = "0 - 0";
-            pictureBoxHotel.Image = hotel.Images != null ? hotel.Images.Count > 0 ? hotel.Images.First().Image : Properties.Resources.noImage : Properties.Resources.noImage;
+            pictureBoxHotel.Image = hotel.Images != null ? hotel.Images.Count > 0 ? hotel.Images.First() : Properties.Resources.noImage : Properties.Resources.noImage;
         }
 
         public void UserControlHottelDoubleClick(object sender, EventArgs e)
         {
-            fService.OpenHotel(index);
+            fService.OpenHotel(hotel);
         }
     }
 }

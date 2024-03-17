@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class FController : Form
     {
+        public static FController Instance { get; private set; }
         private Form currentFromChild;
         public User User { get; private set; }
         public Client Client { get; private set; }
@@ -25,13 +26,14 @@ namespace Project
 
         public FController()
         {
+            Instance = this;
             User = new User();
-            AccountDAO = new AccountDAO(User);
-            InfoDAO = new InfoDAO(User);
-            ClientDAO = new ClientDAO(User);
+            AccountDAO = new AccountDAO();
+            InfoDAO = new InfoDAO();
+            ClientDAO = new ClientDAO();
             AddressDAO = new AddRessDAO();
-            HotelDAO = new HotelDAO(User);
-            ImageHotelDAO = new ImageHotelDAO(User);
+            HotelDAO = new HotelDAO();
+            ImageHotelDAO = new ImageHotelDAO();
             InitializeComponent();
             InitializeFLogin();
         }
@@ -72,22 +74,22 @@ namespace Project
       
         public void InitializeFLogin()
         {
-            OpenFormChild(new FLogin(this));
+            OpenFormChild(new FLogin());
         }
 
         public void InitializeFCreateAccount()
         {
-            OpenFormChild(new FCreateAccount(this));
+            OpenFormChild(new FCreateAccount());
         }
 
         public void InitializeFForgetPassword()
         {
-            OpenFormChild(new FForgetPassword(this));
+            OpenFormChild(new FForgetPassword());
         }
 
         public void InitializeFMain()
         {
-            OpenFormChild(new FMain(this));
+            OpenFormChild(new FMain());
         }
        
         public void MessageSuccess(string tile, string content, Form formParent = null)

@@ -9,12 +9,10 @@ namespace Project
 {
     public class Client
     {
-        public User User { get; private set; } 
         public int RankInt { get; private set; }
 
-        public Client(User user, int rankInt = 0)
+        public Client(int rankInt = 0)
         {
-            User = user;
             RankInt = rankInt;
         }
 
@@ -75,9 +73,9 @@ namespace Project
                 case ERank.noRank:
                     return "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng và mở khóa các tính năng khác.";
                 case ERank.rankCopper:
-                    return $"Bạn cần thêm {ERank.rankSilver - User.Client.RankInt} điểm để mở khóa hạng Bạc.";
+                    return $"Bạn cần thêm {ERank.rankSilver - FController.Instance.User.Client.RankInt} điểm để mở khóa hạng Bạc.";
                 case ERank.rankSilver:
-                    return $"Bạn cần thêm {ERank.rankYellow - User.Client.RankInt} điểm để mở khóa hạng Vàng.";
+                    return $"Bạn cần thêm {ERank.rankYellow - FController.Instance.User.Client.RankInt} điểm để mở khóa hạng Vàng.";
                 default:
                     return $"Bạn hiện tại đang ở mức hạng cao nhất.";
             }

@@ -15,7 +15,19 @@ namespace Project
         private string curentAddress;
         private bool isProvince;
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
-        public Address AddressText
+        public string ComboBoxText
+        {
+            get
+            {
+                return comboBox.Text;
+            }
+            set
+            {
+                comboBox.Items.Add(value);
+                comboBox.Text = value;
+            }
+        }
+        public Address AddressValue
         {
             get 
             { 
@@ -48,9 +60,7 @@ namespace Project
             }
             else
             {
-                string curentTextAddreed = curentAddress + ", " + comboBox.Text;
-                comboBox.Items.Add(curentTextAddreed);
-                comboBox.Text = curentTextAddreed;
+                ComboBoxText = curentAddress + (comboBox.Text == string.Empty ? string.Empty : (", " + comboBox.Text));
             }
         }
 

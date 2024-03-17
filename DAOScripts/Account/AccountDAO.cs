@@ -13,7 +13,7 @@ namespace Project
 {
     public class AccountDAO : DAO
     {
-        public AccountDAO(User user) : base("Account", user)
+        public AccountDAO() : base("Account")
         { }
 
         public bool Select()
@@ -21,7 +21,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{FController.Instance.User.UserName}' and password = '{FController.Instance.User.Password}'", sqlConnection);
 
                 return (int)selectCMD.ExecuteScalar() != 0;
             }
@@ -45,7 +45,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"INSERT {table} VALUES ('{user.UserName}', '{user.Password}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"INSERT {table} VALUES ('{FController.Instance.User.UserName}', '{FController.Instance.User.Password}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -68,7 +68,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
 
                 return (int)selectCMD.ExecuteScalar() != 0;
             }
@@ -88,7 +88,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET password = '{user.NewPassword}' WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET password = '{FController.Instance.User.NewPassword}' WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {

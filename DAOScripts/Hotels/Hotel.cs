@@ -10,7 +10,6 @@ namespace Project
     public class Hotel
     {
         private List<Room> rooms;
-        public User User { get; private set; }
         public int IdHotel { get; private set; }
         public string Name { get; private set; }
         public string Phone { get; private set; }
@@ -26,12 +25,14 @@ namespace Project
         public bool IsSmokingArea { get; private set; }
         public bool IsPark { get; private set; }
         public string Describe { get; private set; }
-        public List<Image_> Images { get; private set; }
+        public List<Image> Images { get; private set; }
+
+        public Hotel()
+        { }
 
 
-        public Hotel(User user, int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, bool isPool, bool isFoodServingArea, bool isCarPark, bool isWifi, bool isServiceFullTime, bool isLaundryService, bool isSmokingArea, bool isPark, string describe, List<Image_> images)
+        public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, bool isPool, bool isFoodServingArea, bool isCarPark, bool isWifi, bool isServiceFullTime, bool isLaundryService, bool isSmokingArea, bool isPark, string describe)
         {
-            User = user;
             IdHotel = id;
             Name = name;
             Phone = phone;
@@ -47,14 +48,31 @@ namespace Project
             IsSmokingArea = isSmokingArea;
             IsPark = isPark;
             Describe = describe;
-            Images = images;
         }
 
-        public void AddImage(Image_ image)
+        public void UpdateInfo(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, bool isPool, bool isFoodServingArea, bool isCarPark, bool isWifi, bool isServiceFullTime, bool isLaundryService, bool isSmokingArea, bool isPark, string describe)
+        {
+            Name = name;
+            Phone = phone;
+            Address = address;
+            CheckIn = checkIn;
+            CheckOut = checkOut;
+            IsPool = isPool;
+            IsFoodServingArea = isFoodServingArea;
+            IsCarPark = isCarPark;
+            IsWifi = isWifi;
+            IsServeFullTime = isServiceFullTime;
+            IsLaundryService = isLaundryService;
+            IsSmokingArea = isSmokingArea;
+            IsPark = isPark;
+            Describe = describe;
+        }
+
+        public void AddImage(Image image)
         {
             if (Images == null)
             {
-                Images = new List<Image_>();
+                Images = new List<Image>();
             }
             Images.Add(image);
         } 
@@ -68,14 +86,26 @@ namespace Project
             rooms.Add(room);
         }
 
-        public bool IsPhone(out string massage)
+        public bool IsName(out string message)
         {
-            return CheckInfo.IsPhone(Phone, out massage);
+            if (string.IsNullOrWhiteSpace(Name))
+            {
+                message = "Tên khách sạn không được để trống.";
+                return false;
+            }
+            message = "Tên khách sạn hợp lệ.";
+            return true;
         }
 
-        public bool IsAddress(out string massage)
+        public bool IsAddress(out string message)
         {
-            return CheckInfo.IsAddRess(Address.ProvinceAndDistrict, out massage);
+            return CheckInfo.IsAddRess(Address.ProvinceAndDistrict, out message);
         }
+
+        public bool IsPhone(out string message)
+        {
+            return CheckInfo.IsPhone(Phone, out message);
+        }
+
     }
 }

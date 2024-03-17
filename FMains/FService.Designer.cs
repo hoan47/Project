@@ -31,7 +31,7 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FService));
             this.flowLayoutPanelHottel = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanelHottel
@@ -48,21 +48,14 @@ namespace Project
             // 
             // buttonAdd
             // 
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.BackgroundImage")));
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.BorderRadius = 5;
-            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(978, 566);
+            this.buttonAdd.Location = new System.Drawing.Point(968, 556);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(50, 50);
-            this.buttonAdd.TabIndex = 2;
+            this.buttonAdd.Size = new System.Drawing.Size(60, 60);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAddClick);
             // 
             // FService
@@ -84,6 +77,6 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelHottel;
-        private Guna.UI2.WinForms.Guna2Button buttonAdd;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

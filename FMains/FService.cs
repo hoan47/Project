@@ -13,13 +13,11 @@ namespace Project
 {
     public partial class FService : Form
     {
-        public FController fController;
         private FMain fMain;
 
-        public FService(FController fController, FMain fMain)
+        public FService(FMain fMain)
         {
             InitializeComponent();
-            this.fController = fController;
             this.fMain = fMain;
             LoadData();
         }
@@ -29,21 +27,20 @@ namespace Project
             OpenHotel();
         }
 
-        public void OpenHotel(int index = -1)
+        public void OpenHotel(Hotel hotel = null)
         {
-            fMain.OpenFormChild(new FUpdateService(fController, index));
+            fMain.OpenFormChild(new FUpdateService(hotel));
         }
 
         private  void LoadData()
         {
-            if (fMain.fController.User.Hotels == null)
+            if (FController.Instance.User.Hotels == null)
             {
                 return; 
             }
-
-            for (int i = 0; i < fController.User.Hotels.Count; i++)
+            foreach(Hotel hotel in FController.Instance.User.Hotels)
             {
-                flowLayoutPanelHottel.Controls.Add(new UserControlHotel(fController, this, i));
+                flowLayoutPanelHottel.Controls.Add(new UserControlHotel(this, hotel));
             }    
         }
     }

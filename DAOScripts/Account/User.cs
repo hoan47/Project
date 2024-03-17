@@ -61,6 +61,7 @@ namespace Project
             StandardizedName();
         }
 
+
         public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes, Image image)
         {
             Name = name;

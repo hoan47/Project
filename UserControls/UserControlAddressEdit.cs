@@ -64,9 +64,7 @@ namespace Project
             }
             else
             {
-                string curentTextAddreed = curentAddress + ", " + comboBox.Text;
-                comboBox.Items.Add(curentTextAddreed);
-                labelValue.Text = comboBox.Text = curentTextAddreed;
+                labelValue.Text = ComboBoxText = curentAddress + (comboBox.Text == string.Empty ? string.Empty : (", " + comboBox.Text));
             }
         }
 

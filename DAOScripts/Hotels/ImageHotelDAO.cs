@@ -11,7 +11,7 @@ namespace Project
 {
     public class ImageHotelDAO : DAO
     {
-        public ImageHotelDAO(User user) : base("ImageHotel", user)
+        public ImageHotelDAO() : base("ImageHotel")
         { }
 
         public void Access()
@@ -19,19 +19,17 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
                 SqlDataReader reader = selectCMD.ExecuteReader();
                 Hotel hotel = null;
 
                 while (reader.Read())
                 {
-                    Image_ image_ = new Image_(user, (int)reader[1], (byte[])reader[2]);
-  
                     if (hotel == null || hotel.IdHotel != (int)reader[1])
                     {
-                        hotel = user.Hotels.Find(h => h.IdHotel == (int)reader[1]);
+                        hotel = FController.Instance.User.Hotels.Find(h => h.IdHotel == (int)reader[1]);
                     }
-                    hotel.AddImage(new Image_(user, (int)reader[1], (byte[])reader[2]));
+                    hotel.AddImage(ProcessImage.ByteToImageArray((byte[])reader[2]));
                 }
                 reader.Close();
             }
@@ -45,7 +43,7 @@ namespace Project
             }
         }
 
-        public bool Insert(Image_ image)
+        public bool Insert(Hotel hotel, Image image)
         {
             try
             {
@@ -54,10 +52,10 @@ namespace Project
                 SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} " +
                                                        $"(userName, idHotel, imageBytes) " +
                                                        $"VALUES " +
-                                                       $"(N'{user.UserName}', '{image.Id}', @imageBytes)", 
+                                                       $"(N'{FController.Instance.User.UserName}', '{hotel.IdHotel}', @imageBytes)", 
                                                        sqlConnection);
 
-                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = image.ImageByte;
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(image);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -75,14 +73,14 @@ namespace Project
             return false;
         }
 
-        public bool Update(Image_ image)
+        public bool Update(Hotel hotel, Image image)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET " +
-                                                    $"imageBytes = '{image.ImageByte}', " +
-                                                    $"WHERE userName = '{user.UserName}' and idHotel = '{image.Id}'",
+                                                    $"imageBytes = '{ProcessImage.ImageToByteArray(image)}', " +
+                                                    $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = '{hotel.IdHotel}'",
                                                     sqlConnection);
 
                 return updateCMD.ExecuteNonQuery() == 1;
@@ -98,16 +96,16 @@ namespace Project
             return false;
         }
 
-        public bool Delete(Image_ image)
+        public bool Delete(Hotel hotel, Image image)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand delteCMD = new SqlCommand($"DELETE FROM {table} " +
-                                                      $"WHERE userName = '{user.UserName}' AND idHotel = '{image.Id}' AND imageBytes = @imageBytes",
+                                                      $"WHERE userName = '{FController.Instance.User.UserName}' AND idHotel = '{hotel.IdHotel}' AND imageBytes = @imageBytes",
                                                       sqlConnection);
 
-                delteCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = image.ImageByte;
+                delteCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(image);
                 return delteCMD.ExecuteNonQuery() == 1;
             }
             catch (Exception e)

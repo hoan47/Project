@@ -9,7 +9,7 @@ namespace Project
 {
     public class ClientDAO : DAO
     {
-        public ClientDAO(User user) : base("Client", user)
+        public ClientDAO() : base("Client")
         { }
 
         public void Access()
@@ -17,12 +17,12 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
                 SqlDataReader dataClient = selectCMD.ExecuteReader();
 
                 if (dataClient.Read())
                 {
-                    user.UpdateClient(new Client(user, Convert.ToInt32(dataClient[1])));
+                    FController.Instance.User.UpdateClient(new Client(Convert.ToInt32(dataClient[1])));
                 }
                 dataClient.Close();
             }
@@ -41,7 +41,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, rankInt) values('{user.UserName}', '{user.Client.RankInt}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, rankInt) values('{FController.Instance.User.UserName}', '{FController.Instance.User.Client.RankInt}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -65,7 +65,7 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand updateCMD = new SqlCommand(
-                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt + core}' WHERE userName = '{user.UserName}'", sqlConnection);
+                    $"UPDATE {table} SET rankInt = '{FController.Instance.User.Client.RankInt + core}' WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {

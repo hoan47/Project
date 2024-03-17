@@ -178,7 +178,6 @@
     <Compile Include="ProcessScripts\ProcessCheckInfo.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />
-    <Compile Include="DAOScripts\Image_.cs" />
     <Compile Include="DAOScripts\Hotels\ImageHotelDAO.cs" />
     <Compile Include="DAOScripts\Room\Room.cs" />
     <Compile Include="FCustomMessageBox.cs">

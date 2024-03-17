@@ -12,27 +12,24 @@ namespace Project
 {
     public partial class FForgetPassword : Form
     {
-        private FController fController;
-
-        public FForgetPassword(FController fController)
+        public FForgetPassword()
         {
             InitializeComponent();
-            this.fController = fController;
         }
 
         private void ButtonFindAccountClick(object sender, EventArgs e)
         {
-            fController.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
+            FController.Instance.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (fController.AccountDAO.FindAccount() == true)
+                if (FController.Instance.AccountDAO.FindAccount() == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
                 }
                 else
                 {
-                    fController.MessageWarning("Thông báo", "Không tìm thấy tài khoản");
+                    FController.Instance.MessageWarning("Thông báo", "Không tìm thấy tài khoản");
                 }
             }
             else if (buttonFindAccount.Text == "Bỏ chọn tài khoản")
@@ -47,21 +44,21 @@ namespace Project
         {
             string message;
 
-            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (fController.User.IsPassword(out message) == true)
+            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            if (FController.Instance.User.IsPassword(out message) == true)
             {
-                fController.AccountDAO.Update();
+                FController.Instance.AccountDAO.Update();
                 Back(sender, e);
             }
             else
             {
-                fController.MessageWarning("Thông báo", message);
+                FController.Instance.MessageWarning("Thông báo", message);
             }    
         }
 
         private void Back(object sender, EventArgs e)
         {
-            fController.InitializeFLogin();
+            FController.Instance.InitializeFLogin();
             Close();
         }
 

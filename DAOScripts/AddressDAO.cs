@@ -13,7 +13,7 @@ namespace Project
             addresses = new Dictionary<string, List<string>>();
         }
 
-        public AddRessDAO() : base("Address", null)
+        public AddRessDAO() : base("Address")
         {
             if (addresses.Count == 0)
             {
