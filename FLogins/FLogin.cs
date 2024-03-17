@@ -54,44 +54,48 @@ namespace Project
 
         public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
         {
-            if(fController.User.IsAccount() == false)
-            {
-                e.Result = false;
-                return;
-            }
+            string message;
 
-            bool isSuccess = true;
-            if (fController.AccountDAO.FindAccount() == false)
+            if(fController.User.IsAccount(out message) == false)
             {
-                ShowMessage.ShowWarning("Tài khoản không tồn tại.");
-                isSuccess = false;
+                e.Result = message;
             }
-            else if (fController.AccountDAO.Login() == false)
+            else if (fController.AccountDAO.FindAccount() == false)
             {
-                ShowMessage.ShowWarning("Mật khẩu sai.");
-                isSuccess = false;
+                e.Result = "Tài khoản không tồn tại.";
             }
-
-            if (isSuccess == true)
+            else if (fController.AccountDAO.Select() == false)
+            {
+                e.Result = "Mật khẩu sai.";
+            }
+            else
             {
                 fController.InfoDAO.Access();
                 fController.ClientDAO.Access();
                 fController.HotelDAO.Access();
                 fController.ImageHotelDAO.Access();
-                
+                e.Result = "Đăng nhập thành công.";
             }
-            e.Result = isSuccess;
         }
 
         public void DackgroundWorkerRunWorkerCompletedLogin(object sender, RunWorkerCompletedEventArgs e)
         {
-            if ((bool)e.Result == true)
+            if ((string)e.Result == "Đăng nhập thành công.")
             {
                 fController.InitializeFMain();
                 fLoading.OnLoading();
-                fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
+                fController.MessageSuccess("Thông báo", (string)e.Result);
+            }
+            else
+            {
+                fController.MessageWarning("Thông báo", (string)e.Result);
             }
             fLoading.OffLoading();
+        }
+
+        private void CheckBoxShowPasswordCheckedChanged(object sender, EventArgs e)
+        {
+            userControlTextBoxPassword.PasswordChar();
         }
     }
 }

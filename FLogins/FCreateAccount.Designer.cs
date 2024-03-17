@@ -42,7 +42,7 @@ namespace Project
             // buttonCreateAccount
             // 
             this.buttonCreateAccount.AutoSize = true;
-            this.buttonCreateAccount.Location = new System.Drawing.Point(284, 194);
+            this.buttonCreateAccount.Location = new System.Drawing.Point(295, 221);
             this.buttonCreateAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCreateAccount.Name = "buttonCreateAccount";
             this.buttonCreateAccount.Size = new System.Drawing.Size(111, 28);
@@ -55,7 +55,7 @@ namespace Project
             // 
             this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBack.Location = new System.Drawing.Point(455, 16);
+            this.buttonBack.Location = new System.Drawing.Point(466, 43);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(35, 27);
@@ -66,7 +66,7 @@ namespace Project
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(12, 30);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(23, 57);
             this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(170, 170);
@@ -77,8 +77,7 @@ namespace Project
             // userControlTextBoxNewPassword
             // 
             this.userControlTextBoxNewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxNewPassword.LableText = "Mật khẩu mới";
-            this.userControlTextBoxNewPassword.Location = new System.Drawing.Point(187, 146);
+            this.userControlTextBoxNewPassword.Location = new System.Drawing.Point(198, 173);
             this.userControlTextBoxNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxNewPassword.Name = "userControlTextBoxNewPassword";
             this.userControlTextBoxNewPassword.Size = new System.Drawing.Size(315, 49);
@@ -88,8 +87,7 @@ namespace Project
             // userControlTextBoxPassword
             // 
             this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxPassword.LableText = "Mật khẩu";
-            this.userControlTextBoxPassword.Location = new System.Drawing.Point(187, 91);
+            this.userControlTextBoxPassword.Location = new System.Drawing.Point(198, 118);
             this.userControlTextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
             this.userControlTextBoxPassword.Size = new System.Drawing.Size(315, 50);
@@ -99,7 +97,7 @@ namespace Project
             // userControlTextBoxAccount
             // 
             this.userControlTextBoxAccount.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxAccount.Location = new System.Drawing.Point(187, 34);
+            this.userControlTextBoxAccount.Location = new System.Drawing.Point(198, 61);
             this.userControlTextBoxAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxAccount.Name = "userControlTextBoxAccount";
             this.userControlTextBoxAccount.Size = new System.Drawing.Size(315, 50);
@@ -111,7 +109,7 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(533, 246);
+            this.ClientSize = new System.Drawing.Size(540, 300);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.userControlTextBoxNewPassword);
             this.Controls.Add(this.pictureBoxIcon);

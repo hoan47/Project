@@ -31,7 +31,7 @@ namespace Project
                         dataInfo.IsDBNull(5) ? null : dataInfo[5].ToString(),
                         dataInfo.IsDBNull(6) ? null : dataInfo[6].ToString(),
                         dataInfo.IsDBNull(7) ? null : dataInfo[7].ToString(),
-                        dataInfo.IsDBNull(8) ? null : ProcessImage.ByteToImageArray((byte[])dataInfo[8])
+                        dataInfo.IsDBNull(8) ? null : (byte[])dataInfo[8]
                     );
                 }
                 dataInfo.Close();
@@ -86,7 +86,7 @@ namespace Project
                  $"phone = '{user.Phone}', " +
                  $"imageBytes = @imageBytes " +
                  $"WHERE userName = '{user.UserName}'", sqlConnection);
-                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = user.Image == null ? null : ProcessImage.ImageToByteArray(user.Image);
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = user.ImageBytes;
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
                     return true;

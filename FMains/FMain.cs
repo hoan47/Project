@@ -85,7 +85,7 @@ namespace Project
             }
             else if(fController.User.Client.RankInt == 0)
             {
-                fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
+                fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.");
             }    
             else if (sender == toolStripButtonHomePage)
             {

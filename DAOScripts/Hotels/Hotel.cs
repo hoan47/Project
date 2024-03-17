@@ -68,14 +68,14 @@ namespace Project
             rooms.Add(room);
         }
 
-        public bool IsPhone()
+        public bool IsPhone(out string massage)
         {
-            return CheckInfo.IsPhone(Phone);
+            return CheckInfo.IsPhone(Phone, out massage);
         }
 
-        public bool IsAddress()
+        public bool IsAddress(out string massage)
         {
-            return CheckInfo.IsAddRess(Address.ProvinceAndDistrict);
+            return CheckInfo.IsAddRess(Address.ProvinceAndDistrict, out massage);
         }
     }
 }

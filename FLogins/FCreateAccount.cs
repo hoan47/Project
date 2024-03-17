@@ -22,21 +22,27 @@ namespace Project
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
+            string message;
+
             fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
             fController.User.UpdateClient(new Client(fController.User));
-            if (fController.User.IsAccount() == true && fController.User.IsPassword() == true)
+            if (fController.User.IsAccount(out message) == true && fController.User.IsPassword(out message) == true)
             {
                 if(fController.AccountDAO.Insert() == true)
                 {
                     fController.InfoDAO.Insert();
                     fController.ClientDAO.Insert();
-                    ShowMessage.ShowNotification("Tạo tài khoản thành công.");
+                    fController.MessageSuccess("Thông báo", "Tạo tài khoản thành công.");
                     Back(sender, e);
                 }
                 else
                 {
-                    ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+                    fController.MessageWarning("Thông báo", "Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
                 }
+            }
+            else
+            {
+                fController.MessageWarning("Thông báo", message);
             }
         }
 

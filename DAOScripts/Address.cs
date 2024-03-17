@@ -44,9 +44,9 @@ namespace Project
             this.AddressValue = AddressValue;
         }
 
-        public bool IsAddRess()
+        public bool IsAddRess(out string massage)
         {
-            return CheckInfo.IsAddRess(ProvinceAndDistrict);
+            return CheckInfo.IsAddRess(ProvinceAndDistrict, out massage);
         }
 
         static public void UpdateProvince(ComboBox comboBox)

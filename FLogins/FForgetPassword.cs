@@ -32,7 +32,7 @@ namespace Project
                 }
                 else
                 {
-                    ShowMessage.ShowWarning("Không tìm thấy tài khoản");
+                    fController.MessageWarning("Thông báo", "Không tìm thấy tài khoản");
                 }
             }
             else if (buttonFindAccount.Text == "Bỏ chọn tài khoản")
@@ -45,12 +45,18 @@ namespace Project
 
         private void ButtonUpdatePasswordClick(object sender, EventArgs e)
         {
+            string message;
+
             fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (fController.User.IsPassword() == true)
+            if (fController.User.IsPassword(out message) == true)
             {
                 fController.AccountDAO.Update();
                 Back(sender, e);
             }
+            else
+            {
+                fController.MessageWarning("Thông báo", message);
+            }    
         }
 
         private void Back(object sender, EventArgs e)

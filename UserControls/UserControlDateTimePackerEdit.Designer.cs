@@ -74,6 +74,7 @@ namespace Project
             // 
             this.dateTimePicker.BorderRadius = 10;
             this.dateTimePicker.Checked = true;
+            this.dateTimePicker.Enabled = false;
             this.dateTimePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.ForeColor = System.Drawing.Color.Black;

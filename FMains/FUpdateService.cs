@@ -74,13 +74,16 @@ namespace Project
             {
                 checks[i] = checkedListBox.GetItemChecked(i);
             }
-            TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText);
+            string message;
+
+            TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText, out message);
 
             if(timeSpanIn == TimeSpan.Zero)
             {
+                fControler.MessageWarning("Thông báo", message);
                 return;
             }    
-            TimeSpan timeSpanOut = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxOutText);
+            TimeSpan timeSpanOut = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxOutText, out message);
 
             if(timeSpanOut != TimeSpan.Zero)
             {
@@ -96,7 +99,7 @@ namespace Project
                     textBoxDescribe.Text,
                     index == -1 ? null : this.hotel.Images);
 
-                if (hotel.IsPhone() && hotel.IsAddress())
+                if (hotel.IsPhone(out message) && hotel.IsAddress(out message))
                 {
                     if (index == -1)
                     {
@@ -113,8 +116,10 @@ namespace Project
                     }
                     this.hotel = hotel;
                     LoadData();
+                    return;
                 }
             }
+            fControler.MessageWarning("Thông báo", message, this);
         }
 
         private void ButtonUploadImageClick(object sender, EventArgs e)

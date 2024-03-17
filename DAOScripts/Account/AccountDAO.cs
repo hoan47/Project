@@ -16,7 +16,7 @@ namespace Project
         public AccountDAO(User user) : base("Account", user)
         { }
 
-        public bool Login()
+        public bool Select()
         {
             try
             {

@@ -8,13 +8,13 @@ namespace Project
 {
     static class ProcessTimeSpan
     {
-        public static TimeSpan TimeSpanPrase(string timeString)
+        public static TimeSpan TimeSpanPrase(string timeString, out string message)
         {
             foreach (string time in timeString.Split(':'))
             {
                 if (string.IsNullOrEmpty(time) || string.IsNullOrWhiteSpace(time))
                 {
-                    ShowMessage.ShowNotification("Vui lòng nhập thời gian.");
+                    message = "Vui lòng nhập thời gian.";
                     return new TimeSpan();
                 }
             }
@@ -25,10 +25,11 @@ namespace Project
             {
                 if (0 <= hours && hours <= 23 && -1 < minutes && minutes < 59)
                 {
+                    message = "Thời gian hợp lệ.";
                     return new TimeSpan(hours, minutes, 0);
                 }
-                ShowMessage.ShowNotification("Thời gian không hợp lệ.");
             }
+            message = "Thời gian không hợp lệ.";
             return new TimeSpan();
         }
     }

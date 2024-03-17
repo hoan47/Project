@@ -58,7 +58,7 @@ namespace Project
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(12, 30);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(23, 55);
             this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(170, 170);
@@ -70,7 +70,7 @@ namespace Project
             // 
             this.panelPassword.Controls.Add(this.userControlTextBoxPassword);
             this.panelPassword.Controls.Add(this.buttonUpdatePassword);
-            this.panelPassword.Location = new System.Drawing.Point(185, 128);
+            this.panelPassword.Location = new System.Drawing.Point(196, 153);
             this.panelPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(315, 85);
@@ -81,7 +81,6 @@ namespace Project
             // userControlTextBoxPassword
             // 
             this.userControlTextBoxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxPassword.LableText = "Mật khẩu mới";
             this.userControlTextBoxPassword.Location = new System.Drawing.Point(0, 0);
             this.userControlTextBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userControlTextBoxPassword.Name = "userControlTextBoxPassword";
@@ -105,7 +104,7 @@ namespace Project
             // 
             this.panelAccount.Controls.Add(this.userControlTextBoxAccount);
             this.panelAccount.Controls.Add(this.buttonFindAccount);
-            this.panelAccount.Location = new System.Drawing.Point(187, 43);
+            this.panelAccount.Location = new System.Drawing.Point(198, 68);
             this.panelAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(315, 85);
@@ -126,7 +125,7 @@ namespace Project
             // 
             this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBack.Location = new System.Drawing.Point(456, 22);
+            this.buttonBack.Location = new System.Drawing.Point(467, 47);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(35, 27);
@@ -139,7 +138,7 @@ namespace Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(533, 246);
+            this.ClientSize = new System.Drawing.Size(540, 300);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.panelPassword);

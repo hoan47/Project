@@ -32,8 +32,7 @@ namespace Project.UserControls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlTextBoxPassword));
             this.panelRoadPassword = new System.Windows.Forms.Panel();
             this.pictureBoxPassword = new System.Windows.Forms.PictureBox();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.label = new System.Windows.Forms.Label();
+            this.textBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,51 +56,45 @@ namespace Project.UserControls
             // 
             // textBox
             // 
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(61, 9);
-            this.textBox.MaxLength = 16;
+            this.textBox.BorderThickness = 0;
+            this.textBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox.DefaultText = "";
+            this.textBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.ForeColor = System.Drawing.Color.Black;
+            this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Location = new System.Drawing.Point(60, 11);
+            this.textBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(234, 27);
-            this.textBox.TabIndex = 0;
-            this.textBox.UseSystemPasswordChar = true;
-            this.textBox.Enter += new System.EventHandler(this.TextBoxEnter);
+            this.textBox.PasswordChar = '●';
+            this.textBox.PlaceholderText = "Nhập mật khẩu";
+            this.textBox.SelectedText = "";
+            this.textBox.Size = new System.Drawing.Size(234, 30);
+            this.textBox.TabIndex = 8;
             this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
-            this.textBox.Leave += new System.EventHandler(this.TextBoxLeave);
-            // 
-            // label
-            // 
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label.Location = new System.Drawing.Point(61, 9);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(234, 27);
-            this.label.TabIndex = 0;
-            this.label.Text = "Tài khoản";
-            this.label.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label.Click += new System.EventHandler(this.LabelClick);
             // 
             // UserControlTextBoxPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.label);
-            this.Controls.Add(this.textBox);
             this.Controls.Add(this.panelRoadPassword);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.pictureBoxPassword);
             this.Name = "UserControlTextBoxPassword";
             this.Size = new System.Drawing.Size(314, 50);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panelRoadPassword;
         private System.Windows.Forms.PictureBox pictureBoxPassword;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Label label;
+        private Guna.UI2.WinForms.Guna2TextBox textBox;
     }
 }

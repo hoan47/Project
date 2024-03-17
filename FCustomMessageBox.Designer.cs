@@ -67,7 +67,7 @@ namespace Project
             this.pictureBoxIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
             this.pictureBoxIcon.Location = new System.Drawing.Point(217, 0);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
             this.pictureBoxIcon.Size = new System.Drawing.Size(100, 92);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@ namespace Project
             this.button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button.BackgroundImage")));
             this.button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button.Location = new System.Drawing.Point(240, 194);
-            this.button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button.Margin = new System.Windows.Forms.Padding(4);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(53, 49);
             this.button.TabIndex = 3;
@@ -98,7 +98,7 @@ namespace Project
             this.Controls.Add(this.labelContent);
             this.Controls.Add(this.pictureBoxIcon);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FCustomMessageBox";
             this.Text = "CustomMessageBox";
             this.Load += new System.EventHandler(this.FCustomMessageBoxLoad);

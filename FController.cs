@@ -43,7 +43,7 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
+            Size = formChild.Size + new Size(15, 40);
             ProcessOpenFormChild(formChild);
         }
 
@@ -55,10 +55,11 @@ namespace Project
 
         public void ProcessOpenFormChild(Form formChild, Form formParent = null)
         {
+            formChild.Location = new Point(0, 0);
             formChild.TopLevel = false;
             if (formParent == null)
             {
-                panelMain.Controls.Add(formChild);
+                Controls.Add(formChild);
             }
             else
             {
@@ -97,16 +98,11 @@ namespace Project
         public void MessageWarning(string tile, string content, Form formParent = null)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.warning), formParent);
-
         }
+
         public void MessageError(string tile, string content)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.error));
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
