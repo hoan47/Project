@@ -12,12 +12,29 @@ namespace Project.UserControls
 {
     public partial class UserControlRoom : UserControl
     {
+       
         public UserControlRoom()
         {
             InitializeComponent();
+
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -218,8 +218,8 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.userControlHomePageRoom1);
             this.flowLayoutPanel1.Controls.Add(this.userControlHomePageRoom2);
+            this.flowLayoutPanel1.Controls.Add(this.userControlHomePageRoom1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(331, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(689, 583);
@@ -227,14 +227,14 @@
             // 
             // userControlHomePageRoom1
             // 
-            this.userControlHomePageRoom1.Location = new System.Drawing.Point(3, 3);
+            this.userControlHomePageRoom1.Location = new System.Drawing.Point(3, 225);
             this.userControlHomePageRoom1.Name = "userControlHomePageRoom1";
             this.userControlHomePageRoom1.Size = new System.Drawing.Size(613, 216);
             this.userControlHomePageRoom1.TabIndex = 0;
             // 
             // userControlHomePageRoom2
             // 
-            this.userControlHomePageRoom2.Location = new System.Drawing.Point(3, 225);
+            this.userControlHomePageRoom2.Location = new System.Drawing.Point(3, 3);
             this.userControlHomePageRoom2.Name = "userControlHomePageRoom2";
             this.userControlHomePageRoom2.Size = new System.Drawing.Size(613, 216);
             this.userControlHomePageRoom2.TabIndex = 1;
