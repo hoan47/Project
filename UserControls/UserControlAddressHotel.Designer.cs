@@ -72,7 +72,7 @@ namespace Project
             this.comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(219, 31);
-            this.comboBox.TabIndex = 10;
+            this.comboBox.TabIndex = 0;
             this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxCSelectedValueChanged);
             this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
             this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
@@ -98,7 +98,7 @@ namespace Project
             this.textBox.PlaceholderText = "";
             this.textBox.SelectedText = "";
             this.textBox.Size = new System.Drawing.Size(218, 30);
-            this.textBox.TabIndex = 2;
+            this.textBox.TabIndex = 1;
             // 
             // pictureBox
             // 

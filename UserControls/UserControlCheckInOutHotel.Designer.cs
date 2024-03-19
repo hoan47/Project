@@ -94,7 +94,7 @@ namespace Project
             this.panelIn.Margin = new System.Windows.Forms.Padding(2);
             this.panelIn.Name = "panelIn";
             this.panelIn.Size = new System.Drawing.Size(58, 26);
-            this.panelIn.TabIndex = 9;
+            this.panelIn.TabIndex = 0;
             // 
             // maskedTextBoxIn
             // 
@@ -105,7 +105,7 @@ namespace Project
             this.maskedTextBoxIn.Mask = "00:00";
             this.maskedTextBoxIn.Name = "maskedTextBoxIn";
             this.maskedTextBoxIn.Size = new System.Drawing.Size(40, 12);
-            this.maskedTextBoxIn.TabIndex = 8;
+            this.maskedTextBoxIn.TabIndex = 1;
             this.maskedTextBoxIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxIn.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxIn.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxIn_MaskInputRejected);
@@ -121,7 +121,7 @@ namespace Project
             this.panelOut.Margin = new System.Windows.Forms.Padding(2);
             this.panelOut.Name = "panelOut";
             this.panelOut.Size = new System.Drawing.Size(58, 26);
-            this.panelOut.TabIndex = 8;
+            this.panelOut.TabIndex = 1;
             // 
             // maskedTextBoxOut
             // 
@@ -132,7 +132,7 @@ namespace Project
             this.maskedTextBoxOut.Mask = "00:00";
             this.maskedTextBoxOut.Name = "maskedTextBoxOut";
             this.maskedTextBoxOut.Size = new System.Drawing.Size(40, 12);
-            this.maskedTextBoxOut.TabIndex = 8;
+            this.maskedTextBoxOut.TabIndex = 1;
             this.maskedTextBoxOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBoxOut.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxOut.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxOut_MaskInputRejected);

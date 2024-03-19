@@ -75,7 +75,7 @@ namespace Project.UserControls
             this.textBox.PlaceholderText = "";
             this.textBox.SelectedText = "";
             this.textBox.Size = new System.Drawing.Size(218, 30);
-            this.textBox.TabIndex = 1;
+            this.textBox.TabIndex = 0;
             // 
             // pictureBoxInforService
             // 

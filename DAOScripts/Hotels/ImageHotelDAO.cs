@@ -29,7 +29,7 @@ namespace Project
                     {
                         hotel = FController.Instance.User.Hotels.Find(h => h.IdHotel == (int)reader[1]);
                     }
-                    hotel.AddImage(ProcessImage.ByteToImageArray((byte[])reader[2]));
+                    hotel.AddImage(new Image_((int)reader[2], (byte[])reader[3], ProcessImage.ByteToImageArray((byte[])reader[3])));
                 }
                 reader.Close();
             }
@@ -43,19 +43,18 @@ namespace Project
             }
         }
 
-        public bool Insert(Hotel hotel, Image image)
+        public bool Insert(Hotel hotel, Image_ image)
         {
             try
             {
                 sqlConnection.Open();
 
                 SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} " +
-                                                       $"(userName, idHotel, imageBytes) " +
                                                        $"VALUES " +
-                                                       $"(N'{FController.Instance.User.UserName}', '{hotel.IdHotel}', @imageBytes)", 
+                                                       $"('{FController.Instance.User.UserName}', '{hotel.IdHotel}', '{image.IdImage}', @imageBytes)", 
                                                        sqlConnection);
 
-                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(image);
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = image.ImageBytes;
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -73,39 +72,15 @@ namespace Project
             return false;
         }
 
-        public bool Update(Hotel hotel, Image image)
-        {
-            try
-            {
-                sqlConnection.Open();
-                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET " +
-                                                    $"imageBytes = '{ProcessImage.ImageToByteArray(image)}', " +
-                                                    $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = '{hotel.IdHotel}'",
-                                                    sqlConnection);
-
-                return updateCMD.ExecuteNonQuery() == 1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e.Message);
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
-            return false;
-        }
-
-        public bool Delete(Hotel hotel, Image image)
+        public bool Delete(Hotel hotel, Image_ image)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand delteCMD = new SqlCommand($"DELETE FROM {table} " +
-                                                      $"WHERE userName = '{FController.Instance.User.UserName}' AND idHotel = '{hotel.IdHotel}' AND imageBytes = @imageBytes",
+                                                      $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = {hotel.IdHotel} and idImage = {image.IdImage}",
                                                       sqlConnection);
 
-                delteCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(image);
                 return delteCMD.ExecuteNonQuery() == 1;
             }
             catch (Exception e)
