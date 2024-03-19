@@ -58,11 +58,9 @@ namespace Project
 
         private void textBox3_Click(object sender, EventArgs e)
         {
-            textBox3.Text = "";
         }
         private void textBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

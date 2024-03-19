@@ -18,13 +18,13 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
-                SqlDataReader dataClient = selectCMD.ExecuteReader();
+                SqlDataReader reader = selectCMD.ExecuteReader();
 
-                if (dataClient.Read())
+                if (reader.Read())
                 {
-                    FController.Instance.User.UpdateClient(new Client(Convert.ToInt32(dataClient[1])));
+                    FController.Instance.User.UpdateClient(new Client(Convert.ToInt32(reader[1])));
                 }
-                dataClient.Close();
+                reader.Close();
             }
             catch (Exception e)
             {

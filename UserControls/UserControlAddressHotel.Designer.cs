@@ -47,8 +47,10 @@ namespace Project
             this.groupBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.Location = new System.Drawing.Point(0, 0);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(400, 110);
+            this.groupBox.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox.Size = new System.Drawing.Size(300, 90);
             this.groupBox.TabIndex = 1;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Địa chỉ";
@@ -66,9 +68,10 @@ namespace Project
             this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox.ForeColor = System.Drawing.Color.Black;
             this.comboBox.ItemHeight = 25;
-            this.comboBox.Location = new System.Drawing.Point(84, 23);
+            this.comboBox.Location = new System.Drawing.Point(64, 20);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(291, 31);
+            this.comboBox.Size = new System.Drawing.Size(219, 31);
             this.comboBox.TabIndex = 10;
             this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxCSelectedValueChanged);
             this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
@@ -88,32 +91,34 @@ namespace Project
             this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox.Location = new System.Drawing.Point(84, 66);
-            this.textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox.Location = new System.Drawing.Point(64, 54);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox.Name = "textBox";
             this.textBox.PasswordChar = '\0';
             this.textBox.PlaceholderText = "";
             this.textBox.SelectedText = "";
-            this.textBox.Size = new System.Drawing.Size(291, 37);
+            this.textBox.Size = new System.Drawing.Size(218, 30);
             this.textBox.TabIndex = 2;
             // 
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(6, 23);
+            this.pictureBox.Location = new System.Drawing.Point(5, 20);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox.Size = new System.Drawing.Size(40, 40);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
             // UserControlAddressHotel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlAddressHotel";
-            this.Size = new System.Drawing.Size(400, 110);
+            this.Size = new System.Drawing.Size(300, 90);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

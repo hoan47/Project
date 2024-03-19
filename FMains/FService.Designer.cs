@@ -40,10 +40,9 @@ namespace Project
             this.flowLayoutPanelHottel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanelHottel.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanelHottel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.flowLayoutPanelHottel.Location = new System.Drawing.Point(16, 13);
-            this.flowLayoutPanelHottel.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanelHottel.Location = new System.Drawing.Point(12, 11);
             this.flowLayoutPanelHottel.Name = "flowLayoutPanelHottel";
-            this.flowLayoutPanelHottel.Size = new System.Drawing.Size(907, 603);
+            this.flowLayoutPanelHottel.Size = new System.Drawing.Size(680, 490);
             this.flowLayoutPanelHottel.TabIndex = 0;
             // 
             // buttonAdd
@@ -51,23 +50,24 @@ namespace Project
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.buttonAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.BackgroundImage")));
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonAdd.Location = new System.Drawing.Point(968, 556);
+            this.buttonAdd.Location = new System.Drawing.Point(719, 451);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(60, 60);
+            this.buttonAdd.Size = new System.Drawing.Size(50, 50);
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAddClick);
             // 
             // FService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.ClientSize = new System.Drawing.Size(780, 512);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.flowLayoutPanelHottel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FService";
             this.Text = "FService";
             this.ResumeLayout(false);

@@ -19,22 +19,22 @@ namespace Project
             {
                 sqlConnection.Open();
                 SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
-                SqlDataReader dataInfo = selectCMD.ExecuteReader();
+                SqlDataReader reader = selectCMD.ExecuteReader();
 
-                if (dataInfo.Read())
+                if (reader.Read())
                 {
                     FController.Instance.User.UpdateInfo(
-                        dataInfo.IsDBNull(1) ? "Nguyen Van An" : dataInfo[1].ToString(),
-                        dataInfo.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(dataInfo[2]),
-                        dataInfo.IsDBNull(3) ? "Nam" : dataInfo[3].ToString(),
-                        dataInfo.IsDBNull(4) ? null : new Address(dataInfo[4].ToString()),
-                        dataInfo.IsDBNull(5) ? null : dataInfo[5].ToString(),
-                        dataInfo.IsDBNull(6) ? null : dataInfo[6].ToString(),
-                        dataInfo.IsDBNull(7) ? null : dataInfo[7].ToString(),
-                        dataInfo.IsDBNull(8) ? null : (byte[])dataInfo[8]
+                        reader.IsDBNull(1) ? "Nguyen Van An" : reader[1].ToString(),
+                        reader.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(reader[2]),
+                        reader.IsDBNull(3) ? "Nam" : reader[3].ToString(),
+                        reader.IsDBNull(4) ? null : new Address(reader[4].ToString()),
+                        reader.IsDBNull(5) ? null : reader[5].ToString(),
+                        reader.IsDBNull(6) ? null : reader[6].ToString(),
+                        reader.IsDBNull(7) ? null : reader[7].ToString(),
+                        reader.IsDBNull(8) ? null : (byte[])reader[8]
                     );
                 }
-                dataInfo.Close();
+                reader.Close();
             }
             catch (Exception e)
             {

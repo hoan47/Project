@@ -16,22 +16,15 @@ namespace Project
         public Address Address { get; private set; }
         public TimeSpan CheckIn { get; private set; }
         public TimeSpan CheckOut { get; private set; }
-        public bool IsPool { get; private set; }
-        public bool IsFoodServingArea { get; private set; }
-        public bool IsCarPark { get; private set; }
-        public bool IsWifi { get; private set; }
-        public bool IsServeFullTime { get; private set; }
-        public bool IsLaundryService { get; private set; }
-        public bool IsSmokingArea { get; private set; }
-        public bool IsPark { get; private set; }
         public string Describe { get; private set; }
+        public List<string> Services { get; private set; }
         public List<Image> Images { get; private set; }
 
         public Hotel()
         { }
 
 
-        public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, bool isPool, bool isFoodServingArea, bool isCarPark, bool isWifi, bool isServiceFullTime, bool isLaundryService, bool isSmokingArea, bool isPark, string describe)
+        public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
             IdHotel = id;
             Name = name;
@@ -39,33 +32,22 @@ namespace Project
             Address = address;
             CheckIn = checkIn;
             CheckOut = checkOut;
-            IsPool = isPool;
-            IsFoodServingArea = isFoodServingArea;
-            IsCarPark = isCarPark;
-            IsWifi = isWifi;
-            IsServeFullTime = isServiceFullTime;
-            IsLaundryService = isLaundryService;
-            IsSmokingArea = isSmokingArea;
-            IsPark = isPark;
             Describe = describe;
         }
 
-        public void UpdateInfo(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, bool isPool, bool isFoodServingArea, bool isCarPark, bool isWifi, bool isServiceFullTime, bool isLaundryService, bool isSmokingArea, bool isPark, string describe)
+        public void UpdateInfo(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
             Name = name;
             Phone = phone;
             Address = address;
             CheckIn = checkIn;
             CheckOut = checkOut;
-            IsPool = isPool;
-            IsFoodServingArea = isFoodServingArea;
-            IsCarPark = isCarPark;
-            IsWifi = isWifi;
-            IsServeFullTime = isServiceFullTime;
-            IsLaundryService = isLaundryService;
-            IsSmokingArea = isSmokingArea;
-            IsPark = isPark;
             Describe = describe;
+        }
+
+        public void UpdateService(List<string> services)
+        {
+            Services = services;
         }
 
         public void AddImage(Image image)
@@ -75,7 +57,7 @@ namespace Project
                 Images = new List<Image>();
             }
             Images.Add(image);
-        } 
+        }
 
         public void AddRoom(Room room)
         {

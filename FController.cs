@@ -22,6 +22,7 @@ namespace Project
         public ClientDAO ClientDAO { get; private set; }
         public AddRessDAO AddressDAO { get; private set; }
         public HotelDAO HotelDAO { get; private set; }
+        public ServiceDAO ServiceDAO { get; private set; }
         public ImageHotelDAO ImageHotelDAO { get; private set; }
 
         public FController()
@@ -33,6 +34,7 @@ namespace Project
             ClientDAO = new ClientDAO();
             AddressDAO = new AddRessDAO();
             HotelDAO = new HotelDAO();
+            ServiceDAO = new ServiceDAO();
             ImageHotelDAO = new ImageHotelDAO();
             InitializeComponent();
             InitializeFLogin();

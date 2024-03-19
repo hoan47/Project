@@ -29,15 +29,7 @@ namespace Project
                         new Address(reader[4].ToString()),
                         (TimeSpan)reader[5],
                         (TimeSpan)reader[6],
-                        (bool)reader[7],
-                        (bool)reader[8],
-                        (bool)reader[9],
-                        (bool)reader[10],
-                        (bool)reader[11],
-                        (bool)reader[12],
-                        (bool)reader[13],
-                        (bool)reader[14],
-                        reader[15].ToString()));
+                        reader[7].ToString()));
                 }
                 reader.Close();
             }
@@ -65,14 +57,6 @@ namespace Project
                                                        $"N'{hotel.Address.AddressValue}', " +
                                                        $"'{hotel.CheckIn.ToString()}', " +
                                                        $"'{hotel.CheckOut.ToString()}', " +
-                                                       $"'{hotel.IsPool}', " +
-                                                       $"'{hotel.IsFoodServingArea}', " +
-                                                       $"'{hotel.IsCarPark}', " +
-                                                       $"'{hotel.IsWifi}', " +
-                                                       $"'{hotel.IsServeFullTime}', " +
-                                                       $"'{hotel.IsLaundryService}', " +
-                                                       $"'{hotel.IsSmokingArea}', " +
-                                                       $"'{hotel.IsPark}', " +
                                                        $"N'{hotel.Describe}')",
                                                        sqlConnection);
 
@@ -103,14 +87,6 @@ namespace Project
                                                     $"address = N'{hotel.Address.AddressValue}', " +
                                                     $"checkIn = '{hotel.CheckIn.ToString()}', " +
                                                     $"checkOut = '{hotel.CheckOut.ToString()}', " +
-                                                    $"isPool = '{hotel.IsPool}', " +
-                                                    $"isFoodServingArea = '{hotel.IsFoodServingArea}', " +
-                                                    $"isCarPark = '{hotel.IsCarPark}', " +
-                                                    $"isWifi = '{hotel.IsWifi}', " +
-                                                    $"isServeFullTime = '{hotel.IsServeFullTime}', " +
-                                                    $"isSmokingArea = '{hotel.IsSmokingArea}', " +
-                                                    $"isLaundryService = '{hotel.IsLaundryService}', " +
-                                                    $"isPark = '{hotel.IsPark}', " +
                                                     $"describe = N'{hotel.Describe}' " +
                                                     $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = '{hotel.IdHotel}'",
                                                     sqlConnection);

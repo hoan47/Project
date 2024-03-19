@@ -175,6 +175,7 @@
   <ItemGroup>
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
+    <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
     <Compile Include="ProcessScripts\ProcessCheckInfo.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />
@@ -292,6 +293,12 @@
     <Compile Include="UserControls\UserControlAddressHotel.Designer.cs">
       <DependentUpon>UserControlAddressHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlAddService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAddService.Designer.cs">
+      <DependentUpon>UserControlAddService.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlCheckInOutHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,41 +317,17 @@
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlDiscount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlDiscount.Designer.cs">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlHomePageRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlHomePageRoom.Designer.cs">
-      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UserControlHotel.Designer.cs">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlLable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlLable.Designer.cs">
-      <DependentUpon>UserControlLable.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.Designer.cs">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlRoom.Designer.cs">
-      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -425,6 +408,9 @@
     <EmbeddedResource Include="UserControls\UserControlAddressHotel.resx">
       <DependentUpon>UserControlAddressHotel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlAddService.resx">
+      <DependentUpon>UserControlAddService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlCheckInOutHotel.resx">
       <DependentUpon>UserControlCheckInOutHotel.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,23 +420,11 @@
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlDiscount.resx">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlHomePageRoom.resx">
-      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlLable.resx">
-      <DependentUpon>UserControlLable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlRoom.resx">
-      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
@@ -512,6 +486,8 @@
     <None Include="Resources\man.png" />
     <None Include="Resources\girl.png" />
     <None Include="Resources\noImage.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\delete.png" />
     <Content Include="Resources\success.png" />
     <None Include="Resources\yellow.png" />
     <None Include="Resources\copper.png" />

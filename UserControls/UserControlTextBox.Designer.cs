@@ -45,8 +45,10 @@ namespace Project.UserControls
             this.groupBoxInforService.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBoxInforService.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxInforService.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxInforService.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxInforService.Name = "groupBoxInforService";
-            this.groupBoxInforService.Size = new System.Drawing.Size(400, 79);
+            this.groupBoxInforService.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxInforService.Size = new System.Drawing.Size(302, 64);
             this.groupBoxInforService.TabIndex = 0;
             this.groupBoxInforService.TabStop = false;
             this.groupBoxInforService.Text = "groupBox1";
@@ -66,20 +68,21 @@ namespace Project.UserControls
             this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox.Location = new System.Drawing.Point(84, 32);
-            this.textBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox.Location = new System.Drawing.Point(64, 29);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox.Name = "textBox";
             this.textBox.PasswordChar = '\0';
             this.textBox.PlaceholderText = "";
             this.textBox.SelectedText = "";
-            this.textBox.Size = new System.Drawing.Size(291, 37);
+            this.textBox.Size = new System.Drawing.Size(218, 30);
             this.textBox.TabIndex = 1;
             // 
             // pictureBoxInforService
             // 
-            this.pictureBoxInforService.Location = new System.Drawing.Point(6, 22);
+            this.pictureBoxInforService.Location = new System.Drawing.Point(5, 20);
+            this.pictureBoxInforService.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxInforService.Name = "pictureBoxInforService";
-            this.pictureBoxInforService.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxInforService.Size = new System.Drawing.Size(40, 40);
             this.pictureBoxInforService.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxInforService.TabIndex = 0;
             this.pictureBoxInforService.TabStop = false;
@@ -87,12 +90,13 @@ namespace Project.UserControls
             // 
             // UserControlTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBoxInforService);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControlTextBox";
-            this.Size = new System.Drawing.Size(403, 74);
+            this.Size = new System.Drawing.Size(302, 64);
             this.groupBoxInforService.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInforService)).EndInit();
             this.ResumeLayout(false);

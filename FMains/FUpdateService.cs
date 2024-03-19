@@ -41,19 +41,7 @@ namespace Project
                 userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
                 textBoxDescribe.Text = hotel.Describe;
-                bool[] checks = { hotel.IsPool,
-                    hotel.IsFoodServingArea, 
-                    hotel.IsCarPark, 
-                    hotel.IsWifi, 
-                    hotel.IsServeFullTime, 
-                    hotel.IsLaundryService, 
-                    hotel.IsSmokingArea, 
-                    hotel.IsPark };
-
-                for (int i = 0; i < checkedListBox.Items.Count; i++)
-                {
-                    checkedListBox.SetItemChecked(i, checks[i]);
-                }
+                userControlAddService.Services = hotel.Services;
             }
             else
             {
@@ -63,12 +51,6 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
-            bool[] checks = new bool[8];
-
-            for (int i = 0; i < checkedListBox.Items.Count; i++)
-            {
-                checks[i] = checkedListBox.GetItemChecked(i);
-            }
             string message;
 
             TimeSpan timeSpanIn = ProcessTimeSpan.TimeSpanPrase(userControlCheckInOutHotel.MaskedTextBoxInText, out message);   
@@ -81,7 +63,6 @@ namespace Project
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
-                            checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
                             textBoxDescribe.Text);
 
                 if (hotel.IsName(out message) && hotel.IsAddress(out message) && hotel.IsPhone(out message))
@@ -101,12 +82,14 @@ namespace Project
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
-                            checks[0], checks[1], checks[2], checks[3], checks[4], checks[5], checks[6], checks[7],
                             textBoxDescribe.Text);
 
                         FController.Instance.HotelDAO.Update(this.hotel);
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
                     }
+                    this.hotel.UpdateService(userControlAddService.Services);
+                    FController.Instance.ServiceDAO.Delete(this.hotel);
+                    FController.Instance.ServiceDAO.Insert(this.hotel);
                     LoadData();
                     return;
                 }

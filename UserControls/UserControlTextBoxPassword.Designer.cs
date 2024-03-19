@@ -39,17 +39,19 @@ namespace Project.UserControls
             // panelRoadPassword
             // 
             this.panelRoadPassword.BackColor = System.Drawing.Color.Aqua;
-            this.panelRoadPassword.Location = new System.Drawing.Point(21, 39);
+            this.panelRoadPassword.Location = new System.Drawing.Point(16, 32);
+            this.panelRoadPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelRoadPassword.Name = "panelRoadPassword";
-            this.panelRoadPassword.Size = new System.Drawing.Size(274, 3);
+            this.panelRoadPassword.Size = new System.Drawing.Size(206, 2);
             this.panelRoadPassword.TabIndex = 7;
             // 
             // pictureBoxPassword
             // 
             this.pictureBoxPassword.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPassword.Image")));
-            this.pictureBoxPassword.Location = new System.Drawing.Point(20, 8);
+            this.pictureBoxPassword.Location = new System.Drawing.Point(15, 6);
+            this.pictureBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxPassword.Name = "pictureBoxPassword";
-            this.pictureBoxPassword.Size = new System.Drawing.Size(32, 32);
+            this.pictureBoxPassword.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPassword.TabIndex = 6;
             this.pictureBoxPassword.TabStop = false;
@@ -64,29 +66,30 @@ namespace Project.UserControls
             this.textBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox.ForeColor = System.Drawing.Color.Black;
             this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox.Location = new System.Drawing.Point(60, 11);
-            this.textBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBox.Location = new System.Drawing.Point(45, 8);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.textBox.Name = "textBox";
             this.textBox.PasswordChar = '●';
             this.textBox.PlaceholderText = "Nhập mật khẩu";
             this.textBox.SelectedText = "";
-            this.textBox.Size = new System.Drawing.Size(234, 30);
+            this.textBox.Size = new System.Drawing.Size(176, 24);
             this.textBox.TabIndex = 8;
             this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
             // 
             // UserControlTextBoxPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panelRoadPassword);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.pictureBoxPassword);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlTextBoxPassword";
-            this.Size = new System.Drawing.Size(314, 50);
+            this.Size = new System.Drawing.Size(236, 41);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPassword)).EndInit();
             this.ResumeLayout(false);
 

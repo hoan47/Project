@@ -71,6 +71,7 @@ namespace Project
                 FController.Instance.InfoDAO.Access();
                 FController.Instance.ClientDAO.Access();
                 FController.Instance.HotelDAO.Access();
+                FController.Instance.ServiceDAO.Access();
                 FController.Instance.ImageHotelDAO.Access();
                 e.Result = "Đăng nhập thành công.";
             }
