@@ -28,19 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(200, 100);
-            this.panelMain.TabIndex = 0;
-            // 
-            // backgroundWorker
-            // 
             // 
             // FController
             // 
@@ -48,7 +36,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -60,7 +47,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMain;
     }
 }

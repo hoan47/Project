@@ -31,70 +31,67 @@ namespace Project.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlTextBoxAccount));
             this.panelRoad = new System.Windows.Forms.Panel();
-            this.textBox = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label = new System.Windows.Forms.Label();
+            this.textBox = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panelRoad
             // 
             this.panelRoad.BackColor = System.Drawing.Color.Aqua;
-            this.panelRoad.Location = new System.Drawing.Point(20, 39);
+            this.panelRoad.Location = new System.Drawing.Point(15, 32);
+            this.panelRoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelRoad.Name = "panelRoad";
-            this.panelRoad.Size = new System.Drawing.Size(274, 3);
+            this.panelRoad.Size = new System.Drawing.Size(206, 2);
             this.panelRoad.TabIndex = 6;
-            // 
-            // textBox
-            // 
-            this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(60, 9);
-            this.textBox.MaxLength = 11;
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(234, 30);
-            this.textBox.TabIndex = 0;
-            this.textBox.Enter += new System.EventHandler(this.TextBoxEnter);
-            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
-            this.textBox.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(20, 9);
+            this.pictureBox.Location = new System.Drawing.Point(15, 7);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox.Size = new System.Drawing.Size(25, 25);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 5;
             this.pictureBox.TabStop = false;
             // 
-            // label
+            // textBox
             // 
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label.Location = new System.Drawing.Point(60, 9);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(234, 30);
-            this.label.TabIndex = 0;
-            this.label.Text = "Tài khoản";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label.Click += new System.EventHandler(this.LabelClick);
+            this.textBox.BorderThickness = 0;
+            this.textBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox.DefaultText = "";
+            this.textBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.ForeColor = System.Drawing.Color.Black;
+            this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox.Location = new System.Drawing.Point(45, 8);
+            this.textBox.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.textBox.Name = "textBox";
+            this.textBox.PasswordChar = '\0';
+            this.textBox.PlaceholderText = "Nhập tài khoản";
+            this.textBox.SelectedText = "";
+            this.textBox.Size = new System.Drawing.Size(176, 24);
+            this.textBox.TabIndex = 7;
+            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxAccountKeyPress);
             // 
             // UserControlTextBoxAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.label);
             this.Controls.Add(this.panelRoad);
-            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.textBox);
+            this.Controls.Add(this.pictureBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserControlTextBoxAccount";
-            this.Size = new System.Drawing.Size(314, 50);
+            this.Size = new System.Drawing.Size(236, 41);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -102,7 +99,6 @@ namespace Project.UserControls
 
         private System.Windows.Forms.Panel panelRoad;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.TextBox textBox;
-        private System.Windows.Forms.Label label;
+        private Guna.UI2.WinForms.Guna2TextBox textBox;
     }
 }

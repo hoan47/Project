@@ -19,5 +19,15 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void maskedTextBoxIn_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBoxOut_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

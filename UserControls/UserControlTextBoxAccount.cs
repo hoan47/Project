@@ -26,24 +26,5 @@ namespace Project.UserControls
                 e.Handled = true;
             }    
         }
-
-        private void LabelClick(object sender, EventArgs e)
-        {
-            label.Visible = false;
-            textBox.Focus();
-        }
-
-        private void TextBoxLeave(object sender, EventArgs e)
-        {
-            if(textBox.Text == string.Empty)
-            {
-                label.Visible = true;
-            }    
-        }
-
-        private void TextBoxEnter(object sender, EventArgs e)
-        {
-            label.Visible = false;
-        }
     }
 }

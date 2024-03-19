@@ -56,6 +56,9 @@
     <Reference Include="Azure.Identity, Version=1.10.3.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>packages\Azure.Identity.1.10.3\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -99,6 +102,7 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -109,6 +113,7 @@
     <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -155,6 +160,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -169,10 +175,10 @@
   <ItemGroup>
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
+    <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
     <Compile Include="ProcessScripts\ProcessCheckInfo.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />
-    <Compile Include="DAOScripts\Image_.cs" />
     <Compile Include="DAOScripts\Hotels\ImageHotelDAO.cs" />
     <Compile Include="DAOScripts\Room\Room.cs" />
     <Compile Include="FCustomMessageBox.cs">
@@ -275,12 +281,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProcessScripts\ProcessImage.cs" />
     <Compile Include="ShowMessage.cs" />
-    <Compile Include="UserControls\UserControlAddress.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlAddress.Designer.cs">
-      <DependentUpon>UserControlAddress.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlAddressEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +292,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlAddressHotel.Designer.cs">
       <DependentUpon>UserControlAddressHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlAddService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlAddService.Designer.cs">
+      <DependentUpon>UserControlAddService.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlCheckInOutHotel.cs">
       <SubType>UserControl</SubType>
@@ -311,41 +317,17 @@
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlDiscount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlDiscount.Designer.cs">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlHomePageRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlHomePageRoom.Designer.cs">
-      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlHotel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UserControlHotel.Designer.cs">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlLable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlLable.Designer.cs">
-      <DependentUpon>UserControlLable.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.Designer.cs">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlRoom.Designer.cs">
-      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -420,14 +402,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlAddress.resx">
-      <DependentUpon>UserControlAddress.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlAddressEdit.resx">
       <DependentUpon>UserControlAddressEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlAddressHotel.resx">
       <DependentUpon>UserControlAddressHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlAddService.resx">
+      <DependentUpon>UserControlAddService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlCheckInOutHotel.resx">
       <DependentUpon>UserControlCheckInOutHotel.cs</DependentUpon>
@@ -438,23 +420,11 @@
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlDiscount.resx">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlHomePageRoom.resx">
-      <DependentUpon>UserControlHomePageRoom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlLable.resx">
-      <DependentUpon>UserControlLable.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlRoom.resx">
-      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
@@ -516,6 +486,8 @@
     <None Include="Resources\man.png" />
     <None Include="Resources\girl.png" />
     <None Include="Resources\noImage.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\delete.png" />
     <Content Include="Resources\success.png" />
     <None Include="Resources\yellow.png" />
     <None Include="Resources\copper.png" />

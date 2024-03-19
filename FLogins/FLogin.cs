@@ -14,25 +14,23 @@ namespace Project
 {
     public partial class FLogin : Form
     {
-        public FController fController;
         private FLoading fLoading;
 
-        public FLogin(FController fController)
+        public FLogin()
         {
             InitializeComponent();
             backgroundWorker.DoWork += BackgroundWorkerDoWorkLogin;
             backgroundWorker.RunWorkerCompleted += DackgroundWorkerRunWorkerCompletedLogin;
-            this.fController = fController;
         }
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fController.InitializeFCreateAccount();
+            FController.Instance.InitializeFCreateAccount();
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fController.InitializeFForgetPassword();
+            FController.Instance.InitializeFForgetPassword();
         }
 
         private void ButtonLoginClick(object sender, EventArgs e)
@@ -41,8 +39,8 @@ namespace Project
             {
                 return;
             }
-            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            fLoading = new FLoading(fController, 500);
+            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            fLoading = new FLoading(FController.Instance, 500);
             fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
         }
@@ -54,44 +52,49 @@ namespace Project
 
         public void BackgroundWorkerDoWorkLogin(object sender, DoWorkEventArgs e)
         {
-            if(fController.User.IsAccount() == false)
-            {
-                e.Result = false;
-                return;
-            }
+            string message;
 
-            bool isSuccess = true;
-            if (fController.AccountDAO.FindAccount() == false)
+            if(FController.Instance.User.IsAccount(out message) == false)
             {
-                ShowMessage.ShowWarning("Tài khoản không tồn tại.");
-                isSuccess = false;
+                e.Result = message;
             }
-            else if (fController.AccountDAO.Login() == false)
+            else if (FController.Instance.AccountDAO.FindAccount() == false)
             {
-                ShowMessage.ShowWarning("Mật khẩu sai.");
-                isSuccess = false;
+                e.Result = "Tài khoản không tồn tại.";
             }
-
-            if (isSuccess == true)
+            else if (FController.Instance.AccountDAO.Select() == false)
             {
-                fController.InfoDAO.Access();
-                fController.ClientDAO.Access();
-                fController.HotelDAO.Access();
-                fController.ImageHotelDAO.Access();
-                
+                e.Result = "Mật khẩu sai.";
             }
-            e.Result = isSuccess;
+            else
+            {
+                FController.Instance.InfoDAO.Access();
+                FController.Instance.ClientDAO.Access();
+                FController.Instance.HotelDAO.Access();
+                FController.Instance.ServiceDAO.Access();
+                FController.Instance.ImageHotelDAO.Access();
+                e.Result = "Đăng nhập thành công.";
+            }
         }
 
         public void DackgroundWorkerRunWorkerCompletedLogin(object sender, RunWorkerCompletedEventArgs e)
         {
-            if ((bool)e.Result == true)
+            if ((string)e.Result == "Đăng nhập thành công.")
             {
-                fController.InitializeFMain();
+                FController.Instance.InitializeFMain();
                 fLoading.OnLoading();
-                fController.MessageSuccess("Thông báo", "Đăng nhập thành công.");
+                FController.Instance.MessageSuccess("Thông báo", (string)e.Result);
+            }
+            else
+            {
+                FController.Instance.MessageWarning("Thông báo", (string)e.Result);
             }
             fLoading.OffLoading();
+        }
+
+        private void CheckBoxShowPasswordCheckedChanged(object sender, EventArgs e)
+        {
+            userControlTextBoxPassword.PasswordChar();
         }
     }
 }

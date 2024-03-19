@@ -12,37 +12,41 @@ namespace Project
 {
     public partial class FCreateAccount : Form
     {
-        public FController fController;
 
-        public FCreateAccount(FController fController)
+        public FCreateAccount()
         {
             InitializeComponent();
-            this.fController = fController;
         }
 
         private void ButtonCreateAccountClick(object sender, EventArgs e)
         {
-            fController.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
-            fController.User.UpdateClient(new Client(fController.User));
-            if (fController.User.IsAccount() == true && fController.User.IsPassword() == true)
+            string message;
+
+            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            FController.Instance.User.UpdateClient(new Client());
+            if (FController.Instance.User.IsAccount(out message) == true && FController.Instance.User.IsPassword(out message) == true)
             {
-                if(fController.AccountDAO.Insert() == true)
+                if(FController.Instance.AccountDAO.Insert() == true)
                 {
-                    fController.InfoDAO.Insert();
-                    fController.ClientDAO.Insert();
-                    ShowMessage.ShowNotification("Tạo tài khoản thành công.");
+                    FController.Instance.InfoDAO.Insert();
+                    FController.Instance.ClientDAO.Insert();
+                    FController.Instance.MessageSuccess("Thông báo", "Tạo tài khoản thành công.");
                     Back(sender, e);
                 }
                 else
                 {
-                    ShowMessage.ShowWarning("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+                    FController.Instance.MessageWarning("Thông báo", "Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
                 }
+            }
+            else
+            {
+                FController.Instance.MessageWarning("Thông báo", message);
             }
         }
 
         private void Back(object sender, EventArgs e)
         {
-            fController.InitializeFLogin();
+            FController.Instance.InitializeFLogin();
             Close();
         }
 

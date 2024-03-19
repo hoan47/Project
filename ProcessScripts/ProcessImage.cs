@@ -13,23 +13,45 @@ namespace Project
     {
         public static byte[] ImageToByteArray(Image image)
         {
-            using (MemoryStream ms = new MemoryStream())
+            MemoryStream ms = new MemoryStream();
+
+            try
             {
                 image.Save(ms, image.RawFormat);
                 return ms.ToArray();
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                ms.Close();
+            }
+            return null;
         }
 
         public static Image ByteToImageArray(byte[] bytes)
         {
-            using (MemoryStream ms = new MemoryStream(bytes))
+            MemoryStream ms = null; 
+
+            try
             {
-                Image image = Image.FromStream(ms);
-                return image;
+                ms = new MemoryStream(bytes);
+                return Image.FromStream(ms);
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                ms?.Close();
+            }
+            return null;
         }
 
-        public static bool Comparer(Image image1, Image image2)
+        public static bool Compare(Image image1, Image image2)
         {
             if (image1.Width != image2.Width || image1.Height != image2.Height)
             {

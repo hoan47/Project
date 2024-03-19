@@ -12,18 +12,34 @@ namespace Project
 {
     public partial class UserControlAddressEdit : UserControl
     {
+        private string curentAddress;
+        private bool isProvince;
         private Color colorTextBoxEnter = Color.FromArgb(255, 128, 0);
         private Color colorTextBoxLeave = Color.FromArgb(64, 64, 64);
-        public string ComboBoxText { get { return userControlComboBoxAddress.ComboBoxText; } set { userControlComboBoxAddress.ComboBoxText = value; } }
+        public string ComboBoxText
+        {
+            get
+            {
+                return comboBox.Text;
+            }
+            set
+            {
+                comboBox.Items.Add(value);
+                labelValue.Text = comboBox.Text = value;
+            }
+        }
 
         public UserControlAddressEdit()
         {
             InitializeComponent();
+            isProvince = true;
+            curentAddress = null;
+            labelValue.Text = curentAddress;
         }
 
         private void Edit(object sender, EventArgs e)
         {
-            buttonEdit.Visible = !(userControlComboBoxAddress.Enabled = true);
+            labelValue.Visible = buttonEdit.Visible = !(comboBox.Visible = comboBox.Enabled = true);
             panelRoad.BackColor = colorTextBoxEnter;
         }
 
@@ -31,9 +47,43 @@ namespace Project
         {
             if(buttonEdit.Visible == false)
             {
-                buttonEdit.Visible = !(userControlComboBoxAddress.Enabled = false);
+                labelValue.Visible =  buttonEdit.Visible = !(comboBox.Visible = comboBox.Enabled = false);
                 panelRoad.BackColor = colorTextBoxLeave;
             }
+        }
+
+        private void ComboBoxLeave(object sender, EventArgs e)
+        {
+            if (isProvince == false)
+            {
+                if (comboBox.Text == string.Empty)
+                {
+                    isProvince = true;
+                }
+                labelValue.Text = curentAddress = comboBox.Text;
+            }
+            else
+            {
+                labelValue.Text = ComboBoxText = curentAddress + (comboBox.Text == string.Empty ? string.Empty : (", " + comboBox.Text));
+            }
+        }
+
+        private void ComboBoxEnter(object sender, EventArgs e)
+        {
+            if (isProvince == true)
+            {
+                Address.UpdateProvince(comboBox);
+            }
+            else
+            {
+                Address.UpdateDistrict(comboBox, curentAddress);
+            }
+            isProvince = !isProvince;
+        }
+
+        private void ComboBoxCSelectedValueChanged(object sender, EventArgs e)
+        {
+            label.Focus();
         }
     }
 }

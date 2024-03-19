@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -43,9 +44,31 @@ namespace Project
             this.AddressValue = AddressValue;
         }
 
-        public bool IsAddRess()
+        public bool IsAddRess(out string massage)
         {
-            return CheckInfo.IsAddRess(ProvinceAndDistrict);
+            return CheckInfo.IsAddRess(ProvinceAndDistrict, out massage);
+        }
+
+        static public void UpdateProvince(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            foreach (string province in AddRessDAO.addresses.Keys)
+            {
+                comboBox.Items.Add(province);
+            }
+        }
+
+        static public void UpdateDistrict(ComboBox comboBox, string curentAddress)
+        {
+            comboBox.Items.Clear();
+            if (AddRessDAO.addresses.ContainsKey(curentAddress) == false)
+            {
+                return;
+            }
+            foreach (string district in AddRessDAO.addresses[curentAddress])
+            {
+                comboBox.Items.Add(district);
+            }
         }
     }
 }

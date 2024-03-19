@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class FController : Form
     {
+        public static FController Instance { get; private set; }
         private Form currentFromChild;
         public User User { get; private set; }
         public Client Client { get; private set; }
@@ -21,17 +22,20 @@ namespace Project
         public ClientDAO ClientDAO { get; private set; }
         public AddRessDAO AddressDAO { get; private set; }
         public HotelDAO HotelDAO { get; private set; }
+        public ServiceDAO ServiceDAO { get; private set; }
         public ImageHotelDAO ImageHotelDAO { get; private set; }
 
         public FController()
         {
+            Instance = this;
             User = new User();
-            AccountDAO = new AccountDAO(User);
-            InfoDAO = new InfoDAO(User);
-            ClientDAO = new ClientDAO(User);
+            AccountDAO = new AccountDAO();
+            InfoDAO = new InfoDAO();
+            ClientDAO = new ClientDAO();
             AddressDAO = new AddRessDAO();
-            HotelDAO = new HotelDAO(User);
-            ImageHotelDAO = new ImageHotelDAO(User);
+            HotelDAO = new HotelDAO();
+            ServiceDAO = new ServiceDAO();
+            ImageHotelDAO = new ImageHotelDAO();
             InitializeComponent();
             InitializeFLogin();
         }
@@ -43,7 +47,7 @@ namespace Project
                 currentFromChild.Close();
             }
             currentFromChild = formChild;
-            Size = (panelMain.Size = formChild.Size) + new Size(15, 40);
+            Size = formChild.Size + new Size(15, 40);
             ProcessOpenFormChild(formChild);
         }
 
@@ -55,10 +59,11 @@ namespace Project
 
         public void ProcessOpenFormChild(Form formChild, Form formParent = null)
         {
+            formChild.Location = new Point(0, 0);
             formChild.TopLevel = false;
             if (formParent == null)
             {
-                panelMain.Controls.Add(formChild);
+                Controls.Add(formChild);
             }
             else
             {
@@ -71,22 +76,22 @@ namespace Project
       
         public void InitializeFLogin()
         {
-            OpenFormChild(new FLogin(this));
+            OpenFormChild(new FLogin());
         }
 
         public void InitializeFCreateAccount()
         {
-            OpenFormChild(new FCreateAccount(this));
+            OpenFormChild(new FCreateAccount());
         }
 
         public void InitializeFForgetPassword()
         {
-            OpenFormChild(new FForgetPassword(this));
+            OpenFormChild(new FForgetPassword());
         }
 
         public void InitializeFMain()
         {
-            OpenFormChild(new FMain(this));
+            OpenFormChild(new FMain());
         }
        
         public void MessageSuccess(string tile, string content, Form formParent = null)
@@ -97,8 +102,8 @@ namespace Project
         public void MessageWarning(string tile, string content, Form formParent = null)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.warning), formParent);
-
         }
+
         public void MessageError(string tile, string content)
         {
             OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.error));

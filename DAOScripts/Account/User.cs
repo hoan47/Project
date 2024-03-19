@@ -22,7 +22,7 @@ namespace Project
         public string IdCard { get; private set; }
         public string Email { get; private set; }
         public string Phone { get; private set; }
-        public int ImageId { get; private set; }
+        public byte[] ImageBytes { get; private set; }
         public Image Image { get; private set; }
         public Client Client { get; private set; }
         public List<Hotel> Hotels { get; private set; }
@@ -32,7 +32,7 @@ namespace Project
 
         public void UpdateUserName(string userName)
         {
-            Name = userName;
+            UserName = userName;
         }
 
         public void UpdateClient(Client client)
@@ -47,7 +47,7 @@ namespace Project
             NewPassword = newPassword;
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, Image image)
+        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -56,6 +56,22 @@ namespace Project
             IdCard = idCard;
             Email = email;
             Phone = phone;
+            ImageBytes = imageBytes;
+            Image = ProcessImage.ByteToImageArray(imageBytes);
+            StandardizedName();
+        }
+
+
+        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes, Image image)
+        {
+            Name = name;
+            DateOfBirth = dateOfBirth;
+            Gender = gender;
+            Address = address;
+            IdCard = idCard;
+            Email = email;
+            Phone = phone;
+            ImageBytes = imageBytes;
             Image = image;
             StandardizedName();
         }
@@ -87,39 +103,39 @@ namespace Project
             Name = string.Join(" ", words);
         }
 
-        public bool IsAccount()
+        public bool IsAccount(out string massage)
         {
-            return CheckInfo.IsAccount(UserName);
+            return CheckInfo.IsAccount(UserName, out massage);
         }
 
-        public bool IsPassword()
+        public bool IsPassword(out string massage)
         {
-            return CheckInfo.IsPassword(Password, NewPassword);
+            return CheckInfo.IsPassword(Password, NewPassword, out massage);
         }
 
-        public bool IsName()
+        public bool IsName(out string massage)
         {
-            return CheckInfo.IsName(Name);
+            return CheckInfo.IsName(Name, out massage);
         }
 
-        public bool IsAddress()
+        public bool IsAddress(out string massage)
         {
-            return Address.IsAddRess();
+            return Address.IsAddRess(out massage);
         }
 
-        public bool IsIdCard()
+        public bool IsIdCard(out string massage)
         {
-            return CheckInfo.IsIdCard(IdCard);
+            return CheckInfo.IsIdCard(IdCard, out massage);
         }
 
-        public bool IsPhone()
+        public bool IsPhone(out string massage)
         {
-            return CheckInfo.IsPhone(Phone);
+            return CheckInfo.IsPhone(Phone, out massage);
         }
 
-        public bool IsEmail()
+        public bool IsEmail(out string massage)
         {
-            return CheckInfo.IsEmail(Email);
+            return CheckInfo.IsEmail(Email, out massage);
         }
     }
 }

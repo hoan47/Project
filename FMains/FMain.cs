@@ -14,12 +14,10 @@ namespace Project
     {
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
-        public FController fController { get; set; }
 
-        public FMain(FController fController)
+        public FMain()
         {
             InitializeComponent();
-            this.fController = fController;
         }
 
         public void OpenFormChild(Form formChild)
@@ -81,11 +79,11 @@ namespace Project
 
             if (sender == toolStripButtonInfo)
             {
-                OpenFormChild(new FUpdateInfo(fController));
+                OpenFormChild(new FUpdateInfo());
             }
-            else if(fController.User.Client.RankInt == 0)
+            else if(FController.Instance.User.Client.RankInt == 0)
             {
-                fController.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.", this);
+                FController.Instance.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.");
             }    
             else if (sender == toolStripButtonHomePage)
             {
@@ -101,7 +99,7 @@ namespace Project
             }
             else if(sender == toolStripButtonService)
             {
-                OpenFormChild(new FService(fController, this));
+                OpenFormChild(new FService(this));
             }
             else if(sender == toolStripButtonSetting)
             {

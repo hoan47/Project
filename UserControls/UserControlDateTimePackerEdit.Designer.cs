@@ -30,27 +30,11 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlDateTimePackerEdit));
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label = new System.Windows.Forms.Label();
             this.panelRoad = new System.Windows.Forms.Panel();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.dateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dateTimePicker.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dateTimePicker.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dateTimePicker.Enabled = false;
-            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(150, 6);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(340, 27);
-            this.dateTimePicker.TabIndex = 0;
             // 
             // label
             // 
@@ -86,13 +70,31 @@ namespace Project
             this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.Edit);
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.BorderRadius = 10;
+            this.dateTimePicker.Checked = true;
+            this.dateTimePicker.Enabled = false;
+            this.dateTimePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.ForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTimePicker.Location = new System.Drawing.Point(141, 5);
+            this.dateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(287, 29);
+            this.dateTimePicker.TabIndex = 14;
+            this.dateTimePicker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 16, 9, 59, 42, 677);
+            // 
             // UserControlDateTimePackerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.label);
             this.Controls.Add(this.panelRoad);
             this.Name = "UserControlDateTimePackerEdit";
@@ -106,8 +108,8 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Panel panelRoad;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker;
     }
 }
