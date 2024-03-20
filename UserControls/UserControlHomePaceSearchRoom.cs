@@ -10,26 +10,21 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlDiscount : UserControl
+    public partial class UserControlHomePaceSearchRoom : UserControl
     {
-        public UserControlDiscount()
+        public UserControlHomePaceSearchRoom()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        private void UserControlHomePaceSearchRoomDoubleClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Thông tin phòng");
         }
     }
 }

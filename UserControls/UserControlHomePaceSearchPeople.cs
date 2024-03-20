@@ -10,24 +10,19 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlDiscount : UserControl
+    public partial class UserControlHomePaceSearchPeople : UserControl
     {
-        public UserControlDiscount()
+        public UserControlHomePaceSearchPeople()
         {
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void userControlNumericUpDown1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -176,6 +176,36 @@
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
+    <Compile Include="FMains\FHomePaceInforRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FHomePaceInforRoom.Designer.cs">
+      <DependentUpon>FHomePaceInforRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\FHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FHomePage.designer.cs">
+      <DependentUpon>FHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\FHotelManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FHotelManage.designer.cs">
+      <DependentUpon>FHotelManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\FInforRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FInforRoom.designer.cs">
+      <DependentUpon>FInforRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\FRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\FRoom.designer.cs">
+      <DependentUpon>FRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcessScripts\ProcessCheckInfo.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />
@@ -233,12 +263,6 @@
     </Compile>
     <Compile Include="FMains\FHistory.Designer.cs">
       <DependentUpon>FHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FMains\FHomePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMains\FHomePage.Designer.cs">
-      <DependentUpon>FHomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="FMains\FMain.cs">
       <SubType>Form</SubType>
@@ -311,17 +335,47 @@
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlHomePaceSearch.cs">
+    <Compile Include="UserControls\UserControlDiscount.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlHomePaceSearch.Designer.cs">
-      <DependentUpon>UserControlHomePaceSearch.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlDiscount.Designer.cs">
+      <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlHomePaceSearchItem.cs">
+    <Compile Include="UserControls\UserControlHomePaceSearchAddress.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlHomePaceSearchItem.Designer.cs">
-      <DependentUpon>UserControlHomePaceSearchItem.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlHomePaceSearchAddress.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchPeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchPeople.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchPrice.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchRoom.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceSearchTime.Designer.cs">
+      <DependentUpon>UserControlHomePaceSearchTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlHomePaceService.Designer.cs">
+      <DependentUpon>UserControlHomePaceService.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlHotel.cs">
       <SubType>UserControl</SubType>
@@ -334,6 +388,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlRadioButtonEdit.Designer.cs">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlRoom.designer.cs">
+      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTextBoxAccount.cs">
       <SubType>UserControl</SubType>
@@ -378,14 +438,26 @@
     <EmbeddedResource Include="FMains\FHistory.resx">
       <DependentUpon>FHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FHomePaceInforRoom.resx">
+      <DependentUpon>FHomePaceInforRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMains\FHomePage.resx">
       <DependentUpon>FHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FHotelManage.resx">
+      <DependentUpon>FHotelManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FInforRoom.resx">
+      <DependentUpon>FInforRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\FPreferential.resx">
       <DependentUpon>FPreferential.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FRoom.resx">
+      <DependentUpon>FRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\FService.resx">
       <DependentUpon>FService.cs</DependentUpon>
@@ -423,17 +495,35 @@
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlHomePaceSearch.resx">
-      <DependentUpon>UserControlHomePaceSearch.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlDiscount.resx">
+      <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchItem.resx">
-      <DependentUpon>UserControlHomePaceSearchItem.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchAddress.resx">
+      <DependentUpon>UserControlHomePaceSearchAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchPeople.resx">
+      <DependentUpon>UserControlHomePaceSearchPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchPrice.resx">
+      <DependentUpon>UserControlHomePaceSearchPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchRoom.resx">
+      <DependentUpon>UserControlHomePaceSearchRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceSearchTime.resx">
+      <DependentUpon>UserControlHomePaceSearchTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlHomePaceService.resx">
+      <DependentUpon>UserControlHomePaceService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlHotel.resx">
       <DependentUpon>UserControlHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlRadioButtonEdit.resx">
       <DependentUpon>UserControlRadioButtonEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlRoom.resx">
+      <DependentUpon>UserControlRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlTextBoxAccount.resx">
       <DependentUpon>UserControlTextBoxAccount.cs</DependentUpon>
