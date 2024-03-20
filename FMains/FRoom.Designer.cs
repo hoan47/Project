@@ -49,7 +49,6 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
@@ -65,7 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
@@ -343,17 +341,6 @@
             this.buttonLeft.TabIndex = 37;
             this.buttonLeft.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxImage.Location = new System.Drawing.Point(76, 15);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(187, 187);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 36;
-            this.pictureBoxImage.TabStop = false;
-            // 
             // buttonDeleteImage
             // 
             this.buttonDeleteImage.BackColor = System.Drawing.SystemColors.Info;
@@ -380,7 +367,6 @@
             // 
             // pictureBoxBackground
             // 
-            this.pictureBoxBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackground.BackgroundImage")));
             this.pictureBoxBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxBackground.Location = new System.Drawing.Point(3, 6);
             this.pictureBoxBackground.Margin = new System.Windows.Forms.Padding(4);
@@ -404,7 +390,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(565, 254);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(114, 20);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(102, 18);
             this.guna2HtmlLabel6.TabIndex = 56;
             this.guna2HtmlLabel6.Text = "Số Lượng Phòng";
             // 
@@ -471,7 +457,6 @@
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
-            this.Controls.Add(this.pictureBoxImage);
             this.Controls.Add(this.buttonDeleteImage);
             this.Controls.Add(this.buttonUploadImage);
             this.Controls.Add(this.pictureBoxBackground);
@@ -488,7 +473,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
@@ -518,7 +502,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
-        private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Button buttonDeleteImage;
         private System.Windows.Forms.Button buttonUploadImage;
         private System.Windows.Forms.PictureBox pictureBoxBackground;

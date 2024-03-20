@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.UserControls
+namespace Project
 {
-    public partial class UserControlHomePaceSearch : UserControl
+    public partial class UserControlHomePaceSearchPrice : UserControl
     {
-        public UserControlHomePaceSearch()
+        public UserControlHomePaceSearchPrice()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

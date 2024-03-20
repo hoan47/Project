@@ -17,6 +17,7 @@ namespace Project
             InitializeComponent();
             for(int i=0; i<10; i++)
             {
+                flowLayoutPanelHomePaceSearch.Controls.Add(new UserControls.UserControlHomePaceSearchRoom());
             }
         }
 
@@ -56,16 +57,22 @@ namespace Project
             
         }
 
-        private void textBox3_Click(object sender, EventArgs e)
-        {
-        }
-        private void textBox2_Click(object sender, EventArgs e)
-        {
-        }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+        private void userControlHomePaceSearchPeople1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanelHomePaceSearch_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Search()
+        { }
     }
 }
