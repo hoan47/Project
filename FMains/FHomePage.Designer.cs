@@ -34,25 +34,25 @@ namespace Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonHomePaceSearch = new System.Windows.Forms.Button();
-            this.flowLayoutPanelHomePaceSearch = new System.Windows.Forms.FlowLayoutPanel();
-            this.userControlHomePaceService = new Project.UserControlService();
-            this.userControlHomePaceSearchAddress = new Project.UserControlAddressRoom();
-            this.userControlHomePaceSearchTimeOut = new Project.UserControlDateTimePacker();
-            this.userControlHomePaceSearchTimeIn = new Project.UserControlDateTimePacker();
-            this.userControlHomePaceSearchPrice = new Project.UserControlTextBoxRoom();
-            this.userControlHomePaceSearchPeople = new Project.UserControlNumeric();
+            this.userControlService = new Project.UserControlService();
+            this.userControlAddressRoom = new Project.UserControlAddressRoom();
+            this.UserControlDateTimePackerOut = new Project.UserControlDateTimePacker();
+            this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
+            this.userControlTextBoxRoomPrice = new Project.UserControlTextBoxRoom();
+            this.userControlNumericPeople = new Project.UserControlNumeric();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonHomePaceSearch);
-            this.panel1.Controls.Add(this.userControlHomePaceService);
-            this.panel1.Controls.Add(this.userControlHomePaceSearchAddress);
-            this.panel1.Controls.Add(this.userControlHomePaceSearchTimeOut);
-            this.panel1.Controls.Add(this.userControlHomePaceSearchTimeIn);
-            this.panel1.Controls.Add(this.userControlHomePaceSearchPrice);
-            this.panel1.Controls.Add(this.userControlHomePaceSearchPeople);
+            this.panel1.Controls.Add(this.userControlService);
+            this.panel1.Controls.Add(this.userControlAddressRoom);
+            this.panel1.Controls.Add(this.UserControlDateTimePackerOut);
+            this.panel1.Controls.Add(this.userControlDateTimePackerIn);
+            this.panel1.Controls.Add(this.userControlTextBoxRoomPrice);
+            this.panel1.Controls.Add(this.userControlNumericPeople);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 120);
@@ -60,6 +60,7 @@ namespace Project
             // 
             // buttonHomePaceSearch
             // 
+            this.buttonHomePaceSearch.BackColor = System.Drawing.Color.Transparent;
             this.buttonHomePaceSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHomePaceSearch.BackgroundImage")));
             this.buttonHomePaceSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonHomePaceSearch.FlatAppearance.BorderSize = 0;
@@ -68,64 +69,75 @@ namespace Project
             this.buttonHomePaceSearch.Name = "buttonHomePaceSearch";
             this.buttonHomePaceSearch.Size = new System.Drawing.Size(55, 55);
             this.buttonHomePaceSearch.TabIndex = 9;
-            this.buttonHomePaceSearch.UseVisualStyleBackColor = true;
+            this.buttonHomePaceSearch.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanelHomePaceSearch
+            // userControlService
             // 
-            this.flowLayoutPanelHomePaceSearch.AllowDrop = true;
-            this.flowLayoutPanelHomePaceSearch.AutoScroll = true;
-            this.flowLayoutPanelHomePaceSearch.Location = new System.Drawing.Point(5, 121);
-            this.flowLayoutPanelHomePaceSearch.Name = "flowLayoutPanelHomePaceSearch";
-            this.flowLayoutPanelHomePaceSearch.Size = new System.Drawing.Size(775, 390);
-            this.flowLayoutPanelHomePaceSearch.TabIndex = 1;
-            this.flowLayoutPanelHomePaceSearch.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelHomePaceSearch_Paint);
+            this.userControlService.BackColor = System.Drawing.Color.Transparent;
+            this.userControlService.Location = new System.Drawing.Point(557, 3);
+            this.userControlService.Name = "userControlService";
+            this.userControlService.Size = new System.Drawing.Size(150, 113);
+            this.userControlService.TabIndex = 8;
             // 
-            // userControlHomePaceService
+            // userControlAddressRoom
             // 
-            this.userControlHomePaceService.Location = new System.Drawing.Point(557, 3);
-            this.userControlHomePaceService.Name = "userControlHomePaceService";
-            this.userControlHomePaceService.Size = new System.Drawing.Size(150, 113);
-            this.userControlHomePaceService.TabIndex = 8;
+            this.userControlAddressRoom.BackColor = System.Drawing.Color.Transparent;
+            this.userControlAddressRoom.ComboBoxText = "";
+            this.userControlAddressRoom.Location = new System.Drawing.Point(12, 3);
+            this.userControlAddressRoom.Name = "userControlAddressRoom";
+            this.userControlAddressRoom.Size = new System.Drawing.Size(256, 55);
+            this.userControlAddressRoom.TabIndex = 7;
             // 
-            // userControlHomePaceSearchAddress
+            // UserControlDateTimePackerOut
             // 
-            this.userControlHomePaceSearchAddress.Location = new System.Drawing.Point(12, 3);
-            this.userControlHomePaceSearchAddress.Name = "userControlHomePaceSearchAddress";
-            this.userControlHomePaceSearchAddress.Size = new System.Drawing.Size(256, 55);
-            this.userControlHomePaceSearchAddress.TabIndex = 7;
+            this.UserControlDateTimePackerOut.BackColor = System.Drawing.Color.Transparent;
+            this.UserControlDateTimePackerOut.GroupBoxText = "Ngày trả phòng";
+            this.UserControlDateTimePackerOut.ImageIcon = ((System.Drawing.Image)(resources.GetObject("UserControlDateTimePackerOut.ImageIcon")));
+            this.UserControlDateTimePackerOut.Location = new System.Drawing.Point(274, 61);
+            this.UserControlDateTimePackerOut.Name = "UserControlDateTimePackerOut";
+            this.UserControlDateTimePackerOut.Size = new System.Drawing.Size(277, 55);
+            this.UserControlDateTimePackerOut.TabIndex = 6;
             // 
-            // userControlHomePaceSearchTimeOut
+            // userControlDateTimePackerIn
             // 
-            this.userControlHomePaceSearchTimeOut.GroupBoxText = "Ngày trả phòng";
-            this.userControlHomePaceSearchTimeOut.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchTimeOut.ImageIcon")));
-            this.userControlHomePaceSearchTimeOut.Location = new System.Drawing.Point(274, 61);
-            this.userControlHomePaceSearchTimeOut.Name = "userControlHomePaceSearchTimeOut";
-            this.userControlHomePaceSearchTimeOut.Size = new System.Drawing.Size(277, 55);
-            this.userControlHomePaceSearchTimeOut.TabIndex = 6;
+            this.userControlDateTimePackerIn.BackColor = System.Drawing.Color.Transparent;
+            this.userControlDateTimePackerIn.GroupBoxText = "Ngày nhận phòng";
+            this.userControlDateTimePackerIn.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerIn.ImageIcon")));
+            this.userControlDateTimePackerIn.Location = new System.Drawing.Point(274, 3);
+            this.userControlDateTimePackerIn.Name = "userControlDateTimePackerIn";
+            this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
+            this.userControlDateTimePackerIn.TabIndex = 5;
             // 
-            // userControlHomePaceSearchTimeIn
+            // userControlTextBoxRoomPrice
             // 
-            this.userControlHomePaceSearchTimeIn.GroupBoxText = "Ngày nhận phòng";
-            this.userControlHomePaceSearchTimeIn.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlHomePaceSearchTimeIn.ImageIcon")));
-            this.userControlHomePaceSearchTimeIn.Location = new System.Drawing.Point(274, 3);
-            this.userControlHomePaceSearchTimeIn.Name = "userControlHomePaceSearchTimeIn";
-            this.userControlHomePaceSearchTimeIn.Size = new System.Drawing.Size(277, 55);
-            this.userControlHomePaceSearchTimeIn.TabIndex = 5;
+            this.userControlTextBoxRoomPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxRoomPrice.Location = new System.Drawing.Point(12, 61);
+            this.userControlTextBoxRoomPrice.Name = "userControlTextBoxRoomPrice";
+            this.userControlTextBoxRoomPrice.Size = new System.Drawing.Size(150, 55);
+            this.userControlTextBoxRoomPrice.TabIndex = 4;
             // 
-            // userControlHomePaceSearchPrice
+            // userControlNumericPeople
             // 
-            this.userControlHomePaceSearchPrice.Location = new System.Drawing.Point(12, 61);
-            this.userControlHomePaceSearchPrice.Name = "userControlHomePaceSearchPrice";
-            this.userControlHomePaceSearchPrice.Size = new System.Drawing.Size(150, 55);
-            this.userControlHomePaceSearchPrice.TabIndex = 4;
+            this.userControlNumericPeople.BackColor = System.Drawing.Color.Transparent;
+            this.userControlNumericPeople.GrupBoxText = "Số người";
+            this.userControlNumericPeople.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericPeople.Image")));
+            this.userControlNumericPeople.Location = new System.Drawing.Point(168, 61);
+            this.userControlNumericPeople.Name = "userControlNumericPeople";
+            this.userControlNumericPeople.NumericValue = 0;
+            this.userControlNumericPeople.Size = new System.Drawing.Size(100, 55);
+            this.userControlNumericPeople.TabIndex = 3;
+            this.userControlNumericPeople.Load += new System.EventHandler(this.userControlHomePaceSearchPeople1_Load);
             // 
-            // userControlHomePaceSearchPeople
+            // flowLayoutPanel
             // 
-            this.userControlHomePaceSearchPeople.Location = new System.Drawing.Point(168, 61);
-            this.userControlHomePaceSearchPeople.Name = "userControlHomePaceSearchPeople";
-            this.userControlHomePaceSearchPeople.Size = new System.Drawing.Size(100, 55);
-            this.userControlHomePaceSearchPeople.TabIndex = 3;
-            this.userControlHomePaceSearchPeople.Load += new System.EventHandler(this.userControlHomePaceSearchPeople1_Load);
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
+            this.flowLayoutPanel.TabIndex = 1;
+            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelHomePaceSearch_Paint);
             // 
             // FHomePage
             // 
@@ -134,7 +146,7 @@ namespace Project
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(780, 512);
-            this.Controls.Add(this.flowLayoutPanelHomePaceSearch);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -150,13 +162,13 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private UserControlNumeric userControlHomePaceSearchPeople;
-        private UserControlTextBoxRoom userControlHomePaceSearchPrice;
-        private UserControlDateTimePacker userControlHomePaceSearchTimeIn;
-        private UserControlDateTimePacker userControlHomePaceSearchTimeOut;
-        private UserControlAddressRoom userControlHomePaceSearchAddress;
+        private UserControlNumeric userControlNumericPeople;
+        private UserControlTextBoxRoom userControlTextBoxRoomPrice;
+        private UserControlDateTimePacker userControlDateTimePackerIn;
+        private UserControlDateTimePacker UserControlDateTimePackerOut;
+        private UserControlAddressRoom userControlAddressRoom;
         private System.Windows.Forms.Button buttonHomePaceSearch;
-        private UserControlService userControlHomePaceService;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelHomePaceSearch;
+        private UserControlService userControlService;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

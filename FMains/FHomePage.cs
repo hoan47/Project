@@ -15,9 +15,13 @@ namespace Project
         public FHomePage()
         {
             InitializeComponent();
-            for(int i=0; i<10; i++)
+            HotelRoom hotelRoom = new HotelRoom("Tình một đêm", new Address("Gia Lai, x, x"), "Tên phòng", 1, 2, 3, new TimeSpan(1), new TimeSpan(2), DateTime.Now, DateTime.Now, "0123456789", 0.123456789, 1234567890, "Không");
+
+            for (int i = 0; i < 10; i++)
             {
-                flowLayoutPanelHomePaceSearch.Controls.Add(new UserControlHotelRoom());
+                UserControlHotelRoom x = new UserControlHotelRoom(hotelRoom);
+                x.Tag = this;
+                flowLayoutPanel.Controls.Add(x);
             }
         }
 
@@ -26,10 +30,11 @@ namespace Project
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        public void OpenInforHotelRoom(HotelRoom hotelRoom)
         {
-
+            ((FMain)Tag).OpenFormChild(new FInforHotelRoom(hotelRoom), false);
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -48,13 +53,13 @@ namespace Project
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

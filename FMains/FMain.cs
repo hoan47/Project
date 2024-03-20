@@ -15,38 +15,43 @@ namespace Project
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
 
+
         public FMain()
         {
             InitializeComponent();
         }
 
-        public void OpenFormChild(Form formChild)
+        public void OpenFormChild(Form formChild, bool isClearCurrent = true)
         {
-            if(formChildCurrent != null)
+            if (formChildCurrent != null)
             {
                 if (formChild.GetType() == formChildCurrent.GetType())
                 {
                     return;
                 }
-                formChildCurrent.Close();
+                if (isClearCurrent == true)
+                {
+                    formChildCurrent.Close();
+                    formChildCurrent = formChild;
+                }
             }
             if (formChild is FUpdateInfor)
             {
                 toolStripButtonInfor.BackColor = formChild.BackColor;
             }
-            else if(formChild is FHomePage)
+            else if (formChild is FHomePage || formChild is FInforHotelRoom)
             {
                 toolStripButtonHomePage.BackColor = formChild.BackColor;
             }
-            else if(formChild is FHistory)
+            else if (formChild is FHistory)
             {
                 toolStripButtonHistory.BackColor = formChild.BackColor;
             }
-            else if(formChild is FPreferential)
+            else if (formChild is FPreferential)
             {
                 toolStripButtonPreferential.BackColor = formChild.BackColor;
             }
-            else if(formChild is FService)
+            else if (formChild is FService)
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
             }
@@ -54,14 +59,14 @@ namespace Project
             {
                 toolStripButtonSetting.BackColor = formChild.BackColor;
             }
-            else if(formChild is FUpdateHotel)
+            else if (formChild is FUpdateHotel)
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
             }
             FLoading fLoading = new FLoading(formChild, 300);
 
             fLoading.OnLoading();
-            formChildCurrent = formChild;
+
             formChild.Size = panelMain.Size;
             formChild.TopLevel = false;
             panelMain.Controls.Add(formChild);
@@ -82,10 +87,10 @@ namespace Project
             {
                 OpenFormChild(new FUpdateInfor());
             }
-            else if(FController.Instance.User.Client.RankInt == 0)
+            else if (FController.Instance.User.Client.RankInt == 0)
             {
                 FController.Instance.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.");
-            }    
+            }
             else if (sender == toolStripButtonHomePage)
             {
                 OpenFormChild(new FHomePage());
@@ -98,15 +103,15 @@ namespace Project
             {
                 OpenFormChild(new FPreferential());
             }
-            else if(sender == toolStripButtonService)
+            else if (sender == toolStripButtonService)
             {
                 OpenFormChild(new FService());
             }
-            else if(sender == toolStripButtonSetting)
+            else if (sender == toolStripButtonSetting)
             {
                 OpenFormChild(new FSetting());
             }
-            else if(sender == toolStripButtonLogOut)
+            else if (sender == toolStripButtonLogOut)
             {
                 Close();
             }

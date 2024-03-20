@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class FHomePaceInforRoom
+    partial class FInforHotelRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePaceInforRoom));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FInforHotelRoom));
             this.labelNameHotel = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelAddressSpecific = new System.Windows.Forms.Label();
@@ -185,6 +185,7 @@ namespace Project
             this.buttonBack.FlatAppearance.BorderSize = 0;
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click_1);
             // 
             // buttonPay
             // 
@@ -332,11 +333,11 @@ namespace Project
             this.pictureBoxRoom.Name = "pictureBoxRoom";
             this.pictureBoxRoom.TabStop = false;
             // 
-            // FHomePaceInformationRoom
+            // FInforHotelRoom
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.labelPictureRoom);
             this.Controls.Add(this.buttonRightRoom);
             this.Controls.Add(this.buttonLeftRoom);
@@ -377,7 +378,7 @@ namespace Project
             this.Controls.Add(this.buttonPay);
             this.Controls.Add(this.buttonBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FHomePaceInformationRoom";
+            this.Name = "FInforHotelRoom";
             this.Load += new System.EventHandler(this.FHomePaceInformationRoom_Load);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameHotel)).EndInit();

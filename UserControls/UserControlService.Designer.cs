@@ -46,6 +46,7 @@ namespace Project
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
@@ -62,12 +63,12 @@ namespace Project
             this.checkedListBox1.Size = new System.Drawing.Size(145, 90);
             this.checkedListBox1.TabIndex = 0;
             // 
-            // UserControlHomePaceService
+            // UserControlService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
-            this.Name = "UserControlHomePaceService";
+            this.Name = "UserControlService";
             this.Size = new System.Drawing.Size(150, 113);
             this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);

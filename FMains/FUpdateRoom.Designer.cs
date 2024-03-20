@@ -41,7 +41,7 @@ namespace Project.FMains
             this.userControlNumeric2 = new Project.UserControlNumeric();
             this.userControlNumeric1 = new Project.UserControlNumeric();
             this.userControlTextBoxHotel2 = new Project.UserControlTextBoxHotel();
-            this.userControlTextBoxHotel1 = new Project.UserControlTextBoxHotel();
+            this.userControlTextBoxHotelName = new Project.UserControlTextBoxHotel();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.userControlTextBoxHotel3 = new Project.UserControlTextBoxHotel();
             this.panelImage.SuspendLayout();
@@ -188,17 +188,17 @@ namespace Project.FMains
             this.userControlTextBoxHotel2.TabIndex = 1;
             this.userControlTextBoxHotel2.TextBoxText = "";
             // 
-            // userControlTextBoxHotel1
+            // userControlTextBoxHotelName
             // 
-            this.userControlTextBoxHotel1.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxHotel1.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotel1.Image")));
-            this.userControlTextBoxHotel1.LabelText = "Tên phòng";
-            this.userControlTextBoxHotel1.Location = new System.Drawing.Point(460, 11);
-            this.userControlTextBoxHotel1.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxHotel1.Name = "userControlTextBoxHotel1";
-            this.userControlTextBoxHotel1.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxHotel1.TabIndex = 0;
-            this.userControlTextBoxHotel1.TextBoxText = "";
+            this.userControlTextBoxHotelName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxHotelName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotelName.Image")));
+            this.userControlTextBoxHotelName.LabelText = "Tên phòng";
+            this.userControlTextBoxHotelName.Location = new System.Drawing.Point(460, 11);
+            this.userControlTextBoxHotelName.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxHotelName.Name = "userControlTextBoxHotelName";
+            this.userControlTextBoxHotelName.Size = new System.Drawing.Size(300, 64);
+            this.userControlTextBoxHotelName.TabIndex = 0;
+            this.userControlTextBoxHotelName.TextBoxText = "";
             // 
             // buttonUpdate
             // 
@@ -238,7 +238,7 @@ namespace Project.FMains
             this.Controls.Add(this.userControlNumeric1);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.userControlTextBoxHotel2);
-            this.Controls.Add(this.userControlTextBoxHotel1);
+            this.Controls.Add(this.userControlTextBoxHotelName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FUpdateRoom";
             this.Text = "FUpdateRoom";
@@ -250,7 +250,7 @@ namespace Project.FMains
 
         #endregion
 
-        private UserControlTextBoxHotel userControlTextBoxHotel1;
+        private UserControlTextBoxHotel userControlTextBoxHotelName;
         private System.Windows.Forms.Panel panelImage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxImage;
         private Guna.UI2.WinForms.Guna2Button buttonRight;
