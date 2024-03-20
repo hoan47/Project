@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    public class InfoDAO : DAO
+    public class InforDAO : DAO
     {
-        public InfoDAO() : base("Info")
+        public InforDAO() : base("Infor")
         {  }
 
         public void Access()
@@ -23,7 +23,7 @@ namespace Project
 
                 if (reader.Read())
                 {
-                    FController.Instance.User.UpdateInfo(
+                    FController.Instance.User.UpdateInfor(
                         reader.IsDBNull(1) ? "Nguyen Van An" : reader[1].ToString(),
                         reader.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(reader[2]),
                         reader.IsDBNull(3) ? "Nam" : reader[3].ToString(),

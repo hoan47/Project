@@ -32,6 +32,11 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateService));
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.userControlTextBoxHotelPhone = new Project.UserControlTextBoxHotel();
+            this.userControlTextBoxHotelName = new Project.UserControlTextBoxHotel();
+            this.userControlAddService = new Project.UserControlAddService();
+            this.userControlAddressHotel = new Project.UserControlAddressHotel();
+            this.userControlCheckInOutHotel = new Project.UserControlCheckInOutHotel();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
             this.textBoxDescribe = new System.Windows.Forms.TextBox();
             this.panelImage = new System.Windows.Forms.Panel();
@@ -41,11 +46,6 @@ namespace Project
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
-            this.userControlAddService = new Project.UserControlAddService();
-            this.userControlAddressHotel = new Project.UserControlAddressHotel();
-            this.userControlCheckInOutHotel = new Project.UserControlCheckInOutHotel();
-            this.userControlTextBoxName = new Project.UserControls.UserControlTextBox();
-            this.userControlTextBoxPhone = new Project.UserControls.UserControlTextBox();
             this.panelInfo.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.panelImage.SuspendLayout();
@@ -55,17 +55,71 @@ namespace Project
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo.Controls.Add(this.userControlTextBoxHotelPhone);
+            this.panelInfo.Controls.Add(this.userControlTextBoxHotelName);
             this.panelInfo.Controls.Add(this.userControlAddService);
             this.panelInfo.Controls.Add(this.userControlAddressHotel);
             this.panelInfo.Controls.Add(this.userControlCheckInOutHotel);
-            this.panelInfo.Controls.Add(this.userControlTextBoxName);
             this.panelInfo.Controls.Add(this.groupBoxDescribe);
-            this.panelInfo.Controls.Add(this.userControlTextBoxPhone);
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(312, 511);
             this.panelInfo.TabIndex = 0;
+            this.panelInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInfo_Paint);
+            // 
+            // userControlTextBoxHotelPhone
+            // 
+            this.userControlTextBoxHotelPhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxHotelPhone.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotelPhone.Image")));
+            this.userControlTextBoxHotelPhone.LabelText = "Số điện thoại";
+            this.userControlTextBoxHotelPhone.Location = new System.Drawing.Point(9, 168);
+            this.userControlTextBoxHotelPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxHotelPhone.Name = "userControlTextBoxHotelPhone";
+            this.userControlTextBoxHotelPhone.Size = new System.Drawing.Size(300, 64);
+            this.userControlTextBoxHotelPhone.TabIndex = 9;
+            this.userControlTextBoxHotelPhone.TextBoxText = "";
+            // 
+            // userControlTextBoxHotelName
+            // 
+            this.userControlTextBoxHotelName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxHotelName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotelName.Image")));
+            this.userControlTextBoxHotelName.LabelText = "Tên khách sạn";
+            this.userControlTextBoxHotelName.Location = new System.Drawing.Point(9, 6);
+            this.userControlTextBoxHotelName.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxHotelName.Name = "userControlTextBoxHotelName";
+            this.userControlTextBoxHotelName.Size = new System.Drawing.Size(300, 64);
+            this.userControlTextBoxHotelName.TabIndex = 8;
+            this.userControlTextBoxHotelName.TextBoxText = "";
+            // 
+            // userControlAddService
+            // 
+            this.userControlAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlAddService.Location = new System.Drawing.Point(4, 305);
+            this.userControlAddService.Name = "userControlAddService";
+            this.userControlAddService.Services = ((System.Collections.Generic.List<string>)(resources.GetObject("userControlAddService.Services")));
+            this.userControlAddService.Size = new System.Drawing.Size(300, 100);
+            this.userControlAddService.TabIndex = 7;
+            // 
+            // userControlAddressHotel
+            // 
+            this.userControlAddressHotel.ComboBoxText = "";
+            this.userControlAddressHotel.Location = new System.Drawing.Point(9, 74);
+            this.userControlAddressHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlAddressHotel.Name = "userControlAddressHotel";
+            this.userControlAddressHotel.Size = new System.Drawing.Size(300, 90);
+            this.userControlAddressHotel.TabIndex = 2;
+            this.userControlAddressHotel.TextBoxText = "";
+            // 
+            // userControlCheckInOutHotel
+            // 
+            this.userControlCheckInOutHotel.Location = new System.Drawing.Point(9, 236);
+            this.userControlCheckInOutHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlCheckInOutHotel.MaskedTextBoxInText = "  :00";
+            this.userControlCheckInOutHotel.MaskedTextBoxOutText = "  :00";
+            this.userControlCheckInOutHotel.Name = "userControlCheckInOutHotel";
+            this.userControlCheckInOutHotel.Size = new System.Drawing.Size(300, 64);
+            this.userControlCheckInOutHotel.TabIndex = 4;
             // 
             // groupBoxDescribe
             // 
@@ -197,59 +251,6 @@ namespace Project
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
-            // userControlAddService
-            // 
-            this.userControlAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddService.Location = new System.Drawing.Point(9, 305);
-            this.userControlAddService.Name = "userControlAddService";
-            this.userControlAddService.Services = ((System.Collections.Generic.List<string>)(resources.GetObject("userControlAddService.Services")));
-            this.userControlAddService.Size = new System.Drawing.Size(300, 100);
-            this.userControlAddService.TabIndex = 5;
-            // 
-            // userControlAddressHotel
-            // 
-            this.userControlAddressHotel.ComboBoxText = "";
-            this.userControlAddressHotel.Location = new System.Drawing.Point(9, 74);
-            this.userControlAddressHotel.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlAddressHotel.Name = "userControlAddressHotel";
-            this.userControlAddressHotel.Size = new System.Drawing.Size(300, 90);
-            this.userControlAddressHotel.TabIndex = 2;
-            this.userControlAddressHotel.TextBoxText = "";
-            // 
-            // userControlCheckInOutHotel
-            // 
-            this.userControlCheckInOutHotel.Location = new System.Drawing.Point(9, 236);
-            this.userControlCheckInOutHotel.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlCheckInOutHotel.MaskedTextBoxInText = "  :00";
-            this.userControlCheckInOutHotel.MaskedTextBoxOutText = "  :00";
-            this.userControlCheckInOutHotel.Name = "userControlCheckInOutHotel";
-            this.userControlCheckInOutHotel.Size = new System.Drawing.Size(300, 64);
-            this.userControlCheckInOutHotel.TabIndex = 4;
-            // 
-            // userControlTextBoxName
-            // 
-            this.userControlTextBoxName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxName.Image")));
-            this.userControlTextBoxName.LabelText = "Tên khách sạn";
-            this.userControlTextBoxName.Location = new System.Drawing.Point(9, 6);
-            this.userControlTextBoxName.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxName.Name = "userControlTextBoxName";
-            this.userControlTextBoxName.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxName.TabIndex = 1;
-            this.userControlTextBoxName.TextBoxText = "";
-            // 
-            // userControlTextBoxPhone
-            // 
-            this.userControlTextBoxPhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxPhone.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxPhone.Image")));
-            this.userControlTextBoxPhone.LabelText = "Số Điện Thoại";
-            this.userControlTextBoxPhone.Location = new System.Drawing.Point(9, 168);
-            this.userControlTextBoxPhone.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxPhone.Name = "userControlTextBoxPhone";
-            this.userControlTextBoxPhone.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxPhone.TabIndex = 3;
-            this.userControlTextBoxPhone.TextBoxText = "";
-            // 
             // FUpdateService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,10 +276,8 @@ namespace Project
         #endregion
         private Button buttonUpdate;
         private Panel panelInfo;
-        private UserControls.UserControlTextBox userControlTextBoxPhone;
         private GroupBox groupBoxDescribe;
         private TextBox textBoxDescribe;
-        private UserControls.UserControlTextBox userControlTextBoxName;
         private UserControlCheckInOutHotel userControlCheckInOutHotel;
         private Panel panelImage;
         private Button buttonUploadImage;
@@ -288,5 +287,7 @@ namespace Project
         private Guna.UI2.WinForms.Guna2Button buttonRight;
         private Guna.UI2.WinForms.Guna2Button buttonLeft;
         private UserControlAddService userControlAddService;
+        private UserControlTextBoxHotel userControlTextBoxHotelPhone;
+        private UserControlTextBoxHotel userControlTextBoxHotelName;
     }
 }

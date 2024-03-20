@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlAddressHotel : UserControl
+    public partial class UserControlHomePaceSearchAddress : UserControl
     {
         private string curentAddress;
         private bool isProvince;
-        public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
         public string ComboBoxText
         {
             get
@@ -27,21 +26,9 @@ namespace Project
                 comboBox.Text = value;
             }
         }
-        public Address AddressValue
-        {
-            get 
-            { 
-                return new Address(comboBox.Text, TextBoxText); 
-            }
-            set
-            {
-                comboBox.Items.Add(value.ProvinceAndDistrict);
-                comboBox.Text = value.ProvinceAndDistrict;
-                textBox.Text = value.SpecificLocation;
-            }
-        }
 
-        public UserControlAddressHotel()
+
+        public UserControlHomePaceSearchAddress()
         {
             InitializeComponent();
             isProvince = true;

@@ -34,7 +34,7 @@ namespace Project
             Describe = describe;
         }
 
-        public void UpdateInfo(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
+        public void UpdateInfor(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
             Name = name;
             Phone = phone;
@@ -91,12 +91,12 @@ namespace Project
 
         public bool IsAddress(out string message)
         {
-            return CheckInfo.IsAddRess(Address.ProvinceAndDistrict, out message);
+            return CheckInfor.IsAddRess(Address.ProvinceAndDistrict, out message);
         }
 
         public bool IsPhone(out string message)
         {
-            return CheckInfo.IsPhone(Phone, out message);
+            return CheckInfor.IsPhone(Phone, out message);
         }
 
     }

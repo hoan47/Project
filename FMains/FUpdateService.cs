@@ -34,9 +34,9 @@ namespace Project
             if (hotel != null)
             {
                 panelImage.Visible = true;
-                userControlTextBoxName.TextBoxText = hotel.Name;
+                userControlTextBoxHotelName.TextBoxText = hotel.Name;
                 userControlAddressHotel.AddressValue = hotel.Address;
-                userControlTextBoxPhone.TextBoxText = hotel.Phone;
+                userControlTextBoxHotelPhone.TextBoxText = hotel.Phone;
                 userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
                 textBoxDescribe.Text = hotel.Describe;
@@ -66,8 +66,8 @@ namespace Project
 
             if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(FController.Instance.User.SelectNewIdHotel(), userControlTextBoxName.TextBoxText,
-                            userControlTextBoxPhone.TextBoxText,
+                Hotel hotel = new Hotel(FController.Instance.User.SelectNewIdHotel(), userControlTextBoxHotelName.TextBoxText,
+                            userControlTextBoxHotelPhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
@@ -84,9 +84,9 @@ namespace Project
                     }
                     else
                     {
-                        this.hotel.UpdateInfo(
-                            userControlTextBoxName.TextBoxText,
-                            userControlTextBoxPhone.TextBoxText,
+                        this.hotel.UpdateInfor(
+                            userControlTextBoxHotelName.TextBoxText,
+                            userControlTextBoxHotelPhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
@@ -152,6 +152,11 @@ namespace Project
             int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
             pictureBoxImage.Image = (currentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
+        }
+
+        private void panelInfo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

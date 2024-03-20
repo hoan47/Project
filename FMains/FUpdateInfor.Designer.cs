@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class FUpdateInfo
+    partial class FUpdateInfor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button buttonDeleteImage;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfor));
             System.Windows.Forms.Button buttonChangeImage;
             this.panelInfo = new System.Windows.Forms.Panel();
             this.buttonUpdate = new System.Windows.Forms.Button();

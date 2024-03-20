@@ -47,7 +47,7 @@ namespace Project
             NewPassword = newPassword;
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes)
+        public void UpdateInfor(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -61,7 +61,7 @@ namespace Project
             StandardizedName();
         }
 
-        public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes, Image image)
+        public void UpdateInfor(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes, Image image)
         {
             Name = name;
             DateOfBirth = dateOfBirth;
@@ -109,17 +109,17 @@ namespace Project
 
         public bool IsAccount(out string massage)
         {
-            return CheckInfo.IsAccount(UserName, out massage);
+            return CheckInfor.IsAccount(UserName, out massage);
         }
 
         public bool IsPassword(out string massage)
         {
-            return CheckInfo.IsPassword(Password, NewPassword, out massage);
+            return CheckInfor.IsPassword(Password, NewPassword, out massage);
         }
 
         public bool IsName(out string massage)
         {
-            return CheckInfo.IsName(Name, out massage);
+            return CheckInfor.IsName(Name, out massage);
         }
 
         public bool IsAddress(out string massage)
@@ -129,17 +129,17 @@ namespace Project
 
         public bool IsIdCard(out string massage)
         {
-            return CheckInfo.IsIdCard(IdCard, out massage);
+            return CheckInfor.IsIdCard(IdCard, out massage);
         }
 
         public bool IsPhone(out string massage)
         {
-            return CheckInfo.IsPhone(Phone, out massage);
+            return CheckInfor.IsPhone(Phone, out massage);
         }
 
         public bool IsEmail(out string massage)
         {
-            return CheckInfo.IsEmail(Email, out massage);
+            return CheckInfor.IsEmail(Email, out massage);
         }
     }
 }

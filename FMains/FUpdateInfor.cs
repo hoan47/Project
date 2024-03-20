@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FUpdateInfo : Form
+    public partial class FUpdateInfor : Form
     {
-        public FUpdateInfo()
+        public FUpdateInfor()
         {
             InitializeComponent();
         }
@@ -54,12 +54,12 @@ namespace Project
             {
                 Address address = new Address(userControlAddressEditAddress.ComboBoxText, userControlTextBoxEditSpecificLocation.TextBoxText);
                 
-                newUser.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
+                newUser.UpdateInfor(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
                 if (newUser.IsName(out message) == true && newUser.IsAddress(out message) == true && newUser.IsIdCard(out message) == true && newUser.IsEmail(out message) == true && newUser.IsPhone(out message) == true)
                 {
                     FLoading fLoading = new FLoading(this, 2000);
 
-                    FController.Instance.User.UpdateInfo(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
+                    FController.Instance.User.UpdateInfor(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
                     fLoading.OnLoading();
                     if (FController.Instance.InfoDAO.Update() == true)
                     {

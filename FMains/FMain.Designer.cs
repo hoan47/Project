@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.panelOption = new System.Windows.Forms.Panel();
             this.toolStripOption = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonInfo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonInfor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHomePage = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonPreferential = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +62,7 @@
             this.toolStripOption.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripOption.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStripOption.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonInfo,
+            this.toolStripButtonInfor,
             this.toolStripButtonHomePage,
             this.toolStripButtonHistory,
             this.toolStripButtonPreferential,
@@ -79,16 +79,16 @@
             // 
             // toolStripButtonInfo
             // 
-            this.toolStripButtonInfo.AutoSize = false;
-            this.toolStripButtonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonInfo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
-            this.toolStripButtonInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripButtonInfo.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButtonInfo.Name = "toolStripButtonInfo";
-            this.toolStripButtonInfo.Size = new System.Drawing.Size(200, 50);
-            this.toolStripButtonInfo.Text = "Thông Tin";
-            this.toolStripButtonInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolStripButtonInfo.Click += new System.EventHandler(this.ToolStripButtonClick);
+            this.toolStripButtonInfor.AutoSize = false;
+            this.toolStripButtonInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButtonInfor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
+            this.toolStripButtonInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonInfor.ImageTransparentColor = System.Drawing.Color.White;
+            this.toolStripButtonInfor.Name = "toolStripButtonInfo";
+            this.toolStripButtonInfor.Size = new System.Drawing.Size(200, 50);
+            this.toolStripButtonInfor.Text = "Thông Tin";
+            this.toolStripButtonInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonInfor.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
             // toolStripButtonHomePage
             // 
@@ -215,7 +215,7 @@
 
         private System.Windows.Forms.Panel panelOption;
         private System.Windows.Forms.ToolStrip toolStripOption;
-        private System.Windows.Forms.ToolStripButton toolStripButtonInfo;
+        private System.Windows.Forms.ToolStripButton toolStripButtonInfor;
         private System.Windows.Forms.ToolStripButton toolStripButtonHomePage;
         private System.Windows.Forms.ToolStripButton toolStripButtonHistory;
         private System.Windows.Forms.ToolStripButton toolStripButtonPreferential;

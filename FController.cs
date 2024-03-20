@@ -18,7 +18,7 @@ namespace Project
         public Client Client { get; private set; }
         public List<Hotel> Hotels { get; private set; }
         public AccountDAO AccountDAO { get; private set; }
-        public InfoDAO InfoDAO { get; private set; }
+        public InforDAO InfoDAO { get; private set; }
         public ClientDAO ClientDAO { get; private set; }
         public AddRessDAO AddressDAO { get; private set; }
         public HotelDAO HotelDAO { get; private set; }
@@ -30,7 +30,7 @@ namespace Project
             Instance = this;
             User = new User();
             AccountDAO = new AccountDAO();
-            InfoDAO = new InfoDAO();
+            InfoDAO = new InforDAO();
             ClientDAO = new ClientDAO();
             AddressDAO = new AddRessDAO();
             HotelDAO = new HotelDAO();

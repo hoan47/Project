@@ -73,7 +73,7 @@ namespace Project
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(219, 31);
             this.comboBox.TabIndex = 0;
-            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxCSelectedValueChanged);
+            this.comboBox.SelectedValueChanged += new System.EventHandler(this.ComboBoxSelectedValueChanged);
             this.comboBox.Enter += new System.EventHandler(this.ComboBoxEnter);
             this.comboBox.Leave += new System.EventHandler(this.ComboBoxLeave);
             // 

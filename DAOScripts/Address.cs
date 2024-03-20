@@ -46,7 +46,7 @@ namespace Project
 
         public bool IsAddRess(out string massage)
         {
-            return CheckInfo.IsAddRess(ProvinceAndDistrict, out massage);
+            return CheckInfor.IsAddRess(ProvinceAndDistrict, out massage);
         }
 
         static public void UpdateProvince(ComboBox comboBox)

@@ -1,7 +1,7 @@
 ﻿
-namespace Project.UserControls
+namespace Project
 {
-    partial class UserControlTextBox
+    partial class UserControlTextBoxHotel
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,7 +48,7 @@ namespace Project.UserControls
             this.groupBoxInforService.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxInforService.Name = "groupBoxInforService";
             this.groupBoxInforService.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxInforService.Size = new System.Drawing.Size(302, 64);
+            this.groupBoxInforService.Size = new System.Drawing.Size(300, 64);
             this.groupBoxInforService.TabIndex = 0;
             this.groupBoxInforService.TabStop = false;
             this.groupBoxInforService.Text = "groupBox1";
@@ -67,6 +67,7 @@ namespace Project.UserControls
             this.textBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.ForeColor = System.Drawing.Color.Black;
             this.textBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox.Location = new System.Drawing.Point(64, 29);
             this.textBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -88,15 +89,15 @@ namespace Project.UserControls
             this.pictureBoxInforService.TabStop = false;
             this.pictureBoxInforService.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // UserControlTextBox
+            // UserControlTextBoxHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBoxInforService);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "UserControlTextBox";
-            this.Size = new System.Drawing.Size(302, 64);
+            this.Name = "UserControlTextBoxHotel";
+            this.Size = new System.Drawing.Size(300, 64);
             this.groupBoxInforService.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInforService)).EndInit();
             this.ResumeLayout(false);

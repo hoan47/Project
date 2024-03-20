@@ -30,9 +30,9 @@ namespace Project
                 }
                 formChildCurrent.Close();
             }
-            if (formChild is FUpdateInfo)
+            if (formChild is FUpdateInfor)
             {
-                toolStripButtonInfo.BackColor = formChild.BackColor;
+                toolStripButtonInfor.BackColor = formChild.BackColor;
             }
             else if(formChild is FHomePage)
             {
@@ -78,9 +78,9 @@ namespace Project
                 toolStripButton.BackColor = colorNormal;
             }
 
-            if (sender == toolStripButtonInfo)
+            if (sender == toolStripButtonInfor)
             {
-                OpenFormChild(new FUpdateInfo());
+                OpenFormChild(new FUpdateInfor());
             }
             else if(FController.Instance.User.Client.RankInt == 0)
             {

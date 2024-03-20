@@ -8,15 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.UserControls
+namespace Project
 {
-    public partial class UserControlTextBox : UserControl
+    public partial class UserControlTextBoxHotel : UserControl
     {
         public string LabelText { get { return groupBoxInforService.Text; } set { groupBoxInforService.Text = value; } }
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
         public Image Image { get { return pictureBoxInforService.Image; } set { pictureBoxInforService.Image = value; } }
 
-        public UserControlTextBox()
+        public UserControlTextBoxHotel()
         {
             InitializeComponent();
         }

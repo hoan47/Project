@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    public static class CheckInfo
+    public static class CheckInfor
     {
         static public bool IsAccount(string userName, out string message)
         {
