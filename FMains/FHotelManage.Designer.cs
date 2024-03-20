@@ -1,4 +1,4 @@
-﻿namespace Project.FMains
+﻿namespace Project
 {
     partial class FHotelManage
     {
@@ -29,322 +29,218 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHotelManage));
-            this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2RadioButton7 = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2RadioButton6 = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2RadioButton5 = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxStatus = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.groupBoxDateTime = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.dateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.buttonEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.groupBoxButton = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.labelUpdatePrice = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
-            this.guna2GroupBox2.SuspendLayout();
-            this.guna2GroupBox4.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelAddRoom = new System.Windows.Forms.Label();
+            this.labelInfoHotel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButtonIsRepair = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioButtonIsRent = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioButtonIsEmpty = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioButtonIsAll = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.radioButtonIsOder = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.groupBoxStatus.SuspendLayout();
+            this.groupBoxDateTime.SuspendLayout();
+            this.groupBoxButton.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2RadioButton2
+            // groupBoxStatus
             // 
-            this.guna2RadioButton2.AutoSize = true;
-            this.guna2RadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2RadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton2.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2RadioButton2.CheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton2.ForeColor = System.Drawing.Color.Black;
-            this.guna2RadioButton2.Location = new System.Drawing.Point(12, 47);
-            this.guna2RadioButton2.Name = "guna2RadioButton2";
-            this.guna2RadioButton2.Size = new System.Drawing.Size(123, 24);
-            this.guna2RadioButton2.TabIndex = 2;
-            this.guna2RadioButton2.Text = "Phòng Đã Đặt";
-            this.guna2RadioButton2.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Black;
-            this.guna2RadioButton2.UseVisualStyleBackColor = false;
+            this.groupBoxStatus.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxStatus.BorderColor = System.Drawing.Color.Transparent;
+            this.groupBoxStatus.BorderRadius = 15;
+            this.groupBoxStatus.Controls.Add(this.radioButtonIsOder);
+            this.groupBoxStatus.Controls.Add(this.radioButtonIsAll);
+            this.groupBoxStatus.Controls.Add(this.radioButtonIsEmpty);
+            this.groupBoxStatus.Controls.Add(this.radioButtonIsRent);
+            this.groupBoxStatus.Controls.Add(this.radioButtonIsRepair);
+            this.groupBoxStatus.CustomBorderColor = System.Drawing.Color.Moccasin;
+            this.groupBoxStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBoxStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBoxStatus.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxStatus.Location = new System.Drawing.Point(2, 2);
+            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxStatus.Name = "groupBoxStatus";
+            this.groupBoxStatus.Size = new System.Drawing.Size(209, 115);
+            this.groupBoxStatus.TabIndex = 7;
+            this.groupBoxStatus.Text = "Trạng Thái Phòng";
             // 
-            // guna2TextBox1
+            // groupBoxDateTime
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(294, 171);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(315, 29);
-            this.guna2TextBox1.TabIndex = 2;
-            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.groupBoxDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxDateTime.BorderColor = System.Drawing.Color.Transparent;
+            this.groupBoxDateTime.BorderRadius = 15;
+            this.groupBoxDateTime.Controls.Add(this.dateTimePicker);
+            this.groupBoxDateTime.CustomBorderColor = System.Drawing.Color.Moccasin;
+            this.groupBoxDateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBoxDateTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBoxDateTime.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxDateTime.Location = new System.Drawing.Point(216, 2);
+            this.groupBoxDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDateTime.Name = "groupBoxDateTime";
+            this.groupBoxDateTime.Size = new System.Drawing.Size(252, 116);
+            this.groupBoxDateTime.TabIndex = 8;
+            this.groupBoxDateTime.Text = "Thời Gian";
             // 
-            // guna2CirclePictureBox1
+            // dateTimePicker
             // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(567, 174);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(20, 26);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 3;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.UseTransparentBackground = true;
+            this.dateTimePicker.BorderRadius = 10;
+            this.dateTimePicker.BorderThickness = 2;
+            this.dateTimePicker.Checked = true;
+            this.dateTimePicker.FillColor = System.Drawing.Color.PowderBlue;
+            this.dateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dateTimePicker.ForeColor = System.Drawing.Color.Black;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dateTimePicker.Location = new System.Drawing.Point(15, 64);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(225, 30);
+            this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 17, 10, 12, 12, 338);
             // 
-            // guna2GroupBox1
+            // buttonEdit
             // 
-            this.guna2GroupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox1.BorderRadius = 15;
-            this.guna2GroupBox1.Controls.Add(this.guna2RadioButton7);
-            this.guna2GroupBox1.Controls.Add(this.guna2RadioButton6);
-            this.guna2GroupBox1.Controls.Add(this.guna2RadioButton5);
-            this.guna2GroupBox1.Controls.Add(this.guna2RadioButton2);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Moccasin;
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(279, 142);
-            this.guna2GroupBox1.TabIndex = 7;
-            this.guna2GroupBox1.Text = "Trạng Thái Phòng";
+            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonEdit.BackgroundImage")));
+            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonEdit.BorderRadius = 10;
+            this.buttonEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonEdit.FillColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonEdit.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.ImageSize = new System.Drawing.Size(35, 35);
+            this.buttonEdit.Location = new System.Drawing.Point(43, 66);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(40, 40);
+            this.buttonEdit.TabIndex = 0;
+            this.buttonEdit.Click += new System.EventHandler(this.ButtonEditClick);
             // 
-            // guna2RadioButton7
+            // buttonAdd
             // 
-            this.guna2RadioButton7.AutoSize = true;
-            this.guna2RadioButton7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton7.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2RadioButton7.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton7.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2RadioButton7.CheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton7.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton7.ForeColor = System.Drawing.Color.Black;
-            this.guna2RadioButton7.Location = new System.Drawing.Point(12, 107);
-            this.guna2RadioButton7.Name = "guna2RadioButton7";
-            this.guna2RadioButton7.Size = new System.Drawing.Size(146, 24);
-            this.guna2RadioButton7.TabIndex = 7;
-            this.guna2RadioButton7.Text = "Tất Cả Các Phòng";
-            this.guna2RadioButton7.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton7.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton7.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton7.UncheckedState.InnerColor = System.Drawing.Color.Black;
-            this.guna2RadioButton7.UseVisualStyleBackColor = false;
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.BorderRadius = 10;
+            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAdd.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
+            this.buttonAdd.ImageSize = new System.Drawing.Size(35, 35);
+            this.buttonAdd.Location = new System.Drawing.Point(141, 66);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
+            this.buttonAdd.TabIndex = 4;
             // 
-            // guna2RadioButton6
+            // groupBoxButton
             // 
-            this.guna2RadioButton6.AutoSize = true;
-            this.guna2RadioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton6.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2RadioButton6.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton6.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2RadioButton6.CheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton6.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton6.ForeColor = System.Drawing.Color.Black;
-            this.guna2RadioButton6.Location = new System.Drawing.Point(155, 47);
-            this.guna2RadioButton6.Name = "guna2RadioButton6";
-            this.guna2RadioButton6.Size = new System.Drawing.Size(114, 24);
-            this.guna2RadioButton6.TabIndex = 6;
-            this.guna2RadioButton6.Text = "Phòng Trống";
-            this.guna2RadioButton6.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton6.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton6.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton6.UncheckedState.InnerColor = System.Drawing.Color.Black;
-            this.guna2RadioButton6.UseVisualStyleBackColor = false;
+            this.groupBoxButton.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxButton.BorderColor = System.Drawing.Color.Transparent;
+            this.groupBoxButton.BorderRadius = 15;
+            this.groupBoxButton.Controls.Add(this.buttonUpdate);
+            this.groupBoxButton.Controls.Add(this.labelUpdatePrice);
+            this.groupBoxButton.Controls.Add(this.panel2);
+            this.groupBoxButton.Controls.Add(this.panel1);
+            this.groupBoxButton.Controls.Add(this.labelAddRoom);
+            this.groupBoxButton.Controls.Add(this.labelInfoHotel);
+            this.groupBoxButton.Controls.Add(this.buttonAdd);
+            this.groupBoxButton.Controls.Add(this.buttonEdit);
+            this.groupBoxButton.CustomBorderColor = System.Drawing.Color.Moccasin;
+            this.groupBoxButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.groupBoxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.groupBoxButton.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxButton.Location = new System.Drawing.Point(472, 2);
+            this.groupBoxButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxButton.Name = "groupBoxButton";
+            this.groupBoxButton.Size = new System.Drawing.Size(307, 116);
+            this.groupBoxButton.TabIndex = 9;
+            this.groupBoxButton.Text = "Chỉnh Sửa";
             // 
-            // guna2RadioButton5
+            // buttonUpdate
             // 
-            this.guna2RadioButton5.AutoSize = true;
-            this.guna2RadioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.CheckedState.BorderColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.CheckedState.BorderThickness = 0;
-            this.guna2RadioButton5.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.CheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.CheckedState.InnerOffset = -4;
-            this.guna2RadioButton5.ForeColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.Location = new System.Drawing.Point(12, 77);
-            this.guna2RadioButton5.Name = "guna2RadioButton5";
-            this.guna2RadioButton5.Size = new System.Drawing.Size(148, 24);
-            this.guna2RadioButton5.TabIndex = 5;
-            this.guna2RadioButton5.Text = "Phòng Đang Thuê";
-            this.guna2RadioButton5.UncheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.UncheckedState.BorderThickness = 2;
-            this.guna2RadioButton5.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2RadioButton5.UncheckedState.InnerColor = System.Drawing.Color.Black;
-            this.guna2RadioButton5.UseVisualStyleBackColor = false;
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUpdate.BorderRadius = 10;
+            this.buttonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
+            this.buttonUpdate.Location = new System.Drawing.Point(234, 66);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 0;
             // 
-            // guna2GroupBox2
+            // labelUpdatePrice
             // 
-            this.guna2GroupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox2.BorderRadius = 15;
-            this.guna2GroupBox2.Controls.Add(this.guna2DateTimePicker3);
-            this.guna2GroupBox2.Controls.Add(this.label2);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Moccasin;
-            this.guna2GroupBox2.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(288, 3);
-            this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(364, 143);
-            this.guna2GroupBox2.TabIndex = 8;
-            this.guna2GroupBox2.Text = "Thời Gian";
+            this.labelUpdatePrice.AutoSize = true;
+            this.labelUpdatePrice.BackColor = System.Drawing.Color.Transparent;
+            this.labelUpdatePrice.Location = new System.Drawing.Point(214, 46);
+            this.labelUpdatePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUpdatePrice.Name = "labelUpdatePrice";
+            this.labelUpdatePrice.Size = new System.Drawing.Size(77, 15);
+            this.labelUpdatePrice.TabIndex = 14;
+            this.labelUpdatePrice.Text = "Cập Nhật Giá";
             // 
-            // guna2DateTimePicker3
+            // panel2
             // 
-            this.guna2DateTimePicker3.BorderRadius = 15;
-            this.guna2DateTimePicker3.Checked = true;
-            this.guna2DateTimePicker3.FillColor = System.Drawing.Color.PowderBlue;
-            this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(56, 70);
-            this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
-            this.guna2DateTimePicker3.Size = new System.Drawing.Size(300, 31);
-            this.guna2DateTimePicker3.TabIndex = 8;
-            this.guna2DateTimePicker3.Value = new System.DateTime(2024, 3, 17, 10, 12, 12, 338);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(7, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Time";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.Info;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button1.Location = new System.Drawing.Point(25, 76);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(59, 54);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
-            this.guna2Button1.MouseEnter += new System.EventHandler(this.guna2Button1_MouseEnter);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.SystemColors.Info;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button2.Location = new System.Drawing.Point(181, 70);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(59, 54);
-            this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            this.guna2Button2.MouseEnter += new System.EventHandler(this.guna2Button2_MouseEnter);
-            // 
-            // guna2GroupBox4
-            // 
-            this.guna2GroupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox4.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GroupBox4.BorderRadius = 15;
-            this.guna2GroupBox4.Controls.Add(this.guna2Button4);
-            this.guna2GroupBox4.Controls.Add(this.label1);
-            this.guna2GroupBox4.Controls.Add(this.panel2);
-            this.guna2GroupBox4.Controls.Add(this.panel1);
-            this.guna2GroupBox4.Controls.Add(this.label4);
-            this.guna2GroupBox4.Controls.Add(this.label3);
-            this.guna2GroupBox4.Controls.Add(this.guna2Button2);
-            this.guna2GroupBox4.Controls.Add(this.guna2Button1);
-            this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.Moccasin;
-            this.guna2GroupBox4.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GroupBox4.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox4.Location = new System.Drawing.Point(655, 3);
-            this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(384, 143);
-            this.guna2GroupBox4.TabIndex = 9;
-            this.guna2GroupBox4.Text = "Chỉnh Sửa";
-            this.guna2GroupBox4.Click += new System.EventHandler(this.guna2GroupBox4_Click);
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(200, 40);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 73);
+            this.panel2.TabIndex = 13;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(156, 44);
+            this.panel1.Location = new System.Drawing.Point(120, 40);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 90);
+            this.panel1.Size = new System.Drawing.Size(1, 73);
             this.panel1.TabIndex = 12;
             // 
-            // label4
+            // labelAddRoom
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(163, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Thêm Phòng";
+            this.labelAddRoom.AutoSize = true;
+            this.labelAddRoom.BackColor = System.Drawing.Color.Transparent;
+            this.labelAddRoom.Location = new System.Drawing.Point(124, 46);
+            this.labelAddRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAddRoom.Name = "labelAddRoom";
+            this.labelAddRoom.Size = new System.Drawing.Size(75, 15);
+            this.labelAddRoom.TabIndex = 11;
+            this.labelAddRoom.Text = "Thêm Phòng";
             // 
-            // label3
+            // labelInfoHotel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(3, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Thông Tin Khách Sạn";
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.BorderRadius = 15;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
-            this.guna2Button3.Location = new System.Drawing.Point(615, 167);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(52, 38);
-            this.guna2Button3.TabIndex = 10;
+            this.labelInfoHotel.AutoSize = true;
+            this.labelInfoHotel.BackColor = System.Drawing.Color.Transparent;
+            this.labelInfoHotel.Location = new System.Drawing.Point(0, 46);
+            this.labelInfoHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelInfoHotel.Name = "labelInfoHotel";
+            this.labelInfoHotel.Size = new System.Drawing.Size(118, 15);
+            this.labelInfoHotel.TabIndex = 10;
+            this.labelInfoHotel.Text = "Thông Tin Khách Sạn";
             // 
             // flowLayoutPanel1
             // 
@@ -352,96 +248,150 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 211);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 158);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1036, 417);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 352);
             this.flowLayoutPanel1.TabIndex = 11;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // panel2
+            // radioButtonIsRepair
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(265, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 90);
-            this.panel2.TabIndex = 13;
+            this.radioButtonIsRepair.AutoSize = true;
+            this.radioButtonIsRepair.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsRepair.CheckedState.BorderThickness = 0;
+            this.radioButtonIsRepair.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsRepair.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButtonIsRepair.CheckedState.InnerOffset = -4;
+            this.radioButtonIsRepair.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonIsRepair.Location = new System.Drawing.Point(102, 44);
+            this.radioButtonIsRepair.Name = "radioButtonIsRepair";
+            this.radioButtonIsRepair.Size = new System.Drawing.Size(103, 19);
+            this.radioButtonIsRepair.TabIndex = 8;
+            this.radioButtonIsRepair.Text = "Đang sữa chữa";
+            this.radioButtonIsRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButtonIsRepair.UncheckedState.BorderThickness = 2;
+            this.radioButtonIsRepair.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButtonIsRepair.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // label1
+            // radioButtonIsRent
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(268, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Cập Nhật Giá";
+            this.radioButtonIsRent.AutoSize = true;
+            this.radioButtonIsRent.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsRent.CheckedState.BorderThickness = 0;
+            this.radioButtonIsRent.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsRent.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButtonIsRent.CheckedState.InnerOffset = -4;
+            this.radioButtonIsRent.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonIsRent.Location = new System.Drawing.Point(10, 44);
+            this.radioButtonIsRent.Name = "radioButtonIsRent";
+            this.radioButtonIsRent.Size = new System.Drawing.Size(82, 19);
+            this.radioButtonIsRent.TabIndex = 9;
+            this.radioButtonIsRent.Text = "Đang Thuê";
+            this.radioButtonIsRent.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButtonIsRent.UncheckedState.BorderThickness = 2;
+            this.radioButtonIsRent.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButtonIsRent.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // guna2Button4
+            // radioButtonIsEmpty
             // 
-            this.guna2Button4.BorderRadius = 15;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.SystemColors.Info;
-            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.ImageSize = new System.Drawing.Size(35, 35);
-            this.guna2Button4.Location = new System.Drawing.Point(290, 69);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(59, 57);
-            this.guna2Button4.TabIndex = 0;
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.radioButtonIsEmpty.AutoSize = true;
+            this.radioButtonIsEmpty.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsEmpty.CheckedState.BorderThickness = 0;
+            this.radioButtonIsEmpty.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsEmpty.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButtonIsEmpty.CheckedState.InnerOffset = -4;
+            this.radioButtonIsEmpty.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonIsEmpty.Location = new System.Drawing.Point(10, 66);
+            this.radioButtonIsEmpty.Name = "radioButtonIsEmpty";
+            this.radioButtonIsEmpty.Size = new System.Drawing.Size(86, 19);
+            this.radioButtonIsEmpty.TabIndex = 10;
+            this.radioButtonIsEmpty.Text = "Đang Trống";
+            this.radioButtonIsEmpty.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButtonIsEmpty.UncheckedState.BorderThickness = 2;
+            this.radioButtonIsEmpty.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButtonIsEmpty.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // radioButtonIsAll
+            // 
+            this.radioButtonIsAll.AutoSize = true;
+            this.radioButtonIsAll.Checked = true;
+            this.radioButtonIsAll.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsAll.CheckedState.BorderThickness = 0;
+            this.radioButtonIsAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsAll.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButtonIsAll.CheckedState.InnerOffset = -4;
+            this.radioButtonIsAll.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonIsAll.Location = new System.Drawing.Point(10, 91);
+            this.radioButtonIsAll.Name = "radioButtonIsAll";
+            this.radioButtonIsAll.Size = new System.Drawing.Size(56, 19);
+            this.radioButtonIsAll.TabIndex = 11;
+            this.radioButtonIsAll.TabStop = true;
+            this.radioButtonIsAll.Text = "Tất cả";
+            this.radioButtonIsAll.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButtonIsAll.UncheckedState.BorderThickness = 2;
+            this.radioButtonIsAll.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButtonIsAll.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // radioButtonIsOder
+            // 
+            this.radioButtonIsOder.AutoSize = true;
+            this.radioButtonIsOder.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsOder.CheckedState.BorderThickness = 0;
+            this.radioButtonIsOder.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.radioButtonIsOder.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.radioButtonIsOder.CheckedState.InnerOffset = -4;
+            this.radioButtonIsOder.ForeColor = System.Drawing.Color.Black;
+            this.radioButtonIsOder.Location = new System.Drawing.Point(102, 66);
+            this.radioButtonIsOder.Name = "radioButtonIsOder";
+            this.radioButtonIsOder.Size = new System.Drawing.Size(59, 19);
+            this.radioButtonIsOder.TabIndex = 12;
+            this.radioButtonIsOder.Text = "Đã đặt";
+            this.radioButtonIsOder.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.radioButtonIsOder.UncheckedState.BorderThickness = 2;
+            this.radioButtonIsOder.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.radioButtonIsOder.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // FHotelManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.ClientSize = new System.Drawing.Size(780, 512);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2GroupBox4);
-            this.Controls.Add(this.guna2GroupBox2);
-            this.Controls.Add(this.guna2GroupBox1);
-            this.Controls.Add(this.guna2CirclePictureBox1);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.groupBoxButton);
+            this.Controls.Add(this.groupBoxDateTime);
+            this.Controls.Add(this.groupBoxStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FHotelManage";
             this.Text = "FHotelManagecs";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
-            this.guna2GroupBox1.PerformLayout();
-            this.guna2GroupBox2.ResumeLayout(false);
-            this.guna2GroupBox2.PerformLayout();
-            this.guna2GroupBox4.ResumeLayout(false);
-            this.guna2GroupBox4.PerformLayout();
+            this.groupBoxStatus.ResumeLayout(false);
+            this.groupBoxStatus.PerformLayout();
+            this.groupBoxDateTime.ResumeLayout(false);
+            this.groupBoxButton.ResumeLayout(false);
+            this.groupBoxButton.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton7;
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton6;
-        private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton5;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2GroupBox groupBoxStatus;
+        private Guna.UI2.WinForms.Guna2GroupBox groupBoxDateTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker;
+        private Guna.UI2.WinForms.Guna2Button buttonEdit;
+        private Guna.UI2.WinForms.Guna2Button buttonAdd;
+        private Guna.UI2.WinForms.Guna2GroupBox groupBoxButton;
+        private System.Windows.Forms.Label labelAddRoom;
+        private System.Windows.Forms.Label labelInfoHotel;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private System.Windows.Forms.Label labelUpdatePrice;
+        private Guna.UI2.WinForms.Guna2Button buttonUpdate;
+        private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsOder;
+        private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsAll;
+        private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsEmpty;
+        private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsRent;
+        private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsRepair;
     }
 }

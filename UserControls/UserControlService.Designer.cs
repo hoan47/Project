@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlHomePaceService
+    partial class UserControlService
     {
         /// <summary> 
         /// Required designer variable.

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHomePaceSearchAddress : UserControl
+    public partial class UserControlAddressRoom : UserControl
     {
         private string curentAddress;
         private bool isProvince;
@@ -28,7 +28,7 @@ namespace Project
         }
 
 
-        public UserControlHomePaceSearchAddress()
+        public UserControlAddressRoom()
         {
             InitializeComponent();
             isProvince = true;

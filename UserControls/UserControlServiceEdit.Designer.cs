@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlAddService
+    partial class UserControlServiceEdit
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,25 +29,25 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxService = new System.Windows.Forms.GroupBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.textBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.button = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.groupBoxService.SuspendLayout();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxService
             // 
-            this.groupBoxService.Controls.Add(this.listBox);
-            this.groupBoxService.Controls.Add(this.textBox);
-            this.groupBoxService.Controls.Add(this.button);
-            this.groupBoxService.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxService.Location = new System.Drawing.Point(0, 0);
-            this.groupBoxService.Name = "groupBoxService";
-            this.groupBoxService.Size = new System.Drawing.Size(300, 100);
-            this.groupBoxService.TabIndex = 66;
-            this.groupBoxService.TabStop = false;
-            this.groupBoxService.Text = "Dịch Vụ";
+            this.groupBox.Controls.Add(this.listBox);
+            this.groupBox.Controls.Add(this.textBox);
+            this.groupBox.Controls.Add(this.button);
+            this.groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox.Location = new System.Drawing.Point(0, 0);
+            this.groupBox.Name = "groupBoxService";
+            this.groupBox.Size = new System.Drawing.Size(300, 100);
+            this.groupBox.TabIndex = 66;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Dịch Vụ";
             // 
             // listBox
             // 
@@ -120,18 +120,18 @@ namespace Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBoxService);
+            this.Controls.Add(this.groupBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlAddService";
             this.Size = new System.Drawing.Size(300, 100);
-            this.groupBoxService.ResumeLayout(false);
+            this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBoxService;
+        private System.Windows.Forms.GroupBox groupBox;
         private Guna.UI2.WinForms.Guna2TextBox textBox;
         private Guna.UI2.WinForms.Guna2CircleButton button;
         private System.Windows.Forms.ListBox listBox;

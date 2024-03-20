@@ -35,12 +35,12 @@ namespace Project
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonHomePaceSearch = new System.Windows.Forms.Button();
             this.flowLayoutPanelHomePaceSearch = new System.Windows.Forms.FlowLayoutPanel();
-            this.userControlHomePaceService = new Project.UserControlHomePaceService();
-            this.userControlHomePaceSearchAddress = new Project.UserControlHomePaceSearchAddress();
-            this.userControlHomePaceSearchTimeOut = new Project.UserControlHomePaceSearchTime();
-            this.userControlHomePaceSearchTimeIn = new Project.UserControlHomePaceSearchTime();
-            this.userControlHomePaceSearchPrice = new Project.UserControlHomePaceSearchPrice();
-            this.userControlHomePaceSearchPeople = new Project.UserControlHomePaceSearchPeople();
+            this.userControlHomePaceService = new Project.UserControlService();
+            this.userControlHomePaceSearchAddress = new Project.UserControlAddressRoom();
+            this.userControlHomePaceSearchTimeOut = new Project.UserControlDateTimePacker();
+            this.userControlHomePaceSearchTimeIn = new Project.UserControlDateTimePacker();
+            this.userControlHomePaceSearchPrice = new Project.UserControlTextBoxRoom();
+            this.userControlHomePaceSearchPeople = new Project.UserControlNumeric();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,13 +150,13 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private UserControlHomePaceSearchPeople userControlHomePaceSearchPeople;
-        private UserControlHomePaceSearchPrice userControlHomePaceSearchPrice;
-        private UserControlHomePaceSearchTime userControlHomePaceSearchTimeIn;
-        private UserControlHomePaceSearchTime userControlHomePaceSearchTimeOut;
-        private UserControlHomePaceSearchAddress userControlHomePaceSearchAddress;
+        private UserControlNumeric userControlHomePaceSearchPeople;
+        private UserControlTextBoxRoom userControlHomePaceSearchPrice;
+        private UserControlDateTimePacker userControlHomePaceSearchTimeIn;
+        private UserControlDateTimePacker userControlHomePaceSearchTimeOut;
+        private UserControlAddressRoom userControlHomePaceSearchAddress;
         private System.Windows.Forms.Button buttonHomePaceSearch;
-        private UserControlHomePaceService userControlHomePaceService;
+        private UserControlService userControlHomePaceService;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelHomePaceSearch;
     }
 }

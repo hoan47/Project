@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project
+namespace Project.FMains
 {
-    public partial class UserControlTextBoxRoom : UserControl
+    public partial class FUpdateRoom : Form
     {
-        public UserControlTextBoxRoom()
+        public FUpdateRoom()
         {
             InitializeComponent();
         }

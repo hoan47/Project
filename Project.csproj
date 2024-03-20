@@ -200,11 +200,11 @@
     <Compile Include="FMains\FInforRoom.designer.cs">
       <DependentUpon>FInforRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMains\FRoom.cs">
+    <Compile Include="FMains\FUpdateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMains\FRoom.designer.cs">
-      <DependentUpon>FRoom.cs</DependentUpon>
+    <Compile Include="FMains\FUpdateRoom.Designer.cs">
+      <DependentUpon>FUpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessScripts\ProcessCheckInfor.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
@@ -252,11 +252,11 @@
     <Compile Include="FMains\FSetting.Designer.cs">
       <DependentUpon>FSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMains\FUpdateService.cs">
+    <Compile Include="FMains\FUpdateHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMains\FUpdateService.Designer.cs">
-      <DependentUpon>FUpdateService.cs</DependentUpon>
+    <Compile Include="FMains\FUpdateHotel.Designer.cs">
+      <DependentUpon>FUpdateHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="FMains\FHistory.cs">
       <SubType>Form</SubType>
@@ -450,9 +450,6 @@
     <EmbeddedResource Include="FMains\FPreferential.resx">
       <DependentUpon>FPreferential.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMains\FRoom.resx">
-      <DependentUpon>FRoom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FMains\FService.resx">
       <DependentUpon>FService.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,8 +460,11 @@
       <DependentUpon>FLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMains\FUpdateService.resx">
-      <DependentUpon>FUpdateService.cs</DependentUpon>
+    <EmbeddedResource Include="FMains\FUpdateHotel.resx">
+      <DependentUpon>FUpdateHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\FUpdateRoom.resx">
+      <DependentUpon>FUpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

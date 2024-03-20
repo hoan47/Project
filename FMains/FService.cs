@@ -20,15 +20,15 @@ namespace Project
 
         private void ButtonAddClick(object sender, EventArgs e)
         {
-            OpenHotel();
+            ((FMain)Tag).OpenFormChild(new FUpdateHotel(null));
         }
 
-        public void OpenHotel(Hotel hotel = null)
+        public void OpenHotelManager(Hotel hotel = null)
         {
-            ((FMain)Tag).OpenFormChild(new FUpdateService(hotel));
+            ((FMain)Tag).OpenFormChild(new FHotelManage(hotel));
         }
 
-        private  void LoadData()
+        private void LoadData()
         {
             if (FController.Instance.User.Hotels == null)
             {
@@ -36,7 +36,9 @@ namespace Project
             }
             foreach(Hotel hotel in FController.Instance.User.Hotels)
             {
-                flowLayoutPanelHottel.Controls.Add(new UserControlHotel(this, hotel));
+                UserControlHotel userControlHotel = new UserControlHotel(hotel);
+                userControlHotel.Tag = this;
+                flowLayoutPanelHottel.Controls.Add(userControlHotel);
             }    
         }
     }

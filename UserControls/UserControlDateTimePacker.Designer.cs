@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlHomePaceSearchTime
+    partial class UserControlDateTimePacker
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHomePaceSearchTime));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlDateTimePacker));
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.groupBoxTime = new System.Windows.Forms.GroupBox();
             this.guna2DateTimePickerTime = new Guna.UI2.WinForms.Guna2DateTimePicker();

@@ -54,7 +54,7 @@ namespace Project
             {
                 toolStripButtonSetting.BackColor = formChild.BackColor;
             }
-            else if(formChild is FUpdateService)
+            else if(formChild is FUpdateHotel)
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
             }

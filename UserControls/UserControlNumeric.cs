@@ -10,9 +10,13 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHomePaceSearchPeople : UserControl
+    public partial class UserControlNumeric : UserControl
     {
-        public UserControlHomePaceSearchPeople()
+        public string GrupBoxText { get { return groupBox.Text; } set { groupBox.Text = value; } }
+        public Image Image { get { return pictureBox.Image; } set { pictureBox.Image = value; } }
+        public int NumericValue { get { return (int)numericUpDownPeople.Value; } set { numericUpDownPeople.Value = value; } }
+
+        public UserControlNumeric()
         {
             InitializeComponent();
         }

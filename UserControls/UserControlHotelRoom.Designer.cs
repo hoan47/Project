@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlHomePaceSearchRoom
+    partial class UserControlHotelRoom
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHomePaceSearchRoom));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotelRoom));
             this.labelHomePaceSearchRoomName = new System.Windows.Forms.Label();
             this.pictureBoxHomePaceSearchRoom = new System.Windows.Forms.PictureBox();
             this.labelHomePaceSearchRoomAddress = new System.Windows.Forms.Label();

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FUpdateService : Form
+    public partial class FUpdateHotel : Form
     {
         private Hotel hotel;
         private Image_ currentImage;
-        public FUpdateService(Hotel hotel)
+        public FUpdateHotel(Hotel hotel)
         {
             InitializeComponent();
             this.hotel = hotel;

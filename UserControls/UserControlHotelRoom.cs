@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHomePaceSearchRoom : UserControl
+    public partial class UserControlHotelRoom : UserControl
     {
-        public UserControlHomePaceSearchRoom()
+        public UserControlHotelRoom()
         {
             InitializeComponent();
         }

@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlAddService : UserControl
+    public partial class UserControlServiceEdit : UserControl
     {
+        public string GroupBoxText { get { return groupBox.Text; } set { groupBox.Text = value; } }
+        public string TextBoxPlaceholderText { get { return textBox.PlaceholderText; } set { textBox.PlaceholderText = value; } }
         public List<string> Services
         {
             get 
@@ -25,7 +27,7 @@ namespace Project
             }
         }
 
-        public UserControlAddService()
+        public UserControlServiceEdit()
         {
             InitializeComponent();
         }

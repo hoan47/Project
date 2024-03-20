@@ -13,12 +13,10 @@ namespace Project
     public partial class UserControlHotel : UserControl
     {
         private Hotel hotel;
-        private FService fService;
 
-        public UserControlHotel(FService fService, Hotel hotel)
+        public UserControlHotel(Hotel hotel)
         {
             this.hotel = hotel;
-            this.fService = fService;
             InitializeComponent();
             groupBox.Text = "Tên Khách Sạn: " + hotel.Name;
             labelAddress.Text = hotel.Address.AddressValue;
@@ -29,7 +27,7 @@ namespace Project
 
         public void UserControlHottelDoubleClick(object sender, EventArgs e)
         {
-            fService.OpenHotel(hotel);
+            ((FService)Tag).OpenHotelManager(hotel);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Project
 {
-    partial class FUpdateService
+    partial class FUpdateHotel
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateService));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateHotel));
             this.panelInfo = new System.Windows.Forms.Panel();
             this.userControlTextBoxHotelPhone = new Project.UserControlTextBoxHotel();
             this.userControlTextBoxHotelName = new Project.UserControlTextBoxHotel();
-            this.userControlAddService = new Project.UserControlAddService();
+            this.userControlAddService = new Project.UserControlServiceEdit();
             this.userControlAddressHotel = new Project.UserControlAddressHotel();
             this.userControlCheckInOutHotel = new Project.UserControlCheckInOutHotel();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
@@ -95,11 +95,13 @@ namespace Project
             // userControlAddService
             // 
             this.userControlAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlAddService.GroupBoxText = "Dịch Vụ";
             this.userControlAddService.Location = new System.Drawing.Point(4, 305);
             this.userControlAddService.Name = "userControlAddService";
             this.userControlAddService.Services = ((System.Collections.Generic.List<string>)(resources.GetObject("userControlAddService.Services")));
             this.userControlAddService.Size = new System.Drawing.Size(300, 100);
             this.userControlAddService.TabIndex = 7;
+            this.userControlAddService.TextBoxPlaceholderText = "Thêm dịch vụ";
             // 
             // userControlAddressHotel
             // 
@@ -251,7 +253,7 @@ namespace Project
             this.buttonUpdate.UseVisualStyleBackColor = false;
             this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
-            // FUpdateService
+            // FUpdateHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -262,7 +264,7 @@ namespace Project
             this.Controls.Add(this.buttonUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FUpdateService";
+            this.Name = "FUpdateHotel";
             this.Text = "FUpdateService";
             this.panelInfo.ResumeLayout(false);
             this.groupBoxDescribe.ResumeLayout(false);
@@ -286,7 +288,7 @@ namespace Project
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxImage;
         private Guna.UI2.WinForms.Guna2Button buttonRight;
         private Guna.UI2.WinForms.Guna2Button buttonLeft;
-        private UserControlAddService userControlAddService;
+        private UserControlServiceEdit userControlAddService;
         private UserControlTextBoxHotel userControlTextBoxHotelPhone;
         private UserControlTextBoxHotel userControlTextBoxHotelName;
     }

@@ -11,96 +11,19 @@ using System.Threading.Tasks;
 using System.Transactions;
 using System.Windows.Forms;
 
-namespace Project.FMains
+namespace Project
 {
     public partial class FHotelManage : Form
     {
-        public FHotelManage()
+        private Hotel hotel;
+
+        public FHotelManage(Hotel hotel)
         {
             InitializeComponent();
-           
-            for(int i=1;i<5;i++)
-            {
-                flowLayoutPanel1.Controls.Add(new UserControlRoom());
-            }
-            
+            this.hotel = hotel;
         }
 
-        private void guna2HtmlToolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlToolTip1_Popup_1(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GroupBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ContainerControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void SetButtonToolTip(Guna2Button button, string tooltipText)
-        {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(button, tooltipText);
-        }
-        private void guna2Button2_MouseEnter(object sender, EventArgs e)
-        {
-            SetButtonToolTip(guna2Button2, "Thêm Phòng");
-        }
-
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_MouseEnter(object sender, EventArgs e)
-        {
-            SetButtonToolTip(guna2Button1, "Thông Tin Khách Sạn");
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void ButtonEditClick(object sender, EventArgs e)
         {
 
         }

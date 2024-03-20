@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlHomePaceSearchAddress
+    partial class UserControlAddressRoom
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHomePaceSearchAddress));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddressRoom));
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.comboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();

@@ -17,7 +17,7 @@ namespace Project
             InitializeComponent();
             for(int i=0; i<10; i++)
             {
-                flowLayoutPanelHomePaceSearch.Controls.Add(new UserControlHomePaceSearchRoom());
+                flowLayoutPanelHomePaceSearch.Controls.Add(new UserControlHotelRoom());
             }
         }
 
