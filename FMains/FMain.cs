@@ -66,6 +66,7 @@ namespace Project
             formChild.TopLevel = false;
             panelMain.Controls.Add(formChild);
             formChild.BringToFront();
+            formChild.Tag = this;
             formChild.Show();
             fLoading.OffLoading();
         }
@@ -99,7 +100,7 @@ namespace Project
             }
             else if(sender == toolStripButtonService)
             {
-                OpenFormChild(new FService(this));
+                OpenFormChild(new FService());
             }
             else if(sender == toolStripButtonSetting)
             {

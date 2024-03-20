@@ -52,6 +52,10 @@ namespace Project
 
         private void ButtonClick(object sender, EventArgs e)
         {
+            if(textBox.Text == string.Empty)
+            {
+                return;
+            }    
             if(listBox.Items.Contains(textBox.Text) == true)
             {
                 listBox.Items.Remove(textBox.Text);

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project
@@ -33,7 +30,7 @@ namespace Project
 
         public static Image ByteToImageArray(byte[] bytes)
         {
-            MemoryStream ms = null; 
+            MemoryStream ms = null;
 
             try
             {
@@ -49,30 +46,6 @@ namespace Project
                 ms?.Close();
             }
             return null;
-        }
-
-        public static bool Compare(Image image1, Image image2)
-        {
-            if (image1.Width != image2.Width || image1.Height != image2.Height)
-            {
-                return false;
-            }
-
-            Bitmap bitmap1 = new Bitmap(image1);
-            Bitmap bitmap2 = new Bitmap(image2);
-
-            for (int x = 0; x < image1.Width; x++)
-            {
-                for (int y = 0; y < image1.Height; y++)
-                {
-                    if (bitmap1.GetPixel(x, y) != bitmap2.GetPixel(x, y))
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true; 
         }
 
         static public Image OpenFileImageDialog()

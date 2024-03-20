@@ -9,7 +9,6 @@ namespace Project
 {
     public class Hotel
     {
-        private List<Room> rooms;
         public int IdHotel { get; private set; }
         public string Name { get; private set; }
         public string Phone { get; private set; }
@@ -17,12 +16,12 @@ namespace Project
         public TimeSpan CheckIn { get; private set; }
         public TimeSpan CheckOut { get; private set; }
         public string Describe { get; private set; }
+        public List<Image_> Images { get; private set; }
         public List<string> Services { get; private set; }
-        public List<Image> Images { get; private set; }
+        public List<Room> rooms { get; private set; }
 
         public Hotel()
         { }
-
 
         public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
@@ -50,13 +49,18 @@ namespace Project
             Services = services;
         }
 
-        public void AddImage(Image image)
+        public void AddImage(Image_ image)
         {
             if (Images == null)
             {
-                Images = new List<Image>();
+                Images = new List<Image_>();
             }
             Images.Add(image);
+        }
+
+        public int SelectNewIdImage()
+        {
+            return Images != null ? Images.Max(i => i.IdImage) + 1 : 0;
         }
 
         public void AddRoom(Room room)
@@ -66,6 +70,12 @@ namespace Project
                 rooms = new List<Room>();
             }
             rooms.Add(room);
+        }
+
+        public int SelectNewIdRoom()
+        {
+            return 0;
+            //return Images != null ? rooms.Max(i => i) + 1 : 0;
         }
 
         public bool IsName(out string message)
@@ -89,5 +99,19 @@ namespace Project
             return CheckInfo.IsPhone(Phone, out message);
         }
 
+    }
+}
+
+public class Image_
+{
+    public int IdImage { get; private set; }
+    public byte[] ImageBytes { get; private set; }
+    public Image Image { get; private set; }
+
+    public Image_(int idImage, byte[] imageBytes, Image image)
+    {
+        IdImage = idImage;
+        ImageBytes = imageBytes;
+        Image = image;
     }
 }

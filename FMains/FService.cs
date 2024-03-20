@@ -1,5 +1,4 @@
-﻿using Project.FMains;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +12,9 @@ namespace Project
 {
     public partial class FService : Form
     {
-        private FMain fMain;
-
-        public FService(FMain fMain)
+        public FService()
         {
             InitializeComponent();
-            this.fMain = fMain;
             LoadData();
         }
 
@@ -29,7 +25,7 @@ namespace Project
 
         public void OpenHotel(Hotel hotel = null)
         {
-            fMain.OpenFormChild(new FUpdateService(hotel));
+            ((FMain)Tag).OpenFormChild(new FUpdateService(hotel));
         }
 
         private  void LoadData()

@@ -15,13 +15,12 @@ namespace Project
     public partial class FUpdateService : Form
     {
         private Hotel hotel;
-        private Image cureentImage;
-
+        private Image_ currentImage;
         public FUpdateService(Hotel hotel)
         {
             InitializeComponent();
             this.hotel = hotel;
-            pictureBoxImage.Image = cureentImage = IsZeroImage() == true ? Properties.Resources.noImage : hotel.Images.First();
+            currentImage = null;
             LoadData();
         }
 
@@ -32,7 +31,7 @@ namespace Project
 
         private void LoadData()
         {
-            if(hotel != null)
+            if (hotel != null)
             {
                 panelImage.Visible = true;
                 userControlTextBoxName.TextBoxText = hotel.Name;
@@ -42,11 +41,20 @@ namespace Project
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
                 textBoxDescribe.Text = hotel.Describe;
                 userControlAddService.Services = hotel.Services;
+                if (hotel.Images != null)
+                {
+                    pictureBoxImage.Image = hotel.Images.First().Image;
+                    currentImage = hotel.Images.First();
+                }
+                else
+                {
+                    pictureBoxImage.Image = Properties.Resources.noImage;
+                }
             }
             else
             {
                 panelImage.Visible = false;
-            }    
+            }
         }
 
         private void ButtonUpdateClick(object sender, EventArgs e)
@@ -58,7 +66,7 @@ namespace Project
 
             if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(FController.Instance.User.Hotels.Count, userControlTextBoxName.TextBoxText,
+                Hotel hotel = new Hotel(FController.Instance.User.SelectNewIdHotel(), userControlTextBoxName.TextBoxText,
                             userControlTextBoxPhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
@@ -103,10 +111,10 @@ namespace Project
 
             if (image != null)
             {
-                hotel.AddImage(image);
-                FController.Instance.ImageHotelDAO.Insert(hotel, image);
+                currentImage = new Image_(hotel.SelectNewIdImage(), ProcessImage.ImageToByteArray(image), image);
+                hotel.AddImage(currentImage);
+                FController.Instance.ImageHotelDAO.Insert(hotel, currentImage);
                 pictureBoxImage.Image = image;
-                cureentImage = image;
             }
         }
 
@@ -116,12 +124,12 @@ namespace Project
             {
                 return;
             }    
-            int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
+            int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
-            hotel.Images.Remove(cureentImage);
-            FController.Instance.ImageHotelDAO.Delete(hotel, cureentImage);
-            pictureBoxImage.Image = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : pictureBoxImage.Image = Properties.Resources.noImage;
-            cureentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
+            hotel.Images.Remove(currentImage);
+            FController.Instance.ImageHotelDAO.Delete(hotel, currentImage);
+            currentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
+            pictureBoxImage.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
         }
 
         private void ButtonLeftClick(object sender, EventArgs e)
@@ -130,9 +138,9 @@ namespace Project
             {
                 return;
             }
-            int indexImage = hotel.Images.IndexOf(cureentImage) - 1;
+            int indexImage = hotel.Images.IndexOf(currentImage) - 1;
 
-            pictureBoxImage.Image = cureentImage =  indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage];
+            pictureBoxImage.Image = (currentImage = indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage]).Image;
         }
 
         private void ButtonRightClick(object sender, EventArgs e)
@@ -141,9 +149,9 @@ namespace Project
             {
                 return;
             }
-            int indexImage = hotel.Images.IndexOf(cureentImage) + 1;
+            int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
-            pictureBoxImage.Image = cureentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage];
+            pictureBoxImage.Image = (currentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
         }
     }
 }

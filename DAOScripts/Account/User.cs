@@ -61,7 +61,6 @@ namespace Project
             StandardizedName();
         }
 
-
         public void UpdateInfo(string name, DateTime dateOfBirth, string gender, Address address, string idCard, string email, string phone, byte[] imageBytes, Image image)
         {
             Name = name;
@@ -83,6 +82,11 @@ namespace Project
                 Hotels = new List<Hotel>();
             }
             Hotels.Add(hotel);
+        }
+
+        public int SelectNewIdHotel()
+        {
+            return Hotels == null ? 0 : Hotels.Max(h => h.IdHotel) + 1;
         }
 
         public Hotel GetIndex(int index)

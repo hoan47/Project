@@ -68,7 +68,7 @@ namespace Project
             this.listBox.Location = new System.Drawing.Point(10, 40);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(280, 53);
-            this.listBox.TabIndex = 3;
+            this.listBox.TabIndex = 2;
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.ListBoxSelectedIndexChanged);
             // 
             // textBox
@@ -93,7 +93,7 @@ namespace Project
             this.textBox.PlaceholderText = "Thêm dịch vụ";
             this.textBox.SelectedText = "";
             this.textBox.Size = new System.Drawing.Size(160, 25);
-            this.textBox.TabIndex = 2;
+            this.textBox.TabIndex = 0;
             this.textBox.TextChanged += new System.EventHandler(this.TextBoxTextChanged);
             // 
             // button
