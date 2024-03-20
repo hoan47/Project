@@ -30,7 +30,7 @@ namespace Project.FMains
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             CheckBox newCheckBox = new CheckBox();
-            string inputText = ShowInputDialog("Dịch Vụ Khác");
+            string inputText = ShowInputDialog(" Dịch Vụ Khác");
             newCheckBox.Text = inputText;
             checkedListBox1.Items.Add(newCheckBox.Text);
             checkedListBox1.Refresh();
@@ -65,6 +65,11 @@ namespace Project.FMains
         }
 
         private void userControlBackground1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
 
         }

@@ -33,6 +33,7 @@
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2NumericUpDown2 = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -41,19 +42,22 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.userControlBackground1 = new Project.UserControls.UserControlBackground();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
+            this.userControlBackground1 = new Project.UserControls.UserControlBackground();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2NumericUpDown3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
@@ -64,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel5
@@ -87,7 +93,7 @@
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(672, 223);
+            this.guna2TextBox2.Location = new System.Drawing.Point(672, 377);
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
@@ -100,7 +106,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(539, 241);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(548, 398);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(73, 20);
@@ -116,11 +122,29 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(489, 360);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 307);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(407, 258);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(434, 234);
             this.guna2GroupBox1.TabIndex = 45;
             this.guna2GroupBox1.Text = "Tiện Nghi";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 30;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Location = new System.Drawing.Point(363, 12);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(28, 25);
+            this.guna2Button1.TabIndex = 20;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // checkedListBox1
             // 
@@ -137,7 +161,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(4, 44);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(399, 202);
+            this.checkedListBox1.Size = new System.Drawing.Size(426, 246);
             this.checkedListBox1.TabIndex = 19;
             // 
             // guna2TextBox3
@@ -243,15 +267,6 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(299, 42);
             this.guna2TextBox1.TabIndex = 39;
             // 
-            // userControlBackground1
-            // 
-            this.userControlBackground1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.userControlBackground1.Location = new System.Drawing.Point(0, 1);
-            this.userControlBackground1.Name = "userControlBackground1";
-            this.userControlBackground1.Size = new System.Drawing.Size(1040, 630);
-            this.userControlBackground1.TabIndex = 0;
-            this.userControlBackground1.Load += new System.EventHandler(this.userControlBackground1_Load);
-            // 
             // guna2PictureBox5
             // 
             this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
@@ -267,7 +282,7 @@
             // 
             this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(493, 223);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(489, 377);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
             this.guna2PictureBox4.Size = new System.Drawing.Size(39, 41);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -307,28 +322,11 @@
             this.guna2PictureBox1.TabIndex = 46;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 30;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(363, 12);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(28, 25);
-            this.guna2Button1.TabIndex = 20;
-            // 
             // buttonRight
             // 
             this.buttonRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRight.BackgroundImage")));
             this.buttonRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonRight.Location = new System.Drawing.Point(325, 241);
+            this.buttonRight.Location = new System.Drawing.Point(260, 236);
             this.buttonRight.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRight.Name = "buttonRight";
             this.buttonRight.Size = new System.Drawing.Size(37, 38);
@@ -339,7 +337,7 @@
             // 
             this.buttonLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonLeft.BackgroundImage")));
             this.buttonLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonLeft.Location = new System.Drawing.Point(96, 241);
+            this.buttonLeft.Location = new System.Drawing.Point(31, 236);
             this.buttonLeft.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLeft.Name = "buttonLeft";
             this.buttonLeft.Size = new System.Drawing.Size(39, 39);
@@ -349,7 +347,7 @@
             // pictureBoxImage
             // 
             this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxImage.Location = new System.Drawing.Point(141, 20);
+            this.pictureBoxImage.Location = new System.Drawing.Point(76, 15);
             this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(187, 187);
@@ -362,7 +360,7 @@
             this.buttonDeleteImage.BackColor = System.Drawing.SystemColors.Info;
             this.buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
             this.buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonDeleteImage.Location = new System.Drawing.Point(341, 123);
+            this.buttonDeleteImage.Location = new System.Drawing.Point(276, 118);
             this.buttonDeleteImage.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDeleteImage.Name = "buttonDeleteImage";
             this.buttonDeleteImage.Size = new System.Drawing.Size(43, 42);
@@ -374,7 +372,7 @@
             this.buttonUploadImage.BackColor = System.Drawing.SystemColors.Info;
             this.buttonUploadImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUploadImage.BackgroundImage")));
             this.buttonUploadImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUploadImage.Location = new System.Drawing.Point(341, 170);
+            this.buttonUploadImage.Location = new System.Drawing.Point(276, 165);
             this.buttonUploadImage.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUploadImage.Name = "buttonUploadImage";
             this.buttonUploadImage.Size = new System.Drawing.Size(43, 41);
@@ -385,12 +383,74 @@
             // 
             this.pictureBoxBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackground.BackgroundImage")));
             this.pictureBoxBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxBackground.Location = new System.Drawing.Point(68, 11);
+            this.pictureBoxBackground.Location = new System.Drawing.Point(3, 6);
             this.pictureBoxBackground.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxBackground.Name = "pictureBoxBackground";
             this.pictureBoxBackground.Size = new System.Drawing.Size(332, 203);
             this.pictureBoxBackground.TabIndex = 35;
             this.pictureBoxBackground.TabStop = false;
+            // 
+            // userControlBackground1
+            // 
+            this.userControlBackground1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.userControlBackground1.Location = new System.Drawing.Point(0, 0);
+            this.userControlBackground1.Name = "userControlBackground1";
+            this.userControlBackground1.Size = new System.Drawing.Size(1040, 630);
+            this.userControlBackground1.TabIndex = 0;
+            this.userControlBackground1.Load += new System.EventHandler(this.userControlBackground1_Load);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(489, 231);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(565, 254);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(114, 20);
+            this.guna2HtmlLabel6.TabIndex = 56;
+            this.guna2HtmlLabel6.Text = "Số Lượng Phòng";
+            // 
+            // guna2NumericUpDown3
+            // 
+            this.guna2NumericUpDown3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2NumericUpDown3.BorderRadius = 15;
+            this.guna2NumericUpDown3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown3.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2NumericUpDown3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2NumericUpDown3.Location = new System.Drawing.Point(705, 244);
+            this.guna2NumericUpDown3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2NumericUpDown3.Name = "guna2NumericUpDown3";
+            this.guna2NumericUpDown3.Size = new System.Drawing.Size(127, 40);
+            this.guna2NumericUpDown3.TabIndex = 57;
+            this.guna2NumericUpDown3.UpDownButtonFillColor = System.Drawing.Color.DarkSalmon;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.Ivory;
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.CornflowerBlue;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2Button2.Location = new System.Drawing.Point(689, 513);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(68, 65);
+            this.guna2Button2.TabIndex = 58;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // FRoom
             // 
@@ -399,6 +459,10 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.guna2NumericUpDown3);
+            this.Controls.Add(this.guna2HtmlLabel6);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2PictureBox5);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2PictureBox4);
@@ -437,6 +501,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +534,9 @@
         private System.Windows.Forms.Button buttonUploadImage;
         private System.Windows.Forms.PictureBox pictureBoxBackground;
         private UserControls.UserControlBackground userControlBackground1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

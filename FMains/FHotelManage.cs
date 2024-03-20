@@ -1,4 +1,5 @@
-﻿using Project.UserControls;
+﻿using Guna.UI2.WinForms;
+using Project.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace Project.FMains
 {
     public partial class FHotelManage : Form
     {
-       
         public FHotelManage()
         {
             InitializeComponent();
@@ -72,6 +72,35 @@ namespace Project.FMains
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void SetButtonToolTip(Guna2Button button, string tooltipText)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(button, tooltipText);
+        }
+        private void guna2Button2_MouseEnter(object sender, EventArgs e)
+        {
+            SetButtonToolTip(guna2Button2, "Thêm Phòng");
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_MouseEnter(object sender, EventArgs e)
+        {
+            SetButtonToolTip(guna2Button1, "Thông Tin Khách Sạn");
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
         {
 
         }

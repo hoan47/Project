@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHotelManage));
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2RadioButton2 = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -40,7 +39,6 @@
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -49,27 +47,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2DateTimePicker2
-            // 
-            this.guna2DateTimePicker2.BorderRadius = 15;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.PowderBlue;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(73, 52);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(300, 31);
-            this.guna2DateTimePicker2.TabIndex = 4;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 3, 17, 10, 12, 12, 338);
             // 
             // guna2RadioButton2
             // 
@@ -215,17 +200,15 @@
             this.guna2GroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox2.BorderRadius = 15;
-            this.guna2GroupBox2.Controls.Add(this.guna2DateTimePicker2);
             this.guna2GroupBox2.Controls.Add(this.guna2DateTimePicker3);
             this.guna2GroupBox2.Controls.Add(this.label2);
-            this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Moccasin;
             this.guna2GroupBox2.FillColor = System.Drawing.Color.PaleTurquoise;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(288, 3);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(379, 143);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(364, 143);
             this.guna2GroupBox2.TabIndex = 8;
             this.guna2GroupBox2.Text = "Thời Gian";
             // 
@@ -237,7 +220,7 @@
             this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.Black;
             this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(74, 97);
+            this.guna2DateTimePicker3.Location = new System.Drawing.Point(56, 70);
             this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
@@ -249,21 +232,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(8, 104);
+            this.label2.Location = new System.Drawing.Point(7, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
+            this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Kết Thúc";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(8, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bắt Đầu";
+            this.label2.Text = "Time";
             // 
             // guna2Button1
             // 
@@ -277,10 +250,13 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(32, 77);
+            this.guna2Button1.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2Button1.Location = new System.Drawing.Point(25, 76);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(59, 54);
             this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            this.guna2Button1.MouseEnter += new System.EventHandler(this.guna2Button1_MouseEnter);
             // 
             // guna2Button2
             // 
@@ -294,16 +270,22 @@
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.Transparent;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Location = new System.Drawing.Point(246, 70);
+            this.guna2Button2.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2Button2.Location = new System.Drawing.Point(181, 70);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(59, 54);
             this.guna2Button2.TabIndex = 4;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.guna2Button2.MouseEnter += new System.EventHandler(this.guna2Button2_MouseEnter);
             // 
             // guna2GroupBox4
             // 
             this.guna2GroupBox4.BackColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox4.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox4.BorderRadius = 15;
+            this.guna2GroupBox4.Controls.Add(this.guna2Button4);
+            this.guna2GroupBox4.Controls.Add(this.label1);
+            this.guna2GroupBox4.Controls.Add(this.panel2);
             this.guna2GroupBox4.Controls.Add(this.panel1);
             this.guna2GroupBox4.Controls.Add(this.label4);
             this.guna2GroupBox4.Controls.Add(this.label3);
@@ -313,9 +295,9 @@
             this.guna2GroupBox4.FillColor = System.Drawing.Color.PaleTurquoise;
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox4.Location = new System.Drawing.Point(673, 3);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(655, 3);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
-            this.guna2GroupBox4.Size = new System.Drawing.Size(348, 143);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(384, 143);
             this.guna2GroupBox4.TabIndex = 9;
             this.guna2GroupBox4.Text = "Chỉnh Sửa";
             this.guna2GroupBox4.Click += new System.EventHandler(this.guna2GroupBox4_Click);
@@ -323,7 +305,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(179, 50);
+            this.panel1.Location = new System.Drawing.Point(156, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 90);
             this.panel1.TabIndex = 12;
@@ -332,7 +314,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(195, 47);
+            this.label4.Location = new System.Drawing.Point(163, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 11;
@@ -372,16 +354,52 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 211);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1018, 370);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1036, 417);
             this.flowLayoutPanel1.TabIndex = 11;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(265, 43);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 90);
+            this.panel2.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(268, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Cập Nhật Giá";
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.BorderRadius = 15;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.SystemColors.Info;
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
+            this.guna2Button4.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2Button4.Location = new System.Drawing.Point(290, 69);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(59, 57);
+            this.guna2Button4.TabIndex = 0;
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // FHotelManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1022, 583);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2GroupBox4);
@@ -405,7 +423,6 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2RadioButton guna2RadioButton2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
@@ -418,11 +435,13 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
     }
 }

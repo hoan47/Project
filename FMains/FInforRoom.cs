@@ -34,5 +34,12 @@ namespace Project.FMains
             
             toolTip1.SetToolTip(button1, "Thông Tin Phòng");
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
