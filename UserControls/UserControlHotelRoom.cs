@@ -10,21 +10,22 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHomePaceSearchRoom : UserControl
+    public partial class UserControlHotelRoom : UserControl
     {
-        public UserControlHomePaceSearchRoom()
+        private HotelRoom hotelRoom;
+        public UserControlHotelRoom(HotelRoom hotelRoom)
         {
             InitializeComponent();
+            this.hotelRoom = hotelRoom;
+            labelName.Text = "Tên: " + hotelRoom.NameHotel + ", " + hotelRoom.NameRoom;
+            labelPhone.Text = "SDT: " + hotelRoom.Phone;
+            labelPrice.Text = "Giá: " + hotelRoom.Price + " VND";
+            labelAddress.Text = "Địa chỉ: " + hotelRoom.Address.AddressValue;
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void UserControlHomePaceSearchRoomDoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Thông tin phòng");
+            ((FHomePage)Tag).OpenInforHotelRoom(hotelRoom);
         }
     }
 }

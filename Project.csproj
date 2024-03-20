@@ -206,6 +206,7 @@
     <Compile Include="FMains\FRoom.designer.cs">
       <DependentUpon>FRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="HotelRoom.cs" />
     <Compile Include="ProcessScripts\ProcessCheckInfor.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />

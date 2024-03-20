@@ -77,6 +77,7 @@ namespace Project
             this.groupBox.Size = new System.Drawing.Size(645, 215);
             this.groupBox.TabIndex = 11;
             this.groupBox.Text = "Khách sạn: ILove";
+            this.groupBox.Click += new System.EventHandler(this.groupBox_Click);
             this.groupBox.DoubleClick += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
             // groupBoxPhone

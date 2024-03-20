@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class FHomePaceInforRoom
+    partial class FInforHotelRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePaceInforRoom));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FInforHotelRoom));
             this.labelNameHotel = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelAddressSpecific = new System.Windows.Forms.Label();
             this.labelPeople = new System.Windows.Forms.Label();
-            this.labelRooms = new System.Windows.Forms.Label();
+            this.labelBedroom = new System.Windows.Forms.Label();
             this.labelBed = new System.Windows.Forms.Label();
             this.labelRoomPhone = new System.Windows.Forms.Label();
             this.labelCheckIn = new System.Windows.Forms.Label();
@@ -42,8 +42,8 @@ namespace Project
             this.labelDateIn = new System.Windows.Forms.Label();
             this.labelDateOut = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
-            this.groupBox = new System.Windows.Forms.GroupBox();
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.groupBoxServices = new System.Windows.Forms.GroupBox();
+            this.listBoxServices = new System.Windows.Forms.ListBox();
             this.labelPictureHotel = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonPay = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@ namespace Project
             this.pictureBoxAddress = new System.Windows.Forms.PictureBox();
             this.pictureBoxAddressSpecific = new System.Windows.Forms.PictureBox();
             this.pictureBoxPeople = new System.Windows.Forms.PictureBox();
-            this.pictureBoxRooms = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBedroom = new System.Windows.Forms.PictureBox();
             this.pictureBoxBed = new System.Windows.Forms.PictureBox();
             this.pictureBoxPhone = new System.Windows.Forms.PictureBox();
             this.pictureBoxCheckIn = new System.Windows.Forms.PictureBox();
@@ -70,12 +70,14 @@ namespace Project
             this.buttonRightRoom = new System.Windows.Forms.Button();
             this.buttonLeftRoom = new System.Windows.Forms.Button();
             this.pictureBoxRoom = new System.Windows.Forms.PictureBox();
-            this.groupBox.SuspendLayout();
+            this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBoxServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddressSpecific)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPeople)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBedroom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckIn)).BeginInit();
@@ -87,6 +89,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAreaRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRoom)).BeginInit();
+            this.groupBoxDescribe.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNameHotel
@@ -109,10 +112,10 @@ namespace Project
             resources.ApplyResources(this.labelPeople, "labelPeople");
             this.labelPeople.Name = "labelPeople";
             // 
-            // labelRooms
+            // labelBedroom
             // 
-            resources.ApplyResources(this.labelRooms, "labelRooms");
-            this.labelRooms.Name = "labelRooms";
+            resources.ApplyResources(this.labelBedroom, "labelBedroom");
+            this.labelBedroom.Name = "labelBedroom";
             // 
             // labelBed
             // 
@@ -149,29 +152,29 @@ namespace Project
             resources.ApplyResources(this.labelPrice, "labelPrice");
             this.labelPrice.Name = "labelPrice";
             // 
-            // groupBox
+            // groupBoxServices
             // 
-            this.groupBox.Controls.Add(this.listBox);
-            resources.ApplyResources(this.groupBox, "groupBox");
-            this.groupBox.Name = "groupBox";
-            this.groupBox.TabStop = false;
+            this.groupBoxServices.Controls.Add(this.listBoxServices);
+            resources.ApplyResources(this.groupBoxServices, "groupBoxServices");
+            this.groupBoxServices.Name = "groupBoxServices";
+            this.groupBoxServices.TabStop = false;
             // 
-            // listBox
+            // listBoxServices
             // 
-            this.listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.listBox, "listBox");
-            this.listBox.Items.AddRange(new object[] {
-            resources.GetString("listBox.Items"),
-            resources.GetString("listBox.Items1"),
-            resources.GetString("listBox.Items2"),
-            resources.GetString("listBox.Items3"),
-            resources.GetString("listBox.Items4"),
-            resources.GetString("listBox.Items5"),
-            resources.GetString("listBox.Items6"),
-            resources.GetString("listBox.Items7"),
-            resources.GetString("listBox.Items8"),
-            resources.GetString("listBox.Items9")});
-            this.listBox.Name = "listBox";
+            this.listBoxServices.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.listBoxServices, "listBoxServices");
+            this.listBoxServices.Items.AddRange(new object[] {
+            resources.GetString("listBoxServices.Items"),
+            resources.GetString("listBoxServices.Items1"),
+            resources.GetString("listBoxServices.Items2"),
+            resources.GetString("listBoxServices.Items3"),
+            resources.GetString("listBoxServices.Items4"),
+            resources.GetString("listBoxServices.Items5"),
+            resources.GetString("listBoxServices.Items6"),
+            resources.GetString("listBoxServices.Items7"),
+            resources.GetString("listBoxServices.Items8"),
+            resources.GetString("listBoxServices.Items9")});
+            this.listBoxServices.Name = "listBoxServices";
             // 
             // labelPictureHotel
             // 
@@ -185,6 +188,7 @@ namespace Project
             this.buttonBack.FlatAppearance.BorderSize = 0;
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonPay
             // 
@@ -217,11 +221,11 @@ namespace Project
             this.pictureBoxPeople.Name = "pictureBoxPeople";
             this.pictureBoxPeople.TabStop = false;
             // 
-            // pictureBoxRooms
+            // pictureBoxBedroom
             // 
-            resources.ApplyResources(this.pictureBoxRooms, "pictureBoxRooms");
-            this.pictureBoxRooms.Name = "pictureBoxRooms";
-            this.pictureBoxRooms.TabStop = false;
+            resources.ApplyResources(this.pictureBoxBedroom, "pictureBoxBedroom");
+            this.pictureBoxBedroom.Name = "pictureBoxBedroom";
+            this.pictureBoxBedroom.TabStop = false;
             // 
             // pictureBoxBed
             // 
@@ -332,11 +336,36 @@ namespace Project
             this.pictureBoxRoom.Name = "pictureBoxRoom";
             this.pictureBoxRoom.TabStop = false;
             // 
-            // FHomePaceInformationRoom
+            // groupBoxDescribe
+            // 
+            this.groupBoxDescribe.Controls.Add(this.listBox1);
+            resources.ApplyResources(this.groupBoxDescribe, "groupBoxDescribe");
+            this.groupBoxDescribe.Name = "groupBoxDescribe";
+            this.groupBoxDescribe.TabStop = false;
+            // 
+            // listBox1
+            // 
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            resources.GetString("listBox1.Items"),
+            resources.GetString("listBox1.Items1"),
+            resources.GetString("listBox1.Items2"),
+            resources.GetString("listBox1.Items3"),
+            resources.GetString("listBox1.Items4"),
+            resources.GetString("listBox1.Items5"),
+            resources.GetString("listBox1.Items6"),
+            resources.GetString("listBox1.Items7"),
+            resources.GetString("listBox1.Items8"),
+            resources.GetString("listBox1.Items9")});
+            this.listBox1.Name = "listBox1";
+            // 
+            // FInforHotelRoom
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.Controls.Add(this.groupBoxDescribe);
             this.Controls.Add(this.labelPictureRoom);
             this.Controls.Add(this.buttonRightRoom);
             this.Controls.Add(this.buttonLeftRoom);
@@ -346,7 +375,7 @@ namespace Project
             this.Controls.Add(this.labelNameRoom);
             this.Controls.Add(this.pictureBoxNameRoom);
             this.Controls.Add(this.labelPictureHotel);
-            this.Controls.Add(this.groupBox);
+            this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.buttonRightHotel);
             this.Controls.Add(this.buttonLeftHotel);
             this.Controls.Add(this.pictureBoxHotel);
@@ -364,8 +393,8 @@ namespace Project
             this.Controls.Add(this.pictureBoxPhone);
             this.Controls.Add(this.labelBed);
             this.Controls.Add(this.pictureBoxBed);
-            this.Controls.Add(this.labelRooms);
-            this.Controls.Add(this.pictureBoxRooms);
+            this.Controls.Add(this.labelBedroom);
+            this.Controls.Add(this.pictureBoxBedroom);
             this.Controls.Add(this.labelPeople);
             this.Controls.Add(this.pictureBoxPeople);
             this.Controls.Add(this.labelAddressSpecific);
@@ -377,14 +406,14 @@ namespace Project
             this.Controls.Add(this.buttonPay);
             this.Controls.Add(this.buttonBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FHomePaceInformationRoom";
+            this.Name = "FInforHotelRoom";
             this.Load += new System.EventHandler(this.FHomePaceInformationRoom_Load);
-            this.groupBox.ResumeLayout(false);
+            this.groupBoxServices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameHotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddressSpecific)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPeople)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBedroom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCheckIn)).EndInit();
@@ -396,6 +425,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAreaRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRoom)).EndInit();
+            this.groupBoxDescribe.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,8 +443,8 @@ namespace Project
         private System.Windows.Forms.PictureBox pictureBoxAddressSpecific;
         private System.Windows.Forms.Label labelPeople;
         private System.Windows.Forms.PictureBox pictureBoxPeople;
-        private System.Windows.Forms.Label labelRooms;
-        private System.Windows.Forms.PictureBox pictureBoxRooms;
+        private System.Windows.Forms.Label labelBedroom;
+        private System.Windows.Forms.PictureBox pictureBoxBedroom;
         private System.Windows.Forms.Label labelBed;
         private System.Windows.Forms.PictureBox pictureBoxBed;
         private System.Windows.Forms.Label labelRoomPhone;
@@ -432,8 +462,8 @@ namespace Project
         private System.Windows.Forms.PictureBox pictureBoxHotel;
         private System.Windows.Forms.Button buttonLeftHotel;
         private System.Windows.Forms.Button buttonRightHotel;
-        private System.Windows.Forms.GroupBox groupBox;
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.GroupBox groupBoxServices;
+        private System.Windows.Forms.ListBox listBoxServices;
         private System.Windows.Forms.Label labelPictureHotel;
         private System.Windows.Forms.Label labelNameRoom;
         private System.Windows.Forms.PictureBox pictureBoxNameRoom;
@@ -443,5 +473,7 @@ namespace Project
         private System.Windows.Forms.Button buttonRightRoom;
         private System.Windows.Forms.Button buttonLeftRoom;
         private System.Windows.Forms.PictureBox pictureBoxRoom;
+        private System.Windows.Forms.GroupBox groupBoxDescribe;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

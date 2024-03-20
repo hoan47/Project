@@ -31,5 +31,10 @@ namespace Project
         {
             fService.OpenHotel(hotel);
         }
+
+        private void groupBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

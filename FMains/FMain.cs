@@ -15,12 +15,13 @@ namespace Project
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
 
+
         public FMain()
         {
             InitializeComponent();
         }
 
-        public void OpenFormChild(Form formChild)
+        public void OpenFormChild(Form formChild, bool isClearCurrent = true)
         {
             if(formChildCurrent != null)
             {
@@ -28,7 +29,11 @@ namespace Project
                 {
                     return;
                 }
-                formChildCurrent.Close();
+                if (isClearCurrent == true)
+                {
+                    formChildCurrent.Close();
+                    formChildCurrent = formChild;
+                }
             }
             if (formChild is FUpdateInfor)
             {
@@ -61,7 +66,7 @@ namespace Project
             FLoading fLoading = new FLoading(formChild, 300);
 
             fLoading.OnLoading();
-            formChildCurrent = formChild;
+
             formChild.Size = panelMain.Size;
             formChild.TopLevel = false;
             panelMain.Controls.Add(formChild);

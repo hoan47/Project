@@ -74,7 +74,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(548, 318);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 18);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(51, 15);
             this.guna2HtmlLabel5.TabIndex = 52;
             this.guna2HtmlLabel5.Text = "Diện Tích";
             // 
@@ -106,7 +106,7 @@
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(548, 398);
             this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(73, 20);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(61, 17);
             this.guna2HtmlLabel4.TabIndex = 49;
             this.guna2HtmlLabel4.Text = "Giá Phòng";
             // 
@@ -158,7 +158,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(4, 44);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(426, 246);
+            this.checkedListBox1.Size = new System.Drawing.Size(426, 238);
             this.checkedListBox1.TabIndex = 19;
             // 
             // guna2TextBox3
@@ -217,7 +217,7 @@
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(535, 170);
             this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(102, 20);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(86, 17);
             this.guna2HtmlLabel3.TabIndex = 42;
             this.guna2HtmlLabel3.Text = "Số lượng người ";
             // 
@@ -228,7 +228,7 @@
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(535, 101);
             this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(110, 20);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(93, 17);
             this.guna2HtmlLabel2.TabIndex = 41;
             this.guna2HtmlLabel2.Text = "Số lượng giường";
             // 
@@ -239,7 +239,7 @@
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(538, 34);
             this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(75, 20);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(63, 17);
             this.guna2HtmlLabel1.TabIndex = 40;
             this.guna2HtmlLabel1.Text = "Tên Phòng";
             // 
@@ -390,7 +390,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(565, 254);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(102, 18);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(83, 15);
             this.guna2HtmlLabel6.TabIndex = 56;
             this.guna2HtmlLabel6.Text = "Số Lượng Phòng";
             // 
@@ -430,7 +430,7 @@
             // 
             // FRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
