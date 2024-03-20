@@ -66,7 +66,7 @@ namespace Project
 
             if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(FController.Instance.User.Hotels.Count, userControlTextBoxName.TextBoxText,
+                Hotel hotel = new Hotel(FController.Instance.User.SelectNewIdHotel(), userControlTextBoxName.TextBoxText,
                             userControlTextBoxPhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
@@ -111,13 +111,7 @@ namespace Project
 
             if (image != null)
             {
-                int idImage = 0;
-
-                if (hotel.Images != null && hotel.Images.Count != 0)
-                {
-                    idImage = hotel.Images.Max(i => i.IdImage) + 1;
-                }
-                currentImage = new Image_(idImage, ProcessImage.ImageToByteArray(image), image);
+                currentImage = new Image_(hotel.SelectNewIdImage(), ProcessImage.ImageToByteArray(image), image);
                 hotel.AddImage(currentImage);
                 FController.Instance.ImageHotelDAO.Insert(hotel, currentImage);
                 pictureBoxImage.Image = image;

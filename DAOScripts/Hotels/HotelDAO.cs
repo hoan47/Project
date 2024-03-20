@@ -85,8 +85,8 @@ namespace Project
                                                     $"name = N'{hotel.Name}', " +
                                                     $"phone = '{hotel.Phone}', " +
                                                     $"address = N'{hotel.Address.AddressValue}', " +
-                                                    $"checkIn = '{hotel.CheckIn.ToString()}', " +
-                                                    $"checkOut = '{hotel.CheckOut.ToString()}', " +
+                                                    $"checkIn = '{hotel.CheckIn}', " +
+                                                    $"checkOut = '{hotel.CheckOut}', " +
                                                     $"describe = N'{hotel.Describe}' " +
                                                     $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = '{hotel.IdHotel}'",
                                                     sqlConnection);

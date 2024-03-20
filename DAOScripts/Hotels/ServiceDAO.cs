@@ -28,7 +28,7 @@ namespace Project
                     {
                         if (reader.IsDBNull(2) == false)
                         {
-                            services.Add(reader[2].ToString());
+                            services.Add(reader.GetString(2));
                         }
                     }
                     hotel.UpdateService(services);

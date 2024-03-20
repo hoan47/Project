@@ -48,8 +48,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-
-                SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} " +
+                SqlCommand insertCMD = new SqlCommand($"INSERT {table} " +
                                                        $"VALUES " +
                                                        $"('{FController.Instance.User.UserName}', '{hotel.IdHotel}', '{image.IdImage}', @imageBytes)", 
                                                        sqlConnection);
