@@ -78,6 +78,7 @@ namespace Project
                     FController.Instance.RoomDAO.Access();
                     FController.Instance.AmenitiesDAO.Access();
                     FController.Instance.ImageRoomDAO.Access();
+                    FController.Instance.HotetRoomDAO.Access();
                 }
                 e.Result = "Đăng nhập thành công.";
             }

@@ -15,13 +15,13 @@ namespace Project
         public FHomePage()
         {
             InitializeComponent();
-            HotelRoom hotelRoom = new HotelRoom("Tình một đêm", new Address("Gia Lai, x, x"), "Tên phòng", 1, 2, 3, new TimeSpan(1), new TimeSpan(2), DateTime.Now, DateTime.Now, "0123456789", 0.123456789, 1234567890, "Không");
-
-            for (int i = 0; i < 100; i++)
+            
+            foreach(HotelRoom hotelRoom in FController.Instance.HotelRooms)
             {
-                UserControlHotelRoom x = new UserControlHotelRoom(hotelRoom);
-                x.Tag = this;
-                flowLayoutPanel.Controls.Add(x);
+                UserControlHotelRoom userControlHotelRoom = new UserControlHotelRoom(hotelRoom);
+
+                userControlHotelRoom.Tag = this;
+                flowLayoutPanel.Controls.Add(userControlHotelRoom);
             }
         }
 
