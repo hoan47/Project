@@ -24,8 +24,8 @@ namespace Project
 
         private void buttonBack_Click_1(object sender, EventArgs e)
         {
+            ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
             Dispose();
-
         }
     }
 }

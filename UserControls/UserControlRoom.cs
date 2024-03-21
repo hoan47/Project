@@ -12,31 +12,19 @@ namespace Project.UserControls
 {
     public partial class UserControlRoom : UserControl
     {
-       
-        public UserControlRoom()
+        private Room room;
+
+        public UserControlRoom(Room room)
         {
             InitializeComponent();
-
+            this.room = room;
+            groupBox.Text = "Tên phòng: " + room.Name;
+            labelStatus.Text = "Trạng thái: " + room.GetStatusStr();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void UserControlClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
+            ((FHotelManage)Tag).OpenUpdateRoom(room);
         }
     }
 }

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    public class ServiceDAO : DAO
+    public class AmenitiesDAO : DAO
     {
-        public ServiceDAO() : base("Service")
+        public AmenitiesDAO() : base("Amenities")
         { }
 
         public void Access()
@@ -20,19 +20,26 @@ namespace Project
 
                 foreach (Hotel hotel in FController.Instance.User.Hotels)
                 {
-                    SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idHotel = {hotel.IdHotel}", sqlConnection);
-                    SqlDataReader reader = selectCMD.ExecuteReader();
-                    List<string> services = new List<string>();
-
-                    while (reader.Read())
+                    if (hotel.Rooms == null)
                     {
-                        if (reader.IsDBNull(1) == false)
-                        {
-                            services.Add(reader.GetString(1));
-                        }
+                        continue;
                     }
-                    hotel.UpdateService(services);
-                    reader.Close();
+                    foreach (Room room in hotel.Rooms)
+                    {
+                        SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idRoom = {room.IdRoom}", sqlConnection);
+                        SqlDataReader reader = selectCMD.ExecuteReader();
+                        List<string> services = new List<string>();
+
+                        while (reader.Read())
+                        {
+                            if (reader.IsDBNull(1) == false)
+                            {
+                                services.Add(reader.GetString(1));
+                            }
+                        }
+                        room.UpdateAmenities(services);
+                        reader.Close();
+                    }
                 }
             }
             catch (Exception e)
@@ -45,18 +52,18 @@ namespace Project
             }
         }
 
-        public bool Insert(Hotel hotel)
+        public bool Insert(Room room)
         {
             try
             {
                 sqlConnection.Open();
 
-                if (hotel.Services.Count != 0)
+                if (room.Amenitiese.Count != 0)
                 {
-                    foreach (string service in hotel.Services)
+                    foreach (string service in room.Amenitiese)
                     {
                         SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} VALUES " +
-                                                               $"('{hotel.IdHotel}', " +
+                                                               $"('{room.IdRoom}', " +
                                                                $"N'{service}')",
                                                                sqlConnection);
 
@@ -68,8 +75,8 @@ namespace Project
                 }
                 else
                 {
-                    SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table}(idHotel) VALUES ('{hotel.IdHotel}')", sqlConnection);
-                }    
+                    SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table}(idRoom) VALUES ('{room.IdRoom}')", sqlConnection);
+                }
                 return true;
             }
             catch (Exception e)
@@ -83,12 +90,12 @@ namespace Project
             return false;
         }
 
-        public bool Delete(Hotel hotel)
+        public bool Delete(Room room)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand updateCMD = new SqlCommand($"Delete {table} WHERE idHotel = '{hotel.IdHotel}'",
+                SqlCommand updateCMD = new SqlCommand($"Delete {table} WHERE idRoom = '{room.IdRoom}'",
                                                     sqlConnection);
 
                 return updateCMD.ExecuteNonQuery() == 1;

@@ -67,7 +67,7 @@ namespace Project
                 e.Result = "Mật khẩu sai.";
             }
             else
-            {
+            {  
                 FController.Instance.InfoDAO.Access();
                 FController.Instance.ClientDAO.Access();
                 FController.Instance.HotelDAO.Access();
@@ -75,6 +75,9 @@ namespace Project
                 {
                     FController.Instance.ServiceDAO.Access();
                     FController.Instance.ImageHotelDAO.Access();
+                    FController.Instance.RoomDAO.Access();
+                    FController.Instance.AmenitiesDAO.Access();
+                    FController.Instance.ImageRoomDAO.Access();
                 }
                 e.Result = "Đăng nhập thành công.";
             }

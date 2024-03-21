@@ -38,48 +38,57 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeople)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBoxPeople
+            // groupBox
             // 
             this.groupBox.Controls.Add(this.numericUpDownPeople);
             this.groupBox.Controls.Add(this.pictureBox);
             this.groupBox.Location = new System.Drawing.Point(0, 0);
-            this.groupBox.Name = "groupBoxPeople";
+            this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(100, 55);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Số người";
             // 
-            // pictureBoxPeople
+            // pictureBox
             // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPeople.Image")));
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox.Name = "pictureBoxPeople";
+            this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(30, 30);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // guna2NumericUpDownPeople
+            // numericUpDownPeople
             // 
             this.numericUpDownPeople.BackColor = System.Drawing.Color.Transparent;
             this.numericUpDownPeople.BorderColor = System.Drawing.Color.Black;
             this.numericUpDownPeople.BorderRadius = 10;
-            this.numericUpDownPeople.BorderThickness = 3;
+            this.numericUpDownPeople.BorderThickness = 2;
             this.numericUpDownPeople.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericUpDownPeople.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownPeople.Location = new System.Drawing.Point(42, 19);
-            this.numericUpDownPeople.Name = "guna2NumericUpDownPeople";
-            this.numericUpDownPeople.Size = new System.Drawing.Size(52, 30);
+            this.numericUpDownPeople.Location = new System.Drawing.Point(45, 20);
+            this.numericUpDownPeople.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownPeople.Name = "numericUpDownPeople";
+            this.numericUpDownPeople.Size = new System.Drawing.Size(51, 30);
             this.numericUpDownPeople.TabIndex = 1;
-            this.numericUpDownPeople.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.numericUpDownPeople.UpDownButtonForeColor = System.Drawing.Color.Black;
+            this.numericUpDownPeople.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.numericUpDownPeople.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // UserControlHomePaceSearchPeople
+            // UserControlNumeric
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
-            this.Name = "UserControlHomePaceSearchPeople";
+            this.Name = "UserControlNumeric";
             this.Size = new System.Drawing.Size(100, 55);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

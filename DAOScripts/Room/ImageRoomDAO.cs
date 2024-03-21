@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    public class ImageHotelDAO : DAO
+    public class ImageRoomDAO : DAO
     {
-        public ImageHotelDAO() : base("ImageHotel")
+        public ImageRoomDAO() : base("ImageRoom")
         { }
 
         public void Access()
@@ -22,14 +22,21 @@ namespace Project
 
                 foreach (Hotel hotel in FController.Instance.User.Hotels)
                 {
-                    SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idHotel = '{hotel.IdHotel}'", sqlConnection);
-                    SqlDataReader reader = selectCMD.ExecuteReader();
-
-                    while (reader.Read())
+                    if(hotel.Rooms == null)
                     {
-                        hotel.AddImage(new Image_((int)reader[1], (byte[])reader[2], ProcessImage.ByteToImageArray((byte[])reader[2])));
+                        continue;
                     }
-                    reader.Close();
+                    foreach (Room room in hotel.Rooms)
+                    {
+                        SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idRoom = '{room.IdRoom}'", sqlConnection);
+                        SqlDataReader reader = selectCMD.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            room.AddImage(new Image_((int)reader[1], (byte[])reader[2], ProcessImage.ByteToImageArray((byte[])reader[2])));
+                        }
+                        reader.Close();
+                    }
                 }
             }
             catch (Exception e)
@@ -42,14 +49,14 @@ namespace Project
             }
         }
 
-        public bool Insert(Hotel hotel, Image_ image)
+        public bool Insert(Room room, Image_ image)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand insertCMD = new SqlCommand($"INSERT {table} " +
                                                        $"VALUES " +
-                                                       $"('{hotel.IdHotel}', '{image.IdImage}', @imageBytes)", 
+                                                       $"('{room.IdRoom}', '{image.IdImage}', @imageBytes)",
                                                        sqlConnection);
 
                 insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = image.ImageBytes;

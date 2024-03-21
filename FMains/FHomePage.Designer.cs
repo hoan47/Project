@@ -123,7 +123,7 @@ namespace Project
             this.userControlNumericPeople.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericPeople.Image")));
             this.userControlNumericPeople.Location = new System.Drawing.Point(168, 61);
             this.userControlNumericPeople.Name = "userControlNumericPeople";
-            this.userControlNumericPeople.NumericValue = 0;
+            this.userControlNumericPeople.NumericValue = 1;
             this.userControlNumericPeople.Size = new System.Drawing.Size(100, 55);
             this.userControlNumericPeople.TabIndex = 3;
             this.userControlNumericPeople.Load += new System.EventHandler(this.userControlHomePaceSearchPeople1_Load);

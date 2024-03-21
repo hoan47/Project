@@ -13,8 +13,9 @@ namespace Project
     public partial class UserControlServiceEdit : UserControl
     {
         public string GroupBoxText { get { return groupBox.Text; } set { groupBox.Text = value; } }
+        public Color ListBoxBackColor { get { return listBox.BackColor; } set { listBox.BackColor = value; } }
         public string TextBoxPlaceholderText { get { return textBox.PlaceholderText; } set { textBox.PlaceholderText = value; } }
-        public List<string> Services
+        public List<string> Value
         {
             get 
             { 

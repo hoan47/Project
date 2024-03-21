@@ -14,6 +14,7 @@ namespace Project
     {
         public static FController Instance { get; private set; }
         private Form currentFromChild;
+        public IdDAO IdDAO { get; private set; }
         public User User { get; private set; }
         public Client Client { get; private set; }
         public List<Hotel> Hotels { get; private set; }
@@ -24,18 +25,31 @@ namespace Project
         public HotelDAO HotelDAO { get; private set; }
         public ServiceDAO ServiceDAO { get; private set; }
         public ImageHotelDAO ImageHotelDAO { get; private set; }
+        public RoomDAO RoomDAO { get; private set; }
+        public AmenitiesDAO AmenitiesDAO { get; private set; }
+        public ImageRoomDAO ImageRoomDAO { get; private set; }
+
 
         public FController()
         {
             Instance = this;
+
+            IdDAO = new IdDAO();
+            AddressDAO = new AddRessDAO();
+
             User = new User();
+
             AccountDAO = new AccountDAO();
             InfoDAO = new InforDAO();
             ClientDAO = new ClientDAO();
-            AddressDAO = new AddRessDAO();
+
             HotelDAO = new HotelDAO();
             ServiceDAO = new ServiceDAO();
             ImageHotelDAO = new ImageHotelDAO();
+
+            RoomDAO = new RoomDAO();
+            AmenitiesDAO = new AmenitiesDAO();
+            ImageRoomDAO = new ImageRoomDAO();
             InitializeComponent();
             InitializeFLogin();
         }

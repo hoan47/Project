@@ -51,7 +51,7 @@ namespace Project
             this.buttonAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.BackgroundImage")));
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonAdd.Location = new System.Drawing.Point(719, 451);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(50, 50);
             this.buttonAdd.TabIndex = 1;
@@ -67,9 +67,10 @@ namespace Project
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.flowLayoutPanelHottel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FService";
             this.Text = "FService";
+            this.Load += new System.EventHandler(this.FServiceLoad);
             this.ResumeLayout(false);
 
         }
