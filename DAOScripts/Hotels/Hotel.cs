@@ -49,6 +49,11 @@ namespace Project
             Services = services;
         }
 
+        public void UpdateImage(List<Image_> images)
+        {
+            Images = images;
+        }
+
         public void AddImage(Image_ image)
         {
             if (Images == null)
