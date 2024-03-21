@@ -32,32 +32,34 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateHotel));
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.userControlTextBoxHotelPhone = new Project.UserControlTextBoxHotel();
-            this.userControlTextBoxHotelName = new Project.UserControlTextBoxHotel();
-            this.userControlAddService = new Project.UserControlServiceEdit();
+            this.userControlTextBoxServicePhone = new Project.UserControlTextBoxService();
+            this.userControlTextBoxSerciveName = new Project.UserControlTextBoxService();
+            this.userControlServiceEdit = new Project.UserControlServiceEdit();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.userControlAddressHotel = new Project.UserControlAddressHotel();
             this.userControlCheckInOutHotel = new Project.UserControlCheckInOutHotel();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
             this.textBoxDescribe = new System.Windows.Forms.TextBox();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.pictureBoxImage = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.butonBack = new Guna.UI2.WinForms.Guna2Button();
             this.panelInfo.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.panelImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.Transparent;
-            this.panelInfo.Controls.Add(this.userControlTextBoxHotelPhone);
-            this.panelInfo.Controls.Add(this.userControlTextBoxHotelName);
-            this.panelInfo.Controls.Add(this.userControlAddService);
+            this.panelInfo.Controls.Add(this.userControlTextBoxServicePhone);
+            this.panelInfo.Controls.Add(this.userControlTextBoxSerciveName);
+            this.panelInfo.Controls.Add(this.userControlServiceEdit);
+            this.panelInfo.Controls.Add(this.buttonUpdate);
             this.panelInfo.Controls.Add(this.userControlAddressHotel);
             this.panelInfo.Controls.Add(this.userControlCheckInOutHotel);
             this.panelInfo.Controls.Add(this.groupBoxDescribe);
@@ -66,42 +68,57 @@ namespace Project
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(312, 511);
             this.panelInfo.TabIndex = 0;
-            this.panelInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInfo_Paint);
             // 
-            // userControlTextBoxHotelPhone
+            // userControlTextBoxServicePhone
             // 
-            this.userControlTextBoxHotelPhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxHotelPhone.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotelPhone.Image")));
-            this.userControlTextBoxHotelPhone.LabelText = "Số điện thoại";
-            this.userControlTextBoxHotelPhone.Location = new System.Drawing.Point(9, 168);
-            this.userControlTextBoxHotelPhone.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxHotelPhone.Name = "userControlTextBoxHotelPhone";
-            this.userControlTextBoxHotelPhone.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxHotelPhone.TabIndex = 9;
-            this.userControlTextBoxHotelPhone.TextBoxText = "";
+            this.userControlTextBoxServicePhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxServicePhone.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxServicePhone.Image")));
+            this.userControlTextBoxServicePhone.LabelText = "Số điện thoại";
+            this.userControlTextBoxServicePhone.Location = new System.Drawing.Point(9, 168);
+            this.userControlTextBoxServicePhone.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxServicePhone.Name = "userControlTextBoxServicePhone";
+            this.userControlTextBoxServicePhone.Size = new System.Drawing.Size(300, 64);
+            this.userControlTextBoxServicePhone.TabIndex = 9;
+            this.userControlTextBoxServicePhone.TextBoxPlaceholderText = "";
+            this.userControlTextBoxServicePhone.TextBoxText = "";
             // 
-            // userControlTextBoxHotelName
+            // userControlTextBoxSerciveName
             // 
-            this.userControlTextBoxHotelName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxHotelName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxHotelName.Image")));
-            this.userControlTextBoxHotelName.LabelText = "Tên khách sạn";
-            this.userControlTextBoxHotelName.Location = new System.Drawing.Point(9, 6);
-            this.userControlTextBoxHotelName.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxHotelName.Name = "userControlTextBoxHotelName";
-            this.userControlTextBoxHotelName.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxHotelName.TabIndex = 8;
-            this.userControlTextBoxHotelName.TextBoxText = "";
+            this.userControlTextBoxSerciveName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlTextBoxSerciveName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxSerciveName.Image")));
+            this.userControlTextBoxSerciveName.LabelText = "Tên khách sạn";
+            this.userControlTextBoxSerciveName.Location = new System.Drawing.Point(9, 6);
+            this.userControlTextBoxSerciveName.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxSerciveName.Name = "userControlTextBoxSerciveName";
+            this.userControlTextBoxSerciveName.Size = new System.Drawing.Size(300, 64);
+            this.userControlTextBoxSerciveName.TabIndex = 8;
+            this.userControlTextBoxSerciveName.TextBoxPlaceholderText = "";
+            this.userControlTextBoxSerciveName.TextBoxText = "";
             // 
-            // userControlAddService
+            // userControlServiceEdit
             // 
-            this.userControlAddService.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userControlAddService.GroupBoxText = "Dịch Vụ";
-            this.userControlAddService.Location = new System.Drawing.Point(4, 305);
-            this.userControlAddService.Name = "userControlAddService";
-            this.userControlAddService.Services = ((System.Collections.Generic.List<string>)(resources.GetObject("userControlAddService.Services")));
-            this.userControlAddService.Size = new System.Drawing.Size(300, 100);
-            this.userControlAddService.TabIndex = 7;
-            this.userControlAddService.TextBoxPlaceholderText = "Thêm dịch vụ";
+            this.userControlServiceEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userControlServiceEdit.GroupBoxText = "Dịch Vụ";
+            this.userControlServiceEdit.ListBoxBackColor = System.Drawing.SystemColors.Info;
+            this.userControlServiceEdit.Location = new System.Drawing.Point(9, 305);
+            this.userControlServiceEdit.Name = "userControlServiceEdit";
+            this.userControlServiceEdit.Size = new System.Drawing.Size(300, 100);
+            this.userControlServiceEdit.TabIndex = 7;
+            this.userControlServiceEdit.TextBoxPlaceholderText = "Thêm dịch vụ";
+            this.userControlServiceEdit.Value = ((System.Collections.Generic.List<string>)(resources.GetObject("userControlServiceEdit.Value")));
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUpdate.Location = new System.Drawing.Point(263, 442);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 10;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
             // userControlAddressHotel
             // 
@@ -131,7 +148,7 @@ namespace Project
             this.groupBoxDescribe.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDescribe.Name = "groupBoxDescribe";
             this.groupBoxDescribe.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxDescribe.Size = new System.Drawing.Size(300, 99);
+            this.groupBoxDescribe.Size = new System.Drawing.Size(250, 98);
             this.groupBoxDescribe.TabIndex = 6;
             this.groupBoxDescribe.TabStop = false;
             this.groupBoxDescribe.Text = "Mô tả";
@@ -146,35 +163,35 @@ namespace Project
             this.textBoxDescribe.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescribe.Multiline = true;
             this.textBoxDescribe.Name = "textBoxDescribe";
-            this.textBoxDescribe.Size = new System.Drawing.Size(291, 72);
+            this.textBoxDescribe.Size = new System.Drawing.Size(240, 72);
             this.textBoxDescribe.TabIndex = 0;
             // 
             // panelImage
             // 
-            this.panelImage.Controls.Add(this.pictureBoxImage);
+            this.panelImage.Controls.Add(this.pictureBox);
             this.panelImage.Controls.Add(this.buttonRight);
             this.panelImage.Controls.Add(this.buttonLeft);
             this.panelImage.Controls.Add(this.buttonDeleteImage);
             this.panelImage.Controls.Add(this.buttonUploadImage);
-            this.panelImage.Location = new System.Drawing.Point(316, 8);
+            this.panelImage.Location = new System.Drawing.Point(316, 61);
             this.panelImage.Margin = new System.Windows.Forms.Padding(2);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(456, 447);
             this.panelImage.TabIndex = 7;
             // 
-            // pictureBoxImage
+            // pictureBox
             // 
-            this.pictureBoxImage.BorderRadius = 20;
-            this.pictureBoxImage.FillColor = System.Drawing.SystemColors.Info;
-            this.pictureBoxImage.Image = global::Project.Properties.Resources.noImage;
-            this.pictureBoxImage.ImageRotate = 0F;
-            this.pictureBoxImage.Location = new System.Drawing.Point(50, 20);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(360, 360);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 6;
-            this.pictureBoxImage.TabStop = false;
+            this.pictureBox.BorderRadius = 20;
+            this.pictureBox.FillColor = System.Drawing.SystemColors.Info;
+            this.pictureBox.Image = global::Project.Properties.Resources.noImage;
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(50, 20);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(360, 360);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 6;
+            this.pictureBox.TabStop = false;
             // 
             // buttonRight
             // 
@@ -240,18 +257,22 @@ namespace Project
             this.buttonUploadImage.UseVisualStyleBackColor = false;
             this.buttonUploadImage.Click += new System.EventHandler(this.ButtonUploadImageClick);
             // 
-            // buttonUpdate
+            // butonBack
             // 
-            this.buttonUpdate.BackColor = System.Drawing.SystemColors.Info;
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUpdate.Location = new System.Drawing.Point(730, 463);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
-            this.buttonUpdate.TabIndex = 10;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            this.butonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butonBack.BackgroundImage")));
+            this.butonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butonBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butonBack.FillColor = System.Drawing.Color.Transparent;
+            this.butonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.butonBack.ForeColor = System.Drawing.Color.White;
+            this.butonBack.Location = new System.Drawing.Point(730, 6);
+            this.butonBack.Name = "butonBack";
+            this.butonBack.Size = new System.Drawing.Size(40, 40);
+            this.butonBack.TabIndex = 11;
+            this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
             // 
             // FUpdateHotel
             // 
@@ -259,9 +280,9 @@ namespace Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(780, 512);
+            this.Controls.Add(this.butonBack);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.buttonUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FUpdateHotel";
@@ -270,7 +291,7 @@ namespace Project
             this.groupBoxDescribe.ResumeLayout(false);
             this.groupBoxDescribe.PerformLayout();
             this.panelImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,11 +306,12 @@ namespace Project
         private Button buttonUploadImage;
         private Button buttonDeleteImage;
         private UserControlAddressHotel userControlAddressHotel;
-        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxImage;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBox;
         private Guna.UI2.WinForms.Guna2Button buttonRight;
         private Guna.UI2.WinForms.Guna2Button buttonLeft;
-        private UserControlServiceEdit userControlAddService;
-        private UserControlTextBoxHotel userControlTextBoxHotelPhone;
-        private UserControlTextBoxHotel userControlTextBoxHotelName;
+        private UserControlServiceEdit userControlServiceEdit;
+        private UserControlTextBoxService userControlTextBoxServicePhone;
+        private UserControlTextBoxService userControlTextBoxSerciveName;
+        private Guna.UI2.WinForms.Guna2Button butonBack;
     }
 }

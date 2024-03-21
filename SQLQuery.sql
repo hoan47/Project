@@ -769,3 +769,59 @@ VALUES
 (N'Cà Mau', N'Huyện Ngọc Hiển');
 
 
+
+
+
+drop table ImageRoom
+
+
+delete imageHotel
+delete Service
+delete hotel
+
+
+select * from ImageHotel
+select * from hotel
+
+create table ImageRoom
+(
+    idRoom int not null,
+    idImage int not null,
+    imageByte VARBINARY (MAX) not null
+)
+
+ALTER TABLE Room ADD CONSTRAINT PKIdRoom Primary KEY ([idRoom]) 
+
+
+CREATE TABLE [dbo].[Room] (
+    [idHote]         INT            NOT NULL,
+    [idRoom]         INT            NOT NULL,
+    [name]           NVARCHAR (MAX) NOT NULL,
+    numberRooom int not null,
+    [numberBeds]   INT            NOT NULL,
+    [numberPeople] INT            NOT NULL,
+    [acreage]        int            NOT NULL,
+    [price]          INT            NOT NULL,
+    status int not null
+);
+
+alter table Room drop constraint [FKIdHotelRoom]
+
+alter table ImageRoom drop [PKIdImageRoom]
+
+ALTER TABLE ImageHotel ADD CONSTRAINT FKIdHotelImage FOREIGN KEY (idHotel)  REFERENCES Hotel(idHotel);
+
+ALTER TABLE ImageRoom ADD CONSTRAINT PKIdImageRoom Primary KEY (idImage) 
+
+ALTER TABLE Ami ADD CONSTRAINT FKIdRooImageRoom FOREIGN KEY(idRoom) REFERENCES Room(idRoom)
+
+create table Amenities
+(
+    idRoom int not null,
+    amenities nvarchar
+)
+EXEC sp_rename 'Room.idHote', 'idHotel', 'COLUMN';
+select * from Hotel where idHotel = '1'
+
+ALTER TABLE Amenities ADD CONSTRAINT FKIdRoomAmenities FOREIGN KEY (idRoom)  REFERENCES Room(idRoom);
+ALTER TABLE Amenities drop constraint [FKIdRoomAmenities]

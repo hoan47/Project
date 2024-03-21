@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlTextBoxHotel
+    partial class UserControlTextBoxService
     {
         /// <summary> 
         /// Required designer variable.

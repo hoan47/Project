@@ -176,6 +176,10 @@
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
+    <Compile Include="DAOScripts\IdDAO.cs" />
+    <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
+    <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
+    <Compile Include="DAOScripts\Room\RoomDAO.cs" />
     <Compile Include="FMains\FInforHotelRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,11 +413,11 @@
     <Compile Include="UserControls\UserControlTextBoxPassword.Designer.cs">
       <DependentUpon>UserControlTextBoxPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlTextBoxHotel.cs">
+    <Compile Include="UserControls\UserControlTextBoxService.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlTextBoxHotel.Designer.cs">
-      <DependentUpon>UserControlTextBoxHotel.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlTextBoxService.Designer.cs">
+      <DependentUpon>UserControlTextBoxService.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FCustomMessageBox.resx">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
@@ -526,8 +530,8 @@
     <EmbeddedResource Include="UserControls\UserControlTextBoxPassword.resx">
       <DependentUpon>UserControlTextBoxPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlTextBoxHotel.resx">
-      <DependentUpon>UserControlTextBoxHotel.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlTextBoxService.resx">
+      <DependentUpon>UserControlTextBoxService.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\.editorconfig" />

@@ -26,7 +26,7 @@ namespace Project
 
         private bool IsZeroImage()
         {
-            return hotel == null || hotel.Images == null || hotel.Images.Count == 0;
+            return hotel.Images == null || hotel.Images.Count == 0;
         }
 
         private void LoadData()
@@ -34,25 +34,26 @@ namespace Project
             if (hotel != null)
             {
                 panelImage.Visible = true;
-                userControlTextBoxHotelName.TextBoxText = hotel.Name;
+                userControlTextBoxSerciveName.TextBoxText = hotel.Name;
                 userControlAddressHotel.AddressValue = hotel.Address;
-                userControlTextBoxHotelPhone.TextBoxText = hotel.Phone;
+                userControlTextBoxServicePhone.TextBoxText = hotel.Phone;
                 userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
                 textBoxDescribe.Text = hotel.Describe;
-                userControlAddService.Services = hotel.Services;
+                userControlServiceEdit.Value = hotel.Services;
                 if (hotel.Images != null)
                 {
-                    pictureBoxImage.Image = hotel.Images.First().Image;
+                    pictureBox.Image = hotel.Images.First().Image;
                     currentImage = hotel.Images.First();
                 }
                 else
                 {
-                    pictureBoxImage.Image = Properties.Resources.noImage;
+                    pictureBox.Image = Properties.Resources.noImage;
                 }
             }
             else
             {
+                userControlServiceEdit.Value = new List<string>() { "Bãi giữ xe máy", "Bãi giữ xe ô tô", "Khu bán đồ ăn", "Wifi", "Hồ bơi", "Khu vực hút thuốc" };
                 panelImage.Visible = false;
             }
         }
@@ -66,8 +67,8 @@ namespace Project
 
             if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(FController.Instance.User.SelectNewIdHotel(), userControlTextBoxHotelName.TextBoxText,
-                            userControlTextBoxHotelPhone.TextBoxText,
+                Hotel hotel = new Hotel(FController.Instance.IdDAO.SelectId, userControlTextBoxSerciveName.TextBoxText,
+                            userControlTextBoxServicePhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
@@ -85,19 +86,19 @@ namespace Project
                     else
                     {
                         this.hotel.UpdateInfor(
-                            userControlTextBoxHotelName.TextBoxText,
-                            userControlTextBoxHotelPhone.TextBoxText,
+                            userControlTextBoxSerciveName.TextBoxText,
+                            userControlTextBoxServicePhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
                             textBoxDescribe.Text);
-
                         FController.Instance.HotelDAO.Update(this.hotel);
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
                     }
-                    this.hotel.UpdateService(userControlAddService.Services);
+                    this.hotel.UpdateService(userControlServiceEdit.Value);
                     FController.Instance.ServiceDAO.Delete(this.hotel);
                     FController.Instance.ServiceDAO.Insert(this.hotel);
+                    FController.Instance.IdDAO.ChangeId();
                     LoadData();
                     return;
                 }
@@ -111,10 +112,11 @@ namespace Project
 
             if (image != null)
             {
-                currentImage = new Image_(hotel.SelectNewIdImage(), ProcessImage.ImageToByteArray(image), image);
+                currentImage = new Image_(FController.Instance.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
                 hotel.AddImage(currentImage);
                 FController.Instance.ImageHotelDAO.Insert(hotel, currentImage);
-                pictureBoxImage.Image = image;
+                FController.Instance.IdDAO.ChangeId();
+                pictureBox.Image = image;
             }
         }
 
@@ -127,9 +129,9 @@ namespace Project
             int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
             hotel.Images.Remove(currentImage);
-            FController.Instance.ImageHotelDAO.Delete(hotel, currentImage);
+            FController.Instance.ImageHotelDAO.Delete(currentImage);
             currentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
-            pictureBoxImage.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
+            pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
         }
 
         private void ButtonLeftClick(object sender, EventArgs e)
@@ -140,7 +142,7 @@ namespace Project
             }
             int indexImage = hotel.Images.IndexOf(currentImage) - 1;
 
-            pictureBoxImage.Image = (currentImage = indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage]).Image;
+            pictureBox.Image = (currentImage = indexImage < 0 ? hotel.Images.Last() : hotel.Images[indexImage]).Image;
         }
 
         private void ButtonRightClick(object sender, EventArgs e)
@@ -151,12 +153,12 @@ namespace Project
             }
             int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
-            pictureBoxImage.Image = (currentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
+            pictureBox.Image = (currentImage = indexImage >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[indexImage]).Image;
         }
 
-        private void panelInfo_Paint(object sender, PaintEventArgs e)
+        private void ButonBackClick(object sender, EventArgs e)
         {
-
+            Dispose();
         }
     }
 }

@@ -23,9 +23,44 @@ namespace Project
             this.hotel = hotel;
         }
 
-        private void ButtonEditClick(object sender, EventArgs e)
+        private void ButtonAddClick(object sender, EventArgs e)
+        {
+            OpenUpdateRoom();
+        }
+
+        public void OpenUpdateRoom(Room room = null)
+        {
+            ((FMain)((FService)Tag).Tag).OpenFormChild(new FUpdateRoom(hotel, room), this);
+        }
+
+        private void ButtonInforHotelClick(object sender, EventArgs e)
+        {
+            ((FMain)((FService)Tag).Tag).OpenFormChild(new FUpdateHotel(hotel), this, false);
+        }
+
+        private void ButtonUpdateClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadData()
+        {
+            if(hotel.Rooms == null)
+            {
+                return;
+            }    
+            foreach(Room room in hotel.Rooms)
+            {
+                UserControlRoom userControlRoom = new UserControlRoom(room);
+
+                userControlRoom.Tag = this;
+                flowLayoutPanel.Controls.Add(userControlRoom);
+            }
+        }
+
+        private void FHotelManageLoad(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

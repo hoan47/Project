@@ -15,17 +15,16 @@ namespace Project
         public FService()
         {
             InitializeComponent();
-            LoadData();
         }
 
         private void ButtonAddClick(object sender, EventArgs e)
         {
-            ((FMain)Tag).OpenFormChild(new FUpdateHotel(null));
+            ((FMain)Tag).OpenFormChild(new FUpdateHotel(null), this);
         }
 
         public void OpenHotelManager(Hotel hotel = null)
         {
-            ((FMain)Tag).OpenFormChild(new FHotelManage(hotel));
+            ((FMain)Tag).OpenFormChild(new FHotelManage(hotel), this);
         }
 
         private void LoadData()
@@ -40,6 +39,11 @@ namespace Project
                 userControlHotel.Tag = this;
                 flowLayoutPanelHottel.Controls.Add(userControlHotel);
             }    
+        }
+
+        private void FServiceLoad(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

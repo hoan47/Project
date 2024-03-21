@@ -165,5 +165,42 @@ namespace Project
             message = "Số điện thoại hợp lệ.";
             return true;
         }
+
+        static public bool IsAcreage(string acreageStr, out string message, out int acreage)
+        {
+            if (string.IsNullOrWhiteSpace(acreageStr))
+            {
+                message = "Diện tích không được để trống.";
+                acreage = -1;
+                return false;
+            }
+            if (int.TryParse(acreageStr, out acreage) == false)
+            {
+                message = "Diện tích không hợp lệ.";
+                return false;
+            }
+            message = "Diện tích hợp lệ";
+            return true;
+        }
+
+        static public bool IsPrice(string priceStr, out string message, out decimal price)
+        {
+            string priceString = priceStr; 
+
+            if (string.IsNullOrWhiteSpace(priceString))
+            {
+                message = "Giá tiền không được để trống.";
+                price = -1;
+                return false;
+            }
+
+            if (decimal.TryParse(priceString, out price) == false)
+            {
+                message = "Giá tiền không hợp lệ.";
+                return false;
+            }
+            message = "Giá tiền hợp lệ";
+            return true;
+        }
     }
 }

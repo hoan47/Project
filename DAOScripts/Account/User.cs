@@ -84,11 +84,6 @@ namespace Project
             Hotels.Add(hotel);
         }
 
-        public int SelectNewIdHotel()
-        {
-            return Hotels == null ? 0 : Hotels.Max(h => h.IdHotel) + 1;
-        }
-
         public Hotel GetIndex(int index)
         {
             return Hotels == null ? null : 0 <= index && index < Hotels.Count ? Hotels[index] : null;

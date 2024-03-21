@@ -49,9 +49,10 @@
             // panelOption
             // 
             this.panelOption.Controls.Add(this.toolStripOption);
-            this.panelOption.Location = new System.Drawing.Point(0, 170);
+            this.panelOption.Location = new System.Drawing.Point(0, 138);
+            this.panelOption.Margin = new System.Windows.Forms.Padding(2);
             this.panelOption.Name = "panelOption";
-            this.panelOption.Size = new System.Drawing.Size(200, 460);
+            this.panelOption.Size = new System.Drawing.Size(150, 374);
             this.panelOption.TabIndex = 3;
             // 
             // toolStripOption
@@ -72,22 +73,22 @@
             this.toolStripOption.Location = new System.Drawing.Point(0, 0);
             this.toolStripOption.Name = "toolStripOption";
             this.toolStripOption.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripOption.Size = new System.Drawing.Size(200, 460);
+            this.toolStripOption.Size = new System.Drawing.Size(148, 374);
             this.toolStripOption.TabIndex = 0;
             this.toolStripOption.TabStop = true;
             this.toolStripOption.Text = "toolStrip1";
             // 
-            // toolStripButtonInfo
+            // toolStripButtonInfor
             // 
             this.toolStripButtonInfor.AutoSize = false;
+            this.toolStripButtonInfor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.toolStripButtonInfor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripButtonInfor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfo.Image")));
+            this.toolStripButtonInfor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonInfor.Image")));
             this.toolStripButtonInfor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButtonInfor.ImageTransparentColor = System.Drawing.Color.White;
-            this.toolStripButtonInfor.Name = "toolStripButtonInfo";
+            this.toolStripButtonInfor.Name = "toolStripButtonInfor";
             this.toolStripButtonInfor.Size = new System.Drawing.Size(200, 50);
             this.toolStripButtonInfor.Text = "Thông Tin";
-            this.toolStripButtonInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButtonInfor.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
             // toolStripButtonHomePage
@@ -172,9 +173,10 @@
             // pictureBoxIcon
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(19, 10);
+            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(112, 122);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 4;
             this.pictureBoxIcon.TabStop = false;
@@ -184,22 +186,22 @@
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelMain.Location = new System.Drawing.Point(200, 0);
+            this.panelMain.Location = new System.Drawing.Point(150, 0);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1040, 630);
+            this.panelMain.Size = new System.Drawing.Size(780, 512);
             this.panelMain.TabIndex = 2;
             // 
             // FMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1240, 630);
+            this.ClientSize = new System.Drawing.Size(930, 512);
             this.Controls.Add(this.pictureBoxIcon);
             this.Controls.Add(this.panelOption);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FMain";
             this.Text = "FMain";

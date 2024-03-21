@@ -18,7 +18,7 @@ namespace Project
         public string Describe { get; private set; }
         public List<Image_> Images { get; private set; }
         public List<string> Services { get; private set; }
-        public List<Room> rooms { get; private set; }
+        public List<Room> Rooms { get; private set; }
 
         public Hotel()
         { }
@@ -58,24 +58,13 @@ namespace Project
             Images.Add(image);
         }
 
-        public int SelectNewIdImage()
-        {
-            return Images != null ? Images.Max(i => i.IdImage) + 1 : 0;
-        }
-
         public void AddRoom(Room room)
         {
-            if (rooms == null)
+            if (Rooms == null)
             {
-                rooms = new List<Room>();
+                Rooms = new List<Room>();
             }
-            rooms.Add(room);
-        }
-
-        public int SelectNewIdRoom()
-        {
-            return 0;
-            //return Images != null ? rooms.Max(i => i) + 1 : 0;
+            Rooms.Add(room);
         }
 
         public bool IsName(out string message)

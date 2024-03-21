@@ -13,28 +13,56 @@ namespace Project
     public partial class FMain : Form
     {
         private Color colorNormal = Color.White;
-        private Form formChildCurrent;
-
+        private Form formChildCurrent1;
+        private Form formChildCurrent2;
 
         public FMain()
         {
             InitializeComponent();
         }
 
-        public void OpenFormChild(Form formChild, bool isClearCurrent = true)
+        public void OpenFormChild(Form formChild, Form fromTag, bool isClearCurrent = true)
         {
-            if (formChildCurrent != null)
+            if (formChildCurrent2 != null)
             {
-                if (formChild.GetType() == formChildCurrent.GetType())
+                formChildCurrent2.Close();
+                formChildCurrent2 = null;
+            }
+            if (formChildCurrent1 != null)
+            {
+                if (formChild.GetType() == formChildCurrent1.GetType())
                 {
                     return;
                 }
                 if (isClearCurrent == true)
                 {
-                    formChildCurrent.Close();
-                    formChildCurrent = formChild;
+                    formChildCurrent1.Close();
+                    formChildCurrent1 = formChild;
+                }
+                else
+                {
+                    formChildCurrent2 = formChild;
                 }
             }
+            else
+            {
+                formChildCurrent1 = formChild;
+            }
+            FLoading fLoading = new FLoading(formChild, 400);
+
+            ChangeColerToolStripButton(formChild);
+            fLoading.OnLoading();
+            formChild.Tag = fromTag;
+            formChild.Size = panelMain.Size;
+            formChild.TopLevel = false;
+            panelMain.Controls.Add(formChild);
+            formChild.BringToFront();
+            formChild.Show();
+            fLoading.OffLoading();
+        }
+
+        public void ChangeColerToolStripButton(Form formChild)
+        {
             if (formChild is FUpdateInfor)
             {
                 toolStripButtonInfor.BackColor = formChild.BackColor;
@@ -51,7 +79,7 @@ namespace Project
             {
                 toolStripButtonPreferential.BackColor = formChild.BackColor;
             }
-            else if (formChild is FService)
+            else if (formChild is FService || formChild is FHotelManage || formChild is FUpdateHotel || formChild is FUpdateRoom)
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
             }
@@ -63,17 +91,6 @@ namespace Project
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
             }
-            FLoading fLoading = new FLoading(formChild, 300);
-
-            fLoading.OnLoading();
-
-            formChild.Size = panelMain.Size;
-            formChild.TopLevel = false;
-            panelMain.Controls.Add(formChild);
-            formChild.BringToFront();
-            formChild.Tag = this;
-            formChild.Show();
-            fLoading.OffLoading();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)
@@ -85,7 +102,7 @@ namespace Project
 
             if (sender == toolStripButtonInfor)
             {
-                OpenFormChild(new FUpdateInfor());
+                OpenFormChild(new FUpdateInfor(), this);
             }
             else if (FController.Instance.User.Client.RankInt == 0)
             {
@@ -93,23 +110,23 @@ namespace Project
             }
             else if (sender == toolStripButtonHomePage)
             {
-                OpenFormChild(new FHomePage());
+                OpenFormChild(new FHomePage(), this);
             }
             else if (sender == toolStripButtonHistory)
             {
-                OpenFormChild(new FHistory());
+                OpenFormChild(new FHistory(), this);
             }
             else if (sender == toolStripButtonPreferential)
             {
-                OpenFormChild(new FPreferential());
+                OpenFormChild(new FPreferential(), this);
             }
             else if (sender == toolStripButtonService)
             {
-                OpenFormChild(new FService());
+                OpenFormChild(new FService(), this);
             }
             else if (sender == toolStripButtonSetting)
             {
-                OpenFormChild(new FSetting());
+                OpenFormChild(new FSetting(), this);
             }
             else if (sender == toolStripButtonLogOut)
             {

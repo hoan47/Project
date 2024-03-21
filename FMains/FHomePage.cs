@@ -17,7 +17,7 @@ namespace Project
             InitializeComponent();
             HotelRoom hotelRoom = new HotelRoom("Tình một đêm", new Address("Gia Lai, x, x"), "Tên phòng", 1, 2, 3, new TimeSpan(1), new TimeSpan(2), DateTime.Now, DateTime.Now, "0123456789", 0.123456789, 1234567890, "Không");
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
                 UserControlHotelRoom x = new UserControlHotelRoom(hotelRoom);
                 x.Tag = this;
@@ -32,7 +32,7 @@ namespace Project
 
         public void OpenInforHotelRoom(HotelRoom hotelRoom)
         {
-            ((FMain)Tag).OpenFormChild(new FInforHotelRoom(hotelRoom), false);
+            ((FMain)Tag).OpenFormChild(new FInforHotelRoom(hotelRoom), this, false);
         }
 
 
