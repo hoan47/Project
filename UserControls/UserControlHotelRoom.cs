@@ -17,10 +17,11 @@ namespace Project
         {
             InitializeComponent();
             this.hotelRoom = hotelRoom;
-            labelName.Text = "Tên: " + hotelRoom.NameHotel + ", " + hotelRoom.NameRoom;
+            labelName.Text = "Tên: " + hotelRoom.NameHotel;
             labelPhone.Text = "SDT: " + hotelRoom.Phone;
             labelPrice.Text = "Giá: " + hotelRoom.Price + " VND";
             labelAddress.Text = "Địa chỉ: " + hotelRoom.Address.AddressValue;
+            pictureBox.Image = hotelRoom.ImagesHotel == null ? Properties.Resources.noImage : hotelRoom.ImagesHotel.First().Image;
         }
 
         private void UserControlHomePaceSearchRoomDoubleClick(object sender, EventArgs e)

@@ -176,6 +176,7 @@
     <Compile Include="DAOScripts\Address.cs" />
     <Compile Include="DAOScripts\AddressDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
+    <Compile Include="DAOScripts\HotetRoomDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
@@ -210,7 +211,7 @@
     <Compile Include="FMains\FUpdateRoom.Designer.cs">
       <DependentUpon>FUpdateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="HotelRoom.cs" />
+    <Compile Include="DAOScripts\HotelRoom.cs" />
     <Compile Include="ProcessScripts\ProcessCheckInfor.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />

@@ -31,13 +31,13 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotelRoom));
             this.labelName = new System.Windows.Forms.Label();
-            this.pictureBoxHotelRoom = new System.Windows.Forms.PictureBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelEvaluate = new System.Windows.Forms.Label();
             this.labelDetail = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotelRoom)).BeginInit();
+            this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
@@ -50,17 +50,6 @@ namespace Project
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Tên: Tình một đêm";
             this.labelName.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
-            // 
-            // pictureBoxHotelRoom
-            // 
-            this.pictureBoxHotelRoom.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHotelRoom.Image")));
-            this.pictureBoxHotelRoom.Location = new System.Drawing.Point(7, 7);
-            this.pictureBoxHotelRoom.Name = "pictureBoxHotelRoom";
-            this.pictureBoxHotelRoom.Size = new System.Drawing.Size(96, 96);
-            this.pictureBoxHotelRoom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxHotelRoom.TabIndex = 1;
-            this.pictureBoxHotelRoom.TabStop = false;
-            this.pictureBoxHotelRoom.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
             // 
             // labelAddress
             // 
@@ -117,6 +106,17 @@ namespace Project
             this.labelDetail.Text = "Chi tiết";
             this.labelDetail.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
             // 
+            // pictureBox
+            // 
+            this.pictureBox.BackColor = System.Drawing.Color.White;
+            this.pictureBox.ImageRotate = 0F;
+            this.pictureBox.Location = new System.Drawing.Point(5, 5);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 7;
+            this.pictureBox.TabStop = false;
+            // 
             // UserControlHotelRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,19 +124,19 @@ namespace Project
             this.BackColor = System.Drawing.Color.Transparent;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.labelDetail);
             this.Controls.Add(this.labelEvaluate);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelAddress);
-            this.Controls.Add(this.pictureBoxHotelRoom);
             this.Controls.Add(this.labelName);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
             this.Name = "UserControlHotelRoom";
             this.Size = new System.Drawing.Size(370, 170);
             this.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotelRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,11 +145,11 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.PictureBox pictureBoxHotelRoom;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelEvaluate;
         private System.Windows.Forms.Label labelDetail;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBox;
     }
 }
