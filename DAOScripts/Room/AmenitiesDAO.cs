@@ -12,13 +12,13 @@ namespace Project
         public AmenitiesDAO() : base("Amenities")
         { }
 
-        public void Access(User user)
+        public void Access(List<Hotel> hotels)
         {
             try
             {
                 sqlConnection.Open();
 
-                foreach (Hotel hotel in user.Hotels)
+                foreach (Hotel hotel in hotels)
                 {
                     if (hotel.Rooms == null)
                     {

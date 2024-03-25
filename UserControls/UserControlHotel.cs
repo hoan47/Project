@@ -22,7 +22,7 @@ namespace Project
             labelAddress.Text = hotel.Address.AddressValue;
             labelPhone.Text = hotel.Phone;
             labelPrice.Text = "0 - 0";
-            pictureBoxHotel.Image = hotel.Images != null ? hotel.Images.Count > 0 ? hotel.Images.First().Image : Properties.Resources.noImage : Properties.Resources.noImage;
+            pictureBoxHotel.Image = hotel.GetImageHotel();
         }
 
         public void UserControlHottelDoubleClick(object sender, EventArgs e)

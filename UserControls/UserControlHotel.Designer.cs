@@ -34,27 +34,27 @@ namespace Project
             this.groupBox = new Guna.UI2.WinForms.Guna2GroupBox();
             this.groupBoxPhone = new System.Windows.Forms.GroupBox();
             this.labelPhone = new System.Windows.Forms.Label();
-            this.pictureBoxPhone = new System.Windows.Forms.PictureBox();
             this.groupBoxPrice = new System.Windows.Forms.GroupBox();
             this.labelPrice = new System.Windows.Forms.Label();
-            this.pictureBoxPrice = new System.Windows.Forms.PictureBox();
             this.groupBoxAddress = new System.Windows.Forms.GroupBox();
             this.labelAddress = new System.Windows.Forms.Label();
-            this.pictureBoxAddress = new System.Windows.Forms.PictureBox();
             this.groupBoxNumber = new System.Windows.Forms.GroupBox();
             this.labelNumber = new System.Windows.Forms.Label();
-            this.pictureNumber = new System.Windows.Forms.PictureBox();
             this.pictureBoxHotel = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBoxPhone = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPrice = new System.Windows.Forms.PictureBox();
+            this.pictureBoxAddress = new System.Windows.Forms.PictureBox();
+            this.pictureNumber = new System.Windows.Forms.PictureBox();
             this.groupBox.SuspendLayout();
             this.groupBoxPhone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).BeginInit();
             this.groupBoxPrice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrice)).BeginInit();
             this.groupBoxAddress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).BeginInit();
             this.groupBoxNumber.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox
@@ -107,19 +107,6 @@ namespace Project
             this.labelPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelPhone.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
-            // pictureBoxPhone
-            // 
-            this.pictureBoxPhone.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxPhone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPhone.Image")));
-            this.pictureBoxPhone.Location = new System.Drawing.Point(4, 20);
-            this.pictureBoxPhone.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxPhone.Name = "pictureBoxPhone";
-            this.pictureBoxPhone.Size = new System.Drawing.Size(35, 35);
-            this.pictureBoxPhone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPhone.TabIndex = 0;
-            this.pictureBoxPhone.TabStop = false;
-            this.pictureBoxPhone.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
-            // 
             // groupBoxPrice
             // 
             this.groupBoxPrice.Controls.Add(this.labelPrice);
@@ -146,19 +133,6 @@ namespace Project
             this.labelPrice.Text = "label1";
             this.labelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelPrice.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
-            // 
-            // pictureBoxPrice
-            // 
-            this.pictureBoxPrice.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxPrice.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPrice.Image")));
-            this.pictureBoxPrice.Location = new System.Drawing.Point(4, 20);
-            this.pictureBoxPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxPrice.Name = "pictureBoxPrice";
-            this.pictureBoxPrice.Size = new System.Drawing.Size(35, 35);
-            this.pictureBoxPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPrice.TabIndex = 0;
-            this.pictureBoxPrice.TabStop = false;
-            this.pictureBoxPrice.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
             // groupBoxAddress
             // 
@@ -188,19 +162,6 @@ namespace Project
             this.labelAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelAddress.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
-            // pictureBoxAddress
-            // 
-            this.pictureBoxAddress.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxAddress.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddress.Image")));
-            this.pictureBoxAddress.Location = new System.Drawing.Point(4, 20);
-            this.pictureBoxAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxAddress.Name = "pictureBoxAddress";
-            this.pictureBoxAddress.Size = new System.Drawing.Size(35, 35);
-            this.pictureBoxAddress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAddress.TabIndex = 0;
-            this.pictureBoxAddress.TabStop = false;
-            this.pictureBoxAddress.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
-            // 
             // groupBoxNumber
             // 
             this.groupBoxNumber.Controls.Add(this.labelNumber);
@@ -228,19 +189,6 @@ namespace Project
             this.labelNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelNumber.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
-            // pictureNumber
-            // 
-            this.pictureNumber.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureNumber.Image = ((System.Drawing.Image)(resources.GetObject("pictureNumber.Image")));
-            this.pictureNumber.Location = new System.Drawing.Point(4, 20);
-            this.pictureNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureNumber.Name = "pictureNumber";
-            this.pictureNumber.Size = new System.Drawing.Size(35, 35);
-            this.pictureNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureNumber.TabIndex = 0;
-            this.pictureNumber.TabStop = false;
-            this.pictureNumber.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
-            // 
             // pictureBoxHotel
             // 
             this.pictureBoxHotel.BackColor = System.Drawing.Color.White;
@@ -257,6 +205,58 @@ namespace Project
             this.pictureBoxHotel.TabStop = false;
             this.pictureBoxHotel.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             // 
+            // pictureBoxPhone
+            // 
+            this.pictureBoxPhone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxPhone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPhone.Image")));
+            this.pictureBoxPhone.Location = new System.Drawing.Point(4, 20);
+            this.pictureBoxPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxPhone.Name = "pictureBoxPhone";
+            this.pictureBoxPhone.Size = new System.Drawing.Size(35, 35);
+            this.pictureBoxPhone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPhone.TabIndex = 0;
+            this.pictureBoxPhone.TabStop = false;
+            this.pictureBoxPhone.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
+            // 
+            // pictureBoxPrice
+            // 
+            this.pictureBoxPrice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxPrice.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPrice.Image")));
+            this.pictureBoxPrice.Location = new System.Drawing.Point(4, 20);
+            this.pictureBoxPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxPrice.Name = "pictureBoxPrice";
+            this.pictureBoxPrice.Size = new System.Drawing.Size(35, 35);
+            this.pictureBoxPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPrice.TabIndex = 0;
+            this.pictureBoxPrice.TabStop = false;
+            this.pictureBoxPrice.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
+            // 
+            // pictureBoxAddress
+            // 
+            this.pictureBoxAddress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxAddress.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddress.Image")));
+            this.pictureBoxAddress.Location = new System.Drawing.Point(4, 20);
+            this.pictureBoxAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxAddress.Name = "pictureBoxAddress";
+            this.pictureBoxAddress.Size = new System.Drawing.Size(35, 35);
+            this.pictureBoxAddress.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAddress.TabIndex = 0;
+            this.pictureBoxAddress.TabStop = false;
+            this.pictureBoxAddress.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
+            // 
+            // pictureNumber
+            // 
+            this.pictureNumber.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureNumber.Image = ((System.Drawing.Image)(resources.GetObject("pictureNumber.Image")));
+            this.pictureNumber.Location = new System.Drawing.Point(4, 20);
+            this.pictureNumber.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureNumber.Name = "pictureNumber";
+            this.pictureNumber.Size = new System.Drawing.Size(35, 35);
+            this.pictureNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureNumber.TabIndex = 0;
+            this.pictureNumber.TabStop = false;
+            this.pictureNumber.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
+            // 
             // UserControlHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,14 +271,14 @@ namespace Project
             this.Click += new System.EventHandler(this.UserControlHottelDoubleClick);
             this.groupBox.ResumeLayout(false);
             this.groupBoxPhone.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).EndInit();
             this.groupBoxPrice.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrice)).EndInit();
             this.groupBoxAddress.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).EndInit();
             this.groupBoxNumber.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumber)).EndInit();
             this.ResumeLayout(false);
 
         }

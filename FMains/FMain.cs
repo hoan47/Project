@@ -67,7 +67,7 @@ namespace Project
             {
                 toolStripButtonInfor.BackColor = formChild.BackColor;
             }
-            else if (formChild is FHomePage || formChild is FInforHotelRoom)
+            else if (formChild is FHomePage || formChild is FInforHotelRoom | formChild is FShowRoom)
             {
                 toolStripButtonHomePage.BackColor = formChild.BackColor;
             }

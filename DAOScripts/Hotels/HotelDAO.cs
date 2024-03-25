@@ -12,17 +12,17 @@ namespace Project
         public HotelDAO() : base("Hotel")
         { }
 
-        public void Access(User user)
+        public void Access(User user, List<Hotel> hotels, bool isUser = true)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName {(isUser == true ? "=" : "<>")} '{user.UserName}'", sqlConnection);
                 SqlDataReader reader = selectCMD.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    user.AddHotel(new Hotel(
+                    hotels.Add(new Hotel(
                         Convert.ToInt32(reader[1]),
                         reader[2].ToString(),
                         reader[3].ToString(),

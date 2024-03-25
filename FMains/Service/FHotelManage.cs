@@ -45,11 +45,11 @@ namespace Project
 
         private void LoadData()
         {
-            if(hotel.Rooms == null)
+            if (hotel.Rooms == null)
             {
                 return;
-            }    
-            foreach(Room room in hotel.Rooms)
+            }
+            foreach (Room room in hotel.Rooms)
             {
                 UserControlRoom userControlRoom = new UserControlRoom(room);
 
@@ -61,6 +61,6 @@ namespace Project
         private void FHotelManageLoad(object sender, EventArgs e)
         {
             LoadData();
-        }
+        } 
     }
 }

@@ -10,16 +10,20 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlHotelRoom : UserControl
+    public partial class FShowRoom : Form
     {
-        public UserControlHotelRoom()
+        private Hotel hotel;
+
+        public FShowRoom(Hotel hotel)
         {
             InitializeComponent();
+            this.hotel = hotel;
+            userControlLable1.LableText = hotel.Address.AddressValue;
         }
 
-        private void UserControlHomePaceSearchRoomDoubleClick(object sender, EventArgs e)
+        private void FShowRoom_Load(object sender, EventArgs e)
         {
-            ((FHomePage)Tag).OpenInforHotelRoom();
+
         }
     }
 }

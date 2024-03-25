@@ -42,11 +42,6 @@ namespace Project
             timer.Start();
         }
 
-        public void Off()
-        {
-            Dispose();
-        }
-
         public void TimerTick(object sender, EventArgs e)
         {
             timer.Stop();

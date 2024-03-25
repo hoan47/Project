@@ -51,6 +51,11 @@ namespace Project
             Images = images;
         }
 
+        public Image GetImageHotel(bool isFirst = true)
+        {
+            return Images != null ? (Images.Count > 0 ? (isFirst == true ? Images.First().Image : Images.Last().Image) : Properties.Resources.noImage) : Properties.Resources.noImage;
+        }
+
         public void AddImage(Image_ image)
         {
             if (Images == null)

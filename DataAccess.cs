@@ -21,6 +21,7 @@ namespace Project
         public static AmenitiesDAO AmenitiesDAO { get; private set; }
         public static ImageRoomDAO ImageRoomDAO { get; private set; }
 
+        public static ApplicationServiceDAO ApplicationServiceDAO { get; private set; }
         static DataAccess()
         {
             IdDAO = new IdDAO();
@@ -37,6 +38,25 @@ namespace Project
             RoomDAO = new RoomDAO();
             AmenitiesDAO = new AmenitiesDAO();
             ImageRoomDAO = new ImageRoomDAO();
+
+            ApplicationServiceDAO = new ApplicationServiceDAO();
+        }
+
+        public static void Access()
+        {
+            InfoDAO.Access(Data.User);
+            ClientDAO.Access(Data.User);
+            HotelDAO.Access(Data.User, Data.User.Hotels);
+            if (Data.User.Hotels != null)
+            {
+                ServiceDAO.Access(Data.User.Hotels);
+                ImageHotelDAO.Access(Data.User.Hotels);
+                RoomDAO.Access(Data.User.Hotels);
+                AmenitiesDAO.Access(Data.User.Hotels);
+                ImageRoomDAO.Access(Data.User.Hotels);
+            }
+
+            ApplicationServiceDAO.Access(Data.User, Data.HotelServices);
         }
     }
 }

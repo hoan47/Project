@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Button buttonDeleteImage;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateInfor));
+            System.Windows.Forms.Button buttonDeleteImage;
             System.Windows.Forms.Button buttonChangeImage;
             this.panelInfo = new System.Windows.Forms.Panel();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.pictureBoxImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.labelRank = new System.Windows.Forms.Label();
             this.pictureBoxImageRank = new System.Windows.Forms.PictureBox();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.pictureBoxImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.userControlAddressEditAddress = new Project.UserControlAddressEdit();
             this.userControlTextBoxEditPhone = new Project.UserControlTextBoxEdit();
             this.userControlRadioButtonEditGender = new Project.UserControlRadioButtonEdit();
@@ -52,37 +52,9 @@
             buttonChangeImage = new System.Windows.Forms.Button();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonDeleteImage
-            // 
-            buttonDeleteImage.AutoSize = true;
-            buttonDeleteImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
-            buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            buttonDeleteImage.Location = new System.Drawing.Point(111, 206);
-            buttonDeleteImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            buttonDeleteImage.Name = "buttonDeleteImage";
-            buttonDeleteImage.Size = new System.Drawing.Size(40, 40);
-            buttonDeleteImage.TabIndex = 2;
-            buttonDeleteImage.UseVisualStyleBackColor = false;
-            buttonDeleteImage.Click += new System.EventHandler(this.ButtonDeleteImageClick);
-            // 
-            // buttonChangeImage
-            // 
-            buttonChangeImage.AutoSize = true;
-            buttonChangeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            buttonChangeImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChangeImage.BackgroundImage")));
-            buttonChangeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            buttonChangeImage.Location = new System.Drawing.Point(59, 206);
-            buttonChangeImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            buttonChangeImage.Name = "buttonChangeImage";
-            buttonChangeImage.Size = new System.Drawing.Size(40, 40);
-            buttonChangeImage.TabIndex = 1;
-            buttonChangeImage.UseVisualStyleBackColor = false;
-            buttonChangeImage.Click += new System.EventHandler(this.ButtonChangeImageClick);
             // 
             // panelInfo
             // 
@@ -97,25 +69,11 @@
             this.panelInfo.Controls.Add(this.userControlTextBoxEditName);
             this.panelInfo.Controls.Add(this.buttonUpdate);
             this.panelInfo.Location = new System.Drawing.Point(270, 42);
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(466, 436);
             this.panelInfo.TabIndex = 1;
             this.panelInfo.TabStop = true;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.AutoSize = true;
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUpdate.Location = new System.Drawing.Point(214, 377);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
             // panelImage
             // 
@@ -126,24 +84,11 @@
             this.panelImage.Controls.Add(this.labelUser);
             this.panelImage.Controls.Add(buttonChangeImage);
             this.panelImage.Location = new System.Drawing.Point(40, 154);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(2);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(201, 253);
             this.panelImage.TabIndex = 0;
             this.panelImage.TabStop = true;
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.BorderRadius = 20;
-            this.pictureBoxImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBoxImage.ImageRotate = 0F;
-            this.pictureBoxImage.Location = new System.Drawing.Point(15, 15);
-            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(170, 170);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 24;
-            this.pictureBoxImage.TabStop = false;
             // 
             // labelUser
             // 
@@ -169,12 +114,67 @@
             // pictureBoxImageRank
             // 
             this.pictureBoxImageRank.Location = new System.Drawing.Point(81, 28);
-            this.pictureBoxImageRank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxImageRank.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxImageRank.Name = "pictureBoxImageRank";
             this.pictureBoxImageRank.Size = new System.Drawing.Size(122, 122);
             this.pictureBoxImageRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImageRank.TabIndex = 4;
             this.pictureBoxImageRank.TabStop = false;
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.AutoSize = true;
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUpdate.Location = new System.Drawing.Point(214, 377);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.BorderRadius = 20;
+            this.pictureBoxImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.pictureBoxImage.ImageRotate = 0F;
+            this.pictureBoxImage.Location = new System.Drawing.Point(15, 15);
+            this.pictureBoxImage.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(170, 170);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 24;
+            this.pictureBoxImage.TabStop = false;
+            // 
+            // buttonDeleteImage
+            // 
+            buttonDeleteImage.AutoSize = true;
+            buttonDeleteImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
+            buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            buttonDeleteImage.Location = new System.Drawing.Point(111, 206);
+            buttonDeleteImage.Margin = new System.Windows.Forms.Padding(2);
+            buttonDeleteImage.Name = "buttonDeleteImage";
+            buttonDeleteImage.Size = new System.Drawing.Size(40, 40);
+            buttonDeleteImage.TabIndex = 2;
+            buttonDeleteImage.UseVisualStyleBackColor = false;
+            buttonDeleteImage.Click += new System.EventHandler(this.ButtonDeleteImageClick);
+            // 
+            // buttonChangeImage
+            // 
+            buttonChangeImage.AutoSize = true;
+            buttonChangeImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            buttonChangeImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChangeImage.BackgroundImage")));
+            buttonChangeImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            buttonChangeImage.Location = new System.Drawing.Point(59, 206);
+            buttonChangeImage.Margin = new System.Windows.Forms.Padding(2);
+            buttonChangeImage.Name = "buttonChangeImage";
+            buttonChangeImage.Size = new System.Drawing.Size(40, 40);
+            buttonChangeImage.TabIndex = 1;
+            buttonChangeImage.UseVisualStyleBackColor = false;
+            buttonChangeImage.Click += new System.EventHandler(this.ButtonChangeImageClick);
             // 
             // userControlAddressEditAddress
             // 
@@ -262,7 +262,7 @@
             this.userControlTextBoxEditName.TabIndex = 0;
             this.userControlTextBoxEditName.TextBoxText = "";
             // 
-            // FUpdateInfo
+            // FUpdateInfor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,9 +273,9 @@
             this.Controls.Add(this.panelInfo);
             this.Controls.Add(this.panelImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "FUpdateInfo";
+            this.Name = "FUpdateInfor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FInfo";
             this.Load += new System.EventHandler(this.FUpdateInfoLoad);
@@ -283,8 +283,8 @@
             this.panelInfo.PerformLayout();
             this.panelImage.ResumeLayout(false);
             this.panelImage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImageRank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
 
         }

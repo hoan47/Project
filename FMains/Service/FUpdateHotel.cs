@@ -40,17 +40,9 @@ namespace Project
                 userControlTextBoxServicePhone.TextBoxText = hotel.Phone;
                 userControlCheckInOutHotel.MaskedTextBoxInText = hotel.CheckIn.ToString();
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
-                textBoxDescribe.Text = hotel.Describe;
+                richTextBox.Text = hotel.Describe;
                 userControlServiceEdit.Value = hotel.Services;
-                if (hotel.Images != null)
-                {
-                    pictureBox.Image = hotel.Images.First().Image;
-                    currentImage = hotel.Images.First();
-                }
-                else
-                {
-                    pictureBox.Image = Properties.Resources.noImage;
-                }
+                pictureBox.Image = hotel.GetImageHotel();
             }
             else
             {
@@ -73,7 +65,7 @@ namespace Project
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
-                            textBoxDescribe.Text);
+                            richTextBox.Text);
 
                 if (hotel.IsName(out message) && hotel.IsAddress(out message) && hotel.IsPhone(out message))
                 {
@@ -92,7 +84,7 @@ namespace Project
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
                             timeSpanOut,
-                            textBoxDescribe.Text);
+                            richTextBox.Text);
                         DataAccess.HotelDAO.Update(Data.User, this.hotel);
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
                     }

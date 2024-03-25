@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,6 +45,10 @@ namespace Project
         public void UpdateAmenities(List<string> amenitiese)
         {
             Amenitiese = amenitiese;
+        }
+        public Image GetImageRoom(bool isFirst = true)
+        {
+            return Images != null ? (Images.Count > 0 ? (isFirst == true ? Images.First().Image : Images.Last().Image) : Properties.Resources.noImage) : Properties.Resources.noImage;
         }
 
         public void AddImage(Image_ image)

@@ -39,7 +39,6 @@ namespace Project
             this.userControlAddressHotel = new Project.UserControlAddressHotel();
             this.userControlCheckInOutHotel = new Project.UserControlCheckInOutHotel();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
-            this.textBoxDescribe = new System.Windows.Forms.TextBox();
             this.panelImage = new System.Windows.Forms.Panel();
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
@@ -47,8 +46,8 @@ namespace Project
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.panelInfo.SuspendLayout();
-            this.groupBoxDescribe.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +55,7 @@ namespace Project
             // panelInfo
             // 
             this.panelInfo.BackColor = System.Drawing.Color.Transparent;
+            this.panelInfo.Controls.Add(this.richTextBox);
             this.panelInfo.Controls.Add(this.userControlTextBoxServicePhone);
             this.panelInfo.Controls.Add(this.userControlTextBoxSerciveName);
             this.panelInfo.Controls.Add(this.userControlServiceEdit);
@@ -142,7 +142,6 @@ namespace Project
             // 
             // groupBoxDescribe
             // 
-            this.groupBoxDescribe.Controls.Add(this.textBoxDescribe);
             this.groupBoxDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDescribe.Location = new System.Drawing.Point(9, 410);
             this.groupBoxDescribe.Margin = new System.Windows.Forms.Padding(2);
@@ -152,19 +151,6 @@ namespace Project
             this.groupBoxDescribe.TabIndex = 6;
             this.groupBoxDescribe.TabStop = false;
             this.groupBoxDescribe.Text = "Mô tả";
-            // 
-            // textBoxDescribe
-            // 
-            this.textBoxDescribe.AllowDrop = true;
-            this.textBoxDescribe.BackColor = System.Drawing.SystemColors.Info;
-            this.textBoxDescribe.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDescribe.Location = new System.Drawing.Point(4, 19);
-            this.textBoxDescribe.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxDescribe.Multiline = true;
-            this.textBoxDescribe.Name = "textBoxDescribe";
-            this.textBoxDescribe.Size = new System.Drawing.Size(240, 72);
-            this.textBoxDescribe.TabIndex = 0;
             // 
             // panelImage
             // 
@@ -261,6 +247,7 @@ namespace Project
             // 
             this.butonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butonBack.BackgroundImage")));
             this.butonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butonBack.BorderRadius = 10;
             this.butonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.butonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.butonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -273,6 +260,15 @@ namespace Project
             this.butonBack.Size = new System.Drawing.Size(40, 40);
             this.butonBack.TabIndex = 11;
             this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
+            // 
+            // richTextBox
+            // 
+            this.richTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox.Location = new System.Drawing.Point(14, 429);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(240, 74);
+            this.richTextBox.TabIndex = 0;
+            this.richTextBox.Text = "";
             // 
             // FUpdateHotel
             // 
@@ -288,8 +284,6 @@ namespace Project
             this.Name = "FUpdateHotel";
             this.Text = "FUpdateService";
             this.panelInfo.ResumeLayout(false);
-            this.groupBoxDescribe.ResumeLayout(false);
-            this.groupBoxDescribe.PerformLayout();
             this.panelImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -300,7 +294,6 @@ namespace Project
         private Button buttonUpdate;
         private Panel panelInfo;
         private GroupBox groupBoxDescribe;
-        private TextBox textBoxDescribe;
         private UserControlCheckInOutHotel userControlCheckInOutHotel;
         private Panel panelImage;
         private Button buttonUploadImage;
@@ -313,5 +306,6 @@ namespace Project
         private UserControlTextBoxService userControlTextBoxServicePhone;
         private UserControlTextBoxService userControlTextBoxSerciveName;
         private Guna.UI2.WinForms.Guna2Button butonBack;
+        private RichTextBox richTextBox;
     }
 }

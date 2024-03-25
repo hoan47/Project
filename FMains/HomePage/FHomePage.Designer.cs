@@ -33,43 +33,28 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonHomePaceSearch = new System.Windows.Forms.Button();
             this.userControlService = new Project.UserControlService();
             this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.UserControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
             this.userControlTextBoxRoomPrice = new Project.UserControlTextBoxRoom();
-            this.userControlNumericPeople = new Project.UserControlNumeric();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonFind = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonHomePaceSearch);
+            this.panel1.Controls.Add(this.buttonFind);
             this.panel1.Controls.Add(this.userControlService);
             this.panel1.Controls.Add(this.userControlAddressRoom);
             this.panel1.Controls.Add(this.UserControlDateTimePackerOut);
             this.panel1.Controls.Add(this.userControlDateTimePackerIn);
             this.panel1.Controls.Add(this.userControlTextBoxRoomPrice);
-            this.panel1.Controls.Add(this.userControlNumericPeople);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 120);
             this.panel1.TabIndex = 0;
-            // 
-            // buttonHomePaceSearch
-            // 
-            this.buttonHomePaceSearch.BackColor = System.Drawing.Color.Transparent;
-            this.buttonHomePaceSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHomePaceSearch.BackgroundImage")));
-            this.buttonHomePaceSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonHomePaceSearch.FlatAppearance.BorderSize = 0;
-            this.buttonHomePaceSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHomePaceSearch.Location = new System.Drawing.Point(713, 61);
-            this.buttonHomePaceSearch.Name = "buttonHomePaceSearch";
-            this.buttonHomePaceSearch.Size = new System.Drawing.Size(55, 55);
-            this.buttonHomePaceSearch.TabIndex = 9;
-            this.buttonHomePaceSearch.UseVisualStyleBackColor = false;
             // 
             // userControlService
             // 
@@ -116,18 +101,6 @@ namespace Project
             this.userControlTextBoxRoomPrice.Size = new System.Drawing.Size(150, 55);
             this.userControlTextBoxRoomPrice.TabIndex = 4;
             // 
-            // userControlNumericPeople
-            // 
-            this.userControlNumericPeople.BackColor = System.Drawing.Color.Transparent;
-            this.userControlNumericPeople.GrupBoxText = "Số người";
-            this.userControlNumericPeople.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericPeople.Image")));
-            this.userControlNumericPeople.Location = new System.Drawing.Point(168, 61);
-            this.userControlNumericPeople.Name = "userControlNumericPeople";
-            this.userControlNumericPeople.NumericValue = 1;
-            this.userControlNumericPeople.Size = new System.Drawing.Size(100, 55);
-            this.userControlNumericPeople.TabIndex = 3;
-            this.userControlNumericPeople.Load += new System.EventHandler(this.userControlHomePaceSearchPeople1_Load);
-            // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AllowDrop = true;
@@ -137,7 +110,23 @@ namespace Project
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
             this.flowLayoutPanel.TabIndex = 1;
-            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelHomePaceSearch_Paint);
+            // 
+            // buttonFind
+            // 
+            this.buttonFind.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFind.BackgroundImage")));
+            this.buttonFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonFind.BorderRadius = 10;
+            this.buttonFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonFind.FillColor = System.Drawing.Color.Transparent;
+            this.buttonFind.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonFind.ForeColor = System.Drawing.Color.White;
+            this.buttonFind.Location = new System.Drawing.Point(728, 61);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(40, 40);
+            this.buttonFind.TabIndex = 9;
             // 
             // FHomePage
             // 
@@ -153,7 +142,7 @@ namespace Project
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHomePage";
             this.Text = "FHomePage";
-            this.Load += new System.EventHandler(this.FHomePage_Load);
+            this.Load += new System.EventHandler(this.FHomePageLoad);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -162,13 +151,12 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private UserControlNumeric userControlNumericPeople;
         private UserControlTextBoxRoom userControlTextBoxRoomPrice;
         private UserControlDateTimePacker userControlDateTimePackerIn;
         private UserControlDateTimePacker UserControlDateTimePackerOut;
         private UserControlAddressRoom userControlAddressRoom;
-        private System.Windows.Forms.Button buttonHomePaceSearch;
         private UserControlService userControlService;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private Guna.UI2.WinForms.Guna2Button buttonFind;
     }
 }

@@ -14,13 +14,13 @@ namespace Project
         public ImageRoomDAO() : base("ImageRoom")
         { }
 
-        public void Access(User user)
+        public void Access(List<Hotel> hotels)
         {
             try
             {
                 sqlConnection.Open();
 
-                foreach (Hotel hotel in user.Hotels)
+                foreach (Hotel hotel in hotels)
                 {
                     if(hotel.Rooms == null)
                     {

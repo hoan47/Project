@@ -68,17 +68,7 @@ namespace Project
             }
             else
             {
-                DataAccess.InfoDAO.Access(Data.User);
-                DataAccess.ClientDAO.Access(Data.User);
-                DataAccess.HotelDAO.Access(Data.User);
-                if (Data.User.Hotels != null)
-                {
-                    DataAccess.ServiceDAO.Access(Data.User);
-                    DataAccess.ImageHotelDAO.Access(Data.User);
-                    DataAccess.RoomDAO.Access(Data.User);
-                    DataAccess.AmenitiesDAO.Access(Data.User);
-                    DataAccess.ImageRoomDAO.Access(Data.User);
-                }
+                DataAccess.Access();
                 e.Result = "Đăng nhập thành công.";
             }
         }

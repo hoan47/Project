@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class UserControlHotelRoom
+    partial class UserControlShowHotel
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,13 +29,12 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlHotelRoom));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlShowHotel));
             this.labelName = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelEvaluate = new System.Windows.Forms.Label();
-            this.labelDetail = new System.Windows.Forms.Label();
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +48,7 @@ namespace Project
             this.labelName.Size = new System.Drawing.Size(250, 23);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Tên: Tình một đêm";
-            this.labelName.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.labelName.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
             // labelAddress
             // 
@@ -60,7 +59,7 @@ namespace Project
             this.labelAddress.Size = new System.Drawing.Size(350, 16);
             this.labelAddress.TabIndex = 2;
             this.labelAddress.Text = "Địa chỉ: Thành phố Hồ Chí Minh, Quận Thủ Đức, Đường Võ Văn Ngân";
-            this.labelAddress.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.labelAddress.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
             // labelPhone
             // 
@@ -68,10 +67,10 @@ namespace Project
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPhone.Location = new System.Drawing.Point(110, 50);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(127, 16);
+            this.labelPhone.Size = new System.Drawing.Size(187, 16);
             this.labelPhone.TabIndex = 3;
-            this.labelPhone.Text = "SDT: 0123456789";
-            this.labelPhone.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.labelPhone.Text = "Số điện thoại: 0123456789";
+            this.labelPhone.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
             // labelPrice
             // 
@@ -82,7 +81,7 @@ namespace Project
             this.labelPrice.Size = new System.Drawing.Size(132, 16);
             this.labelPrice.TabIndex = 4;
             this.labelPrice.Text = "Giá: 1.234.567.890";
-            this.labelPrice.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.labelPrice.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
             // labelEvaluate
             // 
@@ -93,18 +92,7 @@ namespace Project
             this.labelEvaluate.Size = new System.Drawing.Size(305, 16);
             this.labelEvaluate.TabIndex = 5;
             this.labelEvaluate.Text = "Đánh giá:";
-            this.labelEvaluate.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
-            // 
-            // labelDetail
-            // 
-            this.labelDetail.AutoSize = true;
-            this.labelDetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.labelDetail.Location = new System.Drawing.Point(321, 143);
-            this.labelDetail.Name = "labelDetail";
-            this.labelDetail.Size = new System.Drawing.Size(39, 13);
-            this.labelDetail.TabIndex = 6;
-            this.labelDetail.Text = "Chi tiết";
-            this.labelDetail.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.labelEvaluate.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
             // pictureBox
             // 
@@ -116,8 +104,9 @@ namespace Project
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 7;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             // 
-            // UserControlHotelRoom
+            // UserControlHotelShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,7 +114,6 @@ namespace Project
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.labelDetail);
             this.Controls.Add(this.labelEvaluate);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.labelPhone);
@@ -133,9 +121,9 @@ namespace Project
             this.Controls.Add(this.labelName);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DoubleBuffered = true;
-            this.Name = "UserControlHotelRoom";
+            this.Name = "UserControlHotelShow";
             this.Size = new System.Drawing.Size(370, 170);
-            this.DoubleClick += new System.EventHandler(this.UserControlHomePaceSearchRoomDoubleClick);
+            this.Click += new System.EventHandler(this.UserControlHomePaceSearchRoomClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,7 +137,6 @@ namespace Project
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelEvaluate;
-        private System.Windows.Forms.Label labelDetail;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBox;
     }
 }

@@ -157,6 +157,7 @@ namespace Project
             // 
             this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBack.BorderRadius = 10;
             this.buttonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

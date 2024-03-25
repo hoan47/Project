@@ -19,7 +19,9 @@ namespace Project
         {
             Instance = this;
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
             OpenLogin();
+
         }
 
         private void OpenFormChild(Form formChild)
