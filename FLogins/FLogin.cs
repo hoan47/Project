@@ -25,12 +25,12 @@ namespace Project
 
         private void LinkLabelCreateAccountLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FController.Instance.InitializeFCreateAccount();
+            FController.Instance.OpenCreateAccount();
         }
 
         private void LinkLabelForgetPasswordLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FController.Instance.InitializeFForgetPassword();
+            FController.Instance.OpenForgetPassword();
         }
 
         private void ButtonLoginClick(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace Project
             {
                 return;
             }
-            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            Data.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             fLoading = new FLoading(FController.Instance, 500);
             fLoading.OnLoading();
             backgroundWorker.RunWorkerAsync();
@@ -54,31 +54,30 @@ namespace Project
         {
             string message;
 
-            if(FController.Instance.User.IsAccount(out message) == false)
+            if(Data.User.IsAccount(out message) == false)
             {
                 e.Result = message;
             }
-            else if (FController.Instance.AccountDAO.FindAccount() == false)
+            else if (DataAccess.AccountDAO.FindAccount(Data.User) == false)
             {
                 e.Result = "Tài khoản không tồn tại.";
             }
-            else if (FController.Instance.AccountDAO.Select() == false)
+            else if (DataAccess.AccountDAO.Select(Data.User) == false)
             {
                 e.Result = "Mật khẩu sai.";
             }
             else
-            {  
-                FController.Instance.InfoDAO.Access();
-                FController.Instance.ClientDAO.Access();
-                FController.Instance.HotelDAO.Access();
-                if (FController.Instance.User.Hotels != null)
+            {
+                DataAccess.InfoDAO.Access(Data.User);
+                DataAccess.ClientDAO.Access(Data.User);
+                DataAccess.HotelDAO.Access(Data.User);
+                if (Data.User.Hotels != null)
                 {
-                    FController.Instance.ServiceDAO.Access();
-                    FController.Instance.ImageHotelDAO.Access();
-                    FController.Instance.RoomDAO.Access();
-                    FController.Instance.AmenitiesDAO.Access();
-                    FController.Instance.ImageRoomDAO.Access();
-                    FController.Instance.HotetRoomDAO.Access();
+                    DataAccess.ServiceDAO.Access(Data.User);
+                    DataAccess.ImageHotelDAO.Access(Data.User);
+                    DataAccess.RoomDAO.Access(Data.User);
+                    DataAccess.AmenitiesDAO.Access(Data.User);
+                    DataAccess.ImageRoomDAO.Access(Data.User);
                 }
                 e.Result = "Đăng nhập thành công.";
             }
@@ -88,7 +87,7 @@ namespace Project
         {
             if ((string)e.Result == "Đăng nhập thành công.")
             {
-                FController.Instance.InitializeFMain();
+                FController.Instance.OpenMain();
                 fLoading.OnLoading();
                 FController.Instance.MessageSuccess("Thông báo", (string)e.Result);
             }

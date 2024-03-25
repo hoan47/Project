@@ -13,17 +13,17 @@ namespace Project
         public InforDAO() : base("Infor")
         {  }
 
-        public void Access()
+        public void Access(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
                 SqlDataReader reader = selectCMD.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    FController.Instance.User.UpdateInfor(
+                    user.UpdateInfor(
                         reader.IsDBNull(1) ? "Nguyen Van An" : reader[1].ToString(),
                         reader.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(reader[2]),
                         reader.IsDBNull(3) ? "Nam" : reader[3].ToString(),
@@ -47,12 +47,12 @@ namespace Project
         }
 
 
-        public bool Insert()
+        public bool Insert(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, imageBytes) values('{FController.Instance.User.UserName}', @imageBytes)", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, imageBytes) values('{user.UserName}', @imageBytes)", sqlConnection);
                 insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = ProcessImage.ImageToByteArray(Properties.Resources.noImage);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
@@ -71,22 +71,22 @@ namespace Project
             return false;
         }
 
-        public bool Update()
+        public bool Update(User user)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand insertCMD = new SqlCommand($"UPDATE {table} SET " +
-                 $"name = N'{FController.Instance.User.Name}', " +
-                 $"dateOfBirth = '{FController.Instance.User.DateOfBirth.ToString("yyyyMMdd")}', " +
-                 $"gender = N'{FController.Instance.User.Gender}', " +
-                 $"address = N'{FController.Instance.User.Address.AddressValue}', " +
-                 $"idCard = '{FController.Instance.User.IdCard}', " +
-                 $"email = '{FController.Instance.User.Email}', " +
-                 $"phone = '{FController.Instance.User.Phone}', " +
+                 $"name = N'{user.Name}', " +
+                 $"dateOfBirth = '{user.DateOfBirth.ToString("yyyyMMdd")}', " +
+                 $"gender = N'{user.Gender}', " +
+                 $"address = N'{user.Address.AddressValue}', " +
+                 $"idCard = '{user.IdCard}', " +
+                 $"email = '{user.Email}', " +
+                 $"phone = '{user.Phone}', " +
                  $"imageBytes = @imageBytes " +
-                 $"WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
-                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = FController.Instance.User.ImageBytes;
+                 $"WHERE userName = '{user.UserName}'", sqlConnection);
+                insertCMD.Parameters.Add("@imageBytes", SqlDbType.VarBinary).Value = user.ImageBytes;
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
                     return true;

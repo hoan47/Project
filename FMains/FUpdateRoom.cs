@@ -69,7 +69,7 @@ namespace Project
             if(CheckInfor.IsPrice(userControlTextBoxServicePrice.TextBoxText, out message, out price) && CheckInfor.IsAcreage(userControlTextBoxAcreage.TextBoxText, out message, out acreage))
             {
                 Room room = new Room(
-                    FController.Instance.IdDAO.SelectId,
+                    DataAccess.IdDAO.SelectId,
                     userControlTextBoxServiceName.TextBoxText,
                     userControlNumericNumberRoom.NumericValue,
                     userControlNumericNumnberBed.NumericValue,
@@ -81,7 +81,7 @@ namespace Project
                 {
                     this.room = room;
                     hotel.AddRoom(room);
-                    FController.Instance.RoomDAO.Insert(hotel, room);
+                    DataAccess.RoomDAO.Insert(hotel, room);
                     FController.Instance.MessageSuccess("Thông báo", "Tạo phòng mới thành công.", this);
                 }
                 else
@@ -93,13 +93,13 @@ namespace Project
                         userControlNumericNumberPeople.NumericValue,
                         acreage,
                         (int)price);
-                    FController.Instance.RoomDAO.Update(this.room);
+                    DataAccess.RoomDAO.Update(this.room);
                     FController.Instance.MessageSuccess("Thông báo", "Cập nhật phòng thành công.", this);
                 }
                 this.room.UpdateAmenities(userControlServiceEdit.Value);
-                FController.Instance.AmenitiesDAO.Delete(this.room);
-                FController.Instance.AmenitiesDAO.Insert(this.room);
-                FController.Instance.IdDAO.ChangeId();
+                DataAccess.AmenitiesDAO.Delete(this.room);
+                DataAccess.AmenitiesDAO.Insert(this.room);
+                DataAccess.IdDAO.ChangeId();
                 LoadData();
                 return;
             }
@@ -112,10 +112,10 @@ namespace Project
 
             if (image != null)
             {
-                currentImage = new Image_(FController.Instance.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
+                currentImage = new Image_(DataAccess.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
                 room.AddImage(currentImage);
-                FController.Instance.ImageRoomDAO.Insert(room, currentImage);
-                FController.Instance.IdDAO.ChangeId();
+                DataAccess.ImageRoomDAO.Insert(room, currentImage);
+                DataAccess.IdDAO.ChangeId();
                 pictureBox.Image = image;
             }
         }
@@ -129,7 +129,7 @@ namespace Project
             int indexImage = room.Images.IndexOf(currentImage) + 1;
 
             room.Images.Remove(currentImage);
-            FController.Instance.ImageRoomDAO.Delete(currentImage);
+            DataAccess.ImageRoomDAO.Delete(currentImage);
             currentImage = room.Images.Count != 0 ? room.Images[indexImage >= room.Images.Count ? 0 : indexImage] : null;
             pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
         }

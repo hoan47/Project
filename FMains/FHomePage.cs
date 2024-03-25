@@ -15,14 +15,6 @@ namespace Project
         public FHomePage()
         {
             InitializeComponent();
-            
-            foreach(HotelRoom hotelRoom in FController.Instance.HotelRooms)
-            {
-                UserControlHotelRoom userControlHotelRoom = new UserControlHotelRoom(hotelRoom);
-
-                userControlHotelRoom.Tag = this;
-                flowLayoutPanel.Controls.Add(userControlHotelRoom);
-            }
         }
 
         private void FHomePage_Load(object sender, EventArgs e)
@@ -30,9 +22,9 @@ namespace Project
 
         }
 
-        public void OpenInforHotelRoom(HotelRoom hotelRoom)
+        public void OpenInforHotelRoom()
         {
-            ((FMain)Tag).OpenFormChild(new FInforHotelRoom(hotelRoom), this, false);
+            ((FMain)Tag).OpenFormChild(new FInforHotelRoom(), this, false);
         }
 
 

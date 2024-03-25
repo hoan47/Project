@@ -12,17 +12,17 @@ namespace Project
         public HotelDAO() : base("Hotel")
         { }
 
-        public void Access()
+        public void Access(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
                 SqlDataReader reader = selectCMD.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    FController.Instance.User.AddHotel(new Hotel(
+                    user.AddHotel(new Hotel(
                         Convert.ToInt32(reader[1]),
                         reader[2].ToString(),
                         reader[3].ToString(),
@@ -43,14 +43,14 @@ namespace Project
             }
         }
 
-        public bool Insert(Hotel hotel)
+        public bool Insert(User user, Hotel hotel)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} " +
                                                        $"VALUES " +
-                                                       $"('{FController.Instance.User.UserName}', " +
+                                                       $"('{user.UserName}', " +
                                                        $"'{hotel.IdHotel}', " +
                                                        $"N'{hotel.Name}', " +
                                                        $"'{hotel.Phone}', " +
@@ -76,7 +76,7 @@ namespace Project
             return false;
         }
 
-        public bool Update(Hotel hotel)
+        public bool Update(User user, Hotel hotel)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace Project
                                                     $"checkIn = '{hotel.CheckIn}', " +
                                                     $"checkOut = '{hotel.CheckOut}', " +
                                                     $"describe = N'{hotel.Describe}' " +
-                                                    $"WHERE userName = '{FController.Instance.User.UserName}' and idHotel = '{hotel.IdHotel}'",
+                                                    $"WHERE userName = '{user.UserName}' and idHotel = '{hotel.IdHotel}'",
                                                     sqlConnection);
 
                 return updateCMD.ExecuteNonQuery() == 1;

@@ -20,9 +20,6 @@ namespace Project
         public List<string> Services { get; private set; }
         public List<Room> Rooms { get; private set; }
 
-        public Hotel()
-        { }
-
         public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
             IdHotel = id;

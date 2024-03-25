@@ -28,7 +28,9 @@ namespace Project
         public List<Hotel> Hotels { get; private set; }
 
         public User() 
-        { }
+        {
+            Hotels = new List<Hotel>();
+        }
 
         public void UpdateUserName(string userName)
         {
@@ -75,20 +77,6 @@ namespace Project
             StandardizedName();
         }
 
-        public void AddHotel(Hotel hotel)
-        {
-            if (Hotels == null)
-            {
-                Hotels = new List<Hotel>();
-            }
-            Hotels.Add(hotel);
-        }
-
-        public Hotel GetIndex(int index)
-        {
-            return Hotels == null ? null : 0 <= index && index < Hotels.Count ? Hotels[index] : null;
-        }
-
         private void StandardizedName()
         {
             CultureInfo cultureInfo = new CultureInfo("vi-VN", false);
@@ -100,6 +88,11 @@ namespace Project
                 words[i] = textInfo.ToTitleCase(words[i].ToLower());
             }
             Name = string.Join(" ", words);
+        }
+
+        public void AddHotel(Hotel hotel)
+        {
+            Hotels.Add(hotel);
         }
 
         public bool IsAccount(out string massage)

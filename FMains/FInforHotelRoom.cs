@@ -12,7 +12,7 @@ namespace Project
 {
     public partial class FInforHotelRoom : Form
     {
-        public FInforHotelRoom(HotelRoom hotelRoom)
+        public FInforHotelRoom()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace Project
 
         }
 
-        private void buttonBack_Click_1(object sender, EventArgs e)
+        private void ButtonBackClick(object sender, EventArgs e)
         {
             ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
             Dispose();

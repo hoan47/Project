@@ -207,7 +207,7 @@ namespace Project
             // 
             // userControlNumericNumberRoom
             // 
-            this.userControlNumericNumberRoom.GrupBoxText = "Số phòng";
+            this.userControlNumericNumberRoom.GrupBoxText = "Số phòng ngủ";
             this.userControlNumericNumberRoom.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericNumberRoom.Image")));
             this.userControlNumericNumberRoom.Location = new System.Drawing.Point(469, 362);
             this.userControlNumericNumberRoom.Name = "userControlNumericNumberRoom";

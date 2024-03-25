@@ -15,49 +15,11 @@ namespace Project
         public static FController Instance { get; private set; }
         private Form currentFromChild;
 
-        public User User { get; private set; }
-        public List<HotelRoom> HotelRooms { get; private set; }
-
-        public IdDAO IdDAO { get; private set; }
-        public AddRessDAO AddressDAO { get; private set; }
-        public Client Client { get; private set; }
-        public List<Hotel> Hotels { get; private set; }
-        public AccountDAO AccountDAO { get; private set; }
-        public InforDAO InfoDAO { get; private set; }
-        public ClientDAO ClientDAO { get; private set; }
-        public HotelDAO HotelDAO { get; private set; }
-        public ServiceDAO ServiceDAO { get; private set; }
-        public ImageHotelDAO ImageHotelDAO { get; private set; }
-        public RoomDAO RoomDAO { get; private set; }
-        public AmenitiesDAO AmenitiesDAO { get; private set; }
-        public ImageRoomDAO ImageRoomDAO { get; private set; }
-        public HotetRoomDAO HotetRoomDAO { get; private set; }
-
         public FController()
         {
             Instance = this;
-
-            IdDAO = new IdDAO();
-            AddressDAO = new AddRessDAO();
-
-            User = new User();
-            HotelRooms = new List<HotelRoom>();
-
-            AccountDAO = new AccountDAO();
-            InfoDAO = new InforDAO();
-            ClientDAO = new ClientDAO();
-
-            HotelDAO = new HotelDAO();
-            ServiceDAO = new ServiceDAO();
-            ImageHotelDAO = new ImageHotelDAO();
-
-            RoomDAO = new RoomDAO();
-            AmenitiesDAO = new AmenitiesDAO();
-            ImageRoomDAO = new ImageRoomDAO();
-
-            HotetRoomDAO = new HotetRoomDAO();
             InitializeComponent();
-            InitializeFLogin();
+            OpenLogin();
         }
 
         private void OpenFormChild(Form formChild)
@@ -94,22 +56,22 @@ namespace Project
             CenterToScreen();
         }
       
-        public void InitializeFLogin()
+        public void OpenLogin()
         {
             OpenFormChild(new FLogin());
         }
 
-        public void InitializeFCreateAccount()
+        public void OpenCreateAccount()
         {
             OpenFormChild(new FCreateAccount());
         }
 
-        public void InitializeFForgetPassword()
+        public void OpenForgetPassword()
         {
             OpenFormChild(new FForgetPassword());
         }
 
-        public void InitializeFMain()
+        public void OpenMain()
         {
             OpenFormChild(new FMain());
         }

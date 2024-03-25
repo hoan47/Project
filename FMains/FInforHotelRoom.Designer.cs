@@ -185,7 +185,7 @@ namespace Project
             this.buttonBack.FlatAppearance.BorderSize = 0;
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.UseVisualStyleBackColor = false;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click_1);
+            this.buttonBack.Click += new System.EventHandler(this.ButtonBackClick);
             // 
             // buttonPay
             // 

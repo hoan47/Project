@@ -104,7 +104,7 @@ namespace Project
             {
                 OpenFormChild(new FUpdateInfor(), this);
             }
-            else if (FController.Instance.User.Client.RankInt == 0)
+            else if (Data.User.Client.RankInt == 0)
             {
                 FController.Instance.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.");
             }

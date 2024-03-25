@@ -16,6 +16,7 @@ namespace Project
     {
         private Hotel hotel;
         private Image_ currentImage;
+
         public FUpdateHotel(Hotel hotel)
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace Project
 
             if (timeSpanIn != TimeSpan.Zero && timeSpanOut != TimeSpan.Zero)
             {
-                Hotel hotel = new Hotel(FController.Instance.IdDAO.SelectId, userControlTextBoxSerciveName.TextBoxText,
+                Hotel hotel = new Hotel(DataAccess.IdDAO.SelectId, userControlTextBoxSerciveName.TextBoxText,
                             userControlTextBoxServicePhone.TextBoxText,
                             userControlAddressHotel.AddressValue,
                             timeSpanIn,
@@ -78,9 +79,9 @@ namespace Project
                 {
                     if (this.hotel == null)
                     {
-                        FController.Instance.User.AddHotel(hotel);
+                        Data.User.AddHotel(hotel);
                         this.hotel = hotel;
-                        FController.Instance.HotelDAO.Insert(hotel);
+                        DataAccess.HotelDAO.Insert(Data.User, hotel);
                         FController.Instance.MessageSuccess("Thông báo", "Tạo khách sạn mới thành công.", this);
                     }
                     else
@@ -92,13 +93,13 @@ namespace Project
                             timeSpanIn,
                             timeSpanOut,
                             textBoxDescribe.Text);
-                        FController.Instance.HotelDAO.Update(this.hotel);
+                        DataAccess.HotelDAO.Update(Data.User, this.hotel);
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật khách sạn thành công.", this);
                     }
                     this.hotel.UpdateService(userControlServiceEdit.Value);
-                    FController.Instance.ServiceDAO.Delete(this.hotel);
-                    FController.Instance.ServiceDAO.Insert(this.hotel);
-                    FController.Instance.IdDAO.ChangeId();
+                    DataAccess.ServiceDAO.Delete(this.hotel);
+                    DataAccess.ServiceDAO.Insert(this.hotel);
+                    DataAccess.IdDAO.ChangeId();
                     LoadData();
                     return;
                 }
@@ -112,10 +113,10 @@ namespace Project
 
             if (image != null)
             {
-                currentImage = new Image_(FController.Instance.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
+                currentImage = new Image_(DataAccess.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
                 hotel.AddImage(currentImage);
-                FController.Instance.ImageHotelDAO.Insert(hotel, currentImage);
-                FController.Instance.IdDAO.ChangeId();
+                DataAccess.ImageHotelDAO.Insert(hotel, currentImage);
+                DataAccess.IdDAO.ChangeId();
                 pictureBox.Image = image;
             }
         }
@@ -129,7 +130,7 @@ namespace Project
             int indexImage = hotel.Images.IndexOf(currentImage) + 1;
 
             hotel.Images.Remove(currentImage);
-            FController.Instance.ImageHotelDAO.Delete(currentImage);
+            DataAccess.ImageHotelDAO.Delete(currentImage);
             currentImage = hotel.Images.Count != 0 ? hotel.Images[indexImage >= hotel.Images.Count ? 0 : indexImage] : null;
             pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
         }

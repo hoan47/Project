@@ -12,17 +12,17 @@ namespace Project
         public ClientDAO() : base("Client")
         { }
 
-        public void Access()
+        public void Access(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName = '{user.UserName}'", sqlConnection);
                 SqlDataReader reader = selectCMD.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    FController.Instance.User.UpdateClient(new Client(Convert.ToInt32(reader[1])));
+                    user.UpdateClient(new Client(Convert.ToInt32(reader[1])));
                 }
                 reader.Close();
             }
@@ -36,12 +36,12 @@ namespace Project
             }
         }
 
-        public bool Insert()
+        public bool Insert(User user)
         {
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, rankInt) values('{FController.Instance.User.UserName}', '{FController.Instance.User.Client.RankInt}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, rankInt) values('{user.UserName}', '{user.Client.RankInt}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -59,13 +59,13 @@ namespace Project
             return false;
         }
 
-        public bool Update(int core)
+        public bool Update(User user, int core)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand updateCMD = new SqlCommand(
-                    $"UPDATE {table} SET rankInt = '{FController.Instance.User.Client.RankInt + core}' WHERE userName = '{FController.Instance.User.UserName}'", sqlConnection);
+                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt + core}' WHERE userName = '{user.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {

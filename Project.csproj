@@ -173,14 +173,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAOScripts\Address.cs" />
-    <Compile Include="DAOScripts\AddressDAO.cs" />
+    <Compile Include="DAOScripts\Address\Address.cs" />
+    <Compile Include="DAOScripts\Address\AddressDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
-    <Compile Include="DAOScripts\HotetRoomDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DataAccess.cs" />
     <Compile Include="FMains\FInforHotelRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,7 +212,6 @@
     <Compile Include="FMains\FUpdateRoom.Designer.cs">
       <DependentUpon>FUpdateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAOScripts\HotelRoom.cs" />
     <Compile Include="ProcessScripts\ProcessCheckInfor.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
     <Compile Include="DAOScripts\Hotels\HotelDAO.cs" />
@@ -223,9 +223,9 @@
     <Compile Include="FCustomMessageBox.Designer.cs">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAOScripts\Client.cs" />
+    <Compile Include="DAOScripts\Account\Client.cs" />
     <Compile Include="DAOScripts\Account\AccountDAO.cs" />
-    <Compile Include="DAOScripts\ClientDAO.cs" />
+    <Compile Include="DAOScripts\Account\ClientDAO.cs" />
     <Compile Include="DAOScripts\DAO.cs" />
     <Compile Include="DAOScripts\Account\InforDAO.cs" />
     <Compile Include="FController.cs">

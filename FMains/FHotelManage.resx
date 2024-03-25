@@ -1515,4 +1515,7 @@
         AS3LpxBB/1SyAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>42, 19</value>
+  </metadata>
 </root>

@@ -29,11 +29,11 @@ namespace Project
 
         private void LoadData()
         {
-            if (FController.Instance.User.Hotels == null)
+            if (Data.User.Hotels == null)
             {
                 return; 
             }
-            foreach(Hotel hotel in FController.Instance.User.Hotels)
+            foreach(Hotel hotel in Data.User.Hotels)
             {
                 UserControlHotel userControlHotel = new UserControlHotel(hotel);
                 userControlHotel.Tag = this;

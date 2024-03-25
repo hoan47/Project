@@ -14,13 +14,13 @@ namespace Project
         public ImageHotelDAO() : base("ImageHotel")
         { }
 
-        public void Access()
+        public void Access(User user)
         {
             try
             {
                 sqlConnection.Open();
 
-                foreach (Hotel hotel in FController.Instance.User.Hotels)
+                foreach (Hotel hotel in user.Hotels)
                 {
                     SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idHotel = '{hotel.IdHotel}'", sqlConnection);
                     SqlDataReader reader = selectCMD.ExecuteReader();

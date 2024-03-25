@@ -47,6 +47,7 @@
             this.labelAddRoom = new System.Windows.Forms.Label();
             this.labelInfoHotel = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxDateTime.SuspendLayout();
             this.groupBoxButton.SuspendLayout();
@@ -66,10 +67,10 @@
             this.groupBoxStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.groupBoxStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxStatus.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxStatus.Location = new System.Drawing.Point(7, 5);
-            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxStatus.Location = new System.Drawing.Point(9, 6);
+            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxStatus.Name = "groupBoxStatus";
-            this.groupBoxStatus.Size = new System.Drawing.Size(209, 115);
+            this.groupBoxStatus.Size = new System.Drawing.Size(279, 142);
             this.groupBoxStatus.TabIndex = 7;
             this.groupBoxStatus.Text = "Trạng Thái Phòng";
             // 
@@ -82,9 +83,10 @@
             this.radioButtonIsOder.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioButtonIsOder.CheckedState.InnerOffset = -4;
             this.radioButtonIsOder.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonIsOder.Location = new System.Drawing.Point(102, 66);
+            this.radioButtonIsOder.Location = new System.Drawing.Point(136, 81);
+            this.radioButtonIsOder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonIsOder.Name = "radioButtonIsOder";
-            this.radioButtonIsOder.Size = new System.Drawing.Size(59, 19);
+            this.radioButtonIsOder.Size = new System.Drawing.Size(75, 24);
             this.radioButtonIsOder.TabIndex = 12;
             this.radioButtonIsOder.Text = "Đã đặt";
             this.radioButtonIsOder.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -102,9 +104,10 @@
             this.radioButtonIsAll.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioButtonIsAll.CheckedState.InnerOffset = -4;
             this.radioButtonIsAll.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonIsAll.Location = new System.Drawing.Point(10, 91);
+            this.radioButtonIsAll.Location = new System.Drawing.Point(13, 112);
+            this.radioButtonIsAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonIsAll.Name = "radioButtonIsAll";
-            this.radioButtonIsAll.Size = new System.Drawing.Size(56, 19);
+            this.radioButtonIsAll.Size = new System.Drawing.Size(70, 24);
             this.radioButtonIsAll.TabIndex = 11;
             this.radioButtonIsAll.TabStop = true;
             this.radioButtonIsAll.Text = "Tất cả";
@@ -122,9 +125,10 @@
             this.radioButtonIsEmpty.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioButtonIsEmpty.CheckedState.InnerOffset = -4;
             this.radioButtonIsEmpty.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonIsEmpty.Location = new System.Drawing.Point(10, 66);
+            this.radioButtonIsEmpty.Location = new System.Drawing.Point(13, 81);
+            this.radioButtonIsEmpty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonIsEmpty.Name = "radioButtonIsEmpty";
-            this.radioButtonIsEmpty.Size = new System.Drawing.Size(86, 19);
+            this.radioButtonIsEmpty.Size = new System.Drawing.Size(108, 24);
             this.radioButtonIsEmpty.TabIndex = 10;
             this.radioButtonIsEmpty.Text = "Đang Trống";
             this.radioButtonIsEmpty.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -141,9 +145,10 @@
             this.radioButtonIsRent.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioButtonIsRent.CheckedState.InnerOffset = -4;
             this.radioButtonIsRent.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonIsRent.Location = new System.Drawing.Point(10, 44);
+            this.radioButtonIsRent.Location = new System.Drawing.Point(13, 54);
+            this.radioButtonIsRent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonIsRent.Name = "radioButtonIsRent";
-            this.radioButtonIsRent.Size = new System.Drawing.Size(82, 19);
+            this.radioButtonIsRent.Size = new System.Drawing.Size(102, 24);
             this.radioButtonIsRent.TabIndex = 9;
             this.radioButtonIsRent.Text = "Đang Thuê";
             this.radioButtonIsRent.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -160,9 +165,10 @@
             this.radioButtonIsRepair.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radioButtonIsRepair.CheckedState.InnerOffset = -4;
             this.radioButtonIsRepair.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonIsRepair.Location = new System.Drawing.Point(102, 44);
+            this.radioButtonIsRepair.Location = new System.Drawing.Point(136, 54);
+            this.radioButtonIsRepair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radioButtonIsRepair.Name = "radioButtonIsRepair";
-            this.radioButtonIsRepair.Size = new System.Drawing.Size(103, 19);
+            this.radioButtonIsRepair.Size = new System.Drawing.Size(129, 24);
             this.radioButtonIsRepair.TabIndex = 8;
             this.radioButtonIsRepair.Text = "Đang sữa chữa";
             this.radioButtonIsRepair.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -180,10 +186,10 @@
             this.groupBoxDateTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.groupBoxDateTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxDateTime.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxDateTime.Location = new System.Drawing.Point(220, 5);
-            this.groupBoxDateTime.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxDateTime.Location = new System.Drawing.Point(293, 6);
+            this.groupBoxDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxDateTime.Name = "groupBoxDateTime";
-            this.groupBoxDateTime.Size = new System.Drawing.Size(252, 116);
+            this.groupBoxDateTime.Size = new System.Drawing.Size(336, 143);
             this.groupBoxDateTime.TabIndex = 8;
             this.groupBoxDateTime.Text = "Thời Gian";
             // 
@@ -196,12 +202,12 @@
             this.dateTimePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePicker.ForeColor = System.Drawing.Color.Black;
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dateTimePicker.Location = new System.Drawing.Point(15, 64);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker.Location = new System.Drawing.Point(20, 79);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(225, 30);
+            this.dateTimePicker.Size = new System.Drawing.Size(300, 37);
             this.dateTimePicker.TabIndex = 8;
             this.dateTimePicker.Value = new System.DateTime(2024, 3, 17, 10, 12, 12, 338);
             // 
@@ -219,10 +225,10 @@
             this.buttonInforHotel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonInforHotel.ForeColor = System.Drawing.Color.Transparent;
             this.buttonInforHotel.ImageSize = new System.Drawing.Size(35, 35);
-            this.buttonInforHotel.Location = new System.Drawing.Point(43, 66);
-            this.buttonInforHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonInforHotel.Location = new System.Drawing.Point(57, 81);
+            this.buttonInforHotel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonInforHotel.Name = "buttonInforHotel";
-            this.buttonInforHotel.Size = new System.Drawing.Size(40, 40);
+            this.buttonInforHotel.Size = new System.Drawing.Size(53, 49);
             this.buttonInforHotel.TabIndex = 0;
             this.buttonInforHotel.Click += new System.EventHandler(this.ButtonInforHotelClick);
             // 
@@ -239,10 +245,10 @@
             this.buttonAdd.ForeColor = System.Drawing.Color.Transparent;
             this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
             this.buttonAdd.ImageSize = new System.Drawing.Size(35, 35);
-            this.buttonAdd.Location = new System.Drawing.Point(141, 66);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Location = new System.Drawing.Point(188, 81);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(40, 40);
+            this.buttonAdd.Size = new System.Drawing.Size(53, 49);
             this.buttonAdd.TabIndex = 4;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAddClick);
             // 
@@ -263,10 +269,10 @@
             this.groupBoxButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.groupBoxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxButton.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxButton.Location = new System.Drawing.Point(476, 5);
-            this.groupBoxButton.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxButton.Location = new System.Drawing.Point(635, 6);
+            this.groupBoxButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxButton.Name = "groupBoxButton";
-            this.groupBoxButton.Size = new System.Drawing.Size(297, 116);
+            this.groupBoxButton.Size = new System.Drawing.Size(396, 143);
             this.groupBoxButton.TabIndex = 9;
             this.groupBoxButton.Text = "Chỉnh Sửa";
             // 
@@ -283,10 +289,10 @@
             this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
             this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
-            this.buttonUpdate.Location = new System.Drawing.Point(230, 66);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Location = new System.Drawing.Point(307, 81);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.Size = new System.Drawing.Size(53, 49);
             this.buttonUpdate.TabIndex = 0;
             this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
@@ -294,39 +300,37 @@
             // 
             this.labelUpdatePrice.AutoSize = true;
             this.labelUpdatePrice.BackColor = System.Drawing.Color.Transparent;
-            this.labelUpdatePrice.Location = new System.Drawing.Point(214, 46);
-            this.labelUpdatePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUpdatePrice.Location = new System.Drawing.Point(285, 57);
             this.labelUpdatePrice.Name = "labelUpdatePrice";
-            this.labelUpdatePrice.Size = new System.Drawing.Size(77, 15);
+            this.labelUpdatePrice.Size = new System.Drawing.Size(97, 20);
             this.labelUpdatePrice.TabIndex = 14;
             this.labelUpdatePrice.Text = "Cập Nhật Giá";
             // 
             // panelRoad2
             // 
             this.panelRoad2.BackColor = System.Drawing.Color.Black;
-            this.panelRoad2.Location = new System.Drawing.Point(200, 40);
-            this.panelRoad2.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRoad2.Location = new System.Drawing.Point(267, 49);
+            this.panelRoad2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRoad2.Name = "panelRoad2";
-            this.panelRoad2.Size = new System.Drawing.Size(1, 73);
+            this.panelRoad2.Size = new System.Drawing.Size(1, 90);
             this.panelRoad2.TabIndex = 13;
             // 
             // panelRoad1
             // 
             this.panelRoad1.BackColor = System.Drawing.Color.Black;
-            this.panelRoad1.Location = new System.Drawing.Point(120, 40);
-            this.panelRoad1.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRoad1.Location = new System.Drawing.Point(160, 49);
+            this.panelRoad1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRoad1.Name = "panelRoad1";
-            this.panelRoad1.Size = new System.Drawing.Size(1, 73);
+            this.panelRoad1.Size = new System.Drawing.Size(1, 90);
             this.panelRoad1.TabIndex = 12;
             // 
             // labelAddRoom
             // 
             this.labelAddRoom.AutoSize = true;
             this.labelAddRoom.BackColor = System.Drawing.Color.Transparent;
-            this.labelAddRoom.Location = new System.Drawing.Point(124, 46);
-            this.labelAddRoom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAddRoom.Location = new System.Drawing.Point(165, 57);
             this.labelAddRoom.Name = "labelAddRoom";
-            this.labelAddRoom.Size = new System.Drawing.Size(75, 15);
+            this.labelAddRoom.Size = new System.Drawing.Size(92, 20);
             this.labelAddRoom.TabIndex = 11;
             this.labelAddRoom.Text = "Thêm Phòng";
             // 
@@ -334,10 +338,9 @@
             // 
             this.labelInfoHotel.AutoSize = true;
             this.labelInfoHotel.BackColor = System.Drawing.Color.Transparent;
-            this.labelInfoHotel.Location = new System.Drawing.Point(0, 46);
-            this.labelInfoHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelInfoHotel.Location = new System.Drawing.Point(0, 57);
             this.labelInfoHotel.Name = "labelInfoHotel";
-            this.labelInfoHotel.Size = new System.Drawing.Size(118, 15);
+            this.labelInfoHotel.Size = new System.Drawing.Size(147, 20);
             this.labelInfoHotel.TabIndex = 10;
             this.labelInfoHotel.Text = "Thông Tin Khách Sạn";
             // 
@@ -348,24 +351,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 125);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(3, 154);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(777, 385);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(1036, 474);
             this.flowLayoutPanel.TabIndex = 11;
             // 
             // FHotelManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(780, 512);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.groupBoxButton);
             this.Controls.Add(this.groupBoxDateTime);
             this.Controls.Add(this.groupBoxStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FHotelManage";
             this.Text = "FHotelManagecs";
             this.Load += new System.EventHandler(this.FHotelManageLoad);
@@ -397,5 +400,6 @@
         private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsEmpty;
         private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsRent;
         private Guna.UI2.WinForms.Guna2RadioButton radioButtonIsRepair;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
