@@ -30,31 +30,67 @@ namespace Project
 
         public void OpenUpdateRoom(Room room = null)
         {
-            ((FMain)((FService)Tag).Tag).OpenFormChild(new FUpdateRoom(hotel, room), this);
+            FUpdateRoom fUpdateRoom = new FUpdateRoom(hotel, room);
+
+            fUpdateRoom.Tag = this;
+            ((FMain)((FService)Tag).Tag).OpenFormChild(fUpdateRoom, this, false);
         }
 
         private void ButtonInforHotelClick(object sender, EventArgs e)
         {
-            ((FMain)((FService)Tag).Tag).OpenFormChild(new FUpdateHotel(hotel), this, false);
+            FUpdateHotel fUpdateHotel = new FUpdateHotel(hotel);
+
+            fUpdateHotel.Tag = this;
+            ((FMain)((FService)Tag).Tag).OpenFormChild(fUpdateHotel, this, false);
         }
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
+            foreach(Control control in flowLayoutPanel.Controls)
+            {
+                control.Visible = false;
+            }    
+            UserControlDiscount userControlDiscount = new UserControlDiscount(hotel);
 
+            userControlDiscount.Tag = this;
+            flowLayoutPanel.Controls.Add(userControlDiscount);
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             if (hotel.Rooms == null)
             {
                 return;
             }
-            foreach (Room room in hotel.Rooms)
+            foreach(Control control in flowLayoutPanel.Controls)
             {
-                UserControlRoom userControlRoom = new UserControlRoom(room);
+                if(control is UserControlRoom == false)
+                {
+                    flowLayoutPanel.Controls.Remove(control);
+                    control.Dispose();
+                }    
+            }    
+            if (flowLayoutPanel.Controls.Count <= hotel.Rooms.Count)
+            {
+                for (int i = 0; i < hotel.Rooms.Count; i++)
+                {
+                    if (flowLayoutPanel.Controls.Count != i)
+                    {
+                        ((UserControlRoom)flowLayoutPanel.Controls[i]).UpdateUI(hotel.Rooms[i]);
+                    }
+                    else
+                    {
+                        UserControlRoom userControlRoom = new UserControlRoom(hotel.Rooms[i]);
 
-                userControlRoom.Tag = this;
-                flowLayoutPanel.Controls.Add(userControlRoom);
+                        userControlRoom.Tag = this;
+                        flowLayoutPanel.Controls.Add(userControlRoom);
+                    }
+                    flowLayoutPanel.Controls[i].Visible = true;
+                }
+                foreach (Control control in flowLayoutPanel.Controls)
+                {
+                    control.Visible = true;
+                }
             }
         }
 

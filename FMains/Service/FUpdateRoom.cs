@@ -30,7 +30,7 @@ namespace Project
             {
                 panelImage.Visible = true;
                 userControlTextBoxServiceName.TextBoxText = room.Name;
-                userControlTextBoxServicePrice.TextBoxText = room.Price.ToString();
+                userControlPrice.Price = room.Price;
                 userControlTextBoxAcreage.TextBoxText = room.Acreage.ToString();
                 userControlServiceEdit.Value = room.Amenitiese;
                 userControlNumericNumberRoom.NumericValue = room.NumberRoom;
@@ -48,8 +48,7 @@ namespace Project
 
         private void ButtonBackClick(object sender, EventArgs e)
         {
-            ((FMain)((FService)((FHotelManage)Tag).Tag).Tag).ChangeColerToolStripButton((FHotelManage)Tag);
-            ((FService)((FHotelManage)Tag).Tag).OpenHotelManager(hotel);
+            ((FHotelManage)Tag).LoadData();
             Dispose();
         }
 
@@ -57,9 +56,8 @@ namespace Project
         {
             string message;
             int acreage;
-            decimal price;
 
-            if(CheckInfor.IsPrice(userControlTextBoxServicePrice.TextBoxText, out message, out price) && CheckInfor.IsAcreage(userControlTextBoxAcreage.TextBoxText, out message, out acreage))
+            if(CheckInfor.IsAcreage(userControlTextBoxAcreage.TextBoxText, out message, out acreage))
             {
                 Room room = new Room(
                     DataAccess.IdDAO.SelectId,
@@ -68,7 +66,7 @@ namespace Project
                     userControlNumericNumnberBed.NumericValue,
                     userControlNumericNumberPeople.NumericValue,
                     acreage,
-                    (int)price);
+                    userControlPrice.Price);
 
                 if(this.room == null)
                 {
@@ -85,7 +83,7 @@ namespace Project
                         userControlNumericNumnberBed.NumericValue,
                         userControlNumericNumberPeople.NumericValue,
                         acreage,
-                        (int)price);
+                        userControlPrice.Price);
                     DataAccess.RoomDAO.Update(this.room);
                     FController.Instance.MessageSuccess("Thông báo", "Cập nhật phòng thành công.", this);
                 }

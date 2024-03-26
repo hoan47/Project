@@ -12,24 +12,18 @@ namespace Project
 {
     public partial class UserControlDiscount : UserControl
     {
-        public UserControlDiscount()
+        private Hotel hotel;
+
+        public UserControlDiscount(Hotel hotel)
         {
             InitializeComponent();
+            this.hotel = hotel;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void ButtonBackClick(object sender, EventArgs e)
         {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
+            ((FHotelManage)Tag).LoadData();
+            Dispose();
         }
     }
 }

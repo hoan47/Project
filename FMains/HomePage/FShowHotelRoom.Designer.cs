@@ -43,7 +43,6 @@ namespace Project
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableName = new Project.UserControls.UserControlLable();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
@@ -56,6 +55,7 @@ namespace Project
             this.groupBoxNumberPeople = new System.Windows.Forms.GroupBox();
             this.numericUpDownPeople = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel1.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
@@ -258,17 +258,6 @@ namespace Project
             this.guna2GroupBox1.Text = "Tìm kiếm phòng";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, -10);
             // 
-            // userControlLableAddress
-            // 
-            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
-            this.userControlLableAddress.LableText = "Địa chỉ";
-            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
-            this.userControlLableAddress.Name = "userControlLableAddress";
-            this.userControlLableAddress.Size = new System.Drawing.Size(770, 34);
-            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(770, 34);
-            this.userControlLableAddress.TabIndex = 6;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -302,7 +291,7 @@ namespace Project
             this.buttonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.buttonSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonSearch.FillColor = System.Drawing.Color.Lime;
             this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.Black;
             this.buttonSearch.Location = new System.Drawing.Point(9, 55);
@@ -419,6 +408,17 @@ namespace Project
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(512, 350);
             this.flowLayoutPanel.TabIndex = 5;
+            // 
+            // userControlLableAddress
+            // 
+            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
+            this.userControlLableAddress.LableText = "Địa chỉ";
+            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
+            this.userControlLableAddress.Name = "userControlLableAddress";
+            this.userControlLableAddress.Size = new System.Drawing.Size(770, 34);
+            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(770, 34);
+            this.userControlLableAddress.TabIndex = 6;
             // 
             // FShowHotelRoom
             // 

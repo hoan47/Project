@@ -32,29 +32,41 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSearchHotel = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.userControlService = new Project.UserControlService();
+            this.groupBoxService = new System.Windows.Forms.GroupBox();
+            this.checkedListBoxService = new System.Windows.Forms.CheckedListBox();
+            this.userControlPrice1 = new Project.UserControls.UserControlPrice();
             this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.UserControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
-            this.userControlTextBoxRoomPrice = new Project.UserControlTextBoxRoom();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
+            this.panelSearchHotel.SuspendLayout();
+            this.groupBoxService.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelSearchHotel
             // 
-            this.panel1.Controls.Add(this.buttonSearch);
-            this.panel1.Controls.Add(this.userControlService);
-            this.panel1.Controls.Add(this.userControlAddressRoom);
-            this.panel1.Controls.Add(this.UserControlDateTimePackerOut);
-            this.panel1.Controls.Add(this.userControlDateTimePackerIn);
-            this.panel1.Controls.Add(this.userControlTextBoxRoomPrice);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 120);
-            this.panel1.TabIndex = 0;
+            this.panelSearchHotel.Controls.Add(this.groupBoxService);
+            this.panelSearchHotel.Controls.Add(this.userControlPrice1);
+            this.panelSearchHotel.Controls.Add(this.buttonSearch);
+            this.panelSearchHotel.Controls.Add(this.userControlAddressRoom);
+            this.panelSearchHotel.Controls.Add(this.UserControlDateTimePackerOut);
+            this.panelSearchHotel.Controls.Add(this.userControlDateTimePackerIn);
+            this.panelSearchHotel.Location = new System.Drawing.Point(0, 0);
+            this.panelSearchHotel.Name = "panelSearchHotel";
+            this.panelSearchHotel.Size = new System.Drawing.Size(780, 120);
+            this.panelSearchHotel.TabIndex = 0;
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
+            this.flowLayoutPanel.TabIndex = 1;
             // 
             // buttonSearch
             // 
@@ -73,13 +85,44 @@ namespace Project
             this.buttonSearch.Size = new System.Drawing.Size(40, 40);
             this.buttonSearch.TabIndex = 9;
             // 
-            // userControlService
+            // groupBoxService
             // 
-            this.userControlService.BackColor = System.Drawing.Color.Transparent;
-            this.userControlService.Location = new System.Drawing.Point(557, 3);
-            this.userControlService.Name = "userControlService";
-            this.userControlService.Size = new System.Drawing.Size(150, 113);
-            this.userControlService.TabIndex = 8;
+            this.groupBoxService.Controls.Add(this.checkedListBoxService);
+            this.groupBoxService.Location = new System.Drawing.Point(557, 3);
+            this.groupBoxService.Name = "groupBoxService";
+            this.groupBoxService.Size = new System.Drawing.Size(165, 112);
+            this.groupBoxService.TabIndex = 11;
+            this.groupBoxService.TabStop = false;
+            this.groupBoxService.Text = "Dịch vụ";
+            // 
+            // checkedListBoxService
+            // 
+            this.checkedListBoxService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.checkedListBoxService.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxService.FormattingEnabled = true;
+            this.checkedListBoxService.Items.AddRange(new object[] {
+            "Bãi giữ xe máy",
+            "Bãi giữ xe ô tô",
+            "Khu bán đồ ăn",
+            "Công viên",
+            "Wfi",
+            "Hồ bơi",
+            "Giặt là",
+            "Khu vực hút thuốc"});
+            this.checkedListBoxService.Location = new System.Drawing.Point(6, 17);
+            this.checkedListBoxService.Name = "checkedListBoxService";
+            this.checkedListBoxService.Size = new System.Drawing.Size(152, 89);
+            this.checkedListBoxService.TabIndex = 0;
+            // 
+            // userControlPrice1
+            // 
+            this.userControlPrice1.BackColor = System.Drawing.Color.Transparent;
+            this.userControlPrice1.ColorUserControl = System.Drawing.Color.White;
+            this.userControlPrice1.Location = new System.Drawing.Point(13, 61);
+            this.userControlPrice1.Name = "userControlPrice1";
+            this.userControlPrice1.Price = 1000000;
+            this.userControlPrice1.Size = new System.Drawing.Size(256, 56);
+            this.userControlPrice1.TabIndex = 10;
             // 
             // userControlAddressRoom
             // 
@@ -110,24 +153,6 @@ namespace Project
             this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
             this.userControlDateTimePackerIn.TabIndex = 5;
             // 
-            // userControlTextBoxRoomPrice
-            // 
-            this.userControlTextBoxRoomPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxRoomPrice.Location = new System.Drawing.Point(12, 61);
-            this.userControlTextBoxRoomPrice.Name = "userControlTextBoxRoomPrice";
-            this.userControlTextBoxRoomPrice.Size = new System.Drawing.Size(150, 55);
-            this.userControlTextBoxRoomPrice.TabIndex = 4;
-            // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.AllowDrop = true;
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
-            this.flowLayoutPanel.TabIndex = 1;
-            // 
             // FHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,27 +161,29 @@ namespace Project
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(780, 512);
             this.Controls.Add(this.flowLayoutPanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelSearchHotel);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHomePage";
             this.Text = "FHomePage";
             this.Load += new System.EventHandler(this.FHomePageLoad);
-            this.panel1.ResumeLayout(false);
+            this.panelSearchHotel.ResumeLayout(false);
+            this.groupBoxService.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private UserControlTextBoxRoom userControlTextBoxRoomPrice;
-        private UserControlDateTimePacker userControlDateTimePackerIn;
+        private System.Windows.Forms.Panel panelSearchHotel;
         private UserControlDateTimePacker UserControlDateTimePackerOut;
-        private UserControlAddressRoom userControlAddressRoom;
-        private UserControlService userControlService;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private Guna.UI2.WinForms.Guna2Button buttonSearch;
+        private UserControls.UserControlPrice userControlPrice1;
+        private System.Windows.Forms.GroupBox groupBoxService;
+        private System.Windows.Forms.CheckedListBox checkedListBoxService;
+        private UserControlAddressRoom userControlAddressRoom;
+        private UserControlDateTimePacker userControlDateTimePackerIn;
     }
 }

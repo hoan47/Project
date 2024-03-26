@@ -152,6 +152,10 @@ namespace Project
 
         private void ButonBackClick(object sender, EventArgs e)
         {
+            if(Tag is FHotelManage fHotelManage)
+            {
+                fHotelManage.LoadData();
+            }    
             Dispose();
         }
     }

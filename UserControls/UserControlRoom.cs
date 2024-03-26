@@ -17,14 +17,20 @@ namespace Project
         public UserControlRoom(Room room)
         {
             InitializeComponent();
-            this.room = room;
-            groupBox.Text = "Tên phòng: " + room.Name;
-            labelStatus.Text = "Trạng thái: " + room.GetStatusStr();
+            UpdateUI(room);
         }
 
         private void UserControlClick(object sender, EventArgs e)
         {
             ((FHotelManage)Tag).OpenUpdateRoom(room);
         }
+
+        public void UpdateUI(Room room)
+        {
+            this.room = room;
+            groupBox.Text = "Tên phòng: " + room.Name;
+            labelStatus.Text = "Trạng thái: " + room.GetStatusStr();
+        }
+
     }
 }

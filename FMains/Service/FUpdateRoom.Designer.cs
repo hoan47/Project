@@ -36,15 +36,15 @@ namespace Project
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.userControlTextBoxAcreage = new Project.UserControlTextBoxService();
             this.userControlServiceEdit = new Project.UserControlServiceEdit();
             this.userControlNumericNumnberBed = new Project.UserControlNumeric();
             this.userControlNumericNumberRoom = new Project.UserControlNumeric();
             this.userControlNumericNumberPeople = new Project.UserControlNumeric();
-            this.userControlTextBoxServicePrice = new Project.UserControlTextBoxService();
             this.userControlTextBoxServiceName = new Project.UserControlTextBoxService();
+            this.userControlPrice = new Project.UserControls.UserControlPrice();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -140,19 +140,6 @@ namespace Project
             this.buttonUploadImage.UseVisualStyleBackColor = false;
             this.buttonUploadImage.Click += new System.EventHandler(this.ButtonUploadImageClick);
             // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.LightCyan;
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUpdate.Location = new System.Drawing.Point(729, 461);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
-            this.buttonUpdate.TabIndex = 13;
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
-            // 
             // buttonBack
             // 
             this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
@@ -171,12 +158,25 @@ namespace Project
             this.buttonBack.TabIndex = 15;
             this.buttonBack.Click += new System.EventHandler(this.ButtonBackClick);
             // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUpdate.Location = new System.Drawing.Point(729, 461);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 13;
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
+            // 
             // userControlTextBoxAcreage
             // 
             this.userControlTextBoxAcreage.BackColor = System.Drawing.Color.Transparent;
             this.userControlTextBoxAcreage.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxAcreage.Image")));
             this.userControlTextBoxAcreage.LabelText = "Diện tích phòng";
-            this.userControlTextBoxAcreage.Location = new System.Drawing.Point(469, 187);
+            this.userControlTextBoxAcreage.Location = new System.Drawing.Point(469, 119);
             this.userControlTextBoxAcreage.Margin = new System.Windows.Forms.Padding(2);
             this.userControlTextBoxAcreage.Name = "userControlTextBoxAcreage";
             this.userControlTextBoxAcreage.Size = new System.Drawing.Size(300, 64);
@@ -189,7 +189,7 @@ namespace Project
             this.userControlServiceEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlServiceEdit.GroupBoxText = "Tiện nghi";
             this.userControlServiceEdit.ListBoxBackColor = System.Drawing.Color.LightCyan;
-            this.userControlServiceEdit.Location = new System.Drawing.Point(469, 256);
+            this.userControlServiceEdit.Location = new System.Drawing.Point(469, 188);
             this.userControlServiceEdit.Name = "userControlServiceEdit";
             this.userControlServiceEdit.Size = new System.Drawing.Size(300, 100);
             this.userControlServiceEdit.TabIndex = 12;
@@ -200,7 +200,7 @@ namespace Project
             // 
             this.userControlNumericNumnberBed.GrupBoxText = "Số giường";
             this.userControlNumericNumnberBed.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericNumnberBed.Image")));
-            this.userControlNumericNumnberBed.Location = new System.Drawing.Point(575, 362);
+            this.userControlNumericNumnberBed.Location = new System.Drawing.Point(575, 356);
             this.userControlNumericNumnberBed.Name = "userControlNumericNumnberBed";
             this.userControlNumericNumnberBed.NumericValue = 1;
             this.userControlNumericNumnberBed.Size = new System.Drawing.Size(100, 55);
@@ -210,7 +210,7 @@ namespace Project
             // 
             this.userControlNumericNumberRoom.GrupBoxText = "Số phòng ngủ";
             this.userControlNumericNumberRoom.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericNumberRoom.Image")));
-            this.userControlNumericNumberRoom.Location = new System.Drawing.Point(469, 362);
+            this.userControlNumericNumberRoom.Location = new System.Drawing.Point(469, 356);
             this.userControlNumericNumberRoom.Name = "userControlNumericNumberRoom";
             this.userControlNumericNumberRoom.NumericValue = 1;
             this.userControlNumericNumberRoom.Size = new System.Drawing.Size(100, 55);
@@ -220,24 +220,11 @@ namespace Project
             // 
             this.userControlNumericNumberPeople.GrupBoxText = "Số người";
             this.userControlNumericNumberPeople.Image = ((System.Drawing.Image)(resources.GetObject("userControlNumericNumberPeople.Image")));
-            this.userControlNumericNumberPeople.Location = new System.Drawing.Point(469, 423);
+            this.userControlNumericNumberPeople.Location = new System.Drawing.Point(469, 417);
             this.userControlNumericNumberPeople.Name = "userControlNumericNumberPeople";
             this.userControlNumericNumberPeople.NumericValue = 1;
             this.userControlNumericNumberPeople.Size = new System.Drawing.Size(100, 55);
             this.userControlNumericNumberPeople.TabIndex = 9;
-            // 
-            // userControlTextBoxServicePrice
-            // 
-            this.userControlTextBoxServicePrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlTextBoxServicePrice.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxServicePrice.Image")));
-            this.userControlTextBoxServicePrice.LabelText = "Giá phòng";
-            this.userControlTextBoxServicePrice.Location = new System.Drawing.Point(469, 119);
-            this.userControlTextBoxServicePrice.Margin = new System.Windows.Forms.Padding(2);
-            this.userControlTextBoxServicePrice.Name = "userControlTextBoxServicePrice";
-            this.userControlTextBoxServicePrice.Size = new System.Drawing.Size(300, 64);
-            this.userControlTextBoxServicePrice.TabIndex = 1;
-            this.userControlTextBoxServicePrice.TextBoxPlaceholderText = "";
-            this.userControlTextBoxServicePrice.TextBoxText = "";
             // 
             // userControlTextBoxServiceName
             // 
@@ -252,12 +239,23 @@ namespace Project
             this.userControlTextBoxServiceName.TextBoxPlaceholderText = "";
             this.userControlTextBoxServiceName.TextBoxText = "";
             // 
+            // userControlPrice
+            // 
+            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlPrice.ColorUserControl = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.userControlPrice.Location = new System.Drawing.Point(469, 294);
+            this.userControlPrice.Name = "userControlPrice";
+            this.userControlPrice.Price = 0;
+            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
+            this.userControlPrice.TabIndex = 16;
+            // 
             // FUpdateRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(780, 512);
+            this.Controls.Add(this.userControlPrice);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.userControlTextBoxAcreage);
             this.Controls.Add(this.buttonUpdate);
@@ -266,7 +264,6 @@ namespace Project
             this.Controls.Add(this.userControlNumericNumberRoom);
             this.Controls.Add(this.userControlNumericNumberPeople);
             this.Controls.Add(this.panelImage);
-            this.Controls.Add(this.userControlTextBoxServicePrice);
             this.Controls.Add(this.userControlTextBoxServiceName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FUpdateRoom";
@@ -286,7 +283,6 @@ namespace Project
         private Guna.UI2.WinForms.Guna2Button buttonLeft;
         private System.Windows.Forms.Button buttonDeleteImage;
         private System.Windows.Forms.Button buttonUploadImage;
-        private UserControlTextBoxService userControlTextBoxServicePrice;
         private UserControlNumeric userControlNumericNumberPeople;
         private UserControlNumeric userControlNumericNumberRoom;
         private UserControlNumeric userControlNumericNumnberBed;
@@ -294,5 +290,6 @@ namespace Project
         private System.Windows.Forms.Button buttonUpdate;
         private UserControlTextBoxService userControlTextBoxAcreage;
         private Guna.UI2.WinForms.Guna2Button buttonBack;
+        private UserControls.UserControlPrice userControlPrice;
     }
 }
