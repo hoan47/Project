@@ -33,19 +33,19 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.userControlService = new Project.UserControlService();
             this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.UserControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
             this.userControlTextBoxRoomPrice = new Project.UserControlTextBoxRoom();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonFind = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonFind);
+            this.panel1.Controls.Add(this.buttonSearch);
             this.panel1.Controls.Add(this.userControlService);
             this.panel1.Controls.Add(this.userControlAddressRoom);
             this.panel1.Controls.Add(this.UserControlDateTimePackerOut);
@@ -55,6 +55,23 @@ namespace Project
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 120);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
+            this.buttonSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSearch.BorderRadius = 10;
+            this.buttonSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonSearch.FillColor = System.Drawing.Color.Transparent;
+            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(728, 61);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(40, 40);
+            this.buttonSearch.TabIndex = 9;
             // 
             // userControlService
             // 
@@ -111,23 +128,6 @@ namespace Project
             this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
             this.flowLayoutPanel.TabIndex = 1;
             // 
-            // buttonFind
-            // 
-            this.buttonFind.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFind.BackgroundImage")));
-            this.buttonFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonFind.BorderRadius = 10;
-            this.buttonFind.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFind.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonFind.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonFind.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonFind.FillColor = System.Drawing.Color.Transparent;
-            this.buttonFind.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonFind.ForeColor = System.Drawing.Color.White;
-            this.buttonFind.Location = new System.Drawing.Point(728, 61);
-            this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(40, 40);
-            this.buttonFind.TabIndex = 9;
-            // 
             // FHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +157,6 @@ namespace Project
         private UserControlAddressRoom userControlAddressRoom;
         private UserControlService userControlService;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private Guna.UI2.WinForms.Guna2Button buttonFind;
+        private Guna.UI2.WinForms.Guna2Button buttonSearch;
     }
 }

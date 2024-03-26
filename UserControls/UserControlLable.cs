@@ -14,7 +14,7 @@ namespace Project.UserControls
     {
         public string LableText { get { return label.Text; } set { label.Text = value; } }
         public Image ImageIcon { get { return pictureBox.Image; } set { pictureBox.Image = value; } }
-        public Size SizeControl { get { return Size; } set { label.Size = new Size(value.Width - label.Location.X, label.Height); } }
+        public Size SizeUserControl { get { return Size; } set { label.Size = new Size(value.Width - label.Location.X, label.Height); } }
 
         public UserControlLable()
         {

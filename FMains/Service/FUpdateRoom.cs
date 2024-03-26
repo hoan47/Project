@@ -36,6 +36,7 @@ namespace Project
                 userControlNumericNumberRoom.NumericValue = room.NumberRoom;
                 userControlNumericNumnberBed.NumericValue = room.NumberBeds;
                 userControlNumericNumberPeople.NumericValue = room.NumberPeople;
+                currentImage = room.Images?.First();
                 pictureBox.Image = room.GetImageRoom();
             }
             else

@@ -14,6 +14,7 @@ namespace Project
 
         public void Access(User user, List<Hotel> hotels)
         {
+            hotels.Clear();
             DataAccess.HotelDAO.Access(user, hotels, false);
             DataAccess.ServiceDAO.Access(hotels);
             DataAccess.ImageHotelDAO.Access(hotels);

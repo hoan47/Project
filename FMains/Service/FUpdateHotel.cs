@@ -42,6 +42,7 @@ namespace Project
                 userControlCheckInOutHotel.MaskedTextBoxOutText = hotel.CheckOut.ToString();
                 richTextBox.Text = hotel.Describe;
                 userControlServiceEdit.Value = hotel.Services;
+                currentImage = hotel.Images?.First();
                 pictureBox.Image = hotel.GetImageHotel();
             }
             else

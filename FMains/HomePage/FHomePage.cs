@@ -30,7 +30,7 @@ namespace Project
 
         public void OpenHotel(Hotel hotel)
         {
-            ((FMain)Tag).OpenFormChild(new FShowRoom(hotel), this, false);
+            ((FMain)Tag).OpenFormChild(new FShowHotelRoom(hotel), this, false);
         }
     }
 }

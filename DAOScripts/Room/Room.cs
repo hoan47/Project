@@ -15,6 +15,7 @@ namespace Project
         public int NumberBeds { get; private set; }
         public int NumberPeople { get; private set; }
         public int Acreage { get; private set; }
+        public int OldPrice { get; private set; }
         public int Price { get; private set; }
         public ERoomStatus Status { get; private set; }
         public List<Image_> Images { get; private set; }
@@ -28,8 +29,15 @@ namespace Project
             NumberBeds = numberOfBeds;
             NumberPeople = numberOfPeople;
             Acreage = acreage;
+            OldPrice = (int)Math.Floor(price * 1.1f);
             Price = price;
             Status = status;
+        }
+
+        public void UpdatePrice(float percent)
+        {
+            OldPrice = Price;
+            Price = (int)Math.Floor(Price * percent);
         }
 
         public void UpdateInfor(string name, int numberRoom, int numberOfBeds, int numberOfPeople, int acreage, int price)
@@ -46,6 +54,7 @@ namespace Project
         {
             Amenitiese = amenitiese;
         }
+
         public Image GetImageRoom(bool isFirst = true)
         {
             return Images != null ? (Images.Count > 0 ? (isFirst == true ? Images.First().Image : Images.Last().Image) : Properties.Resources.noImage) : Properties.Resources.noImage;

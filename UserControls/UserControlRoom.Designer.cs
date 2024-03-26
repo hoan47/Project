@@ -1,4 +1,4 @@
-﻿namespace Project.UserControls
+﻿namespace Project
 {
     partial class UserControlRoom
     {

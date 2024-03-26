@@ -70,6 +70,7 @@ namespace Project
             this.buttonRightRoom = new System.Windows.Forms.Button();
             this.buttonLeftRoom = new System.Windows.Forms.Button();
             this.pictureBoxRoom = new System.Windows.Forms.PictureBox();
+            this.userControlLable1 = new Project.UserControls.UserControlLable();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNameHotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAddress)).BeginInit();
@@ -333,11 +334,21 @@ namespace Project
             this.pictureBoxRoom.Name = "pictureBoxRoom";
             this.pictureBoxRoom.TabStop = false;
             // 
+            // userControlLable1
+            // 
+            this.userControlLable1.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLable1.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLable1.ImageIcon")));
+            this.userControlLable1.LableText = "Nội dung mmmmmmmmmmmm";
+            resources.ApplyResources(this.userControlLable1, "userControlLable1");
+            this.userControlLable1.Name = "userControlLable1";
+            this.userControlLable1.SizeUserControl = new System.Drawing.Size(240, 34);
+            // 
             // FInforHotelRoom
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.userControlLable1);
             this.Controls.Add(this.labelPictureRoom);
             this.Controls.Add(this.buttonRightRoom);
             this.Controls.Add(this.buttonLeftRoom);
@@ -444,5 +455,6 @@ namespace Project
         private System.Windows.Forms.Button buttonRightRoom;
         private System.Windows.Forms.Button buttonLeftRoom;
         private System.Windows.Forms.PictureBox pictureBoxRoom;
+        private UserControls.UserControlLable userControlLable1;
     }
 }
