@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project.UserControls
+namespace Project
 {
     public partial class UserControlRoom : UserControl
     {
@@ -17,14 +17,20 @@ namespace Project.UserControls
         public UserControlRoom(Room room)
         {
             InitializeComponent();
-            this.room = room;
-            groupBox.Text = "Tên phòng: " + room.Name;
-            labelStatus.Text = "Trạng thái: " + room.GetStatusStr();
+            UpdateUI(room);
         }
 
         private void UserControlClick(object sender, EventArgs e)
         {
             ((FHotelManage)Tag).OpenUpdateRoom(room);
         }
+
+        public void UpdateUI(Room room)
+        {
+            this.room = room;
+            groupBox.Text = "Tên phòng: " + room.Name;
+            labelStatus.Text = "Trạng thái: " + room.GetStatusStr();
+        }
+
     }
 }

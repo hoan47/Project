@@ -20,9 +20,6 @@ namespace Project
         public List<string> Services { get; private set; }
         public List<Room> Rooms { get; private set; }
 
-        public Hotel()
-        { }
-
         public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
             IdHotel = id;
@@ -47,6 +44,16 @@ namespace Project
         public void UpdateService(List<string> services)
         {
             Services = services;
+        }
+
+        public void UpdateImage(List<Image_> images)
+        {
+            Images = images;
+        }
+
+        public Image GetImageHotel(bool isFirst = true)
+        {
+            return Images != null ? (Images.Count > 0 ? (isFirst == true ? Images.First().Image : Images.Last().Image) : Properties.Resources.noImage) : Properties.Resources.noImage;
         }
 
         public void AddImage(Image_ image)

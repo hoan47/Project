@@ -19,10 +19,10 @@ namespace Project
 
         private void ButtonFindAccountClick(object sender, EventArgs e)
         {
-            FController.Instance.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
+            Data.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (FController.Instance.AccountDAO.FindAccount() == true)
+                if (DataAccess.AccountDAO.FindAccount(Data.User) == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -44,10 +44,10 @@ namespace Project
         {
             string message;
 
-            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
-            if (FController.Instance.User.IsPassword(out message) == true)
+            Data.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
+            if (Data.User.IsPassword(out message) == true)
             {
-                FController.Instance.AccountDAO.Update();
+                DataAccess.AccountDAO.Update(Data.User);
                 Back(sender, e);
             }
             else
@@ -58,7 +58,7 @@ namespace Project
 
         private void Back(object sender, EventArgs e)
         {
-            FController.Instance.InitializeFLogin();
+            FController.Instance.OpenLogin();
             Close();
         }
 

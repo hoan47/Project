@@ -22,14 +22,14 @@ namespace Project
         {
             string message;
 
-            FController.Instance.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
-            FController.Instance.User.UpdateClient(new Client());
-            if (FController.Instance.User.IsAccount(out message) == true && FController.Instance.User.IsPassword(out message) == true)
+            Data.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxNewPassword.TextBoxText);
+            Data.User.UpdateClient(new Client());
+            if (Data.User.IsAccount(out message) == true && Data.User.IsPassword(out message) == true)
             {
-                if(FController.Instance.AccountDAO.Insert() == true)
+                if(DataAccess.AccountDAO.Insert(Data.User) == true)
                 {
-                    FController.Instance.InfoDAO.Insert();
-                    FController.Instance.ClientDAO.Insert();
+                    DataAccess.InfoDAO.Insert(Data.User);
+                    DataAccess.ClientDAO.Insert(Data.User);
                     FController.Instance.MessageSuccess("Thông báo", "Tạo tài khoản thành công.");
                     Back(sender, e);
                 }
@@ -46,7 +46,7 @@ namespace Project
 
         private void Back(object sender, EventArgs e)
         {
-            FController.Instance.InitializeFLogin();
+            FController.Instance.OpenLogin();
             Close();
         }
 

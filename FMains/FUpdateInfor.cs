@@ -21,22 +21,22 @@ namespace Project
 
         private void LoadData()
         {
-            labelUser.Text = FController.Instance.User.UserName;
-            userControlTextBoxEditName.TextBoxText = FController.Instance.User.Name;
-            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = FController.Instance.User.DateOfBirth.ToString();
-            userControlRadioButtonEditGender.GenderText = FController.Instance.User.Gender;
-            if (FController.Instance.User.Address != null)
+            labelUser.Text = Data.User.UserName;
+            userControlTextBoxEditName.TextBoxText = Data.User.Name;
+            userControlDateTimePackerEditDateOfBirth.DateTimePickerText = Data.User.DateOfBirth.ToString();
+            userControlRadioButtonEditGender.GenderText = Data.User.Gender;
+            if (Data.User.Address != null)
             {
-                userControlAddressEditAddress.ComboBoxText = FController.Instance.User.Address.ProvinceAndDistrict;
-                userControlTextBoxEditSpecificLocation.TextBoxText = FController.Instance.User.Address.SpecificLocation;
+                userControlAddressEditAddress.ComboBoxText = Data.User.Address.ProvinceAndDistrict;
+                userControlTextBoxEditSpecificLocation.TextBoxText = Data.User.Address.SpecificLocation;
             }
-            userControlTextBoxEditIdCard.TextBoxText = FController.Instance.User.IdCard;
-            userControlTextBoxEditEmail.TextBoxText = FController.Instance.User.Email;
-            userControlTextBoxEditPhone.TextBoxText = FController.Instance.User.Phone;
-            pictureBoxImage.Image = FController.Instance.User.Image;
-            labelRank.Text = FController.Instance.User.Client.RankStr();
-            pictureBoxImageRank.Image = FController.Instance.User.Client.RankImage();
-            toolTip.SetToolTip(pictureBoxImageRank, FController.Instance.User.Client.StatusRank());
+            userControlTextBoxEditIdCard.TextBoxText = Data.User.IdCard;
+            userControlTextBoxEditEmail.TextBoxText = Data.User.Email;
+            userControlTextBoxEditPhone.TextBoxText = Data.User.Phone;
+            pictureBoxImage.Image = Data.User.Image;
+            labelRank.Text = Data.User.Client.RankStr();
+            pictureBoxImageRank.Image = Data.User.Client.RankImage();
+            toolTip.SetToolTip(pictureBoxImageRank, Data.User.Client.StatusRank());
         }
 
         private void ButtonChangeImageClick(object sender, EventArgs e)
@@ -59,15 +59,15 @@ namespace Project
                 {
                     FLoading fLoading = new FLoading(this, 2000);
 
-                    FController.Instance.User.UpdateInfor(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
+                    Data.User.UpdateInfor(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
                     fLoading.OnLoading();
-                    if (FController.Instance.InfoDAO.Update() == true)
+                    if (DataAccess.InfoDAO.Update(Data.User) == true)
                     {
-                        if(FController.Instance.User.Client.GetRank() == Client.ERank.noRank)
+                        if(Data.User.Client.GetRank() == Client.ERank.noRank)
                         {
-                            if (FController.Instance.ClientDAO.Update((int)Client.ERank.rankCopper) == true)
+                            if (DataAccess.ClientDAO.Update(Data.User, (int)Client.ERank.rankCopper) == true)
                             {
-                                FController.Instance.User.Client.UpdateRank((int)Client.ERank.rankCopper);
+                                Data.User.Client.UpdateRank((int)Client.ERank.rankCopper);
                             }
                         }    
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật thành công.", this);

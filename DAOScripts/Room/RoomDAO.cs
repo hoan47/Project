@@ -12,13 +12,13 @@ namespace Project
         public RoomDAO() : base("Room")
         { }
 
-        public void Access()
+        public void Access(List<Hotel> hotels)
         {
             try
             {
                 sqlConnection.Open();
 
-                foreach (Hotel hotel in FController.Instance.User.Hotels)
+                foreach (Hotel hotel in hotels)
                 {
                     SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idHotel = '{hotel.IdHotel}'", sqlConnection);
                     SqlDataReader reader = selectCMD.ExecuteReader();

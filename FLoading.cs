@@ -42,10 +42,9 @@ namespace Project
             timer.Start();
         }
 
-        private void TimerTick(object sender, EventArgs e)
+        public void TimerTick(object sender, EventArgs e)
         {
             timer.Stop();
-            form.Controls.Remove(this);
             Dispose();
         }
     }

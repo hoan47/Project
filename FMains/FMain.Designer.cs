@@ -73,7 +73,7 @@
             this.toolStripOption.Location = new System.Drawing.Point(0, 0);
             this.toolStripOption.Name = "toolStripOption";
             this.toolStripOption.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStripOption.Size = new System.Drawing.Size(148, 374);
+            this.toolStripOption.Size = new System.Drawing.Size(150, 374);
             this.toolStripOption.TabIndex = 0;
             this.toolStripOption.TabStop = true;
             this.toolStripOption.Text = "toolStrip1";
