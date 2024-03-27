@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FSetting : Form
+    public partial class UserControlNotificationHotel : UserControl
     {
-        public FSetting()
+        public UserControlNotificationHotel()
         {
             InitializeComponent();
+        }
+
+        private void ButtonProcessedClick(object sender, EventArgs e)
+        {
+            ((FNotification)Tag).OpenFormChild(panel, new FProcessedNotification());
         }
     }
 }

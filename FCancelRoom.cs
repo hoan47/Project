@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class FPreferential : Form
+    public partial class FCancelRoom : Form
     {
-        public FPreferential()
+        public FCancelRoom()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBackClick(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

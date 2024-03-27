@@ -21,6 +21,50 @@ namespace Project
             InitializeComponent();
         }
 
+        private void ToolStripButtonClick(object sender, EventArgs e)
+        {
+            if (sender == toolStripButtonInfor)
+            {
+                NormalColorToolStripButton();
+                OpenFormChild(new FUpdateInfor(), this);
+                return;
+            }
+            else if (Data.User.Client.RankInt == 0)
+            {
+                FController.Instance.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender).Text}.");
+                return;
+            }
+            NormalColorToolStripButton();
+            if (sender == toolStripButtonHomePage)
+            {
+                OpenFormChild(new FHomePage(), this);
+            }
+            else if (sender == toolStripButtonHistory)
+            {
+                OpenFormChild(new FHistory(), this);
+            }
+            else if (sender == toolStripButtonNotification)
+            {
+                OpenFormChild(new FNotification(), this);
+            }
+            else if (sender == toolStripButtonService)
+            {
+                OpenFormChild(new FService(), this);
+            }
+            else if (sender == toolStripButtonLogOut)
+            {
+                Close();
+            }
+        }
+
+        private void NormalColorToolStripButton()
+        {
+            foreach (ToolStripButton toolStripButton in toolStripOption.Items)
+            {
+                toolStripButton.BackColor = colorNormal;
+            }
+        }
+
         public void OpenFormChild(Form formChild, Form fromTag, bool isClearCurrent = true)
         {
             if (formChildCurrent2 != null)
@@ -52,13 +96,18 @@ namespace Project
 
             ChangeColerToolStripButton(formChild);
             fLoading.OnLoading();
+            OpenFormChild(panelMain, formChild, fromTag);
+            fLoading.OffLoading();
+        }
+
+        public void OpenFormChild(Panel panel, Form formChild, Form fromTag)
+        {
             formChild.Tag = fromTag;
             formChild.Size = panelMain.Size;
             formChild.TopLevel = false;
-            panelMain.Controls.Add(formChild);
+            panel.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
-            fLoading.OffLoading();
         }
 
         public void ChangeColerToolStripButton(Form formChild)
@@ -75,17 +124,13 @@ namespace Project
             {
                 toolStripButtonHistory.BackColor = formChild.BackColor;
             }
-            else if (formChild is FPreferential)
+            else if (formChild is FNotification)
             {
-                toolStripButtonPreferential.BackColor = formChild.BackColor;
+                toolStripButtonNotification.BackColor = formChild.BackColor;
             }
             else if (formChild is FService || formChild is FHotelManage || formChild is FUpdateHotel || formChild is FUpdateRoom)
             {
                 toolStripButtonService.BackColor = formChild.BackColor;
-            }
-            else if (formChild is FSetting)
-            {
-                toolStripButtonSetting.BackColor = formChild.BackColor;
             }
             else if (formChild is FUpdateHotel)
             {
@@ -93,45 +138,14 @@ namespace Project
             }
         }
 
-        private void ToolStripButtonClick(object sender, EventArgs e)
+        public void UpdateConins()
         {
-            foreach (ToolStripButton toolStripButton in toolStripOption.Items)
-            {
-                toolStripButton.BackColor = colorNormal;
-            }
+            labelCoins.Text = Data.User.Client.Coins.ToString("N0").Replace(",", ".");
+        }
 
-            if (sender == toolStripButtonInfor)
-            {
-                OpenFormChild(new FUpdateInfor(), this);
-            }
-            else if (Data.User.Client.RankInt == 0)
-            {
-                FController.Instance.MessageWarning("Yêu cầu", $"Bạn vui lòng cập nhật thông tin trước để sử dụng tính năng {((ToolStripButton)sender)?.Text}.");
-            }
-            else if (sender == toolStripButtonHomePage)
-            {
-                OpenFormChild(new FHomePage(), this);
-            }
-            else if (sender == toolStripButtonHistory)
-            {
-                OpenFormChild(new FHistory(), this);
-            }
-            else if (sender == toolStripButtonPreferential)
-            {
-                OpenFormChild(new FPreferential(), this);
-            }
-            else if (sender == toolStripButtonService)
-            {
-                OpenFormChild(new FService(), this);
-            }
-            else if (sender == toolStripButtonSetting)
-            {
-                OpenFormChild(new FSetting(), this);
-            }
-            else if (sender == toolStripButtonLogOut)
-            {
-                Close();
-            }
+        private void FMainLoad(object sender, EventArgs e)
+        {
+            UpdateConins();
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateHotel));
             this.panelInfo = new System.Windows.Forms.Panel();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.userControlTextBoxServicePhone = new Project.UserControlTextBoxService();
             this.userControlTextBoxSerciveName = new Project.UserControlTextBoxService();
             this.userControlServiceEdit = new Project.UserControlServiceEdit();
@@ -46,7 +47,6 @@ namespace Project
             this.buttonDeleteImage = new System.Windows.Forms.Button();
             this.buttonUploadImage = new System.Windows.Forms.Button();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.panelInfo.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -68,6 +68,16 @@ namespace Project
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(312, 511);
             this.panelInfo.TabIndex = 0;
+            // 
+            // richTextBox
+            // 
+            this.richTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox.Location = new System.Drawing.Point(14, 429);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(240, 74);
+            this.richTextBox.TabIndex = 0;
+            this.richTextBox.Text = "";
             // 
             // userControlTextBoxServicePhone
             // 
@@ -260,15 +270,6 @@ namespace Project
             this.butonBack.Size = new System.Drawing.Size(40, 40);
             this.butonBack.TabIndex = 11;
             this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
-            // 
-            // richTextBox
-            // 
-            this.richTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox.Location = new System.Drawing.Point(14, 429);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(240, 74);
-            this.richTextBox.TabIndex = 0;
-            this.richTextBox.Text = "";
             // 
             // FUpdateHotel
             // 

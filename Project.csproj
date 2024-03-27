@@ -183,6 +183,12 @@
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="FCancelRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCancelRoom.Designer.cs">
+      <DependentUpon>FCancelRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="FMains\HomePage\FInforHotelRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,12 @@
     </Compile>
     <Compile Include="FMains\Service\FUpdateRoom.Designer.cs">
       <DependentUpon>FUpdateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProcessedNotification.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProcessedNotification.cs.Designer.cs">
+      <DependentUpon>FProcessedNotification.cs.cs</DependentUpon>
     </Compile>
     <Compile Include="ProcessScripts\ProcessCheckInfor.cs" />
     <Compile Include="DAOScripts\Hotels\Hotel.cs" />
@@ -259,12 +271,6 @@
     <Compile Include="FLogins\FForgetPassword.Designer.cs">
       <DependentUpon>FForgetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMains\FSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMains\FSetting.Designer.cs">
-      <DependentUpon>FSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="FMains\Service\FUpdateHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,11 +289,11 @@
     <Compile Include="FMains\FMain.designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMains\FPreferential.cs">
+    <Compile Include="FMains\FNotification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMains\FPreferential.Designer.cs">
-      <DependentUpon>FPreferential.cs</DependentUpon>
+    <Compile Include="FMains\FNotification.Designer.cs">
+      <DependentUpon>FNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="FMains\Service\FService.cs">
       <SubType>Form</SubType>
@@ -329,6 +335,24 @@
     </Compile>
     <Compile Include="UserControls\UserControlLable.Designer.cs">
       <DependentUpon>UserControlLable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationCoins.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationCoins.Designer.cs">
+      <DependentUpon>UserControlNotificationCoins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationHotel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationHotel.Designer.cs">
+      <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationService.Designer.cs">
+      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlPrice.cs">
       <SubType>UserControl</SubType>
@@ -433,6 +457,9 @@
     <Compile Include="UserControls\UserControlTextBoxService.Designer.cs">
       <DependentUpon>UserControlTextBoxService.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FCancelRoom.resx">
+      <DependentUpon>FCancelRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCustomMessageBox.resx">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -469,8 +496,8 @@
     <EmbeddedResource Include="FMains\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMains\FPreferential.resx">
-      <DependentUpon>FPreferential.cs</DependentUpon>
+    <EmbeddedResource Include="FMains\FNotification.resx">
+      <DependentUpon>FNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\Service\FService.resx">
       <DependentUpon>FService.cs</DependentUpon>
@@ -488,6 +515,9 @@
     <EmbeddedResource Include="FMains\Service\FUpdateRoom.resx">
       <DependentUpon>FUpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FProcessedNotification.cs.resx">
+      <DependentUpon>FProcessedNotification.cs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -501,6 +531,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlLable.resx">
       <DependentUpon>UserControlLable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificationCoins.resx">
+      <DependentUpon>UserControlNotificationCoins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificationHotel.resx">
+      <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificationService.resx">
+      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlPrice.resx">
       <DependentUpon>UserControlPrice.cs</DependentUpon>

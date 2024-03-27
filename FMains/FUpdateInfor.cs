@@ -65,9 +65,11 @@ namespace Project
                     {
                         if(Data.User.Client.GetRank() == Client.ERank.noRank)
                         {
-                            if (DataAccess.ClientDAO.Update(Data.User, (int)Client.ERank.rankCopper) == true)
+                            if (DataAccess.ClientDAO.Update(Data.User, (int)Client.ERank.rankCopper, Client.coninsStar) == true)
                             {
                                 Data.User.Client.UpdateRank((int)Client.ERank.rankCopper);
+                                Data.User.Client.UpdateCoins(Client.coninsStar);
+                                ((FMain)Tag).UpdateConins();
                             }
                         }    
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
