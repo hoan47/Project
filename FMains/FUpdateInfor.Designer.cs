@@ -103,7 +103,7 @@
             // 
             // labelRank
             // 
-            this.labelRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRank.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRank.Location = new System.Drawing.Point(81, 2);
             this.labelRank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRank.Name = "labelRank";

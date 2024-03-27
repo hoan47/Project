@@ -10,15 +10,23 @@ namespace Project
     public class Client
     {
         public int RankInt { get; private set; }
+        public int Coins { get; private set; }
+        public const int coninsStar = 100;
 
-        public Client(int rankInt = 0)
+        public Client(int rankInt = 0, int coins = 0)
         {
             RankInt = rankInt;
+            Coins = coins;
         }
 
         public void UpdateRank(int core)
         {
             RankInt = RankInt + core;
+        }
+
+        public void UpdateCoins(int coins)
+        {
+            Coins = Coins + coins;
         }
 
         public ERank GetRank()
@@ -71,13 +79,13 @@ namespace Project
             switch (GetRank())
             {
                 case ERank.noRank:
-                    return "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng và mở khóa các tính năng khác.";
+                    return "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng, nhận 100 xu và mở khóa các tính năng khác.";
                 case ERank.rankCopper:
-                    return $"Bạn cần thêm {ERank.rankSilver - Data.User.Client.RankInt} điểm để mở khóa hạng Bạc.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankCopper}% các dịch vụ.\nBạn cần thêm {ERank.rankSilver - Data.User.Client.RankInt} điểm để mở khóa hạng Bạc.";
                 case ERank.rankSilver:
-                    return $"Bạn cần thêm {ERank.rankYellow - Data.User.Client.RankInt} điểm để mở khóa hạng Vàng.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankSilver}% các dịch vụ.\nBạn cần thêm {ERank.rankYellow - Data.User.Client.RankInt} điểm để mở khóa hạng Vàng.";
                 default:
-                    return $"Bạn hiện tại đang ở mức hạng cao nhất.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankYellow}% các dịch vụ.\nBạn hiện tại đang ở mức hạng cao nhất.";
             }
         }
 
@@ -87,6 +95,13 @@ namespace Project
             rankCopper = 5,
             rankSilver = 16,
             rankYellow = 30
+        }
+
+        public enum EValue
+        {
+            rankCopper = 10,
+            rankSilver = 15,
+            rankYellow = 20
         }
     }
 }

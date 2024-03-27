@@ -22,7 +22,7 @@ namespace Project
 
                 if (reader.Read())
                 {
-                    user.UpdateClient(new Client(Convert.ToInt32(reader[1])));
+                    user.UpdateClient(new Client(Convert.ToInt32(reader[1]), Convert.ToInt32(reader[2])));
                 }
                 reader.Close();
             }
@@ -41,7 +41,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand insertCMD = new SqlCommand($"Insert {table}(userName, rankInt) values('{user.UserName}', '{user.Client.RankInt}')", sqlConnection);
+                SqlCommand insertCMD = new SqlCommand($"Insert {table} values('{user.UserName}', '{user.Client.RankInt}', '{user.Client.Coins}')", sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
                 {
@@ -59,13 +59,13 @@ namespace Project
             return false;
         }
 
-        public bool Update(User user, int core)
+        public bool Update(User user, int core, int coins)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand updateCMD = new SqlCommand(
-                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt + core}' WHERE userName = '{user.UserName}'", sqlConnection);
+                    $"UPDATE {table} SET rankInt = '{user.Client.RankInt + core}', coins = '{user.Client.Coins + coins}' WHERE userName = '{user.UserName}'", sqlConnection);
 
                 if (updateCMD.ExecuteNonQuery() == 1)
                 {
