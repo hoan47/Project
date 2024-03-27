@@ -70,7 +70,7 @@ namespace Project
             this.groupBox.TabIndex = 0;
             this.groupBox.Text = "Tên phòng:";
             this.groupBox.TextOffset = new System.Drawing.Point(0, -10);
-            this.groupBox.Click += new System.EventHandler(this.Click);
+            this.groupBox.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // pictureBoxIconPrice
             // 
@@ -82,7 +82,7 @@ namespace Project
             this.pictureBoxIconPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIconPrice.TabIndex = 5;
             this.pictureBoxIconPrice.TabStop = false;
-            this.pictureBoxIconPrice.Click += new System.EventHandler(this.Click);
+            this.pictureBoxIconPrice.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // pictureBox
             // 
@@ -94,7 +94,7 @@ namespace Project
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.Click);
+            this.pictureBox.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelOldPrice
             // 
@@ -108,7 +108,7 @@ namespace Project
             this.labelOldPrice.TabIndex = 6;
             this.labelOldPrice.Text = "1000000";
             this.labelOldPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelOldPrice.Click += new System.EventHandler(this.Click);
+            this.labelOldPrice.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelPrice
             // 
@@ -122,7 +122,7 @@ namespace Project
             this.labelPrice.TabIndex = 7;
             this.labelPrice.Text = "1000000";
             this.labelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelPrice.Click += new System.EventHandler(this.Click);
+            this.labelPrice.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // guna2PictureBox1
             // 
@@ -134,7 +134,7 @@ namespace Project
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.Click);
+            this.guna2PictureBox1.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelAcreages
             // 
@@ -145,7 +145,7 @@ namespace Project
             this.labelAcreages.Size = new System.Drawing.Size(115, 16);
             this.labelAcreages.TabIndex = 4;
             this.labelAcreages.Text = "Diện tích: 999 m^2";
-            this.labelAcreages.Click += new System.EventHandler(this.Click);
+            this.labelAcreages.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelNumberBed
             // 
@@ -156,7 +156,7 @@ namespace Project
             this.labelNumberBed.Size = new System.Drawing.Size(115, 16);
             this.labelNumberBed.TabIndex = 3;
             this.labelNumberBed.Text = "Số giường: 0";
-            this.labelNumberBed.Click += new System.EventHandler(this.Click);
+            this.labelNumberBed.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelNumberRoom
             // 
@@ -167,7 +167,7 @@ namespace Project
             this.labelNumberRoom.Size = new System.Drawing.Size(115, 16);
             this.labelNumberRoom.TabIndex = 2;
             this.labelNumberRoom.Text = "Số phòng ngủ: 0";
-            this.labelNumberRoom.Click += new System.EventHandler(this.Click);
+            this.labelNumberRoom.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelNumberPeople
             // 
@@ -178,7 +178,7 @@ namespace Project
             this.labelNumberPeople.Size = new System.Drawing.Size(115, 16);
             this.labelNumberPeople.TabIndex = 1;
             this.labelNumberPeople.Text = "Số người: 0";
-            this.labelNumberPeople.Click += new System.EventHandler(this.Click);
+            this.labelNumberPeople.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // UserControlShowRoom
             // 
@@ -188,6 +188,7 @@ namespace Project
             this.Controls.Add(this.groupBox);
             this.Name = "UserControlShowRoom";
             this.Size = new System.Drawing.Size(200, 134);
+            this.Load += new System.EventHandler(this.UserControlShowRoomLoad);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

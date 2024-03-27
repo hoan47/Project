@@ -19,7 +19,7 @@ namespace Project
 
         private void ButtonAddClick(object sender, EventArgs e)
         {
-            ((FMain)Tag).OpenFormChild(new FUpdateHotel(null), this);
+            ((FMain)Tag).OpenFormChild(null, new FUpdateHotel(null), this);
         }
 
         public void OpenHotelManager(Hotel hotel = null)

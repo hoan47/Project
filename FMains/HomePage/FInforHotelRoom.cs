@@ -12,19 +12,18 @@ namespace Project
 {
     public partial class FInforHotelRoom : Form
     {
-        public FInforHotelRoom()
+        public FInforHotelRoom(Hotel hotel, Room room)
         {
             InitializeComponent();
         }
 
-        private void FHomePaceInformationRoom_Load(object sender, EventArgs e)
+        private void FHomePaceInformationRoomLoad(object sender, EventArgs e)
         {
 
         }
 
         private void ButtonBackClick(object sender, EventArgs e)
         {
-            ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
             Dispose();
         }
     }

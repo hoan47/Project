@@ -22,6 +22,7 @@ namespace Project
             foreach (Hotel hotel in Data.HotelServices)
             {
                 UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
+
                 userControlHotel.Tag = this;
                 flowLayoutPanel.Controls.Add(userControlHotel);
             }
@@ -29,14 +30,11 @@ namespace Project
 
         public void OpenHotel(Hotel hotel)
         {
-            ((FMain)Tag).OpenFormChild(new FShowHotelRoom(hotel), this, false);
+            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel), this);
         }
+
         private void ButtonSearchClick(object sender, EventArgs e)
         {
-            foreach(string item in checkedListBoxService.CheckedItems)
-            {
-                MessageBox.Show(item);
-            }
             flowLayoutPanel.Controls.Clear();
             foreach (Hotel hotel in Data.HotelServices)
             {
@@ -50,6 +48,7 @@ namespace Project
                 }
             }
         }
+
         private bool CheckPrice(int price, List<Room> rooms)
         {
             foreach (Room room in rooms)
@@ -61,11 +60,12 @@ namespace Project
             }
             return false;
         }
+
         private bool CheckService(CheckedListBox checkedListBoxService, Hotel hotel)
         {
-            foreach(string item in checkedListBoxService.CheckedItems)
+            foreach (string item in checkedListBoxService.CheckedItems)
             {
-                if(hotel.Services.Contains(item) == false)
+                if (hotel.Services.Contains(item) == false)
                 {
                     return false;
                 }

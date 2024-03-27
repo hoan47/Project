@@ -48,7 +48,7 @@ namespace Project
             else
             {
                 userControlServiceEdit.Value = new List<string>() { "Bãi giữ xe máy", "Bãi giữ xe ô tô", "Khu bán đồ ăn", "Wifi", "Hồ bơi", "Khu vực hút thuốc" };
-                panelImage.Visible = false;
+                butonBack.Visible = panelImage.Visible = false;
             }
         }
 
@@ -155,7 +155,8 @@ namespace Project
             if(Tag is FHotelManage fHotelManage)
             {
                 fHotelManage.LoadData();
-            }    
+                ((FMain)((FService)fHotelManage.Tag).Tag).ChangeColerToolStripButton(fHotelManage);
+            }
             Dispose();
         }
     }

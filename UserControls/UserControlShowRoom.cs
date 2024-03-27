@@ -12,10 +12,17 @@ namespace Project
 {
     public partial class UserControlShowRoom : UserControl
     {
+        private Room room;
+
         public UserControlShowRoom(Room room)
         {
             InitializeComponent();
+            this.room = room;
 
+        }
+
+        private void LoadUI()
+        {
             pictureBox.Image = room.GetImageRoom();
             groupBox.Text = "Tên phòng: " + room.Name;
             labelNumberPeople.Text = room.NumberPeople.ToString();
@@ -25,9 +32,14 @@ namespace Project
             labelPrice.Text = room.Price.ToString();
         }
 
-        private void Click(object sender, EventArgs e)
+        private void ShowRoomClick(object sender, EventArgs e)
         {
-            
+            ((FShowHotelRoom)Tag).OpenInfoHotelRoom(room);
+        }
+
+        private void UserControlShowRoomLoad(object sender, EventArgs e)
+        {
+            LoadUI();
         }
     }
 }

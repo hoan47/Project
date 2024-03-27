@@ -38,14 +38,11 @@
             this.toolStripButtonHistory = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonService = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonLogOut = new System.Windows.Forms.ToolStripButton();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBoxConins = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelCoins = new System.Windows.Forms.Label();
             this.panelOption.SuspendLayout();
             this.toolStripOption.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
-            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConins)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,23 +157,11 @@
             this.toolStripButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButtonLogOut.Click += new System.EventHandler(this.ToolStripButtonClick);
             // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
-            this.pictureBoxIcon.Location = new System.Drawing.Point(638, 370);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(120, 120);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIcon.TabIndex = 4;
-            this.pictureBoxIcon.TabStop = false;
-            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
             this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelMain.Controls.Add(this.pictureBoxIcon);
             this.panelMain.Location = new System.Drawing.Point(150, 0);
             this.panelMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelMain.Name = "panelMain";
@@ -222,8 +207,6 @@
             this.panelOption.ResumeLayout(false);
             this.toolStripOption.ResumeLayout(false);
             this.toolStripOption.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
-            this.panelMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConins)).EndInit();
             this.ResumeLayout(false);
 
@@ -239,7 +222,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonNotification;
         private System.Windows.Forms.ToolStripButton toolStripButtonService;
         private System.Windows.Forms.ToolStripButton toolStripButtonLogOut;
-        private System.Windows.Forms.PictureBox pictureBoxIcon;
         public System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxConins;
         private System.Windows.Forms.Label labelCoins;

@@ -49,6 +49,7 @@ namespace Project
         private void ButtonBackClick(object sender, EventArgs e)
         {
             ((FHotelManage)Tag).LoadData();
+            ((FMain)((FService)((FHotelManage)Tag).Tag).Tag).ChangeColerToolStripButton((FHotelManage)Tag);
             Dispose();
         }
 

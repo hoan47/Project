@@ -85,11 +85,12 @@ namespace Project
             // 
             // panelIn
             // 
-            this.panelIn.BackColor = System.Drawing.Color.White;
+            this.panelIn.BackColor = System.Drawing.Color.Transparent;
             this.panelIn.BorderColor = System.Drawing.Color.Black;
             this.panelIn.BorderRadius = 10;
             this.panelIn.BorderThickness = 2;
             this.panelIn.Controls.Add(this.maskedTextBoxIn);
+            this.panelIn.FillColor = System.Drawing.Color.White;
             this.panelIn.Location = new System.Drawing.Point(60, 34);
             this.panelIn.Margin = new System.Windows.Forms.Padding(2);
             this.panelIn.Name = "panelIn";
@@ -112,11 +113,12 @@ namespace Project
             // 
             // panelOut
             // 
-            this.panelOut.BackColor = System.Drawing.Color.White;
+            this.panelOut.BackColor = System.Drawing.Color.Transparent;
             this.panelOut.BorderColor = System.Drawing.Color.Black;
             this.panelOut.BorderRadius = 10;
             this.panelOut.BorderThickness = 2;
             this.panelOut.Controls.Add(this.maskedTextBoxOut);
+            this.panelOut.FillColor = System.Drawing.Color.White;
             this.panelOut.Location = new System.Drawing.Point(204, 34);
             this.panelOut.Margin = new System.Windows.Forms.Padding(2);
             this.panelOut.Name = "panelOut";

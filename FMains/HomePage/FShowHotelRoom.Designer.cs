@@ -30,7 +30,7 @@ namespace Project
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FShowHotelRoom));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelInfoHotel = new System.Windows.Forms.Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.userControlLablePhone = new Project.UserControls.UserControlLable();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
@@ -42,8 +42,9 @@ namespace Project
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableName = new Project.UserControls.UserControlLable();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel = new System.Windows.Forms.Panel();
+            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.checkedListBoxAmenities = new System.Windows.Forms.CheckedListBox();
@@ -55,14 +56,14 @@ namespace Project
             this.groupBoxNumberPeople = new System.Windows.Forms.GroupBox();
             this.numericUpDownPeople = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.userControlLableAddress = new Project.UserControls.UserControlLable();
-            this.panel1.SuspendLayout();
+            this.butonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.panelInfoHotel.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
             this.panel.SuspendLayout();
+            this.guna2GroupBox1.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.groupBoxNumberBed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBed)).BeginInit();
@@ -72,18 +73,18 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPeople)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelInfoHotel
             // 
-            this.panel1.Controls.Add(this.guna2GroupBox2);
-            this.panel1.Controls.Add(this.userControlLablePhone);
-            this.panel1.Controls.Add(this.groupBoxDescribe);
-            this.panel1.Controls.Add(this.groupBoxService);
-            this.panel1.Controls.Add(this.panelImage);
-            this.panel1.Controls.Add(this.userControlLableName);
-            this.panel1.Location = new System.Drawing.Point(5, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 478);
-            this.panel1.TabIndex = 5;
+            this.panelInfoHotel.Controls.Add(this.guna2GroupBox2);
+            this.panelInfoHotel.Controls.Add(this.userControlLablePhone);
+            this.panelInfoHotel.Controls.Add(this.groupBoxDescribe);
+            this.panelInfoHotel.Controls.Add(this.groupBoxService);
+            this.panelInfoHotel.Controls.Add(this.panelImage);
+            this.panelInfoHotel.Controls.Add(this.userControlLableName);
+            this.panelInfoHotel.Location = new System.Drawing.Point(5, 34);
+            this.panelInfoHotel.Name = "panelInfoHotel";
+            this.panelInfoHotel.Size = new System.Drawing.Size(244, 478);
+            this.panelInfoHotel.TabIndex = 5;
             // 
             // guna2GroupBox2
             // 
@@ -240,33 +241,43 @@ namespace Project
             this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
             this.userControlLableName.TabIndex = 10;
             // 
+            // userControlLableAddress
+            // 
+            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
+            this.userControlLableAddress.LableText = "Địa chỉ";
+            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
+            this.userControlLableAddress.Name = "userControlLableAddress";
+            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.TabIndex = 6;
+            // 
+            // panel
+            // 
+            this.panel.Controls.Add(this.guna2GroupBox1);
+            this.panel.Location = new System.Drawing.Point(252, 38);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(523, 470);
+            this.panel.TabIndex = 7;
+            // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2GroupBox1.BorderRadius = 4;
             this.guna2GroupBox1.BorderThickness = 4;
-            this.guna2GroupBox1.Controls.Add(this.panel);
+            this.guna2GroupBox1.Controls.Add(this.panelSearch);
+            this.guna2GroupBox1.Controls.Add(this.flowLayoutPanel);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(252, 38);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(523, 470);
-            this.guna2GroupBox1.TabIndex = 14;
+            this.guna2GroupBox1.TabIndex = 15;
             this.guna2GroupBox1.Text = "Tìm kiếm phòng";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, -10);
-            // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.Color.Transparent;
-            this.panel.Controls.Add(this.panelSearch);
-            this.panel.Controls.Add(this.flowLayoutPanel);
-            this.panel.Location = new System.Drawing.Point(3, 18);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(516, 448);
-            this.panel.TabIndex = 0;
             // 
             // panelSearch
             // 
@@ -278,10 +289,10 @@ namespace Project
             this.panelSearch.Controls.Add(this.groupBoxNumberRoom);
             this.panelSearch.Controls.Add(this.groupBoxNumberPeople);
             this.panelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelSearch.Location = new System.Drawing.Point(3, 5);
+            this.panelSearch.Location = new System.Drawing.Point(4, 21);
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(508, 85);
-            this.panelSearch.TabIndex = 6;
+            this.panelSearch.TabIndex = 8;
             // 
             // buttonSearch
             // 
@@ -299,7 +310,6 @@ namespace Project
             this.buttonSearch.Size = new System.Drawing.Size(229, 26);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
-            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             // 
             // checkedListBoxAmenities
             // 
@@ -313,7 +323,7 @@ namespace Project
             "Bếp nướng"});
             this.checkedListBoxAmenities.Location = new System.Drawing.Point(250, 19);
             this.checkedListBoxAmenities.Name = "checkedListBoxAmenities";
-            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 55);
+            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 38);
             this.checkedListBoxAmenities.TabIndex = 0;
             // 
             // groupBoxAmenities
@@ -405,21 +415,28 @@ namespace Project
             this.flowLayoutPanel.AllowDrop = true;
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 96);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(4, 112);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(512, 350);
-            this.flowLayoutPanel.TabIndex = 5;
+            this.flowLayoutPanel.TabIndex = 7;
             // 
-            // userControlLableAddress
+            // butonBack
             // 
-            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
-            this.userControlLableAddress.LableText = "Địa chỉ";
-            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
-            this.userControlLableAddress.Name = "userControlLableAddress";
-            this.userControlLableAddress.Size = new System.Drawing.Size(770, 34);
-            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(770, 34);
-            this.userControlLableAddress.TabIndex = 6;
+            this.butonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butonBack.BackgroundImage")));
+            this.butonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butonBack.BorderRadius = 10;
+            this.butonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.butonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.butonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.butonBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.butonBack.FillColor = System.Drawing.Color.Transparent;
+            this.butonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.butonBack.ForeColor = System.Drawing.Color.White;
+            this.butonBack.Location = new System.Drawing.Point(740, 0);
+            this.butonBack.Name = "butonBack";
+            this.butonBack.Size = new System.Drawing.Size(35, 35);
+            this.butonBack.TabIndex = 12;
+            this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
             // 
             // FShowHotelRoom
             // 
@@ -427,21 +444,22 @@ namespace Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(780, 512);
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.butonBack);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.userControlLableAddress);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelInfoHotel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FShowHotelRoom";
             this.Text = "FShowRoom";
             this.Load += new System.EventHandler(this.FShowRoom_Load);
-            this.panel1.ResumeLayout(false);
+            this.panelInfoHotel.ResumeLayout(false);
             this.groupBoxDescribe.ResumeLayout(false);
             this.groupBoxService.ResumeLayout(false);
             this.panelImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
             this.panel.ResumeLayout(false);
+            this.guna2GroupBox1.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             this.groupBoxNumberBed.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBed)).EndInit();
@@ -454,7 +472,7 @@ namespace Project
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelInfoHotel;
         private System.Windows.Forms.Panel panelImage;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBox;
         private Guna.UI2.WinForms.Guna2Button buttonRight;
@@ -465,10 +483,10 @@ namespace Project
         private System.Windows.Forms.ListBox listBoxService;
         private System.Windows.Forms.RichTextBox richTextBoxDescribe;
         private System.Windows.Forms.GroupBox groupBoxDescribe;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private UserControls.UserControlLable userControlLablePhone;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Panel panel;
+        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Panel panelSearch;
         private Guna.UI2.WinForms.Guna2Button buttonSearch;
         private System.Windows.Forms.CheckedListBox checkedListBoxAmenities;
@@ -480,5 +498,6 @@ namespace Project
         private System.Windows.Forms.GroupBox groupBoxNumberPeople;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDownPeople;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private Guna.UI2.WinForms.Guna2Button butonBack;
     }
 }

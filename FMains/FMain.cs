@@ -13,8 +13,7 @@ namespace Project
     public partial class FMain : Form
     {
         private Color colorNormal = Color.White;
-        private Form formChildCurrent1;
-        private Form formChildCurrent2;
+        private Form formChildCurrent;
 
         public FMain()
         {
@@ -65,33 +64,13 @@ namespace Project
             }
         }
 
-        public void OpenFormChild(Form formChild, Form fromTag, bool isClearCurrent = true)
+        public void OpenFormChild(Form formChild, Form fromTag)
         {
-            if (formChildCurrent2 != null)
+            if (formChildCurrent != null)
             {
-                formChildCurrent2.Close();
-                formChildCurrent2 = null;
+                formChildCurrent.Close();
             }
-            if (formChildCurrent1 != null)
-            {
-                if (formChild.GetType() == formChildCurrent1.GetType())
-                {
-                    return;
-                }
-                if (isClearCurrent == true)
-                {
-                    formChildCurrent1.Close();
-                    formChildCurrent1 = formChild;
-                }
-                else
-                {
-                    formChildCurrent2 = formChild;
-                }
-            }
-            else
-            {
-                formChildCurrent1 = formChild;
-            }
+            formChildCurrent = formChild;
             FLoading fLoading = new FLoading(formChild, 400);
 
             ChangeColerToolStripButton(formChild);
@@ -102,8 +81,13 @@ namespace Project
 
         public void OpenFormChild(Panel panel, Form formChild, Form fromTag)
         {
+            if(panel == null)
+            {
+                panel = panelMain;
+                ChangeColerToolStripButton(formChild);
+            }    
             formChild.Tag = fromTag;
-            formChild.Size = panelMain.Size;
+            formChild.Size = panel.Size;
             formChild.TopLevel = false;
             panel.Controls.Add(formChild);
             formChild.BringToFront();

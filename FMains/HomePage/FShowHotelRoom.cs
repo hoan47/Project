@@ -14,10 +14,20 @@ namespace Project
     {
         private Hotel hotel;
         private Image_ currentImage;
+
         public FShowHotelRoom(Hotel hotel)
         {
             InitializeComponent();
             this.hotel = hotel;
+        }
+
+        private void FShowRoom_Load(object sender, EventArgs e)
+        {
+            LoadUI();
+        }
+
+        private void LoadUI()
+        {
             userControlLableAddress.LableText = hotel.Address.AddressValue;
             userControlLableName.LableText = hotel.Name;
             userControlLablePhone.LableText = hotel.Phone;
@@ -25,18 +35,7 @@ namespace Project
             currentImage = hotel.Images?.First();
             listBoxService.DataSource = hotel.Services;
             richTextBoxDescribe.Text = hotel.Describe;
-            foreach(Room room in hotel.Rooms)
-            {
-                UserControlShowRoom userControlShowRoom = new UserControlShowRoom(room);
-
-                userControlShowRoom.Tag = this;
-                flowLayoutPanel.Controls.Add(userControlShowRoom);
-            }    
-        }
-
-        private void FShowRoom_Load(object sender, EventArgs e)
-        {
-
+            ShowRooms(null);
         }
 
         private void ButtonLeftClick(object sender, EventArgs e)
@@ -64,14 +63,25 @@ namespace Project
         private void ButtonSearchClick(object sender, EventArgs e)
         {
             flowLayoutPanel.Controls.Clear();
-            foreach(Room room in hotel.Rooms)
-            {
-                if(numericUpDownPeople.Value <= room.NumberPeople &&
+            ShowRooms(SearchCriteria);
+        }
+
+        private bool SearchCriteria(Room room)
+        {
+            return numericUpDownPeople.Value <= room.NumberPeople &&
                     numericUpDownBed.Value <= room.NumberBeds &&
                     numericUpDownRoom.Value <= room.NumberRoom &&
-                    CheckAmenities(checkedListBoxAmenities, room))
+                    CheckAmenities(checkedListBoxAmenities, room);
+        }
+
+        private void ShowRooms(Func<Room, bool> SearchCriteria)
+        {
+            foreach (Room room in hotel.Rooms)
+            {
+                if (SearchCriteria == null || SearchCriteria(room) == true)
                 {
                     UserControlShowRoom userControlShowRoom = new UserControlShowRoom(room);
+
                     userControlShowRoom.Tag = this;
                     flowLayoutPanel.Controls.Add(userControlShowRoom);
                 }
@@ -85,6 +95,17 @@ namespace Project
                 if (room.Amenitiese.Contains(item) == false) return false;
             }
             return true;
+        }
+
+        public void OpenInfoHotelRoom(Room room)
+        {
+            ((FMain)((FHomePage)Tag).Tag).OpenFormChild(panel, new FInforHotelRoom(hotel, room), this);
+        }
+
+        private void ButonBackClick(object sender, EventArgs e)
+        {
+            ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
+            Dispose();
         }
     }
 }

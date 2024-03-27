@@ -12,7 +12,7 @@ namespace Project.UserControls
 {
     public partial class UserControlPrice : UserControl
     {
-        const int priceStart = 20000;
+        const int priceStart = 100000;
         private int price;
         public int Price 
         { 

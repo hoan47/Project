@@ -33,7 +33,7 @@ namespace Project
             FUpdateRoom fUpdateRoom = new FUpdateRoom(hotel, room);
 
             fUpdateRoom.Tag = this;
-            ((FMain)((FService)Tag).Tag).OpenFormChild(fUpdateRoom, this, false);
+            ((FMain)((FService)Tag).Tag).OpenFormChild(null, fUpdateRoom, this);
         }
 
         private void ButtonInforHotelClick(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Project
             FUpdateHotel fUpdateHotel = new FUpdateHotel(hotel);
 
             fUpdateHotel.Tag = this;
-            ((FMain)((FService)Tag).Tag).OpenFormChild(fUpdateHotel, this, false);
+            ((FMain)((FService)Tag).Tag).OpenFormChild(null, fUpdateHotel, this);
         }
 
         private void ButtonUpdateClick(object sender, EventArgs e)

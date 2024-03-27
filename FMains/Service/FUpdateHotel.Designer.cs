@@ -64,14 +64,14 @@ namespace Project
             this.panelInfo.Controls.Add(this.userControlCheckInOutHotel);
             this.panelInfo.Controls.Add(this.groupBoxDescribe);
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelInfo.Name = "panelInfo";
             this.panelInfo.Size = new System.Drawing.Size(312, 511);
             this.panelInfo.TabIndex = 0;
             // 
             // richTextBox
             // 
-            this.richTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox.Location = new System.Drawing.Point(14, 429);
             this.richTextBox.Name = "richTextBox";
@@ -85,7 +85,7 @@ namespace Project
             this.userControlTextBoxServicePhone.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxServicePhone.Image")));
             this.userControlTextBoxServicePhone.LabelText = "Số điện thoại";
             this.userControlTextBoxServicePhone.Location = new System.Drawing.Point(9, 168);
-            this.userControlTextBoxServicePhone.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxServicePhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlTextBoxServicePhone.Name = "userControlTextBoxServicePhone";
             this.userControlTextBoxServicePhone.Size = new System.Drawing.Size(300, 64);
             this.userControlTextBoxServicePhone.TabIndex = 9;
@@ -98,7 +98,7 @@ namespace Project
             this.userControlTextBoxSerciveName.Image = ((System.Drawing.Image)(resources.GetObject("userControlTextBoxSerciveName.Image")));
             this.userControlTextBoxSerciveName.LabelText = "Tên khách sạn";
             this.userControlTextBoxSerciveName.Location = new System.Drawing.Point(9, 6);
-            this.userControlTextBoxSerciveName.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlTextBoxSerciveName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlTextBoxSerciveName.Name = "userControlTextBoxSerciveName";
             this.userControlTextBoxSerciveName.Size = new System.Drawing.Size(300, 64);
             this.userControlTextBoxSerciveName.TabIndex = 8;
@@ -109,7 +109,7 @@ namespace Project
             // 
             this.userControlServiceEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userControlServiceEdit.GroupBoxText = "Dịch Vụ";
-            this.userControlServiceEdit.ListBoxBackColor = System.Drawing.SystemColors.Info;
+            this.userControlServiceEdit.ListBoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.userControlServiceEdit.Location = new System.Drawing.Point(9, 305);
             this.userControlServiceEdit.Name = "userControlServiceEdit";
             this.userControlServiceEdit.Size = new System.Drawing.Size(300, 100);
@@ -123,7 +123,7 @@ namespace Project
             this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
             this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonUpdate.Location = new System.Drawing.Point(263, 442);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
             this.buttonUpdate.TabIndex = 10;
@@ -134,7 +134,7 @@ namespace Project
             // 
             this.userControlAddressHotel.ComboBoxText = "";
             this.userControlAddressHotel.Location = new System.Drawing.Point(9, 74);
-            this.userControlAddressHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlAddressHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlAddressHotel.Name = "userControlAddressHotel";
             this.userControlAddressHotel.Size = new System.Drawing.Size(300, 90);
             this.userControlAddressHotel.TabIndex = 2;
@@ -143,7 +143,7 @@ namespace Project
             // userControlCheckInOutHotel
             // 
             this.userControlCheckInOutHotel.Location = new System.Drawing.Point(9, 236);
-            this.userControlCheckInOutHotel.Margin = new System.Windows.Forms.Padding(2);
+            this.userControlCheckInOutHotel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.userControlCheckInOutHotel.MaskedTextBoxInText = "  :00";
             this.userControlCheckInOutHotel.MaskedTextBoxOutText = "  :00";
             this.userControlCheckInOutHotel.Name = "userControlCheckInOutHotel";
@@ -154,9 +154,9 @@ namespace Project
             // 
             this.groupBoxDescribe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDescribe.Location = new System.Drawing.Point(9, 410);
-            this.groupBoxDescribe.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxDescribe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxDescribe.Name = "groupBoxDescribe";
-            this.groupBoxDescribe.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxDescribe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBoxDescribe.Size = new System.Drawing.Size(250, 98);
             this.groupBoxDescribe.TabIndex = 6;
             this.groupBoxDescribe.TabStop = false;
@@ -170,7 +170,7 @@ namespace Project
             this.panelImage.Controls.Add(this.buttonDeleteImage);
             this.panelImage.Controls.Add(this.buttonUploadImage);
             this.panelImage.Location = new System.Drawing.Point(316, 61);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(2);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(456, 447);
             this.panelImage.TabIndex = 7;
@@ -182,7 +182,7 @@ namespace Project
             this.pictureBox.Image = global::Project.Properties.Resources.noImage;
             this.pictureBox.ImageRotate = 0F;
             this.pictureBox.Location = new System.Drawing.Point(50, 20);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(360, 360);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -202,7 +202,7 @@ namespace Project
             this.buttonRight.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonRight.ForeColor = System.Drawing.Color.White;
             this.buttonRight.Location = new System.Drawing.Point(413, 188);
-            this.buttonRight.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRight.Name = "buttonRight";
             this.buttonRight.Size = new System.Drawing.Size(22, 32);
             this.buttonRight.TabIndex = 9;
@@ -221,7 +221,7 @@ namespace Project
             this.buttonLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonLeft.ForeColor = System.Drawing.Color.White;
             this.buttonLeft.Location = new System.Drawing.Point(24, 188);
-            this.buttonLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLeft.Name = "buttonLeft";
             this.buttonLeft.Size = new System.Drawing.Size(22, 32);
             this.buttonLeft.TabIndex = 8;
@@ -233,7 +233,7 @@ namespace Project
             this.buttonDeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDeleteImage.BackgroundImage")));
             this.buttonDeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonDeleteImage.Location = new System.Drawing.Point(244, 399);
-            this.buttonDeleteImage.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDeleteImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDeleteImage.Name = "buttonDeleteImage";
             this.buttonDeleteImage.Size = new System.Drawing.Size(40, 40);
             this.buttonDeleteImage.TabIndex = 2;
@@ -246,7 +246,7 @@ namespace Project
             this.buttonUploadImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUploadImage.BackgroundImage")));
             this.buttonUploadImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonUploadImage.Location = new System.Drawing.Point(190, 399);
-            this.buttonUploadImage.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUploadImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonUploadImage.Name = "buttonUploadImage";
             this.buttonUploadImage.Size = new System.Drawing.Size(40, 40);
             this.buttonUploadImage.TabIndex = 1;
@@ -275,13 +275,13 @@ namespace Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(780, 512);
             this.Controls.Add(this.butonBack);
             this.Controls.Add(this.panelImage);
             this.Controls.Add(this.panelInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FUpdateHotel";
             this.Text = "FUpdateService";
             this.panelInfo.ResumeLayout(false);
