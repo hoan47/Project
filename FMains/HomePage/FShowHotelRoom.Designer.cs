@@ -299,6 +299,7 @@ namespace Project
             this.buttonSearch.Size = new System.Drawing.Size(229, 26);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             // 
             // checkedListBoxAmenities
             // 

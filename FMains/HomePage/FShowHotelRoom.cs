@@ -60,5 +60,31 @@ namespace Project
 
             pictureBox.Image = (currentImage = index >= hotel.Images.Count ? hotel.Images.First() : hotel.Images[index]).Image;
         }
+
+        private void ButtonSearchClick(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            foreach(Room room in hotel.Rooms)
+            {
+                if(numericUpDownPeople.Value <= room.NumberPeople &&
+                    numericUpDownBed.Value <= room.NumberBeds &&
+                    numericUpDownRoom.Value <= room.NumberRoom &&
+                    CheckAmenities(checkedListBoxAmenities, room))
+                {
+                    UserControlShowRoom userControlShowRoom = new UserControlShowRoom(room);
+                    userControlShowRoom.Tag = this;
+                    flowLayoutPanel.Controls.Add(userControlShowRoom);
+                }
+            }
+        }
+
+        private bool CheckAmenities(CheckedListBox checkedListBoxAmenities, Room room)
+        {
+            foreach(string item in checkedListBoxAmenities.CheckedItems)
+            {
+                if (room.Amenitiese.Contains(item) == false) return false;
+            }
+            return true;
+        }
     }
 }
