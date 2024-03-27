@@ -43,7 +43,7 @@ namespace Project
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableName = new Project.UserControls.UserControlLable();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.checkedListBoxAmenities = new System.Windows.Forms.CheckedListBox();
@@ -62,7 +62,7 @@ namespace Project
             this.panelImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel.SuspendLayout();
             this.panelSearch.SuspendLayout();
             this.groupBoxNumberBed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBed)).BeginInit();
@@ -245,7 +245,7 @@ namespace Project
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2GroupBox1.BorderRadius = 4;
             this.guna2GroupBox1.BorderThickness = 4;
-            this.guna2GroupBox1.Controls.Add(this.panel2);
+            this.guna2GroupBox1.Controls.Add(this.panel);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -258,15 +258,15 @@ namespace Project
             this.guna2GroupBox1.Text = "Tìm kiếm phòng";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, -10);
             // 
-            // panel2
+            // panel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panelSearch);
-            this.panel2.Controls.Add(this.flowLayoutPanel);
-            this.panel2.Location = new System.Drawing.Point(3, 18);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(516, 448);
-            this.panel2.TabIndex = 0;
+            this.panel.BackColor = System.Drawing.Color.Transparent;
+            this.panel.Controls.Add(this.panelSearch);
+            this.panel.Controls.Add(this.flowLayoutPanel);
+            this.panel.Location = new System.Drawing.Point(3, 18);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(516, 448);
+            this.panel.TabIndex = 0;
             // 
             // panelSearch
             // 
@@ -441,7 +441,7 @@ namespace Project
             this.panelImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
             this.panelSearch.ResumeLayout(false);
             this.groupBoxNumberBed.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBed)).EndInit();
@@ -468,7 +468,7 @@ namespace Project
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private UserControls.UserControlLable userControlLablePhone;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Panel panelSearch;
         private Guna.UI2.WinForms.Guna2Button buttonSearch;
         private System.Windows.Forms.CheckedListBox checkedListBoxAmenities;
