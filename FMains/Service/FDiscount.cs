@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlDiscount : UserControl
+    public partial class FDiscount : Form
     {
-        private Hotel hotel;
-
-        public UserControlDiscount(Hotel hotel)
+        public FDiscount()
         {
             InitializeComponent();
-            this.hotel = hotel;
         }
 
         private void ButtonBackClick(object sender, EventArgs e)

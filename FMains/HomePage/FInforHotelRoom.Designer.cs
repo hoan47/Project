@@ -55,7 +55,7 @@ namespace Project
             // 
             // panel
             // 
-            this.panel.BorderRadius = 12;
+            this.panel.BorderRadius = 10;
             this.panel.Controls.Add(this.panelImage);
             this.panel.Controls.Add(this.groupBoxService);
             this.panel.Controls.Add(this.buttonPay);

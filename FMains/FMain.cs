@@ -79,7 +79,7 @@ namespace Project
             fLoading.OffLoading();
         }
 
-        public void OpenFormChild(Panel panel, Form formChild, Form fromTag)
+        public void OpenFormChild(Control panel, Form formChild, Form fromTag)
         {
             if(panel == null)
             {
@@ -87,12 +87,12 @@ namespace Project
                 ChangeColerToolStripButton(formChild);
             }    
             formChild.Tag = fromTag;
-            formChild.Size = panel.Size;
             formChild.TopLevel = false;
             panel.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
         }
+
 
         public void ChangeColerToolStripButton(Form formChild)
         {

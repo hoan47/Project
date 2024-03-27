@@ -49,11 +49,8 @@ namespace Project
             foreach(Control control in flowLayoutPanel.Controls)
             {
                 control.Visible = false;
-            }    
-            UserControlDiscount userControlDiscount = new UserControlDiscount(hotel);
-
-            userControlDiscount.Tag = this;
-            flowLayoutPanel.Controls.Add(userControlDiscount);
+            }
+            ((FMain)((FService)Tag).Tag).OpenFormChild(flowLayoutPanel, new FDiscount(), this);
         }
 
         public void LoadData()
