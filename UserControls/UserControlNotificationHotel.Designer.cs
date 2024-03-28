@@ -31,6 +31,7 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNotificationHotel));
             this.groupBox = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.circleButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.labelSendingTime = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonProcessed = new Guna.UI2.WinForms.Guna2Button();
@@ -50,7 +51,6 @@ namespace Project
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelNameClient = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
-            this.circleButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.groupBox.SuspendLayout();
             this.groupBoxMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).BeginInit();
@@ -90,12 +90,30 @@ namespace Project
             this.groupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.ForeColor = System.Drawing.Color.Black;
             this.groupBox.Location = new System.Drawing.Point(0, 0);
-            this.groupBox.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(700, 232);
             this.groupBox.TabIndex = 3;
-            this.groupBox.Text = "Tên khách hàng";
+            this.groupBox.Text = "Tên khách hàng:";
             this.groupBox.TextOffset = new System.Drawing.Point(0, -3);
+            // 
+            // circleButton
+            // 
+            this.circleButton.BackColor = System.Drawing.Color.Transparent;
+            this.circleButton.BorderColor = System.Drawing.Color.Transparent;
+            this.circleButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.circleButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.circleButton.FillColor = System.Drawing.Color.Red;
+            this.circleButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.circleButton.ForeColor = System.Drawing.Color.White;
+            this.circleButton.Location = new System.Drawing.Point(672, 3);
+            this.circleButton.Name = "circleButton";
+            this.circleButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circleButton.Size = new System.Drawing.Size(25, 25);
+            this.circleButton.TabIndex = 33;
+            this.circleButton.Click += new System.EventHandler(this.CircleButtonClick);
             // 
             // labelSendingTime
             // 
@@ -232,7 +250,7 @@ namespace Project
             // 
             this.panelRoad.BackColor = System.Drawing.Color.Yellow;
             this.panelRoad.Location = new System.Drawing.Point(5, 185);
-            this.panelRoad.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelRoad.Name = "panelRoad";
             this.panelRoad.Size = new System.Drawing.Size(690, 2);
             this.panelRoad.TabIndex = 15;
@@ -310,24 +328,6 @@ namespace Project
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(700, 232);
             this.panel.TabIndex = 4;
-            // 
-            // circleButton
-            // 
-            this.circleButton.BackColor = System.Drawing.Color.Transparent;
-            this.circleButton.BorderColor = System.Drawing.Color.Transparent;
-            this.circleButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.circleButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.circleButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.circleButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.circleButton.FillColor = System.Drawing.Color.Red;
-            this.circleButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.circleButton.ForeColor = System.Drawing.Color.White;
-            this.circleButton.Location = new System.Drawing.Point(672, 3);
-            this.circleButton.Name = "circleButton";
-            this.circleButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.circleButton.Size = new System.Drawing.Size(25, 25);
-            this.circleButton.TabIndex = 33;
-            this.circleButton.Click += new System.EventHandler(this.CircleButtonClick);
             // 
             // UserControlNotificationHotel
             // 

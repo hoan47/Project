@@ -32,6 +32,11 @@ namespace Project
             Hotels = new List<Hotel>();
         }
 
+        public User(string userName, string name)
+        {
+            Name = name;
+        }
+
         public void UpdateUserName(string userName)
         {
             UserName = userName;

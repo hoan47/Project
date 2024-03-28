@@ -179,6 +179,7 @@
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
     <Compile Include="DAOScripts\Notification.cs" />
+    <Compile Include="DAOScripts\NotificationDAO.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
@@ -361,11 +362,11 @@
     <Compile Include="UserControls\UserControlNotificationHotel.Designer.cs">
       <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlNotificationService.cs">
+    <Compile Include="UserControls\UserControlNotificationClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlNotificationService.Designer.cs">
-      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlNotificationClient.Designer.cs">
+      <DependentUpon>UserControlNotificationClient.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlNotificationSystem.cs">
       <SubType>UserControl</SubType>
@@ -557,8 +558,8 @@
     <EmbeddedResource Include="UserControls\UserControlNotificationHotel.resx">
       <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlNotificationService.resx">
-      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlNotificationClient.resx">
+      <DependentUpon>UserControlNotificationClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificationSystem.resx">
       <DependentUpon>UserControlNotificationSystem.cs</DependentUpon>

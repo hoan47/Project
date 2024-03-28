@@ -17,7 +17,7 @@ namespace Project
         {
             InitializeComponent();
             this.notification = notification;
-            groupBox.Text = notification.Sender;
+            groupBox.Text = "Người gửi: " + (notification.Sender == null ? "Hệ thống" : notification.Sender.Name);
             labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
             labelContent.Text = notification.Content;
             circleButton.Visible = !notification.IsWatched;

@@ -12,9 +12,13 @@ namespace Project
 {
     public partial class UserControlNotificationHotel : UserControl
     {
-        public UserControlNotificationHotel()
+        private Notification notification;
+
+        public UserControlNotificationHotel(Notification notification)
         {
             InitializeComponent();
+            this.notification = notification;
+
         }
 
         private void ButtonProcessedClick(object sender, EventArgs e)

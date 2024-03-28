@@ -102,5 +102,32 @@ namespace Project
             }
             return false;
         }
+
+        public User FindAccount(string userName)
+        {
+            User result = null;
+
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand selectCMD = new SqlCommand($"SELECT name FROM {table} WHERE userName = '{userName}'", sqlConnection);
+
+                SqlDataReader reader = selectCMD.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    result = new User(userName, reader[0].ToString());
+                }
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowError(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return result;
+        }
     }
 }

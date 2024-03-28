@@ -60,10 +60,7 @@ namespace Project
                                                        $"N'{hotel.Describe}')",
                                                        sqlConnection);
 
-                if (insertCMD.ExecuteNonQuery() == 1)
-                {
-                    return true;
-                }
+                return insertCMD.ExecuteNonQuery() == 1;
             }
             catch (Exception e)
             {

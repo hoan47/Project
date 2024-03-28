@@ -137,6 +137,7 @@ namespace Project
         private void FMainLoad(object sender, EventArgs e)
         {
             UpdateConins();
+            UpdateNotificationNumber();
         }
     }
 }

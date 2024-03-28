@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlNotificationService : UserControl
+    public partial class UserControlNotificationClient : UserControl
     {
-        public UserControlNotificationService()
+        private Notification notification;
+
+        public UserControlNotificationClient(Notification notification)
         {
             InitializeComponent();
+            this.notification = notification;
+            groupBox.Text = "Tên khách hàng: " + notification.Sender.Name;
+            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
         }
 
         private void ButtonCancelClick(object sender, EventArgs e)
