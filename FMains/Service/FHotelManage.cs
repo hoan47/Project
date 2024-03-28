@@ -46,11 +46,17 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
-            foreach(Control control in flowLayoutPanel.Controls)
+            EnabledGroupBox();
+            foreach (Control control in flowLayoutPanel.Controls)
             {
                 control.Visible = false;
             }
             ((FMain)((FService)Tag).Tag).OpenFormChild(flowLayoutPanel, new FDiscount(), this);
+        }
+
+        public void EnabledGroupBox()
+        {
+            groupBoxStatus.Enabled = groupBoxDateTime.Enabled = groupBoxButton.Enabled = !groupBoxButton.Enabled;
         }
 
         public void LoadData()
@@ -83,10 +89,6 @@ namespace Project
                         flowLayoutPanel.Controls.Add(userControlRoom);
                     }
                     flowLayoutPanel.Controls[i].Visible = true;
-                }
-                foreach (Control control in flowLayoutPanel.Controls)
-                {
-                    control.Visible = true;
                 }
             }
         }

@@ -48,7 +48,6 @@ namespace Project
             if (Data.User.IsPassword(out message) == true)
             {
                 DataAccess.AccountDAO.Update(Data.User);
-                Back(sender, e);
             }
             else
             {

@@ -15,14 +15,6 @@ namespace Project
         public FNotification()
         {
             InitializeComponent();
-
-            UserControl[] userControls = new UserControl[] { new UserControlNotificationService(), new UserControlNotificationHotel(), new UserControlNotificationCoins() };
-
-            foreach(UserControl userControl in userControls)
-            {
-                userControl.Tag = this;
-                flowLayoutPanel.Controls.Add(userControl);
-            }    
         }
 
         public void OpenFormChild(Panel panel, Form formChild)
@@ -30,9 +22,27 @@ namespace Project
             ((FMain)Tag).OpenFormChild(panel, formChild, this);
         }
 
-        private void FNotification_Load(object sender, EventArgs e)
+        private void FNotificationLoad(object sender, EventArgs e)
         {
+            Data.Notifications.Reverse();
+            foreach (Notification notification in Data.Notifications)
+            {
+                Control control = new Control();
 
+                switch (notification.Type)
+                {
+                    case Notification.EType.System:
+                        control = new UserControlNotificationSystem(notification);
+                        break;
+                    case Notification.EType.Coins:
+                        control = new UserControlNotificationCoins(notification);
+                        break;
+                }
+                control.Tag = this;
+                flowLayoutPanel.Controls.Add(control);
+
+            }
+            Data.Notifications.Reverse();
         }
     }
 }

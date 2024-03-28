@@ -113,7 +113,7 @@
             this.toolStripButtonNotification.ImageTransparentColor = System.Drawing.Color.White;
             this.toolStripButtonNotification.Name = "toolStripButtonNotification";
             this.toolStripButtonNotification.Size = new System.Drawing.Size(200, 60);
-            this.toolStripButtonNotification.Text = "Thông Báo(10)";
+            this.toolStripButtonNotification.Text = "Thông Báo";
             this.toolStripButtonNotification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolStripButtonNotification.ToolTipText = "Thông Báo";
             this.toolStripButtonNotification.Click += new System.EventHandler(this.ToolStripButtonClick);
@@ -195,10 +195,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(930, 512);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.pictureBoxConins);
             this.Controls.Add(this.labelCoins);
             this.Controls.Add(this.panelOption);
-            this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "FMain";

@@ -31,7 +31,6 @@ namespace Project
                     DataAccess.InfoDAO.Insert(Data.User);
                     DataAccess.ClientDAO.Insert(Data.User);
                     FController.Instance.MessageSuccess("Thông báo", "Tạo tài khoản thành công.");
-                    Back(sender, e);
                 }
                 else
                 {

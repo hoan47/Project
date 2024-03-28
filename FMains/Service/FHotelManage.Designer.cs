@@ -38,15 +38,15 @@
             this.groupBoxDateTime = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.groupBoxButton = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.labelUpdatePrice = new System.Windows.Forms.Label();
             this.panelRoad2 = new System.Windows.Forms.Panel();
             this.panelRoad1 = new System.Windows.Forms.Panel();
             this.labelAddRoom = new System.Windows.Forms.Label();
             this.labelInfoHotel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.buttonInforHotel = new Guna.UI2.WinForms.Guna2Button();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxDateTime.SuspendLayout();
             this.groupBoxButton.SuspendLayout();
@@ -67,7 +67,7 @@
             this.groupBoxStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxStatus.ForeColor = System.Drawing.Color.Black;
             this.groupBoxStatus.Location = new System.Drawing.Point(7, 5);
-            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxStatus.Name = "groupBoxStatus";
             this.groupBoxStatus.Size = new System.Drawing.Size(209, 115);
             this.groupBoxStatus.TabIndex = 7;
@@ -181,7 +181,7 @@
             this.groupBoxDateTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxDateTime.ForeColor = System.Drawing.Color.Black;
             this.groupBoxDateTime.Location = new System.Drawing.Point(220, 5);
-            this.groupBoxDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDateTime.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDateTime.Name = "groupBoxDateTime";
             this.groupBoxDateTime.Size = new System.Drawing.Size(252, 116);
             this.groupBoxDateTime.TabIndex = 8;
@@ -197,7 +197,7 @@
             this.dateTimePicker.ForeColor = System.Drawing.Color.Black;
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dateTimePicker.Location = new System.Drawing.Point(15, 64);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker.Name = "dateTimePicker";
@@ -223,11 +223,34 @@
             this.groupBoxButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.groupBoxButton.ForeColor = System.Drawing.Color.Black;
             this.groupBoxButton.Location = new System.Drawing.Point(476, 5);
-            this.groupBoxButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxButton.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxButton.Name = "groupBoxButton";
             this.groupBoxButton.Size = new System.Drawing.Size(297, 116);
             this.groupBoxButton.TabIndex = 9;
             this.groupBoxButton.Text = "Chỉnh Sửa";
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUpdate.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.BorderRadius = 5;
+            this.buttonUpdate.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
+            this.buttonUpdate.Location = new System.Drawing.Point(230, 66);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.PressedColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 0;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
             // labelUpdatePrice
             // 
@@ -244,7 +267,7 @@
             // 
             this.panelRoad2.BackColor = System.Drawing.Color.Black;
             this.panelRoad2.Location = new System.Drawing.Point(207, 40);
-            this.panelRoad2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelRoad2.Margin = new System.Windows.Forms.Padding(2);
             this.panelRoad2.Name = "panelRoad2";
             this.panelRoad2.Size = new System.Drawing.Size(1, 73);
             this.panelRoad2.TabIndex = 13;
@@ -253,7 +276,7 @@
             // 
             this.panelRoad1.BackColor = System.Drawing.Color.Black;
             this.panelRoad1.Location = new System.Drawing.Point(120, 40);
-            this.panelRoad1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelRoad1.Margin = new System.Windows.Forms.Padding(2);
             this.panelRoad1.Name = "panelRoad1";
             this.panelRoad1.Size = new System.Drawing.Size(1, 73);
             this.panelRoad1.TabIndex = 12;
@@ -280,43 +303,12 @@
             this.labelInfoHotel.TabIndex = 10;
             this.labelInfoHotel.Text = "Thông Tin Khách Sạn";
             // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.AllowDrop = true;
-            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 125);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(777, 385);
-            this.flowLayoutPanel.TabIndex = 11;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUpdate.BorderRadius = 10;
-            this.buttonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
-            this.buttonUpdate.Location = new System.Drawing.Point(230, 66);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
-            this.buttonUpdate.TabIndex = 0;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
-            // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.BorderRadius = 10;
+            this.buttonAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.BorderRadius = 5;
+            this.buttonAdd.CustomBorderColor = System.Drawing.Color.Transparent;
             this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -329,6 +321,7 @@
             this.buttonAdd.Location = new System.Drawing.Point(141, 66);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.PressedColor = System.Drawing.Color.Transparent;
             this.buttonAdd.Size = new System.Drawing.Size(40, 40);
             this.buttonAdd.TabIndex = 4;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAddClick);
@@ -338,7 +331,9 @@
             this.buttonInforHotel.BackColor = System.Drawing.Color.Transparent;
             this.buttonInforHotel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInforHotel.BackgroundImage")));
             this.buttonInforHotel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonInforHotel.BorderRadius = 10;
+            this.buttonInforHotel.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonInforHotel.BorderRadius = 5;
+            this.buttonInforHotel.CustomBorderColor = System.Drawing.Color.Transparent;
             this.buttonInforHotel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonInforHotel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonInforHotel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -350,9 +345,23 @@
             this.buttonInforHotel.Location = new System.Drawing.Point(43, 66);
             this.buttonInforHotel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInforHotel.Name = "buttonInforHotel";
+            this.buttonInforHotel.PressedColor = System.Drawing.Color.Transparent;
             this.buttonInforHotel.Size = new System.Drawing.Size(40, 40);
             this.buttonInforHotel.TabIndex = 0;
             this.buttonInforHotel.Click += new System.EventHandler(this.ButtonInforHotelClick);
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 125);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(777, 385);
+            this.flowLayoutPanel.TabIndex = 11;
             // 
             // FHotelManage
             // 
@@ -365,7 +374,7 @@
             this.Controls.Add(this.groupBoxDateTime);
             this.Controls.Add(this.groupBoxStatus);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FHotelManage";
             this.Text = "FHotelManagecs";
             this.Load += new System.EventHandler(this.FHotelManageLoad);

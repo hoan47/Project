@@ -32,9 +32,9 @@ namespace Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNotificationService));
             this.panel = new System.Windows.Forms.Panel();
             this.groupBox = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.labelSendingTime = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonCancel = new Guna.UI2.WinForms.Guna2Button();
-            this.circlePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.groupBoxMessage = new System.Windows.Forms.GroupBox();
             this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
             this.pictureBoxOut = new System.Windows.Forms.PictureBox();
@@ -48,9 +48,9 @@ namespace Project
             this.labelOut = new System.Windows.Forms.Label();
             this.labelNameRoom = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
+            this.circleButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel.SuspendLayout();
             this.groupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).BeginInit();
             this.groupBoxMessage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).BeginInit();
@@ -72,9 +72,10 @@ namespace Project
             this.groupBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.groupBox.BorderRadius = 10;
             this.groupBox.BorderThickness = 3;
+            this.groupBox.Controls.Add(this.circleButton);
+            this.groupBox.Controls.Add(this.labelSendingTime);
             this.groupBox.Controls.Add(this.labelStatus);
             this.groupBox.Controls.Add(this.buttonCancel);
-            this.groupBox.Controls.Add(this.circlePictureBox);
             this.groupBox.Controls.Add(this.groupBoxMessage);
             this.groupBox.Controls.Add(this.pictureBoxOut);
             this.groupBox.Controls.Add(this.pictureBoxIn);
@@ -98,6 +99,18 @@ namespace Project
             this.groupBox.TabIndex = 2;
             this.groupBox.Text = "Tên Khách Sạn";
             this.groupBox.TextOffset = new System.Drawing.Point(0, -3);
+            // 
+            // labelSendingTime
+            // 
+            this.labelSendingTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelSendingTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSendingTime.Location = new System.Drawing.Point(224, 3);
+            this.labelSendingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSendingTime.Name = "labelSendingTime";
+            this.labelSendingTime.Size = new System.Drawing.Size(300, 22);
+            this.labelSendingTime.TabIndex = 32;
+            this.labelSendingTime.Text = "Vào lúc: 26/04/2004 16:00";
+            this.labelSendingTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelStatus
             // 
@@ -128,18 +141,6 @@ namespace Project
             this.buttonCancel.TabIndex = 32;
             this.buttonCancel.Text = "Hủy phòng";
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancelClick);
-            // 
-            // circlePictureBox
-            // 
-            this.circlePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.circlePictureBox.FillColor = System.Drawing.Color.Red;
-            this.circlePictureBox.ImageRotate = 0F;
-            this.circlePictureBox.Location = new System.Drawing.Point(675, 5);
-            this.circlePictureBox.Name = "circlePictureBox";
-            this.circlePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.circlePictureBox.Size = new System.Drawing.Size(20, 20);
-            this.circlePictureBox.TabIndex = 31;
-            this.circlePictureBox.TabStop = false;
             // 
             // groupBoxMessage
             // 
@@ -283,6 +284,24 @@ namespace Project
             this.labelPhone.TabIndex = 2;
             this.labelPhone.Text = "SĐT: 0336849370";
             // 
+            // circleButton
+            // 
+            this.circleButton.BackColor = System.Drawing.Color.Transparent;
+            this.circleButton.BorderColor = System.Drawing.Color.Transparent;
+            this.circleButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.circleButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.circleButton.FillColor = System.Drawing.Color.Red;
+            this.circleButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.circleButton.ForeColor = System.Drawing.Color.White;
+            this.circleButton.Location = new System.Drawing.Point(672, 3);
+            this.circleButton.Name = "circleButton";
+            this.circleButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circleButton.Size = new System.Drawing.Size(25, 25);
+            this.circleButton.TabIndex = 34;
+            this.circleButton.Click += new System.EventHandler(this.CircleButtonClick);
+            // 
             // UserControlNotificationService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +312,6 @@ namespace Project
             this.Size = new System.Drawing.Size(700, 224);
             this.panel.ResumeLayout(false);
             this.groupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).EndInit();
             this.groupBoxMessage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIn)).EndInit();
@@ -310,7 +328,6 @@ namespace Project
         private Guna.UI2.WinForms.Guna2GroupBox groupBox;
         private System.Windows.Forms.Label labelStatus;
         private Guna.UI2.WinForms.Guna2Button buttonCancel;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox circlePictureBox;
         private System.Windows.Forms.GroupBox groupBoxMessage;
         private System.Windows.Forms.RichTextBox richTextBoxMessage;
         private System.Windows.Forms.PictureBox pictureBoxOut;
@@ -324,5 +341,7 @@ namespace Project
         private System.Windows.Forms.Label labelOut;
         private System.Windows.Forms.Label labelNameRoom;
         private System.Windows.Forms.Label labelPhone;
+        private System.Windows.Forms.Label labelSendingTime;
+        private Guna.UI2.WinForms.Guna2CircleButton circleButton;
     }
 }

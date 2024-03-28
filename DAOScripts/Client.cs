@@ -19,9 +19,12 @@ namespace Project
             Coins = coins;
         }
 
-        public void UpdateRank(int core)
+        public bool UpdateRank(int core)
         {
+            ERank eRank = GetRank();
+
             RankInt = RankInt + core;
+            return eRank != GetRank();
         }
 
         public void UpdateCoins(int coins)
@@ -57,7 +60,20 @@ namespace Project
                 default:
                     return "Hạng Vàng";
             }  
-        }    
+        }
+
+        public int Discount()
+        {
+            switch (RankInt)
+            {
+                case (int)ERank.rankCopper:
+                    return (int)EDiscount.rankCopper;
+                case (int)ERank.rankSilver:
+                    return (int)EDiscount.rankSilver;
+                default:
+                    return (int)EDiscount.rankYellow;
+            }
+        }
 
         public Image RankImage()
         {
@@ -81,11 +97,11 @@ namespace Project
                 case ERank.noRank:
                     return "Bạn cần cập nhật thông tin của mình để thăng lên hạng đồng, nhận 100 xu và mở khóa các tính năng khác.";
                 case ERank.rankCopper:
-                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankCopper}% các dịch vụ.\nBạn cần thêm {ERank.rankSilver - Data.User.Client.RankInt} điểm để mở khóa hạng Bạc.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EDiscount.rankCopper}% các dịch vụ.\nBạn cần thêm {ERank.rankSilver - Data.User.Client.RankInt} điểm để mở khóa hạng Bạc.";
                 case ERank.rankSilver:
-                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankSilver}% các dịch vụ.\nBạn cần thêm {ERank.rankYellow - Data.User.Client.RankInt} điểm để mở khóa hạng Vàng.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EDiscount.rankSilver}% các dịch vụ.\nBạn cần thêm {ERank.rankYellow - Data.User.Client.RankInt} điểm để mở khóa hạng Vàng.";
                 default:
-                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EValue.rankYellow}% các dịch vụ.\nBạn hiện tại đang ở mức hạng cao nhất.";
+                    return $"Mức hạng hiện tại giúp bạn giảm {(int)EDiscount.rankYellow}% các dịch vụ.\nBạn hiện tại đang ở mức hạng cao nhất.";
             }
         }
 
@@ -97,7 +113,7 @@ namespace Project
             rankYellow = 30
         }
 
-        public enum EValue
+        public enum EDiscount
         {
             rankCopper = 10,
             rankSilver = 15,

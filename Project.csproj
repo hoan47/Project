@@ -178,6 +178,7 @@
     <Compile Include="DAOScripts\ApplicationServiceDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
+    <Compile Include="DAOScripts\Notification.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
@@ -248,9 +249,9 @@
     <Compile Include="FCustomMessageBox.Designer.cs">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAOScripts\Account\Client.cs" />
+    <Compile Include="DAOScripts\Client.cs" />
     <Compile Include="DAOScripts\Account\AccountDAO.cs" />
-    <Compile Include="DAOScripts\Account\ClientDAO.cs" />
+    <Compile Include="DAOScripts\ClientDAO.cs" />
     <Compile Include="DAOScripts\DAO.cs" />
     <Compile Include="DAOScripts\Account\InforDAO.cs" />
     <Compile Include="FController.cs">
@@ -342,6 +343,12 @@
     <Compile Include="UserControls\UserControlLable.Designer.cs">
       <DependentUpon>UserControlLable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNote.Designer.cs">
+      <DependentUpon>UserControlNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlNotificationCoins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -359,6 +366,12 @@
     </Compile>
     <Compile Include="UserControls\UserControlNotificationService.Designer.cs">
       <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationSystem.Designer.cs">
+      <DependentUpon>UserControlNotificationSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlPrice.cs">
       <SubType>UserControl</SubType>
@@ -535,6 +548,9 @@
     <EmbeddedResource Include="UserControls\UserControlLable.resx">
       <DependentUpon>UserControlLable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNote.resx">
+      <DependentUpon>UserControlNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificationCoins.resx">
       <DependentUpon>UserControlNotificationCoins.cs</DependentUpon>
     </EmbeddedResource>
@@ -543,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificationService.resx">
       <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificationSystem.resx">
+      <DependentUpon>UserControlNotificationSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlPrice.resx">
       <DependentUpon>UserControlPrice.cs</DependentUpon>

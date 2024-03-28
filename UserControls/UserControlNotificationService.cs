@@ -21,5 +21,10 @@ namespace Project
         {
             ((FNotification)Tag).OpenFormChild(panel, new FCancelRoom());
         }
+
+        private void CircleButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

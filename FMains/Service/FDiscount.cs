@@ -20,6 +20,7 @@ namespace Project
         private void ButtonBackClick(object sender, EventArgs e)
         {
             ((FHotelManage)Tag).LoadData();
+            ((FHotelManage)Tag).EnabledGroupBox();
             Dispose();
         }
     }

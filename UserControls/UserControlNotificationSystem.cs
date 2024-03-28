@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class UserControlNotificationCoins : UserControl
+    public partial class UserControlNotificationSystem : UserControl
     {
-        private Notification notification;
-        public UserControlNotificationCoins(Notification notification)
+        Notification notification;
+
+        public UserControlNotificationSystem(Notification notification)
         {
             InitializeComponent();
             this.notification = notification;

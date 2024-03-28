@@ -71,17 +71,16 @@ namespace Project
                 formChildCurrent.Close();
             }
             formChildCurrent = formChild;
-            FLoading fLoading = new FLoading(formChild, 400);
-
             ChangeColerToolStripButton(formChild);
-            fLoading.OnLoading();
             OpenFormChild(panelMain, formChild, fromTag);
-            fLoading.OffLoading();
         }
 
         public void OpenFormChild(Control panel, Form formChild, Form fromTag)
         {
-            if(panel == null)
+            FLoading fLoading = new FLoading(formChild, 400);
+
+            fLoading.OnLoading();
+            if (panel == null)
             {
                 panel = panelMain;
                 ChangeColerToolStripButton(formChild);
@@ -91,6 +90,7 @@ namespace Project
             panel.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
+            fLoading.OffLoading();
         }
 
 
@@ -125,6 +125,13 @@ namespace Project
         public void UpdateConins()
         {
             labelCoins.Text = Data.User.Client.Coins.ToString("N0").Replace(",", ".");
+        }
+
+        public void UpdateNotificationNumber()
+        {
+            int count = Data.Notifications.Count(n => n.IsWatched == false);
+
+            toolStripButtonNotification.Text = count > 0 ? $"Thông báo({count})" : "Thông báo";
         }
 
         private void FMainLoad(object sender, EventArgs e)
