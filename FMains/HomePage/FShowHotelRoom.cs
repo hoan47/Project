@@ -14,11 +14,15 @@ namespace Project
     {
         private Hotel hotel;
         private Image_ currentImage;
+        private DateTime firstDay;
+        private DateTime lastDay;
 
-        public FShowHotelRoom(Hotel hotel)
+        public FShowHotelRoom(Hotel hotel, DateTime firstDay, DateTime lastDay)
         {
             InitializeComponent();
             this.hotel = hotel;
+            this.firstDay = firstDay;
+            this.lastDay = lastDay;
         }
 
         private void FShowRoom_Load(object sender, EventArgs e)
@@ -99,7 +103,7 @@ namespace Project
 
         public void OpenInfoHotelRoom(Room room)
         {
-            ((FMain)((FHomePage)Tag).Tag).OpenFormChild(panel, new FInforHotelRoom(hotel, room), this);
+            ((FMain)((FHomePage)Tag).Tag).OpenFormChild(panel, new FInforHotelRoom(hotel, room, firstDay, lastDay), this);
         }
 
         private void ButonBackClick(object sender, EventArgs e)

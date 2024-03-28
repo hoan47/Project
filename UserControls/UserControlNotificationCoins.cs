@@ -12,8 +12,9 @@ namespace Project
 {
     public partial class UserControlNotificationCoins : UserControl
     {
-        private Notification notification;
-        public UserControlNotificationCoins(Notification notification)
+        private NotificationCoins notification;
+
+        public UserControlNotificationCoins(NotificationCoins notification)
         {
             InitializeComponent();
             this.notification = notification;

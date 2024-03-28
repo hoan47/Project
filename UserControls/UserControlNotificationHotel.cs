@@ -12,13 +12,23 @@ namespace Project
 {
     public partial class UserControlNotificationHotel : UserControl
     {
-        private Notification notification;
+        private NotificationHotel notification;
 
-        public UserControlNotificationHotel(Notification notification)
+        public UserControlNotificationHotel(NotificationHotel notification)
         {
             InitializeComponent();
             this.notification = notification;
-
+            groupBox.Text = "Tên khách hàng: " + notification.Sender.Name;
+            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
+            richTextBoxMessage.Text = notification.Content;
+            labelPhone.Text = "SĐT: " + notification.Hotel.Phone;
+            labelNameHotel.Text = "Tên khách sạn: " + notification.Hotel.Name;
+            labelNameRoom.Text = "Tên phòng: " + notification.Room.Name;
+            labelNameRoom.Text = "Xu cọc: " + notification.DepositCoins.ToString();
+            labelIn.Text = notification.CheckIn.ToString("dd/MM/yyyy HH:mm");
+            labelOut.Text = notification.CheckOut.ToString("dd/MM/yyyy HH:mm");
+            labelStatus.Text = notification.Status;
+            circleButton.Visible = !notification.IsWatched;
         }
 
         private void ButtonProcessedClick(object sender, EventArgs e)

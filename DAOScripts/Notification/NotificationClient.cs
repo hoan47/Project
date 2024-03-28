@@ -8,8 +8,21 @@ namespace Project
 {
     public class NotificationClient : Notification
     {
-        public NotificationClient(User sender, User receiver, DateTime time, string content, bool isWatched, string type) : base(sender, receiver, time, content, isWatched, type)
-        { }
+        public Hotel Hotel { get; private set; }
+        public Room Room { get; private set; }
+        public int DepositCoins { get; private set; }
+        public string Status { get; private set; }
+        public DateTime CheckIn { get; private set; }
+        public DateTime CheckOut { get; private set; }
 
+        public NotificationClient(User sender, User receiver, DateTime time, string content, bool isWatched, Hotel hotel, Room room, int depositCoins, string status, DateTime checkIn, DateTime checkOut) : base(sender, receiver, time, content, isWatched)
+        {
+            Hotel = hotel;
+            Room = room;
+            DepositCoins = depositCoins;
+            Status = status;
+            CheckIn = checkIn;
+            CheckOut = checkOut;
+        }
     }
 }

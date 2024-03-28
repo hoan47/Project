@@ -30,7 +30,7 @@ namespace Project
 
         public void OpenHotel(Hotel hotel)
         {
-            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel), this);
+            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker), this);
         }
 
         private void ButtonSearchClick(object sender, EventArgs e)

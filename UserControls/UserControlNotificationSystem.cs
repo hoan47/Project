@@ -12,9 +12,9 @@ namespace Project
 {
     public partial class UserControlNotificationSystem : UserControl
     {
-        Notification notification;
+        NotificationSystem notification;
 
-        public UserControlNotificationSystem(Notification notification)
+        public UserControlNotificationSystem(NotificationSystem notification)
         {
             InitializeComponent();
             this.notification = notification;

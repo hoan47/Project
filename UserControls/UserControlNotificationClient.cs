@@ -12,14 +12,23 @@ namespace Project
 {
     public partial class UserControlNotificationClient : UserControl
     {
-        private Notification notification;
+        private NotificationClient notification;
 
-        public UserControlNotificationClient(Notification notification)
+        public UserControlNotificationClient(NotificationClient notification)
         {
             InitializeComponent();
             this.notification = notification;
-            groupBox.Text = "Tên khách hàng: " + notification.Sender.Name;
+            groupBox.Text = "Tên khách sạn: " + notification.Hotel.Name;
             labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
+            richTextBoxMessage.Text = notification.Content;
+            labelPhone.Text = "SĐT: " + notification.Hotel.Phone;
+            labelNameRoom.Text = "Tên phòng: " + notification.Room.Name;
+            labelPrice.Text = "Xu cọc: " + notification.DepositCoins.ToString();
+            labelIn.Text = notification.CheckIn.ToString("dd/MM/yyyy HH:mm");
+            labelOut.Text = notification.CheckOut.ToString("dd/MM/yyyy HH:mm");
+            labelStatus.Text = notification.Status;
+            circleButton.Visible = !notification.IsWatched;
+
         }
 
         private void ButtonCancelClick(object sender, EventArgs e)

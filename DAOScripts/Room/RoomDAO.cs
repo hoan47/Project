@@ -110,5 +110,41 @@ namespace Project
             }
             return false;
         }
+
+        public Room FindRoom(int id)
+        {
+            Room room = null;
+
+            try
+            {
+                sqlConnection.Open();
+
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idRoom = '{id}'", sqlConnection);
+                SqlDataReader reader = selectCMD.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    room = new Room(
+                        (int)reader[1],
+                        reader[2].ToString(),
+                        (int)reader[3],
+                        (int)reader[4],
+                        (int)reader[5],
+                        (int)reader[6],
+                        (int)reader[7],
+                        Room.GetStatus((int)reader[8]));
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowError(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return room;
+        }
     }
 }

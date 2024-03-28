@@ -36,7 +36,7 @@ namespace Project
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonProcessed = new Guna.UI2.WinForms.Guna2Button();
             this.groupBoxMessage = new System.Windows.Forms.GroupBox();
-            this.richTextBoxMesaage = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
             this.pictureBoxOut = new System.Windows.Forms.PictureBox();
             this.pictureBoxIn = new System.Windows.Forms.PictureBox();
             this.pictureBoxPrice = new System.Windows.Forms.PictureBox();
@@ -49,7 +49,7 @@ namespace Project
             this.labelOut = new System.Windows.Forms.Label();
             this.labelNameRoom = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
-            this.labelNameClient = new System.Windows.Forms.Label();
+            this.labelNameHotel = new System.Windows.Forms.Label();
             this.panel = new System.Windows.Forms.Panel();
             this.groupBox.SuspendLayout();
             this.groupBoxMessage.SuspendLayout();
@@ -84,13 +84,13 @@ namespace Project
             this.groupBox.Controls.Add(this.labelOut);
             this.groupBox.Controls.Add(this.labelNameRoom);
             this.groupBox.Controls.Add(this.labelPhone);
-            this.groupBox.Controls.Add(this.labelNameClient);
+            this.groupBox.Controls.Add(this.labelNameHotel);
             this.groupBox.CustomBorderColor = System.Drawing.Color.Yellow;
             this.groupBox.CustomBorderThickness = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.groupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.ForeColor = System.Drawing.Color.Black;
             this.groupBox.Location = new System.Drawing.Point(0, 0);
-            this.groupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(700, 232);
             this.groupBox.TabIndex = 3;
@@ -160,7 +160,7 @@ namespace Project
             // groupBoxMessage
             // 
             this.groupBoxMessage.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxMessage.Controls.Add(this.richTextBoxMesaage);
+            this.groupBoxMessage.Controls.Add(this.richTextBoxMessage);
             this.groupBoxMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxMessage.Location = new System.Drawing.Point(358, 33);
             this.groupBoxMessage.Name = "groupBoxMessage";
@@ -169,16 +169,16 @@ namespace Project
             this.groupBoxMessage.TabStop = false;
             this.groupBoxMessage.Text = "Lời nhắn từ khách hàng";
             // 
-            // richTextBoxMesaage
+            // richTextBoxMessage
             // 
-            this.richTextBoxMesaage.BackColor = System.Drawing.Color.White;
-            this.richTextBoxMesaage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxMesaage.Location = new System.Drawing.Point(7, 18);
-            this.richTextBoxMesaage.Name = "richTextBoxMesaage";
-            this.richTextBoxMesaage.ReadOnly = true;
-            this.richTextBoxMesaage.Size = new System.Drawing.Size(323, 52);
-            this.richTextBoxMesaage.TabIndex = 0;
-            this.richTextBoxMesaage.Text = "Mong không bị lừa đảo";
+            this.richTextBoxMessage.BackColor = System.Drawing.Color.White;
+            this.richTextBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxMessage.Location = new System.Drawing.Point(7, 18);
+            this.richTextBoxMessage.Name = "richTextBoxMessage";
+            this.richTextBoxMessage.ReadOnly = true;
+            this.richTextBoxMessage.Size = new System.Drawing.Size(323, 52);
+            this.richTextBoxMessage.TabIndex = 0;
+            this.richTextBoxMessage.Text = "Mong không bị lừa đảo";
             // 
             // pictureBoxOut
             // 
@@ -250,7 +250,7 @@ namespace Project
             // 
             this.panelRoad.BackColor = System.Drawing.Color.Yellow;
             this.panelRoad.Location = new System.Drawing.Point(5, 185);
-            this.panelRoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelRoad.Margin = new System.Windows.Forms.Padding(2);
             this.panelRoad.Name = "panelRoad";
             this.panelRoad.Size = new System.Drawing.Size(690, 2);
             this.panelRoad.TabIndex = 15;
@@ -310,16 +310,16 @@ namespace Project
             this.labelPhone.TabIndex = 2;
             this.labelPhone.Text = "SĐT: 0336849370";
             // 
-            // labelNameClient
+            // labelNameHotel
             // 
-            this.labelNameClient.BackColor = System.Drawing.Color.Transparent;
-            this.labelNameClient.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameClient.Location = new System.Drawing.Point(45, 48);
-            this.labelNameClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNameClient.Name = "labelNameClient";
-            this.labelNameClient.Size = new System.Drawing.Size(300, 22);
-            this.labelNameClient.TabIndex = 1;
-            this.labelNameClient.Text = "Khách sạn : Nguyễn Văn Hưng";
+            this.labelNameHotel.BackColor = System.Drawing.Color.Transparent;
+            this.labelNameHotel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameHotel.Location = new System.Drawing.Point(45, 48);
+            this.labelNameHotel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNameHotel.Name = "labelNameHotel";
+            this.labelNameHotel.Size = new System.Drawing.Size(300, 22);
+            this.labelNameHotel.TabIndex = 1;
+            this.labelNameHotel.Text = "Khách sạn : Nguyễn Văn Hưng";
             // 
             // panel
             // 
@@ -355,7 +355,7 @@ namespace Project
         private System.Windows.Forms.Label labelStatus;
         private Guna.UI2.WinForms.Guna2Button buttonProcessed;
         private System.Windows.Forms.GroupBox groupBoxMessage;
-        private System.Windows.Forms.RichTextBox richTextBoxMesaage;
+        private System.Windows.Forms.RichTextBox richTextBoxMessage;
         private System.Windows.Forms.PictureBox pictureBoxOut;
         private System.Windows.Forms.PictureBox pictureBoxIn;
         private System.Windows.Forms.PictureBox pictureBoxPrice;
@@ -368,7 +368,7 @@ namespace Project
         private System.Windows.Forms.Label labelOut;
         private System.Windows.Forms.Label labelNameRoom;
         private System.Windows.Forms.Label labelPhone;
-        private System.Windows.Forms.Label labelNameClient;
+        private System.Windows.Forms.Label labelNameHotel;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label labelSendingTime;
         private Guna.UI2.WinForms.Guna2CircleButton circleButton;

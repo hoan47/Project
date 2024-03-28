@@ -24,26 +24,29 @@ namespace Project
 
         private void FNotificationLoad(object sender, EventArgs e)
         {
-            Data.Notifications.Sort((a, b) => a.Time.CompareTo(b.Time));
+            Data.Notifications.Sort((a, b) => b.Time.CompareTo(a.Time));
             foreach (Notification notification in Data.Notifications)
             {
                 Control control = new Control();
 
-                switch (notification.Type)
+                if (notification is NotificationSystem)
                 {
-                    case "system":
-                        control = new UserControlNotificationSystem(notification);
-                        break;
-                    case "coins":
-                        control = new UserControlNotificationCoins(notification);
-                        break;
-                    case "hotel":
-                        control = new UserControlNotificationHotel(notification);
-                        break;
+                    control = new UserControlNotificationSystem((NotificationSystem)notification);
+                }
+                else if (notification is NotificationCoins)
+                {
+                    control = new UserControlNotificationCoins((NotificationCoins)notification);
+                }
+                else if (notification is NotificationHotel)
+                {
+                    control = new UserControlNotificationHotel((NotificationHotel)notification);
+                }
+                else
+                {
+                    control = new UserControlNotificationClient((NotificationClient)notification);
                 }
                 control.Tag = this;
                 flowLayoutPanel.Controls.Add(control);
-
             }
         }
     }

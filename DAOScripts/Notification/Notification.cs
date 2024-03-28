@@ -13,21 +13,36 @@ namespace Project
         public DateTime Time { get; private set; }
         public string Content { get; private set; }
         public bool IsWatched { get; private set; }
-        public string Type { get; private set; }
 
-        public Notification(User sender, User receiver, DateTime time, string content, bool isWatched, string type)
+        public Notification(User sender, User receiver, DateTime time, string content, bool isWatched)
         {
             Sender = sender;
             Receiver = receiver;
             Time = time;
             Content = content;
             IsWatched = isWatched;
-            Type = type;
         }
 
         public void Watched()
         {
             IsWatched = true;
         }
+
+        public string GetTypeStr()
+        {
+            if(this is NotificationSystem)
+            {
+                return "system";
+            }
+            if(this is NotificationCoins)
+            {
+                return "coins";
+            }
+            if (this is NotificationHotel)
+            {
+                return "hotel";
+            }
+            return "client";
+        } 
     }
 }

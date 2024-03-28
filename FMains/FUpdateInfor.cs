@@ -69,9 +69,9 @@ namespace Project
                             {
                                 Data.User.Client.UpdateRank((int)Client.ERank.rankCopper);
                                 Data.User.Client.UpdateCoins(Client.coninsStar);
-                                Data.Notifications.Add(new Notification(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Bạn nhận được {(int)Client.ERank.rankCopper} điểm.", false, "system"));
-                                Data.Notifications.Add(new Notification(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Chúc mừng bạn được thăng {Data.User.Client.RankStr()}, Khi sử dụng các dịch vụ bạn được giảm {Data.User.Client.Discount()} %.", false, "system"));
-                                Data.Notifications.Add(new Notification(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Bạn nhận được {Client.coninsStar} xu.", false, "coins"));
+                                Data.Notifications.Add(new NotificationSystem(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Bạn nhận được {(int)Client.ERank.rankCopper} điểm.", false));
+                                Data.Notifications.Add(new NotificationSystem(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Chúc mừng bạn được thăng {Data.User.Client.RankStr()}, Khi sử dụng các dịch vụ bạn được giảm {Data.User.Client.Discount()} %.", false));
+                                Data.Notifications.Add(new NotificationCoins(new User(null, "Hệ thống"), Data.User, DateTime.Now, $"Bạn nhận được {Client.coninsStar} xu.", false));
                                 ((FMain)Tag).UpdateConins();
                                 ((FMain)Tag).UpdateNotificationNumber();
                             }

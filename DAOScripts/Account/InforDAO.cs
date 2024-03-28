@@ -110,7 +110,7 @@ namespace Project
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT name FROM {table} WHERE userName = '{userName}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT name, phone FROM {table} WHERE userName = '{userName}'", sqlConnection);
 
                 SqlDataReader reader = selectCMD.ExecuteReader();
 

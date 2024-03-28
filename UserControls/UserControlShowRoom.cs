@@ -25,9 +25,10 @@ namespace Project
         {
             pictureBox.Image = room.GetImageRoom();
             groupBox.Text = "Tên phòng: " + room.Name;
-            labelNumberPeople.Text = room.NumberPeople.ToString();
-            labelNumberRoom.Text = room.NumberRoom.ToString();
-            labelNumberBed.Text = room.NumberBeds.ToString();
+            labelNumberPeople.Text = "Số người: " + room.NumberPeople.ToString();
+            labelNumberRoom.Text = "Số phòng ngủ: " + room.NumberRoom.ToString();
+            labelNumberBed.Text = "Số giường: " + room.NumberBeds.ToString();
+            labelAcreage.Text = "Diện tích: " + room.Acreage.ToString() + " m^2";
             labelOldPrice.Text = room.OldPrice.ToString();
             labelPrice.Text = room.Price.ToString();
         }

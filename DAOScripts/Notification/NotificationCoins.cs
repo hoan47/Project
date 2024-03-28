@@ -8,7 +8,7 @@ namespace Project
 {
     public class NotificationCoins : Notification
     {
-        public NotificationCoins(User sender, User receiver, DateTime time, string content, bool isWatched, string type) : base(sender, receiver, time, content, isWatched, type)
+        public NotificationCoins(User sender, User receiver, DateTime time, string content, bool isWatched) : base(sender, receiver, time, content, isWatched)
         { }
     }
 }

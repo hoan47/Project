@@ -34,6 +34,7 @@ namespace Project
 
         public User(string userName, string name)
         {
+            UserName = userName;
             Name = name;
         }
 

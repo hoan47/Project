@@ -178,8 +178,12 @@
     <Compile Include="DAOScripts\ApplicationServiceDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
-    <Compile Include="DAOScripts\Notification.cs" />
-    <Compile Include="DAOScripts\NotificationDAO.cs" />
+    <Compile Include="DAOScripts\Notification\Notification.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationClient.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationCoins.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationDAO.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationHotel.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationSystem.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />

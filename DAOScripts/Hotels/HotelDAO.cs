@@ -100,5 +100,38 @@ namespace Project
             }
             return false;
         }
+
+        public Hotel FindHotel(int id)
+        {
+            Hotel hotel = null;
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE idHotel = '{id}'", sqlConnection);
+                SqlDataReader reader = selectCMD.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    hotel = new Hotel(
+                        Convert.ToInt32(reader[1]),
+                        reader[2].ToString(),
+                        reader[3].ToString(),
+                        new Address(reader[4].ToString()),
+                        (TimeSpan)reader[5],
+                        (TimeSpan)reader[6],
+                        reader[7].ToString());
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                ShowMessage.ShowError(e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return hotel;
+        }
     }
 }

@@ -32,8 +32,8 @@ namespace Project
                                             DataAccess.InfoDAO.FindAccount(reader[1].ToString()),
                                             Convert.ToDateTime(reader[2]),
                                             reader[3].ToString(),
-                                            (bool)reader[4],
-                                            reader[5].ToString());
+                                            (bool)reader[4]);
+
                             break;
                         case "coins":
                             notification = new NotificationCoins(
@@ -41,8 +41,8 @@ namespace Project
                                             DataAccess.InfoDAO.FindAccount(reader[1].ToString()),
                                             Convert.ToDateTime(reader[2]),
                                             reader[3].ToString(),
-                                            (bool)reader[4],
-                                            reader[5].ToString());
+                                            (bool)reader[4]);
+
                             break;
                         case "hotel":
                             notification = new NotificationHotel(
@@ -51,7 +51,13 @@ namespace Project
                                             Convert.ToDateTime(reader[2]),
                                             reader[3].ToString(),
                                             (bool)reader[4],
-                                            reader[5].ToString());
+                                            DataAccess.HotelDAO.FindHotel((int)reader[6]),
+                                            DataAccess.RoomDAO.FindRoom((int)reader[7]),
+                                            (int)reader[8],
+                                            reader[9].ToString(),
+                                            Convert.ToDateTime(reader[10]),
+                                            Convert.ToDateTime(reader[11]));
+
                             break;
                         default:
                             notification = new NotificationClient(
@@ -60,7 +66,13 @@ namespace Project
                                             Convert.ToDateTime(reader[2]),
                                             reader[3].ToString(),
                                             (bool)reader[4],
-                                            reader[5].ToString());
+                                            DataAccess.HotelDAO.FindHotel((int)reader[6]),
+                                            DataAccess.RoomDAO.FindRoom((int)reader[7]),
+                                            (int)reader[8],
+                                            reader[9].ToString(),
+                                            Convert.ToDateTime(reader[10]),
+                                            Convert.ToDateTime(reader[11]));
+
                             break;
                     }
                     notifications.Add(notification);
@@ -91,7 +103,7 @@ namespace Project
                     $"'{notifications.Time.ToString("yyyy-MM-dd HH:mm:ss")}', " +
                     $"'{notifications.Content}', " +
                     $"'{notifications.IsWatched}', " +
-                    $"'{notifications.Type}')",
+                    $"'{notifications.GetTypeStr()}', null, null, null, null, null, null)",
                     sqlConnection);
 
                 return insertCMD.ExecuteNonQuery() == 1;
@@ -119,7 +131,7 @@ namespace Project
                     $"sendingTime = '{notifications.Time.ToString("yyyy-MM-dd HH:mm:ss")}', " +
                     $"content = N'{notifications.Content}', " +
                     $"isWatched = '{notifications.IsWatched}', " +
-                    $"type = '{notifications.Type}' " +
+                    $"type = '{notifications.GetTypeStr()}' " +
                     $"WHERE userName = '{user.UserName}'",
                     sqlConnection);
 

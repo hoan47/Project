@@ -36,7 +36,7 @@ namespace Project
             this.labelOldPrice = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.labelAcreages = new System.Windows.Forms.Label();
+            this.labelAcreage = new System.Windows.Forms.Label();
             this.labelNumberBed = new System.Windows.Forms.Label();
             this.labelNumberRoom = new System.Windows.Forms.Label();
             this.labelNumberPeople = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace Project
             this.groupBox.Controls.Add(this.labelOldPrice);
             this.groupBox.Controls.Add(this.labelPrice);
             this.groupBox.Controls.Add(this.guna2PictureBox1);
-            this.groupBox.Controls.Add(this.labelAcreages);
+            this.groupBox.Controls.Add(this.labelAcreage);
             this.groupBox.Controls.Add(this.labelNumberBed);
             this.groupBox.Controls.Add(this.labelNumberRoom);
             this.groupBox.Controls.Add(this.labelNumberPeople);
@@ -138,14 +138,14 @@ namespace Project
             // 
             // labelAcreages
             // 
-            this.labelAcreages.AutoEllipsis = true;
-            this.labelAcreages.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAcreages.Location = new System.Drawing.Point(78, 76);
-            this.labelAcreages.Name = "labelAcreages";
-            this.labelAcreages.Size = new System.Drawing.Size(115, 16);
-            this.labelAcreages.TabIndex = 4;
-            this.labelAcreages.Text = "Diện tích: 999 m^2";
-            this.labelAcreages.Click += new System.EventHandler(this.ShowRoomClick);
+            this.labelAcreage.AutoEllipsis = true;
+            this.labelAcreage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAcreage.Location = new System.Drawing.Point(78, 76);
+            this.labelAcreage.Name = "labelAcreages";
+            this.labelAcreage.Size = new System.Drawing.Size(115, 16);
+            this.labelAcreage.TabIndex = 4;
+            this.labelAcreage.Text = "Diện tích: 999 m^2";
+            this.labelAcreage.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelNumberBed
             // 
@@ -204,7 +204,7 @@ namespace Project
         private System.Windows.Forms.Label labelNumberBed;
         private System.Windows.Forms.Label labelNumberRoom;
         private System.Windows.Forms.Label labelNumberPeople;
-        private System.Windows.Forms.Label labelAcreages;
+        private System.Windows.Forms.Label labelAcreage;
         private System.Windows.Forms.Label labelOldPrice;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxIconPrice;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;

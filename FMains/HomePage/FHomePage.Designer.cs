@@ -35,12 +35,12 @@ namespace Project
             this.panelSearchHotel = new System.Windows.Forms.Panel();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
             this.checkedListBoxService = new System.Windows.Forms.CheckedListBox();
-            this.userControlPrice = new Project.UserControls.UserControlPrice();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.userControlAddressRoom = new Project.UserControlAddressRoom();
-            this.UserControlDateTimePackerOut = new Project.UserControlDateTimePacker();
-            this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControlPrice = new Project.UserControls.UserControlPrice();
+            this.userControlAddressRoom = new Project.UserControlAddressRoom();
+            this.userControlDateTimePackerOut = new Project.UserControlDateTimePacker();
+            this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
             this.panelSearchHotel.SuspendLayout();
             this.groupBoxService.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@ namespace Project
             this.panelSearchHotel.Controls.Add(this.userControlPrice);
             this.panelSearchHotel.Controls.Add(this.buttonSearch);
             this.panelSearchHotel.Controls.Add(this.userControlAddressRoom);
-            this.panelSearchHotel.Controls.Add(this.UserControlDateTimePackerOut);
+            this.panelSearchHotel.Controls.Add(this.userControlDateTimePackerOut);
             this.panelSearchHotel.Controls.Add(this.userControlDateTimePackerIn);
             this.panelSearchHotel.Location = new System.Drawing.Point(0, 0);
             this.panelSearchHotel.Name = "panelSearchHotel";
@@ -87,16 +87,6 @@ namespace Project
             this.checkedListBoxService.Size = new System.Drawing.Size(152, 89);
             this.checkedListBoxService.TabIndex = 0;
             // 
-            // userControlPrice
-            // 
-            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
-            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
-            this.userControlPrice.Name = "userControlPrice";
-            this.userControlPrice.Price = 1000000;
-            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
-            this.userControlPrice.TabIndex = 10;
-            // 
             // buttonSearch
             // 
             this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
@@ -116,35 +106,6 @@ namespace Project
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             this.buttonSearch.DoubleClick += new System.EventHandler(this.ButtonSearchClick);
             // 
-            // userControlAddressRoom
-            // 
-            this.userControlAddressRoom.BackColor = System.Drawing.Color.Transparent;
-            this.userControlAddressRoom.ComboBoxText = "";
-            this.userControlAddressRoom.Location = new System.Drawing.Point(12, 3);
-            this.userControlAddressRoom.Name = "userControlAddressRoom";
-            this.userControlAddressRoom.Size = new System.Drawing.Size(256, 55);
-            this.userControlAddressRoom.TabIndex = 7;
-            // 
-            // UserControlDateTimePackerOut
-            // 
-            this.UserControlDateTimePackerOut.BackColor = System.Drawing.Color.Transparent;
-            this.UserControlDateTimePackerOut.GroupBoxText = "Ngày trả phòng";
-            this.UserControlDateTimePackerOut.ImageIcon = ((System.Drawing.Image)(resources.GetObject("UserControlDateTimePackerOut.ImageIcon")));
-            this.UserControlDateTimePackerOut.Location = new System.Drawing.Point(274, 61);
-            this.UserControlDateTimePackerOut.Name = "UserControlDateTimePackerOut";
-            this.UserControlDateTimePackerOut.Size = new System.Drawing.Size(277, 55);
-            this.UserControlDateTimePackerOut.TabIndex = 6;
-            // 
-            // userControlDateTimePackerIn
-            // 
-            this.userControlDateTimePackerIn.BackColor = System.Drawing.Color.Transparent;
-            this.userControlDateTimePackerIn.GroupBoxText = "Ngày nhận phòng";
-            this.userControlDateTimePackerIn.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerIn.ImageIcon")));
-            this.userControlDateTimePackerIn.Location = new System.Drawing.Point(274, 3);
-            this.userControlDateTimePackerIn.Name = "userControlDateTimePackerIn";
-            this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
-            this.userControlDateTimePackerIn.TabIndex = 5;
-            // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AllowDrop = true;
@@ -154,6 +115,47 @@ namespace Project
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
             this.flowLayoutPanel.TabIndex = 1;
+            // 
+            // userControlPrice
+            // 
+            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
+            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
+            this.userControlPrice.Name = "userControlPrice";
+            this.userControlPrice.Price = 1000000;
+            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
+            this.userControlPrice.TabIndex = 10;
+            // 
+            // userControlAddressRoom
+            // 
+            this.userControlAddressRoom.BackColor = System.Drawing.Color.Transparent;
+            this.userControlAddressRoom.ComboBoxText = "";
+            this.userControlAddressRoom.Location = new System.Drawing.Point(12, 3);
+            this.userControlAddressRoom.Name = "userControlAddressRoom";
+            this.userControlAddressRoom.Size = new System.Drawing.Size(256, 55);
+            this.userControlAddressRoom.TabIndex = 7;
+            // 
+            // userControlDateTimePackerOut
+            // 
+            this.userControlDateTimePackerOut.BackColor = System.Drawing.Color.Transparent;
+            this.userControlDateTimePackerOut.DateTimePacker = new System.DateTime(2024, 3, 30, 0, 0, 0, 0);
+            this.userControlDateTimePackerOut.GroupBoxText = "Ngày trả phòng";
+            this.userControlDateTimePackerOut.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerOut.ImageIcon")));
+            this.userControlDateTimePackerOut.Location = new System.Drawing.Point(274, 61);
+            this.userControlDateTimePackerOut.Name = "userControlDateTimePackerOut";
+            this.userControlDateTimePackerOut.Size = new System.Drawing.Size(277, 55);
+            this.userControlDateTimePackerOut.TabIndex = 6;
+            // 
+            // userControlDateTimePackerIn
+            // 
+            this.userControlDateTimePackerIn.BackColor = System.Drawing.Color.Transparent;
+            this.userControlDateTimePackerIn.DateTimePacker = new System.DateTime(2024, 3, 20, 0, 0, 0, 0);
+            this.userControlDateTimePackerIn.GroupBoxText = "Ngày nhận phòng";
+            this.userControlDateTimePackerIn.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerIn.ImageIcon")));
+            this.userControlDateTimePackerIn.Location = new System.Drawing.Point(274, 3);
+            this.userControlDateTimePackerIn.Name = "userControlDateTimePackerIn";
+            this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
+            this.userControlDateTimePackerIn.TabIndex = 5;
             // 
             // FHomePage
             // 
@@ -179,7 +181,7 @@ namespace Project
         #endregion
 
         private System.Windows.Forms.Panel panelSearchHotel;
-        private UserControlDateTimePacker UserControlDateTimePackerOut;
+        private UserControlDateTimePacker userControlDateTimePackerOut;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private Guna.UI2.WinForms.Guna2Button buttonSearch;
         private UserControls.UserControlPrice userControlPrice;

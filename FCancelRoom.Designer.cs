@@ -98,7 +98,6 @@ namespace Project
             this.richTextBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBoxMessage.Location = new System.Drawing.Point(7, 24);
             this.richTextBoxMessage.Name = "richTextBoxMessage";
-            this.richTextBoxMessage.ReadOnly = true;
             this.richTextBoxMessage.Size = new System.Drawing.Size(586, 83);
             this.richTextBoxMessage.TabIndex = 0;
             this.richTextBoxMessage.Text = "Lí do khác";
