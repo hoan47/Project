@@ -103,9 +103,9 @@ namespace Project
             return false;
         }
 
-        public User FindAccount(string userName)
+        public string FindAccount(string userName)
         {
-            User result = null;
+            string name = null;
 
             try
             {
@@ -116,7 +116,7 @@ namespace Project
 
                 if (reader.Read())
                 {
-                    result = new User(userName, reader[0].ToString());
+                    name = reader[0].ToString();
                 }
             }
             catch (Exception e)
@@ -127,7 +127,7 @@ namespace Project
             {
                 sqlConnection.Close();
             }
-            return result;
+            return name;
         }
     }
 }

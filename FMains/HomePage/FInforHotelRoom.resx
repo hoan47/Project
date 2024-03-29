@@ -384,23 +384,6 @@
   <data name="&gt;&gt;butonBack.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
-        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
-        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
-        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
-        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
-        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
-        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
-        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
-        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
-        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
-        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
-        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
-</value>
-  </data>
   <data name="pictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1269,24 +1252,6 @@
   <data name="&gt;&gt;userControlLableTotalPrice.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="labelContent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 24</value>
-  </data>
-  <data name="labelContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 72</value>
-  </data>
-  <data name="labelContent.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="labelContent.Text" xml:space="preserve">
-    <value>- Hạng đồng được giảm 10%
-- Phải cọc trước 1.000.000 xu
-- Bạn sẽ nhận được 10 điểm vào mức hạng hiện tại.
-</value>
-  </data>
   <data name="&gt;&gt;labelContent.Name" xml:space="preserve">
     <value>labelContent</value>
   </data>
@@ -1299,47 +1264,6 @@
   <data name="&gt;&gt;labelContent.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="richTextBoxPolicy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 18</value>
-  </data>
-  <data name="richTextBoxPolicy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 68</value>
-  </data>
-  <data name="richTextBoxPolicy.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="richTextBoxPolicy.Text" xml:space="preserve">
-    <value>- Ấn xác nhận để cọc phòng
-- Sau khi cọc xong:
-   + Số tiền còn lại sẽ phải thanh toán trực tiếp với khách sạn.
-   + Ấn xác nhận để cọc phòng. Khi cọc xong bạn vui lòng đợi nhiều nhất là 24h. Nếu quá 24h mà bạn vẫn chưa nhận được thông báo từ khách sạn thì bạn sẽ được hoàn lại gấp đôi số tiền đã cọc cho khách sạn.
-   + Khi khách sạn chưa xác nhận thì bạn có thể hủy phòng. Nhưng sẽ không nhận lại được xu với bất kì lí do.
-   + Check in nếu sau 24h vẫn chưa có sự hiện diện của bạn. Khách sạn sẽ hủy phòng và bạn sẽ không được nhận lại xuvới bất kì lí do.</value>
-  </data>
-  <data name="&gt;&gt;richTextBoxPolicy.Name" xml:space="preserve">
-    <value>richTextBoxPolicy</value>
-  </data>
-  <data name="&gt;&gt;richTextBoxPolicy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBoxPolicy.Parent" xml:space="preserve">
-    <value>groupBoxPolicy</value>
-  </data>
-  <data name="&gt;&gt;richTextBoxPolicy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBoxPolicy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="groupBoxPolicy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>277, 91</value>
-  </data>
-  <data name="groupBoxPolicy.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="groupBoxPolicy.Text" xml:space="preserve">
-    <value>Chính sách</value>
-  </data>
   <data name="&gt;&gt;groupBoxPolicy.Name" xml:space="preserve">
     <value>groupBoxPolicy</value>
   </data>
@@ -1351,21 +1275,6 @@
   </data>
   <data name="&gt;&gt;groupBoxPolicy.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="buttonConfirm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="buttonConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 99</value>
-  </data>
-  <data name="buttonConfirm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 25</value>
-  </data>
-  <data name="buttonConfirm.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="buttonConfirm.Text" xml:space="preserve">
-    <value>Xác nhận</value>
   </data>
   <data name="&gt;&gt;buttonConfirm.Name" xml:space="preserve">
     <value>buttonConfirm</value>
@@ -1405,36 +1314,6 @@
   </data>
   <data name="&gt;&gt;groupBoxConfirm.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="listBoxService.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="listBoxService.ItemHeight" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="listBoxService.Items" xml:space="preserve">
-    <value>Tủ lạnh</value>
-  </data>
-  <data name="listBoxService.Items1" xml:space="preserve">
-    <value>Điều hòa</value>
-  </data>
-  <data name="listBoxService.Items2" xml:space="preserve">
-    <value>Máy xấy</value>
-  </data>
-  <data name="listBoxService.Items3" xml:space="preserve">
-    <value>Ti vi</value>
-  </data>
-  <data name="listBoxService.Items4" xml:space="preserve">
-    <value>Bếp nướng</value>
-  </data>
-  <data name="listBoxService.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 18</value>
-  </data>
-  <data name="listBoxService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 38</value>
-  </data>
-  <data name="listBoxService.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="&gt;&gt;listBoxService.Name" xml:space="preserve">
     <value>listBoxService</value>
@@ -4478,6 +4357,170 @@
   <data name="&gt;&gt;panel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="labelContent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 24</value>
+  </data>
+  <data name="labelContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 72</value>
+  </data>
+  <data name="labelContent.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="labelContent.Text" xml:space="preserve">
+    <value>- Hạng đồng được giảm 10%
+- Phải cọc trước 1.000.000 xu
+- Bạn sẽ nhận được 10 điểm vào mức hạng hiện tại.
+</value>
+  </data>
+  <data name="&gt;&gt;labelContent.Name" xml:space="preserve">
+    <value>labelContent</value>
+  </data>
+  <data name="&gt;&gt;labelContent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelContent.Parent" xml:space="preserve">
+    <value>groupBoxConfirm</value>
+  </data>
+  <data name="&gt;&gt;labelContent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Name" xml:space="preserve">
+    <value>richTextBoxPolicy</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Parent" xml:space="preserve">
+    <value>groupBoxPolicy</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBoxPolicy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="groupBoxPolicy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>277, 91</value>
+  </data>
+  <data name="groupBoxPolicy.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="groupBoxPolicy.Text" xml:space="preserve">
+    <value>Chính sách</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPolicy.Name" xml:space="preserve">
+    <value>groupBoxPolicy</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPolicy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPolicy.Parent" xml:space="preserve">
+    <value>groupBoxConfirm</value>
+  </data>
+  <data name="&gt;&gt;groupBoxPolicy.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="richTextBoxPolicy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="richTextBoxPolicy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 68</value>
+  </data>
+  <data name="richTextBoxPolicy.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="richTextBoxPolicy.Text" xml:space="preserve">
+    <value>- Ấn xác nhận để cọc phòng
+- Sau khi cọc xong:
+   + Số tiền còn lại sẽ phải thanh toán trực tiếp với khách sạn.
+   + Ấn xác nhận để cọc phòng. Khi cọc xong bạn vui lòng đợi nhiều nhất là 24h. Nếu quá 24h mà bạn vẫn chưa nhận được thông báo từ khách sạn thì bạn sẽ được hoàn lại gấp đôi số tiền đã cọc cho khách sạn.
+   + Khi khách sạn chưa xác nhận thì bạn có thể hủy phòng. Nhưng sẽ không nhận lại được xu với bất kì lí do.
+   + Check in nếu sau 24h vẫn chưa có sự hiện diện của bạn. Khách sạn sẽ hủy phòng và bạn sẽ không được nhận lại xuvới bất kì lí do.</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Name" xml:space="preserve">
+    <value>richTextBoxPolicy</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.Parent" xml:space="preserve">
+    <value>groupBoxPolicy</value>
+  </data>
+  <data name="&gt;&gt;richTextBoxPolicy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonConfirm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="buttonConfirm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>398, 99</value>
+  </data>
+  <data name="buttonConfirm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 25</value>
+  </data>
+  <data name="buttonConfirm.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="&gt;&gt;buttonConfirm.Name" xml:space="preserve">
+    <value>buttonConfirm</value>
+  </data>
+  <data name="&gt;&gt;buttonConfirm.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;buttonConfirm.Parent" xml:space="preserve">
+    <value>groupBoxConfirm</value>
+  </data>
+  <data name="&gt;&gt;buttonConfirm.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="listBoxService.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="listBoxService.ItemHeight" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="listBoxService.Items" xml:space="preserve">
+    <value>Tủ lạnh</value>
+  </data>
+  <data name="listBoxService.Items1" xml:space="preserve">
+    <value>Điều hòa</value>
+  </data>
+  <data name="listBoxService.Items2" xml:space="preserve">
+    <value>Máy xấy</value>
+  </data>
+  <data name="listBoxService.Items3" xml:space="preserve">
+    <value>Ti vi</value>
+  </data>
+  <data name="listBoxService.Items4" xml:space="preserve">
+    <value>Bếp nướng</value>
+  </data>
+  <data name="listBoxService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 18</value>
+  </data>
+  <data name="listBoxService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 38</value>
+  </data>
+  <data name="listBoxService.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;listBoxService.Name" xml:space="preserve">
+    <value>listBoxService</value>
+  </data>
+  <data name="&gt;&gt;listBoxService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBoxService.Parent" xml:space="preserve">
+    <value>groupBoxService</value>
+  </data>
+  <data name="&gt;&gt;listBoxService.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4486,9 +4529,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>523, 470</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>check-in date</value>

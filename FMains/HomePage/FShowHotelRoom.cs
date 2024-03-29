@@ -39,7 +39,7 @@ namespace Project
             currentImage = hotel.Images?.First();
             listBoxService.DataSource = hotel.Services;
             richTextBoxDescribe.Text = hotel.Describe;
-            ShowRooms(null);
+            ShowRooms();
         }
 
         private void ButtonLeftClick(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace Project
                     CheckAmenities(checkedListBoxAmenities, room);
         }
 
-        private void ShowRooms(Func<Room, bool> SearchCriteria)
+        private void ShowRooms(Func<Room, bool> SearchCriteria = null)
         {
             foreach (Room room in hotel.Rooms)
             {
@@ -103,12 +103,12 @@ namespace Project
 
         public void OpenInfoHotelRoom(Room room)
         {
-            ((FMain)((FHomePage)Tag).Tag).OpenFormChild(panel, new FInforHotelRoom(hotel, room, firstDay, lastDay), this);
+            FMain.Instance.OpenFormChild(panel, new FInforHotelRoom(hotel, room, firstDay, lastDay), this);
         }
 
         private void ButonBackClick(object sender, EventArgs e)
         {
-            ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
+            FMain.Instance.ChangeColerToolStripButton((FHomePage)Tag);
             Dispose();
         }
     }

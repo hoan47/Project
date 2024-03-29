@@ -8,7 +8,7 @@ namespace Project
 {
     public class NotificationSystem : Notification
     {
-        public NotificationSystem(User sender, User receiver, DateTime time, string content, bool isWatched) : base(sender, receiver, time, content, isWatched)
+        public NotificationSystem(int idNotification, string userNameReceiver, string nameReceiver, DateTime time, string content, bool isWatched) : base(idNotification, null, null, userNameReceiver, nameReceiver, time, content, isWatched)
         { }
     }
 }

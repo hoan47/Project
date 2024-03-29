@@ -19,7 +19,7 @@ namespace Project
 
         public void OpenFormChild(Panel panel, Form formChild)
         {
-            ((FMain)Tag).OpenFormChild(panel, formChild, this);
+            FMain.Instance.OpenFormChild(panel, formChild, this);
         }
 
         private void FNotificationLoad(object sender, EventArgs e)
@@ -29,21 +29,21 @@ namespace Project
             {
                 Control control = new Control();
 
-                if (notification is NotificationSystem)
+                if (notification is NotificationSystem notificationSystem)
                 {
-                    control = new UserControlNotificationSystem((NotificationSystem)notification);
+                    control = new UserControlNotificationSystem(notificationSystem);
                 }
-                else if (notification is NotificationCoins)
+                else if (notification is NotificationCoins notificationCoins)
                 {
-                    control = new UserControlNotificationCoins((NotificationCoins)notification);
+                    control = new UserControlNotificationCoins(notificationCoins);
                 }
-                else if (notification is NotificationHotel)
+                else if (notification is NotificationHotel notificationHotel)
                 {
-                    control = new UserControlNotificationHotel((NotificationHotel)notification);
+                    control = new UserControlNotificationHotel(notificationHotel);
                 }
-                else
+                else if (notification is NotificationClient notificationClient)
                 {
-                    control = new UserControlNotificationClient((NotificationClient)notification);
+                    control = new UserControlNotificationClient(notificationClient);
                 }
                 control.Tag = this;
                 flowLayoutPanel.Controls.Add(control);

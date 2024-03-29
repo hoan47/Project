@@ -14,6 +14,7 @@ namespace Project
 
         public void Access(User user, List<Hotel> hotels, bool isUser = true)
         {
+            hotels.Clear();
             try
             {
                 sqlConnection.Open();
@@ -23,6 +24,7 @@ namespace Project
                 while (reader.Read())
                 {
                     hotels.Add(new Hotel(
+                        reader[0].ToString(),
                         Convert.ToInt32(reader[1]),
                         reader[2].ToString(),
                         reader[3].ToString(),
@@ -43,14 +45,14 @@ namespace Project
             }
         }
 
-        public bool Insert(User user, Hotel hotel)
+        public bool Insert(Hotel hotel)
         {
             try
             {
                 sqlConnection.Open();
                 SqlCommand insertCMD = new SqlCommand($"INSERT INTO {table} " +
                                                        $"VALUES " +
-                                                       $"('{user.UserName}', " +
+                                                       $"('{hotel.UserName}', " +
                                                        $"'{hotel.IdHotel}', " +
                                                        $"N'{hotel.Name}', " +
                                                        $"'{hotel.Phone}', " +
@@ -113,6 +115,7 @@ namespace Project
                 if (reader.Read())
                 {
                     hotel = new Hotel(
+                        reader[0].ToString(),
                         Convert.ToInt32(reader[1]),
                         reader[2].ToString(),
                         reader[3].ToString(),

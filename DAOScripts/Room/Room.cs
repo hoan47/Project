@@ -15,13 +15,13 @@ namespace Project
         public int NumberBeds { get; private set; }
         public int NumberPeople { get; private set; }
         public int Acreage { get; private set; }
-        public int OldPrice { get; private set; }
         public int Price { get; private set; }
         public ERoomStatus Status { get; private set; }
         public List<Image_> Images { get; private set; }
         public List<string> Amenitiese { get; private set; }
+        public int OldPrice { get; private set; }
 
-        public Room(int idRoom, string name, int numberRoom, int numberOfBeds, int numberOfPeople, int acreage, int price, ERoomStatus status = ERoomStatus.empty)
+        public Room(int idRoom, string name, int numberRoom, int numberOfBeds, int numberOfPeople, int acreage, int price, ERoomStatus status, int oldPrice)
         {
             IdRoom = idRoom;
             Name = name;
@@ -29,12 +29,13 @@ namespace Project
             NumberBeds = numberOfBeds;
             NumberPeople = numberOfPeople;
             Acreage = acreage;
-            OldPrice = (int)Math.Floor(price * 1.1f);
+            OldPrice = price;
             Price = price;
             Status = status;
+            OldPrice = oldPrice;
         }
 
-        public void UpdatePrice(float percent)
+        public void UpdatePrice(double percent)
         {
             OldPrice = Price;
             Price = (int)Math.Floor(Price * percent);
@@ -47,6 +48,7 @@ namespace Project
             NumberBeds = numberOfBeds;
             NumberPeople = numberOfPeople;
             Acreage = acreage;
+            OldPrice = Price;
             Price = price;
         }
 
@@ -76,8 +78,6 @@ namespace Project
                 case 0:
                     return ERoomStatus.rent;
                 case 1:
-                    return ERoomStatus.repair;
-                case 2:
                     return ERoomStatus.oder;
                 default:
                     return ERoomStatus.empty;
@@ -90,23 +90,24 @@ namespace Project
             {
                 case ERoomStatus.rent:
                     return 0;
-                case ERoomStatus.repair:
-                    return 1;
                 case ERoomStatus.oder:
-                    return 2;
+                    return 1;
                 default:
-                    return 3;
+                    return 2;
             }
         }
 
         public string GetStatusStr()
         {
-            switch (Status)
+            return GetStatusStr(Status);
+        }
+
+        public static string GetStatusStr(ERoomStatus status)
+        {
+            switch (status)
             {
                 case ERoomStatus.rent:
                     return "Đang thuê";
-                case ERoomStatus.repair:
-                    return "Đang sửa";
                 case ERoomStatus.oder:
                     return "Đã đặt";
                 default:
@@ -117,9 +118,8 @@ namespace Project
         public enum ERoomStatus
         {
             rent = 0,
-            repair = 1,
-            oder = 2,
-            empty = 3
+            oder = 1,
+            empty = 2
         }
     }
 }

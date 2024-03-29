@@ -22,7 +22,7 @@ namespace Project
             Data.User.UpdateUserName(userControlTextBoxAccount.TextBoxText);
             if (buttonFindAccount.Text == "Tìm tài khoản")
             {
-                if (DataAccess.AccountDAO.FindAccount(Data.User) == true)
+                if (QueryData.AccountDAO.FindAccount(Data.User) == true)
                 {
                     userControlTextBoxAccount.Enabled = !(panelPassword.Visible = true);
                     buttonFindAccount.Text = "Bỏ chọn tài khoản";
@@ -47,7 +47,7 @@ namespace Project
             Data.User.UpdateUserPassword(userControlTextBoxAccount.TextBoxText, userControlTextBoxPassword.TextBoxText, userControlTextBoxPassword.TextBoxText);
             if (Data.User.IsPassword(out message) == true)
             {
-                DataAccess.AccountDAO.Update(Data.User);
+                QueryData.AccountDAO.Update(Data.User);
             }
             else
             {

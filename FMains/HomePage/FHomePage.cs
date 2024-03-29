@@ -19,36 +19,40 @@ namespace Project
 
         private void FHomePageLoad(object sender, EventArgs e)
         {
-            foreach (Hotel hotel in Data.HotelServices)
-            {
-                UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
-
-                userControlHotel.Tag = this;
-                flowLayoutPanel.Controls.Add(userControlHotel);
-            }
+            ShowHotels();
         }
 
-        public void OpenHotel(Hotel hotel)
+        private void ShowHotels(Func<Hotel, bool> searchCriteria = null)
         {
-            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker), this);
-        }
-
-        private void ButtonSearchClick(object sender, EventArgs e)
-        {
-            flowLayoutPanel.Controls.Clear();
             foreach (Hotel hotel in Data.HotelServices)
             {
-                if (userControlAddressRoom.ComboBoxText == hotel.Address.ProvinceAndDistrict &&
-                    CheckPrice(userControlPrice.Price, hotel.Rooms) &&
-                    CheckService(checkedListBoxService, hotel))
+                if (searchCriteria == null || searchCriteria(hotel) == true)
                 {
                     UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
+
                     userControlHotel.Tag = this;
                     flowLayoutPanel.Controls.Add(userControlHotel);
                 }
             }
         }
 
+        public void OpenHotel(Hotel hotel)
+        {
+            FMain.Instance.OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker), this);
+        }
+
+        private void ButtonSearchClick(object sender, EventArgs e)
+        {
+            flowLayoutPanel.Controls.Clear();
+            ShowHotels(SearchCriteria);
+        }
+
+        private bool SearchCriteria(Hotel hotel)
+        {
+            return userControlAddressRoom.ComboBoxText == hotel.Address.ProvinceAndDistrict &&
+                    CheckPrice(userControlPrice.Price, hotel.Rooms) &&
+                    CheckService(checkedListBoxService, hotel);
+        }
         private bool CheckPrice(int price, List<Room> rooms)
         {
             foreach (Room room in rooms)

@@ -177,6 +177,8 @@
     <Compile Include="DAOScripts\Address\AddressDAO.cs" />
     <Compile Include="DAOScripts\ApplicationServiceDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
+    <Compile Include="DAOScripts\Hotels\UpdatePrice.cs" />
+    <Compile Include="DAOScripts\Hotels\UpdatePriceDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
     <Compile Include="DAOScripts\Notification\Notification.cs" />
     <Compile Include="DAOScripts\Notification\NotificationClient.cs" />
@@ -188,7 +190,13 @@
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="FMains\HomePage\FConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\HomePage\FConfirm.Designer.cs">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryData.cs" />
     <Compile Include="FCancelRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,11 +221,11 @@
     <Compile Include="FMains\HomePage\FShowHotelRoom.Designer.cs">
       <DependentUpon>FShowHotelRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMains\Service\FDiscount.cs">
+    <Compile Include="FMains\Service\FUpdatePrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMains\Service\FDiscount.Designer.cs">
-      <DependentUpon>FDiscount.cs</DependentUpon>
+    <Compile Include="FMains\Service\FUpdatePrice.Designer.cs">
+      <DependentUpon>FUpdatePrice.cs</DependentUpon>
     </Compile>
     <Compile Include="FMains\Service\FHotelManage.cs">
       <SubType>Form</SubType>
@@ -478,6 +486,9 @@
     <EmbeddedResource Include="FCancelRoom.resx">
       <DependentUpon>FCancelRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMains\HomePage\FConfirm.resx">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCustomMessageBox.resx">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,8 +516,8 @@
     <EmbeddedResource Include="FMains\HomePage\FShowHotelRoom.resx">
       <DependentUpon>FShowHotelRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMains\Service\FDiscount.resx">
-      <DependentUpon>FDiscount.cs</DependentUpon>
+    <EmbeddedResource Include="FMains\Service\FUpdatePrice.resx">
+      <DependentUpon>FUpdatePrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\Service\FHotelManage.resx">
       <DependentUpon>FHotelManage.cs</DependentUpon>

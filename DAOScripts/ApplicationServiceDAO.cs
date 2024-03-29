@@ -14,13 +14,12 @@ namespace Project
 
         public void Access(User user, List<Hotel> hotels)
         {
-            hotels.Clear();
-            DataAccess.HotelDAO.Access(user, hotels, false);
-            DataAccess.ServiceDAO.Access(hotels);
-            DataAccess.ImageHotelDAO.Access(hotels);
-            DataAccess.RoomDAO.Access(hotels);
-            DataAccess.AmenitiesDAO.Access(hotels);
-            DataAccess.ImageRoomDAO.Access(hotels);
+            QueryData.HotelDAO.Access(user, hotels, false);
+            QueryData.ServiceDAO.Access(hotels);
+            QueryData.ImageHotelDAO.Access(hotels);
+            QueryData.RoomDAO.Access(hotels);
+            QueryData.AmenitiesDAO.Access(hotels);
+            QueryData.ImageRoomDAO.Access(hotels);
         }
     }
 }

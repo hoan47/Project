@@ -12,12 +12,16 @@ namespace Project
 {
     public partial class FMain : Form
     {
+        public static FMain Instance { get; private set; }
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
 
         public FMain()
         {
             InitializeComponent();
+            Instance = this;
+            timer.Interval = 1000;
+            timer.Start();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)
@@ -84,7 +88,7 @@ namespace Project
             {
                 panel = panelMain;
                 ChangeColerToolStripButton(formChild);
-            }    
+            }
             formChild.Tag = fromTag;
             formChild.TopLevel = false;
             panel.Controls.Add(formChild);
@@ -122,22 +126,12 @@ namespace Project
             }
         }
 
-        public void UpdateConins()
+        private void TimerTick(object sender, EventArgs e)
         {
+            QueryData.Access();
             labelCoins.Text = Data.User.Client.Coins.ToString("N0").Replace(",", ".");
-        }
-
-        public void UpdateNotificationNumber()
-        {
             int count = Data.Notifications.Count(n => n.IsWatched == false);
-
             toolStripButtonNotification.Text = count > 0 ? $"Thông báo({count})" : "Thông báo";
-        }
-
-        private void FMainLoad(object sender, EventArgs e)
-        {
-            UpdateConins();
-            UpdateNotificationNumber();
         }
     }
 }

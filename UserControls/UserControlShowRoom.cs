@@ -31,6 +31,8 @@ namespace Project
             labelAcreage.Text = "Diện tích: " + room.Acreage.ToString() + " m^2";
             labelOldPrice.Text = room.OldPrice.ToString();
             labelPrice.Text = room.Price.ToString();
+
+            labelOldPrice .Visible = pictureBoxSale.Visible = room.OldPrice > room.Price;
         }
 
         private void ShowRoomClick(object sender, EventArgs e)

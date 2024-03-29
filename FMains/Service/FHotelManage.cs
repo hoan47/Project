@@ -46,12 +46,17 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
+            if(hotel.Rooms == null || hotel.Rooms.Count == 0)
+            {
+                FController.Instance.MessageWarning("Thông báo", "Bạn vui lòng tạo phòng trước khi sử dụng tính năng này.", this);
+                return;
+            }    
             EnabledGroupBox();
             foreach (Control control in flowLayoutPanel.Controls)
             {
                 control.Visible = false;
             }
-            ((FMain)((FService)Tag).Tag).OpenFormChild(flowLayoutPanel, new FDiscount(), this);
+            ((FMain)((FService)Tag).Tag).OpenFormChild(flowLayoutPanel, new FUpdatePrice(hotel), this);
         }
 
         public void EnabledGroupBox()

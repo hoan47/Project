@@ -18,15 +18,15 @@ namespace Project
         {
             InitializeComponent();
             this.notification = notification;
-            groupBox.Text = "Tên khách hàng: " + notification.Sender.Name;
-            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
+            groupBox.Text = "Tên khách hàng: " + notification.NameSender;
+            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm:ss");
             richTextBoxMessage.Text = notification.Content;
             labelPhone.Text = "SĐT: " + notification.Hotel.Phone;
             labelNameHotel.Text = "Tên khách sạn: " + notification.Hotel.Name;
             labelNameRoom.Text = "Tên phòng: " + notification.Room.Name;
-            labelNameRoom.Text = "Xu cọc: " + notification.DepositCoins.ToString();
-            labelIn.Text = notification.CheckIn.ToString("dd/MM/yyyy HH:mm");
-            labelOut.Text = notification.CheckOut.ToString("dd/MM/yyyy HH:mm");
+            labelPrice.Text = "Xu cọc: " + notification.DepositCoins.ToString();
+            labelIn.Text = notification.CheckIn.ToString("dd/MM/yyyy HH:mm:ss");
+            labelOut.Text = notification.CheckOut.ToString("dd/MM/yyyy HH:mm:ss");
             labelStatus.Text = notification.Status;
             circleButton.Visible = !notification.IsWatched;
         }
@@ -39,6 +39,8 @@ namespace Project
         private void CircleButtonClick(object sender, EventArgs e)
         {
             circleButton.Visible = false;
+            notification.Watched();
+            QueryData.NotificationDAO.Update(notification);
         }
     }
 }

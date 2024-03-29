@@ -9,6 +9,7 @@ namespace Project
 {
     public class Hotel
     {
+        public string UserName { get; private set; }
         public int IdHotel { get; private set; }
         public string Name { get; private set; }
         public string Phone { get; private set; }
@@ -19,9 +20,11 @@ namespace Project
         public List<Image_> Images { get; private set; }
         public List<string> Services { get; private set; }
         public List<Room> Rooms { get; private set; }
+        public List<UpdatePrice> UpdatePrices { get; private set; }
 
-        public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
+        public Hotel(string userName, int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
+            UserName = userName;
             IdHotel = id;
             Name = name;
             Phone = phone;
@@ -46,11 +49,6 @@ namespace Project
             Services = services;
         }
 
-        public void UpdateImage(List<Image_> images)
-        {
-            Images = images;
-        }
-
         public Image GetImageHotel(bool isFirst = true)
         {
             return Images != null ? (Images.Count > 0 ? (isFirst == true ? Images.First().Image : Images.Last().Image) : Properties.Resources.noImage) : Properties.Resources.noImage;
@@ -72,6 +70,15 @@ namespace Project
                 Rooms = new List<Room>();
             }
             Rooms.Add(room);
+        }
+
+        public void AddUpdatePrice(UpdatePrice updatePrice)
+        {
+            if (UpdatePrices == null)
+            {
+                UpdatePrices = new List<UpdatePrice>();
+            }
+            UpdatePrices.Add(updatePrice);
         }
 
         public bool IsName(out string message)

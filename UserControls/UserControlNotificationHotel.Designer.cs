@@ -134,7 +134,7 @@ namespace Project
             this.labelStatus.Location = new System.Drawing.Point(9, 195);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(246, 22);
+            this.labelStatus.Size = new System.Drawing.Size(589, 22);
             this.labelStatus.TabIndex = 29;
             this.labelStatus.Text = "Trạng thái: đang chờ xác nhận";
             // 

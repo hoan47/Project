@@ -26,10 +26,10 @@ namespace Project
             Data.User.UpdateClient(new Client());
             if (Data.User.IsAccount(out message) == true && Data.User.IsPassword(out message) == true)
             {
-                if(DataAccess.AccountDAO.Insert(Data.User) == true)
+                if(QueryData.AccountDAO.Insert(Data.User) == true)
                 {
-                    DataAccess.InfoDAO.Insert(Data.User);
-                    DataAccess.ClientDAO.Insert(Data.User);
+                    QueryData.InfoDAO.Insert(Data.User);
+                    QueryData.ClientDAO.Insert(Data.User);
                     FController.Instance.MessageSuccess("Thông báo", "Tạo tài khoản thành công.");
                 }
                 else

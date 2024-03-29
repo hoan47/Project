@@ -15,7 +15,7 @@ namespace Project
         public DateTime CheckIn { get; private set; }
         public DateTime CheckOut { get; private set; }
 
-        public NotificationHotel(User sender, User receiver, DateTime time, string content, bool isWatched, Hotel hotel, Room room, int depositCoins, string status, DateTime checkIn, DateTime checkOut) : base(sender, receiver, time, content, isWatched)
+        public NotificationHotel(int idNotification, string userNameSender, string nameSender, string userNameReceiver, string nameReceiver, DateTime time, string content, bool isWatched, Hotel hotel, Room room, int depositCoins, string status, DateTime checkIn, DateTime checkOut) : base(idNotification, userNameSender, nameSender, userNameReceiver, nameReceiver, time, content, isWatched)
         {
             Hotel = hotel;
             Room = room;

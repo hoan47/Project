@@ -18,8 +18,8 @@ namespace Project
         {
             InitializeComponent();
             this.notification = notification;
-            groupBox.Text = "Người gửi: " + (notification.Sender == null ? "Hệ thống" : notification.Sender.Name);
-            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm");
+            groupBox.Text = "Người gửi: " + (notification.NameSender == null ? "Hệ thống" : notification.NameSender);
+            labelSendingTime.Text = notification.Time.ToString("dd/MM/yyyy HH:mm:ss");
             labelContent.Text = notification.Content;
             circleButton.Visible = !notification.IsWatched;
         }
@@ -28,7 +28,7 @@ namespace Project
         {
             circleButton.Visible = false;
             notification.Watched();
-            ((FMain)((FNotification)Tag).Tag).UpdateNotificationNumber();
+            QueryData.NotificationDAO.Update(notification);
         }
     }
 }

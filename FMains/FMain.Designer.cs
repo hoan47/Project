@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.panelOption = new System.Windows.Forms.Panel();
             this.toolStripOption = new System.Windows.Forms.ToolStrip();
@@ -41,6 +42,7 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBoxConins = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelCoins = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelOption.SuspendLayout();
             this.toolStripOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConins)).BeginInit();
@@ -189,6 +191,11 @@
             this.labelCoins.Text = "0";
             this.labelCoins.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // timer
+            // 
+            this.timer.Interval = 3000;
+            this.timer.Tick += new System.EventHandler(this.TimerTick);
+            // 
             // FMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +210,6 @@
             this.MaximizeBox = false;
             this.Name = "FMain";
             this.Text = "FMain";
-            this.Load += new System.EventHandler(this.FMainLoad);
             this.panelOption.ResumeLayout(false);
             this.toolStripOption.ResumeLayout(false);
             this.toolStripOption.PerformLayout();
@@ -225,5 +231,6 @@
         public System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxConins;
         private System.Windows.Forms.Label labelCoins;
+        private System.Windows.Forms.Timer timer;
     }
 }

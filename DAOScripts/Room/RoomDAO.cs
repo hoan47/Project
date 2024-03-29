@@ -33,7 +33,8 @@ namespace Project
                             (int)reader[5],
                             (int)reader[6],
                             (int)reader[7],
-                            Room.GetStatus((int)reader[8])));
+                            Room.GetStatus((int)reader[8]),
+                            (int)reader[9]));
                     }
                     reader.Close();
                 }
@@ -63,7 +64,8 @@ namespace Project
                                                        $"'{room.NumberPeople}', " +
                                                        $"'{room.Acreage}', " +
                                                        $"'{room.Price}', " +
-                                                       $"'{room.GetStatus()}')",
+                                                       $"'{room.GetStatus()}', " +
+                                                       $"'{room.OldPrice}')",
                                                        sqlConnection);
 
                 if (insertCMD.ExecuteNonQuery() == 1)
@@ -94,8 +96,32 @@ namespace Project
                                                     $"numberPeople = '{room.NumberPeople}', " +
                                                     $"acreage = '{room.Acreage}', " +
                                                     $"price = '{room.Price}', " +
-                                                    $"status = '{room.GetStatus()}' " +
+                                                    $"status = '{room.GetStatus()}', " +
+                                                    $"oldPrice = '{room.OldPrice}' " +
                                                     $"WHERE idRoom = '{room.IdRoom}'",
+                                                    sqlConnection);
+
+                return updateCMD.ExecuteNonQuery() == 1;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return false;
+        }
+
+        public bool Update(int idRoom, Room.ERoomStatus status)
+        {
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand updateCMD = new SqlCommand($"UPDATE {table} SET " +
+                                                    $"status = '{Room.GetStatusStr(status)}' " +
+                                                    $"WHERE idRoom = '{idRoom}'",
                                                     sqlConnection);
 
                 return updateCMD.ExecuteNonQuery() == 1;
@@ -132,7 +158,8 @@ namespace Project
                         (int)reader[5],
                         (int)reader[6],
                         (int)reader[7],
-                        Room.GetStatus((int)reader[8]));
+                        Room.GetStatus((int)reader[8]),
+                        (int)reader[9]);
                 }
                 reader.Close();
             }

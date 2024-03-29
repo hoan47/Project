@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project
 {
-    static class DataAccess
+    static class QueryData
     {
         public static IdDAO IdDAO { get; private set; }
         public static AddRessDAO AddressDAO { get; private set; }
@@ -17,13 +17,14 @@ namespace Project
         public static HotelDAO HotelDAO { get; private set; }
         public static ServiceDAO ServiceDAO { get; private set; }
         public static ImageHotelDAO ImageHotelDAO { get; private set; }
+        public static UpdatePriceDAO UpdatePriceDAO { get; private set; }
         public static RoomDAO RoomDAO { get; private set; }
         public static AmenitiesDAO AmenitiesDAO { get; private set; }
         public static ImageRoomDAO ImageRoomDAO { get; private set; }
         public static NotificationDAO NotificationDAO { get; private set; }
         public static ApplicationServiceDAO ApplicationServiceDAO { get; private set; }
 
-        static DataAccess()
+        static QueryData()
         {
             IdDAO = new IdDAO();
             AddressDAO = new AddRessDAO();
@@ -35,6 +36,7 @@ namespace Project
             HotelDAO = new HotelDAO();
             ServiceDAO = new ServiceDAO();
             ImageHotelDAO = new ImageHotelDAO();
+            UpdatePriceDAO = new UpdatePriceDAO();
 
             RoomDAO = new RoomDAO();
             AmenitiesDAO = new AmenitiesDAO();
@@ -43,7 +45,6 @@ namespace Project
             NotificationDAO = new NotificationDAO();
 
             ApplicationServiceDAO = new ApplicationServiceDAO();
-
         }
 
         public static void Access()
@@ -59,6 +60,7 @@ namespace Project
                 RoomDAO.Access(Data.User.Hotels);
                 AmenitiesDAO.Access(Data.User.Hotels);
                 ImageRoomDAO.Access(Data.User.Hotels);
+                UpdatePriceDAO.Access(Data.User.Hotels);
             }
 
             ApplicationServiceDAO.Access(Data.User, Data.HotelServices);

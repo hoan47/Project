@@ -36,6 +36,7 @@ namespace Project
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.labelOldTotalPrice = new System.Windows.Forms.Label();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
+            this.userControlLableTotalPrice = new Project.UserControls.UserControlLable();
             this.groupBoxConfirm = new Guna.UI2.WinForms.Guna2GroupBox();
             this.labelContent = new System.Windows.Forms.Label();
             this.groupBoxPolicy = new System.Windows.Forms.GroupBox();
@@ -43,7 +44,6 @@ namespace Project
             this.buttonConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
             this.listBoxService = new System.Windows.Forms.ListBox();
-            this.userControlLableTotalPrice = new Project.UserControls.UserControlLable();
             this.userControlLableCheckIn = new Project.UserControls.UserControlLable();
             this.userControlLablePrice = new Project.UserControls.UserControlLable();
             this.userControlLableAcreage = new Project.UserControls.UserControlLable();
@@ -100,9 +100,9 @@ namespace Project
             // 
             this.pictureBox.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox.BorderRadius = 20;
-            this.pictureBox.FillColor = System.Drawing.SystemColors.Info;
-            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.pictureBox.ImageRotate = 0F;
+            resources.ApplyResources(this.pictureBox, "pictureBox");
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.TabStop = false;
             // 
@@ -142,6 +142,15 @@ namespace Project
             this.buttonLeft.ForeColor = System.Drawing.Color.White;
             this.buttonLeft.Name = "buttonLeft";
             this.buttonLeft.Click += new System.EventHandler(this.ButtonLeftClick);
+            // 
+            // userControlLableTotalPrice
+            // 
+            this.userControlLableTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableTotalPrice.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableTotalPrice.ImageIcon")));
+            this.userControlLableTotalPrice.LableText = "Giá 10 ngày: 9.000.000 VND";
+            resources.ApplyResources(this.userControlLableTotalPrice, "userControlLableTotalPrice");
+            this.userControlLableTotalPrice.Name = "userControlLableTotalPrice";
+            this.userControlLableTotalPrice.SizeUserControl = new System.Drawing.Size(246, 34);
             // 
             // groupBoxConfirm
             // 
@@ -190,6 +199,7 @@ namespace Project
             resources.ApplyResources(this.buttonConfirm, "buttonConfirm");
             this.buttonConfirm.ForeColor = System.Drawing.Color.Black;
             this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Click += new System.EventHandler(this.ButtonConfirmClick);
             // 
             // groupBoxService
             // 
@@ -211,15 +221,6 @@ namespace Project
             resources.GetString("listBoxService.Items3"),
             resources.GetString("listBoxService.Items4")});
             this.listBoxService.Name = "listBoxService";
-            // 
-            // userControlLableTotalPrice
-            // 
-            this.userControlLableTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableTotalPrice.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableTotalPrice.ImageIcon")));
-            this.userControlLableTotalPrice.LableText = "Giá 10 ngày: 9.000.000 VND";
-            resources.ApplyResources(this.userControlLableTotalPrice, "userControlLableTotalPrice");
-            this.userControlLableTotalPrice.Name = "userControlLableTotalPrice";
-            this.userControlLableTotalPrice.SizeUserControl = new System.Drawing.Size(246, 34);
             // 
             // userControlLableCheckIn
             // 
