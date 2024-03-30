@@ -21,6 +21,7 @@ namespace Project
         {
             InitializeComponent();
             this.hotel = hotel;
+            dateTimePicker.Value = DateTime.Now;
         }
 
         private void ButtonAddClick(object sender, EventArgs e)

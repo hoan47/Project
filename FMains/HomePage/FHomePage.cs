@@ -47,7 +47,7 @@ namespace Project
         {
             if (userControlDateTimePackerOut.DateTimePacker <= userControlDateTimePackerIn.DateTimePacker)
             {
-                MessageBox.Show("Thời gian không hợp lệ");
+                FController.Instance.MessageWarning("Thông báo", "Thời gian không hợp lệ", this);
                 return;
             }
             flowLayoutPanel.Controls.Clear();

@@ -37,15 +37,15 @@
             this.groupBoxDateTime = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.groupBoxButton = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.labelUpdatePrice = new System.Windows.Forms.Label();
             this.panelRoad2 = new System.Windows.Forms.Panel();
             this.panelRoad1 = new System.Windows.Forms.Panel();
             this.labelAddRoom = new System.Windows.Forms.Label();
             this.labelInfoHotel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.buttonInforHotel = new Guna.UI2.WinForms.Guna2Button();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxStatus.SuspendLayout();
             this.groupBoxDateTime.SuspendLayout();
             this.groupBoxButton.SuspendLayout();
@@ -182,7 +182,7 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(225, 30);
             this.dateTimePicker.TabIndex = 8;
-            this.dateTimePicker.Value = new System.DateTime(2024, 3, 17, 10, 12, 12, 338);
+            this.dateTimePicker.Value = new System.DateTime(2024, 3, 30, 20, 51, 1, 0);
             // 
             // groupBoxButton
             // 
@@ -207,6 +207,29 @@
             this.groupBoxButton.Size = new System.Drawing.Size(297, 116);
             this.groupBoxButton.TabIndex = 9;
             this.groupBoxButton.Text = "Chỉnh Sửa";
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
+            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUpdate.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.BorderRadius = 5;
+            this.buttonUpdate.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonUpdate.FillColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonUpdate.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
+            this.buttonUpdate.Location = new System.Drawing.Point(230, 66);
+            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.PressedColor = System.Drawing.Color.Transparent;
+            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
+            this.buttonUpdate.TabIndex = 0;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
             // 
             // labelUpdatePrice
             // 
@@ -259,42 +282,6 @@
             this.labelInfoHotel.TabIndex = 10;
             this.labelInfoHotel.Text = "Thông Tin Khách Sạn";
             // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.AllowDrop = true;
-            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 125);
-            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(777, 385);
-            this.flowLayoutPanel.TabIndex = 11;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.BackgroundImage")));
-            this.buttonUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonUpdate.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.BorderRadius = 5;
-            this.buttonUpdate.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonUpdate.FillColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonUpdate.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.ImageSize = new System.Drawing.Size(35, 35);
-            this.buttonUpdate.Location = new System.Drawing.Point(230, 66);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.PressedColor = System.Drawing.Color.Transparent;
-            this.buttonUpdate.Size = new System.Drawing.Size(40, 40);
-            this.buttonUpdate.TabIndex = 0;
-            this.buttonUpdate.Click += new System.EventHandler(this.ButtonUpdateClick);
-            // 
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
@@ -341,6 +328,19 @@
             this.buttonInforHotel.Size = new System.Drawing.Size(40, 40);
             this.buttonInforHotel.TabIndex = 0;
             this.buttonInforHotel.Click += new System.EventHandler(this.ButtonInforHotelClick);
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(2, 125);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(777, 385);
+            this.flowLayoutPanel.TabIndex = 11;
             // 
             // FHotelManage
             // 
