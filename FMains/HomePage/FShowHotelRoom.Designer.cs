@@ -32,7 +32,6 @@ namespace Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FShowHotelRoom));
             this.panelInfoHotel = new System.Windows.Forms.Panel();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.userControlLablePhone = new Project.UserControls.UserControlLable();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
             this.richTextBoxDescribe = new System.Windows.Forms.RichTextBox();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
@@ -41,8 +40,6 @@ namespace Project
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
-            this.userControlLableName = new Project.UserControls.UserControlLable();
-            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel = new System.Windows.Forms.Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
@@ -57,6 +54,9 @@ namespace Project
             this.numericUpDownPeople = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.userControlLableAddress = new Project.UserControls.UserControlLable();
+            this.userControlLablePhone = new Project.UserControls.UserControlLable();
+            this.userControlLableName = new Project.UserControls.UserControlLable();
             this.panelInfoHotel.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
@@ -101,17 +101,6 @@ namespace Project
             this.guna2GroupBox2.TabIndex = 15;
             this.guna2GroupBox2.Text = "Đánh giá";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, -10);
-            // 
-            // userControlLablePhone
-            // 
-            this.userControlLablePhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLablePhone.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLablePhone.ImageIcon")));
-            this.userControlLablePhone.LableText = "0978037893";
-            this.userControlLablePhone.Location = new System.Drawing.Point(0, 245);
-            this.userControlLablePhone.Name = "userControlLablePhone";
-            this.userControlLablePhone.Size = new System.Drawing.Size(243, 34);
-            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(243, 34);
-            this.userControlLablePhone.TabIndex = 14;
             // 
             // groupBoxDescribe
             // 
@@ -230,28 +219,6 @@ namespace Project
             this.buttonLeft.TabIndex = 8;
             this.buttonLeft.Click += new System.EventHandler(this.ButtonLeftClick);
             // 
-            // userControlLableName
-            // 
-            this.userControlLableName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableName.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableName.ImageIcon")));
-            this.userControlLableName.LableText = "Tên khách sạn";
-            this.userControlLableName.Location = new System.Drawing.Point(0, 205);
-            this.userControlLableName.Name = "userControlLableName";
-            this.userControlLableName.Size = new System.Drawing.Size(243, 34);
-            this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
-            this.userControlLableName.TabIndex = 10;
-            // 
-            // userControlLableAddress
-            // 
-            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
-            this.userControlLableAddress.LableText = "Địa chỉ";
-            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
-            this.userControlLableAddress.Name = "userControlLableAddress";
-            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.TabIndex = 6;
-            // 
             // panel
             // 
             this.panel.Controls.Add(this.guna2GroupBox1);
@@ -323,7 +290,7 @@ namespace Project
             "Bếp nướng"});
             this.checkedListBoxAmenities.Location = new System.Drawing.Point(250, 19);
             this.checkedListBoxAmenities.Name = "checkedListBoxAmenities";
-            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 38);
+            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 55);
             this.checkedListBoxAmenities.TabIndex = 0;
             // 
             // groupBoxAmenities
@@ -437,6 +404,39 @@ namespace Project
             this.butonBack.Size = new System.Drawing.Size(35, 35);
             this.butonBack.TabIndex = 12;
             this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
+            // 
+            // userControlLableAddress
+            // 
+            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
+            this.userControlLableAddress.LableText = "Địa chỉ";
+            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
+            this.userControlLableAddress.Name = "userControlLableAddress";
+            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.TabIndex = 6;
+            // 
+            // userControlLablePhone
+            // 
+            this.userControlLablePhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLablePhone.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLablePhone.ImageIcon")));
+            this.userControlLablePhone.LableText = "0978037893";
+            this.userControlLablePhone.Location = new System.Drawing.Point(0, 245);
+            this.userControlLablePhone.Name = "userControlLablePhone";
+            this.userControlLablePhone.Size = new System.Drawing.Size(243, 34);
+            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLablePhone.TabIndex = 14;
+            // 
+            // userControlLableName
+            // 
+            this.userControlLableName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableName.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableName.ImageIcon")));
+            this.userControlLableName.LableText = "Tên khách sạn";
+            this.userControlLableName.Location = new System.Drawing.Point(0, 205);
+            this.userControlLableName.Name = "userControlLableName";
+            this.userControlLableName.Size = new System.Drawing.Size(243, 34);
+            this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLableName.TabIndex = 10;
             // 
             // FShowHotelRoom
             // 

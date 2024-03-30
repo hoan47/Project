@@ -69,9 +69,9 @@ namespace Project
         private bool SearchCriteria(Room room)
         {
             return numericUpDownPeople.Value <= room.NumberPeople &&
-                    numericUpDownBed.Value <= room.NumberBeds &&
-                    numericUpDownRoom.Value <= room.NumberRoom &&
-                    CheckAmenities(checkedListBoxAmenities, room);
+                numericUpDownBed.Value <= room.NumberBeds &&
+                numericUpDownRoom.Value <= room.NumberRoom &&
+                CheckAmenities(checkedListBoxAmenities, room);
         }
 
         private void ShowRooms(Func<Room, bool> SearchCriteria)

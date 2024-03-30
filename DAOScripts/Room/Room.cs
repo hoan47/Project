@@ -20,6 +20,7 @@ namespace Project
         public ERoomStatus Status { get; private set; }
         public List<Image_> Images { get; private set; }
         public List<string> Amenitiese { get; private set; }
+        public List<KeyValuePair<DateTime, DateTime>> CheckInOuts { get; private set; }
 
         public Room(int idRoom, string name, int numberRoom, int numberOfBeds, int numberOfPeople, int acreage, int price, ERoomStatus status = ERoomStatus.empty)
         {
