@@ -19,7 +19,7 @@ namespace Project
         {
             Instance = this;
             InitializeComponent();
-            Control.CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
             OpenLogin();
 
         }
@@ -38,10 +38,19 @@ namespace Project
         private void OpenFormMessage(Form formChild, Form formParent = null)
         {
             ProcessOpenFormChild(formChild, formParent);
-            formChild.Size = formParent != null ? formParent.Size : Size;
+            if (formParent != null)
+            {
+                formChild.Size = formParent.Size;
+                formChild.BackColor = formParent.BackColor;
+            }
+            else
+            {
+                formChild.Size = Size;
+                formChild.BackColor = BackColor;
+            }    
         }
 
-        public void ProcessOpenFormChild(Form formChild, Form formParent = null)
+        public void ProcessOpenFormChild(Form formChild, Form formParent = null, bool isShow = true)
         {
             formChild.Location = new Point(0, 0);
             formChild.TopLevel = false;
@@ -54,7 +63,14 @@ namespace Project
                 formParent.Controls.Add(formChild);
             }    
             formChild.BringToFront();
-            formChild.Show();
+            if (isShow == true)
+            {
+                formChild.Show();
+            }
+            else
+            {
+                formChild.ShowDialog();
+            }
             CenterToScreen();
         }
       
@@ -77,11 +93,19 @@ namespace Project
         {
             OpenFormChild(new FMain());
         }
-       
-        public void MessageSuccess(string tile, string content, Form formParent = null)
+
+        public void MessageSuccess(string title, string content, Form formParent = null, FormClosedEventHandler eventHandler = null)
         {
-            OpenFormMessage(new FCustomMessageBox(tile, content, FCustomMessageBox.EIcon.success), formParent);
+            FCustomMessageBox fCustomMessageBox = new FCustomMessageBox(title, content, FCustomMessageBox.EIcon.success);
+
+            if (eventHandler != null)
+            {
+                fCustomMessageBox.FormClosed += eventHandler;
+            }
+
+            OpenFormMessage(fCustomMessageBox, formParent);
         }
+
 
         public void MessageWarning(string tile, string content, Form formParent = null)
         {

@@ -242,8 +242,8 @@ namespace Project
             // userControlPrice
             // 
             this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlPrice.ColorUserControl = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.userControlPrice.Location = new System.Drawing.Point(469, 294);
+            this.userControlPrice.ColorUserControl = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.userControlPrice.Location = new System.Drawing.Point(469, 295);
             this.userControlPrice.Name = "userControlPrice";
             this.userControlPrice.Price = 0;
             this.userControlPrice.Size = new System.Drawing.Size(256, 56);

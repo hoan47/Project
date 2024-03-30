@@ -38,7 +38,7 @@ namespace Project
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.userControlPrice = new Project.UserControls.UserControlPrice();
-            this.userControlAddressHotel = new Project.UserControlAddressRoom();
+            this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.userControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
             this.panelSearchHotel.SuspendLayout();
@@ -50,7 +50,7 @@ namespace Project
             this.panelSearchHotel.Controls.Add(this.groupBoxService);
             this.panelSearchHotel.Controls.Add(this.userControlPrice);
             this.panelSearchHotel.Controls.Add(this.buttonSearch);
-            this.panelSearchHotel.Controls.Add(this.userControlAddressHotel);
+            this.panelSearchHotel.Controls.Add(this.userControlAddressRoom);
             this.panelSearchHotel.Controls.Add(this.userControlDateTimePackerOut);
             this.panelSearchHotel.Controls.Add(this.userControlDateTimePackerIn);
             this.panelSearchHotel.Location = new System.Drawing.Point(0, 0);
@@ -126,19 +126,19 @@ namespace Project
             this.userControlPrice.Size = new System.Drawing.Size(256, 56);
             this.userControlPrice.TabIndex = 10;
             // 
-            // userControlAddressHotel
+            // userControlAddressRoom
             // 
-            this.userControlAddressHotel.BackColor = System.Drawing.Color.Transparent;
-            this.userControlAddressHotel.ComboBoxText = "";
-            this.userControlAddressHotel.Location = new System.Drawing.Point(12, 3);
-            this.userControlAddressHotel.Name = "userControlAddressHotel";
-            this.userControlAddressHotel.Size = new System.Drawing.Size(256, 55);
-            this.userControlAddressHotel.TabIndex = 7;
+            this.userControlAddressRoom.BackColor = System.Drawing.Color.Transparent;
+            this.userControlAddressRoom.ComboBoxText = "";
+            this.userControlAddressRoom.Location = new System.Drawing.Point(12, 3);
+            this.userControlAddressRoom.Name = "userControlAddressRoom";
+            this.userControlAddressRoom.Size = new System.Drawing.Size(256, 55);
+            this.userControlAddressRoom.TabIndex = 7;
             // 
             // userControlDateTimePackerOut
             // 
             this.userControlDateTimePackerOut.BackColor = System.Drawing.Color.Transparent;
-            this.userControlDateTimePackerOut.DateTime = new System.DateTime(2024, 3, 30, 0, 0, 0, 0);
+            this.userControlDateTimePackerOut.DateTimePacker = new System.DateTime(2024, 3, 30, 0, 0, 0, 0);
             this.userControlDateTimePackerOut.GroupBoxText = "Ngày trả phòng";
             this.userControlDateTimePackerOut.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerOut.ImageIcon")));
             this.userControlDateTimePackerOut.Location = new System.Drawing.Point(274, 61);
@@ -149,7 +149,7 @@ namespace Project
             // userControlDateTimePackerIn
             // 
             this.userControlDateTimePackerIn.BackColor = System.Drawing.Color.Transparent;
-            this.userControlDateTimePackerIn.DateTime = new System.DateTime(2024, 3, 30, 0, 0, 0, 0);
+            this.userControlDateTimePackerIn.DateTimePacker = new System.DateTime(2024, 3, 20, 0, 0, 0, 0);
             this.userControlDateTimePackerIn.GroupBoxText = "Ngày nhận phòng";
             this.userControlDateTimePackerIn.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlDateTimePackerIn.ImageIcon")));
             this.userControlDateTimePackerIn.Location = new System.Drawing.Point(274, 3);
@@ -187,7 +187,7 @@ namespace Project
         private UserControls.UserControlPrice userControlPrice;
         private System.Windows.Forms.GroupBox groupBoxService;
         private System.Windows.Forms.CheckedListBox checkedListBoxService;
-        private UserControlAddressRoom userControlAddressHotel;
+        private UserControlAddressRoom userControlAddressRoom;
         private UserControlDateTimePacker userControlDateTimePackerIn;
     }
 }

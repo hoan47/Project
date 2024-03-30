@@ -14,11 +14,17 @@ namespace Project
     {
         private Hotel hotel;
         private Image_ currentImage;
+        private DateTime firstDay;
+        private DateTime lastDay;
+        private int price;
 
-        public FShowHotelRoom(Hotel hotel)
+        public FShowHotelRoom(Hotel hotel, DateTime firstDay, DateTime lastDay, int price)
         {
             InitializeComponent();
             this.hotel = hotel;
+            this.firstDay = firstDay;
+            this.lastDay = lastDay;
+            this.price = price;
         }
 
         private void FShowRoom_Load(object sender, EventArgs e)
@@ -35,7 +41,7 @@ namespace Project
             currentImage = hotel.Images?.First();
             listBoxService.DataSource = hotel.Services;
             richTextBoxDescribe.Text = hotel.Describe;
-            ShowRooms(null);
+            ShowRooms();
         }
 
         private void ButtonLeftClick(object sender, EventArgs e)
@@ -71,24 +77,50 @@ namespace Project
             return numericUpDownPeople.Value <= room.NumberPeople &&
                 numericUpDownBed.Value <= room.NumberBeds &&
                 numericUpDownRoom.Value <= room.NumberRoom &&
-                CheckAmenities(checkedListBoxAmenities, room);
+                CheckAmenities(room);
         }
 
-        private void ShowRooms(Func<Room, bool> SearchCriteria)
+        private void ShowRooms(Func<Room, bool> SearchCriteria = null)
         {
-            foreach (Room room in hotel.Rooms)
+            foreach(Room room in hotel.Rooms)
             {
-                if (SearchCriteria == null || SearchCriteria(room) == true)
+                if(room.Price <= price)
                 {
-                    UserControlShowRoom userControlShowRoom = new UserControlShowRoom(room);
+                    if(CheckDateTime(firstDay, lastDay, room) == true)
+                    {
+                        if (SearchCriteria == null || SearchCriteria(room) == true)
+                        {
+                            UserControlShowRoom userControlShowRoom = new UserControlShowRoom(room);
 
-                    userControlShowRoom.Tag = this;
-                    flowLayoutPanel.Controls.Add(userControlShowRoom);
+                            userControlShowRoom.Tag = this;
+                            flowLayoutPanel.Controls.Add(userControlShowRoom);
+                        }
+                    }
                 }
             }
         }
 
-        private bool CheckAmenities(CheckedListBox checkedListBoxAmenities, Room room)
+        private bool CheckDateTime(DateTime firstDay, DateTime lastDay, Room room)
+        {
+            if(room.CheckInOuts == null)
+            {
+                return true;
+            }
+            foreach(KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
+            {
+                if (keyValuePair.Key <= firstDay && firstDay < keyValuePair.Value)
+                {
+                    return false;
+                }
+                if (keyValuePair.Key < lastDay && lastDay <= keyValuePair.Value)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool CheckAmenities(Room room)
         {
             foreach(string item in checkedListBoxAmenities.CheckedItems)
             {
@@ -99,12 +131,12 @@ namespace Project
 
         public void OpenInfoHotelRoom(Room room)
         {
-            ((FMain)((FHomePage)Tag).Tag).OpenFormChild(panel, new FInforHotelRoom(hotel, room), this);
+            FMain.Instance.OpenFormChild(panel, new FInforHotelRoom(hotel, room, firstDay, lastDay), this);
         }
 
         private void ButonBackClick(object sender, EventArgs e)
         {
-            ((FMain)((FHomePage)Tag).Tag).ChangeColerToolStripButton((FHomePage)Tag);
+            FMain.Instance.ChangeColerToolStripButton((FHomePage)Tag);
             Dispose();
         }
     }

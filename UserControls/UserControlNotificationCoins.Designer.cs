@@ -29,44 +29,33 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.circlePictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.labelContent = new System.Windows.Forms.Label();
             this.groupBox = new Guna.UI2.WinForms.Guna2GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).BeginInit();
+            this.labelSendingTime = new System.Windows.Forms.Label();
+            this.circleButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelStatus
+            // labelContent
             // 
-            this.labelStatus.AutoEllipsis = true;
-            this.labelStatus.BackColor = System.Drawing.Color.Transparent;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(3, 30);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(692, 48);
-            this.labelStatus.TabIndex = 29;
-            this.labelStatus.Text = "Bạn nhận được 100 xu.\r\nTừ việc cập nhật thông tin.";
-            // 
-            // circlePictureBox
-            // 
-            this.circlePictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.circlePictureBox.FillColor = System.Drawing.Color.Red;
-            this.circlePictureBox.ImageRotate = 0F;
-            this.circlePictureBox.Location = new System.Drawing.Point(675, 5);
-            this.circlePictureBox.Name = "circlePictureBox";
-            this.circlePictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.circlePictureBox.Size = new System.Drawing.Size(20, 20);
-            this.circlePictureBox.TabIndex = 30;
-            this.circlePictureBox.TabStop = false;
+            this.labelContent.AutoEllipsis = true;
+            this.labelContent.BackColor = System.Drawing.Color.Transparent;
+            this.labelContent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContent.Location = new System.Drawing.Point(3, 30);
+            this.labelContent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelContent.Name = "labelContent";
+            this.labelContent.Size = new System.Drawing.Size(692, 24);
+            this.labelContent.TabIndex = 29;
+            this.labelContent.Text = "Bạn nhận được 100 xu.";
             // 
             // groupBox
             // 
             this.groupBox.BorderColor = System.Drawing.Color.Lime;
             this.groupBox.BorderRadius = 10;
             this.groupBox.BorderThickness = 3;
-            this.groupBox.Controls.Add(this.circlePictureBox);
-            this.groupBox.Controls.Add(this.labelStatus);
+            this.groupBox.Controls.Add(this.circleButton);
+            this.groupBox.Controls.Add(this.labelSendingTime);
+            this.groupBox.Controls.Add(this.labelContent);
             this.groupBox.CustomBorderColor = System.Drawing.Color.Lime;
             this.groupBox.CustomBorderThickness = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.groupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,10 +63,40 @@ namespace Project
             this.groupBox.Location = new System.Drawing.Point(0, 0);
             this.groupBox.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(700, 78);
+            this.groupBox.Size = new System.Drawing.Size(700, 60);
             this.groupBox.TabIndex = 4;
             this.groupBox.Text = "Tên khách hàng";
             this.groupBox.TextOffset = new System.Drawing.Point(0, -3);
+            // 
+            // labelSendingTime
+            // 
+            this.labelSendingTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelSendingTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSendingTime.Location = new System.Drawing.Point(224, 3);
+            this.labelSendingTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSendingTime.Name = "labelSendingTime";
+            this.labelSendingTime.Size = new System.Drawing.Size(300, 22);
+            this.labelSendingTime.TabIndex = 31;
+            this.labelSendingTime.Text = "Vào lúc: 26/04/2004 16:00";
+            this.labelSendingTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // circleButton
+            // 
+            this.circleButton.BackColor = System.Drawing.Color.Transparent;
+            this.circleButton.BorderColor = System.Drawing.Color.Transparent;
+            this.circleButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.circleButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.circleButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.circleButton.FillColor = System.Drawing.Color.Red;
+            this.circleButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.circleButton.ForeColor = System.Drawing.Color.White;
+            this.circleButton.Location = new System.Drawing.Point(670, 3);
+            this.circleButton.Name = "circleButton";
+            this.circleButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circleButton.Size = new System.Drawing.Size(25, 25);
+            this.circleButton.TabIndex = 32;
+            this.circleButton.Click += new System.EventHandler(this.CircleButtonClick);
             // 
             // UserControlNotificationCoins
             // 
@@ -85,8 +104,7 @@ namespace Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
             this.Name = "UserControlNotificationCoins";
-            this.Size = new System.Drawing.Size(700, 78);
-            ((System.ComponentModel.ISupportInitialize)(this.circlePictureBox)).EndInit();
+            this.Size = new System.Drawing.Size(700, 60);
             this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -94,8 +112,9 @@ namespace Project
 
         #endregion
 
-        private System.Windows.Forms.Label labelStatus;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox circlePictureBox;
+        private System.Windows.Forms.Label labelContent;
         private Guna.UI2.WinForms.Guna2GroupBox groupBox;
+        private System.Windows.Forms.Label labelSendingTime;
+        private Guna.UI2.WinForms.Guna2CircleButton circleButton;
     }
 }

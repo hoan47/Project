@@ -19,37 +19,16 @@ namespace Project
 
         private void FHomePageLoad(object sender, EventArgs e)
         {
-            userControlDateTimePackerIn.DateTime = DateTime.Now;
-            userControlDateTimePackerOut.DateTime = DateTime.Now.AddDays(1);
-            ShowHotels(null);
+            userControlDateTimePackerIn.DateTimePacker = DateTime.Now;
+            userControlDateTimePackerOut.DateTimePacker = DateTime.Now.AddDays(1);
+            ShowHotels();
         }
 
-        public void OpenHotel(Hotel hotel)
-        {
-            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel), this);
-        }
-
-        private void ButtonSearchClick(object sender, EventArgs e)
-        {
-            if(userControlAddressHotel.ComboBoxText == "")
-            {
-                MessageBox.Show("Nhập đầy đủ địa chỉ!");
-                return;
-            }
-            if(userControlDateTimePackerOut.DateTime <= userControlDateTimePackerIn.DateTime)
-            {
-                MessageBox.Show("Thời gian không hợp lệ");
-                return;
-            }
-            flowLayoutPanel.Controls.Clear();
-            ShowHotels(SearchCriteria);
-        }
-
-        private void ShowHotels(Func<Hotel, bool> SearchCriteria)
+        private void ShowHotels(Func<Hotel, bool> searchCriteria = null)
         {
             foreach (Hotel hotel in Data.HotelServices)
             {
-                if (SearchCriteria == null || SearchCriteria(hotel) == true)
+                if (searchCriteria == null || searchCriteria(hotel) == true)
                 {
                     UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
 
@@ -58,29 +37,68 @@ namespace Project
                 }
             }
         }
+
+        public void OpenHotel(Hotel hotel)
+        {
+            FMain.Instance.OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker, userControlPrice.Price), this);
+        }
+
+        private void ButtonSearchClick(object sender, EventArgs e)
+        {
+            if (userControlDateTimePackerOut.DateTimePacker <= userControlDateTimePackerIn.DateTimePacker)
+            {
+                MessageBox.Show("Thời gian không hợp lệ");
+                return;
+            }
+            flowLayoutPanel.Controls.Clear();
+            ShowHotels(SearchCriteria);
+        }
+
         private bool SearchCriteria(Hotel hotel)
         {
-            return userControlAddressHotel.ComboBoxText == hotel.Address.ProvinceAndDistrict &&
+            return CheckAddress(hotel) &&
                 CheckPriceDateTime(hotel) &&
                 CheckService(hotel);
         }
+
+        private bool CheckAddress(Hotel hotel)
+        {
+            if (userControlAddressRoom.ComboBoxText == "")
+            {
+                return true;
+            }
+            if (hotel.Address.ProvinceAndDistrict.Contains(userControlAddressRoom.ComboBoxText) == true)
+            {
+                return true;
+            }
+            if( hotel.Address.ProvinceAndDistrict == userControlAddressRoom.ComboBoxText)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private bool CheckPriceDateTime(Hotel hotel)
         {
-            foreach(Room room in hotel.Rooms)
+            if(hotel.Rooms == null)
             {
-                if(room.Price <= userControlPrice.Price)
+                return false;
+            }
+            foreach (Room room in hotel.Rooms)
+            {
+                if (room.Price <= userControlPrice.Price)
                 {
-                    if(room.CheckInOuts == null)
+                    if (room.CheckInOuts == null)
                     {
                         return true;
                     }
                     foreach (KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
                     {
-                        if (keyValuePair.Key <= userControlDateTimePackerIn.DateTime && userControlDateTimePackerIn.DateTime < keyValuePair.Value)
+                        if (keyValuePair.Key <= userControlDateTimePackerIn.DateTimePacker && userControlDateTimePackerIn.DateTimePacker < keyValuePair.Value)
                         {
                             break;
                         }
-                        if (keyValuePair.Key < userControlDateTimePackerOut.DateTime && userControlDateTimePackerOut.DateTime <= keyValuePair.Value)
+                        if (keyValuePair.Key < userControlDateTimePackerOut.DateTimePacker && userControlDateTimePackerOut.DateTimePacker <= keyValuePair.Value)
                         {
                             break;
                         }
