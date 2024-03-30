@@ -75,6 +75,7 @@ namespace Project
                     hotel.AddRoom(room);
                     DataAccess.RoomDAO.Insert(hotel, room);
                     FController.Instance.MessageSuccess("Thông báo", "Tạo phòng mới thành công.", this);
+                 
                 }
                 else
                 {
@@ -86,13 +87,15 @@ namespace Project
                         acreage,
                         userControlPrice.Price);
                     DataAccess.RoomDAO.Update(this.room);
-                    FController.Instance.MessageSuccess("Thông báo", "Cập nhật phòng thành công.", this);
+                    FController.Instance.MessageSuccess("Thông báo", "Cập nhật phòng thành công .", this);
                 }
                 this.room.UpdateAmenities(userControlServiceEdit.Value);
                 DataAccess.AmenitiesDAO.Delete(this.room);
                 DataAccess.AmenitiesDAO.Insert(this.room);
                 DataAccess.IdDAO.ChangeId();
-                LoadData();
+                LoadData(); 
+              
+              
                 return;
             }
             FController.Instance.MessageWarning("Thông báo", message, this);
