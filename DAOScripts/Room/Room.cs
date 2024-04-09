@@ -71,7 +71,27 @@ namespace Project
             }
             Images.Add(image);
         }
-
+        public void AddCheckInOuts(DateTime firstDay, DateTime lastDay)
+        {
+            if(CheckInOuts == null)
+            {
+                CheckInOuts = new List<KeyValuePair<DateTime, DateTime>>();
+            }
+            CheckInOuts.Add(new KeyValuePair<DateTime, DateTime>(firstDay, lastDay));
+        }
+        public void RemoveCheckInOuts(DateTime firstDay, DateTime lastDay)
+        {
+            int index = 0;
+            foreach( KeyValuePair<DateTime, DateTime> keyValuePair in CheckInOuts)
+            {
+                if (keyValuePair.Key.Date == firstDay.Date)
+                {
+                    break;
+                }
+                index++;
+            }
+            CheckInOuts.RemoveAt(index);
+        }
         public static ERoomStatus GetStatus(int status)
         {
             switch(status)

@@ -15,8 +15,8 @@ namespace Project
         private Hotel hotel;
         private Room room;
         private TimeSpan roomRentalPeriod;
-        private DateTime checkIn;
-        private DateTime checkOut;
+        private DateTime firstDay;
+        private DateTime lastDay;
         private Image_ currentImage;
         private int deposits;
 
@@ -25,10 +25,11 @@ namespace Project
             InitializeComponent();
             this.hotel = hotel;
             this.room = room;
+            this.firstDay = firstDay;
+            this.lastDay = lastDay;
             roomRentalPeriod = lastDay - firstDay;
-
-            DateTime.TryParseExact(firstDay.ToString("dd/MM/yyyy") + " " + hotel.CheckIn.ToString(@"hh\:mm"), "dd/MM/yyyy HH:mm", null, System.Globalization.DateTimeStyles.None, out checkIn);
-            DateTime.TryParseExact(lastDay.ToString("dd/MM/yyyy") + " " + hotel.CheckOut.ToString(@"hh\:mm"), "dd/MM/yyyy HH:mm", null, System.Globalization.DateTimeStyles.None, out checkOut);
+            DateTime.TryParseExact(firstDay.ToString("dd/MM/yyyy") + " " + hotel.CheckIn.ToString(@"hh\:mm"), "dd/MM/yyyy HH:mm", null, System.Globalization.DateTimeStyles.None, out this.firstDay);
+            DateTime.TryParseExact(lastDay.ToString("dd/MM/yyyy") + " " + hotel.CheckOut.ToString(@"hh\:mm"), "dd/MM/yyyy HH:mm", null, System.Globalization.DateTimeStyles.None, out this.lastDay);
             deposits = (int)(roomRentalPeriod.Days * room.Price * 0.1f);
         }
 
@@ -43,8 +44,8 @@ namespace Project
             userControlLableNumnberPeople.LableText = "Số người: " + room.NumberPeople.ToString();
             userControlLableNumberRoom.LableText = "Số phòng ngủ: " + room.NumberRoom.ToString();
             userControlLableNumberBed.LableText = "Tên giường: " + room.NumberBeds.ToString();
-            userControlLableCheckIn.LableText = checkIn.ToString("dd/MM/yyyy HH:mm:ss");
-            userControlLableCheckOut.LableText = checkOut.ToString("dd/MM/yyyy HH:mm:ss");
+            userControlLableCheckIn.LableText = firstDay.ToString("dd/MM/yyyy HH:mm:ss");
+            userControlLableCheckOut.LableText = lastDay.ToString("dd/MM/yyyy HH:mm:ss");
             userControlLableAcreage.LableText = "Diện tích: " + room.Acreage.ToString() + " m^2";
             userControlLablePrice.LableText = "Giá ngày: " + room.Price.ToString("N0").Replace(",", ".");
             labelOldTotalPrice.Text = (roomRentalPeriod.Days * room.Price).ToString("N0").Replace(",", ".");
@@ -85,7 +86,7 @@ namespace Project
 
         private void ButtonConfirmClick(object sender, EventArgs e)
         {
-            FConfirm fConfirm = new FConfirm();
+            FConfirm fConfirm = new FConfirm(room, firstDay, lastDay);
 
             fConfirm.FormClosing += ConfirmFormClosing;
             FMain.Instance.OpenFormChild(panel, fConfirm, this);
@@ -107,8 +108,8 @@ namespace Project
                     room,
                     deposits,
                     "Khách hàng đang chờ xác nhận.",
-                    checkIn,
-                    checkOut);
+                    firstDay,
+                    lastDay);
 
                 QueryData.NotificationDAO.Insert(notification1);
                 QueryData.IdDAO.ChangeId();
@@ -123,8 +124,8 @@ namespace Project
                     room,
                     deposits,
                     "Khách sạn đang xác nhận.",
-                    checkIn,
-                    checkOut);
+                    firstDay,
+                    lastDay);
 
                 Data.Notifications.Add(notification2);
                 QueryData.NotificationDAO.Insert(notification2);

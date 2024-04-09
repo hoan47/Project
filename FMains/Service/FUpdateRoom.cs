@@ -154,5 +154,20 @@ namespace Project
         {
             return room.Images == null || room.Images.Count == 0;
         }
+
+        private void ButtonDeleteClick(object sender, EventArgs e)
+        {
+
+            while(IsZeroImage() == false)
+            {
+                int indexImage = room.Images.IndexOf(currentImage) + 1;
+
+                room.Images.Remove(currentImage);
+                QueryData.ImageRoomDAO.Delete(currentImage);
+                currentImage = room.Images.Count != 0 ? room.Images[indexImage >= room.Images.Count ? 0 : indexImage] : null;
+                pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
+            }
+            QueryData.AmenitiesDAO.Delete(this.room);
+        }
     }
 }

@@ -13,15 +13,21 @@ namespace Project
     public partial class FConfirm : Form
     {
         public string RichTextBoxText { get { return richTextBox.Text; } }
-
-        public FConfirm()
+        private Room room;
+        private DateTime firstDay;
+        private DateTime lastDay;
+        public FConfirm(Room room, DateTime firstDay, DateTime lastDay)
         {
             InitializeComponent();
+            this.room = room;
+            this.firstDay = firstDay;
+            this.lastDay = lastDay;
         }
 
         private void ButtonYesClick(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Yes;
+            room.AddCheckInOuts(firstDay, lastDay);
             Close();
         }
 

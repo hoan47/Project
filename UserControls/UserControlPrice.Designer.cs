@@ -49,10 +49,8 @@ namespace Project.UserControls
             this.groupBox.Controls.Add(this.guna2HScrollBar);
             this.groupBox.Controls.Add(this.pictureBox);
             this.groupBox.Location = new System.Drawing.Point(0, 0);
-            this.groupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox.Size = new System.Drawing.Size(341, 69);
+            this.groupBox.Size = new System.Drawing.Size(256, 56);
             this.groupBox.TabIndex = 11;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Giá tiền";
@@ -61,10 +59,9 @@ namespace Project.UserControls
             // 
             this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
             this.pictureBoxIcon.ImageRotate = 0F;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(283, 12);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxIcon.Location = new System.Drawing.Point(212, 10);
             this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(33, 31);
+            this.pictureBoxIcon.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 3;
             this.pictureBoxIcon.TabStop = false;
@@ -72,10 +69,9 @@ namespace Project.UserControls
             // labelPrice
             // 
             this.labelPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(67, 12);
-            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrice.Location = new System.Drawing.Point(50, 10);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(221, 25);
+            this.labelPrice.Size = new System.Drawing.Size(166, 20);
             this.labelPrice.TabIndex = 2;
             this.labelPrice.Text = "10.000";
             this.labelPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -84,10 +80,9 @@ namespace Project.UserControls
             // 
             this.panelRoad.BackColor = System.Drawing.Color.White;
             this.panelRoad.ForeColor = System.Drawing.Color.Transparent;
-            this.panelRoad.Location = new System.Drawing.Point(67, 52);
-            this.panelRoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelRoad.Location = new System.Drawing.Point(50, 42);
             this.panelRoad.Name = "panelRoad";
-            this.panelRoad.Size = new System.Drawing.Size(233, 2);
+            this.panelRoad.Size = new System.Drawing.Size(175, 2);
             this.panelRoad.TabIndex = 1;
             // 
             // guna2HScrollBar
@@ -97,12 +92,11 @@ namespace Project.UserControls
             this.guna2HScrollBar.FillColor = System.Drawing.Color.Transparent;
             this.guna2HScrollBar.InUpdate = false;
             this.guna2HScrollBar.LargeChange = 10;
-            this.guna2HScrollBar.Location = new System.Drawing.Point(56, 41);
-            this.guna2HScrollBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HScrollBar.Location = new System.Drawing.Point(42, 33);
             this.guna2HScrollBar.Minimum = 1;
             this.guna2HScrollBar.Name = "guna2HScrollBar";
-            this.guna2HScrollBar.ScrollbarSize = 25;
-            this.guna2HScrollBar.Size = new System.Drawing.Size(260, 25);
+            this.guna2HScrollBar.ScrollbarSize = 20;
+            this.guna2HScrollBar.Size = new System.Drawing.Size(195, 20);
             this.guna2HScrollBar.TabIndex = 0;
             this.guna2HScrollBar.ThumbColor = System.Drawing.Color.White;
             this.guna2HScrollBar.ThumbSize = 5F;
@@ -113,23 +107,21 @@ namespace Project.UserControls
             // pictureBox
             // 
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(8, 23);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Location = new System.Drawing.Point(6, 19);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox.Size = new System.Drawing.Size(30, 30);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
             // UserControlPrice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.groupBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserControlPrice";
-            this.Size = new System.Drawing.Size(341, 69);
+            this.Size = new System.Drawing.Size(256, 56);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

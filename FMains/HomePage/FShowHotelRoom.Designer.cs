@@ -32,6 +32,7 @@ namespace Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FShowHotelRoom));
             this.panelInfoHotel = new System.Windows.Forms.Panel();
             this.groupBoxEvaluate = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.userControlLablePhone = new Project.UserControls.UserControlLable();
             this.groupBoxDescribe = new System.Windows.Forms.GroupBox();
             this.richTextBoxDescribe = new System.Windows.Forms.RichTextBox();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
@@ -40,6 +41,7 @@ namespace Project
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
+            this.userControlLableName = new Project.UserControls.UserControlLable();
             this.panel = new System.Windows.Forms.Panel();
             this.groupBoxShowRoom = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
@@ -55,8 +57,6 @@ namespace Project
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableAddress = new Project.UserControls.UserControlLable();
-            this.userControlLablePhone = new Project.UserControls.UserControlLable();
-            this.userControlLableName = new Project.UserControls.UserControlLable();
             this.panelInfoHotel.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
@@ -101,6 +101,17 @@ namespace Project
             this.groupBoxEvaluate.TabIndex = 15;
             this.groupBoxEvaluate.Text = "Đánh giá";
             this.groupBoxEvaluate.TextOffset = new System.Drawing.Point(0, -10);
+            // 
+            // userControlLablePhone
+            // 
+            this.userControlLablePhone.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLablePhone.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLablePhone.ImageIcon")));
+            this.userControlLablePhone.LableText = "0978037893";
+            this.userControlLablePhone.Location = new System.Drawing.Point(0, 245);
+            this.userControlLablePhone.Name = "userControlLablePhone";
+            this.userControlLablePhone.Size = new System.Drawing.Size(243, 34);
+            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLablePhone.TabIndex = 14;
             // 
             // groupBoxDescribe
             // 
@@ -219,6 +230,17 @@ namespace Project
             this.buttonLeft.TabIndex = 8;
             this.buttonLeft.Click += new System.EventHandler(this.ButtonLeftClick);
             // 
+            // userControlLableName
+            // 
+            this.userControlLableName.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableName.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableName.ImageIcon")));
+            this.userControlLableName.LableText = "Tên khách sạn";
+            this.userControlLableName.Location = new System.Drawing.Point(0, 205);
+            this.userControlLableName.Name = "userControlLableName";
+            this.userControlLableName.Size = new System.Drawing.Size(243, 34);
+            this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLableName.TabIndex = 10;
+            // 
             // panel
             // 
             this.panel.Controls.Add(this.groupBoxShowRoom);
@@ -277,6 +299,7 @@ namespace Project
             this.buttonSearch.Size = new System.Drawing.Size(229, 26);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             // 
             // checkedListBoxAmenities
             // 
@@ -415,28 +438,6 @@ namespace Project
             this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
             this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
             this.userControlLableAddress.TabIndex = 6;
-            // 
-            // userControlLablePhone
-            // 
-            this.userControlLablePhone.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLablePhone.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLablePhone.ImageIcon")));
-            this.userControlLablePhone.LableText = "0978037893";
-            this.userControlLablePhone.Location = new System.Drawing.Point(0, 245);
-            this.userControlLablePhone.Name = "userControlLablePhone";
-            this.userControlLablePhone.Size = new System.Drawing.Size(243, 34);
-            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(243, 34);
-            this.userControlLablePhone.TabIndex = 14;
-            // 
-            // userControlLableName
-            // 
-            this.userControlLableName.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableName.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableName.ImageIcon")));
-            this.userControlLableName.LableText = "Tên khách sạn";
-            this.userControlLableName.Location = new System.Drawing.Point(0, 205);
-            this.userControlLableName.Name = "userControlLableName";
-            this.userControlLableName.Size = new System.Drawing.Size(243, 34);
-            this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
-            this.userControlLableName.TabIndex = 10;
             // 
             // FShowHotelRoom
             // 

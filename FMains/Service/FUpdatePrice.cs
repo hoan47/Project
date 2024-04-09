@@ -29,29 +29,6 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
-            if(numericUpDown.Value == 100)
-            {
-                FController.Instance.MessageWarning("Thông báo", "Không cập nhật lại giá cũ.", this);
-                return;
-            }    
-            foreach(Room room in hotel.Rooms)
-            {
-                room.UpdatePrice((double)numericUpDown.Value / 100);
-                QueryData.RoomDAO.Update(room);
-            }
-            UpdatePrice updatePrice = new UpdatePrice(DateTime.Now, (int)numericUpDown.Value, hotel.Rooms.Count);
-
-            hotel.AddUpdatePrice(updatePrice);
-            QueryData.UpdatePriceDAO.Insert(hotel, updatePrice);
-            FController.Instance.MessageSuccess("Thông báo", "Cập nhật thành công.", this);
-
-            Notification notification = new NotificationSystem(QueryData.IdDAO.SelectId, Data.User.UserName, Data.User.Name, DateTime.Now, $"Bạn vừa cập nhật giá ({UpdateValueStr((int)numericUpDown.Value)}) cho khách sạn {hotel.Name}.", false);
-
-            Data.Notifications.Add(notification);
-            QueryData.NotificationDAO.Insert(notification);
-            QueryData.IdDAO.ChangeId();
-
-            LoadUI();
         }
 
         private void FDiscountLoad(object sender, EventArgs e)
@@ -61,25 +38,26 @@ namespace Project
 
         private void LoadUI()
         {
-            if (hotel.UpdatePrices == null)
-            {
-                return;
-            }
-            numericUpDown.Value = 100;
-            listBox.Items.Clear();
-            foreach (UpdatePrice updatePrice in hotel.UpdatePrices)
-            {
-                string time = "Thời gian: " + updatePrice.Time.ToString("dd/MM/yyyy HH:mm:ss");
-                string value = UpdateValueStr(updatePrice.Value);
-                string number = "Tổng số phòng: " + updatePrice.NumberRoom.ToString();
-
-                listBox.Items.Add($"{time}, {value}, {number}");
-            }
         }
 
         private string UpdateValueStr(int value)
         {
             return (value < 100 ? "Giảm: " : "Tăng: ") + Math.Abs(100 - value).ToString() + "%";
+        }
+
+        private void pictureBoxEnd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumericUpDownValueChanged(object sender, EventArgs e)
+        {
+            label.Text = NumericUpDown.Value.ToString() + "%";
         }
     }
 }

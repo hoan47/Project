@@ -35,12 +35,12 @@ namespace Project
             this.panelSearchHotel = new System.Windows.Forms.Panel();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
             this.checkedListBoxService = new System.Windows.Forms.CheckedListBox();
-            this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.userControlPrice = new Project.UserControls.UserControlPrice();
+            this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
             this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.userControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSearchHotel.SuspendLayout();
             this.groupBoxService.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,16 @@ namespace Project
             this.checkedListBoxService.Size = new System.Drawing.Size(152, 89);
             this.checkedListBoxService.TabIndex = 0;
             // 
+            // userControlPrice
+            // 
+            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
+            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
+            this.userControlPrice.Name = "userControlPrice";
+            this.userControlPrice.Price = 10000000;
+            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
+            this.userControlPrice.TabIndex = 10;
+            // 
             // buttonSearch
             // 
             this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
@@ -105,26 +115,6 @@ namespace Project
             this.buttonSearch.TabIndex = 9;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             this.buttonSearch.DoubleClick += new System.EventHandler(this.ButtonSearchClick);
-            // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.AllowDrop = true;
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
-            this.flowLayoutPanel.TabIndex = 1;
-            // 
-            // userControlPrice
-            // 
-            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
-            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
-            this.userControlPrice.Name = "userControlPrice";
-            this.userControlPrice.Price = 1000000;
-            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
-            this.userControlPrice.TabIndex = 10;
             // 
             // userControlAddressRoom
             // 
@@ -156,6 +146,16 @@ namespace Project
             this.userControlDateTimePackerIn.Name = "userControlDateTimePackerIn";
             this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
             this.userControlDateTimePackerIn.TabIndex = 5;
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
+            this.flowLayoutPanel.TabIndex = 1;
             // 
             // FHomePage
             // 

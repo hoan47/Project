@@ -88,25 +88,32 @@ namespace Project
             {
                 if (room.Price <= userControlPrice.Price)
                 {
-                    if (room.CheckInOuts == null)
+                    if (CheckInOutRoom(room) == true)
                     {
-                        return true;
-                    }
-                    foreach (KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
-                    {
-                        if (keyValuePair.Key <= userControlDateTimePackerIn.DateTimePacker && userControlDateTimePackerIn.DateTimePacker < keyValuePair.Value)
-                        {
-                            break;
-                        }
-                        if (keyValuePair.Key < userControlDateTimePackerOut.DateTimePacker && userControlDateTimePackerOut.DateTimePacker <= keyValuePair.Value)
-                        {
-                            break;
-                        }
                         return true;
                     }
                 }
             }
             return false;
+        }
+        bool CheckInOutRoom(Room room)
+        {
+            if (room.CheckInOuts == null)
+            {
+                return true;
+            }
+            foreach (KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
+            {
+                if (keyValuePair.Key.Date <= userControlDateTimePackerIn.DateTimePacker.Date && userControlDateTimePackerIn.DateTimePacker.Date < keyValuePair.Value.Date)
+                {
+                    return false;
+                }
+                if (keyValuePair.Key.Date < userControlDateTimePackerOut.DateTimePacker.Date && userControlDateTimePackerOut.DateTimePacker.Date <= keyValuePair.Value.Date)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         private bool CheckService(Hotel hotel)
         {

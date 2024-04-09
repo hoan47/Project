@@ -31,6 +31,7 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FUpdateRoom));
             this.panelImage = new System.Windows.Forms.Panel();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
@@ -51,6 +52,7 @@ namespace Project
             // 
             // panelImage
             // 
+            this.panelImage.Controls.Add(this.buttonDelete);
             this.panelImage.Controls.Add(this.pictureBox);
             this.panelImage.Controls.Add(this.buttonRight);
             this.panelImage.Controls.Add(this.buttonLeft);
@@ -59,8 +61,21 @@ namespace Project
             this.panelImage.Location = new System.Drawing.Point(0, 0);
             this.panelImage.Margin = new System.Windows.Forms.Padding(2);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(456, 447);
+            this.panelImage.Size = new System.Drawing.Size(456, 512);
             this.panelImage.TabIndex = 8;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
+            this.buttonDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDelete.Location = new System.Drawing.Point(11, 461);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(40, 40);
+            this.buttonDelete.TabIndex = 17;
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.ButtonDeleteClick);
             // 
             // pictureBox
             // 
@@ -291,5 +306,6 @@ namespace Project
         private UserControlTextBoxService userControlTextBoxAcreage;
         private Guna.UI2.WinForms.Guna2Button buttonBack;
         private UserControls.UserControlPrice userControlPrice;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
