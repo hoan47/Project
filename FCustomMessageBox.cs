@@ -40,7 +40,7 @@ namespace Project
 
         private void ButtonClick(object sender, EventArgs e)
         {
-            Dispose();
+            Close();
         }
 
         private void FCustomMessageBoxLoad(object sender, EventArgs e)

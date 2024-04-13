@@ -86,65 +86,9 @@ namespace Project
 
         private void ButtonConfirmClick(object sender, EventArgs e)
         {
-            FConfirm fConfirm = new FConfirm(room, firstDay, lastDay);
+            FConfirm fConfirm = new FConfirm(hotel, room, firstDay, lastDay, deposits, () => { ((FShowHotelRoom)Tag).LoadUI(); Close(); });
 
-            fConfirm.FormClosing += ConfirmFormClosing;
             FMain.Instance.OpenFormChild(panel, fConfirm, this);
-        }
-
-        private void ConfirmFormClosing(object sender, FormClosingEventArgs e)
-        {
-            FConfirm fConfirm = (FConfirm)sender;
-
-            if (fConfirm.DialogResult == DialogResult.Yes)
-            {
-                Notification notification1 = new NotificationHotel(QueryData.IdDAO.SelectId, 
-                    Data.User.UserName, Data.User.Name,
-                    hotel.UserName, QueryData.InfoDAO.FindAccount(hotel.UserName), 
-                    DateTime.Now,
-                    fConfirm.RichTextBoxText, 
-                    false,
-                    hotel,
-                    room,
-                    deposits,
-                    "Khách hàng đang chờ xác nhận.",
-                    firstDay,
-                    lastDay);
-
-                QueryData.NotificationDAO.Insert(notification1);
-                QueryData.IdDAO.ChangeId();
-
-                Notification notification2 = new NotificationClient(QueryData.IdDAO.SelectId,
-                    hotel.UserName, QueryData.InfoDAO.FindAccount(hotel.UserName),
-                    Data.User.UserName, Data.User.Name,
-                    DateTime.Now,
-                    "Rất hân hạnh được phục vụ quý khách.\nSự hài lòng của quý khách là thành công của chúng tôi.",
-                    false,
-                    hotel,
-                    room,
-                    deposits,
-                    "Khách sạn đang xác nhận.",
-                    firstDay,
-                    lastDay);
-
-                Data.Notifications.Add(notification2);
-                QueryData.NotificationDAO.Insert(notification2);
-                QueryData.IdDAO.ChangeId();
-
-
-                Notification notification3 = new NotificationCoins(QueryData.IdDAO.SelectId, null, "Hệ thống", Data.User.UserName, Data.User.Name, DateTime.Now, $"Bạn bị trừ {deposits} xu. Chuyển cho {QueryData.InfoDAO.FindAccount(hotel.UserName)}.", false);
-
-                Data.Notifications.Add(notification3);
-                QueryData.NotificationDAO.Insert(notification3);
-                QueryData.IdDAO.ChangeId();
-
-                Notification notification4 = new NotificationCoins(QueryData.IdDAO.SelectId, Data.User.UserName, Data.User.Name, hotel.UserName, QueryData.InfoDAO.FindAccount(hotel.UserName), DateTime.Now, $"Bạn nhận được {deposits} xu.", false);
-
-                QueryData.NotificationDAO.Insert(notification4);
-                QueryData.IdDAO.ChangeId();
-
-                FController.Instance.MessageSuccess("Thông báo", "Bạn đã cọc phòng thành công vui lòng đợi khách sạn phản hồi.", this, (s, ev) => { Dispose(); });
-            }
         }
     }
 }

@@ -82,7 +82,8 @@ namespace Project
         public void RemoveCheckInOuts(DateTime firstDay, DateTime lastDay)
         {
             int index = 0;
-            foreach( KeyValuePair<DateTime, DateTime> keyValuePair in CheckInOuts)
+
+            foreach(KeyValuePair<DateTime, DateTime> keyValuePair in CheckInOuts)
             {
                 if (keyValuePair.Key.Date == firstDay.Date)
                 {

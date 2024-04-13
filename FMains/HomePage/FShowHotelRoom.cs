@@ -32,7 +32,7 @@ namespace Project
             LoadUI();
         }
 
-        private void LoadUI()
+        public void LoadUI()
         {
             userControlLableAddress.LableText = hotel.Address.AddressValue;
             userControlLableName.LableText = hotel.Name;
@@ -68,7 +68,6 @@ namespace Project
 
         private void ButtonSearchClick(object sender, EventArgs e)
         {
-            flowLayoutPanel.Controls.Clear();
             ShowRooms(SearchCriteria);
         }
 
@@ -82,7 +81,9 @@ namespace Project
 
         private void ShowRooms(Func<Room, bool> SearchCriteria = null)
         {
-            foreach(Room room in hotel.Rooms)
+            flowLayoutPanel.Controls.Clear();
+
+            foreach (Room room in hotel.Rooms)
             {
                 if(room.Price <= price)
                 {
@@ -108,11 +109,11 @@ namespace Project
             }
             foreach(KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
             {
-                if (keyValuePair.Key <= firstDay && firstDay < keyValuePair.Value)
+                if (keyValuePair.Key.Date <= firstDay.Date && firstDay.Date < keyValuePair.Value.Date)
                 {
                     return false;
                 }
-                if (keyValuePair.Key < lastDay && lastDay <= keyValuePair.Value)
+                if (keyValuePair.Key.Date < lastDay.Date && lastDay.Date <= keyValuePair.Value.Date)
                 {
                     return false;
                 }

@@ -128,7 +128,7 @@ namespace Project
 
         private void TimerTick(object sender, EventArgs e)
         {
-            QueryData.Access();
+            //QueryData.Access();
             labelCoins.Text = Data.User.Client.Coins.ToString("N0").Replace(",", ".");
             int count = Data.Notifications.Count(n => n.IsWatched == false);
             toolStripButtonNotification.Text = count > 0 ? $"Thông báo({count})" : "Thông báo";

@@ -26,6 +26,7 @@ namespace Project
 
         private void ShowHotels(Func<Hotel, bool> searchCriteria = null)
         {
+            flowLayoutPanel.Controls.Clear();
             foreach (Hotel hotel in Data.HotelServices)
             {
                 if (searchCriteria == null || searchCriteria(hotel) == true)
@@ -50,7 +51,6 @@ namespace Project
                 FController.Instance.MessageWarning("Thông báo", "Thời gian không hợp lệ", this);
                 return;
             }
-            flowLayoutPanel.Controls.Clear();
             ShowHotels(SearchCriteria);
         }
 
@@ -96,7 +96,7 @@ namespace Project
             }
             return false;
         }
-        bool CheckInOutRoom(Room room)
+        private bool CheckInOutRoom(Room room)
         {
             if (room.CheckInOuts == null)
             {
