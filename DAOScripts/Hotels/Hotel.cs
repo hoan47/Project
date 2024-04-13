@@ -9,6 +9,7 @@ namespace Project
 {
     public class Hotel
     {
+        public string UserName { get; private set; }
         public int IdHotel { get; private set; }
         public string Name { get; private set; }
         public string Phone { get; private set; }
@@ -19,9 +20,12 @@ namespace Project
         public List<Image_> Images { get; private set; }
         public List<string> Services { get; private set; }
         public List<Room> Rooms { get; private set; }
+        public List<UpdatePrice> UpdatePrices { get; private set; }
 
-        public Hotel(int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
+
+        public Hotel(string userName, int id, string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
         {
+            UserName = userName;
             IdHotel = id;
             Name = name;
             Phone = phone;
@@ -29,6 +33,22 @@ namespace Project
             CheckIn = checkIn;
             CheckOut = checkOut;
             Describe = describe;
+        }
+
+        public string PriceMinMaxStr()
+        {
+            if(Rooms == null)
+            {
+                return "0 - 0";
+            }
+            int minPrice = int.MaxValue;
+            int maxPrice = int.MinValue;
+            foreach (Room room in Rooms)
+            {
+                minPrice = Math.Min(minPrice, room.Price);
+                maxPrice = Math.Max(maxPrice, room.Price);
+            }
+            return minPrice.ToString() + " - " + maxPrice.ToString();
         }
 
         public void UpdateInfor(string name, string phone, Address address, TimeSpan checkIn, TimeSpan checkOut, string describe)
@@ -44,11 +64,6 @@ namespace Project
         public void UpdateService(List<string> services)
         {
             Services = services;
-        }
-
-        public void UpdateImage(List<Image_> images)
-        {
-            Images = images;
         }
 
         public Image GetImageHotel(bool isFirst = true)
@@ -72,6 +87,15 @@ namespace Project
                 Rooms = new List<Room>();
             }
             Rooms.Add(room);
+        }
+
+        public void AddUpdatePrice(UpdatePrice updatePrice)
+        {
+            if (UpdatePrices == null)
+            {
+                UpdatePrices = new List<UpdatePrice>();
+            }
+            UpdatePrices.Add(updatePrice);
         }
 
         public bool IsName(out string message)

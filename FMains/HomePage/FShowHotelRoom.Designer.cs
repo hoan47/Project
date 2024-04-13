@@ -42,7 +42,6 @@ namespace Project
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableName = new Project.UserControls.UserControlLable();
-            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel = new System.Windows.Forms.Panel();
             this.groupBoxShowRoom = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@ namespace Project
             this.numericUpDownPeople = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panelInfoHotel.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
@@ -241,17 +241,6 @@ namespace Project
             this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
             this.userControlLableName.TabIndex = 10;
             // 
-            // userControlLableAddress
-            // 
-            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
-            this.userControlLableAddress.LableText = "Địa chỉ";
-            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
-            this.userControlLableAddress.Name = "userControlLableAddress";
-            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.TabIndex = 6;
-            // 
             // panel
             // 
             this.panel.Controls.Add(this.groupBoxShowRoom);
@@ -291,7 +280,7 @@ namespace Project
             this.panelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSearch.Location = new System.Drawing.Point(4, 21);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(508, 85);
+            this.panelSearch.Size = new System.Drawing.Size(512, 85);
             this.panelSearch.TabIndex = 8;
             // 
             // buttonSearch
@@ -310,6 +299,7 @@ namespace Project
             this.buttonSearch.Size = new System.Drawing.Size(229, 26);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             // 
             // checkedListBoxAmenities
             // 
@@ -323,14 +313,14 @@ namespace Project
             "Bếp nướng"});
             this.checkedListBoxAmenities.Location = new System.Drawing.Point(250, 19);
             this.checkedListBoxAmenities.Name = "checkedListBoxAmenities";
-            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 38);
+            this.checkedListBoxAmenities.Size = new System.Drawing.Size(253, 55);
             this.checkedListBoxAmenities.TabIndex = 0;
             // 
             // groupBoxAmenities
             // 
             this.groupBoxAmenities.Location = new System.Drawing.Point(243, 3);
             this.groupBoxAmenities.Name = "groupBoxAmenities";
-            this.groupBoxAmenities.Size = new System.Drawing.Size(262, 79);
+            this.groupBoxAmenities.Size = new System.Drawing.Size(266, 79);
             this.groupBoxAmenities.TabIndex = 3;
             this.groupBoxAmenities.TabStop = false;
             this.groupBoxAmenities.Text = "Tiện nghi";
@@ -437,6 +427,17 @@ namespace Project
             this.butonBack.Size = new System.Drawing.Size(35, 35);
             this.butonBack.TabIndex = 12;
             this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
+            // 
+            // userControlLableAddress
+            // 
+            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
+            this.userControlLableAddress.LableText = "Địa chỉ";
+            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
+            this.userControlLableAddress.Name = "userControlLableAddress";
+            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
+            this.userControlLableAddress.TabIndex = 6;
             // 
             // FShowHotelRoom
             // 

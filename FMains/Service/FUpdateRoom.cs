@@ -61,19 +61,22 @@ namespace Project
             if(CheckInfor.IsAcreage(userControlTextBoxAcreage.TextBoxText, out message, out acreage))
             {
                 Room room = new Room(
-                    DataAccess.IdDAO.SelectId,
+                    QueryData.IdDAO.SelectId,
                     userControlTextBoxServiceName.TextBoxText,
                     userControlNumericNumberRoom.NumericValue,
                     userControlNumericNumnberBed.NumericValue,
                     userControlNumericNumberPeople.NumericValue,
                     acreage,
+                    userControlPrice.Price,
+                    Room.ERoomStatus.empty,
                     userControlPrice.Price);
 
                 if(this.room == null)
                 {
                     this.room = room;
                     hotel.AddRoom(room);
-                    DataAccess.RoomDAO.Insert(hotel, room);
+                    QueryData.RoomDAO.Insert(hotel, room);
+                    QueryData.IdDAO.ChangeId();
                     FController.Instance.MessageSuccess("Thông báo", "Tạo phòng mới thành công.", this);
                 }
                 else
@@ -85,13 +88,12 @@ namespace Project
                         userControlNumericNumberPeople.NumericValue,
                         acreage,
                         userControlPrice.Price);
-                    DataAccess.RoomDAO.Update(this.room);
+                    QueryData.RoomDAO.Update(this.room);
                     FController.Instance.MessageSuccess("Thông báo", "Cập nhật phòng thành công.", this);
                 }
                 this.room.UpdateAmenities(userControlServiceEdit.Value);
-                DataAccess.AmenitiesDAO.Delete(this.room);
-                DataAccess.AmenitiesDAO.Insert(this.room);
-                DataAccess.IdDAO.ChangeId();
+                QueryData.AmenitiesDAO.Delete(this.room);
+                QueryData.AmenitiesDAO.Insert(this.room);
                 LoadData();
                 return;
             }
@@ -104,10 +106,10 @@ namespace Project
 
             if (image != null)
             {
-                currentImage = new Image_(DataAccess.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
+                currentImage = new Image_(QueryData.IdDAO.SelectId, ProcessImage.ImageToByteArray(image), image);
                 room.AddImage(currentImage);
-                DataAccess.ImageRoomDAO.Insert(room, currentImage);
-                DataAccess.IdDAO.ChangeId();
+                QueryData.ImageRoomDAO.Insert(room, currentImage);
+                QueryData.IdDAO.ChangeId();
                 pictureBox.Image = image;
             }
         }
@@ -121,7 +123,7 @@ namespace Project
             int indexImage = room.Images.IndexOf(currentImage) + 1;
 
             room.Images.Remove(currentImage);
-            DataAccess.ImageRoomDAO.Delete(currentImage);
+            QueryData.ImageRoomDAO.Delete(currentImage);
             currentImage = room.Images.Count != 0 ? room.Images[indexImage >= room.Images.Count ? 0 : indexImage] : null;
             pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
         }
@@ -151,6 +153,21 @@ namespace Project
         private bool IsZeroImage()
         {
             return room.Images == null || room.Images.Count == 0;
+        }
+
+        private void ButtonDeleteClick(object sender, EventArgs e)
+        {
+
+            while(IsZeroImage() == false)
+            {
+                int indexImage = room.Images.IndexOf(currentImage) + 1;
+
+                room.Images.Remove(currentImage);
+                QueryData.ImageRoomDAO.Delete(currentImage);
+                currentImage = room.Images.Count != 0 ? room.Images[indexImage >= room.Images.Count ? 0 : indexImage] : null;
+                pictureBox.Image = currentImage == null ? Properties.Resources.noImage : currentImage.Image;
+            }
+            QueryData.AmenitiesDAO.Delete(this.room);
         }
     }
 }

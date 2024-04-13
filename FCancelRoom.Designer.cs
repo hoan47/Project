@@ -31,11 +31,11 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCancelRoom));
             this.groupBox = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.buttonComfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.label = new System.Windows.Forms.Label();
+            this.buttonBack = new Guna.UI2.WinForms.Guna2Button();
             this.groupBoxMessage = new System.Windows.Forms.GroupBox();
             this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
-            this.buttonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonComfirm = new Guna.UI2.WinForms.Guna2Button();
+            this.label = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.groupBoxMessage.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,47 @@ namespace Project
             this.groupBox.TabIndex = 4;
             this.groupBox.Text = "Hủy phòng";
             this.groupBox.TextOffset = new System.Drawing.Point(0, -3);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
+            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBack.BorderRadius = 10;
+            this.buttonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonBack.FillColor = System.Drawing.Color.Transparent;
+            this.buttonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.Location = new System.Drawing.Point(658, 33);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(30, 30);
+            this.buttonBack.TabIndex = 28;
+            this.buttonBack.Click += new System.EventHandler(this.ButtonBackClick);
+            // 
+            // groupBoxMessage
+            // 
+            this.groupBoxMessage.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxMessage.Controls.Add(this.richTextBoxMessage);
+            this.groupBoxMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxMessage.Location = new System.Drawing.Point(51, 44);
+            this.groupBoxMessage.Name = "groupBoxMessage";
+            this.groupBoxMessage.Size = new System.Drawing.Size(599, 113);
+            this.groupBoxMessage.TabIndex = 27;
+            this.groupBoxMessage.TabStop = false;
+            this.groupBoxMessage.Text = "Gửi lí do hủy phòng tới khách sạn";
+            // 
+            // richTextBoxMessage
+            // 
+            this.richTextBoxMessage.BackColor = System.Drawing.Color.White;
+            this.richTextBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxMessage.Location = new System.Drawing.Point(7, 24);
+            this.richTextBoxMessage.Name = "richTextBoxMessage";
+            this.richTextBoxMessage.Size = new System.Drawing.Size(586, 83);
+            this.richTextBoxMessage.TabIndex = 0;
+            this.richTextBoxMessage.Text = "Lí do khác";
             // 
             // buttonComfirm
             // 
@@ -90,51 +131,11 @@ namespace Project
             this.label.Text = "Hủy phòng bạn sẽ không được bồi thường với bất kì lí do gì bạn chắc chứ.\r\n";
             this.label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // groupBoxMessage
-            // 
-            this.groupBoxMessage.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxMessage.Controls.Add(this.richTextBoxMessage);
-            this.groupBoxMessage.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxMessage.Location = new System.Drawing.Point(51, 44);
-            this.groupBoxMessage.Name = "groupBoxMessage";
-            this.groupBoxMessage.Size = new System.Drawing.Size(599, 113);
-            this.groupBoxMessage.TabIndex = 27;
-            this.groupBoxMessage.TabStop = false;
-            this.groupBoxMessage.Text = "Gửi lí do hủy phòng tới khách sạn";
-            // 
-            // richTextBoxMessage
-            // 
-            this.richTextBoxMessage.BackColor = System.Drawing.Color.White;
-            this.richTextBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxMessage.Location = new System.Drawing.Point(7, 24);
-            this.richTextBoxMessage.Name = "richTextBoxMessage";
-            this.richTextBoxMessage.ReadOnly = true;
-            this.richTextBoxMessage.Size = new System.Drawing.Size(586, 83);
-            this.richTextBoxMessage.TabIndex = 0;
-            this.richTextBoxMessage.Text = "Lí do khác";
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.BackgroundImage")));
-            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonBack.FillColor = System.Drawing.Color.Transparent;
-            this.buttonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonBack.ForeColor = System.Drawing.Color.White;
-            this.buttonBack.Location = new System.Drawing.Point(658, 33);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(30, 30);
-            this.buttonBack.TabIndex = 28;
-            this.buttonBack.Click += new System.EventHandler(this.ButtonBackClick);
-            // 
             // FCancelRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(700, 224);
             this.Controls.Add(this.groupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

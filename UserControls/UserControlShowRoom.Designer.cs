@@ -35,15 +35,15 @@ namespace Project
             this.pictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.labelOldPrice = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.labelAcreages = new System.Windows.Forms.Label();
+            this.pictureBoxSale = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.labelAcreage = new System.Windows.Forms.Label();
             this.labelNumberBed = new System.Windows.Forms.Label();
             this.labelNumberRoom = new System.Windows.Forms.Label();
             this.labelNumberPeople = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSale)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox
@@ -55,8 +55,8 @@ namespace Project
             this.groupBox.Controls.Add(this.pictureBox);
             this.groupBox.Controls.Add(this.labelOldPrice);
             this.groupBox.Controls.Add(this.labelPrice);
-            this.groupBox.Controls.Add(this.guna2PictureBox1);
-            this.groupBox.Controls.Add(this.labelAcreages);
+            this.groupBox.Controls.Add(this.pictureBoxSale);
+            this.groupBox.Controls.Add(this.labelAcreage);
             this.groupBox.Controls.Add(this.labelNumberBed);
             this.groupBox.Controls.Add(this.labelNumberRoom);
             this.groupBox.Controls.Add(this.labelNumberPeople);
@@ -76,7 +76,7 @@ namespace Project
             // 
             this.pictureBoxIconPrice.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIconPrice.Image")));
             this.pictureBoxIconPrice.ImageRotate = 0F;
-            this.pictureBoxIconPrice.Location = new System.Drawing.Point(163, 97);
+            this.pictureBoxIconPrice.Location = new System.Drawing.Point(163, 100);
             this.pictureBoxIconPrice.Name = "pictureBoxIconPrice";
             this.pictureBoxIconPrice.Size = new System.Drawing.Size(30, 30);
             this.pictureBoxIconPrice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,28 +124,28 @@ namespace Project
             this.labelPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelPrice.Click += new System.EventHandler(this.ShowRoomClick);
             // 
-            // guna2PictureBox1
+            // pictureBoxSale
             // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(160, 0);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.ShowRoomClick);
+            this.pictureBoxSale.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSale.Image")));
+            this.pictureBoxSale.ImageRotate = 0F;
+            this.pictureBoxSale.Location = new System.Drawing.Point(160, 0);
+            this.pictureBoxSale.Name = "pictureBoxSale";
+            this.pictureBoxSale.Size = new System.Drawing.Size(40, 40);
+            this.pictureBoxSale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSale.TabIndex = 0;
+            this.pictureBoxSale.TabStop = false;
+            this.pictureBoxSale.Click += new System.EventHandler(this.ShowRoomClick);
             // 
-            // labelAcreages
+            // labelAcreage
             // 
-            this.labelAcreages.AutoEllipsis = true;
-            this.labelAcreages.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAcreages.Location = new System.Drawing.Point(78, 76);
-            this.labelAcreages.Name = "labelAcreages";
-            this.labelAcreages.Size = new System.Drawing.Size(115, 16);
-            this.labelAcreages.TabIndex = 4;
-            this.labelAcreages.Text = "Diện tích: 999 m^2";
-            this.labelAcreages.Click += new System.EventHandler(this.ShowRoomClick);
+            this.labelAcreage.AutoEllipsis = true;
+            this.labelAcreage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAcreage.Location = new System.Drawing.Point(78, 76);
+            this.labelAcreage.Name = "labelAcreage";
+            this.labelAcreage.Size = new System.Drawing.Size(115, 16);
+            this.labelAcreage.TabIndex = 4;
+            this.labelAcreage.Text = "Diện tích: 999 m^2";
+            this.labelAcreage.Click += new System.EventHandler(this.ShowRoomClick);
             // 
             // labelNumberBed
             // 
@@ -192,7 +192,7 @@ namespace Project
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSale)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,10 +204,10 @@ namespace Project
         private System.Windows.Forms.Label labelNumberBed;
         private System.Windows.Forms.Label labelNumberRoom;
         private System.Windows.Forms.Label labelNumberPeople;
-        private System.Windows.Forms.Label labelAcreages;
+        private System.Windows.Forms.Label labelAcreage;
         private System.Windows.Forms.Label labelOldPrice;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxIconPrice;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxSale;
         private System.Windows.Forms.Label labelPrice;
     }
 }

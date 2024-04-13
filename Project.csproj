@@ -177,12 +177,26 @@
     <Compile Include="DAOScripts\Address\AddressDAO.cs" />
     <Compile Include="DAOScripts\ApplicationServiceDAO.cs" />
     <Compile Include="DAOScripts\Hotels\ServiceDAO.cs" />
+    <Compile Include="DAOScripts\Hotels\UpdatePrice.cs" />
+    <Compile Include="DAOScripts\Hotels\UpdatePriceDAO.cs" />
     <Compile Include="DAOScripts\IdDAO.cs" />
+    <Compile Include="DAOScripts\Notification\Notification.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationClient.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationCoins.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationDAO.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationHotel.cs" />
+    <Compile Include="DAOScripts\Notification\NotificationSystem.cs" />
     <Compile Include="DAOScripts\Room\AmenitiesDAO.cs" />
     <Compile Include="DAOScripts\Room\ImageRoomDAO.cs" />
     <Compile Include="DAOScripts\Room\RoomDAO.cs" />
     <Compile Include="Data.cs" />
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="FMains\HomePage\FConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\HomePage\FConfirm.Designer.cs">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryData.cs" />
     <Compile Include="FCancelRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +220,12 @@
     </Compile>
     <Compile Include="FMains\HomePage\FShowHotelRoom.Designer.cs">
       <DependentUpon>FShowHotelRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FMains\Service\FUpdatePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMains\Service\FUpdatePrice.Designer.cs">
+      <DependentUpon>FUpdatePrice.cs</DependentUpon>
     </Compile>
     <Compile Include="FMains\Service\FHotelManage.cs">
       <SubType>Form</SubType>
@@ -242,9 +262,9 @@
     <Compile Include="FCustomMessageBox.Designer.cs">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAOScripts\Account\Client.cs" />
+    <Compile Include="DAOScripts\Client.cs" />
     <Compile Include="DAOScripts\Account\AccountDAO.cs" />
-    <Compile Include="DAOScripts\Account\ClientDAO.cs" />
+    <Compile Include="DAOScripts\ClientDAO.cs" />
     <Compile Include="DAOScripts\DAO.cs" />
     <Compile Include="DAOScripts\Account\InforDAO.cs" />
     <Compile Include="FController.cs">
@@ -336,6 +356,12 @@
     <Compile Include="UserControls\UserControlLable.Designer.cs">
       <DependentUpon>UserControlLable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNote.Designer.cs">
+      <DependentUpon>UserControlNote.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlNotificationCoins.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,11 +374,17 @@
     <Compile Include="UserControls\UserControlNotificationHotel.Designer.cs">
       <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlNotificationService.cs">
+    <Compile Include="UserControls\UserControlNotificationClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControlNotificationService.Designer.cs">
-      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    <Compile Include="UserControls\UserControlNotificationClient.Designer.cs">
+      <DependentUpon>UserControlNotificationClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNotificationSystem.Designer.cs">
+      <DependentUpon>UserControlNotificationSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlPrice.cs">
       <SubType>UserControl</SubType>
@@ -377,12 +409,6 @@
     </Compile>
     <Compile Include="UserControls\UserControlDateTimePackerEdit.Designer.cs">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UserControlDiscount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UserControlDiscount.Designer.cs">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlAddressRoom.cs">
       <SubType>UserControl</SubType>
@@ -460,6 +486,9 @@
     <EmbeddedResource Include="FCancelRoom.resx">
       <DependentUpon>FCancelRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMains\HomePage\FConfirm.resx">
+      <DependentUpon>FConfirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FCustomMessageBox.resx">
       <DependentUpon>FCustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\HomePage\FShowHotelRoom.resx">
       <DependentUpon>FShowHotelRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMains\Service\FUpdatePrice.resx">
+      <DependentUpon>FUpdatePrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMains\Service\FHotelManage.resx">
       <DependentUpon>FHotelManage.cs</DependentUpon>
@@ -532,14 +564,20 @@
     <EmbeddedResource Include="UserControls\UserControlLable.resx">
       <DependentUpon>UserControlLable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNote.resx">
+      <DependentUpon>UserControlNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificationCoins.resx">
       <DependentUpon>UserControlNotificationCoins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlNotificationHotel.resx">
       <DependentUpon>UserControlNotificationHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlNotificationService.resx">
-      <DependentUpon>UserControlNotificationService.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlNotificationClient.resx">
+      <DependentUpon>UserControlNotificationClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNotificationSystem.resx">
+      <DependentUpon>UserControlNotificationSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlPrice.resx">
       <DependentUpon>UserControlPrice.cs</DependentUpon>
@@ -552,9 +590,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlDateTimePackerEdit.resx">
       <DependentUpon>UserControlDateTimePackerEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControlDiscount.resx">
-      <DependentUpon>UserControlDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlAddressRoom.resx">
       <DependentUpon>UserControlAddressRoom.cs</DependentUpon>
