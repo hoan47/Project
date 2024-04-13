@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 
 namespace Project
 {
     public partial class FMain : Form
     {
+        public static FMain Instance { get; private set; }
         private Color colorNormal = Color.White;
         private Form formChildCurrent;
 
         public FMain()
         {
             InitializeComponent();
+            Instance = this;
+            timer.Interval = 1000;
+            timer.Start();
         }
 
         private void ToolStripButtonClick(object sender, EventArgs e)
@@ -72,28 +75,28 @@ namespace Project
                 formChildCurrent.Close();
             }
             formChildCurrent = formChild;
-            FLoading fLoading = new FLoading(formChild, 400);
-
             ChangeColerToolStripButton(formChild);
-            fLoading.OnLoading();
             OpenFormChild(panelMain, formChild, fromTag);
-            fLoading.OffLoading();
         }
 
-        public void OpenFormChild(Panel panel, Form formChild, Form fromTag)
+        public void OpenFormChild(Control panel, Form formChild, Form fromTag)
         {
-            if(panel == null)
+            FLoading fLoading = new FLoading(formChild, 400);
+
+            fLoading.OnLoading();
+            if (panel == null)
             {
                 panel = panelMain;
                 ChangeColerToolStripButton(formChild);
-            }    
+            }
             formChild.Tag = fromTag;
-            formChild.Size = panel.Size;
             formChild.TopLevel = false;
             panel.Controls.Add(formChild);
             formChild.BringToFront();
             formChild.Show();
+            fLoading.OffLoading();
         }
+
 
         public void ChangeColerToolStripButton(Form formChild)
         {
@@ -123,14 +126,12 @@ namespace Project
             }
         }
 
-        public void UpdateConins()
+        private void TimerTick(object sender, EventArgs e)
         {
+            QueryData.Access();
             labelCoins.Text = Data.User.Client.Coins.ToString("N0").Replace(",", ".");
-        }
-
-        private void FMainLoad(object sender, EventArgs e)
-        {
-            UpdateConins();
+            int count = Data.Notifications.Count(n => n.IsWatched == false);
+            toolStripButtonNotification.Text = count > 0 ? $"Thông báo({count})" : "Thông báo";
         }
     }
 }

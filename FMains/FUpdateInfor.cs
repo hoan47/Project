@@ -61,15 +61,32 @@ namespace Project
 
                     Data.User.UpdateInfor(userControlTextBoxEditName.TextBoxText, dateTime, userControlRadioButtonEditGender.GenderText, address, userControlTextBoxEditIdCard.TextBoxText, userControlTextBoxEditEmail.TextBoxText, userControlTextBoxEditPhone.TextBoxText, ProcessImage.ImageToByteArray(pictureBoxImage.Image), pictureBoxImage.Image);
                     fLoading.OnLoading();
-                    if (DataAccess.InfoDAO.Update(Data.User) == true)
+                    if (QueryData.InfoDAO.Update(Data.User) == true)
                     {
                         if(Data.User.Client.GetRank() == Client.ERank.noRank)
                         {
-                            if (DataAccess.ClientDAO.Update(Data.User, (int)Client.ERank.rankCopper, Client.coninsStar) == true)
+                            if (QueryData.ClientDAO.Update(Data.User, (int)Client.ERank.rankCopper, Client.coninsStar) == true)
                             {
                                 Data.User.Client.UpdateRank((int)Client.ERank.rankCopper);
                                 Data.User.Client.UpdateCoins(Client.coninsStar);
-                                ((FMain)Tag).UpdateConins();
+
+                                Notification notification1 = new NotificationSystem(QueryData.IdDAO.SelectId, Data.User.UserName, Data.User.Name, DateTime.Now, $"Bạn nhận được {(int)Client.ERank.rankCopper} điểm.", false);
+                                
+                                Data.Notifications.Add(notification1);
+                                QueryData.NotificationDAO.Insert(notification1);
+                                QueryData.IdDAO.ChangeId();
+
+                                Notification notification2 = new NotificationSystem(QueryData.IdDAO.SelectId, Data.User.UserName, Data.User.Name, DateTime.Now, $"Chúc mừng bạn được thăng {Data.User.Client.RankStr()}, Khi sử dụng các dịch vụ bạn được giảm {Data.User.Client.Discount()} %.", false);
+                                
+                                Data.Notifications.Add(notification2);
+                                QueryData.NotificationDAO.Insert(notification2);
+                                QueryData.IdDAO.ChangeId();
+
+                                Notification notification3 = new NotificationCoins(QueryData.IdDAO.SelectId, null, "Hệ thống", Data.User.UserName, Data.User.Name, DateTime.Now, $"Bạn nhận được {Client.coninsStar} xu.", false);
+                                
+                                Data.Notifications.Add(notification3);
+                                QueryData.NotificationDAO.Insert(notification3);
+                                QueryData.IdDAO.ChangeId();
                             }
                         }    
                         FController.Instance.MessageSuccess("Thông báo", "Cập nhật thành công.", this);

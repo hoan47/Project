@@ -14,6 +14,7 @@ namespace Project
     {
         public Image ImageIcon { get { return pictureBoxIn.Image; } set { pictureBoxIn.Image = value; } }
         public string GroupBoxText { get { return groupBoxTime.Text; } set { groupBoxTime.Text = value; } }
+        public DateTime DateTimePacker { get { return dateTimePickerTime.Value; } set { dateTimePickerTime.Value = value; } }
 
         public UserControlDateTimePacker()
         {

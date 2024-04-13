@@ -16,7 +16,7 @@ namespace Project
         public string TextBoxText { get { return textBox.Text; } set { textBox.Text = value; } }
         public string TextBoxPlaceholderText { get { return textBox.PlaceholderText; } set { textBox.PlaceholderText = value; } }
         public Image Image { get { return pictureBoxInforService.Image; } set { pictureBoxInforService.Image = value; } }
-
+        public bool ReadOnly { get { return textBox.ReadOnly; } set { textBox.ReadOnly = value; } }
         public UserControlTextBoxService()
         {
             InitializeComponent();

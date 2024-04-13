@@ -42,7 +42,6 @@ namespace Project
             this.buttonRight = new Guna.UI2.WinForms.Guna2Button();
             this.buttonLeft = new Guna.UI2.WinForms.Guna2Button();
             this.userControlLableName = new Project.UserControls.UserControlLable();
-            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panel = new System.Windows.Forms.Panel();
             this.groupBoxShowRoom = new Guna.UI2.WinForms.Guna2GroupBox();
             this.panelSearch = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@ namespace Project
             this.numericUpDownPeople = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.butonBack = new Guna.UI2.WinForms.Guna2Button();
+            this.userControlLableAddress = new Project.UserControls.UserControlLable();
             this.panelInfoHotel.SuspendLayout();
             this.groupBoxDescribe.SuspendLayout();
             this.groupBoxService.SuspendLayout();
@@ -81,9 +81,10 @@ namespace Project
             this.panelInfoHotel.Controls.Add(this.groupBoxService);
             this.panelInfoHotel.Controls.Add(this.panelImage);
             this.panelInfoHotel.Controls.Add(this.userControlLableName);
-            this.panelInfoHotel.Location = new System.Drawing.Point(5, 34);
+            this.panelInfoHotel.Location = new System.Drawing.Point(7, 42);
+            this.panelInfoHotel.Margin = new System.Windows.Forms.Padding(4);
             this.panelInfoHotel.Name = "panelInfoHotel";
-            this.panelInfoHotel.Size = new System.Drawing.Size(244, 478);
+            this.panelInfoHotel.Size = new System.Drawing.Size(325, 588);
             this.panelInfoHotel.TabIndex = 5;
             // 
             // groupBoxEvaluate
@@ -95,9 +96,10 @@ namespace Project
             this.groupBoxEvaluate.CustomBorderThickness = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.groupBoxEvaluate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxEvaluate.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxEvaluate.Location = new System.Drawing.Point(0, 418);
+            this.groupBoxEvaluate.Location = new System.Drawing.Point(0, 514);
+            this.groupBoxEvaluate.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxEvaluate.Name = "groupBoxEvaluate";
-            this.groupBoxEvaluate.Size = new System.Drawing.Size(241, 52);
+            this.groupBoxEvaluate.Size = new System.Drawing.Size(321, 64);
             this.groupBoxEvaluate.TabIndex = 15;
             this.groupBoxEvaluate.Text = "Đánh giá";
             this.groupBoxEvaluate.TextOffset = new System.Drawing.Point(0, -10);
@@ -107,10 +109,11 @@ namespace Project
             this.userControlLablePhone.BackColor = System.Drawing.Color.Transparent;
             this.userControlLablePhone.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLablePhone.ImageIcon")));
             this.userControlLablePhone.LableText = "0978037893";
-            this.userControlLablePhone.Location = new System.Drawing.Point(0, 245);
+            this.userControlLablePhone.Location = new System.Drawing.Point(0, 302);
+            this.userControlLablePhone.Margin = new System.Windows.Forms.Padding(5);
             this.userControlLablePhone.Name = "userControlLablePhone";
-            this.userControlLablePhone.Size = new System.Drawing.Size(243, 34);
-            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLablePhone.Size = new System.Drawing.Size(324, 42);
+            this.userControlLablePhone.SizeUserControl = new System.Drawing.Size(324, 42);
             this.userControlLablePhone.TabIndex = 14;
             // 
             // groupBoxDescribe
@@ -118,9 +121,11 @@ namespace Project
             this.groupBoxDescribe.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBoxDescribe.Controls.Add(this.richTextBoxDescribe);
             this.groupBoxDescribe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDescribe.Location = new System.Drawing.Point(0, 347);
+            this.groupBoxDescribe.Location = new System.Drawing.Point(0, 427);
+            this.groupBoxDescribe.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxDescribe.Name = "groupBoxDescribe";
-            this.groupBoxDescribe.Size = new System.Drawing.Size(242, 65);
+            this.groupBoxDescribe.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxDescribe.Size = new System.Drawing.Size(323, 80);
             this.groupBoxDescribe.TabIndex = 13;
             this.groupBoxDescribe.TabStop = false;
             this.groupBoxDescribe.Text = "Mô tả";
@@ -129,10 +134,11 @@ namespace Project
             // 
             this.richTextBoxDescribe.BackColor = System.Drawing.Color.SkyBlue;
             this.richTextBoxDescribe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxDescribe.Location = new System.Drawing.Point(5, 18);
+            this.richTextBoxDescribe.Location = new System.Drawing.Point(7, 22);
+            this.richTextBoxDescribe.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxDescribe.Name = "richTextBoxDescribe";
             this.richTextBoxDescribe.ReadOnly = true;
-            this.richTextBoxDescribe.Size = new System.Drawing.Size(230, 41);
+            this.richTextBoxDescribe.Size = new System.Drawing.Size(305, 50);
             this.richTextBoxDescribe.TabIndex = 13;
             this.richTextBoxDescribe.Text = resources.GetString("richTextBoxDescribe.Text");
             // 
@@ -140,9 +146,11 @@ namespace Project
             // 
             this.groupBoxService.Controls.Add(this.listBoxService);
             this.groupBoxService.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxService.Location = new System.Drawing.Point(0, 285);
+            this.groupBoxService.Location = new System.Drawing.Point(0, 351);
+            this.groupBoxService.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxService.Name = "groupBoxService";
-            this.groupBoxService.Size = new System.Drawing.Size(242, 60);
+            this.groupBoxService.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxService.Size = new System.Drawing.Size(323, 74);
             this.groupBoxService.TabIndex = 12;
             this.groupBoxService.TabStop = false;
             this.groupBoxService.Text = "Dịch vụ";
@@ -152,7 +160,7 @@ namespace Project
             this.listBoxService.BackColor = System.Drawing.Color.SkyBlue;
             this.listBoxService.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxService.FormattingEnabled = true;
-            this.listBoxService.ItemHeight = 17;
+            this.listBoxService.ItemHeight = 21;
             this.listBoxService.Items.AddRange(new object[] {
             "Hồ bơi",
             "Khu phục vụ đồ ăn",
@@ -162,9 +170,10 @@ namespace Project
             "Dịch vụ giặt là",
             "Khu vực hút thuốc lá",
             "Công viên"});
-            this.listBoxService.Location = new System.Drawing.Point(5, 18);
+            this.listBoxService.Location = new System.Drawing.Point(7, 22);
+            this.listBoxService.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxService.Name = "listBoxService";
-            this.listBoxService.Size = new System.Drawing.Size(230, 38);
+            this.listBoxService.Size = new System.Drawing.Size(305, 46);
             this.listBoxService.TabIndex = 11;
             // 
             // panelImage
@@ -173,9 +182,9 @@ namespace Project
             this.panelImage.Controls.Add(this.buttonRight);
             this.panelImage.Controls.Add(this.buttonLeft);
             this.panelImage.Location = new System.Drawing.Point(0, 0);
-            this.panelImage.Margin = new System.Windows.Forms.Padding(2);
+            this.panelImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(244, 200);
+            this.panelImage.Size = new System.Drawing.Size(325, 246);
             this.panelImage.TabIndex = 9;
             // 
             // pictureBox
@@ -184,10 +193,10 @@ namespace Project
             this.pictureBox.FillColor = System.Drawing.SystemColors.Info;
             this.pictureBox.Image = global::Project.Properties.Resources.noImage;
             this.pictureBox.ImageRotate = 0F;
-            this.pictureBox.Location = new System.Drawing.Point(22, 0);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Location = new System.Drawing.Point(29, 0);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox.Size = new System.Drawing.Size(267, 246);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -204,10 +213,10 @@ namespace Project
             this.buttonRight.FillColor = System.Drawing.Color.Transparent;
             this.buttonRight.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonRight.ForeColor = System.Drawing.Color.White;
-            this.buttonRight.Location = new System.Drawing.Point(222, 88);
-            this.buttonRight.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRight.Location = new System.Drawing.Point(296, 108);
+            this.buttonRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRight.Name = "buttonRight";
-            this.buttonRight.Size = new System.Drawing.Size(22, 32);
+            this.buttonRight.Size = new System.Drawing.Size(29, 39);
             this.buttonRight.TabIndex = 9;
             this.buttonRight.Click += new System.EventHandler(this.ButtonRightClick);
             // 
@@ -223,10 +232,10 @@ namespace Project
             this.buttonLeft.FillColor = System.Drawing.Color.Transparent;
             this.buttonLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonLeft.ForeColor = System.Drawing.Color.White;
-            this.buttonLeft.Location = new System.Drawing.Point(0, 88);
-            this.buttonLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLeft.Location = new System.Drawing.Point(0, 108);
+            this.buttonLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLeft.Name = "buttonLeft";
-            this.buttonLeft.Size = new System.Drawing.Size(22, 32);
+            this.buttonLeft.Size = new System.Drawing.Size(29, 39);
             this.buttonLeft.TabIndex = 8;
             this.buttonLeft.Click += new System.EventHandler(this.ButtonLeftClick);
             // 
@@ -235,29 +244,20 @@ namespace Project
             this.userControlLableName.BackColor = System.Drawing.Color.Transparent;
             this.userControlLableName.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableName.ImageIcon")));
             this.userControlLableName.LableText = "Tên khách sạn";
-            this.userControlLableName.Location = new System.Drawing.Point(0, 205);
+            this.userControlLableName.Location = new System.Drawing.Point(0, 252);
+            this.userControlLableName.Margin = new System.Windows.Forms.Padding(5);
             this.userControlLableName.Name = "userControlLableName";
-            this.userControlLableName.Size = new System.Drawing.Size(243, 34);
-            this.userControlLableName.SizeUserControl = new System.Drawing.Size(243, 34);
+            this.userControlLableName.Size = new System.Drawing.Size(324, 42);
+            this.userControlLableName.SizeUserControl = new System.Drawing.Size(324, 42);
             this.userControlLableName.TabIndex = 10;
-            // 
-            // userControlLableAddress
-            // 
-            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
-            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
-            this.userControlLableAddress.LableText = "Địa chỉ";
-            this.userControlLableAddress.Location = new System.Drawing.Point(5, 0);
-            this.userControlLableAddress.Name = "userControlLableAddress";
-            this.userControlLableAddress.Size = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(727, 34);
-            this.userControlLableAddress.TabIndex = 6;
             // 
             // panel
             // 
             this.panel.Controls.Add(this.groupBoxShowRoom);
-            this.panel.Location = new System.Drawing.Point(252, 38);
+            this.panel.Location = new System.Drawing.Point(336, 47);
+            this.panel.Margin = new System.Windows.Forms.Padding(4);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(523, 470);
+            this.panel.Size = new System.Drawing.Size(697, 578);
             this.panel.TabIndex = 7;
             // 
             // groupBoxShowRoom
@@ -273,8 +273,9 @@ namespace Project
             this.groupBoxShowRoom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxShowRoom.ForeColor = System.Drawing.Color.Black;
             this.groupBoxShowRoom.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxShowRoom.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxShowRoom.Name = "groupBoxShowRoom";
-            this.groupBoxShowRoom.Size = new System.Drawing.Size(523, 470);
+            this.groupBoxShowRoom.Size = new System.Drawing.Size(697, 578);
             this.groupBoxShowRoom.TabIndex = 15;
             this.groupBoxShowRoom.Text = "Tìm kiếm phòng";
             this.groupBoxShowRoom.TextOffset = new System.Drawing.Point(0, -10);
@@ -289,9 +290,10 @@ namespace Project
             this.panelSearch.Controls.Add(this.groupBoxNumberRoom);
             this.panelSearch.Controls.Add(this.groupBoxNumberPeople);
             this.panelSearch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelSearch.Location = new System.Drawing.Point(4, 21);
+            this.panelSearch.Location = new System.Drawing.Point(5, 26);
+            this.panelSearch.Margin = new System.Windows.Forms.Padding(4);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(508, 85);
+            this.panelSearch.Size = new System.Drawing.Size(683, 105);
             this.panelSearch.TabIndex = 8;
             // 
             // buttonSearch
@@ -305,11 +307,13 @@ namespace Project
             this.buttonSearch.FillColor = System.Drawing.Color.Lime;
             this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearch.ForeColor = System.Drawing.Color.Black;
-            this.buttonSearch.Location = new System.Drawing.Point(9, 55);
+            this.buttonSearch.Location = new System.Drawing.Point(12, 68);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(229, 26);
+            this.buttonSearch.Size = new System.Drawing.Size(305, 32);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm kiếm";
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             // 
             // checkedListBoxAmenities
             // 
@@ -321,16 +325,19 @@ namespace Project
             "Máy xấy",
             "Ti vi",
             "Bếp nướng"});
-            this.checkedListBoxAmenities.Location = new System.Drawing.Point(250, 19);
+            this.checkedListBoxAmenities.Location = new System.Drawing.Point(333, 23);
+            this.checkedListBoxAmenities.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxAmenities.Name = "checkedListBoxAmenities";
-            this.checkedListBoxAmenities.Size = new System.Drawing.Size(249, 38);
+            this.checkedListBoxAmenities.Size = new System.Drawing.Size(336, 67);
             this.checkedListBoxAmenities.TabIndex = 0;
             // 
             // groupBoxAmenities
             // 
-            this.groupBoxAmenities.Location = new System.Drawing.Point(243, 3);
+            this.groupBoxAmenities.Location = new System.Drawing.Point(324, 4);
+            this.groupBoxAmenities.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAmenities.Name = "groupBoxAmenities";
-            this.groupBoxAmenities.Size = new System.Drawing.Size(262, 79);
+            this.groupBoxAmenities.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxAmenities.Size = new System.Drawing.Size(355, 97);
             this.groupBoxAmenities.TabIndex = 3;
             this.groupBoxAmenities.TabStop = false;
             this.groupBoxAmenities.Text = "Tiện nghi";
@@ -339,9 +346,11 @@ namespace Project
             // 
             this.groupBoxNumberBed.Controls.Add(this.numericUpDownBed);
             this.groupBoxNumberBed.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNumberBed.Location = new System.Drawing.Point(169, 3);
+            this.groupBoxNumberBed.Location = new System.Drawing.Point(225, 4);
+            this.groupBoxNumberBed.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNumberBed.Name = "groupBoxNumberBed";
-            this.groupBoxNumberBed.Size = new System.Drawing.Size(75, 50);
+            this.groupBoxNumberBed.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxNumberBed.Size = new System.Drawing.Size(100, 62);
             this.groupBoxNumberBed.TabIndex = 2;
             this.groupBoxNumberBed.TabStop = false;
             this.groupBoxNumberBed.Text = "Số giường";
@@ -354,9 +363,10 @@ namespace Project
             this.numericUpDownBed.BorderThickness = 2;
             this.numericUpDownBed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericUpDownBed.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownBed.Location = new System.Drawing.Point(10, 16);
+            this.numericUpDownBed.Location = new System.Drawing.Point(13, 20);
+            this.numericUpDownBed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownBed.Name = "numericUpDownBed";
-            this.numericUpDownBed.Size = new System.Drawing.Size(59, 28);
+            this.numericUpDownBed.Size = new System.Drawing.Size(79, 34);
             this.numericUpDownBed.TabIndex = 0;
             this.numericUpDownBed.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             // 
@@ -364,9 +374,11 @@ namespace Project
             // 
             this.groupBoxNumberRoom.Controls.Add(this.numericUpDownRoom);
             this.groupBoxNumberRoom.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNumberRoom.Location = new System.Drawing.Point(74, 3);
+            this.groupBoxNumberRoom.Location = new System.Drawing.Point(99, 4);
+            this.groupBoxNumberRoom.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNumberRoom.Name = "groupBoxNumberRoom";
-            this.groupBoxNumberRoom.Size = new System.Drawing.Size(96, 50);
+            this.groupBoxNumberRoom.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxNumberRoom.Size = new System.Drawing.Size(128, 62);
             this.groupBoxNumberRoom.TabIndex = 1;
             this.groupBoxNumberRoom.TabStop = false;
             this.groupBoxNumberRoom.Text = "Số phòng ngủ";
@@ -379,9 +391,10 @@ namespace Project
             this.numericUpDownRoom.BorderThickness = 2;
             this.numericUpDownRoom.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericUpDownRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownRoom.Location = new System.Drawing.Point(20, 16);
+            this.numericUpDownRoom.Location = new System.Drawing.Point(27, 20);
+            this.numericUpDownRoom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownRoom.Name = "numericUpDownRoom";
-            this.numericUpDownRoom.Size = new System.Drawing.Size(59, 28);
+            this.numericUpDownRoom.Size = new System.Drawing.Size(79, 34);
             this.numericUpDownRoom.TabIndex = 0;
             this.numericUpDownRoom.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             // 
@@ -389,9 +402,11 @@ namespace Project
             // 
             this.groupBoxNumberPeople.Controls.Add(this.numericUpDownPeople);
             this.groupBoxNumberPeople.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNumberPeople.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxNumberPeople.Location = new System.Drawing.Point(4, 4);
+            this.groupBoxNumberPeople.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNumberPeople.Name = "groupBoxNumberPeople";
-            this.groupBoxNumberPeople.Size = new System.Drawing.Size(72, 50);
+            this.groupBoxNumberPeople.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxNumberPeople.Size = new System.Drawing.Size(96, 62);
             this.groupBoxNumberPeople.TabIndex = 0;
             this.groupBoxNumberPeople.TabStop = false;
             this.groupBoxNumberPeople.Text = "Số người";
@@ -404,9 +419,10 @@ namespace Project
             this.numericUpDownPeople.BorderThickness = 2;
             this.numericUpDownPeople.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numericUpDownPeople.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDownPeople.Location = new System.Drawing.Point(6, 16);
+            this.numericUpDownPeople.Location = new System.Drawing.Point(8, 20);
+            this.numericUpDownPeople.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numericUpDownPeople.Name = "numericUpDownPeople";
-            this.numericUpDownPeople.Size = new System.Drawing.Size(59, 28);
+            this.numericUpDownPeople.Size = new System.Drawing.Size(79, 34);
             this.numericUpDownPeople.TabIndex = 0;
             this.numericUpDownPeople.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             // 
@@ -415,9 +431,10 @@ namespace Project
             this.flowLayoutPanel.AllowDrop = true;
             this.flowLayoutPanel.AutoScroll = true;
             this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(4, 112);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 138);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(512, 350);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(683, 431);
             this.flowLayoutPanel.TabIndex = 7;
             // 
             // butonBack
@@ -432,24 +449,37 @@ namespace Project
             this.butonBack.FillColor = System.Drawing.Color.Transparent;
             this.butonBack.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.butonBack.ForeColor = System.Drawing.Color.White;
-            this.butonBack.Location = new System.Drawing.Point(740, 0);
+            this.butonBack.Location = new System.Drawing.Point(987, 0);
+            this.butonBack.Margin = new System.Windows.Forms.Padding(4);
             this.butonBack.Name = "butonBack";
-            this.butonBack.Size = new System.Drawing.Size(35, 35);
+            this.butonBack.Size = new System.Drawing.Size(47, 43);
             this.butonBack.TabIndex = 12;
             this.butonBack.Click += new System.EventHandler(this.ButonBackClick);
             // 
+            // userControlLableAddress
+            // 
+            this.userControlLableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.userControlLableAddress.ImageIcon = ((System.Drawing.Image)(resources.GetObject("userControlLableAddress.ImageIcon")));
+            this.userControlLableAddress.LableText = "Địa chỉ";
+            this.userControlLableAddress.Location = new System.Drawing.Point(7, 0);
+            this.userControlLableAddress.Margin = new System.Windows.Forms.Padding(5);
+            this.userControlLableAddress.Name = "userControlLableAddress";
+            this.userControlLableAddress.Size = new System.Drawing.Size(969, 42);
+            this.userControlLableAddress.SizeUserControl = new System.Drawing.Size(969, 42);
+            this.userControlLableAddress.TabIndex = 6;
+            // 
             // FShowHotelRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(780, 512);
+            this.ClientSize = new System.Drawing.Size(1040, 630);
             this.Controls.Add(this.butonBack);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.userControlLableAddress);
             this.Controls.Add(this.panelInfoHotel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FShowHotelRoom";
             this.Text = "FShowRoom";
             this.Load += new System.EventHandler(this.FShowRoom_Load);

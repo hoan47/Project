@@ -21,6 +21,7 @@ namespace Project
         {
             InitializeComponent();
             this.hotel = hotel;
+            dateTimePicker.Value = DateTime.Now;
         }
 
         private void ButtonAddClick(object sender, EventArgs e)
@@ -46,14 +47,22 @@ namespace Project
 
         private void ButtonUpdateClick(object sender, EventArgs e)
         {
-            foreach(Control control in flowLayoutPanel.Controls)
+            if(hotel.Rooms == null || hotel.Rooms.Count == 0)
+            {
+                FController.Instance.MessageWarning("Thông báo", "Bạn vui lòng tạo phòng trước khi sử dụng tính năng này.", this);
+                return;
+            }    
+            EnabledGroupBox();
+            foreach (Control control in flowLayoutPanel.Controls)
             {
                 control.Visible = false;
-            }    
-            UserControlDiscount userControlDiscount = new UserControlDiscount(hotel);
+            }
+            ((FMain)((FService)Tag).Tag).OpenFormChild(flowLayoutPanel, new FUpdatePrice(hotel), this);
+        }
 
-            userControlDiscount.Tag = this;
-            flowLayoutPanel.Controls.Add(userControlDiscount);
+        public void EnabledGroupBox()
+        {
+            groupBoxStatus.Enabled = groupBoxDateTime.Enabled = groupBoxButton.Enabled = !groupBoxButton.Enabled;
         }
 
         public void LoadData()
@@ -86,10 +95,6 @@ namespace Project
                         flowLayoutPanel.Controls.Add(userControlRoom);
                     }
                     flowLayoutPanel.Controls[i].Visible = true;
-                }
-                foreach (Control control in flowLayoutPanel.Controls)
-                {
-                    control.Visible = true;
                 }
             }
         }

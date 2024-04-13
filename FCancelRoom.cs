@@ -12,14 +12,37 @@ namespace Project
 {
     public partial class FCancelRoom : Form
     {
-        public FCancelRoom()
+   
+
+        private NotificationClient notification;
+    
+        public FCancelRoom(NotificationClient notification)
         {
             InitializeComponent();
+            this.notification = notification;
+          
+          
         }
 
         private void ButtonBackClick(object sender, EventArgs e)
         {
             Dispose();
+        }
+
+        public void ButtonComfirmClick(object sender, EventArgs e)
+        {
+          
+            notification.Status = "Đã Huỷ Phòng";
+            QueryData.NotificationDAO.Update(notification);
+            QueryData.Access();
+            FMain.Instance.OpenFormChild(new FNotification(), null);
+
+           
+
+
+
+
+
         }
     }
 }

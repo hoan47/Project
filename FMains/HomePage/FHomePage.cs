@@ -19,49 +19,96 @@ namespace Project
 
         private void FHomePageLoad(object sender, EventArgs e)
         {
-            foreach (Hotel hotel in Data.HotelServices)
-            {
-                UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
-
-                userControlHotel.Tag = this;
-                flowLayoutPanel.Controls.Add(userControlHotel);
-            }
+            userControlDateTimePackerIn.DateTimePacker = DateTime.Now;
+            userControlDateTimePackerOut.DateTimePacker = DateTime.Now.AddDays(1);
+            ShowHotels();
         }
 
-        public void OpenHotel(Hotel hotel)
+        private void ShowHotels(Func<Hotel, bool> searchCriteria = null)
         {
-            ((FMain)Tag).OpenFormChild(null, new FShowHotelRoom(hotel), this);
-        }
-
-        private void ButtonSearchClick(object sender, EventArgs e)
-        {
-            flowLayoutPanel.Controls.Clear();
             foreach (Hotel hotel in Data.HotelServices)
             {
-                if (userControlAddressRoom.ComboBoxText == hotel.Address.ProvinceAndDistrict &&
-                    CheckPrice(userControlPrice.Price, hotel.Rooms) &&
-                    CheckService(checkedListBoxService, hotel))
+                if (searchCriteria == null || searchCriteria(hotel) == true)
                 {
                     UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
+
                     userControlHotel.Tag = this;
                     flowLayoutPanel.Controls.Add(userControlHotel);
                 }
             }
         }
 
-        private bool CheckPrice(int price, List<Room> rooms)
+        public void OpenHotel(Hotel hotel)
         {
-            foreach (Room room in rooms)
+            FMain.Instance.OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker, userControlPrice.Price), this);
+        }
+
+        private void ButtonSearchClick(object sender, EventArgs e)
+        {
+            if (userControlDateTimePackerOut.DateTimePacker <= userControlDateTimePackerIn.DateTimePacker)
             {
-                if (price <= room.Price)
-                {
-                    return true;
-                }
+                FController.Instance.MessageWarning("Thông báo", "Thời gian không hợp lệ", this);
+                return;
+            }
+            flowLayoutPanel.Controls.Clear();
+            ShowHotels(SearchCriteria);
+        }
+
+        private bool SearchCriteria(Hotel hotel)
+        {
+            return CheckAddress(hotel) &&
+                CheckPriceDateTime(hotel) &&
+                CheckService(hotel);
+        }
+
+        private bool CheckAddress(Hotel hotel)
+        {
+            if (userControlAddressRoom.ComboBoxText == "")
+            {
+                return true;
+            }
+            if (hotel.Address.ProvinceAndDistrict.Contains(userControlAddressRoom.ComboBoxText) == true)
+            {
+                return true;
+            }
+            if( hotel.Address.ProvinceAndDistrict == userControlAddressRoom.ComboBoxText)
+            {
+                return true;
             }
             return false;
         }
 
-        private bool CheckService(CheckedListBox checkedListBoxService, Hotel hotel)
+        private bool CheckPriceDateTime(Hotel hotel)
+        {
+            if(hotel.Rooms == null)
+            {
+                return false;
+            }
+            foreach (Room room in hotel.Rooms)
+            {
+                if (room.Price <= userControlPrice.Price)
+                {
+                    if (room.CheckInOuts == null)
+                    {
+                        return true;
+                    }
+                    foreach (KeyValuePair<DateTime, DateTime> keyValuePair in room.CheckInOuts)
+                    {
+                        if (keyValuePair.Key <= userControlDateTimePackerIn.DateTimePacker && userControlDateTimePackerIn.DateTimePacker < keyValuePair.Value)
+                        {
+                            break;
+                        }
+                        if (keyValuePair.Key < userControlDateTimePackerOut.DateTimePacker && userControlDateTimePackerOut.DateTimePacker <= keyValuePair.Value)
+                        {
+                            break;
+                        }
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private bool CheckService(Hotel hotel)
         {
             foreach (string item in checkedListBoxService.CheckedItems)
             {
@@ -71,6 +118,11 @@ namespace Project
                 }
             }
             return true;
+        }
+
+        private void userControlPrice_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

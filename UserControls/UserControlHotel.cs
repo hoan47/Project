@@ -21,10 +21,10 @@ namespace Project
             groupBox.Text = "Tên Khách Sạn: " + hotel.Name;
             labelAddress.Text = hotel.Address.AddressValue;
             labelPhone.Text = hotel.Phone;
-            labelPrice.Text = "0 - 0";
+            labelPrice.Text = hotel.PriceMinMaxStr();
+            labelNumber.Text = hotel.NumberRoom();
             pictureBoxHotel.Image = hotel.GetImageHotel();
         }
-
         public void UserControlHottelDoubleClick(object sender, EventArgs e)
         {
             ((FService)Tag).OpenHotelManager(hotel);
