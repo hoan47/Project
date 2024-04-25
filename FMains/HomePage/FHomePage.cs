@@ -47,6 +47,11 @@ namespace Project
             FMain.Instance.OpenFormChild(null, new FShowHotelRoom(hotel, userControlDateTimePackerIn.DateTimePacker, userControlDateTimePackerOut.DateTimePacker, userControlPrice.Price), this);
         }
 
+        public void OpenForm(Form form)
+        {
+            FMain.Instance.OpenFormChild(flowLayoutPanel, form, this);
+        }
+
         private void ButtonSearchClick(object sender, EventArgs e)
         {
             if (userControlDateTimePackerOut.DateTimePacker <= userControlDateTimePackerIn.DateTimePacker)
@@ -128,6 +133,16 @@ namespace Project
                 }
             }
             return true;
+        }
+
+        private void ButtonSuggestClick(object sender, EventArgs e)
+        {
+            OpenForm(new FMains.HomePage.FSuggest());
+        }
+
+        private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

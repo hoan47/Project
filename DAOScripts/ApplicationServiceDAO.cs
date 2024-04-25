@@ -23,6 +23,7 @@ namespace Project
                 QueryData.RoomDAO.Access(notMeUser.Hotels);
                 QueryData.AmenitiesDAO.Access(notMeUser.Hotels);
                 QueryData.ImageRoomDAO.Access(notMeUser.Hotels);
+                QueryData.RentalDAO.Access(notMeUser.Hotels);
             }
         }
     }

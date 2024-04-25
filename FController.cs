@@ -100,7 +100,7 @@ namespace Project
 
             if (eventHandler != null)
             {
-                fCustomMessageBox.FormClosed += eventHandler;
+                //fCustomMessageBox.FormClosed += eventHandler;
             }
 
             OpenFormMessage(fCustomMessageBox, formParent);

@@ -46,7 +46,6 @@ namespace Project
             }
         }
 
-
         public bool Insert(User user)
         {
             try

@@ -33,20 +33,22 @@ namespace Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHomePage));
             this.panelSearchHotel = new System.Windows.Forms.Panel();
+            this.buttonSuggest = new System.Windows.Forms.Button();
             this.groupBoxService = new System.Windows.Forms.GroupBox();
             this.checkedListBoxService = new System.Windows.Forms.CheckedListBox();
-            this.userControlPrice = new Project.UserControls.UserControlPrice();
             this.buttonSearch = new Guna.UI2.WinForms.Guna2Button();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.userControlPrice = new Project.UserControls.UserControlPrice();
             this.userControlAddressRoom = new Project.UserControlAddressRoom();
             this.userControlDateTimePackerOut = new Project.UserControlDateTimePacker();
             this.userControlDateTimePackerIn = new Project.UserControlDateTimePacker();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSearchHotel.SuspendLayout();
             this.groupBoxService.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSearchHotel
             // 
+            this.panelSearchHotel.Controls.Add(this.buttonSuggest);
             this.panelSearchHotel.Controls.Add(this.groupBoxService);
             this.panelSearchHotel.Controls.Add(this.userControlPrice);
             this.panelSearchHotel.Controls.Add(this.buttonSearch);
@@ -57,6 +59,19 @@ namespace Project
             this.panelSearchHotel.Name = "panelSearchHotel";
             this.panelSearchHotel.Size = new System.Drawing.Size(780, 120);
             this.panelSearchHotel.TabIndex = 0;
+            // 
+            // buttonSuggest
+            // 
+            this.buttonSuggest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSuggest.BackgroundImage")));
+            this.buttonSuggest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonSuggest.FlatAppearance.BorderSize = 0;
+            this.buttonSuggest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSuggest.Location = new System.Drawing.Point(729, 20);
+            this.buttonSuggest.Name = "buttonSuggest";
+            this.buttonSuggest.Size = new System.Drawing.Size(40, 40);
+            this.buttonSuggest.TabIndex = 12;
+            this.buttonSuggest.UseVisualStyleBackColor = true;
+            this.buttonSuggest.Click += new System.EventHandler(this.ButtonSuggestClick);
             // 
             // groupBoxService
             // 
@@ -87,16 +102,6 @@ namespace Project
             this.checkedListBoxService.Size = new System.Drawing.Size(152, 89);
             this.checkedListBoxService.TabIndex = 0;
             // 
-            // userControlPrice
-            // 
-            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
-            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
-            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
-            this.userControlPrice.Name = "userControlPrice";
-            this.userControlPrice.Price = 10000000;
-            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
-            this.userControlPrice.TabIndex = 10;
-            // 
             // buttonSearch
             // 
             this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
@@ -115,6 +120,27 @@ namespace Project
             this.buttonSearch.TabIndex = 9;
             this.buttonSearch.Click += new System.EventHandler(this.ButtonSearchClick);
             this.buttonSearch.DoubleClick += new System.EventHandler(this.ButtonSearchClick);
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AllowDrop = true;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
+            this.flowLayoutPanel.TabIndex = 1;
+            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
+            // 
+            // userControlPrice
+            // 
+            this.userControlPrice.BackColor = System.Drawing.Color.Transparent;
+            this.userControlPrice.ColorUserControl = System.Drawing.Color.White;
+            this.userControlPrice.Location = new System.Drawing.Point(12, 61);
+            this.userControlPrice.Name = "userControlPrice";
+            this.userControlPrice.Price = 10000000;
+            this.userControlPrice.Size = new System.Drawing.Size(256, 56);
+            this.userControlPrice.TabIndex = 10;
             // 
             // userControlAddressRoom
             // 
@@ -146,16 +172,6 @@ namespace Project
             this.userControlDateTimePackerIn.Name = "userControlDateTimePackerIn";
             this.userControlDateTimePackerIn.Size = new System.Drawing.Size(277, 55);
             this.userControlDateTimePackerIn.TabIndex = 5;
-            // 
-            // flowLayoutPanel
-            // 
-            this.flowLayoutPanel.AllowDrop = true;
-            this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(5, 121);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(775, 390);
-            this.flowLayoutPanel.TabIndex = 1;
             // 
             // FHomePage
             // 
@@ -189,5 +205,6 @@ namespace Project
         private System.Windows.Forms.CheckedListBox checkedListBoxService;
         private UserControlAddressRoom userControlAddressRoom;
         private UserControlDateTimePacker userControlDateTimePackerIn;
+        private System.Windows.Forms.Button buttonSuggest;
     }
 }

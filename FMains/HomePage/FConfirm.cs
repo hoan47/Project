@@ -76,6 +76,7 @@ namespace Project
             QueryData.NotificationDAO.Insert(notification4);
             QueryData.IdDAO.ChangeId();
 
+            QueryData.RentalDAO.Insert(Data.User, room, firstDay, lastDay);
             room.AddCheckInOuts(firstDay, lastDay);
             FController.Instance.MessageSuccess("Thông báo", "Bạn đã cọc phòng thành công vui lòng đợi khách sạn phản hồi.", this, Successes());
         }

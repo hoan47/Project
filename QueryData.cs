@@ -23,6 +23,7 @@ namespace Project
         public static ImageRoomDAO ImageRoomDAO { get; private set; }
         public static NotificationDAO NotificationDAO { get; private set; }
         public static ApplicationServiceDAO ApplicationServiceDAO { get; private set; }
+        public static RentalDAO RentalDAO { get; private set; }
 
         static QueryData()
         {
@@ -45,6 +46,7 @@ namespace Project
             NotificationDAO = new NotificationDAO();
 
             ApplicationServiceDAO = new ApplicationServiceDAO();
+            RentalDAO = new RentalDAO();
         }
 
         public static void Access()
@@ -61,6 +63,7 @@ namespace Project
                 AmenitiesDAO.Access(Data.User.Hotels);
                 ImageRoomDAO.Access(Data.User.Hotels);
                 UpdatePriceDAO.Access(Data.User.Hotels);
+                RentalDAO.Access(Data.User.Hotels);
             }
 
             AccountDAO.AccessNotMe(Data.User, Data.NotMeUsers);
