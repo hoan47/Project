@@ -101,7 +101,12 @@ namespace Project
 
             if (fConfirm.DialogResult == DialogResult.Yes)
             {
-                Notification notification1 = new NotificationHotel(QueryData.IdDAO.SelectId, 
+                int idNotificationClient = QueryData.IdDAO.SelectId;
+                QueryData.IdDAO.ChangeId();
+                int idNotificationHotel = QueryData.IdDAO.SelectId;
+                QueryData.IdDAO.ChangeId();
+
+                Notification notification1 = new NotificationHotel(idNotificationClient,
                     Data.User.UserName, Data.User.Name,
                     hotel.UserName, QueryData.InfoDAO.FindAccount(hotel.UserName), 
                     DateTime.Now,
@@ -112,12 +117,12 @@ namespace Project
                     deposits,
                     "Khách hàng đang chờ xác nhận.",
                     checkIn,
-                    checkOut);
+                    checkOut,
+                    idNotificationHotel);
 
                 QueryData.NotificationDAO.Insert(notification1);
-                QueryData.IdDAO.ChangeId();
 
-                Notification notification2 = new NotificationClient(QueryData.IdDAO.SelectId,
+                Notification notification2 = new NotificationClient(idNotificationHotel,
                     hotel.UserName, QueryData.InfoDAO.FindAccount(hotel.UserName),
                     Data.User.UserName, Data.User.Name,
                     DateTime.Now,
@@ -128,11 +133,11 @@ namespace Project
                     deposits,
                     "Khách sạn đang xác nhận.",
                     checkIn,
-                    checkOut);
+                    checkOut,
+                    idNotificationClient);
 
                 Data.Notifications.Add(notification2);
                 QueryData.NotificationDAO.Insert(notification2);
-                QueryData.IdDAO.ChangeId();
 
 
                 Notification notification3 = new NotificationCoins(QueryData.IdDAO.SelectId, null, "Hệ thống", Data.User.UserName, Data.User.Name, DateTime.Now, $"Bạn bị trừ {deposits} xu. Chuyển cho {QueryData.InfoDAO.FindAccount(hotel.UserName)}.", false);

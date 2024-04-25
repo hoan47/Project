@@ -12,6 +12,8 @@ namespace Project
 {
     public partial class FCancelRoom : Form
     {
+        public string RichTextBoxText { get { return richTextBox.Text; } }
+
         public FCancelRoom()
         {
             InitializeComponent();
@@ -19,7 +21,14 @@ namespace Project
 
         private void ButtonBackClick(object sender, EventArgs e)
         {
-            Dispose();
+            DialogResult = DialogResult.No;
+            Close();
+        }
+
+        private void ButtonComfirmClick(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Yes;
+            Close();
         }
     }
 }

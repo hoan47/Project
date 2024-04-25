@@ -20,6 +20,7 @@ namespace Project
         public List<Image_> Images { get; private set; }
         public List<string> Amenitiese { get; private set; }
         public int OldPrice { get; private set; }
+        public List<KeyValuePair<DateTime, DateTime>> CheckInOuts { get; private set; }
 
         public Room(int idRoom, string name, int numberRoom, int numberOfBeds, int numberOfPeople, int acreage, int price, ERoomStatus status, int oldPrice)
         {
@@ -70,10 +71,31 @@ namespace Project
             }
             Images.Add(image);
         }
+        public void AddCheckInOuts(DateTime firstDay, DateTime lastDay)
+        {
+            if (CheckInOuts == null)
+            {
+                CheckInOuts = new List<KeyValuePair<DateTime, DateTime>>();
+            }
+            CheckInOuts.Add(new KeyValuePair<DateTime, DateTime>(firstDay, lastDay));
+        }
+        public void RemoveCheckInOuts(DateTime firstDay, DateTime lastDay)
+        {
+            int index = 0;
 
+            foreach (KeyValuePair<DateTime, DateTime> keyValuePair in CheckInOuts)
+            {
+                if (keyValuePair.Key.Date == firstDay.Date)
+                {
+                    break;
+                }
+                index++;
+            }
+            CheckInOuts.RemoveAt(index);
+        }
         public static ERoomStatus GetStatus(int status)
         {
-            switch(status)
+            switch (status)
             {
                 case 0:
                     return ERoomStatus.rent;
@@ -81,7 +103,7 @@ namespace Project
                     return ERoomStatus.oder;
                 default:
                     return ERoomStatus.empty;
-            }    
+            }
         }
 
         public int GetStatus()

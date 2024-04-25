@@ -59,7 +59,8 @@ namespace Project
                                             (int)reader[9],
                                             reader[10].ToString(),
                                             Convert.ToDateTime(reader[11]),
-                                            Convert.ToDateTime(reader[12]));
+                                            Convert.ToDateTime(reader[12]),
+                                            (int)reader[13]);
 
                             break;
                         default:
@@ -75,7 +76,8 @@ namespace Project
                                             (int)reader[9],
                                             reader[10].ToString(),
                                             Convert.ToDateTime(reader[11]),
-                                            Convert.ToDateTime(reader[12]));
+                                            Convert.ToDateTime(reader[12]),
+                                            (int)reader[13]);
 
                             break;
                     }
@@ -111,7 +113,7 @@ namespace Project
                     $"N'{notificationSystem.Content}', " +
                     $"'{notificationSystem.IsWatched}', " +
                     $"'{notificationSystem.GetTypeStr()}', " +
-                    $"null, null, null, null, null, null)",
+                    $"null, null, null, null, null, null, null)",
                     sqlConnection);
                 }
                 else if (notification is NotificationCoins notificationCoins)
@@ -125,7 +127,7 @@ namespace Project
                     $"N'{notificationCoins.Content}', " +
                     $"'{notificationCoins.IsWatched}', " +
                     $"'{notificationCoins.GetTypeStr()}', " +
-                    $"null, null, null, null, null, null)",
+                    $"null, null, null, null, null, null, null)",
                     sqlConnection);
                 }
                 else if (notification is NotificationHotel notificationHotel)
@@ -144,7 +146,8 @@ namespace Project
                     $"'{notificationHotel.DepositCoins}', " +
                     $"N'{notificationHotel.Status}', " +
                     $"'{notificationHotel.CheckIn.ToString("yyyy-MM-dd HH:mm:ss")}', " +
-                    $"'{notificationHotel.CheckOut.ToString("yyyy-MM-dd HH:mm:ss")}')",
+                    $"'{notificationHotel.CheckOut.ToString("yyyy-MM-dd HH:mm:ss")}', " +
+                    $"'{notificationHotel.IdTargetNotification}')",
                     sqlConnection);
                 }
                 else if (notification is NotificationClient notificationClient)
@@ -163,7 +166,8 @@ namespace Project
                     $"'{notificationClient.DepositCoins}', " +
                     $"N'{notificationClient.Status}', " +
                     $"'{notificationClient.CheckIn.ToString("yyyy-MM-dd HH:mm:ss")}', " +
-                    $"'{notificationClient.CheckOut.ToString("yyyy-MM-dd HH:mm:ss")}')",
+                    $"'{notificationClient.CheckOut.ToString("yyyy-MM-dd HH:mm:ss")}', " +
+                    $"'{notificationClient.IdTargetNotification}')",
                     sqlConnection);
                 }
 
@@ -207,6 +211,7 @@ namespace Project
                 {
                     updateCMD = new SqlCommand(
                     $"UPDATE {table} SET " +
+                    $"contect = N'{notificationHotel.Content}', " +
                     $"isWatched = '{notificationHotel.IsWatched}', " +
                     $"status = N'{notificationHotel.Status}' " +
                     $"WHERE idNotification = '{notificationHotel.IdNotification}'",
@@ -216,6 +221,7 @@ namespace Project
                 {
                     updateCMD = new SqlCommand(
                     $"UPDATE {table} SET " +
+                    $"contect = N'{notificationClient.Content}', " +
                     $"isWatched = '{notificationClient.IsWatched}', " +
                     $"status = N'{notificationClient.Status}' " +
                     $"WHERE idNotification = '{notificationClient.IdNotification}'",
@@ -223,6 +229,43 @@ namespace Project
                 }
 
                 return updateCMD.ExecuteNonQuery() == 1;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return false;
+        }
+
+        public bool Delete(Notification notification)
+        {
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand deleteCMD = null;
+                if (notification is NotificationHotel notificationHotel)
+                {
+                    deleteCMD = new SqlCommand(
+                    $"DELETE {table} " +
+                    $"WHERE idNotification = '{notificationHotel.IdNotification}'\n" + 
+                    $"DELETE {table} " +
+                    $"WHERE idNotification = '{notificationHotel.IdTargetNotification}'",
+                    sqlConnection);
+                }
+                else if (notification is NotificationClient notificationClient)
+                {
+                    deleteCMD = new SqlCommand(
+                    $"DELETE {table} " +
+                    $"WHERE idNotification = '{notificationClient.IdNotification}'\n" +
+                    $"DELETE {table} " +
+                    $"WHERE idNotification = '{notificationClient.IdTargetNotification}'",
+                    sqlConnection);
+                }
+                return deleteCMD.ExecuteNonQuery() == 1;
             }
             catch (Exception e)
             {

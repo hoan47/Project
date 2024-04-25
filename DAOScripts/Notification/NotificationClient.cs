@@ -14,8 +14,9 @@ namespace Project
         public string Status { get; private set; }
         public DateTime CheckIn { get; private set; }
         public DateTime CheckOut { get; private set; }
+        public int IdTargetNotification { get; private set; }
 
-        public NotificationClient(int idNotification, string userNameSender, string nameSender, string userNameReceiver, string nameReceiver, DateTime time, string content, bool isWatched, Hotel hotel, Room room, int depositCoins, string status, DateTime checkIn, DateTime checkOut) : base(idNotification, userNameSender, nameSender, userNameReceiver, nameReceiver, time, content, isWatched)
+        public NotificationClient(int idNotification, string userNameSender, string nameSender, string userNameReceiver, string nameReceiver, DateTime time, string content, bool isWatched, Hotel hotel, Room room, int depositCoins, string status, DateTime checkIn, DateTime checkOut, int idTargetNotification) : base(idNotification, userNameSender, nameSender, userNameReceiver, nameReceiver, time, content, isWatched)
         {
             Hotel = hotel;
             Room = room;
@@ -23,6 +24,7 @@ namespace Project
             Status = status;
             CheckIn = checkIn;
             CheckOut = checkOut;
+            IdTargetNotification = idTargetNotification;
         }
     }
 }

@@ -10,16 +10,20 @@ namespace Project
     public class ApplicationServiceDAO : DAO
     {
         public ApplicationServiceDAO() : base(null)
-        {  }
+        { }
 
-        public void Access(User user, List<Hotel> hotels)
+        public void Access(List<User> notMeUsers)
         {
-            QueryData.HotelDAO.Access(user, hotels, false);
-            QueryData.ServiceDAO.Access(hotels);
-            QueryData.ImageHotelDAO.Access(hotels);
-            QueryData.RoomDAO.Access(hotels);
-            QueryData.AmenitiesDAO.Access(hotels);
-            QueryData.ImageRoomDAO.Access(hotels);
+            foreach (User notMeUser in notMeUsers)
+            {
+                QueryData.InfoDAO.Access(notMeUser);
+                QueryData.HotelDAO.Access(notMeUser);
+                QueryData.ServiceDAO.Access(notMeUser.Hotels);
+                QueryData.ImageHotelDAO.Access(notMeUser.Hotels);
+                QueryData.RoomDAO.Access(notMeUser.Hotels);
+                QueryData.AmenitiesDAO.Access(notMeUser.Hotels);
+                QueryData.ImageRoomDAO.Access(notMeUser.Hotels);
+            }
         }
     }
 }

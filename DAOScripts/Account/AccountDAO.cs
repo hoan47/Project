@@ -16,14 +16,24 @@ namespace Project
         public AccountDAO() : base("Account")
         { }
 
-        public bool Select(User user)
+
+        public void AccessNotMe(User user, List<User> notMeUsers)
         {
+            notMeUsers.Clear();
             try
             {
                 sqlConnection.Open();
-                SqlCommand selectCMD = new SqlCommand($"SELECT COUNT(*) FROM {table} WHERE userName = '{user.UserName}' and password = '{user.Password}'", sqlConnection);
+                SqlCommand selectCMD = new SqlCommand($"SELECT * FROM {table} WHERE userName <> '{user.UserName}'", sqlConnection);
+                SqlDataReader reader = selectCMD.ExecuteReader();
 
-                return (int)selectCMD.ExecuteScalar() != 0;
+                while (reader.Read())
+                {
+                    User notMeUser = new User();
+
+                    notMeUser.UpdateUserName(reader[0].ToString());
+                    notMeUsers.Add(notMeUser);
+                }
+                reader.Close();
             }
             catch (Exception e)
             {
@@ -33,9 +43,7 @@ namespace Project
             {
                 sqlConnection.Close();
             }
-            return false;
         }
-
 
 
         public bool Insert(User user)

@@ -29,6 +29,13 @@ namespace Project
             labelOut.Text = notification.CheckOut.ToString("dd/MM/yyyy HH:mm:ss");
             labelStatus.Text = notification.Status;
             circleButton.Visible = !notification.IsWatched;
+
+            switch (notification.Status)
+            {
+                case "Khách hàng đã hủy phòng.":
+                    buttonProcessed.Visible = false;
+                    break;
+            }
         }
 
         private void ButtonProcessedClick(object sender, EventArgs e)
