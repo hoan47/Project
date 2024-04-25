@@ -27,14 +27,17 @@ namespace Project
         private void ShowHotels(Func<Hotel, bool> searchCriteria = null)
         {
             flowLayoutPanel.Controls.Clear();
-            foreach (Hotel hotel in Data.HotelServices)
+            foreach(User user in Data.NotMeUsers)
             {
-                if (searchCriteria == null || searchCriteria(hotel) == true)
+                foreach (Hotel hotel in user.Hotels)
                 {
-                    UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
+                    if (searchCriteria == null || searchCriteria(hotel) == true)
+                    {
+                        UserControlShowHotel userControlHotel = new UserControlShowHotel(hotel);
 
-                    userControlHotel.Tag = this;
-                    flowLayoutPanel.Controls.Add(userControlHotel);
+                        userControlHotel.Tag = this;
+                        flowLayoutPanel.Controls.Add(userControlHotel);
+                    }
                 }
             }
         }

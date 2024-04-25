@@ -24,7 +24,7 @@ namespace Project
                 if (reader.Read())
                 {
                     user.UpdateInfor(
-                        reader.IsDBNull(1) ? "Nguyen Van An" : reader[1].ToString(),
+                        reader.IsDBNull(1) ? "Nguyen Van A" : reader[1].ToString(),
                         reader.IsDBNull(2) ? DateTime.Now : Convert.ToDateTime(reader[2]),
                         reader.IsDBNull(3) ? "Nam" : reader[3].ToString(),
                         reader.IsDBNull(4) ? null : new Address(reader[4].ToString()),

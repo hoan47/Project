@@ -62,7 +62,7 @@ namespace Project
             {
                 e.Result = "Tài khoản không tồn tại.";
             }
-            else if (QueryData.AccountDAO.Select(Data.User) == false)
+            else if (QueryData.AccountDAO.FindAccount(Data.User) == false)
             {
                 e.Result = "Mật khẩu sai.";
             }

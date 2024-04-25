@@ -51,7 +51,7 @@ namespace Project
         {
             InfoDAO.Access(Data.User);
             ClientDAO.Access(Data.User);
-            HotelDAO.Access(Data.User, Data.User.Hotels);
+            HotelDAO.Access(Data.User);
             NotificationDAO.Access(Data.User, Data.Notifications);
             if (Data.User.Hotels != null)
             {
@@ -63,7 +63,8 @@ namespace Project
                 UpdatePriceDAO.Access(Data.User.Hotels);
             }
 
-            ApplicationServiceDAO.Access(Data.User, Data.HotelServices);
+            AccountDAO.AccessNotMe(Data.User, Data.NotMeUsers);
+            ApplicationServiceDAO.Access(Data.NotMeUsers);
         }
     }
 }
